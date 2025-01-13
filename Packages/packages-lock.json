@@ -102,7 +102,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.textmeshpro": {
-      "version": "3.0.6",
+      "version": "4.0.0-pre.2",
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -142,7 +142,7 @@
       "url": "https://packages.unity.com"
     },
     "uk.lunalabs.luna": {
-      "version": "file:E:/6.0.0/scripts",
+      "version": "file:../../../6.0.0/scripts",
       "depth": 0,
       "source": "local",
       "dependencies": {}

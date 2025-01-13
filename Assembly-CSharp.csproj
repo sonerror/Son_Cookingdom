@@ -65,15 +65,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\_GAME\Levels\LvKingCrab\Scripts\CrabHammer.cs" />
-    <Compile Include="Assets\_GAME\Levels\LvKingCrab\Scripts\Fish.cs" />
-    <Compile Include="Assets\Scripts\Tmp\Level110Hook.cs" />
-    <Compile Include="Assets\Scripts\Tmp\CapybaraFishing.cs" />
     <Compile Include="Assets\AllIn1SpriteShader\Scripts\RandomSeed.cs" />
-    <Compile Include="Assets\Scripts\Tmp\GaintPointEffect.cs" />
-    <Compile Include="Assets\Scripts\Tmp\UIFishTargetDisplay.cs" />
     <Compile Include="Assets\DOTween\Modules\DOTweenModuleAudio.cs" />
     <Compile Include="Assets\_GAME\Levels\LvKingCrab\Scripts\CrabStickTool.cs" />
-    <Compile Include="Assets\Scripts\Tmp\TrufnCache.cs" />
     <Compile Include="Assets\_GAME\Levels\LvKingCrab\Scripts\CrabLegPart.cs" />
     <Compile Include="Assets\_GAME\Levels\LvKingCrab\Scripts\SimpleTransition.cs" />
     <Compile Include="Assets\AllIn1SpriteShader\Scripts\All1CreateUnifiedOutline.cs" />
@@ -83,24 +77,18 @@
     <Compile Include="Assets\Scripts\Tmp\EmojiControl.cs" />
     <Compile Include="Assets\Scripts\Helper\Cache.cs" />
     <Compile Include="Assets\_GAME\Levels\LvKingCrab\Scripts\LevelKingCrab.cs" />
-    <Compile Include="Assets\Scripts\Tmp\FishableObject.cs" />
-    <Compile Include="Assets\Scripts\Tmp\UIFishTarget.cs" />
     <Compile Include="Assets\DOTween\Modules\DOTweenModuleUnityVersion.cs" />
     <Compile Include="Assets\DOTween\Modules\DOTweenModulePhysics.cs" />
     <Compile Include="Assets\_GAME\Levels\LvKingCrab\Scripts\BlockUI.cs" />
     <Compile Include="Assets\_GAME\Levels\LvKingCrab\Scripts\CrabLeg.cs" />
     <Compile Include="Assets\_GAME\Levels\LvKingCrab\Scripts\KingCrabTool.cs" />
-    <Compile Include="Assets\Scripts\Tmp\Level110HookPlayer.cs" />
     <Compile Include="Assets\AllIn1SpriteShader\Scripts\AllIn1ShaderWindow.cs" />
-    <Compile Include="Assets\_GAME\Levels\LvKingCrab\Scripts\Shark.cs" />
     <Compile Include="Assets\_GAME\Levels\LvKingCrab\Scripts\CrabSpoon.cs" />
-    <Compile Include="Assets\Scripts\Tmp\Garbage.cs" />
     <Compile Include="Assets\AllIn1SpriteShader\Scripts\SetGlobalTimeUnity2018.cs" />
     <Compile Include="Assets\AllIn1SpriteShader\Scripts\AllIn1Shader.cs" />
     <Compile Include="Assets\AllIn1SpriteShader\Scripts\SetGlobalTimeNew.cs" />
     <Compile Include="Assets\Scripts\Tmp\APDUtilities.cs" />
     <Compile Include="Assets\Scripts\Manager\SoundManager.cs" />
-    <Compile Include="Assets\Scripts\Tmp\LevelFishing.cs" />
     <Compile Include="Assets\_GAME\Levels\LvKingCrab\Scripts\CrabPry.cs" />
     <Compile Include="Assets\AllIn1SpriteShader\Scripts\SetAtlasUvs.cs" />
     <Compile Include="Assets\Scripts\Tmp\CatHeal.cs" />
@@ -110,19 +98,14 @@
     <Compile Include="Assets\DOTween\Modules\DOTweenModulePhysics2D.cs" />
     <Compile Include="Assets\DOTween\Modules\DOTweenModuleUI.cs" />
     <Compile Include="Assets\DOTween\Modules\DOTweenModuleSprite.cs" />
-    <Compile Include="Assets\Scripts\Tmp\Fish.cs" />
     <Compile Include="Assets\_GAME\Levels\LvKingCrab\Scripts\CrabBowl.cs" />
-    <Compile Include="Assets\Scripts\Tmp\Level110FishCatched.cs" />
-    <Compile Include="Assets\Scripts\Tmp\FishingData.cs" />
     <Compile Include="Assets\Scripts\Manager\GameManager.cs" />
     <Compile Include="Assets\Scripts\Pool\EffectPool.cs" />
     <Compile Include="Assets\_GAME\Levels\LvKingCrab\Scripts\DragToTargetObj.cs" />
     <Compile Include="Assets\_GAME\Levels\LvKingCrab\Scripts\CrabRazor.cs" />
-    <Compile Include="Assets\_GAME\Levels\LvKingCrab\Scripts\Crab.cs" />
     <Compile Include="Assets\_GAME\Levels\LvKingCrab\Scripts\Scissors.cs" />
     <Compile Include="Assets\Scripts\Manager\Singleton.cs" />
     <Compile Include="Assets\Scripts\Pool\GameUnit.cs" />
-    <Compile Include="Assets\_GAME\Levels\LvKingCrab\Scripts\HookKingCrab.cs" />
     <Compile Include="Assets\DOTween\Modules\DOTweenModuleUtils.cs" />
     <Compile Include="Assets\_GAME\Levels\LvKingCrab\Scripts\CrabTweezers.cs" />
   </ItemGroup>

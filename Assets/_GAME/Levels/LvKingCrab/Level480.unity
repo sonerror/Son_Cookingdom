@@ -4645,6 +4645,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsReady: 1
+  emoji: {fileID: 916491830}
   hints:
   - {fileID: 21300000, guid: b3054d97378922a43a54d7492df7b543, type: 3}
   - {fileID: 21300000, guid: 3d28e71636b47914780a45b591b120a3, type: 3}
@@ -4654,9 +4655,6 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 38bc8b11ea2011e48893c1b8ce7b3e28, type: 3}
   - {fileID: 21300000, guid: 700fbd4ad6fc24b4b93655e5511883d1, type: 3}
   - {fileID: 21300000, guid: 5b064cacd0bfbc04b8a49728558dae2b, type: 3}
-  stage1: {fileID: 0}
-  stage2: {fileID: 1449248765}
-  transition: {fileID: 1016333097}
   scissors: {fileID: 1700169371}
   dish: {fileID: 409513114}
   board: {fileID: 246238988}
@@ -5070,6 +5068,26 @@ PrefabInstance:
     - target: {fileID: 1933522620882923799, guid: e434c9d857bad80469ca91a1f9d42513, type: 3}
       propertyPath: m_Name
       value: Emoji
+      objectReference: {fileID: 0}
+    - target: {fileID: 3999442512676364130, guid: e434c9d857bad80469ca91a1f9d42513, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: cac302442d9d4554f902f0254de2ebe4, type: 2}
+    - target: {fileID: 9018224514831080200, guid: e434c9d857bad80469ca91a1f9d42513, type: 3}
+      propertyPath: m_Size.x
+      value: 2.33
+      objectReference: {fileID: 0}
+    - target: {fileID: 9018224514831080200, guid: e434c9d857bad80469ca91a1f9d42513, type: 3}
+      propertyPath: m_Size.y
+      value: 2.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 9018224514831080200, guid: e434c9d857bad80469ca91a1f9d42513, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 743bcd8dff027584cbebbe56fb3e1469, type: 3}
+    - target: {fileID: 9018224514831080200, guid: e434c9d857bad80469ca91a1f9d42513, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8735755261832643865, guid: e434c9d857bad80469ca91a1f9d42513, type: 3}

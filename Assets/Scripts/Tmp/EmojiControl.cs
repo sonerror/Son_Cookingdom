@@ -40,7 +40,7 @@ namespace Satisgame
 
         public void ShowPositive(float delay = 0f)
         {
-            if (_sequenceShowEmoji.IsActive()) _sequenceShowEmoji.Complete();
+            if (_sequenceShowEmoji != null && _sequenceShowEmoji.IsActive()) _sequenceShowEmoji.Complete();
             spriteAnimator.Play(AnimPositive);
             _sequenceShowEmoji = DOTween.Sequence();
             if (delay > 0) _sequenceShowEmoji.AppendInterval(delay);

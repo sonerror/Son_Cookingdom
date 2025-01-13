@@ -1,5 +1,6 @@
 using AnhPD.Fishing;
 using DG.Tweening;
+using Satisgame;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -31,10 +32,8 @@ namespace AnhPD.KingCrab
             _hint = hints[1];
         }
 
-        // public EmojiControl emoji;
+        public EmojiControl emoji;
         [SerializeField] Sprite[] hints;
-        [SerializeField] GameObject stage1, stage2;
-        [SerializeField] SimpleTransition transition;
         [SerializeField] Scissors scissors;
         [SerializeField] Transform dish, board, tool;
         [SerializeField] CrabStickTool stick;
@@ -53,7 +52,7 @@ namespace AnhPD.KingCrab
         public static int maxLayer = 30;
         public void OnCompleteCutCrab()
         {
-            // emoji.ShowPositive();
+            emoji.ShowPositive();
             scissors.OnComplete();
 
             dish.MoveX(10f);
@@ -65,14 +64,14 @@ namespace AnhPD.KingCrab
         }
         public void OnCompleteCutLeg()
         {
-            // emoji.ShowPositive();
+            emoji.ShowPositive();
             scissors.OnComplete();
 
             stick.IsReady = true;
         }
         public void OnCompleteCrabStick()
         {
-            // emoji.ShowPositive();
+            emoji.ShowPositive();
             stick.OnComplete();
 
             hammer.IsReady = true;
@@ -82,14 +81,14 @@ namespace AnhPD.KingCrab
         }
         public void OnCompleteSmashCrab()
         {
-            // emoji.ShowPositive();
+            emoji.ShowPositive();
             hammer.OnComplete();
 
             pry.IsReady = true;
         }
         public void OnCompleteOpenCrab()
         {
-            // emoji.ShowPositive();
+            emoji.ShowPositive();
             pry.OnComplete();
 
             tweezers.IsReady = true;
@@ -97,7 +96,7 @@ namespace AnhPD.KingCrab
         }
         public void OnCompleteRemoveIntestines()
         {
-            // emoji.ShowPositive();
+            emoji.ShowPositive();
             tweezers.OnComplete();
 
             spoon.IsReady = true;
@@ -112,7 +111,7 @@ namespace AnhPD.KingCrab
         }
         public void OnCompleteCrabSauce1()
         {
-            // emoji.ShowPositive();
+            emoji.ShowPositive();
             spoon.OnCompleteSauce();
         }
         public void OnPutSauceInBowl()
@@ -125,12 +124,12 @@ namespace AnhPD.KingCrab
         }
         public void OnCompleteCutCrabBody()
         {
-            //emoji.ShowPositive();
+            emoji.ShowPositive();
             scissors.SetupForCutLung();
         }
         public void OnCompleteCutLung()
         {
-            // emoji.ShowPositive();
+            emoji.ShowPositive();
             scissors.OnComplete();
 
             razor.IsReady = true;
@@ -138,14 +137,14 @@ namespace AnhPD.KingCrab
         }
         public void OnCompleteTrimMeat()
         {
-            // emoji.ShowPositive();
+            emoji.ShowPositive();
             razor.OnComplete();
 
             meat.IsReady = true;
         }
         public void OnPutMeatInBow()
         {
-            // emoji.ShowPositive();
+            emoji.ShowPositive();
             crabBody.OnComplete();
 
             tweezers.SetupForGapEgg();
@@ -154,21 +153,21 @@ namespace AnhPD.KingCrab
         }
         public void OnCompleteGapEgg()
         {
-            // emoji.ShowPositive();
+            emoji.ShowPositive();
             tweezers.OnComplete();
 
             razor.SetupForLid();
         }
         public void OnCompleteTrimMeat2()
         {
-            // emoji.ShowPositive();
+            emoji.ShowPositive();
             razor.OnComplete();
 
             meat2.IsReady = true;
         }
         public void OnPutMeatInBow2()
         {
-            // emoji.ShowPositive();
+            emoji.ShowPositive();
 
             Camera.main.transform.DOMoveX(20f, 1f).SetDelay(.5f);
             crabTray.MoveY(10f, 1f, false, 1.5f);
@@ -180,7 +179,7 @@ namespace AnhPD.KingCrab
             crabCount++;
             if (crabCount > 10)
             {
-                // emoji.ShowPositive();
+                emoji.ShowPositive();
                 OnEndGame();
             }
         }
