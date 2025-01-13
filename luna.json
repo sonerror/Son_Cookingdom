@@ -102,7 +102,9 @@
                 "Assets/Resources/DOTweenSettings.asset"
             ]
         },
-        "scenes": [],
+        "scenes": [
+            "Assets/_GAME/Levels/LvKingCrab/Level480.unity"
+        ],
         "disabledScenes": [],
         "startupScene": 0,
         "packages": {
