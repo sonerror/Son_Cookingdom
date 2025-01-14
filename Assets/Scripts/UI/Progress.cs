@@ -2,14 +2,14 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
-using TMPro;
+// using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
 public class Progress : MonoBehaviour
 {
-    public TextMeshProUGUI txtProgressValue;
+    // public TextMeshProUGUI txtProgressValue;
     public Image greenPanel;
     public float greenPanelFillAmount = 0;
     public int totalProgress = 100;
@@ -47,8 +47,8 @@ public class Progress : MonoBehaviour
 
     public void setProgerss(int progress)
     {
-        currProgress = progress;
-        txtProgressValue.text = currProgress.ToString();
+        // currProgress = progress;
+        // txtProgressValue.text = currProgress.ToString();
         greenPanelFillAmount = (float)currProgress / totalProgress;
     }
 
