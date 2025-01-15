@@ -33,7 +33,8 @@ namespace AnhPD.KingCrab
             spriteRenderer.sprite = open;
 
             Tf.DOComplete();
-            Tf.DORotate(new Vector3(0, 0, 20f), .3f);
+            Tf.DORotate(new Vector3(0, 0, 20f), 0.3f);
+            if (IsReady) TutorialManager.Ins.ResetTimeHint();
         }
         protected override void MouseDrag(BaseEventData eventData)
         {

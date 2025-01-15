@@ -9,6 +9,7 @@ namespace Satisgame
         private static readonly int AnimPositive = Animator.StringToHash("Positive");
         private static readonly int AnimNegative = Animator.StringToHash("Negative");
         public Animator spriteAnimator;
+        public Animator spriteAnimator1;
 
         public Transform scaleTransform;
         public float durationShow = 0.25f;
@@ -41,6 +42,8 @@ namespace Satisgame
         public void ShowPositive(float delay = 0f)
         {
             if (_sequenceShowEmoji != null && _sequenceShowEmoji.IsActive()) _sequenceShowEmoji.Complete();
+            spriteAnimator1.gameObject.SetActive(false);
+            spriteAnimator.gameObject.SetActive(true);
             spriteAnimator.Play(AnimPositive);
             _sequenceShowEmoji = DOTween.Sequence();
             if (delay > 0) _sequenceShowEmoji.AppendInterval(delay);
@@ -59,8 +62,10 @@ namespace Satisgame
 
         public void ShowNegative(float delay = 0f)
         {
-            if (_sequenceShowEmoji.IsActive()) _sequenceShowEmoji.Complete();
-            spriteAnimator.Play(AnimNegative);
+            if (_sequenceShowEmoji != null && _sequenceShowEmoji.IsActive()) _sequenceShowEmoji.Complete();
+            spriteAnimator.gameObject.SetActive(false);
+            spriteAnimator1.gameObject.SetActive(true);
+            spriteAnimator1.Play(AnimNegative);
             _sequenceShowEmoji = DOTween.Sequence();
             if (delay > 0) _sequenceShowEmoji.AppendInterval(delay);
             _sequenceShowEmoji

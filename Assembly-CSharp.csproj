@@ -65,6 +65,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\_GAME\Levels\LvKingCrab\Scripts\CrabHammer.cs" />
+    <Compile Include="Assets\Scripts\Object\HandCtrl.cs" />
     <Compile Include="Assets\AllIn1SpriteShader\Scripts\RandomSeed.cs" />
     <Compile Include="Assets\DOTween\Modules\DOTweenModuleAudio.cs" />
     <Compile Include="Assets\_GAME\Levels\LvKingCrab\Scripts\CrabStickTool.cs" />
@@ -75,7 +76,6 @@
     <Compile Include="Assets\Scripts\Pool\PoolManager.cs" />
     <Compile Include="Assets\Scripts\Manager\UIManager.cs" />
     <Compile Include="Assets\_GAME\Levels\LvKingCrab\Scripts\CrabBody.cs" />
-    <Compile Include="Assets\Scripts\Tmp\EmojiControl.cs" />
     <Compile Include="Assets\Scripts\Helper\Cache.cs" />
     <Compile Include="Assets\_GAME\Levels\LvKingCrab\Scripts\LevelKingCrab.cs" />
     <Compile Include="Assets\DOTween\Modules\DOTweenModuleUnityVersion.cs" />
@@ -88,12 +88,14 @@
     <Compile Include="Assets\AllIn1SpriteShader\Scripts\SetGlobalTimeUnity2018.cs" />
     <Compile Include="Assets\AllIn1SpriteShader\Scripts\AllIn1Shader.cs" />
     <Compile Include="Assets\AllIn1SpriteShader\Scripts\SetGlobalTimeNew.cs" />
+    <Compile Include="Assets\Scripts\LegsGroup.cs" />
     <Compile Include="Assets\Scripts\Tmp\APDUtilities.cs" />
     <Compile Include="Assets\Scripts\Manager\SoundManager.cs" />
     <Compile Include="Assets\_GAME\Levels\LvKingCrab\Scripts\CrabPry.cs" />
     <Compile Include="Assets\AllIn1SpriteShader\Scripts\SetAtlasUvs.cs" />
     <Compile Include="Assets\Scripts\LevelBase.cs" />
     <Compile Include="Assets\Scripts\UI\Progress.cs" />
+    <Compile Include="Assets\_GAME\Levels\29\Scripts\EmojiControl.cs" />
     <Compile Include="Assets\_GAME\Levels\LvKingCrab\Scripts\CrabPart.cs" />
     <Compile Include="Assets\DOTween\Modules\DOTweenModulePhysics2D.cs" />
     <Compile Include="Assets\DOTween\Modules\DOTweenModuleUI.cs" />
@@ -107,7 +109,9 @@
     <Compile Include="Assets\_GAME\Levels\LvKingCrab\Scripts\Scissors.cs" />
     <Compile Include="Assets\Scripts\Manager\Singleton.cs" />
     <Compile Include="Assets\Scripts\Pool\GameUnit.cs" />
+    <Compile Include="Assets\Scripts\UI\GamePlayScreen.cs" />
     <Compile Include="Assets\DOTween\Modules\DOTweenModuleUtils.cs" />
+    <Compile Include="Assets\Scripts\Manager\TutorialManager.cs" />
     <Compile Include="Assets\_GAME\Levels\LvKingCrab\Scripts\CrabTweezers.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -29,15 +29,13 @@ namespace AnhPD.KingCrab
         {
             base.Start();
             scissors.IsReady = true;
-            _hint = hints[1];
 
             state21.SetActive(true);
             state22.SetActive(false);
         }
 
         public EmojiControl emoji;
-        [SerializeField] Sprite[] hints;
-        [SerializeField] Scissors scissors;
+        [SerializeField] public Scissors scissors;
         [SerializeField] Transform dish, board, tool;
         [SerializeField] CrabStickTool stick;
         [SerializeField] CrabBody crabBody;
@@ -50,9 +48,11 @@ namespace AnhPD.KingCrab
         [SerializeField] DragToTargetObj meat, meat2;
         [SerializeField] Transform crabLid;
         [SerializeField] Transform crabTray;
-
+        [SerializeField] public LegsGroup legsGroup;
         [SerializeField] GameObject state21;
         [SerializeField] GameObject state22;
+
+        public int state = 0;
 
 
         public static int maxLayer = 30;
@@ -63,10 +63,14 @@ namespace AnhPD.KingCrab
 
             dish.MoveX(10f);
             board.DOMove(new Vector2(0, -2.5f), 1f).SetDelay(.5f);
-            board.DOScale(.9f, 1f).SetDelay(.5f);
+            board.DOScale(.9f, 1f).SetDelay(0.5f);
 
-            tool.MoveX(10f, 1f, false, 1f, scissors.SetupForCutLeg);
-            _hint = hints[2];
+            tool.MoveX(10f, 1f, false, 1f, () =>
+            { });
+
+            hammer.IsReady = true;
+            crabBody.transform.MoveX(-10f, 1, false, .5f);
+            legs.MoveX(10f);
         }
         public void OnCompleteCutLeg()
         {
@@ -83,7 +87,6 @@ namespace AnhPD.KingCrab
             hammer.IsReady = true;
             crabBody.transform.MoveX(-10f, 1, false, .5f);
             legs.MoveX(10f);
-            _hint = hints[3];
         }
         public void OnCompleteSmashCrab()
         {
@@ -98,7 +101,6 @@ namespace AnhPD.KingCrab
             pry.OnComplete();
 
             tweezers.IsReady = true;
-            _hint = hints[4];
         }
         public void OnCompleteRemoveIntestines()
         {
@@ -126,7 +128,6 @@ namespace AnhPD.KingCrab
             spoon.OnComplete();
 
             scissors.SetupForCutCrab();
-            _hint = hints[5];
         }
         public void OnCompleteCutCrabBody()
         {
@@ -156,7 +157,6 @@ namespace AnhPD.KingCrab
 
             tweezers.SetupForGapEgg();
             crabLid.MoveX(-10f, 1, false);
-            _hint = hints[6];
         }
         public void OnCompleteGapEgg()
         {
@@ -182,7 +182,6 @@ namespace AnhPD.KingCrab
 
             });
             crabTray.MoveY(10f, 1f, false, 1.5f);
-            _hint = hints[7];
 
         }
         int crabCount = 0;

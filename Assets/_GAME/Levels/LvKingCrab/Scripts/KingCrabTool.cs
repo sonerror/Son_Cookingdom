@@ -139,7 +139,7 @@ namespace AnhPD.KingCrab
             yield return new WaitForSeconds(1f);
             if (isDragging && !isWarned && !IsReady)
             {
-                // emoji.ShowNegative();
+                LevelKingCrab.Instance.emoji.ShowNegative();
                 isWarned = true;
             }
         }
@@ -147,7 +147,7 @@ namespace AnhPD.KingCrab
         {
             if (!isWarned)
             {
-                // emoji.ShowNegative();
+                LevelKingCrab.Instance.emoji.ShowNegative();
                 isWarned = true;
             }
         }
