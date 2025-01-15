@@ -4,17 +4,14 @@ using UnityEngine;
 
 public enum FxType
 {
-    Click = 0,
-    Cow = 1,
-    Pig = 2,
-    Chicken = 3,
-    Humm = 4,
-    Engine = 5,
-    Star = 6,
-    CompleteBuild = 7,
-    Happy = 8,
-    Done = 9,
-    OpenPopup = 10,
+    Pick = 0,
+    Drop = 1,
+    Cut = 2,
+    Hammer = 3,
+    OpenShell = 4,
+    Push = 5,
+    Gap = 6,
+    PaintBush = 7,
 }
 
 public class SoundManager : Singleton<SoundManager>
@@ -36,6 +33,30 @@ public class SoundManager : Singleton<SoundManager>
             }
 
             fx[(int)fxType].Play();
+        }
+    }
+
+    public void PlaySoundLoop(FxType fxType)
+    {
+        if (!isMute)
+        {
+            if (fx[(int)fxType] == null)
+            {
+                fx[(int)fxType] = new GameObject().AddComponent<AudioSource>();
+                fx[(int)fxType].clip = audioClips[(int)fxType];
+            }
+
+            fx[(int)fxType].loop = true;
+            fx[(int)fxType].Play();
+        }
+    }
+
+    public void StopSoundLoop(FxType fxType)
+    {
+        if (fx[(int)fxType] != null)
+        {
+            fx[(int)fxType].loop = false;
+            fx[(int)fxType].Stop();
         }
     }
 

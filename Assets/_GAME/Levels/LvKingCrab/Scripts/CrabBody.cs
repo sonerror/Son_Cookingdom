@@ -17,7 +17,7 @@ namespace AnhPD.KingCrab
         {
             smashCount++;
             transform.DOPunchScale(Vector3.one * .2f, .3f);
-            if(smashCount > 2)
+            if (smashCount > 2)
             {
                 LevelKingCrab.Instance.OnCompleteSmashCrab();
             }
@@ -55,6 +55,7 @@ namespace AnhPD.KingCrab
         {
             left.MoveX(-5f, .5f);
             right.MoveX(5f, .5f);
+            meat.SetActive(false);
         }
     }
 }

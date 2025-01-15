@@ -9,7 +9,7 @@ namespace AnhPD.KingCrab
     public class CrabPry : KingCrabTool
     {
         [SerializeField] CrabBody target;
-        [SerializeField] AudioClip sfxOpen;
+        [SerializeField] FxType sfxOpen = FxType.OpenShell;
         private bool isAniming;
         protected override void MouseDown(BaseEventData eventData)
         {
@@ -45,7 +45,7 @@ namespace AnhPD.KingCrab
             }
             void complete()
             {
-                //AudioManager.PlaySFX(sfxOpen);
+                SoundManager.Ins.PlayFx(sfxOpen);
                 target.OnOpen();
                 isAniming = false;
 

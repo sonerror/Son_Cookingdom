@@ -16,7 +16,7 @@ namespace AnhPD.KingCrab
         }
         [SerializeField] List<Transform> meats;
         [SerializeField] Transform pos;
-        [SerializeField] AudioClip sfxPush;
+        [SerializeField] FxType sfxPush = FxType.Push;
         private State state;
         private float pushDistance;
 
@@ -88,7 +88,7 @@ namespace AnhPD.KingCrab
         }
         private void ChangePushState()
         {
-            //AudioManager.PlaySFX(sfxPush);
+            SoundManager.Ins.PlayFx(sfxPush);
             pushDistance = 0;
             state = State.Animing;
             Tf.DORotate(Vector3.zero, .3f);

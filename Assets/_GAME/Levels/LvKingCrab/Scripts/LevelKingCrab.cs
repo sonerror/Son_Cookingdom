@@ -1,4 +1,4 @@
-using AnhPD.Fishing;
+
 using DG.Tweening;
 using Satisgame;
 using System.Collections;
@@ -30,6 +30,9 @@ namespace AnhPD.KingCrab
             base.Start();
             scissors.IsReady = true;
             _hint = hints[1];
+
+            state21.SetActive(true);
+            state22.SetActive(false);
         }
 
         public EmojiControl emoji;
@@ -43,11 +46,14 @@ namespace AnhPD.KingCrab
         [SerializeField] CrabPry pry;
         [SerializeField] CrabTweezers tweezers;
         [SerializeField] CrabSpoon spoon;
-        [SerializeField] AudioSource painterSound;
         [SerializeField] CrabRazor razor;
         [SerializeField] DragToTargetObj meat, meat2;
         [SerializeField] Transform crabLid;
         [SerializeField] Transform crabTray;
+
+        [SerializeField] GameObject state21;
+        [SerializeField] GameObject state22;
+
 
         public static int maxLayer = 30;
         public void OnCompleteCutCrab()
@@ -103,11 +109,11 @@ namespace AnhPD.KingCrab
         }
         public void StartPainter()
         {
-            painterSound.gameObject.SetActive(true);
+            SoundManager.Ins.PlaySoundLoop(FxType.PaintBush);
         }
         public void EndPainter()
         {
-            painterSound.gameObject.SetActive(false);
+            SoundManager.Ins.StopSoundLoop(FxType.PaintBush);
         }
         public void OnCompleteCrabSauce1()
         {
@@ -147,6 +153,7 @@ namespace AnhPD.KingCrab
             emoji.ShowPositive();
             crabBody.OnComplete();
 
+
             tweezers.SetupForGapEgg();
             crabLid.MoveX(-10f, 1, false);
             _hint = hints[6];
@@ -168,10 +175,15 @@ namespace AnhPD.KingCrab
         public void OnPutMeatInBow2()
         {
             emoji.ShowPositive();
+            state22.SetActive(true);
+            Camera.main.transform.DOMoveX(20f, 1f).SetDelay(.5f).OnComplete(() =>
+            {
+                state21.SetActive(false);
 
-            Camera.main.transform.DOMoveX(20f, 1f).SetDelay(.5f);
+            });
             crabTray.MoveY(10f, 1f, false, 1.5f);
             _hint = hints[7];
+
         }
         int crabCount = 0;
         public void OnPutCrabPartIn()
@@ -192,6 +204,8 @@ namespace AnhPD.KingCrab
             decor2.MoveX(-10f, .5f, false, 1.75f);
 
             // EndGame();
+
+            GameManager.Ins.showEndGame();
         }
     }
 }

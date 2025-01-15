@@ -11,7 +11,8 @@ namespace AnhPD.KingCrab
         [SerializeField] Transform left, right, lid;
         [SerializeField] GameObject painter;
         [SerializeField] Transform meatDump, meatDump2;
-        [SerializeField] MaskGroupCustom maskGroup;
+        [SerializeField] MaskGroupCustom maskGroupCustom;
+        [SerializeField] MaskGroup maskGroupLid;
         bool isLid;
         float rateL, rateR, rateM;
         protected override void MouseDown(BaseEventData eventData)
@@ -37,14 +38,14 @@ namespace AnhPD.KingCrab
                     rateL += Time.deltaTime;
                     rateL = Mathf.Clamp01(rateL);
 
-                    maskGroup.CheckMaskLeft(painter.transform.position);
+                    maskGroupCustom.CheckMaskLeft(painter.transform.position);
                 }
                 if (Vector2.Distance(painter.transform.position, right.transform.position) < dropDistance)
                 {
                     rateR += Time.deltaTime;
                     rateR = Mathf.Clamp01(rateR);
 
-                    maskGroup.CheckMaskRight(painter.transform.position);
+                    maskGroupCustom.CheckMaskRight(painter.transform.position);
                 }
 
                 float rate = (rateL + rateR) / 2;
@@ -58,6 +59,7 @@ namespace AnhPD.KingCrab
                     rateM = Mathf.Clamp01(rateM);
 
                     meatDump2.localScale = Vector3.one * 1f * rateM;
+                    maskGroupLid.CheckMask(painter.transform.position);
                 }
             }
 

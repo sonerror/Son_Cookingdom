@@ -16,8 +16,8 @@ namespace AnhPD.KingCrab
         [SerializeField] protected Collider2D coll2D;
         [SerializeField] protected SpriteRenderer spriteRenderer;
 
-        [SerializeField] protected AudioClip pickSfx;
-        [SerializeField] protected AudioClip placeSfx;
+        [SerializeField] protected FxType pickSfx = FxType.Pick;
+        [SerializeField] protected FxType placeSfx = FxType.Drop;
 
         [SerializeField] protected Vector3 sizeInit;
         [SerializeField] protected Vector3 sizeInCrease;
@@ -64,7 +64,7 @@ namespace AnhPD.KingCrab
         {
             if (IsBlocked) return;
 
-            //AudioManager.PlaySFX(pickSfx);
+            SoundManager.Ins.PlayFx(pickSfx);
             mOffset = Tf.position - GetMouseWorldPos();
 
             Tf.DOKill();
@@ -88,8 +88,7 @@ namespace AnhPD.KingCrab
             //if (IsBlocked) return;
             if (!isDragging) return;
 
-            ////AudioManager.PlaySFX(placeSfx);
-            ////MMVibrationManager.Haptic(HapticTypes.SoftImpact);
+            SoundManager.Ins.PlayFx(placeSfx);
             //Tf.DOScale(sizeInit, 0.3f);
             if (!IsReady)
             {
@@ -124,8 +123,7 @@ namespace AnhPD.KingCrab
             isDragging = false;
             Tf.DOMove(startPos, .5f).OnComplete(() =>
             {
-                //AudioManager.PlaySFX(placeSfx);
-                //MMVibrationManager.Haptic(HapticTypes.SoftImpact);
+                SoundManager.Ins.PlayFx(placeSfx);
                 spriteRenderer.sortingOrder = minLayer;
                 completeAction?.Invoke();
             });

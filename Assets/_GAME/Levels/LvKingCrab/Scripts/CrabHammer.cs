@@ -11,7 +11,7 @@ namespace AnhPD.KingCrab
     {
         [SerializeField] Transform pos;
         [SerializeField] CrabBody crabBody;
-        [SerializeField] AudioClip sfxHammer;
+        [SerializeField] FxType sfxHammer = FxType.Hammer;
         private bool isSmashing;
 
         protected override void MouseDown(BaseEventData eventData)
@@ -49,7 +49,7 @@ namespace AnhPD.KingCrab
                 if (Vector2.Distance(pos.position, crabBody.transform.position) < dropDistance)
                 {
                     crabBody.OnSmash();
-                    //AudioManager.PlaySFX(sfxHammer);
+                    SoundManager.Ins.PlayFx(sfxHammer);
                 }
                 Tf.DORotate(new Vector3(0, 0, -15f), .3f).OnComplete(() =>
                 {

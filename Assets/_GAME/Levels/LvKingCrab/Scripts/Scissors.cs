@@ -11,7 +11,7 @@ namespace AnhPD.KingCrab
     {
         [SerializeField] Transform pos;
         [SerializeField] Sprite close, open;
-        [SerializeField] AudioClip sfx;
+        [SerializeField] FxType sfx = FxType.Cut;
         [SerializeField] List<CrabLeg> legs;
         [SerializeField] List<CrabLegPart> parts;
         [SerializeField] CrabBody crabBody;
@@ -120,7 +120,7 @@ namespace AnhPD.KingCrab
         {
             isCooldown = true;
             spriteRenderer.sprite = close;
-            //AudioManager.PlaySFX(sfx);
+            SoundManager.Ins.PlayFx(sfx);
 
             yield return new WaitForSeconds(.2f);
             isCooldown = false;

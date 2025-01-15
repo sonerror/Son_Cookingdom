@@ -13,7 +13,7 @@ namespace AnhPD.KingCrab
         [SerializeField] List<SpriteRenderer> garbages;
         [SerializeField] SpriteRenderer egg;
         [SerializeField] SpriteRenderer topSprite;
-        [SerializeField] AudioClip sfxGap;
+        [SerializeField] FxType sfxGap = FxType.Gap;
 
         private bool isGap, isEgg;
         private SpriteRenderer currentGarbage;
@@ -36,7 +36,7 @@ namespace AnhPD.KingCrab
                 {
                     if (Vector2.Distance(pos.position, garbages[i].transform.position) < dropDistance)
                     {
-                        //AudioManager.PlaySFX(sfxGap);
+                        SoundManager.Ins.PlayFx(sfxGap);
                         isGap = true;
                         currentGarbage = garbages[i];
                         currentGarbage.sortingOrder = spriteRenderer.sortingOrder;

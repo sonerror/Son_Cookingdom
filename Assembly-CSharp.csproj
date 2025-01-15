@@ -71,6 +71,7 @@
     <Compile Include="Assets\_GAME\Levels\LvKingCrab\Scripts\CrabLegPart.cs" />
     <Compile Include="Assets\_GAME\Levels\LvKingCrab\Scripts\SimpleTransition.cs" />
     <Compile Include="Assets\AllIn1SpriteShader\Scripts\All1CreateUnifiedOutline.cs" />
+    <Compile Include="Assets\Scripts\MaskGroup.cs" />
     <Compile Include="Assets\Scripts\Pool\PoolManager.cs" />
     <Compile Include="Assets\Scripts\Manager\UIManager.cs" />
     <Compile Include="Assets\_GAME\Levels\LvKingCrab\Scripts\CrabBody.cs" />
@@ -91,7 +92,6 @@
     <Compile Include="Assets\Scripts\Manager\SoundManager.cs" />
     <Compile Include="Assets\_GAME\Levels\LvKingCrab\Scripts\CrabPry.cs" />
     <Compile Include="Assets\AllIn1SpriteShader\Scripts\SetAtlasUvs.cs" />
-    <Compile Include="Assets\Scripts\Tmp\CatHeal.cs" />
     <Compile Include="Assets\Scripts\LevelBase.cs" />
     <Compile Include="Assets\Scripts\UI\Progress.cs" />
     <Compile Include="Assets\_GAME\Levels\LvKingCrab\Scripts\CrabPart.cs" />
