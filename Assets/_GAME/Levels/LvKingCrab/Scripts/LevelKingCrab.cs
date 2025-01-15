@@ -116,7 +116,7 @@ namespace AnhPD.KingCrab
         }
         public void OnPutSauceInBowl()
         {
-            // emoji.ShowPositive();
+            emoji.ShowPositive();
             spoon.OnComplete();
 
             scissors.SetupForCutCrab();

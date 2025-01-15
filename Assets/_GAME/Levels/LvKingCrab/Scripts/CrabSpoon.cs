@@ -39,7 +39,7 @@ namespace AnhPD.KingCrab
                     isHaveSauce = true;
                     crabSauce.DOFade(1, 1f).OnComplete(() =>
                     {
-                        isCompleteSauce = true;
+                        LevelKingCrab.Instance.OnCompleteCrabSauce1();
                     });
                     crabBody.GetComponentInChildren<SpriteRenderer>().DOFade(0, 1f);
                 }
