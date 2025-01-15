@@ -8,7 +8,6 @@ namespace AnhPD.KingCrab
 {
     public class CrabSpoon : KingCrabTool
     {
-        [SerializeField] GameObject painter;
         [SerializeField] SpriteRenderer crabSauce;
         [SerializeField] Transform crabBody;
         [SerializeField] CrabBowl bowl;
@@ -26,7 +25,6 @@ namespace AnhPD.KingCrab
 
             if (IsReady)
             {
-                painter.SetActive(true);
                 LevelKingCrab.Instance.StartPainter();
             }
         }
@@ -36,16 +34,22 @@ namespace AnhPD.KingCrab
             if (!IsReady) return;
             if (!isCompleteSauce)
             {
-                if(!isHaveSauce && Vector2.Distance(crabSauce.transform.position, crabBody.position) < dropDistance)
+                if (!isHaveSauce && Vector2.Distance(crabSauce.transform.position, crabBody.position) < dropDistance)
                 {
                     isHaveSauce = true;
-                    crabSauce.DOFade(1, 1f);
+                    crabSauce.DOFade(1, 1f).OnComplete(() =>
+                    {
+                        isCompleteSauce = true;
+                    });
+                    crabBody.GetComponentInChildren<SpriteRenderer>().DOFade(0, 1f);
                 }
             }
             else
             {
-                if(Vector2.Distance(crabSauce.transform.position, bowl.transform.position) < dropDistance)
+                Debug.Log("Drop sauce" + (Vector2.Distance(crabSauce.transform.position, bowl.transform.position) < dropDistance));
+                if (Vector2.Distance(crabSauce.transform.position, bowl.transform.position) < dropDistance)
                 {
+                    Debug.Log("Drop sauce1111");
                     bowl.OnSauceIn();
                     crabSauce.gameObject.SetActive(false);
                     LevelKingCrab.Instance.OnPutSauceInBowl();
@@ -55,13 +59,10 @@ namespace AnhPD.KingCrab
         protected override void MouseUp(BaseEventData eventData)
         {
             base.MouseUp(eventData);
-
-            painter.SetActive(false);
             LevelKingCrab.Instance.EndPainter();
         }
         public void OnCompleteSauce()
         {
-            painter.SetActive(false);
             LevelKingCrab.Instance.EndPainter();
 
             isCompleteSauce = true;

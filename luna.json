@@ -1677,10 +1677,6 @@
                 "excluded": true
             },
             {
-                "name": "UnityEngine.PlayerPrefs.SessionStorageWrapper",
-                "excluded": true
-            },
-            {
                 "name": "UnityEngine.Profiling.Profiler",
                 "excluded": true
             },
@@ -2006,10 +2002,6 @@
             },
             {
                 "name": "UnityEngine.Playables.PlayableBehaviour",
-                "excluded": true
-            },
-            {
-                "name": "UnityEngine.PlayerPrefs.SessionStorageProvider",
                 "excluded": true
             },
             {
@@ -6258,7 +6250,7 @@
             },
             {
                 "name": "UnityEngine.UI.ILayoutController",
-                "excluded": true
+                "excluded": false
             },
             {
                 "name": "UnityEngine.UI.ContentSizeFitter.FitMode",
@@ -6450,7 +6442,7 @@
             },
             {
                 "name": "UnityEngine.UI.ILayoutGroup",
-                "excluded": true
+                "excluded": false
             },
             {
                 "name": "UnityEngine.EventSystems.EventTrigger.TriggerEvent",
@@ -28552,6 +28544,66 @@
                     },
                     {
                         "name": "MoveY",
+                        "excluded": true
+                    }
+                ]
+            },
+            {
+                "className": "UnityEngine.PlayerPrefs.SessionStorageWrapper",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "ctor",
+                        "excluded": false
+                    },
+                    {
+                        "name": "GetItem",
+                        "excluded": true
+                    },
+                    {
+                        "name": "SetItem",
+                        "excluded": true
+                    },
+                    {
+                        "name": "RemoveItem",
+                        "excluded": true
+                    },
+                    {
+                        "name": "Clear",
+                        "excluded": true
+                    }
+                ]
+            },
+            {
+                "className": "UnityEngine.PlayerPrefs.SessionStorageProvider",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "init",
+                        "excluded": false
+                    },
+                    {
+                        "name": "Get",
+                        "excluded": true
+                    },
+                    {
+                        "name": "Set",
+                        "excluded": true
+                    },
+                    {
+                        "name": "Remove",
+                        "excluded": true
+                    },
+                    {
+                        "name": "Clear",
+                        "excluded": true
+                    },
+                    {
+                        "name": "Save",
+                        "excluded": true
+                    },
+                    {
+                        "name": "Has",
                         "excluded": true
                     }
                 ]
