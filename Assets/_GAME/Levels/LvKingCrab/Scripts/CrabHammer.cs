@@ -18,7 +18,8 @@ namespace AnhPD.KingCrab
         {
             base.MouseDown(eventData);
             Tf.DOComplete();
-            Tf.DORotate(new Vector3(0, 0, 15f), .3f);
+            Tf.DORotate(new Vector3(0, 0, 15f), 0.3f);
+            if (IsReady) TutorialManager.Ins.ResetTimeHint();
         }
         protected override void MouseDrag(BaseEventData eventData)
         {
@@ -32,6 +33,7 @@ namespace AnhPD.KingCrab
         protected override void MouseUp(BaseEventData eventData)
         {
             if (!isDragging) return;
+            if (isSmashing) return;
             Tf.DOKill();
             isSmashing = false;
             base.MouseUp(eventData);
@@ -41,9 +43,9 @@ namespace AnhPD.KingCrab
         private void Smash()
         {
             isSmashing = true;
-            Tf.DORotate(new Vector3(0, 0, -55f), .2f);
-            Tf.DORotate(new Vector3(0, 0, 115f), .3f).OnComplete(checkTarget).SetDelay(.3f);
-
+            Tf.DORotate(new Vector3(0, 0, -55f), 0.2f);
+            Tf.DORotate(new Vector3(0, 0, 115f), 0.3f).OnComplete(checkTarget).SetDelay(0.3f);
+            Tf.DOMove(crabBody.transform.position, 0.5f);
             void checkTarget()
             {
                 if (Vector2.Distance(pos.position, crabBody.transform.position) < dropDistance)
@@ -54,6 +56,7 @@ namespace AnhPD.KingCrab
                 Tf.DORotate(new Vector3(0, 0, -15f), .3f).OnComplete(() =>
                 {
                     isSmashing = false;
+                    base.MouseUp(null);
                 });
             }
         }

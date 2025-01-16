@@ -8,7 +8,7 @@ namespace AnhPD.KingCrab
 {
     public class CrabPart : KingCrabTool
     {
-        [SerializeField] Transform target;
+        [SerializeField] public Transform target;
         [SerializeField] SpriteRenderer meat;
         protected override void MouseDown(BaseEventData eventData)
         {
@@ -20,11 +20,12 @@ namespace AnhPD.KingCrab
             {
                 meat.sortingOrder = spriteRenderer.sortingOrder - 1;
             }
+            TutorialManager.Ins.MouseDownItem();
         }
         protected override void MouseUp(BaseEventData eventData)
         {
             //base.MouseUp(eventData);
-            if(Vector2.Distance(Tf.position, target.position) < dropDistance)
+            if (Vector2.Distance(Tf.position, target.position) < dropDistance)
             {
                 coll2D.enabled = false;
                 isDragging = false;
@@ -43,6 +44,8 @@ namespace AnhPD.KingCrab
             {
                 Tf.DORotate(startRotation, .3f);
             }
+
+            TutorialManager.Ins.MouseUpItem();
         }
     }
 }

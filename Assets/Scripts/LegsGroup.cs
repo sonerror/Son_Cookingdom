@@ -11,7 +11,7 @@ public class LegsGroup : MonoBehaviour
     {
         foreach (CrabLeg leg in legs)
         {
-            if (leg.gameObject.activeSelf)
+            if (leg.isCut == false)
             {
                 return leg.transform.position;
             }

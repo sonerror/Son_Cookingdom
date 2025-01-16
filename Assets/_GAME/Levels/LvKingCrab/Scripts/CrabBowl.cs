@@ -7,6 +7,8 @@ namespace AnhPD.KingCrab
 {
     public class CrabBowl : MonoBehaviour
     {
+
+        public Transform Tf;
         [SerializeField] Transform sauce;
         [SerializeField] Transform meat, meat2;
         public void OnSauceIn()

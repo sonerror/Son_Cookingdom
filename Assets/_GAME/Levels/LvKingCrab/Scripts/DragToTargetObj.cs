@@ -15,13 +15,14 @@ namespace AnhPD.KingCrab
         {
             if (!IsReady) return;
             base.MouseDown(eventData);
+            TutorialManager.Ins.ResetTimeHint();
         }
         protected override void MouseDrag(BaseEventData eventData)
         {
             base.MouseDrag(eventData);
             if (!IsReady) return;
 
-            if(Vector2.Distance(Tf.position, target.position) < dropDistance)
+            if (Vector2.Distance(Tf.position, target.position) < dropDistance)
             {
                 gameObject.SetActive(false);
                 eventComplete?.Invoke();

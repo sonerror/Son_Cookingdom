@@ -18,6 +18,7 @@ namespace AnhPD.KingCrab
 
             Tf.DOComplete();
             Tf.DORotate(Vector3.zero, .3f);
+            if (IsReady) TutorialManager.Ins.ResetTimeHint();
         }
         protected override void MouseDrag(BaseEventData eventData)
         {

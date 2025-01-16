@@ -21,6 +21,27 @@ public class MaskGroupCustom : MonoBehaviour
         }
     }
 
+    public Vector3 getPosition()
+    {
+        foreach (GameObject mask in maskLeft)
+        {
+            if (!mask.activeSelf)
+            {
+                return mask.transform.position;
+            }
+        }
+
+        foreach (GameObject mask in maskRight)
+        {
+            if (!mask.activeSelf)
+            {
+                return mask.transform.position;
+            }
+        }
+
+        return Vector3.zero;
+    }
+
     public void CheckMaskLeft(Vector3 pos)
     {
         foreach (var mask in maskLeft)
@@ -64,5 +85,17 @@ public class MaskGroupCustom : MonoBehaviour
         if (!maskRight.All(x => x.activeSelf)) return;
 
         LevelKingCrab.Instance.OnCompleteTrimMeat();
+    }
+
+    public void ResetMask()
+    {
+        foreach (var mask in maskLeft)
+        {
+            mask.SetActive(false);
+        }
+        foreach (var mask in maskRight)
+        {
+            mask.SetActive(false);
+        }
     }
 }

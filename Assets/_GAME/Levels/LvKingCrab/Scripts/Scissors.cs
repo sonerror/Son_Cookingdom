@@ -16,6 +16,8 @@ namespace AnhPD.KingCrab
         [SerializeField] List<CrabLegPart> parts;
         [SerializeField] CrabBody crabBody;
         [SerializeField] SpriteRenderer crabLungL, crabLungR;
+
+        public ItemDrop meatRight, meatLeft;
         enum State
         {
             CutCrab = 0,
@@ -34,7 +36,7 @@ namespace AnhPD.KingCrab
 
             Tf.DOComplete();
             Tf.DORotate(new Vector3(0, 0, 20f), 0.3f);
-            if (IsReady) TutorialManager.Ins.ResetTimeHint();
+            if (IsReady) TutorialManager.Ins.MouseDownItem();
         }
         protected override void MouseDrag(BaseEventData eventData)
         {
@@ -96,20 +98,22 @@ namespace AnhPD.KingCrab
                     {
                         crabBody.OnCutLungLeft();
                         StartCoroutine(Cooldown());
-
+                        meatLeft.isDrop = true;
                         crabLungL = null;
                     }
                     if (crabLungR != null && Vector2.Distance(pos.position, crabLungR.transform.position) < dropDistance)
                     {
                         crabBody.OnCutLungRight();
                         StartCoroutine(Cooldown());
-
+                        meatRight.isDrop = true;
                         crabLungR = null;
                     }
                     break;
             }
 
         }
+
+
 
         protected override void Rewind(Action completeAction = null)
         {

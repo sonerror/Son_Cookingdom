@@ -7,6 +7,9 @@ namespace AnhPD.KingCrab
 {
     public class CrabBody : MonoBehaviour
     {
+
+        public Transform Tf;
+
         [SerializeField] Transform bodyTop;
         [SerializeField] GameObject sauce, meat;
         [SerializeField] Transform left, right;
@@ -15,12 +18,12 @@ namespace AnhPD.KingCrab
         int smashCount = 0;
         public void OnSmash()
         {
-            smashCount++;
-            transform.DOPunchScale(Vector3.one * .2f, .3f);
-            if (smashCount > 2)
-            {
-                LevelKingCrab.Instance.OnCompleteSmashCrab();
-            }
+            // smashCount++;
+            transform.DOPunchScale(Vector3.one * .2f, 0.3f);
+            // if (smashCount > 2)
+            // {
+            LevelKingCrab.Instance.OnCompleteSmashCrab();
+            // }
         }
         public void OnOpen()
         {
@@ -53,9 +56,14 @@ namespace AnhPD.KingCrab
         }
         public void OnComplete()
         {
-            left.MoveX(-5f, .5f);
-            right.MoveX(5f, .5f);
+            left.MoveX(-5f, 0.5f);
+            right.MoveX(5f, 0.5f, action: () =>
+            {
+                LevelKingCrab.Instance.razor.maskGroupCustom.ResetMask();
+            });
             meat.SetActive(false);
+            // Destroy(meat);
+
         }
     }
 }

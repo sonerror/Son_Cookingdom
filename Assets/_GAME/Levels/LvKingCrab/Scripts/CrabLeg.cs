@@ -10,6 +10,8 @@ namespace AnhPD.KingCrab
     {
         [SerializeField] SpriteRenderer spriteRenderer;
         [SerializeField] Transform target;
+
+        public bool isCut = false;
         private void Init()
         {
             spriteRenderer = GetComponent<SpriteRenderer>();
@@ -17,6 +19,7 @@ namespace AnhPD.KingCrab
 
         public void OnCut()
         {
+            isCut = true;
             spriteRenderer.DOFade(0f, .5f);
             transform.DOMove(transform.position + transform.right * 1f, .5f).SetEase(Ease.Linear).OnComplete(delay);
             void delay()

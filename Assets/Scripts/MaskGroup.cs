@@ -16,6 +16,19 @@ public class MaskGroup : MonoBehaviour
 
     }
 
+    public Vector3 getPosition()
+    {
+        foreach (GameObject mask in masks)
+        {
+            if (!mask.activeSelf)
+            {
+                return mask.transform.position;
+            }
+        }
+
+        return Vector3.zero;
+    }
+
     public void CheckMask(Vector3 pos)
     {
         foreach (var mask in masks)

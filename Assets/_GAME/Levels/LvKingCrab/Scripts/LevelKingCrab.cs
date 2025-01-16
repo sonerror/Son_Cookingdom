@@ -38,19 +38,24 @@ namespace AnhPD.KingCrab
         [SerializeField] public Scissors scissors;
         [SerializeField] Transform dish, board, tool;
         [SerializeField] CrabStickTool stick;
-        [SerializeField] CrabBody crabBody;
-        [SerializeField] CrabHammer hammer;
+        [SerializeField] public CrabBody crabBody;
+        [SerializeField] public CrabHammer hammer;
         [SerializeField] Transform legs;
-        [SerializeField] CrabPry pry;
-        [SerializeField] CrabTweezers tweezers;
-        [SerializeField] CrabSpoon spoon;
-        [SerializeField] CrabRazor razor;
-        [SerializeField] DragToTargetObj meat, meat2;
+        [SerializeField] public CrabPry pry;
+        [SerializeField] public CrabTweezers tweezers;
+        [SerializeField] public CrabSpoon spoon;
+        [SerializeField] public CrabRazor razor;
+        [SerializeField] public DragToTargetObj meat, meat2;
         [SerializeField] Transform crabLid;
         [SerializeField] Transform crabTray;
         [SerializeField] public LegsGroup legsGroup;
+        [SerializeField] public ItemDropGroup inDropGroup;
+        public CrabBowl bowl;
         [SerializeField] GameObject state21;
         [SerializeField] GameObject state22;
+
+        public ItemCrabGroup crabGroup;
+        public ItemDropGroup bodyPartGroup;
 
         public int state = 0;
 
@@ -58,6 +63,8 @@ namespace AnhPD.KingCrab
         public static int maxLayer = 30;
         public void OnCompleteCutCrab()
         {
+            TutorialManager.Ins.MouseUpItem();
+            state = 1;
             emoji.ShowPositive();
             scissors.OnComplete();
 
@@ -72,14 +79,14 @@ namespace AnhPD.KingCrab
             crabBody.transform.MoveX(-10f, 1, false, .5f);
             legs.MoveX(10f);
         }
-        public void OnCompleteCutLeg()
+        public void OnCompleteCutLeg() // not use
         {
             emoji.ShowPositive();
             scissors.OnComplete();
 
             stick.IsReady = true;
         }
-        public void OnCompleteCrabStick()
+        public void OnCompleteCrabStick() // not use
         {
             emoji.ShowPositive();
             stick.OnComplete();
@@ -90,6 +97,7 @@ namespace AnhPD.KingCrab
         }
         public void OnCompleteSmashCrab()
         {
+            state = 2; TutorialManager.Ins.MouseUpItem();
             emoji.ShowPositive();
             hammer.OnComplete();
 
@@ -97,6 +105,7 @@ namespace AnhPD.KingCrab
         }
         public void OnCompleteOpenCrab()
         {
+            state = 3; TutorialManager.Ins.MouseUpItem();
             emoji.ShowPositive();
             pry.OnComplete();
 
@@ -104,6 +113,8 @@ namespace AnhPD.KingCrab
         }
         public void OnCompleteRemoveIntestines()
         {
+
+            state = 4; TutorialManager.Ins.MouseUpItem();
             emoji.ShowPositive();
             tweezers.OnComplete();
 
@@ -119,11 +130,13 @@ namespace AnhPD.KingCrab
         }
         public void OnCompleteCrabSauce1()
         {
+            state = 5; TutorialManager.Ins.MouseUpItem();
             emoji.ShowPositive();
             spoon.OnCompleteSauce();
         }
         public void OnPutSauceInBowl()
         {
+            state = 6; TutorialManager.Ins.MouseUpItem();
             emoji.ShowPositive();
             spoon.OnComplete();
 
@@ -131,11 +144,14 @@ namespace AnhPD.KingCrab
         }
         public void OnCompleteCutCrabBody()
         {
+            state = 50; TutorialManager.Ins.MouseUpItem(); // 6.5
+
             emoji.ShowPositive();
             scissors.SetupForCutLung();
         }
         public void OnCompleteCutLung()
         {
+            state = 7; TutorialManager.Ins.MouseUpItem();
             emoji.ShowPositive();
             scissors.OnComplete();
 
@@ -144,6 +160,7 @@ namespace AnhPD.KingCrab
         }
         public void OnCompleteTrimMeat()
         {
+            state = 8; TutorialManager.Ins.MouseUpItem();
             emoji.ShowPositive();
             razor.OnComplete();
 
@@ -151,22 +168,31 @@ namespace AnhPD.KingCrab
         }
         public void OnPutMeatInBow()
         {
+
+            state = 9; TutorialManager.Ins.MouseUpItem();
             emoji.ShowPositive();
             crabBody.OnComplete();
 
 
             tweezers.SetupForGapEgg();
+
             crabLid.MoveX(-10f, 1, false);
         }
         public void OnCompleteGapEgg()
         {
+
+            state = 10; TutorialManager.Ins.MouseUpItem();
             emoji.ShowPositive();
             tweezers.OnComplete();
 
+            razor.maskGroupCustom.transform.localPosition = new Vector3(0f, 0.75f, 0);
+            Debug.Log("OnCompleteGapEgg");
             razor.SetupForLid();
         }
         public void OnCompleteTrimMeat2()
         {
+
+            state = 11; TutorialManager.Ins.MouseUpItem();
             emoji.ShowPositive();
             razor.OnComplete();
 
@@ -174,6 +200,8 @@ namespace AnhPD.KingCrab
         }
         public void OnPutMeatInBow2()
         {
+
+            state = 12; TutorialManager.Ins.MouseUpItem();
             emoji.ShowPositive();
             state22.SetActive(true);
             Camera.main.transform.DOMoveX(20f, 1f).SetDelay(.5f).OnComplete(() =>
@@ -187,11 +215,14 @@ namespace AnhPD.KingCrab
         int crabCount = 0;
         public void OnPutCrabPartIn()
         {
+
             crabCount++;
             if (crabCount > 10)
             {
                 emoji.ShowPositive();
                 OnEndGame();
+
+                state = 13;
             }
         }
         [SerializeField] Transform decor1, decor2, board2;
@@ -203,7 +234,7 @@ namespace AnhPD.KingCrab
             decor2.MoveX(-10f, .5f, false, 1.75f);
 
             // EndGame();
-
+            Debug.Log("End Game");
             GameManager.Ins.showEndGame();
         }
     }

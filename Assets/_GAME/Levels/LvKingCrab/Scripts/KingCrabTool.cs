@@ -81,6 +81,7 @@ namespace AnhPD.KingCrab
 
             //nho xoa di
             //IsReady = true;
+            if (IsReady) TutorialManager.Ins.MouseDownItem();
         }
 
         protected virtual void MouseUp(BaseEventData eventData)
@@ -96,6 +97,7 @@ namespace AnhPD.KingCrab
             }
 
             Rewind();
+            if (IsReady) TutorialManager.Ins.MouseUpItem();
         }
 
         protected virtual void MouseDrag(BaseEventData eventData)

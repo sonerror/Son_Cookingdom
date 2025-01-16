@@ -11,8 +11,8 @@ namespace AnhPD.KingCrab
         [SerializeField] Transform left, right, lid;
         [SerializeField] GameObject painter;
         [SerializeField] Transform meatDump, meatDump2;
-        [SerializeField] MaskGroupCustom maskGroupCustom;
-        [SerializeField] MaskGroup maskGroupLid;
+        [SerializeField] public MaskGroupCustom maskGroupCustom;
+        [SerializeField] public MaskGroup maskGroupLid;
         bool isLid;
         float rateL, rateR, rateM;
         protected override void MouseDown(BaseEventData eventData)
@@ -26,6 +26,8 @@ namespace AnhPD.KingCrab
                 painter.SetActive(true);
                 LevelKingCrab.Instance.StartPainter();
             }
+
+            if (IsReady) TutorialManager.Ins.ResetTimeHint();
         }
         protected override void MouseDrag(BaseEventData eventData)
         {

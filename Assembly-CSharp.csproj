@@ -76,10 +76,12 @@
     <Compile Include="Assets\Scripts\Pool\PoolManager.cs" />
     <Compile Include="Assets\Scripts\Manager\UIManager.cs" />
     <Compile Include="Assets\_GAME\Levels\LvKingCrab\Scripts\CrabBody.cs" />
+    <Compile Include="Assets\Scripts\ItemInCrab.cs" />
     <Compile Include="Assets\Scripts\Helper\Cache.cs" />
     <Compile Include="Assets\_GAME\Levels\LvKingCrab\Scripts\LevelKingCrab.cs" />
     <Compile Include="Assets\DOTween\Modules\DOTweenModuleUnityVersion.cs" />
     <Compile Include="Assets\DOTween\Modules\DOTweenModulePhysics.cs" />
+    <Compile Include="Assets\Scripts\ItemDropGroup.cs" />
     <Compile Include="Assets\_GAME\Levels\LvKingCrab\Scripts\BlockUI.cs" />
     <Compile Include="Assets\_GAME\Levels\LvKingCrab\Scripts\CrabLeg.cs" />
     <Compile Include="Assets\_GAME\Levels\LvKingCrab\Scripts\KingCrabTool.cs" />
@@ -97,6 +99,7 @@
     <Compile Include="Assets\Scripts\UI\Progress.cs" />
     <Compile Include="Assets\_GAME\Levels\29\Scripts\EmojiControl.cs" />
     <Compile Include="Assets\_GAME\Levels\LvKingCrab\Scripts\CrabPart.cs" />
+    <Compile Include="Assets\Scripts\ItemCrabGroup.cs" />
     <Compile Include="Assets\DOTween\Modules\DOTweenModulePhysics2D.cs" />
     <Compile Include="Assets\DOTween\Modules\DOTweenModuleUI.cs" />
     <Compile Include="Assets\DOTween\Modules\DOTweenModuleSprite.cs" />
@@ -107,6 +110,7 @@
     <Compile Include="Assets\_GAME\Levels\LvKingCrab\Scripts\DragToTargetObj.cs" />
     <Compile Include="Assets\_GAME\Levels\LvKingCrab\Scripts\CrabRazor.cs" />
     <Compile Include="Assets\_GAME\Levels\LvKingCrab\Scripts\Scissors.cs" />
+    <Compile Include="Assets\Scripts\ItemDrop.cs" />
     <Compile Include="Assets\Scripts\Manager\Singleton.cs" />
     <Compile Include="Assets\Scripts\Pool\GameUnit.cs" />
     <Compile Include="Assets\Scripts\UI\GamePlayScreen.cs" />

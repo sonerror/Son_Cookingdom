@@ -27,6 +27,7 @@ namespace AnhPD.KingCrab
             {
                 LevelKingCrab.Instance.StartPainter();
             }
+            if (IsReady) TutorialManager.Ins.ResetTimeHint();
         }
         protected override void MouseDrag(BaseEventData eventData)
         {

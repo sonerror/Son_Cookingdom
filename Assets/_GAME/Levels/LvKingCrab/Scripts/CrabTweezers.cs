@@ -11,7 +11,7 @@ namespace AnhPD.KingCrab
     {
         [SerializeField] Transform crabBody, pos;
         [SerializeField] List<SpriteRenderer> garbages;
-        [SerializeField] SpriteRenderer egg;
+        [SerializeField] public SpriteRenderer egg;
         [SerializeField] SpriteRenderer topSprite;
         [SerializeField] FxType sfxGap = FxType.Gap;
 
@@ -24,7 +24,8 @@ namespace AnhPD.KingCrab
             topSprite.sortingOrder = spriteRenderer.sortingOrder;
 
             Tf.DOComplete();
-            Tf.DORotate(new Vector3(0, 0, 15f), .3f);
+            Tf.DORotate(new Vector3(0, 0, 15f), 0.3f);
+            if (IsReady) TutorialManager.Ins.ResetTimeHint();
         }
         protected override void MouseDrag(BaseEventData eventData)
         {
