@@ -5,6 +5,7 @@ using UnityEngine;
 public class GamePlayScreen : MonoBehaviour
 {
     public Transform btnPlay;
+    public Transform btnHint;
     public Transform logo;
 
     private float gameWidth = 1080f;
@@ -12,6 +13,7 @@ public class GamePlayScreen : MonoBehaviour
 
     private Vector3 btnPlayPos = new Vector3(0, 0, 0);
     private Vector3 logoPos = new Vector3(0, 0, 0);
+    private Vector3 btnHintPos = new Vector3(0, 0, 0);
 
     private Vector3 scaleUp = new Vector3(1.5f, 1.5f, 1.5f);
     private Vector3 scaleDown = new Vector3(1f, 1f, 1f);
@@ -75,12 +77,18 @@ public class GamePlayScreen : MonoBehaviour
 
             btnPlay.localScale = scaleUp;
             logo.localScale = scaleUp;
+
+            btnHintPos.Set(0, 100 - gameHeight / 2, 0);
+
+            btnHint.localPosition = btnHintPos;
         }
         else
         {
-            btnPlayPos.Set(0, -150 + gameHeight / 2, 0);
-            logoPos.Set(0, 100 - gameHeight / 2, 0);
+            btnPlayPos.Set(0, 110 - gameHeight / 2, 0);
+            logoPos.Set(350, 110 - gameHeight / 2, 0);
+            btnHintPos.Set(-350, 110 - gameHeight / 2, 0);
 
+            btnHint.localPosition = btnHintPos;
             btnPlay.localPosition = btnPlayPos;
             logo.localPosition = logoPos;
             btnPlay.localScale = scaleDown;
