@@ -5,6 +5,16 @@ using UnityEngine;
 public class LevelBase : MonoBehaviour
 {
 
+    protected Sprite _hint;
+
+    public void SetStep(int step)
+    {
+        // if (onStepChanged != null)
+        // {
+        //     onStepChanged(step);
+        // }
+    }
+
     protected virtual void Awake()
     {
         // LevelBase.instance = this;
@@ -15,6 +25,14 @@ public class LevelBase : MonoBehaviour
         // if (onBlockPlayerInteractChanged != null)
         // {
         //     onBlockPlayerInteractChanged();
+        // }
+    }
+
+    protected void EndGame()
+    {
+        // if (onEndGame != null)
+        // {
+        //     onEndGame();
         // }
     }
 }

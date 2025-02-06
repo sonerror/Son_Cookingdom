@@ -56,6 +56,8 @@ namespace Satisgame
 
             void PlaySfx()
             {
+                // Debug.Log(sfxPositive);
+                // Debug.Log(gameObject.name);
                 if (audioSource) audioSource.PlayOneShot(sfxPositive);
             }
         }
