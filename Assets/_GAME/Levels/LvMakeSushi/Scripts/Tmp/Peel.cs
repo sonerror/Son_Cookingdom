@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using AnhPD.MakeSushi;
 using DG.Tweening;
 using UnityEngine;
 
@@ -18,8 +19,14 @@ public class Peel : MonoBehaviour
             transform.DOMove(target.position, 0.5f).OnComplete(() =>
             {
                 gameObject.SetActive(false);
+                LevelMakeSushi.Ins.OnGarbageThrowed();
             });
         }
+    }
+
+    public void ResetPosition()
+    {
+        draggable.ResetStartPos();
     }
 
 }

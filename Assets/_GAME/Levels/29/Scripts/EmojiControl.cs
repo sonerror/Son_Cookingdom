@@ -16,10 +16,8 @@ namespace Satisgame
         public float durationHold = 2f;
         public float durationHide = 0.25f;
         private Sequence _sequenceShowEmoji;
-
-        public AudioSource audioSource;
-        public AudioClip sfxPositive;
-        public AudioClip sfxNegative;
+        public FxType sfxPositive = FxType.SfxEmoijPositive;
+        public FxType sfxNegative = FxType.SfxEmoijNegative;
 
         private Vector3 _originScale;
 
@@ -56,9 +54,7 @@ namespace Satisgame
 
             void PlaySfx()
             {
-                // Debug.Log(sfxPositive);
-                // Debug.Log(gameObject.name);
-                if (audioSource) audioSource.PlayOneShot(sfxPositive);
+                SoundManager.Ins.PlayFx(sfxPositive);
             }
         }
 
@@ -79,7 +75,7 @@ namespace Satisgame
 
             void PlaySfx()
             {
-                if (audioSource) audioSource.PlayOneShot(sfxNegative);
+                SoundManager.Ins.PlayFx(sfxNegative);
             }
         }
     }

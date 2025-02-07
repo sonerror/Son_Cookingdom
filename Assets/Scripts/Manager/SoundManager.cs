@@ -4,20 +4,39 @@ using UnityEngine;
 
 public enum FxType
 {
-    Pick = 0,
-    Drop = 1,
-    Cut = 2,
-    Hammer = 3,
-    OpenShell = 4,
-    Push = 5,
-    Gap = 6,
-    PaintBush = 7,
+    Click = 0,
+    WaterDrop = 1,
+    SfxEmoijPositive = 2,
+    SfxEmoijNegative = 3,
+    SfxDop4 = 4,
+    SfxDop5 = 5,
+    WaterBoiling = 6,
+    SfxDop2 = 7,
+    SfxPeel = 8,
+
+
+
+
+
+
+
+
+
+    // =================
+    Pick = 70,
+    Drop = 71,
+    Cut = 72,
+    Hammer = 73,
+    OpenShell = 74,
+    Push = 75,
+    Gap = 76,
+    PaintBush = 77,
 }
 
 public class SoundManager : Singleton<SoundManager>
 {
     public AudioClip[] audioClips;
-    public AudioSource sound1;
+    public AudioSource bgm;
     private AudioSource[] fx = new AudioSource[11];
 
     bool isMute = false;
@@ -82,7 +101,7 @@ public class SoundManager : Singleton<SoundManager>
 
     public void Mute()
     {
-        sound1.Stop();
+        bgm.Stop();
         for (int i = 0; i < fx.Length; i++)
         {
             if (fx[i] != null)

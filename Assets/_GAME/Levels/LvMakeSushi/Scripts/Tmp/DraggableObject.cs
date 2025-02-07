@@ -13,7 +13,7 @@ public class DraggableObject : MonoBehaviour
     private bool isDragging = false;
     private float startZ;
     [SerializeField] private float deltaZ = 0f;
-    [SerializeField] private AudioClip sfxPick;
+    [SerializeField] private FxType sfxPick = FxType.SfxDop4;
 
     public bool
         isActive = true,
@@ -50,8 +50,7 @@ public class DraggableObject : MonoBehaviour
     private void OnMouseDown()
     {
         if (!isActive || isFrezee) return;
-
-        // AudioManager.PlaySFX(sfxPick);
+        SoundManager.Ins.PlayFx(sfxPick);
 
         SetMoveOrder();
 

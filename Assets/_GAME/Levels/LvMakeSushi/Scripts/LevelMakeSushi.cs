@@ -111,7 +111,7 @@ namespace AnhPD.MakeSushi
                 }
             }
 
-            if (garbageCount < 4 || !knife.IsCorrectPosition || !peeler.IsCorrectPosition || !cookerButton.IsCooked)
+            if (garbageCount < 4 || !cookerButton.IsCooked)
             {
                 return;
             }

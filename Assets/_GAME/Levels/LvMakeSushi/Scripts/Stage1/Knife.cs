@@ -8,12 +8,9 @@ namespace AnhPD.MakeSushi
     public class Knife : MonoBehaviour
     {
         [SerializeField] DraggableObject draggable;
-        [SerializeField] AudioClip sfxPeel;
 
         CuttingBoard board => LevelMakeSushi.Ins.board;
         private bool isCutting = false;
-        private bool isCorrectPosition = false;
-        public bool IsCorrectPosition => isCorrectPosition;
 
         Vector2 startPos;
 
@@ -52,8 +49,6 @@ namespace AnhPD.MakeSushi
             gameObject.SetActive(true);
             isCutting = false;
             transform.DOMove(startPos, .5f);
-            isCorrectPosition = true;
-
         }
     }
 }

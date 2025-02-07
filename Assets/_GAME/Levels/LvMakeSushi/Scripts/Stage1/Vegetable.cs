@@ -19,12 +19,11 @@ namespace AnhPD.MakeSushi
 
         private Vector3 prePos;
 
-        private bool isCorrectPosition = false;
         private bool isCut = false;
 
         public bool IsPeeled;
         public bool IsCut => isCut;
-        public bool IsComplete => isCorrectPosition && isCut && IsPeeled;
+        public bool IsComplete => isCut && IsPeeled;
 
         public Collider2D collide;
 
@@ -57,9 +56,14 @@ namespace AnhPD.MakeSushi
             if (!tfPeel) return;
             tfPeel.SetParent(null);
             float size = tfPeel.localScale.x;
-            tfPeel.DOScale(1.1f * size, .4f).OnComplete(() =>
+            tfPeel.DOScale(1.1f * size, .5f).OnComplete(() =>
             {
-                tfPeel.DOScale(1f * size, .1f);
+                tfPeel.DOScale(1f * size, 0.1f);
+                try
+                {
+                    tfPeel.GetComponent<Peel>().ResetPosition();
+                }
+                catch (System.Exception) { }
             });
             tfPeel.DOLocalMoveY(-1.728f, .5f);
         }
@@ -83,6 +87,14 @@ namespace AnhPD.MakeSushi
                 peeled.SetActive(false);
                 isAvocado = false;
                 tfSeed.SetParent(null);
+                tfSeed.DOLocalMoveY(-1.2f, .5f).OnComplete(() =>
+                {
+                    try
+                    {
+                        tfSeed.GetComponent<Peel>().ResetPosition();
+                    }
+                    catch (System.Exception) { }
+                });
                 return;
             }
             isCut = true;

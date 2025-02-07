@@ -8,18 +8,10 @@ namespace AnhPD.MakeSushi
     public class Peeler : MonoBehaviour
     {
         [SerializeField] DraggableObject draggable;
-        [SerializeField] AudioClip sfxPeel;
+        [SerializeField] FxType sfxPeel = FxType.SfxPeel;
         CuttingBoard board => LevelMakeSushi.Ins.board;
 
         private bool isPeeling = false;
-        private bool isCorrectPosition = false;
-        public bool IsCorrectPosition => isCorrectPosition;
-        Vector2 startPos;
-
-        private void Start()
-        {
-            startPos = transform.position;
-        }
         public void CheckStartPos()
         {
 
@@ -35,7 +27,7 @@ namespace AnhPD.MakeSushi
                 isPeeling = true;
                 draggable.LockPosition();
 
-                // AudioManager.PlaySfx(sfxPeel);
+                SoundManager.Ins.PlayFx(sfxPeel);
 
                 Sequence sequence = DOTween.Sequence();
                 float x = 1.5f, duration = .25f;

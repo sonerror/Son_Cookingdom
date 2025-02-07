@@ -9,7 +9,7 @@ namespace AnhPD.MakeSushi
     public class CookerButton : MonoBehaviour
     {
         [SerializeField] GameObject red, green;
-        [SerializeField] AudioClip sfxClick;
+        [SerializeField] FxType sfxClick = FxType.Click;
         private bool isCanTouch = false;
         private bool isStartCooking = false;
         private float timer = 0f;
@@ -30,7 +30,8 @@ namespace AnhPD.MakeSushi
 
             red.SetActive(true);
             green.SetActive(false);
-            // AudioManager.PlaySfx(sfxClick);
+
+            SoundManager.Ins.PlayFx(sfxClick);
             fxSmoke.gameObject.SetActive(true);
             lid.transform.DOShakeRotation(.5f, 2, 15).OnComplete(() =>
             {
@@ -48,7 +49,7 @@ namespace AnhPD.MakeSushi
         {
             if (!isStartCooking || IsCooked) return;
             timer += Time.deltaTime;
-            if (timer > 10f)
+            if (timer > 5f)
             {
                 IsCooked = true;
                 LevelMakeSushi.Ins.CheckCompleteStage1();
@@ -60,7 +61,7 @@ namespace AnhPD.MakeSushi
             lid.endDragEvents.RemoveAllListeners();
             lid.isRewind = false;
 
-            // AudioManager.PlaySfx(sfxClick);
+            SoundManager.Ins.PlayFx(sfxClick);
             red.SetActive(false);
             green.SetActive(true);
             fxSmoke.Stop();

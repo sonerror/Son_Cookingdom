@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 87138479583697775}
   - component: {fileID: 8735755261832643865}
-  - component: {fileID: 5174374150010305450}
   m_Layer: 0
   m_Name: Emoji
   m_TagString: Untagged
@@ -26,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1933522620882923799}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0.7232685, w: 0.6905669}
+  m_LocalRotation: {x: 0, y: 0, z: -0.7232685, w: 0.6905669}
   m_LocalPosition: {x: 4.746166, y: -1.9974341, z: -0.05}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 1
@@ -34,7 +33,7 @@ Transform:
   - {fileID: 7919476350793845109}
   - {fileID: 8756862428139553123}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -92.65}
 --- !u!114 &8735755261832643865
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51,107 +50,10 @@ MonoBehaviour:
   spriteAnimator1: {fileID: 594420060480464792}
   scaleTransform: {fileID: 87138479583697775}
   durationShow: 0.25
-  durationHold: 2
+  durationHold: 0.25
   durationHide: 0.25
-  audioSource: {fileID: 5174374150010305450}
-  sfxPositive: {fileID: 8300000, guid: 1c998188aff47ce4ebe85867ab369084, type: 3}
-  sfxNegative: {fileID: 8300000, guid: 7b453f265e4fdf94b90981ebb328d727, type: 3}
---- !u!82 &5174374150010305450
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1933522620882923799}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 1220150759414987609, guid: 10d3200ba6085744ab1deaa7e3e821ca, type: 2}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
+  sfxPositive: 2
+  sfxNegative: 3
 --- !u!1 &4545142501347687031
 GameObject:
   m_ObjectHideFlags: 0
@@ -455,7 +357,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.637, y: 0.877, z: 0}
-  m_LocalScale: {x: 0.78, y: 0.78, z: 0.78}
+  m_LocalScale: {x: 0.29, y: 0.29, z: 0.29}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 2815991755690979994}
