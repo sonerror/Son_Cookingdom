@@ -10,10 +10,12 @@ namespace AnhPD.MakeSushi
     {
         [SerializeField] Transform tfPeel;
 
-        public Level127DraggableObject draggable;
+        public bool CanCheckBroad = true;
+
+        public DraggableObject draggable;
         public UnityEvent eventCompletePeeling, eventCompleteCutting;
 
-        CuttingBoard cuttingBoard => LevelMakeSushi.Instance.board;
+        CuttingBoard cuttingBoard => LevelMakeSushi.Ins.board;
 
         private Vector3 prePos;
 
@@ -33,53 +35,33 @@ namespace AnhPD.MakeSushi
 
         public void CheckStartPos()
         {
-            if (Vector2.Distance(transform.localPosition, Vector2.zero) < 1f)
-            {
-                // transform.DOLocalMove(Vector2.zero, .1f).OnComplete(() =>
-                // {
-                if (isCut)
-                {
-                    draggable.LockPosition();
-                }
-                // });
-                isCorrectPosition = true;
 
-            }
-            else
-            {
-                isCorrectPosition = false;
-            }
         }
 
         public void CheckBoard()
         {
+            if (!CanCheckBroad) return;
             if (!isCut && cuttingBoard.IsBoardEmpty && Vector2.Distance(transform.position, cuttingBoard.transform.position) < 1f)
             {
                 draggable.LockPosition();
                 cuttingBoard.OnPutVegetableIn(this);
-                transform.DOMove(cuttingBoard.transform.position, .5f).OnComplete(() =>
-                {
-                    CheckStartPos();
-                });
+                transform.DOMove(cuttingBoard.transform.position, .5f);
             }
-            else
-            {
-                // transform.DOMove(prePos, .5f);
-            }
+
         }
         public void OnComplePeeling()
         {
             IsPeeled = true;
             eventCompletePeeling?.Invoke();
+
+            if (!tfPeel) return;
             tfPeel.SetParent(null);
-
             float size = tfPeel.localScale.x;
-
             tfPeel.DOScale(1.1f * size, .4f).OnComplete(() =>
             {
                 tfPeel.DOScale(1f * size, .1f);
             });
-            tfPeel.DOLocalMoveY(-1.628f, .5f);
+            tfPeel.DOLocalMoveY(-1.728f, .5f);
         }
 
         public bool isAvocado = false;
@@ -89,7 +71,7 @@ namespace AnhPD.MakeSushi
         {
             DOVirtual.DelayedCall(1f, () =>
             {
-                LevelMakeSushi.Instance.OnVegetablePrefareComplete();
+                LevelMakeSushi.Ins.OnVegetablePrefareComplete();
             });
             if (isAvocado)
             {

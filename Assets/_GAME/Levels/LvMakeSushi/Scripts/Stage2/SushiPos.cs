@@ -12,7 +12,7 @@ namespace AnhPD.MakeSushi
 
         private int index = 0;
 
-        private EmojiControl emoji => LevelMakeSushi.Instance.emojiStage2_dish;
+        private EmojiControl emoji => LevelMakeSushi.Ins.emojiStage2_dish;
 
         public void PutRollIn(SushiRoll roll)
         {
@@ -20,9 +20,9 @@ namespace AnhPD.MakeSushi
             roll.transform.DOMove(tfPos[index].position, .1f);
             index++;
 
-            if(index >=  tfPos.Length)
+            if (index >= tfPos.Length)
             {
-                LevelMakeSushi.Instance.OnCompleteStage2();
+                LevelMakeSushi.Ins.OnCompleteStage2();
             }
         }
         private void RemoveRoll(SushiRoll roll)

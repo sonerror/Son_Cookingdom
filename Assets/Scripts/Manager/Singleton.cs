@@ -6,7 +6,7 @@ public class Singleton<T> : MonoBehaviour
 {
     public static T Ins;
 
-    public virtual void Awake()
+    protected virtual void Awake()
     {
         Ins = GetComponent<T>();
     }

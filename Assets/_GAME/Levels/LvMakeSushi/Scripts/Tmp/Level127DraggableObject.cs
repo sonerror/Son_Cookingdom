@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class Level127DraggableObject : MonoBehaviour
+public class DraggableObject : MonoBehaviour
 {
     [SerializeField] private float rewindDuration = 1f;
     private Vector2 startOffset;
@@ -33,22 +33,15 @@ public class Level127DraggableObject : MonoBehaviour
 
     private void Awake()
     {
+        ResetStartPos();
+    }
+
+    public void ResetStartPos()
+    {
         startPos = transform.position;
         startZ = transform.eulerAngles.z;
-        // _level = LevelBase.instance;
-        // if (_level)
-        // {
-        //     _level.onBlockPlayerInteractChanged += OnMouseUp;
-        // }
+    }
 
-    }
-    private void OnDestroy()
-    {
-        // if (_level)
-        // {
-        //     _level.onBlockPlayerInteractChanged -= OnMouseUp;
-        // }
-    }
     private void Start()
     {
         SetUnmoveOrder();
@@ -157,6 +150,7 @@ public class Level127DraggableObject : MonoBehaviour
         isFrezee = true;
         isActive = false;
         transform.DOKill();
+        SetUnmoveOrder();
     }
     public void UnlockPosition()
     {

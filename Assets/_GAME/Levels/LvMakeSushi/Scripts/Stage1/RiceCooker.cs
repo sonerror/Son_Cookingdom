@@ -11,11 +11,11 @@ namespace AnhPD.MakeSushi
         [SerializeField] Transform tfSink, tfCooker;
         [SerializeField] SpriteRenderer waterCooker;
         [SerializeField] GameObject goCookerSide, goCookerFont;
-        [SerializeField] Level127DraggableObject draggable;
+        [SerializeField] DraggableObject draggable;
         [SerializeField] EmojiControl emoji;
         [SerializeField] WaterValue value;
         //Lid
-        [SerializeField] Level127DraggableObject lidDrag;
+        [SerializeField] DraggableObject lidDrag;
         [SerializeField] ObjectMoveToTarget objMoving;
         private bool isHaveWater = false, isInSink = false, isCooked = false;
 
@@ -33,10 +33,11 @@ namespace AnhPD.MakeSushi
                     {
                         draggable.LockPosition();
                         isInSink = true;
-                        LevelMakeSushi.Instance.OnPutCookerInSink();
+                        LevelMakeSushi.Ins.OnPutCookerInSink();
 
                         draggable.unmoveOrder = 3;
                         draggable.SetUnmoveOrder();
+                        draggable.ResetStartPos();
                     });
 
                     draggable.isActive = false;
@@ -46,7 +47,7 @@ namespace AnhPD.MakeSushi
             {
 
                 isInSink = false;
-                LevelMakeSushi.Instance.OnCookerLeaveSink();
+                LevelMakeSushi.Ins.OnCookerLeaveSink();
                 draggable.unmoveOrder = 5;
             }
 

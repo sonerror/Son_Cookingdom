@@ -54,7 +54,7 @@ namespace AnhPD.MakeSushi
                 if (rate > 0.999f)
                 {
                     OnMouseUp();
-                    LevelMakeSushi.Instance.OnSushiComplete(transform.position);
+                    LevelMakeSushi.Ins.OnSushiComplete(transform.position);
                 }
             }
             else

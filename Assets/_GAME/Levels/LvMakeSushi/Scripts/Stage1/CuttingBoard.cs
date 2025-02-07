@@ -13,11 +13,11 @@ namespace AnhPD.MakeSushi
         public bool IsVegPeeled => veg.IsPeeled;
         private Vegetable veg;
 
-        private EmojiControl emoji => LevelMakeSushi.Instance.emojiStage1;
+        private EmojiControl emoji => LevelMakeSushi.Ins.emojiStage1;
 
         public void OnPutVegetableIn(Vegetable vegetable)
         {
-            if( veg == null )
+            if (veg == null)
             {
                 veg = vegetable;
                 veg.draggable.LockPosition();
@@ -33,7 +33,7 @@ namespace AnhPD.MakeSushi
         public void OnStartCutting(Knife knife)
         {
             knife.gameObject.SetActive(false);
-            knife.transform.DOMoveY(knife.transform.position.y + 1f,.2f);
+            knife.transform.DOMoveY(knife.transform.position.y + 1f, .2f);
             cuttingAnim.Play();
             StartCoroutine(delay());
             IEnumerator delay()

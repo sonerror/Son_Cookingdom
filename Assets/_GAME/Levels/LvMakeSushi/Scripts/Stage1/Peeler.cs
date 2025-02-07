@@ -7,9 +7,9 @@ namespace AnhPD.MakeSushi
 {
     public class Peeler : MonoBehaviour
     {
-        [SerializeField] Level127DraggableObject draggable;
+        [SerializeField] DraggableObject draggable;
         [SerializeField] AudioClip sfxPeel;
-        CuttingBoard board => LevelMakeSushi.Instance.board;
+        CuttingBoard board => LevelMakeSushi.Ins.board;
 
         private bool isPeeling = false;
         private bool isCorrectPosition = false;
@@ -29,8 +29,8 @@ namespace AnhPD.MakeSushi
             if (isPeeling) return;
             if (!board.IsBoardEmpty
                 && !board.IsVegPeeled
-                && Mathf.Abs(transform.position.y - board.transform.position.y) < .5f
-                && Mathf.Abs(transform.position.x - board.transform.position.x) < 1f)
+                && Mathf.Abs(transform.position.y - board.transform.position.y) < 1f
+                && Mathf.Abs(transform.position.x - board.transform.position.x) < 1.25f)
             {
                 isPeeling = true;
                 draggable.LockPosition();

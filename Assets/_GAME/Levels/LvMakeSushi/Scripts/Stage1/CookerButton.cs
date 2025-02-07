@@ -15,7 +15,7 @@ namespace AnhPD.MakeSushi
         private float timer = 0f;
 
         [SerializeField] ParticleSystem fxSmoke;
-        [SerializeField] Level127DraggableObject lid;
+        [SerializeField] DraggableObject lid;
         [SerializeField] BoxCollider lidBlock;
         [SerializeField] AudioSource sfxBoid;
 
@@ -26,9 +26,7 @@ namespace AnhPD.MakeSushi
 
         private void OnMouseDown()
         {
-            // if (!LevelBase.instance.IsAllowInteract || !isCanTouch) return;
-
-            LevelMakeSushi.Instance.OnStartCooking();
+            if (!isCanTouch) return;
 
             red.SetActive(true);
             green.SetActive(false);
@@ -53,7 +51,7 @@ namespace AnhPD.MakeSushi
             if (timer > 10f)
             {
                 IsCooked = true;
-                LevelMakeSushi.Instance.CheckCompleteStage1();
+                LevelMakeSushi.Ins.CheckCompleteStage1();
             }
         }
 

@@ -10,9 +10,9 @@ namespace AnhPD.MakeSushi
     {
         public SushiKit.SushiStuffType type;
         [SerializeField] GameObject fish, avocado;
-        public Level127DraggableObject draggable;
+        public DraggableObject draggable;
 
-        private SushiPos sushiPos => LevelMakeSushi.Instance.sushiPos;
+        private SushiPos sushiPos => LevelMakeSushi.Ins.sushiPos;
 
         public void CheckDistance()
         {

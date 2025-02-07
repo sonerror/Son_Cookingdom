@@ -92,6 +92,7 @@
     <Compile Include="Assets\_GAME\Levels\LvMakeSushi\Scripts\Stage2\SushiPos.cs" />
     <Compile Include="Assets\Scripts\ItemDropGroup.cs" />
     <Compile Include="Assets\_GAME\Levels\LvKingCrab\Scripts\BlockUI.cs" />
+    <Compile Include="Assets\_GAME\Levels\LvMakeSushi\Scripts\Tmp\Peel.cs" />
     <Compile Include="Assets\_GAME\Levels\LvKingCrab\Scripts\CrabLeg.cs" />
     <Compile Include="Assets\_GAME\Levels\LvKingCrab\Scripts\KingCrabTool.cs" />
     <Compile Include="Assets\AllIn1SpriteShader\Scripts\AllIn1ShaderWindow.cs" />

@@ -27,7 +27,7 @@ public class PoolManager : Singleton<PoolManager>
 
     private Dictionary<PoolType, Queue<GameUnit>> dict = new Dictionary<PoolType, Queue<GameUnit>>();
 
-    public override void Awake()
+    protected override void Awake()
     {
         base.Awake();
         OnInit();

@@ -7,10 +7,10 @@ namespace AnhPD.MakeSushi
 {
     public class Knife : MonoBehaviour
     {
-        [SerializeField] Level127DraggableObject draggable;
+        [SerializeField] DraggableObject draggable;
         [SerializeField] AudioClip sfxPeel;
 
-        CuttingBoard board => LevelMakeSushi.Instance.board;
+        CuttingBoard board => LevelMakeSushi.Ins.board;
         private bool isCutting = false;
         private bool isCorrectPosition = false;
         public bool IsCorrectPosition => isCorrectPosition;
@@ -27,8 +27,8 @@ namespace AnhPD.MakeSushi
             if (isCutting) return;
             if (!board.IsBoardEmpty
                 && board.IsVegPeeled
-                && Mathf.Abs(transform.position.y - board.transform.position.y) < .5f
-                && Mathf.Abs(transform.position.x - board.transform.position.x) < 1f)
+                && Mathf.Abs(transform.position.y - board.transform.position.y) < 1f
+                && Mathf.Abs(transform.position.x - board.transform.position.x) < 1.25f)
             {
                 isCutting = true;
                 board.OnStartCutting(this);
@@ -40,7 +40,7 @@ namespace AnhPD.MakeSushi
             // {
             //     transform.DOMove(startPos, .1f);
             //     isCorrectPosition = true;
-            //     LevelMakeSushi.Instance.CheckCompleteStage1();
+            //     LevelMakeSushi.Ins.CheckCompleteStage1();
             // }
             // else
             // {

@@ -9,22 +9,11 @@ using Utilities;
 
 namespace AnhPD.MakeSushi
 {
-    public class LevelMakeSushi : LevelBase
+    public class LevelMakeSushi : Singleton<LevelMakeSushi>
     {
-        public static LevelMakeSushi Instance;
         protected override void Awake()
         {
             base.Awake();
-
-            if (Instance == null)
-                Instance = this;
-            else
-            {
-                Destroy(gameObject);
-                return;
-            }
-            _hint = hint[0];
-            SetStep(0);
         }
         [SerializeField] private GameObject[] stages;
         [SerializeField] private Sprite[] hint;
@@ -44,12 +33,6 @@ namespace AnhPD.MakeSushi
         {
             garbageCount++;
             CheckCompleteStage1();
-        }
-
-        public void OnStartCooking()
-        {
-            _hint = hint[1];
-            SetStep(1);
         }
 
         private int vegetableCount = 0;
@@ -112,8 +95,6 @@ namespace AnhPD.MakeSushi
                     return;
                 }
             }
-            _hint = hint[2];
-            SetStep(2);
 
             if (garbageCount < 4 || !knife.IsCorrectPosition || !peeler.IsCorrectPosition || !cookerButton.IsCooked)
             {
@@ -121,16 +102,12 @@ namespace AnhPD.MakeSushi
             }
 
             cookerButton.OnComplete();
-            _hint = hint[3];
-            SetStep(3);
         }
         public async void OnCompleteStage1()
         {
             emojiStage1.ShowPositive();
             await Task.Delay(500);
             Camera.main.transform.DOMoveX(15f, 1f);
-            _hint = hint[4];
-            SetStep(4);
         }
 
         [Header("Stage2")]
@@ -201,9 +178,6 @@ namespace AnhPD.MakeSushi
         [SerializeField] GameObject dish2, dish3;
         public void OnCompleteStage2()
         {
-            _hint = hint[5];
-            SetStep(5);
-
             dish2.SetActive(false);
             dish3.SetActive(true);
 
@@ -309,8 +283,13 @@ namespace AnhPD.MakeSushi
         {
             goBG.transform.DOLocalMoveX(-15f, .5f);
             dish3.transform.DOLocalMoveX(-10f, .5f);
-            goDisk.transform.DOLocalMove(new Vector3(-0.1f, .23f, -1f), .5f).SetDelay(.5f);
+            goDisk.transform.DOLocalMove(new Vector3(-0.1f, .23f, -1f), .5f).SetDelay(0.5f);
             EndGame();
+        }
+
+        public void EndGame()
+        {
+            Debug.Log("End Game");
         }
     }
 

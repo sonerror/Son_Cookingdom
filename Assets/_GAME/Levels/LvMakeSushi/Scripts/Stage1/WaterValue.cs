@@ -32,7 +32,7 @@ namespace AnhPD.MakeSushi
                 isWatering = true;
                 water.gameObject.SetActive(isWatering);
                 value.DOScaleY(.85f, .05f);
-                LevelMakeSushi.Instance.OnWaterStart();
+                LevelMakeSushi.Ins.OnWaterStart();
             }
         }
         public void OnHaveObjectInSink()

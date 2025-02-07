@@ -25,7 +25,7 @@ namespace AnhPD.MakeSushi
 
         private int index = 0;
 
-        private EmojiControl emoji => LevelMakeSushi.Instance.emojiStage2;
+        private EmojiControl emoji => LevelMakeSushi.Ins.emojiStage2;
 
         public enum SushiStuffType
         {
@@ -61,7 +61,7 @@ namespace AnhPD.MakeSushi
             if (!isHaveSeaweed || !isHaveMustard || !isHaveRice)
             {
                 emoji.ShowNegative();
-                LevelMakeSushi.Instance.OnNotUseStuff(stuff.type);
+                LevelMakeSushi.Ins.OnNotUseStuff(stuff.type);
                 return;
             }
             SushiStuffType type = stuff.type;
@@ -72,7 +72,7 @@ namespace AnhPD.MakeSushi
                     {
                         isHaveCucumber = true;
                         OnStuffOn(stuff);
-                        LevelMakeSushi.Instance.OnUseStuff(type);
+                        LevelMakeSushi.Ins.OnUseStuff(type);
                         return;
                     }
                     break;
@@ -81,7 +81,7 @@ namespace AnhPD.MakeSushi
                     {
                         isHaveCarrot = true;
                         OnStuffOn(stuff);
-                        LevelMakeSushi.Instance.OnUseStuff(type);
+                        LevelMakeSushi.Ins.OnUseStuff(type);
                         return;
                     }
                     break;
@@ -91,7 +91,7 @@ namespace AnhPD.MakeSushi
                         isHaveMainStuff = true;
                         mainType = stuff.type;
                         OnStuffOn(stuff);
-                        LevelMakeSushi.Instance.OnUseStuff(type);
+                        LevelMakeSushi.Ins.OnUseStuff(type);
                         return;
                     }
                     break;
@@ -101,12 +101,12 @@ namespace AnhPD.MakeSushi
                         isHaveMainStuff = true;
                         mainType = stuff.type;
                         OnStuffOn(stuff);
-                        LevelMakeSushi.Instance.OnUseStuff(type);
+                        LevelMakeSushi.Ins.OnUseStuff(type);
                         return;
                     }
                     break;
             }
-            LevelMakeSushi.Instance.OnNotUseStuff(type);
+            LevelMakeSushi.Ins.OnNotUseStuff(type);
             emoji.ShowNegative();
         }
         private void OnStuffOn(SushiStuff sushiStuff)
