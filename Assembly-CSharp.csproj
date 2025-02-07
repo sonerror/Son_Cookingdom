@@ -70,7 +70,6 @@
     <Compile Include="Assets\_GAME\Levels\LvMakeSushi\Scripts\LevelMakeSushi.cs" />
     <Compile Include="Assets\_GAME\Levels\LvMakeSushi\Scripts\Stage2\SushiRoll.cs" />
     <Compile Include="Assets\AllIn1SpriteShader\Scripts\RandomSeed.cs" />
-    <Compile Include="Assets\_GAME\Levels\LvMakeSushi\Scripts\Tmp\Level127DraggableObject.cs" />
     <Compile Include="Assets\DOTween\Modules\DOTweenModuleAudio.cs" />
     <Compile Include="Assets\_GAME\Levels\LvKingCrab\Scripts\CrabStickTool.cs" />
     <Compile Include="Assets\_GAME\Levels\LvKingCrab\Scripts\CrabLegPart.cs" />
@@ -83,6 +82,7 @@
     <Compile Include="Assets\Scripts\Manager\UIManager.cs" />
     <Compile Include="Assets\_GAME\Levels\LvKingCrab\Scripts\CrabBody.cs" />
     <Compile Include="Assets\Scripts\ItemInCrab.cs" />
+    <Compile Include="Assets\_GAME\Levels\LvMakeSushi\Scripts\Tmp\DraggableObject.cs" />
     <Compile Include="Assets\_GAME\Levels\LvMakeSushi\Scripts\Stage3\OneTimeDecor.cs" />
     <Compile Include="Assets\Scripts\Helper\Cache.cs" />
     <Compile Include="Assets\_GAME\Levels\LvKingCrab\Scripts\LevelKingCrab.cs" />

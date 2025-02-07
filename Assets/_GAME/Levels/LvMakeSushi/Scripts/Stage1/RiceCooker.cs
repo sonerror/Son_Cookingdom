@@ -41,6 +41,8 @@ namespace AnhPD.MakeSushi
                     });
 
                     draggable.isActive = false;
+
+                    LevelMakeSushi.Ins.UnlockCanCheckBroadVegetable();
                 }
             }
             else

@@ -16,7 +16,6 @@ namespace AnhPD.MakeSushi
             base.Awake();
         }
         [SerializeField] private GameObject[] stages;
-        [SerializeField] private Sprite[] hint;
         [Header("Stage 1")]
         [SerializeField] private RiceCooker cooker;
         [SerializeField] private CookerButton cookerButton;
@@ -72,6 +71,22 @@ namespace AnhPD.MakeSushi
             if (cooker.IsInSink)
             {
                 cooker.OnWater();
+            }
+        }
+
+        public void LockCanCheckBroadVegetable()
+        {
+            for (int i = 0; i < vegs.Length; i++)
+            {
+                vegs[i].CanCheckBroad = false;
+            }
+        }
+
+        public void UnlockCanCheckBroadVegetable()
+        {
+            for (int i = 0; i < vegs.Length; i++)
+            {
+                vegs[i].CanCheckBroad = true;
             }
         }
         public void OnPutCookerInSink()
