@@ -11,7 +11,7 @@ public class Peel : MonoBehaviour
     public Transform target;
 
 
-    public void CheckToTarget()
+    public virtual void CheckToTarget()
     {
         if (Vector3.Distance(transform.position, target.position) < distaceCheck)
         {

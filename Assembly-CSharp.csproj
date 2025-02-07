@@ -107,6 +107,7 @@
     <Compile Include="Assets\Scripts\Manager\SoundManager.cs" />
     <Compile Include="Assets\_GAME\Levels\LvKingCrab\Scripts\CrabPry.cs" />
     <Compile Include="Assets\AllIn1SpriteShader\Scripts\SetAtlasUvs.cs" />
+    <Compile Include="Assets\_GAME\Levels\LvMakeSushi\Scripts\Tmp\Lid.cs" />
     <Compile Include="Assets\_GAME\Levels\LvMakeSushi\Scripts\Stage2\SushiRoller.cs" />
     <Compile Include="Assets\Scripts\LevelBase.cs" />
     <Compile Include="Assets\Scripts\UI\Progress.cs" />

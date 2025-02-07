@@ -81,7 +81,6 @@ public class DraggableObject : MonoBehaviour
             {
                 CancelDragging();
             }
-            ;
 
             Vector2 pos2d = (Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition) - startOffset;
 

@@ -783,6 +783,7 @@ GameObject:
   - component: {fileID: 86221055}
   - component: {fileID: 86221054}
   - component: {fileID: 86221056}
+  - component: {fileID: 86221057}
   m_Layer: 0
   m_Name: Lid
   m_TagString: Untagged
@@ -836,7 +837,19 @@ MonoBehaviour:
       m_Calls: []
   endDragEvents:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 86221057}
+        m_TargetAssemblyTypeName: Lid, Assembly-CSharp
+        m_MethodName: CheckToTarget
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   completeRewindEvents:
     m_PersistentCalls:
       m_Calls: []
@@ -921,6 +934,22 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &86221057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 86221052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c342639e6ef52846bf1da3b15d6fb6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  draggable: {fileID: 86221054}
+  distaceCheck: 2
+  target: {fileID: 230988979}
+  isState2: 0
 --- !u!1 &126083562
 GameObject:
   m_ObjectHideFlags: 0
