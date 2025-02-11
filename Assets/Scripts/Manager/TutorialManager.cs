@@ -1,19 +1,50 @@
 
+using System.Collections.Generic;
+using System.Linq;
 using AnhPD.KingCrab;
+using AnhPD.MakeSushi;
 using UnityEngine;
 
 public class TutorialManager : Singleton<TutorialManager>
 {
     [SerializeField] private HandCtrl handCtrl;
     [SerializeField] float TimeHint = 5f;
+
+    [SerializeField] Transform sink, cuttingBroad, cooker, lid, rice1, pos1, pos2;
+    [SerializeField] List<Peel> peels;
+
+    public List<int> listState = Enumerable.Range(0, 20).ToList();
     private float timeCountHint = 0f;
 
     public float timeEndGame = 30f;
     private bool isClickTrueItem = false;
+
+    public void removeState(int state)
+    {
+        listState.Remove(state);
+    }
+
+    public void removePeel(Peel peel)
+    {
+        peels.Remove(peel);
+    }
+
+    public void AddPeel(Peel peel)
+    {
+        if (peels.Contains(peel)) return;
+        peels.Add(peel);
+    }
+
     private void Update()
     {
-        CalculateTimeHint();
+        if (Input.GetMouseButtonDown(0))
+        {
+            ResetTimeHint();
+        }
 
+        if (Input.GetMouseButton(0)) return;
+
+        CalculateTimeHint();
         if (GameManager.Ins.isEndGame) return;
         if (!isClickTrueItem) return;
         timeEndGame -= Time.deltaTime;
@@ -72,9 +103,31 @@ public class TutorialManager : Singleton<TutorialManager>
     private void PlayState()
     {
         isShowHint = true;
-        var index = LevelKingCrab.Instance.state;
-
+        var index = listState[0];
         Debug.Log("PlayState: " + index);
+
+        if (index > 4 && LevelMakeSushi.Ins.board.veg != null)
+        {
+            if (!LevelMakeSushi.Ins.board.veg.IsPeeled)
+            {
+                PlayPeeler();
+                return;
+            }
+
+            if (!LevelMakeSushi.Ins.board.veg.IsCut)
+            {
+                PlayKnife();
+                return;
+            }
+        }
+
+        if (index == 9 && peels.Count > 0)
+        {
+            PlayPeel(peels[0]);
+            return;
+        }
+
+
         switch (index)
         {
             case 0:
@@ -110,128 +163,113 @@ public class TutorialManager : Singleton<TutorialManager>
             case 10:
                 PlayState10();
                 break;
-            case 11:
-                PlayState11();
-                break;
-            case 12:
-                PlayState12();
-                break;
-            case 50:
-                PlayState50();
-                break;
             default:
                 break;
         }
     }
 
+    private void PlayPeeler()
+    {
+        handCtrl.ShowHandPosToPos(
+            LevelMakeSushi.Ins.peeler.transform.position,
+            cuttingBroad.position);
+    }
+
+    private void PlayKnife()
+    {
+        handCtrl.ShowHandPosToPos(
+            LevelMakeSushi.Ins.knife.transform.position,
+            cuttingBroad.position);
+    }
+
+    private void PlayPeel(Peel peel)
+    {
+        handCtrl.ShowHandPosToPos(
+            peel.transform.position,
+            peel.target.position);
+    }
+
     private void PlayState0()
     {
-        var pos = LevelKingCrab.Instance.legsGroup.getPosition();
-        if (pos == Vector3.zero) return;
         handCtrl.ShowHandPosToPos(
-            LevelKingCrab.Instance.scissors.Tf.position,
-             pos);
+            LevelMakeSushi.Ins.cooker.transform.position,
+             sink.position);
     }
 
     private void PlayState1()
     {
-        handCtrl.ShowHandPosToPos(
-            LevelKingCrab.Instance.hammer.Tf.position,
-             LevelKingCrab.Instance.crabBody.Tf.position);
+        handCtrl.ShowHandState1(LevelMakeSushi.Ins.value.transform.position);
     }
 
     private void PlayState2()
     {
         handCtrl.ShowHandPosToPos(
-            LevelKingCrab.Instance.pry.Tf.position,
-             LevelKingCrab.Instance.crabBody.Tf.position - Vector3.up * 0.5f);
+            LevelMakeSushi.Ins.cooker.transform.position,
+             cooker.position);
     }
 
     private void PlayState3()
     {
-        var pos = LevelKingCrab.Instance.inDropGroup.getPosition();
-        if (pos == Vector3.zero) return;
         handCtrl.ShowHandPosToPos(
-            LevelKingCrab.Instance.tweezers.Tf.position,
-             pos);
+            lid.position,
+            cooker.position);
     }
 
     private void PlayState4()
     {
-        handCtrl.ShowHandPosToPos(
-            LevelKingCrab.Instance.spoon.Tf.position,
-             LevelKingCrab.Instance.crabBody.Tf.position);
+        handCtrl.ShowHandState1(LevelMakeSushi.Ins.cookerButton.transform.position);
     }
 
     private void PlayState5()
     {
         handCtrl.ShowHandPosToPos(
-            LevelKingCrab.Instance.spoon.Tf.position,
-             LevelKingCrab.Instance.bowl.Tf.position);
+            LevelMakeSushi.Ins.vegs[0].transform.position,
+            cuttingBroad.position);
     }
 
     private void PlayState6()
     {
         handCtrl.ShowHandPosToPos(
-            LevelKingCrab.Instance.scissors.Tf.position,
-             LevelKingCrab.Instance.crabBody.Tf.position);
-    }
-
-    private void PlayState50()
-    {
-        var item = LevelKingCrab.Instance.bodyPartGroup.getItemDropNotDrop();
-        if (item == null) return;
-        handCtrl.ShowHandPosToPos(
-            LevelKingCrab.Instance.scissors.Tf.position,
-             item.Tf.position);
+            LevelMakeSushi.Ins.vegs[1].transform.position,
+            cuttingBroad.position);
     }
 
     private void PlayState7()
     {
-        var pos = LevelKingCrab.Instance.razor.maskGroupCustom.getPosition();
-        if (pos == Vector3.zero) return;
         handCtrl.ShowHandPosToPos(
-            LevelKingCrab.Instance.razor.Tf.position,
-             pos);
+            LevelMakeSushi.Ins.vegs[2].transform.position,
+            cuttingBroad.position);
     }
 
     private void PlayState8()
     {
         handCtrl.ShowHandPosToPos(
-            LevelKingCrab.Instance.meat.Tf.position,
-             LevelKingCrab.Instance.bowl.Tf.position);
+            LevelMakeSushi.Ins.vegs[3].transform.position,
+            cuttingBroad.position);
     }
 
     private void PlayState9()
     {
+        var lidCpn = lid.GetComponent<Lid>();
         handCtrl.ShowHandPosToPos(
-            LevelKingCrab.Instance.tweezers.Tf.position,
-             LevelKingCrab.Instance.tweezers.egg.transform.position);
+            lid.position,
+            lidCpn.startPos);
     }
 
     private void PlayState10()
     {
-        var pos = LevelKingCrab.Instance.razor.maskGroupLid.getPosition();
-        if (pos == Vector3.zero) return;
+        var riceCpn = rice1.GetComponent<Lid>();
         handCtrl.ShowHandPosToPos(
-            LevelKingCrab.Instance.razor.Tf.position,
-             pos);
+            rice1.position,
+            riceCpn.target.position);
     }
 
-    private void PlayState11()
+    public void PlayStateEndGame()
     {
         handCtrl.ShowHandPosToPos(
-            LevelKingCrab.Instance.meat2.Tf.position,
-              LevelKingCrab.Instance.bowl.Tf.position);
+            pos1.position,
+            pos2.position);
     }
 
-    private void PlayState12()
-    {
-        var item = LevelKingCrab.Instance.crabGroup.getItemActive();
-        if (item == null) return;
-        handCtrl.ShowHandPosToPos(
-            item.Tf.position,
-             item.target.position);
-    }
 
 }

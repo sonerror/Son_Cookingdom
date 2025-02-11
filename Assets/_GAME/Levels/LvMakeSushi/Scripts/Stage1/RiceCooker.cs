@@ -43,6 +43,7 @@ namespace AnhPD.MakeSushi
                     draggable.isActive = false;
 
                     LevelMakeSushi.Ins.UnlockCanCheckBroadVegetable();
+                    TutorialManager.Ins.removeState(0);
                 }
             }
             else
@@ -72,6 +73,9 @@ namespace AnhPD.MakeSushi
                 lidDrag.endDragEvents.AddListener(objMoving.CheckTarget);
 
                 isCooked = true;
+
+                TutorialManager.Ins.removeState(2);
+
             }
 
         }

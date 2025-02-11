@@ -21,6 +21,8 @@ public class Peel : MonoBehaviour
                 gameObject.SetActive(false);
                 LevelMakeSushi.Ins.OnGarbageThrowed();
             });
+
+            TutorialManager.Ins.removePeel(this);
         }
     }
 

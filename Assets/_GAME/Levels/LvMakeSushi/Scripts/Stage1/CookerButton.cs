@@ -43,13 +43,15 @@ namespace AnhPD.MakeSushi
             isCanTouch = false;
 
             emoji.ShowPositive();
+
+            TutorialManager.Ins.removeState(4);
         }
 
         private void Update()
         {
             if (!isStartCooking || IsCooked) return;
             timer += Time.deltaTime;
-            if (timer > 5f)
+            if (timer > 3f)
             {
                 IsCooked = true;
                 LevelMakeSushi.Ins.CheckCompleteStage1();
@@ -70,6 +72,9 @@ namespace AnhPD.MakeSushi
             lid.transform.DOKill();
             lid.UnlockPosition();
             lid.endDragEvents.AddListener(removeBarrier);
+
+            lid.GetComponent<Lid>().isState2 = true;
+
             void removeBarrier()
             {
                 lidBlock.enabled = false;

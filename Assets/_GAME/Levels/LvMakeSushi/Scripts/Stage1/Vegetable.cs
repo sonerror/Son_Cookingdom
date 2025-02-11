@@ -17,20 +17,16 @@ namespace AnhPD.MakeSushi
 
         CuttingBoard cuttingBoard => LevelMakeSushi.Ins.board;
 
-        private Vector3 prePos;
-
         private bool isCut = false;
 
         public bool IsPeeled;
         public bool IsCut => isCut;
         public bool IsComplete => isCut && IsPeeled;
 
-        public Collider2D collide;
+        public int stateIndex = 5;
 
-        protected void Awake()
-        {
-            prePos = transform.position;
-        }
+        public Collider collide;
+
 
         public void CheckStartPos()
         {
@@ -45,6 +41,7 @@ namespace AnhPD.MakeSushi
                 draggable.LockPosition();
                 cuttingBoard.OnPutVegetableIn(this);
                 transform.DOMove(cuttingBoard.transform.position, .5f);
+                TutorialManager.Ins.removeState(stateIndex);
             }
 
         }
@@ -61,7 +58,9 @@ namespace AnhPD.MakeSushi
                 tfPeel.DOScale(1f * size, 0.1f);
                 try
                 {
-                    tfPeel.GetComponent<Peel>().ResetPosition();
+                    var peelCpn = tfPeel.GetComponent<Peel>();
+                    peelCpn.ResetPosition();
+                    TutorialManager.Ins.AddPeel(peelCpn);
                 }
                 catch (System.Exception) { }
             });
@@ -91,7 +90,9 @@ namespace AnhPD.MakeSushi
                 {
                     try
                     {
-                        tfSeed.GetComponent<Peel>().ResetPosition();
+                        var peelCpn = tfSeed.GetComponent<Peel>();
+                        peelCpn.ResetPosition();
+                        TutorialManager.Ins.AddPeel(peelCpn);
                     }
                     catch (System.Exception) { }
                 });

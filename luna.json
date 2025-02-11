@@ -3103,10 +3103,6 @@
                 "excluded": true
             },
             {
-                "name": "UnityEngine.Random",
-                "excluded": true
-            },
-            {
                 "name": "UnityEngine.RangeAttribute",
                 "excluded": true
             },
@@ -3280,10 +3276,6 @@
             },
             {
                 "name": "UnityEngine.TouchScreenKeyboard",
-                "excluded": true
-            },
-            {
-                "name": "UnityEngine.TrailModule",
                 "excluded": true
             },
             {
@@ -3659,10 +3651,6 @@
                 "excluded": true
             },
             {
-                "name": "UnityEngine.ParticleSystem",
-                "excluded": true
-            },
-            {
                 "name": "UnityEngine.ReflectionProbe",
                 "excluded": true
             },
@@ -3692,10 +3680,6 @@
             },
             {
                 "name": "Luna.Unity.DTO.UnityEngine.Components.TargetJoint2D",
-                "excluded": true
-            },
-            {
-                "name": "UnityEngine.BoxCollider",
                 "excluded": true
             },
             {
@@ -7811,10 +7795,6 @@
                 "excluded": true
             },
             {
-                "name": "DG.Tweening.DOVirtual",
-                "excluded": true
-            },
-            {
                 "name": "DG.Tweening.EaseFactory",
                 "excluded": true
             },
@@ -7988,7 +7968,7 @@
             },
             {
                 "name": "DG.Tweening.ShakeRandomnessMode",
-                "excluded": true
+                "excluded": false
             },
             {
                 "name": "DG.Tweening.SpiralMode",
@@ -8124,10 +8104,6 @@
             },
             {
                 "name": "Spine.TextureLoader",
-                "excluded": true
-            },
-            {
-                "name": "AnhPD.ObjectMoveToTarget",
                 "excluded": true
             },
             {
@@ -8452,10 +8428,6 @@
             },
             {
                 "name": "Spine.Unity.SkeletonMecanim",
-                "excluded": true
-            },
-            {
-                "name": "AnhPD.MakeSushi.SushiKit.SushiStuffType",
                 "excluded": true
             },
             {
@@ -14362,7 +14334,7 @@
                     },
                     {
                         "name": "Sample",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "Next",
@@ -14382,7 +14354,7 @@
                     },
                     {
                         "name": "NextDouble",
-                        "excluded": true
+                        "excluded": false
                     }
                 ]
             },
@@ -16838,7 +16810,7 @@
                     },
                     {
                         "name": "localRotation#set",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "forward#set",
@@ -16862,7 +16834,7 @@
                     },
                     {
                         "name": "name#get",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "name#set",
@@ -22324,7 +22296,7 @@
                     },
                     {
                         "name": "AddListener",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "RemoveListener",
@@ -23730,7 +23702,7 @@
                     },
                     {
                         "name": "Play$4",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "Play$3",
@@ -23738,7 +23710,7 @@
                     },
                     {
                         "name": "Play$2",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "Rebind",
@@ -25203,10 +25175,6 @@
                     {
                         "name": "ChangeDragState",
                         "excluded": false
-                    },
-                    {
-                        "name": "init",
-                        "excluded": false
                     }
                 ]
             },
@@ -26420,7 +26388,7 @@
                     },
                     {
                         "name": "ctor",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "ClosestPoint",
@@ -26796,7 +26764,7 @@
                     },
                     {
                         "name": "Vector3FromAngle",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "Angle2D",
@@ -26964,7 +26932,7 @@
                     },
                     {
                         "name": "SetUpdateType",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "DespawnAll",
@@ -27250,7 +27218,7 @@
                     },
                     {
                         "name": "Shake",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "Shake$1",
@@ -27258,7 +27226,7 @@
                     },
                     {
                         "name": "Shake$2",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "Sequence$1",
@@ -27590,7 +27558,7 @@
                     },
                     {
                         "name": "DOShakeRotation$2",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "DOShakeRotation$3",
@@ -27682,7 +27650,7 @@
                     },
                     {
                         "name": "DOScaleY",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "DOScaleZ",
@@ -27924,7 +27892,7 @@
                     },
                     {
                         "name": "SetAutoKill$1",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "SetId$1",
@@ -27952,7 +27920,7 @@
                     },
                     {
                         "name": "SetLoops$1",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "SetEase$4",
@@ -27988,7 +27956,7 @@
                     },
                     {
                         "name": "SetUpdate$2",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "SetInverted",
@@ -28020,7 +27988,7 @@
                     },
                     {
                         "name": "OnStepComplete",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "OnKill",
@@ -28486,7 +28454,7 @@
                     },
                     {
                         "name": "SetShake",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "SetCameraShakePosition",
@@ -28766,7 +28734,7 @@
                     },
                     {
                         "name": "IsAnyCallbackSet",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "DoPrepend",
@@ -28900,7 +28868,7 @@
                     },
                     {
                         "name": "ShowHandState1",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "setHandPlayBox",
@@ -29025,19 +28993,11 @@
                         "excluded": false
                     },
                     {
-                        "name": "PlayState12",
+                        "name": "PlayState4",
                         "excluded": false
                     },
                     {
-                        "name": "PlayState4",
-                        "excluded": true
-                    },
-                    {
                         "name": "PlayState5",
-                        "excluded": true
-                    },
-                    {
-                        "name": "PlayState50",
                         "excluded": true
                     },
                     {
@@ -29057,7 +29017,31 @@
                         "excluded": true
                     },
                     {
-                        "name": "PlayState11",
+                        "name": "removeState",
+                        "excluded": false
+                    },
+                    {
+                        "name": "removePeel",
+                        "excluded": true
+                    },
+                    {
+                        "name": "AddPeel",
+                        "excluded": false
+                    },
+                    {
+                        "name": "PlayPeeler",
+                        "excluded": true
+                    },
+                    {
+                        "name": "PlayKnife",
+                        "excluded": true
+                    },
+                    {
+                        "name": "PlayPeel",
+                        "excluded": true
+                    },
+                    {
+                        "name": "PlayStateEndGame",
                         "excluded": true
                     }
                 ]
@@ -29586,7 +29570,7 @@
                     },
                     {
                         "name": "AddTime",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "IsName",
@@ -30890,7 +30874,7 @@
                 "instanceMethods": [
                     {
                         "name": "length#get",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "name#get",
@@ -30922,15 +30906,15 @@
                     },
                     {
                         "name": "AddTime",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "Rewind",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "Stoped",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "Fade",
@@ -30944,7 +30928,7 @@
                 "instanceMethods": [
                     {
                         "name": "clip#get",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "clip#set",
@@ -30952,7 +30936,7 @@
                     },
                     {
                         "name": "clips#get",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "clips#set",
@@ -30992,7 +30976,7 @@
                     },
                     {
                         "name": "Play",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "Play$1",
@@ -31004,7 +30988,7 @@
                     },
                     {
                         "name": "Stop",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "Stop$1",
@@ -31012,7 +30996,7 @@
                     },
                     {
                         "name": "Rewind",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "AddTime",
@@ -31020,7 +31004,7 @@
                     },
                     {
                         "name": "TriggerEvents",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "Update",
@@ -31028,7 +31012,7 @@
                     },
                     {
                         "name": "Sample",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "OnEnable",
@@ -31050,7 +31034,7 @@
                     },
                     {
                         "name": "OnMouseDown",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "Update",
@@ -31062,7 +31046,7 @@
                     },
                     {
                         "name": "OnCanTouch",
-                        "excluded": true
+                        "excluded": false
                     }
                 ]
             },
@@ -31072,27 +31056,31 @@
                 "instanceMethods": [
                     {
                         "name": "IsBoardEmpty#get",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "IsVegPeeled#get",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "emoji#get",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "OnPutVegetableIn",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "OnCompletePeeling",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "OnStartCutting",
-                        "excluded": true
+                        "excluded": false
+                    },
+                    {
+                        "name": "playAnim",
+                        "excluded": false
                     }
                 ]
             },
@@ -31102,11 +31090,7 @@
                 "instanceMethods": [
                     {
                         "name": "board#get",
-                        "excluded": true
-                    },
-                    {
-                        "name": "IsCorrectPosition#get",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "init",
@@ -31118,37 +31102,15 @@
                     },
                     {
                         "name": "CheckBoard",
-                        "excluded": true
-                    },
-                    {
-                        "name": "CheckStartPos",
-                        "excluded": true
-                    },
-                    {
-                        "name": "OnCompleteCutting",
-                        "excluded": true
-                    }
-                ]
-            },
-            {
-                "className": "AnhPD.MakeSushi.OneTimeDecor",
-                "staticMethods": [],
-                "instanceMethods": [
-                    {
-                        "name": "init",
                         "excluded": false
                     },
                     {
-                        "name": "OnTriggerEnter2D",
-                        "excluded": true
+                        "name": "CheckStartPos",
+                        "excluded": false
                     },
                     {
-                        "name": "OnTriggerExit2D",
-                        "excluded": true
-                    },
-                    {
-                        "name": "CheckTarget",
-                        "excluded": true
+                        "name": "OnCompleteCutting",
+                        "excluded": false
                     }
                 ]
             },
@@ -31158,27 +31120,19 @@
                 "instanceMethods": [
                     {
                         "name": "board#get",
-                        "excluded": true
-                    },
-                    {
-                        "name": "IsCorrectPosition#get",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "init",
                         "excluded": false
                     },
                     {
-                        "name": "Start",
+                        "name": "CheckStartPos",
                         "excluded": false
                     },
                     {
-                        "name": "CheckStartPos",
-                        "excluded": true
-                    },
-                    {
                         "name": "CheckBoard",
-                        "excluded": true
+                        "excluded": false
                     }
                 ]
             },
@@ -31188,7 +31142,7 @@
                 "instanceMethods": [
                     {
                         "name": "IsInSink#get",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "init",
@@ -31200,155 +31154,11 @@
                     },
                     {
                         "name": "OnWater",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "dragStart",
-                        "excluded": true
-                    }
-                ]
-            },
-            {
-                "className": "AnhPD.MakeSushi.StuffAmount",
-                "staticMethods": [],
-                "instanceMethods": [
-                    {
-                        "name": "init",
                         "excluded": false
-                    },
-                    {
-                        "name": "OnTakeOffStuff",
-                        "excluded": true
-                    },
-                    {
-                        "name": "OnPutInStuff",
-                        "excluded": true
-                    }
-                ]
-            },
-            {
-                "className": "AnhPD.MakeSushi.SushiKit",
-                "staticMethods": [],
-                "instanceMethods": [
-                    {
-                        "name": "emoji#get",
-                        "excluded": true
-                    },
-                    {
-                        "name": "init",
-                        "excluded": false
-                    },
-                    {
-                        "name": "OnSeaweedReady",
-                        "excluded": true
-                    },
-                    {
-                        "name": "OnRiceReady",
-                        "excluded": true
-                    },
-                    {
-                        "name": "OnMustardReady",
-                        "excluded": true
-                    },
-                    {
-                        "name": "PutStuffOn",
-                        "excluded": true
-                    },
-                    {
-                        "name": "OnStuffOn",
-                        "excluded": true
-                    }
-                ]
-            },
-            {
-                "className": "AnhPD.MakeSushi.SushiPos",
-                "staticMethods": [],
-                "instanceMethods": [
-                    {
-                        "name": "emoji#get",
-                        "excluded": true
-                    },
-                    {
-                        "name": "init",
-                        "excluded": false
-                    },
-                    {
-                        "name": "PutRollIn",
-                        "excluded": true
-                    },
-                    {
-                        "name": "RemoveRoll",
-                        "excluded": true
-                    }
-                ]
-            },
-            {
-                "className": "AnhPD.MakeSushi.SushiRoll",
-                "staticMethods": [],
-                "instanceMethods": [
-                    {
-                        "name": "sushiPos#get",
-                        "excluded": true
-                    },
-                    {
-                        "name": "CheckDistance",
-                        "excluded": true
-                    },
-                    {
-                        "name": "OnInit",
-                        "excluded": true
-                    },
-                    {
-                        "name": "Despawn",
-                        "excluded": true
-                    }
-                ]
-            },
-            {
-                "className": "AnhPD.MakeSushi.SushiRoller",
-                "staticMethods": [],
-                "instanceMethods": [
-                    {
-                        "name": "init",
-                        "excluded": false
-                    },
-                    {
-                        "name": "Start",
-                        "excluded": false
-                    },
-                    {
-                        "name": "StartRolling",
-                        "excluded": true
-                    },
-                    {
-                        "name": "OnMouseDown",
-                        "excluded": true
-                    },
-                    {
-                        "name": "OnMouseDrag",
-                        "excluded": true
-                    },
-                    {
-                        "name": "OnMouseUp",
-                        "excluded": true
-                    }
-                ]
-            },
-            {
-                "className": "AnhPD.MakeSushi.SushiStuff",
-                "staticMethods": [],
-                "instanceMethods": [
-                    {
-                        "name": "init",
-                        "excluded": false
-                    },
-                    {
-                        "name": "OnTakeOff",
-                        "excluded": true
-                    },
-                    {
-                        "name": "CheckTarget",
-                        "excluded": true
                     }
                 ]
             },
@@ -31358,15 +31168,15 @@
                 "instanceMethods": [
                     {
                         "name": "cuttingBoard#get",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "IsCut#get",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "IsComplete#get",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "init",
@@ -31374,19 +31184,19 @@
                     },
                     {
                         "name": "CheckStartPos",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "CheckBoard",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "OnComplePeeling",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "OnCompleteCutting",
-                        "excluded": true
+                        "excluded": false
                     }
                 ]
             },
@@ -31396,7 +31206,7 @@
                 "instanceMethods": [
                     {
                         "name": "IsWatering#get",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "init",
@@ -31404,85 +31214,19 @@
                     },
                     {
                         "name": "OnMouseDown",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "OnHaveObjectInSink",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "OnRemovedAllObjectInSink",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "TurnOff",
-                        "excluded": true
-                    }
-                ]
-            },
-            {
-                "className": "Level127DraggableObject",
-                "staticMethods": [],
-                "instanceMethods": [
-                    {
-                        "name": "init",
                         "excluded": false
-                    },
-                    {
-                        "name": "Awake",
-                        "excluded": false
-                    },
-                    {
-                        "name": "OnDestroy",
-                        "excluded": true
-                    },
-                    {
-                        "name": "Start",
-                        "excluded": false
-                    },
-                    {
-                        "name": "OnMouseDown",
-                        "excluded": false
-                    },
-                    {
-                        "name": "OnMouseDrag",
-                        "excluded": false
-                    },
-                    {
-                        "name": "OnMouseUp",
-                        "excluded": false
-                    },
-                    {
-                        "name": "CancelDragging",
-                        "excluded": true
-                    },
-                    {
-                        "name": "SetUnmoveOrder",
-                        "excluded": false
-                    },
-                    {
-                        "name": "SetMoveOrder",
-                        "excluded": false
-                    },
-                    {
-                        "name": "LockPosition",
-                        "excluded": true
-                    },
-                    {
-                        "name": "UnlockPosition",
-                        "excluded": true
-                    },
-                    {
-                        "name": "SetNewStart",
-                        "excluded": true
-                    },
-                    {
-                        "name": "SetOrderLayer",
-                        "excluded": false
-                    },
-                    {
-                        "name": "UpdateOffset",
-                        "excluded": true
                     }
                 ]
             },
@@ -31503,84 +31247,622 @@
                         "excluded": true
                     },
                     {
-                        "name": "OnStartCooking",
-                        "excluded": true
-                    },
-                    {
                         "name": "OnVegetablePrefareComplete",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "OnWaterStart",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "OnPutCookerInSink",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "OnCookerLeaveSink",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "CheckCompleteStage1",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "OnCompleteStage1",
                         "excluded": true
                     },
                     {
-                        "name": "OnPutStuff",
+                        "name": "inherits",
+                        "excluded": false
+                    },
+                    {
+                        "name": "LockCanCheckBroadVegetable",
                         "excluded": true
                     },
                     {
-                        "name": "OnSeaweedReady",
+                        "name": "UnlockCanCheckBroadVegetable",
+                        "excluded": false
+                    }
+                ]
+            },
+            {
+                "className": "UnityEngine.TrailModule",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "enabled#get",
                         "excluded": true
                     },
                     {
-                        "name": "OnSushiComplete",
+                        "name": "enabled#set",
+                        "excluded": true
+                    }
+                ]
+            },
+            {
+                "className": "UnityEngine.ParticleSystem",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "main#get",
                         "excluded": true
                     },
                     {
-                        "name": "OnReroll",
+                        "name": "emission#get",
                         "excluded": true
                     },
                     {
-                        "name": "SpawnRoll",
+                        "name": "colorBySpeed#get",
                         "excluded": true
                     },
                     {
-                        "name": "OnCompleteStage2",
+                        "name": "colorOverLifetime#get",
                         "excluded": true
                     },
                     {
-                        "name": "OnTakeOffStuff",
+                        "name": "rotationBySpeed#get",
                         "excluded": true
                     },
                     {
-                        "name": "OnNotUseStuff",
+                        "name": "rotationOverLifetime#get",
                         "excluded": true
                     },
                     {
-                        "name": "OnUseStuff",
+                        "name": "shape#get",
                         "excluded": true
                     },
                     {
-                        "name": "OnPutRollInBoard",
+                        "name": "sizeBySpeed#get",
                         "excluded": true
                     },
                     {
-                        "name": "CheckBoard",
+                        "name": "sizeOverLifetime#get",
                         "excluded": true
                     },
                     {
-                        "name": "OnPutDecor",
+                        "name": "textureSheetAnimation#get",
                         "excluded": true
                     },
                     {
-                        "name": "OnEndGame",
+                        "name": "velocityOverLifetime#get",
                         "excluded": true
+                    },
+                    {
+                        "name": "noise#get",
+                        "excluded": true
+                    },
+                    {
+                        "name": "inheritVelocity#get",
+                        "excluded": true
+                    },
+                    {
+                        "name": "forceOverLifetime#get",
+                        "excluded": true
+                    },
+                    {
+                        "name": "limitVelocityOverLifetime#get",
+                        "excluded": true
+                    },
+                    {
+                        "name": "enableEmission#get",
+                        "excluded": true
+                    },
+                    {
+                        "name": "enableEmission#set",
+                        "excluded": true
+                    },
+                    {
+                        "name": "maxParticles#get",
+                        "excluded": true
+                    },
+                    {
+                        "name": "maxParticles#set",
+                        "excluded": true
+                    },
+                    {
+                        "name": "isPlaying#get",
+                        "excluded": true
+                    },
+                    {
+                        "name": "isPaused#get",
+                        "excluded": true
+                    },
+                    {
+                        "name": "isStopped#get",
+                        "excluded": true
+                    },
+                    {
+                        "name": "time#get",
+                        "excluded": true
+                    },
+                    {
+                        "name": "isEmitting#get",
+                        "excluded": true
+                    },
+                    {
+                        "name": "particleCount#get",
+                        "excluded": true
+                    },
+                    {
+                        "name": "duration#get",
+                        "excluded": true
+                    },
+                    {
+                        "name": "duration#set",
+                        "excluded": true
+                    },
+                    {
+                        "name": "loop#get",
+                        "excluded": true
+                    },
+                    {
+                        "name": "loop#set",
+                        "excluded": true
+                    },
+                    {
+                        "name": "startDelay#get",
+                        "excluded": true
+                    },
+                    {
+                        "name": "startDelay#set",
+                        "excluded": true
+                    },
+                    {
+                        "name": "prewarm#get",
+                        "excluded": true
+                    },
+                    {
+                        "name": "prewarm#set",
+                        "excluded": true
+                    },
+                    {
+                        "name": "simulationSpace#get",
+                        "excluded": true
+                    },
+                    {
+                        "name": "simulationSpace#set",
+                        "excluded": true
+                    },
+                    {
+                        "name": "simulationSpeed#get",
+                        "excluded": true
+                    },
+                    {
+                        "name": "simulationSpeed#set",
+                        "excluded": true
+                    },
+                    {
+                        "name": "useRigidbodyForVelocity#get",
+                        "excluded": true
+                    },
+                    {
+                        "name": "useRigidbodyForVelocity#set",
+                        "excluded": true
+                    },
+                    {
+                        "name": "useUnscaledTime#get",
+                        "excluded": true
+                    },
+                    {
+                        "name": "useUnscaledTime#set",
+                        "excluded": true
+                    },
+                    {
+                        "name": "scalingMode#get",
+                        "excluded": true
+                    },
+                    {
+                        "name": "scalingMode#set",
+                        "excluded": true
+                    },
+                    {
+                        "name": "moveWithCustomTransform#get",
+                        "excluded": true
+                    },
+                    {
+                        "name": "moveWithCustomTransform#set",
+                        "excluded": true
+                    },
+                    {
+                        "name": "startSize3D#get",
+                        "excluded": true
+                    },
+                    {
+                        "name": "startSize3D#set",
+                        "excluded": true
+                    },
+                    {
+                        "name": "playOnAwake#get",
+                        "excluded": true
+                    },
+                    {
+                        "name": "playOnAwake#set",
+                        "excluded": true
+                    },
+                    {
+                        "name": "init",
+                        "excluded": false
+                    },
+                    {
+                        "name": "ctor",
+                        "excluded": false
+                    },
+                    {
+                        "name": "GetParticles",
+                        "excluded": true
+                    },
+                    {
+                        "name": "SetParticles",
+                        "excluded": true
+                    },
+                    {
+                        "name": "SetCustomParticleData",
+                        "excluded": true
+                    },
+                    {
+                        "name": "IsAlive",
+                        "excluded": true
+                    },
+                    {
+                        "name": "Play",
+                        "excluded": true
+                    },
+                    {
+                        "name": "Play$1",
+                        "excluded": true
+                    },
+                    {
+                        "name": "Pause",
+                        "excluded": true
+                    },
+                    {
+                        "name": "Pause$1",
+                        "excluded": true
+                    },
+                    {
+                        "name": "Stop",
+                        "excluded": true
+                    },
+                    {
+                        "name": "Stop$1",
+                        "excluded": true
+                    },
+                    {
+                        "name": "Stop$2",
+                        "excluded": true
+                    },
+                    {
+                        "name": "Emit",
+                        "excluded": true
+                    },
+                    {
+                        "name": "Clear",
+                        "excluded": true
+                    },
+                    {
+                        "name": "Simulate",
+                        "excluded": true
+                    }
+                ]
+            },
+            {
+                "className": "UnityEngine.BoxCollider",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "size#get",
+                        "excluded": true
+                    },
+                    {
+                        "name": "size#set",
+                        "excluded": true
+                    },
+                    {
+                        "name": "center#get",
+                        "excluded": true
+                    },
+                    {
+                        "name": "center#set",
+                        "excluded": true
+                    },
+                    {
+                        "name": "ctor",
+                        "excluded": false
+                    }
+                ]
+            },
+            {
+                "className": "AnhPD.ObjectMoveToTarget",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "init",
+                        "excluded": false
+                    },
+                    {
+                        "name": "CheckTarget",
+                        "excluded": false
+                    }
+                ]
+            },
+            {
+                "className": "DraggableObject",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "init",
+                        "excluded": false
+                    },
+                    {
+                        "name": "Awake",
+                        "excluded": false
+                    },
+                    {
+                        "name": "ResetStartPos",
+                        "excluded": false
+                    },
+                    {
+                        "name": "Start",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnMouseDown",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnMouseDrag",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnMouseUp",
+                        "excluded": false
+                    },
+                    {
+                        "name": "CancelDragging",
+                        "excluded": false
+                    },
+                    {
+                        "name": "SetUnmoveOrder",
+                        "excluded": false
+                    },
+                    {
+                        "name": "SetMoveOrder",
+                        "excluded": false
+                    },
+                    {
+                        "name": "LockPosition",
+                        "excluded": false
+                    },
+                    {
+                        "name": "UnlockPosition",
+                        "excluded": false
+                    },
+                    {
+                        "name": "SetNewStart",
+                        "excluded": true
+                    },
+                    {
+                        "name": "SetOrderLayer",
+                        "excluded": false
+                    },
+                    {
+                        "name": "UpdateOffset",
+                        "excluded": true
+                    }
+                ]
+            },
+            {
+                "className": "HoangHH.H3MonoBehaviour",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "Tf#get",
+                        "excluded": false
+                    },
+                    {
+                        "name": "DistanceToInSqr",
+                        "excluded": true
+                    },
+                    {
+                        "name": "DistanceToInSqr$1",
+                        "excluded": true
+                    },
+                    {
+                        "name": "DistanceToInSqrVec2",
+                        "excluded": true
+                    },
+                    {
+                        "name": "DistanceToInSqrVec2$1",
+                        "excluded": true
+                    }
+                ]
+            },
+            {
+                "className": "Peel",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "init",
+                        "excluded": false
+                    },
+                    {
+                        "name": "CheckToTarget",
+                        "excluded": true
+                    },
+                    {
+                        "name": "ResetPosition",
+                        "excluded": false
+                    }
+                ]
+            },
+            {
+                "className": "HoangHH.LockObjectInsideScreen",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "init",
+                        "excluded": false
+                    },
+                    {
+                        "name": "Awake",
+                        "excluded": false
+                    },
+                    {
+                        "name": "Start",
+                        "excluded": false
+                    },
+                    {
+                        "name": "LateUpdate",
+                        "excluded": false
+                    }
+                ]
+            },
+            {
+                "className": "Lid",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "init",
+                        "excluded": false
+                    },
+                    {
+                        "name": "Awake",
+                        "excluded": false
+                    },
+                    {
+                        "name": "CheckToTarget",
+                        "excluded": false
+                    },
+                    {
+                        "name": "SetCanMove",
+                        "excluded": true
+                    }
+                ]
+            },
+            {
+                "className": "UnityEngine.Random",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "value#get",
+                        "excluded": true
+                    },
+                    {
+                        "name": "onUnitSphere#get",
+                        "excluded": true
+                    },
+                    {
+                        "name": "insideUnitSphere#get",
+                        "excluded": true
+                    },
+                    {
+                        "name": "state#get",
+                        "excluded": true
+                    },
+                    {
+                        "name": "state#set",
+                        "excluded": true
+                    },
+                    {
+                        "name": "insideUnitCircle#get",
+                        "excluded": true
+                    },
+                    {
+                        "name": "rotation#get",
+                        "excluded": true
+                    },
+                    {
+                        "name": "SpherePoint",
+                        "excluded": true
+                    },
+                    {
+                        "name": "Range$1",
+                        "excluded": false
+                    },
+                    {
+                        "name": "Range",
+                        "excluded": true
+                    },
+                    {
+                        "name": "InitState",
+                        "excluded": true
+                    }
+                ]
+            },
+            {
+                "className": "DG.Tweening.DOVirtual",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "Float",
+                        "excluded": true
+                    },
+                    {
+                        "name": "Int",
+                        "excluded": true
+                    },
+                    {
+                        "name": "Vector3",
+                        "excluded": true
+                    },
+                    {
+                        "name": "Color",
+                        "excluded": true
+                    },
+                    {
+                        "name": "EasedValue",
+                        "excluded": true
+                    },
+                    {
+                        "name": "EasedValue$1",
+                        "excluded": true
+                    },
+                    {
+                        "name": "EasedValue$2",
+                        "excluded": true
+                    },
+                    {
+                        "name": "EasedValue$3",
+                        "excluded": true
+                    },
+                    {
+                        "name": "EasedValue$4",
+                        "excluded": true
+                    },
+                    {
+                        "name": "EasedValue$5",
+                        "excluded": true
+                    },
+                    {
+                        "name": "EasedValue$6",
+                        "excluded": true
+                    },
+                    {
+                        "name": "EasedValue$7",
+                        "excluded": true
+                    },
+                    {
+                        "name": "DelayedCall",
+                        "excluded": false
                     }
                 ]
             }

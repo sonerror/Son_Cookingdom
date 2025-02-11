@@ -8,7 +8,7 @@ namespace AnhPD.MakeSushi
     public class WaterValue : MonoBehaviour
     {
         [SerializeField] Transform value, water;
-        [SerializeField] AudioClip sfxClick;
+        // [SerializeField] AudioClip sfxClick;
 
         private bool isWatering = false;
         public bool IsWatering => isWatering;
@@ -34,6 +34,8 @@ namespace AnhPD.MakeSushi
                 value.DOScaleY(.85f, .05f);
                 LevelMakeSushi.Ins.OnWaterStart();
             }
+
+            TutorialManager.Ins.removeState(1);
         }
         public void OnHaveObjectInSink()
         {
@@ -50,6 +52,7 @@ namespace AnhPD.MakeSushi
             if (isWatering)
             {
                 // AudioManager.PlaySfx(sfxClick);
+                SoundManager.Ins.PlayFx(FxType.SinkBtnClick);
                 isWatering = false;
                 water.gameObject.SetActive(isWatering);
                 value.DOScaleY(1, .1f);

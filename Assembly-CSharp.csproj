@@ -59,7 +59,7 @@
     <UnityVersion>2022.3.41f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Analyzer Include="C:\Users\daotr\.vscode\extensions\visualstudiotoolsforunity.vstuc-1.0.5\Analyzers\Microsoft.Unity.Analyzers.dll" />
+    <Analyzer Include="C:\Users\daotr\.vscode\extensions\visualstudiotoolsforunity.vstuc-1.1.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
     <Analyzer Include="D:\_App\Unity\UnityInstall\2022.3.41f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.SourceGenerators.dll" />
     <Analyzer Include="D:\_App\Unity\UnityInstall\2022.3.41f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
@@ -68,7 +68,6 @@
     <Compile Include="Assets\Scripts\Object\HandCtrl.cs" />
     <Compile Include="Assets\_GAME\Levels\LvMakeSushi\Scripts\Tmp\ObjectMoveToTarget.cs" />
     <Compile Include="Assets\_GAME\Levels\LvMakeSushi\Scripts\LevelMakeSushi.cs" />
-    <Compile Include="Assets\_GAME\Levels\LvMakeSushi\Scripts\Stage2\SushiRoll.cs" />
     <Compile Include="Assets\AllIn1SpriteShader\Scripts\RandomSeed.cs" />
     <Compile Include="Assets\DOTween\Modules\DOTweenModuleAudio.cs" />
     <Compile Include="Assets\_GAME\Levels\LvKingCrab\Scripts\CrabStickTool.cs" />
@@ -76,27 +75,22 @@
     <Compile Include="Assets\_GAME\Levels\LvKingCrab\Scripts\SimpleTransition.cs" />
     <Compile Include="Assets\AllIn1SpriteShader\Scripts\All1CreateUnifiedOutline.cs" />
     <Compile Include="Assets\Scripts\MaskGroup.cs" />
-    <Compile Include="Assets\_GAME\Levels\LvMakeSushi\Scripts\Stage2\StuffAmount.cs" />
-    <Compile Include="Assets\_GAME\Levels\LvMakeSushi\Scripts\Stage2\SushiStuff.cs" />
     <Compile Include="Assets\Scripts\Pool\PoolManager.cs" />
     <Compile Include="Assets\Scripts\Manager\UIManager.cs" />
     <Compile Include="Assets\_GAME\Levels\LvKingCrab\Scripts\CrabBody.cs" />
     <Compile Include="Assets\Scripts\ItemInCrab.cs" />
     <Compile Include="Assets\_GAME\Levels\LvMakeSushi\Scripts\Tmp\DraggableObject.cs" />
-    <Compile Include="Assets\_GAME\Levels\LvMakeSushi\Scripts\Stage3\OneTimeDecor.cs" />
     <Compile Include="Assets\Scripts\Helper\Cache.cs" />
     <Compile Include="Assets\_GAME\Levels\LvKingCrab\Scripts\LevelKingCrab.cs" />
     <Compile Include="Assets\_GAME\Levels\LvMakeSushi\Scripts\Stage1\CookerButton.cs" />
     <Compile Include="Assets\DOTween\Modules\DOTweenModuleUnityVersion.cs" />
     <Compile Include="Assets\DOTween\Modules\DOTweenModulePhysics.cs" />
-    <Compile Include="Assets\_GAME\Levels\LvMakeSushi\Scripts\Stage2\SushiPos.cs" />
     <Compile Include="Assets\Scripts\ItemDropGroup.cs" />
     <Compile Include="Assets\_GAME\Levels\LvKingCrab\Scripts\BlockUI.cs" />
     <Compile Include="Assets\_GAME\Levels\LvMakeSushi\Scripts\Tmp\Peel.cs" />
     <Compile Include="Assets\_GAME\Levels\LvKingCrab\Scripts\CrabLeg.cs" />
     <Compile Include="Assets\_GAME\Levels\LvKingCrab\Scripts\KingCrabTool.cs" />
     <Compile Include="Assets\AllIn1SpriteShader\Scripts\AllIn1ShaderWindow.cs" />
-    <Compile Include="Assets\_GAME\Levels\LvMakeSushi\Scripts\Stage2\SushiKit.cs" />
     <Compile Include="Assets\_GAME\Levels\LvKingCrab\Scripts\CrabSpoon.cs" />
     <Compile Include="Assets\_GAME\Levels\LvMakeSushi\Scripts\Stage1\Vegetable.cs" />
     <Compile Include="Assets\AllIn1SpriteShader\Scripts\SetGlobalTimeUnity2018.cs" />
@@ -108,7 +102,6 @@
     <Compile Include="Assets\_GAME\Levels\LvKingCrab\Scripts\CrabPry.cs" />
     <Compile Include="Assets\AllIn1SpriteShader\Scripts\SetAtlasUvs.cs" />
     <Compile Include="Assets\_GAME\Levels\LvMakeSushi\Scripts\Tmp\Lid.cs" />
-    <Compile Include="Assets\_GAME\Levels\LvMakeSushi\Scripts\Stage2\SushiRoller.cs" />
     <Compile Include="Assets\Scripts\LevelBase.cs" />
     <Compile Include="Assets\Scripts\UI\Progress.cs" />
     <Compile Include="Assets\_GAME\Levels\29\Scripts\EmojiControl.cs" />

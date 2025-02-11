@@ -8,10 +8,12 @@ namespace AnhPD.MakeSushi
 {
     public class CuttingBoard : MonoBehaviour
     {
-        [SerializeField] private Animation cuttingAnim;
+        [SerializeField] private Animator cutting;
         public bool IsBoardEmpty => veg == null;
         public bool IsVegPeeled => veg.IsPeeled;
-        private Vegetable veg;
+        public Vegetable veg;
+
+        public GameObject gb1, gb2, gb3, gb4;
 
         private EmojiControl emoji => LevelMakeSushi.Ins.emojiStage1;
 
@@ -33,8 +35,9 @@ namespace AnhPD.MakeSushi
         public void OnStartCutting(Knife knife)
         {
             knife.gameObject.SetActive(false);
-            knife.transform.DOMoveY(knife.transform.position.y + 1f, .2f);
-            cuttingAnim.Play();
+            knife.transform.DOMoveY(knife.transform.position.y + 1f, 0.2f);
+            // cutting.SetTrigger("Cut");
+            StartCoroutine(playAnim());
             StartCoroutine(delay());
             IEnumerator delay()
             {
@@ -46,6 +49,25 @@ namespace AnhPD.MakeSushi
                     veg = null;
                 }
             }
+        }
+
+        private IEnumerator playAnim()
+        {
+            gb1.SetActive(true);
+            yield return Cache.GetWFS(0.1f);
+            gb2.SetActive(true);
+            yield return Cache.GetWFS(0.1f);
+            gb1.SetActive(false);
+            gb2.SetActive(false);
+            yield return Cache.GetWFS(0.1f);
+            gb3.SetActive(true);
+            yield return Cache.GetWFS(0.1f);
+            gb4.SetActive(true);
+            gb3.SetActive(false);
+            gb1.SetActive(true);
+            yield return Cache.GetWFS(0.1f);
+            gb4.SetActive(false);
+            gb1.SetActive(false);
         }
     }
 }

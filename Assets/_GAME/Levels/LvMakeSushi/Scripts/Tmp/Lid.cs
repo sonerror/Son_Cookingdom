@@ -3,12 +3,20 @@ using System.Collections.Generic;
 using AnhPD.MakeSushi;
 using DG.Tweening;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Lid : Peel
 {
 
     public bool isState2 = false;
-    private Vector3 startPos;
+    public bool moveToTarget = false;
+    public Vector3 startPos;
+
+    public bool LockWhenDone = false;
+
+    public int stateIndex;
+
+    public UnityEvent onCompleted;
 
     private void Awake()
     {
@@ -20,10 +28,31 @@ public class Lid : Peel
         if (Vector3.Distance(transform.position, target.position) > distaceCheck)
         {
             draggable.isActive = false;
-            transform.DOMove(startPos, 0.5f).OnComplete(() =>
+            draggable.LockPosition();
+            if (moveToTarget)
             {
-                LevelMakeSushi.Ins.OnGarbageThrowed();
-            });
+                transform.DOMove(target.position, 0.5f).OnComplete(() =>
+                {
+                    LevelMakeSushi.Ins.OnGarbageThrowed();
+                    onCompleted?.Invoke();
+                });
+            }
+            else
+            {
+                transform.DOMove(startPos, 0.5f).OnComplete(() =>
+                {
+                    LevelMakeSushi.Ins.OnGarbageThrowed();
+                    onCompleted?.Invoke();
+                });
+            }
+
+            TutorialManager.Ins.removeState(stateIndex);
         }
+    }
+
+    public void SetCanMove()
+    {
+        isState2 = true;
+        draggable.enabled = true;
     }
 }

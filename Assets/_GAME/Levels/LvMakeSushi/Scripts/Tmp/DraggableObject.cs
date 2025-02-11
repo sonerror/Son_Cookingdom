@@ -8,7 +8,7 @@ public class DraggableObject : MonoBehaviour
 {
     [SerializeField] private float rewindDuration = 1f;
     private Vector2 startOffset;
-    private Vector3 startPos;
+    public Vector3 startPos;
 
     private bool isDragging = false;
     private float startZ;

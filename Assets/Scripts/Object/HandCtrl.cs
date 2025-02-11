@@ -8,11 +8,8 @@ public class HandCtrl : MonoBehaviour
     private Vector3 pos1;
     private Vector3 pos2;
 
-    private bool isShowHandState1 = false;
     public void ShowHandState1(Vector3 pos)
     {
-        if (isShowHandState1) return;
-        isShowHandState1 = true;
         animator.gameObject.SetActive(true);
         animator.Play("Hand");
         transform.position = pos;

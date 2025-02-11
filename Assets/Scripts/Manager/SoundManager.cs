@@ -5,7 +5,7 @@ using UnityEngine;
 public enum FxType
 {
     Click = 0,
-    WaterDrop = 1,
+    SinkBtnClick = 1,
     SfxEmoijPositive = 2,
     SfxEmoijNegative = 3,
     SfxDop4 = 4,
