@@ -29002,7 +29002,7 @@
                     },
                     {
                         "name": "PlayState7",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "PlayState8",
@@ -29034,7 +29034,7 @@
                     },
                     {
                         "name": "PlayKnife",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "PlayPeel",

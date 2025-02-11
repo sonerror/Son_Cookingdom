@@ -57,14 +57,12 @@ namespace AnhPD.MakeSushi
             yield return Cache.GetWFS(0.1f);
             gb2.SetActive(true);
             yield return Cache.GetWFS(0.1f);
-            gb1.SetActive(false);
             gb2.SetActive(false);
             yield return Cache.GetWFS(0.1f);
             gb3.SetActive(true);
             yield return Cache.GetWFS(0.1f);
             gb4.SetActive(true);
             gb3.SetActive(false);
-            gb1.SetActive(true);
             yield return Cache.GetWFS(0.1f);
             gb4.SetActive(false);
             gb1.SetActive(false);

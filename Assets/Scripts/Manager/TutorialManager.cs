@@ -40,6 +40,7 @@ public class TutorialManager : Singleton<TutorialManager>
         if (Input.GetMouseButtonDown(0))
         {
             ResetTimeHint();
+            isClickTrueItem = true;
         }
 
         if (Input.GetMouseButton(0)) return;
@@ -51,7 +52,6 @@ public class TutorialManager : Singleton<TutorialManager>
         if (timeEndGame <= 0)
         {
             GameManager.Ins.isEndGame = true;
-
         }
     }
 
@@ -81,7 +81,6 @@ public class TutorialManager : Singleton<TutorialManager>
         handCtrl.HideHand();
 
         isClickTrueItem = true;
-
     }
 
     public void MouseUpItem()
