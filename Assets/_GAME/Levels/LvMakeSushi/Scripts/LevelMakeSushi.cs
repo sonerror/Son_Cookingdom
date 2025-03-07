@@ -103,6 +103,8 @@ namespace AnhPD.MakeSushi
         }
         public void CheckCompleteStage1()
         {
+            Debug.Log("Complete Stage 0");
+
             for (int i = 0; i < vegs.Length; i++)
             {
                 if (!vegs[i].IsComplete)
@@ -110,12 +112,12 @@ namespace AnhPD.MakeSushi
                     return;
                 }
             }
-
+            Debug.Log("Complete Stage 0.5");
             if (garbageCount < 4 || !cookerButton.IsCooked)
             {
                 return;
             }
-
+            Debug.Log("Complete Stage 1");
             cookerButton.OnComplete();
         }
         public async void OnCompleteStage1()

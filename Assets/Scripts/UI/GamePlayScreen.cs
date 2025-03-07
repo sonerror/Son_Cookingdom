@@ -21,7 +21,7 @@ public class GamePlayScreen : MonoBehaviour
 
     private void Start()
     {
-        logo.gameObject.SetActive(false);
+        btnPlay.gameObject.SetActive(false);
     }
 
     public void gotoStore()
@@ -52,7 +52,7 @@ public class GamePlayScreen : MonoBehaviour
         if (isFirstClick && Input.GetMouseButtonDown(0))
         {
             isFirstClick = false;
-            logo.gameObject.SetActive(true);
+            btnPlay.gameObject.SetActive(true);
         }
 
         // if (widthTmp < 1080f)
@@ -67,32 +67,12 @@ public class GamePlayScreen : MonoBehaviour
 
     private void resizeUI()
     {
-        if (gameWidth > 1.2 * gameHeight)
-        {
-            btnPlayPos.Set(-540 - (gameWidth - 1080f) / 4, 0, 0);
-            logoPos.Set(540 + (gameWidth - 1080f) / 4, 0, 0);
+        btnPlayPos.Set(0, -gameHeight / 2, 0);
+        logoPos.Set(-gameWidth / 2, gameHeight / 2, 0);
+        btnHintPos.Set(gameWidth / 2, gameHeight / 2, 0);
 
-            btnPlay.localPosition = btnPlayPos;
-            logo.localPosition = logoPos;
-
-            btnPlay.localScale = scaleUp;
-            logo.localScale = scaleUp;
-
-            btnHintPos.Set(0, 100 - gameHeight / 2, 0);
-
-            btnHint.localPosition = btnHintPos;
-        }
-        else
-        {
-            btnPlayPos.Set(0, 110 - gameHeight / 2, 0);
-            logoPos.Set(350, 110 - gameHeight / 2, 0);
-            btnHintPos.Set(-350, 110 - gameHeight / 2, 0);
-
-            btnHint.localPosition = btnHintPos;
-            btnPlay.localPosition = btnPlayPos;
-            logo.localPosition = logoPos;
-            btnPlay.localScale = scaleDown;
-            logo.localScale = scaleDown;
-        }
+        btnPlay.localPosition = btnPlayPos;
+        logo.localPosition = logoPos;
+        btnHint.localPosition = btnHintPos;
     }
 }

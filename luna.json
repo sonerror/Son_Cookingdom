@@ -1,8 +1,8 @@
 {
     "version": "6.2.1",
     "projectId": "f42e7ff96e4545544bb6cd68f51ab634",
-    "applicationID": 26864,
-    "creativeName": "",
+    "applicationID": 27404,
+    "creativeName": "Cookingdom_v2",
     "pgServer": "EU",
     "window": {
         "‐‵": true
@@ -14908,7 +14908,7 @@
                     },
                     {
                         "name": "RemoveAllListeners",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "GetPersistentTarget",
@@ -29010,7 +29010,7 @@
                     },
                     {
                         "name": "PlayState9",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "PlayState10",
@@ -29022,7 +29022,7 @@
                     },
                     {
                         "name": "removePeel",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "AddPeel",
@@ -31042,7 +31042,7 @@
                     },
                     {
                         "name": "OnComplete",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "OnCanTouch",
@@ -31244,7 +31244,7 @@
                     },
                     {
                         "name": "OnGarbageThrowed",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "OnVegetablePrefareComplete",
@@ -31268,7 +31268,7 @@
                     },
                     {
                         "name": "OnCompleteStage1",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "inherits",
@@ -31540,7 +31540,7 @@
                     },
                     {
                         "name": "Stop",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "Stop$1",
@@ -31706,7 +31706,7 @@
                     },
                     {
                         "name": "CheckToTarget",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "ResetPosition",
@@ -31914,7 +31914,38 @@
                     "script": "",
                     "ext": ""
                 },
-                "overrides": []
+                "overrides": [
+                    {
+                        "channels": 1,
+                        "startTime": "00:00.000",
+                        "endTime": "00:00.000",
+                        "lengthInSeconds": 0.0,
+                        "bitrate": 128,
+                        "script": "",
+                        "ext": "",
+                        "name": "Assets/_GAME/Levels/LvMakeSushi/Sounds/BGM2.mp3"
+                    },
+                    {
+                        "channels": 1,
+                        "startTime": "00:01.593",
+                        "endTime": "00:30.000",
+                        "lengthInSeconds": 28.406999588012697,
+                        "bitrate": 128,
+                        "script": "",
+                        "ext": "",
+                        "name": "Assets/_GAME/Levels/LvMakeSushi/Sounds/water-boiling.mp3"
+                    },
+                    {
+                        "channels": 1,
+                        "startTime": "00:00.030",
+                        "endTime": "00:30.000",
+                        "lengthInSeconds": 29.969999313354493,
+                        "bitrate": 128,
+                        "script": "",
+                        "ext": "",
+                        "name": "Assets/Audios/small-water-flow-43845.mp3"
+                    }
+                ]
             },
             "font": {
                 "default": {
