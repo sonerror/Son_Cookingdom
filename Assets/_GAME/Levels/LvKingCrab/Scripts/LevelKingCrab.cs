@@ -63,21 +63,25 @@ namespace AnhPD.KingCrab
         public static int maxLayer = 30;
         public void OnCompleteCutCrab()
         {
+            StartCoroutine(IE_OnCompleteCutCrab());
+        }
+
+        IEnumerator IE_OnCompleteCutCrab()
+        {
             TutorialManager.Ins.MouseUpItem();
             state = 1;
             emoji.ShowPositive();
             scissors.OnComplete();
-
-            dish.MoveX(10f);
+            legs.MoveX(10f, 0.3f);
+            dish.MoveX(10f, 0.3f);
+            yield return Cache.GetWFS(0.5f);
             board.DOMove(new Vector2(0, -2.5f), 1f).SetDelay(.5f);
             board.DOScale(.9f, 1f).SetDelay(0.5f);
-
-            tool.MoveX(10f, 1f, false, 1f, () =>
-            { });
-
+            yield return Cache.GetWFS(0.5f);
+            tool.MoveX(10f, 0.3f, false, 1f);
             hammer.IsReady = true;
+            yield return Cache.GetWFS(0.5f);
             crabBody.transform.MoveX(-10f, 1, false, .5f);
-            legs.MoveX(10f);
         }
         public void OnCompleteCutLeg() // not use
         {

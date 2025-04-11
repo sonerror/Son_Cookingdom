@@ -12,7 +12,6 @@ namespace AnhPD
         {
             tfMove.gameObject.SetActive(true);
             tfMove.DOLocalMoveX(tfMove.localPosition.x + x, duration)
-                .SetEase(Ease.InOutBack)
                 .SetDelay(delay)
                 .OnComplete(() =>
                 {

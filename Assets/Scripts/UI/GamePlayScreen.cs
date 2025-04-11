@@ -61,7 +61,7 @@ public class GamePlayScreen : MonoBehaviour
         //     gameHeight = heightTmp;
         // }
 
-        Debug.Log("gameWidth: " + gameWidth + " gameHeight: " + gameHeight);
+        // Debug.Log("gameWidth: " + gameWidth + " gameHeight: " + gameHeight);
         resizeUI();
     }
 
