@@ -125,7 +125,7 @@ namespace AnhPD.MakeSushi
             emojiStage1.ShowPositive();
             stages[2].SetActive(true);
             await Task.Delay(500);
-            Camera.main.transform.DOMoveX(24.1f, 1f).OnComplete(() =>
+            Camera.main.transform.DOMoveX(33.94f, 1f).OnComplete(() =>
             {
                 stages[1].SetActive(false);
                 TutorialManager.Ins.PlayStateEndGame();
