@@ -7,6 +7,23 @@ using Luna.Unity;
 
 public class GameManager : Singleton<GameManager>
 {
+    public List<ShowItem> gameActiveState1 = new List<ShowItem>();
+
+    public List<ShowItem> gameActiveState2 = new List<ShowItem>();
+
+    public void ChangeState()
+    {
+        gameActiveState1.ForEach(item =>
+        {
+            item.MoveObjHide();
+        });
+        gameActiveState2.ForEach(item =>
+        {
+            item.gameObject.SetActive(true);
+            item.MoveObjShow();
+        });
+    }
+
     public void gotoStore()
     {
         Debug.Log("Goto Store");
@@ -29,5 +46,10 @@ public class GameManager : Singleton<GameManager>
     {
         Debug.Log("End Game");
         isEndGame = true;
+    }
+
+    public void PlaySoundWater()
+    {
+        SoundManager.Ins.PlayFxAfterTime(FxType.DropWater, 0.3f);
     }
 }

@@ -3,14 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EffectPool : GameUnit
+public class EffectPool : PoolMember
 {
     void OnEnable()
     {
         Invoke(nameof(DespawnEffect), 0.5f);
         try
         {
-            var fx = tf.GetComponent<ParticleSystem>();
+            var fx = Tf.GetComponent<ParticleSystem>();
             fx.Play();
         }
         catch (Exception e)
@@ -20,6 +20,6 @@ public class EffectPool : GameUnit
 
     void DespawnEffect()
     {
-        PoolManager.Ins.Despawn( this);
+        PoolManager.Ins.Despawn(this);
     }
 }

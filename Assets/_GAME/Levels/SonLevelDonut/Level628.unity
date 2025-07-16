@@ -254,6 +254,7 @@ GameObject:
   - component: {fileID: 62190372}
   - component: {fileID: 62190373}
   - component: {fileID: 62190374}
+  - component: {fileID: 62190375}
   m_Layer: 0
   m_Name: thia_danh_trung_quay
   m_TagString: Untagged
@@ -435,12 +436,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  takeIngredientSound:
-    clip: {fileID: 0}
-    volume: 0.5
-  giveIngredientSound:
-    clip: {fileID: 8300000, guid: 45275d9cf79171c4e9521fd5ff251dd7, type: 3}
-    volume: 1
+  takeIngredientSound: 20
+  giveIngredientSound: 7
   ingredient: 0
   imgNilong: {fileID: 0}
 --- !u!114 &62190373
@@ -481,6 +478,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.4899998, y: 6.649999, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &62190375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 62190365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea296b6f4cf593942858a14e24ae34de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distance: 15
 --- !u!1 &71168661
 GameObject:
   m_ObjectHideFlags: 0
@@ -1073,7 +1083,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 886780809}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &222904076
 GameObject:
@@ -1605,6 +1615,7 @@ GameObject:
   - component: {fileID: 357371006}
   - component: {fileID: 357371007}
   - component: {fileID: 357371008}
+  - component: {fileID: 357371009}
   m_Layer: 0
   m_Name: coc
   m_TagString: Untagged
@@ -1805,6 +1816,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1910561422}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: PlaySoundWater
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 357371007}
         m_TargetAssemblyTypeName: HoangHH.PlayAnimationManually, Assembly-CSharp
         m_MethodName: PlayAnimation
@@ -1817,12 +1840,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  takeIngredientSound:
-    clip: {fileID: 0}
-    volume: 0
-  giveIngredientSound:
-    clip: {fileID: 0}
-    volume: 0
+  takeIngredientSound: 20
+  giveIngredientSound: 20
   ingredient: 0
   imgNilong: {fileID: 0}
 --- !u!114 &357371006
@@ -1879,6 +1898,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 3.92, y: 6.21, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &357371009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 357370996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea296b6f4cf593942858a14e24ae34de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distance: 15
 --- !u!1 &405124044
 GameObject:
   m_ObjectHideFlags: 0
@@ -2141,12 +2173,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  takeIngredientSound:
-    clip: {fileID: 0}
-    volume: 0
-  giveIngredientSound:
-    clip: {fileID: 0}
-    volume: 0
+  takeIngredientSound: 20
+  giveIngredientSound: 20
   ingredient: 0
   imgNilong: {fileID: 0}
 --- !u!212 &412790594
@@ -3147,7 +3175,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 62063676}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -118}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -121.74}
 --- !u!212 &612743866
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3921,6 +3949,7 @@ GameObject:
   - component: {fileID: 838454905}
   - component: {fileID: 838454904}
   - component: {fileID: 838454908}
+  - component: {fileID: 838454909}
   m_Layer: 11
   m_Name: Salt_bowl
   m_TagString: Ingredient
@@ -3937,7 +3966,7 @@ Transform:
   m_GameObject: {fileID: 838454902}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.6399999, y: 0, z: 0.1}
+  m_LocalPosition: {x: 2.91, y: 0.25, z: 0.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -4080,6 +4109,19 @@ MonoBehaviour:
     foodSprite: {fileID: 153116388}
     scale: []
   disableContactWhenTriggered: 1
+--- !u!114 &838454909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 838454902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea296b6f4cf593942858a14e24ae34de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distance: 15
 --- !u!1 &870484120
 GameObject:
   m_ObjectHideFlags: 0
@@ -4224,7 +4266,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 209074314}
   - {fileID: 970581302}
   - {fileID: 1890093581}
   - {fileID: 530282499}
@@ -5043,6 +5084,7 @@ GameObject:
   - component: {fileID: 1339947680}
   - component: {fileID: 1339947686}
   - component: {fileID: 1339947687}
+  - component: {fileID: 1339947688}
   m_Layer: 0
   m_Name: Mix_Yeast_bowl_Drag
   m_TagString: Untagged
@@ -5059,7 +5101,7 @@ Transform:
   m_GameObject: {fileID: 1339947678}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.8, y: 0, z: 0}
+  m_LocalPosition: {x: -4.9900002, y: 0.25, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5175,12 +5217,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  takeIngredientSound:
-    clip: {fileID: 0}
-    volume: 0
-  giveIngredientSound:
-    clip: {fileID: 0}
-    volume: 0
+  takeIngredientSound: 20
+  giveIngredientSound: 20
   ingredient: 0
   imgNilong: {fileID: 0}
 --- !u!111 &1339947683
@@ -5289,6 +5327,19 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 2.1964722
   m_Center: {x: 0, y: 0.6635275, z: 0}
+--- !u!114 &1339947688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1339947678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea296b6f4cf593942858a14e24ae34de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distance: 15
 --- !u!1 &1344471371
 GameObject:
   m_ObjectHideFlags: 0
@@ -5505,6 +5556,7 @@ GameObject:
   - component: {fileID: 1367961020}
   - component: {fileID: 1367961019}
   - component: {fileID: 1367961023}
+  - component: {fileID: 1367961024}
   m_Layer: 11
   m_Name: Sugar_bowl
   m_TagString: Ingredient
@@ -5521,7 +5573,7 @@ Transform:
   m_GameObject: {fileID: 1367961017}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.8600001, y: 0, z: 0.1}
+  m_LocalPosition: {x: -3, y: 0.61, z: 0.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -5664,6 +5716,19 @@ MonoBehaviour:
     foodSprite: {fileID: 1752567974}
     scale: []
   disableContactWhenTriggered: 1
+--- !u!114 &1367961024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1367961017}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea296b6f4cf593942858a14e24ae34de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distance: 15
 --- !u!1 &1370299057
 GameObject:
   m_ObjectHideFlags: 0
@@ -5677,6 +5742,7 @@ GameObject:
   - component: {fileID: 1370299063}
   - component: {fileID: 1370299064}
   - component: {fileID: 1370299065}
+  - component: {fileID: 1370299066}
   m_Layer: 0
   m_Name: thia_quayend
   m_TagString: Untagged
@@ -5693,7 +5759,7 @@ Transform:
   m_GameObject: {fileID: 1370299057}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 4.66, y: 5.63, z: 0}
+  m_LocalPosition: {x: -3.84, y: 4.83, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -5860,12 +5926,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  takeIngredientSound:
-    clip: {fileID: 8300000, guid: 257a3d83f95361e4e812e3d9c507adc8, type: 3}
-    volume: 0.5
-  giveIngredientSound:
-    clip: {fileID: 8300000, guid: 45275d9cf79171c4e9521fd5ff251dd7, type: 3}
-    volume: 1
+  takeIngredientSound: 8
+  giveIngredientSound: 7
   ingredient: 0
   imgNilong: {fileID: 0}
 --- !u!114 &1370299064
@@ -5906,6 +5968,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.7300007, y: 8.490002, z: 0.2}
   m_Center: {x: -0.0000009536743, y: 0, z: 0}
+--- !u!114 &1370299066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1370299057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea296b6f4cf593942858a14e24ae34de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distance: 15
 --- !u!1 &1372003921
 GameObject:
   m_ObjectHideFlags: 0
@@ -6313,11 +6388,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7594258068915185186, guid: 71b9f252e6c42a3459e77e45be76a0a8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.08
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7594258068915185186, guid: 71b9f252e6c42a3459e77e45be76a0a8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -6.4
+      value: -0.93
       objectReference: {fileID: 0}
     - target: {fileID: 7594258068915185186, guid: 71b9f252e6c42a3459e77e45be76a0a8, type: 3}
       propertyPath: m_LocalPosition.z
@@ -6329,15 +6404,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7594258068915185186, guid: 71b9f252e6c42a3459e77e45be76a0a8, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7594258068915185186, guid: 71b9f252e6c42a3459e77e45be76a0a8, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7594258068915185186, guid: 71b9f252e6c42a3459e77e45be76a0a8, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7594258068915185186, guid: 71b9f252e6c42a3459e77e45be76a0a8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -6381,6 +6456,7 @@ GameObject:
   - component: {fileID: 1522984620}
   - component: {fileID: 1522984621}
   - component: {fileID: 1522984622}
+  - component: {fileID: 1522984623}
   m_Layer: 0
   m_Name: thia_muc
   m_TagString: Untagged
@@ -6397,7 +6473,7 @@ Transform:
   m_GameObject: {fileID: 1522984613}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.92, y: 2.93, z: 0}
+  m_LocalPosition: {x: 3.71, y: 4.41, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -6645,12 +6721,8 @@ MonoBehaviour:
   onIngredientChanged:
     m_PersistentCalls:
       m_Calls: []
-  takeIngredientSound:
-    clip: {fileID: 8300000, guid: 47f340532c627d646aedcec5dfcecb6f, type: 3}
-    volume: 0.5
-  giveIngredientSound:
-    clip: {fileID: 8300000, guid: 4ebde4a0489bf964fb551fe470eb91e8, type: 3}
-    volume: 0.4
+  takeIngredientSound: 6
+  giveIngredientSound: 5
   ingredient: 0
   imgNilong: {fileID: 0}
 --- !u!114 &1522984621
@@ -6691,6 +6763,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 5.12, y: 1.28, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1522984623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1522984613}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea296b6f4cf593942858a14e24ae34de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distance: 1
 --- !u!1 &1544372801
 GameObject:
   m_ObjectHideFlags: 0
@@ -6704,6 +6789,7 @@ GameObject:
   - component: {fileID: 1544372804}
   - component: {fileID: 1544372803}
   - component: {fileID: 1544372807}
+  - component: {fileID: 1544372808}
   m_Layer: 11
   m_Name: Yeast_bowl
   m_TagString: Ingredient
@@ -6720,7 +6806,7 @@ Transform:
   m_GameObject: {fileID: 1544372801}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.36, y: 0, z: 0.1}
+  m_LocalPosition: {x: 3, y: 0.6099992, z: 0.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -6863,6 +6949,19 @@ MonoBehaviour:
     foodSprite: {fileID: 1042357173}
     scale: []
   disableContactWhenTriggered: 1
+--- !u!114 &1544372808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1544372801}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea296b6f4cf593942858a14e24ae34de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distance: 15
 --- !u!1 &1630833773
 GameObject:
   m_ObjectHideFlags: 0
@@ -7518,12 +7617,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  takeIngredientSound:
-    clip: {fileID: 0}
-    volume: 0
-  giveIngredientSound:
-    clip: {fileID: 0}
-    volume: 0
+  takeIngredientSound: 20
+  giveIngredientSound: 20
   ingredient: 0
   imgNilong: {fileID: 0}
 --- !u!212 &1717605956
@@ -8163,6 +8258,193 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1882534373
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1882534374}
+  - component: {fileID: 1882534375}
+  m_Layer: 0
+  m_Name: SoundManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1882534374
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1882534373}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -6.199316, y: -1.6120112, z: -0.13500516}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1888016939}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1882534375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1882534373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39097b592ec41ef49bbc5cc59cb5a07a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioClips:
+  - {fileID: 8300000, guid: e0d5ab24d2307724b93036c0780588b4, type: 3}
+  - {fileID: 8300000, guid: 7157570e71194d94daec16ccb6199ebc, type: 3}
+  - {fileID: 8300000, guid: c0b7be0eb9e710e409fdedb72ad80714, type: 3}
+  - {fileID: 8300000, guid: b075ad106c3e5a5478b00d48e0f63180, type: 3}
+  - {fileID: 8300000, guid: 0d57a302c22ac7c4dae24fc962e3a450, type: 3}
+  - {fileID: 8300000, guid: 9ab4174b3b28ae64f8f78eede824d166, type: 3}
+  - {fileID: 8300000, guid: 0d57a302c22ac7c4dae24fc962e3a450, type: 3}
+  - {fileID: 8300000, guid: d85d7450c22ded145a805613081cf7a3, type: 3}
+  - {fileID: 8300000, guid: 3c17aa33ae94eca428cf3dd533ce5850, type: 3}
+  - {fileID: 8300000, guid: aa3f2b415114fa34082d214128d5a21e, type: 3}
+  - {fileID: 8300000, guid: 3fde14210fe9f9d42ac0cd87e992605a, type: 3}
+  - {fileID: 8300000, guid: 7b453f265e4fdf94b90981ebb328d727, type: 3}
+  bgm: {fileID: 1888016940}
+--- !u!1 &1888016938
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1888016939}
+  - component: {fileID: 1888016940}
+  m_Layer: 0
+  m_Name: Bgm
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1888016939
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1888016938}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1882534374}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &1888016940
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1888016938}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 94d323598ace366429931479bd3f0c60, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1890093578
 GameObject:
   m_ObjectHideFlags: 0
@@ -8335,7 +8617,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tfRoot: {fileID: 157503142}
   mixerFlour: {fileID: 1968295486}
-  rotateSfx: {fileID: 8300000, guid: 1f5f1415e1d4c1d43b3ab8458557ff18, type: 3}
+  rotateSfx: 9
   phase1: {fileID: 1677818996}
 --- !u!212 &1892631230
 SpriteRenderer:
@@ -8587,6 +8869,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a965e1633b0a58b41b87b25b363279f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameActiveState1:
+  - {fileID: 1544372808}
+  - {fileID: 1367961024}
+  - {fileID: 62190375}
+  - {fileID: 357371009}
+  gameActiveState2:
+  - {fileID: 1339947688}
+  - {fileID: 838454909}
+  - {fileID: 1370299066}
   isEndGame: 0
 --- !u!114 &1910561423
 MonoBehaviour:
@@ -8602,7 +8893,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   handCtrl: {fileID: 1133082802}
   TimeHint: 5
-  timeEndGame: 30
+  timeEndGame: 45
 --- !u!1 &1916603930
 GameObject:
   m_ObjectHideFlags: 0
@@ -9243,6 +9534,8 @@ MonoBehaviour:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 209074314}
+  - {fileID: 1882534374}
   - {fileID: 886780809}
   - {fileID: 1910561421}
   - {fileID: 1462995877}

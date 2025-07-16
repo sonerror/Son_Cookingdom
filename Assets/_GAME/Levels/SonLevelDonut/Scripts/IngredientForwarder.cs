@@ -14,8 +14,8 @@ namespace sonnv
         [SerializeField] private List<SpriteForwarderData> ingredientSpriteDataList;
         [SerializeField] private IngredientType ingredientType = IngredientType.None;
         public UnityEvent onIngredientChanged;
-        [SerializeField] private AudioData takeIngredientSound;
-        [SerializeField] private AudioData giveIngredientSound;
+        [SerializeField] private FxType takeIngredientSound = FxType.None;
+        [SerializeField] private FxType giveIngredientSound = FxType.None;
 
         private SpriteForwarderData _currentSpriteData;
         public Collider2D ContactCollider => contactCollider;
@@ -37,8 +37,7 @@ namespace sonnv
             {
                 foodSprite.enabled = false;
                 onIngredientChanged?.Invoke();
-                //.PlaySFX(giveIngredientSound.clip, giveIngredientSound.volume);
-                // MMVibrationManager.Haptic(HapticTypes.LightImpact);
+                SoundManager.Ins.PlayFx(giveIngredientSound);
                 return;
             }
             _currentSpriteData = GetFoodSpriteData(iType);
@@ -51,8 +50,7 @@ namespace sonnv
             if (invokeOnChange)
             {
                 onIngredientChanged?.Invoke();
-                //.PlaySFX(takeIngredientSound.clip, takeIngredientSound.volume);
-                // MMVibrationManager.Haptic(HapticTypes.LightImpact);
+                SoundManager.Ins.PlayFx(takeIngredientSound);
             }
         }
 

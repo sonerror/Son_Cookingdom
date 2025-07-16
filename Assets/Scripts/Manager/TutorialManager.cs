@@ -1,6 +1,7 @@
 
 using System.Collections.Generic;
 using System.Linq;
+using sonnv;
 using UnityEngine;
 
 public class TutorialManager : Singleton<TutorialManager>
@@ -43,9 +44,41 @@ public class TutorialManager : Singleton<TutorialManager>
         timeCountHint -= Time.deltaTime;
         if (timeCountHint <= 0)
         {
-            // PlayState();
+            PlayTutState();
         }
     }
+
+    private void PlayTutState()
+    {
+        var currstate = Level628.Ins.CurStep;
+
+        switch (currstate)
+        {
+            case 0:
+                PlayTutState0();
+                break;
+            case 1:
+                PlayTutState1();
+                break;
+            case 2:
+                PlayTutState2();
+                break;
+            case 3:
+                PlayTutState3();
+                break;
+            case 4:
+                PlayTutState4();
+                break;
+            default:
+                break;
+        }
+    }
+
+    private void PlayTutState0() { }
+    private void PlayTutState1() { }
+    private void PlayTutState2() { }
+    private void PlayTutState3() { }
+    private void PlayTutState4() { }
 
     public void ResetTimeHint()
     {

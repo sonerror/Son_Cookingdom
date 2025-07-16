@@ -1,5 +1,5 @@
 ﻿using DG.Tweening;
-using System.Collections;
+using System;
 using UnityEngine;
 
 namespace Satisgame
@@ -16,8 +16,7 @@ namespace Satisgame
         public float durationHold = 2f;
         public float durationHide = 0.25f;
         private Sequence _sequenceShowEmoji;
-        public FxType sfxPositive = FxType.SfxEmoijPositive;
-        public FxType sfxNegative = FxType.SfxEmoijNegative;
+
 
         private Vector3 _originScale;
 
@@ -47,15 +46,9 @@ namespace Satisgame
             if (delay > 0) _sequenceShowEmoji.AppendInterval(delay);
             _sequenceShowEmoji
                 .Append(scaleTransform.DOScale(_originScale, durationShow).SetEase(Ease.OutBack))
-                .AppendCallback(PlaySfx)
                 .AppendInterval(durationHold)
                 .Append(scaleTransform.DOScale(Vector3.zero, durationHide).SetEase(Ease.InBack))
                 .Play();
-
-            void PlaySfx()
-            {
-                SoundManager.Ins.PlayFx(sfxPositive);
-            }
         }
 
         public void ShowNegative(float delay = 0f)
@@ -68,14 +61,50 @@ namespace Satisgame
             if (delay > 0) _sequenceShowEmoji.AppendInterval(delay);
             _sequenceShowEmoji
                 .Append(scaleTransform.DOScale(_originScale, durationShow).SetEase(Ease.OutBack))
-                .AppendCallback(PlaySfx)
+                .AppendInterval(durationHold)
+                .Append(scaleTransform.DOScale(Vector3.zero, durationHide).SetEase(Ease.InBack))
+                .Play();
+        }
+
+        public void ShowPositiveWithSound(float delay = 0f)
+        {
+            if (_sequenceShowEmoji != null && _sequenceShowEmoji.IsActive()) _sequenceShowEmoji.Complete();
+            spriteAnimator1.gameObject.SetActive(false);
+            spriteAnimator.gameObject.SetActive(true);
+            spriteAnimator.Play(AnimPositive);
+            _sequenceShowEmoji = DOTween.Sequence();
+            if (delay > 0) _sequenceShowEmoji.AppendInterval(delay);
+            _sequenceShowEmoji
+                .Append(scaleTransform.DOScale(_originScale, durationShow).SetEase(Ease.OutBack))
+                .AppendCallback(PlaySound)
+                .AppendInterval(durationHold)
+                .Append(scaleTransform.DOScale(Vector3.zero, durationHide).SetEase(Ease.InBack))
+                .Play();
+            void PlaySound()
+            {
+                SoundManager.Ins.PlayFx(FxType.EmojiPositive);
+            }
+
+        }
+
+        public void ShowNegativeWithSound(float delay = 0f)
+        {
+            if (_sequenceShowEmoji != null && _sequenceShowEmoji.IsActive()) _sequenceShowEmoji.Complete();
+            spriteAnimator.gameObject.SetActive(false);
+            spriteAnimator1.gameObject.SetActive(true);
+            spriteAnimator1.Play(AnimNegative);
+            _sequenceShowEmoji = DOTween.Sequence();
+            if (delay > 0) _sequenceShowEmoji.AppendInterval(delay);
+            _sequenceShowEmoji
+                .Append(scaleTransform.DOScale(_originScale, durationShow).SetEase(Ease.OutBack))
+                .AppendCallback(PlaySound)
                 .AppendInterval(durationHold)
                 .Append(scaleTransform.DOScale(Vector3.zero, durationHide).SetEase(Ease.InBack))
                 .Play();
 
-            void PlaySfx()
+            void PlaySound()
             {
-                SoundManager.Ins.PlayFx(sfxNegative);
+                SoundManager.Ins.PlayFx(FxType.EmojiNegative);
             }
         }
     }

@@ -26,34 +26,6 @@ namespace sonnv
         [SerializeField] private UnityEvent onEndGame;
         [SerializeField] private float delayTimeEndGame = 5f;
 
-        protected void SetNewEmoji(EmojiControl newEmoji)
-        {
-            emoji = newEmoji;
-        }
-
-        protected void SetEmojiContainer(Transform container, float delay = 1f) // delay for handle the case method is called when emoji is showing
-        {
-            DOVirtual.DelayedCall(delay, () =>
-            {
-                Transform emoTf = emoji.transform;
-                emoTf.SetParent(container);
-                emoTf.localPosition = Vector3.zero;
-                emoTf.localRotation = Quaternion.identity;
-            });
-        }
-
-        protected List<Sprite> hintList;
-
-        private void SetUpHintList()
-        {
-            // hintList = new List<Sprite>();
-            // List<List<Sprite>> hintData = GetHintGroups();
-            // for (int i = 0; i < hintData.Count; i++)
-            // {
-            //     hintList.AddRange(hintData[i]);
-            // }
-        }
-
         #endregion
 
         #region Control Step
@@ -67,11 +39,6 @@ namespace sonnv
             InitStepActions();
         }
 
-        protected override void Start()
-        {
-            base.Start();
-            SetUpHintList();
-        }
 
         protected virtual void InitStepActions() { }
 
@@ -88,7 +55,6 @@ namespace sonnv
         public virtual void OnWrongCurrentStep()
         {
             emoji.ShowNegative();
-            // LoseFullHeart();
         }
 
         private bool IsCurrentStepDone()
@@ -96,11 +62,20 @@ namespace sonnv
             return _doneSteps.Contains(currentStep);
         }
 
-        protected virtual void DoneStep(bool showEmoji = true)
+        protected virtual void DoneStep(bool showEmoji = true, bool playSound = false)
         {
             _doneSteps.Add(currentStep);
-            // MMVibrationManager.Haptic(HapticTypes.SoftImpact);
-            if (showEmoji) emoji.ShowPositive();
+            if (showEmoji)
+            {
+                if (playSound)
+                {
+                    emoji.ShowPositiveWithSound();
+                }
+                else
+                {
+                    emoji.ShowPositive();
+                }
+            }
             // #if UNITY_EDITOR
             //             Debug.Log("Done Step: " + currentStep);
             // #endif

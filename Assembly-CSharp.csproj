@@ -130,6 +130,7 @@
     <Compile Include="Assets\_GAME\Levels\SonLevelDonut\Scripts\HandCatSteal.cs" />
     <Compile Include="Assets\_GAME\Core\Scripts\SonNv\ItemRotateAround.cs" />
     <Compile Include="Assets\Scripts\Manager\Singleton.cs" />
+    <Compile Include="Assets\Scripts\Pool\PoolMember.cs" />
     <Compile Include="Assets\Scripts\Pool\GameUnit.cs" />
     <Compile Include="Assets\Scripts\UI\GamePlayScreen.cs" />
     <Compile Include="Assets\DOTween\Modules\DOTweenModuleUtils.cs" />

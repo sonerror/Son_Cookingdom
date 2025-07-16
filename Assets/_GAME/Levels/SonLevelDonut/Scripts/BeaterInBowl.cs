@@ -8,7 +8,7 @@ namespace sonnv
         [SerializeField] Transform tfRoot;
         [SerializeField] SpriteRenderer mixerFlour;
 
-        [SerializeField] private AudioClip rotateSfx;
+        [SerializeField] private FxType rotateSfx = FxType.None;
         [SerializeField] private Phase1Donut phase1;
         Vector2 mouseStarPos;
         int count = 0;
@@ -31,7 +31,7 @@ namespace sonnv
                 if (deltaAngle >= 360f)
                 {
                     count += 2;
-                    //.PlaySFX(rotateSfx);
+                    SoundManager.Ins.PlayFx(rotateSfx);
                     deltaAngle %= 360f;
                     if (count >= 10)
                     {

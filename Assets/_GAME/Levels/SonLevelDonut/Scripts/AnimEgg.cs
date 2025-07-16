@@ -9,11 +9,11 @@ namespace sonnv
         [SerializeField] private Transform tfBowl;
         public void SfxCrack()
         {
-
+            SoundManager.Ins.PlayFx(FxType.EggCrack);
         }
         public void SfxKeng()
         {
-
+            SoundManager.Ins.PlayFx(FxType.EggKeng);
         }
         public void ShakeBowl()
         {

@@ -1,12 +1,55 @@
+using System;
 using System.Collections;
 using DG.Tweening;
 using UnityEngine;
 
-public class HandCtrl : MonoBehaviour
+public class HandCtrl : GameUnit
 {
     public Animator animator;
     private Vector3 pos1;
     private Vector3 pos2;
+
+    private Vector3 localPosBodyHand;
+
+    void Awake()
+    {
+        localPosBodyHand = animator.transform.localPosition;
+    }
+    private float distance = 1f;
+    private Vector3[] paths = new Vector3[8];
+    public void ShowHandArrow(Vector3 posRot, float fromAngle, float dist)
+    {
+        distance = dist;
+
+        for (int i = 0; i < paths.Length; i++)
+        {
+            paths[i] = new Vector3(
+                Mathf.Cos(fromAngle + (i + 1) * Mathf.PI / 4) * distance + posRot.x,
+                Mathf.Sin(fromAngle + (i + 1) * Mathf.PI / 4) * distance + posRot.y,
+                posRot.z
+            );
+        }
+        Tf.position = new Vector3(Mathf.Cos(fromAngle) * distance + posRot.x,
+         Mathf.Sin(fromAngle) * distance + posRot.y, posRot.z);
+        ShowHandArrowLoop();
+    }
+
+    private void ShowHandArrowLoop()
+    {
+        animator.SetTrigger("HandDown");
+        transform.DOPath(paths, 1.5f).SetLoops(2).SetDelay(0.75f).onComplete = () =>
+        {
+            animator.SetTrigger("HandUp");
+        };
+        StartCoroutine(IEShowHandRotate());
+    }
+
+    IEnumerator IEShowHandRotate()
+    {
+        yield return Cache.GetWFS(6f);
+        if (animator.gameObject.activeSelf)
+            ShowHandArrowLoop();
+    }
 
     public void ShowHandState1(Vector3 pos)
     {

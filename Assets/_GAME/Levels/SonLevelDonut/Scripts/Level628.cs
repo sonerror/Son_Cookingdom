@@ -72,21 +72,15 @@ namespace sonnv
                 duration
             );
         }
-        public void OnEndStep()
+        public void OnEndStep(bool playSound = false)
         {
-            DoneStep();
+            DoneStep(true, playSound);
             TryNextStep();
         }
         public void FinishStep()
         {
             DoneStep();
         }
-
-        private void PunkScale(Transform tf)
-        {
-            tf.DOPunchScale(Vector3.up * 0.05f, 0.15f);
-        }
-
 
         public void SmoothZoomBy(float deltaSize, float zoomDuration)
         {
@@ -115,28 +109,9 @@ namespace sonnv
         }
         public void PlayPickSfx()
         {
-            if (pickSfx == null) return;
-            PlaySFX(pickSfx, 0.8f);
+            SoundManager.Ins.PlayFx(FxType.Click);
         }
-        public static void LoopSFX(AudioClip clip, float volume = 1f)
-        {
-            if (Ins != null && clip != null)
-            {
-                Ins.SfxSource.loop = true;
-                Ins.SfxSource.clip = clip;
-                Ins.SfxSource.volume = volume;
-                Ins.SfxSource.Play();
-            }
-        }
-        public static void StopSFX()
-        {
-            if (Ins != null)
-            {
-                Debug.Log("Stop");
-                Ins.SfxSource.Stop();
-                Ins.SfxSource.loop = false;
-            }
-        }
+
         protected override void InitStepActions()
         {
             //Phase 1

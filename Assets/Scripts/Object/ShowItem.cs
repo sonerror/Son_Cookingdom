@@ -1,21 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 
 public class ShowItem : GameUnit
 {
-    [SerializeField] private bool fromRight = false;
     [SerializeField] private float distance = 1f;
 
-    void Start()
+    public void MoveObjShow()
     {
-        MoveObj();
+        Vector3 targetPosition = Tf.position;
+        Tf.position = Tf.position + Vector3.right * distance;
+        Tf.DOMove(targetPosition, 1f);
     }
 
-    private void MoveObj()
+    public void MoveObjHide()
     {
-        Vector3 targetPosition = transform.position;
-        transform.position = fromRight ? tf.position + Vector3.right * distance : tf.position + Vector3.right * distance;
-        transform.localPosition = targetPosition;
+        var pos = Tf.position + Vector3.left * distance;
+        Tf.DOMove(pos, 1f).OnComplete(() =>
+        {
+            Tf.gameObject.SetActive(false);
+        });
     }
 }

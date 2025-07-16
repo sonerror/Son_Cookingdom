@@ -216,7 +216,9 @@ namespace sonnv
             rbFlourBowl = newRb;
             mixFlourBowl.Collider.enabled = true;
             isRotateBeater = false;
-            OnEndStep();
+            OnEndStep(true);
+
+            GameManager.Ins.ChangeState();
         }
         //Step 4 them bot
         [SerializeField] private IngredientForwarder flourBowl;
