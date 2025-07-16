@@ -153,6 +153,7 @@ namespace sonnv
                     StartRelease();
                 }
             }
+            TutorialManager.Ins.MouseUpItem();
         }
 
         private void StartRelease()

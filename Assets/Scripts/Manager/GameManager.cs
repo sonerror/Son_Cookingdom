@@ -13,6 +13,13 @@ public class GameManager : Singleton<GameManager>
 
     public void ChangeState()
     {
+
+        StartCoroutine(IE_ChangeState());
+    }
+
+    private IEnumerator IE_ChangeState()
+    {
+        yield return new WaitForSeconds(0.5f);
         gameActiveState1.ForEach(item =>
         {
             item.MoveObjHide();

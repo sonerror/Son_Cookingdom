@@ -15,7 +15,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3674544526778798348
 RectTransform:
   m_ObjectHideFlags: 0
@@ -89,9 +89,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LimitX: 0
   LimitY: 0
-  btnPlay: {fileID: 1348876748209178117}
-  btnHint: {fileID: 3143079969240331834}
-  logo: {fileID: 3674544526778798348}
+  btnPlay: {fileID: 439523987212490221}
 --- !u!1 &4105468248201460119
 GameObject:
   m_ObjectHideFlags: 0

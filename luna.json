@@ -1,8 +1,8 @@
 {
     "version": "6.2.1",
     "projectId": "f42e7ff96e4545544bb6cd68f51ab634",
-    "applicationID": 29728,
-    "creativeName": "Cookingdom_v2",
+    "applicationID": 27404,
+    "creativeName": "Cookingdom_v3",
     "pgServer": "EU",
     "window": {
         "‐‵": true
@@ -2842,10 +2842,6 @@
             },
             {
                 "name": "LunaUnity.Utils.ArrayUtils",
-                "excluded": true
-            },
-            {
-                "name": "LunaUnity.Utils.PrefabUtil",
                 "excluded": true
             },
             {
@@ -7721,10 +7717,6 @@
                 "excluded": true
             },
             {
-                "name": "DG.Tweening.Plugins.Core.PathCore.ControlPoint",
-                "excluded": true
-            },
-            {
                 "name": "DG.Tweening.Plugins.StringPluginExtensions",
                 "excluded": true
             },
@@ -7737,10 +7729,6 @@
                 "excluded": true
             },
             {
-                "name": "DG.Tweening.Plugins.Core.PathCore.CatmullRomDecoder",
-                "excluded": true
-            },
-            {
                 "name": "DG.Tweening.Plugins.Core.PathCore.CubicBezierDecoder",
                 "excluded": true
             },
@@ -7750,10 +7738,6 @@
             },
             {
                 "name": "DG.Tweening.Plugins.CirclePlugin",
-                "excluded": true
-            },
-            {
-                "name": "DG.Tweening.Plugins.PathPlugin",
                 "excluded": true
             },
             {
@@ -7870,19 +7854,19 @@
             },
             {
                 "name": "DG.Tweening.PathMode",
-                "excluded": true
+                "excluded": false
             },
             {
                 "name": "DG.Tweening.PathType",
-                "excluded": true
+                "excluded": false
             },
             {
                 "name": "DG.Tweening.Plugins.Core.PathCore.ABSPathDecoder",
-                "excluded": true
+                "excluded": false
             },
             {
                 "name": "DG.Tweening.Plugins.Options.OrientType",
-                "excluded": true
+                "excluded": false
             },
             {
                 "name": "DG.Tweening.ScrambleMode",
@@ -8357,10 +8341,6 @@
                 "excluded": true
             },
             {
-                "name": "GameUnit",
-                "excluded": true
-            },
-            {
                 "name": "IAmAnEmptyScriptJustToMakeCodelessProjectsCompileProperty",
                 "excluded": true
             },
@@ -8422,7 +8402,7 @@
             },
             {
                 "name": "UIID",
-                "excluded": true
+                "excluded": false
             },
             {
                 "name": "Spine.Unity.IHasSkeletonDataAsset",
@@ -8562,6 +8542,10 @@
             },
             {
                 "name": "sonnv.ToppingForwarder",
+                "excluded": true
+            },
+            {
+                "name": "PoolMember",
                 "excluded": true
             }
         ],
@@ -17992,7 +17976,7 @@
                     },
                     {
                         "name": "Element#get",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "anchorMax#get",
@@ -18048,7 +18032,7 @@
                     },
                     {
                         "name": "sizeDelta#set",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "rect#get",
@@ -19644,15 +19628,15 @@
                     },
                     {
                         "name": "minInputWaypoints#get",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "init",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "$ctor1",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "ctor",
@@ -19660,31 +19644,31 @@
                     },
                     {
                         "name": "AssignWaypoints",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "AssignDecoder",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "FinalizePath",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "GetPoint",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "ConvertToConstantPathPerc",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "GetWaypointIndexFromPerc",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "Destroy",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "CloneIncremental",
@@ -19792,19 +19776,19 @@
                 "instanceMethods": [
                     {
                         "name": "getDefaultValue",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "init",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "ctor",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "Reset",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "getHashCode",
@@ -19816,7 +19800,7 @@
                     },
                     {
                         "name": "$clone",
-                        "excluded": true
+                        "excluded": false
                     }
                 ]
             },
@@ -20973,6 +20957,14 @@
                     {
                         "name": "showEndGame",
                         "excluded": false
+                    },
+                    {
+                        "name": "ChangeState",
+                        "excluded": false
+                    },
+                    {
+                        "name": "PlaySoundWater",
+                        "excluded": false
                     }
                 ]
             },
@@ -21044,11 +21036,11 @@
                     },
                     {
                         "name": "IE_PlayFxAfterTime",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "PlayFxAfterTime",
-                        "excluded": true
+                        "excluded": false
                     }
                 ]
             },
@@ -21124,6 +21116,50 @@
                 "instanceMethods": [
                     {
                         "name": "inherits",
+                        "excluded": false
+                    },
+                    {
+                        "name": "Tf#get",
+                        "excluded": true
+                    },
+                    {
+                        "name": "GameSize#get",
+                        "excluded": true
+                    },
+                    {
+                        "name": "init",
+                        "excluded": false
+                    },
+                    {
+                        "name": "Start",
+                        "excluded": false
+                    },
+                    {
+                        "name": "IsOpenedUI",
+                        "excluded": true
+                    },
+                    {
+                        "name": "GetUI",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OpenUI",
+                        "excluded": false
+                    },
+                    {
+                        "name": "IsLoaded",
+                        "excluded": false
+                    },
+                    {
+                        "name": "CloseUI",
+                        "excluded": true
+                    },
+                    {
+                        "name": "FixedUpdate",
+                        "excluded": false
+                    },
+                    {
+                        "name": "resizeAllUI",
                         "excluded": false
                     }
                 ]
@@ -24943,6 +24979,14 @@
                     {
                         "name": "HideEmoji",
                         "excluded": true
+                    },
+                    {
+                        "name": "ShowPositiveWithSound",
+                        "excluded": false
+                    },
+                    {
+                        "name": "ShowNegativeWithSound",
+                        "excluded": true
                     }
                 ]
             },
@@ -26368,7 +26412,7 @@
                     },
                     {
                         "name": "Vector3AreApproximatelyEqual",
-                        "excluded": true
+                        "excluded": false
                     }
                 ]
             },
@@ -26766,7 +26810,7 @@
                     },
                     {
                         "name": "To",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "To$15",
@@ -26810,7 +26854,7 @@
                     },
                     {
                         "name": "Shake$1",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "Shake$2",
@@ -27004,7 +27048,7 @@
                     },
                     {
                         "name": "GetCustomPlugin",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "PurgeAll",
@@ -27134,7 +27178,7 @@
                     },
                     {
                         "name": "DOShakePosition$3",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "DOShakeRotation",
@@ -27282,7 +27326,7 @@
                     },
                     {
                         "name": "DOPath$1",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "DOPath",
@@ -27504,7 +27548,7 @@
                     },
                     {
                         "name": "SetLoops",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "SetLoops$1",
@@ -27700,7 +27744,7 @@
                     },
                     {
                         "name": "SetOptions$11",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "SetOptions$10",
@@ -28461,6 +28505,22 @@
                     {
                         "name": "setHandPlayBox",
                         "excluded": true
+                    },
+                    {
+                        "name": "Awake",
+                        "excluded": false
+                    },
+                    {
+                        "name": "ShowHandArrow",
+                        "excluded": false
+                    },
+                    {
+                        "name": "ShowHandArrowLoop",
+                        "excluded": false
+                    },
+                    {
+                        "name": "IEShowHandRotate",
+                        "excluded": false
                     }
                 ]
             },
@@ -28505,8 +28565,44 @@
                         "excluded": false
                     },
                     {
-                        "name": "removeState",
+                        "name": "PlayTutState",
                         "excluded": false
+                    },
+                    {
+                        "name": "PlayTutState0",
+                        "excluded": false
+                    },
+                    {
+                        "name": "PlayTutState1",
+                        "excluded": true
+                    },
+                    {
+                        "name": "PlayTutState2",
+                        "excluded": false
+                    },
+                    {
+                        "name": "PlayTutState3",
+                        "excluded": false
+                    },
+                    {
+                        "name": "PlayTutState3_5",
+                        "excluded": false
+                    },
+                    {
+                        "name": "PlayTutState4",
+                        "excluded": false
+                    },
+                    {
+                        "name": "PlayTutState5",
+                        "excluded": true
+                    },
+                    {
+                        "name": "PlayTutState6",
+                        "excluded": true
+                    },
+                    {
+                        "name": "PlayTutState7",
+                        "excluded": true
                     }
                 ]
             },
@@ -29963,19 +30059,11 @@
                         "excluded": false
                     },
                     {
-                        "name": "Start",
-                        "excluded": false
-                    },
-                    {
                         "name": "gotoStore",
                         "excluded": false
                     },
                     {
-                        "name": "Update",
-                        "excluded": false
-                    },
-                    {
-                        "name": "resizeUI",
+                        "name": "Resize",
                         "excluded": false
                     }
                 ]
@@ -30854,15 +30942,15 @@
                 "instanceMethods": [
                     {
                         "name": "SfxCrack",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "SfxKeng",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "ShakeBowl",
-                        "excluded": true
+                        "excluded": false
                     }
                 ]
             },
@@ -31025,6 +31113,10 @@
                     {
                         "name": "RemoveListFoodsByType",
                         "excluded": true
+                    },
+                    {
+                        "name": "CanContact#get",
+                        "excluded": false
                     }
                 ]
             },
@@ -31302,7 +31394,7 @@
                 "instanceMethods": [
                     {
                         "name": "CurStep#get",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "StepActionCount#get",
@@ -31313,23 +31405,7 @@
                         "excluded": false
                     },
                     {
-                        "name": "SetNewEmoji",
-                        "excluded": true
-                    },
-                    {
-                        "name": "SetEmojiContainer",
-                        "excluded": true
-                    },
-                    {
-                        "name": "SetUpHintList",
-                        "excluded": false
-                    },
-                    {
                         "name": "Awake",
-                        "excluded": false
-                    },
-                    {
-                        "name": "Start",
                         "excluded": false
                     },
                     {
@@ -31379,14 +31455,6 @@
                 "staticMethods": [],
                 "instanceMethods": [
                     {
-                        "name": "LoopSFX",
-                        "excluded": true
-                    },
-                    {
-                        "name": "StopSFX",
-                        "excluded": true
-                    },
-                    {
                         "name": "init",
                         "excluded": false
                     },
@@ -31412,10 +31480,6 @@
                     },
                     {
                         "name": "FinishStep",
-                        "excluded": true
-                    },
-                    {
-                        "name": "PunkScale",
                         "excluded": true
                     },
                     {
@@ -32740,6 +32804,222 @@
                     },
                     {
                         "name": "CalculateWheelParams",
+                        "excluded": true
+                    }
+                ]
+            },
+            {
+                "className": "LunaUnity.Utils.PrefabUtil",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "IsPrefabProxy",
+                        "excluded": false
+                    }
+                ]
+            },
+            {
+                "className": "GameUnit",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "Tf#get",
+                        "excluded": false
+                    }
+                ]
+            },
+            {
+                "className": "UIUnit",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "RectTf#get",
+                        "excluded": false
+                    }
+                ]
+            },
+            {
+                "className": "UIScreen",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "Tf#get",
+                        "excluded": true
+                    },
+                    {
+                        "name": "init",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnClose",
+                        "excluded": true
+                    },
+                    {
+                        "name": "OnCreate",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnShow",
+                        "excluded": true
+                    },
+                    {
+                        "name": "OnHide",
+                        "excluded": true
+                    },
+                    {
+                        "name": "Resize",
+                        "excluded": false
+                    },
+                    {
+                        "name": "fomatSize",
+                        "excluded": false
+                    }
+                ]
+            },
+            {
+                "className": "ShowItem",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "init",
+                        "excluded": false
+                    },
+                    {
+                        "name": "MoveObjShow",
+                        "excluded": false
+                    },
+                    {
+                        "name": "MoveObjHide",
+                        "excluded": false
+                    }
+                ]
+            },
+            {
+                "className": "DG.Tweening.Plugins.Core.PathCore.ControlPoint",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "op_Addition",
+                        "excluded": true
+                    },
+                    {
+                        "name": "getDefaultValue",
+                        "excluded": true
+                    },
+                    {
+                        "name": "init",
+                        "excluded": false
+                    },
+                    {
+                        "name": "$ctor1",
+                        "excluded": false
+                    },
+                    {
+                        "name": "ctor",
+                        "excluded": false
+                    },
+                    {
+                        "name": "toString",
+                        "excluded": true
+                    },
+                    {
+                        "name": "getHashCode",
+                        "excluded": true
+                    },
+                    {
+                        "name": "equals",
+                        "excluded": true
+                    },
+                    {
+                        "name": "$clone",
+                        "excluded": true
+                    }
+                ]
+            },
+            {
+                "className": "DG.Tweening.Plugins.Core.PathCore.CatmullRomDecoder",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "init",
+                        "excluded": false
+                    },
+                    {
+                        "name": "minInputWaypoints#get",
+                        "excluded": false
+                    },
+                    {
+                        "name": "FinalizePath",
+                        "excluded": false
+                    },
+                    {
+                        "name": "GetPoint",
+                        "excluded": false
+                    },
+                    {
+                        "name": "SetTimeToLengthTables",
+                        "excluded": false
+                    },
+                    {
+                        "name": "SetWaypointsLengths",
+                        "excluded": false
+                    }
+                ]
+            },
+            {
+                "className": "DG.Tweening.Plugins.PathPlugin",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "init",
+                        "excluded": false
+                    },
+                    {
+                        "name": "Get",
+                        "excluded": false
+                    },
+                    {
+                        "name": "Reset",
+                        "excluded": false
+                    },
+                    {
+                        "name": "SetFrom$1",
+                        "excluded": true
+                    },
+                    {
+                        "name": "SetFrom",
+                        "excluded": true
+                    },
+                    {
+                        "name": "ConvertToStartValue",
+                        "excluded": false
+                    },
+                    {
+                        "name": "SetRelativeEndValue",
+                        "excluded": true
+                    },
+                    {
+                        "name": "SetChangeValue",
+                        "excluded": false
+                    },
+                    {
+                        "name": "GetSpeedBasedDuration",
+                        "excluded": true
+                    },
+                    {
+                        "name": "EvaluateAndApply",
+                        "excluded": false
+                    },
+                    {
+                        "name": "SetOrientation",
+                        "excluded": true
+                    },
+                    {
+                        "name": "DivideVectorByVector",
+                        "excluded": true
+                    },
+                    {
+                        "name": "MultiplyVectorByVector",
                         "excluded": true
                     }
                 ]

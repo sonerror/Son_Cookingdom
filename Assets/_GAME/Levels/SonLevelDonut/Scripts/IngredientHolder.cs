@@ -16,6 +16,7 @@ namespace sonnv
         [SerializeField] private List<SpriteHolderData> foodChangeList;
         [SerializeField] private bool disableContactWhenTriggered;
         private bool _canContact;
+        public bool CanContact => _canContact;
         private readonly Dictionary<Collider2D, IngredientForwarder> _cachedForwarderDict = new Dictionary<Collider2D, IngredientForwarder>();
         public Action<SpriteHolderData> OnIngredientDone;
         private const string INGREDIENT_TAG = "Ingredient";

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using sonnv;
 using UnityEngine;
+using UnityEngine.XR;
 
 public class TutorialManager : Singleton<TutorialManager>
 {
@@ -13,7 +14,20 @@ public class TutorialManager : Singleton<TutorialManager>
     public float timeEndGame = 30f;
     private bool isClickTrueItem = false;
 
+    private Level628 level;
+    [SerializeField] private Phase1Donut phase1Donut;
+    [SerializeField] private Transform egg1;
+    [SerializeField] private Transform egg2;
+    [SerializeField] private SpriteRenderer FoodSpriteSpoon;
 
+
+
+    void Start()
+    {
+        level = Level628.Ins;
+
+        PlayTutState();
+    }
 
     private void Update()
     {
@@ -50,8 +64,8 @@ public class TutorialManager : Singleton<TutorialManager>
 
     private void PlayTutState()
     {
-        var currstate = Level628.Ins.CurStep;
-
+        isShowHint = true;
+        var currstate = level.CurStep;
         switch (currstate)
         {
             case 0:
@@ -69,16 +83,115 @@ public class TutorialManager : Singleton<TutorialManager>
             case 4:
                 PlayTutState4();
                 break;
+            case 5:
+                PlayTutState5();
+                break;
+            case 6:
+                PlayTutState6();
+                break;
             default:
+                handCtrl.gameObject.SetActive(false);
                 break;
         }
     }
 
-    private void PlayTutState0() { }
-    private void PlayTutState1() { }
-    private void PlayTutState2() { }
-    private void PlayTutState3() { }
-    private void PlayTutState4() { }
+    private void PlayTutState0()
+    {
+        var pos1 = phase1Donut.milkCup.Tf.position;
+        var pos2 = phase1Donut.Tf.position;
+        handCtrl.ShowHandPosToPos(pos1, pos2);
+    }
+    private void PlayTutState1()
+    {
+        var pos1 = egg1.position;
+        if (!egg1.gameObject.activeSelf)
+        {
+            pos1 = egg2.position;
+        }
+        var pos2 = phase1Donut.Tf.position;
+        handCtrl.ShowHandPosToPos(pos1, pos2);
+    }
+    private void PlayTutState2()
+    {
+        var pos1 = phase1Donut.spoon.Tf.position;
+        var pos2 = phase1Donut.Tf.position;
+
+        if (!FoodSpriteSpoon.enabled)
+        {
+            if (phase1Donut.yeastBowl.CanContact)
+            {
+                pos2 = phase1Donut.yeastBowl.Tf.position;
+            }
+            else if (phase1Donut.sugarBowl.CanContact)
+            {
+                pos2 = phase1Donut.sugarBowl.Tf.position;
+            }
+        }
+
+        handCtrl.ShowHandPosToPos(pos1, pos2);
+    }
+    private void PlayTutState3()
+    {
+        if (phase1Donut.spoonPosToPour.gameObject.activeSelf)
+        {
+            PlayTutState3_5();
+            return;
+        }
+        var pos1 = phase1Donut.beater.Tf.position;
+        var pos2 = phase1Donut.Tf.position;
+        handCtrl.ShowHandPosToPos(pos1, pos2);
+
+
+    }
+    private void PlayTutState3_5()
+    {
+        var pos1 = phase1Donut.Tf.position;
+        var radial = phase1Donut.spoonPosToPour.position - pos1;
+        var fromAngle = Mathf.Atan2(radial.y, radial.x);
+
+        handCtrl.ShowHandArrow(pos1, fromAngle, 2.5f);
+    }
+
+    public void PlayTutState4()
+    {
+        var pos1 = phase1Donut.flourBowl.Tf.position;
+        var pos2 = phase1Donut.Tf.position;
+        handCtrl.ShowHandPosToPos(pos1, pos2);
+    }
+    public void PlayTutState5()
+    {
+        var pos1 = phase1Donut.spoon.Tf.position;
+        var pos2 = phase1Donut.Tf.position;
+
+        if (!FoodSpriteSpoon.enabled)
+        {
+            pos2 = phase1Donut.saltBowl.Tf.position;
+        }
+
+        handCtrl.ShowHandPosToPos(pos1, pos2);
+    }
+
+    public void PlayTutState6()
+    {
+        if (phase1Donut.spatulaInBowl.activeSelf)
+        {
+            PlayTutState7();
+            return;
+        }
+
+        var pos1 = phase1Donut.spatula.Tf.position;
+        var pos2 = phase1Donut.Tf.position;
+        handCtrl.ShowHandPosToPos(pos1, pos2);
+    }
+
+    public void PlayTutState7()
+    {
+        var pos1 = phase1Donut.Tf.position;
+        var radial = phase1Donut.spoonPosToPour.position - pos1;
+        var fromAngle = Mathf.Atan2(radial.y, radial.x);
+
+        handCtrl.ShowHandArrow(pos1, fromAngle, 2.5f);
+    }
 
     public void ResetTimeHint()
     {

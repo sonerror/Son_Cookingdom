@@ -17,7 +17,7 @@ namespace sonnv
         #region Phase_1
         [SerializeField] private IngredientHolder mixFlourBowl;
         [SerializeField] private Rigidbody2D rbFlourBowl;
-        [SerializeField] private IngredientForwarder milkCup;
+        [SerializeField] public IngredientForwarder milkCup;
         [SerializeField] private Transform cupPosToPour;
         [SerializeField] private SpriteRenderer milkInBowl;
 
@@ -51,13 +51,13 @@ namespace sonnv
             }
         }
         //add sugar, salt, yeast
-        [SerializeField] private IngredientForwarder spoon;
-        [SerializeField] private IngredientHolder yeastBowl;
-        [SerializeField] private IngredientHolder sugarBowl;
+        [SerializeField] public IngredientForwarder spoon;
+        [SerializeField] public IngredientHolder yeastBowl;
+        [SerializeField] public IngredientHolder sugarBowl;
         [SerializeField] private Transform eggPosToPour;
 
 
-        [SerializeField] private Transform spoonPosToPour;
+        [SerializeField] public Transform spoonPosToPour;
         [SerializeField] private SpriteRenderer sugarInBowl;
         [SerializeField] private bool isAddSugar;
         [SerializeField] private Transform sugarPosToPour;
@@ -166,7 +166,7 @@ namespace sonnv
         }
         // add beater and rotate 
         [SerializeField] private GameObject beaterInBowl;
-        [SerializeField] private IngredientForwarder beater;
+        [SerializeField] public IngredientForwarder beater;
         [SerializeField] private Transform beaterPosToPour;
         public bool isRotateBeater;
         private void OnStartStep3()
@@ -221,7 +221,7 @@ namespace sonnv
             GameManager.Ins.ChangeState();
         }
         //Step 4 them bot
-        [SerializeField] private IngredientForwarder flourBowl;
+        [SerializeField] public IngredientForwarder flourBowl;
         [SerializeField] private Transform PosToFlourBowl;
         [SerializeField] private SpriteRenderer flourInBowl;
         [SerializeField] private Animation animFlour;
@@ -261,7 +261,7 @@ namespace sonnv
         }
 
         //step 5 add salt
-        [SerializeField] private IngredientHolder saltBowl;
+        [SerializeField] public IngredientHolder saltBowl;
         [SerializeField] private SpriteRenderer saltInBowl;
 
         private void OnStartStep5()
@@ -294,9 +294,9 @@ namespace sonnv
 
         }
         // add and rotate spatulaInBowl
-        [SerializeField] private GameObject spatulaInBowl;
+        [SerializeField] public GameObject spatulaInBowl;
         [SerializeField] private GameObject mixedMilkInBowl;
-        [SerializeField] private IngredientForwarder spatula;
+        [SerializeField] public IngredientForwarder spatula;
         [SerializeField] private Transform spatulaPosToPour;
         public bool isRotateSpatula;
         private void OnStartStep6()

@@ -20,6 +20,7 @@ public class HandCtrl : GameUnit
     public void ShowHandArrow(Vector3 posRot, float fromAngle, float dist)
     {
         distance = dist;
+        animator.gameObject.SetActive(true);
 
         for (int i = 0; i < paths.Length; i++)
         {
@@ -37,7 +38,7 @@ public class HandCtrl : GameUnit
     private void ShowHandArrowLoop()
     {
         animator.SetTrigger("HandDown");
-        transform.DOPath(paths, 1.5f).SetLoops(2).SetDelay(0.75f).onComplete = () =>
+        transform.DOPath(paths, 1.5f, PathType.CatmullRom).SetLoops(2).SetDelay(0.75f).onComplete = () =>
         {
             animator.SetTrigger("HandUp");
         };
