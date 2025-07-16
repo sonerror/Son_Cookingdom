@@ -64,78 +64,81 @@
     <Analyzer Include="D:\_App\Unity\UnityInstall\2022.3.41f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\_GAME\Levels\LvKingCrab\Scripts\CrabHammer.cs" />
+    <Compile Include="Assets\_GAME\Levels\SonLevelDonut\Scripts\IngredientHolderTopping.cs" />
     <Compile Include="Assets\Scripts\Object\HandCtrl.cs" />
-    <Compile Include="Assets\_GAME\Levels\LvMakeSushi\Scripts\Tmp\ObjectMoveToTarget.cs" />
-    <Compile Include="Assets\_GAME\Levels\LvMakeSushi\Scripts\LevelMakeSushi.cs" />
+    <Compile Include="Assets\_GAME\Levels\SonLevelDonut\Scripts\SpoonForwarder.cs" />
+    <Compile Include="Assets\_GAME\Levels\SonLevelDonut\Scripts\CameraCenter.cs" />
+    <Compile Include="Assets\_GAME\Levels\SonLevelDonut\Scripts\IngredientForwarderAnim.cs" />
+    <Compile Include="Assets\_GAME\Levels\SonLevelDonut\Scripts\InforSprite.cs" />
+    <Compile Include="Assets\_GAME\Levels\SonLevelDonut\Scripts\IngredientForwarder.cs" />
+    <Compile Include="Assets\_GAME\Levels\SonLevelDonut\Scripts\IngredientHolder.cs" />
     <Compile Include="Assets\AllIn1SpriteShader\Scripts\RandomSeed.cs" />
     <Compile Include="Assets\DOTween\Modules\DOTweenModuleAudio.cs" />
-    <Compile Include="Assets\_GAME\Levels\LvKingCrab\Scripts\CrabStickTool.cs" />
-    <Compile Include="Assets\_GAME\Levels\LvKingCrab\Scripts\CrabLegPart.cs" />
-    <Compile Include="Assets\_GAME\Levels\LvKingCrab\Scripts\SimpleTransition.cs" />
     <Compile Include="Assets\AllIn1SpriteShader\Scripts\All1CreateUnifiedOutline.cs" />
-    <Compile Include="Assets\Scripts\MaskGroup.cs" />
     <Compile Include="Assets\Scripts\Pool\PoolManager.cs" />
     <Compile Include="Assets\Scripts\Manager\UIManager.cs" />
-    <Compile Include="Assets\_GAME\Levels\LvKingCrab\Scripts\CrabBody.cs" />
-    <Compile Include="Assets\Scripts\ItemInCrab.cs" />
-    <Compile Include="Assets\_GAME\Levels\LvMakeSushi\Scripts\Tmp\DraggableObject.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\MGExtensionMethods.cs" />
+    <Compile Include="Assets\_GAME\Levels\SonLevelDonut\Scripts\ToppingForwarder.cs" />
+    <Compile Include="Assets\_GAME\Levels\SonLevelDonut\Scripts\MiniFlourHolder.cs" />
+    <Compile Include="Assets\_GAME\Levels\SonLevelDonut\Scripts\DonutForwarder.cs" />
+    <Compile Include="Assets\_GAME\Levels\SonLevelDonut\Scripts\Level628.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\SonNv\ISnapObject.cs" />
+    <Compile Include="Assets\_GAME\Levels\SonLevelDonut\Scripts\DragController.cs" />
     <Compile Include="Assets\Scripts\Helper\Cache.cs" />
-    <Compile Include="Assets\_GAME\Levels\LvKingCrab\Scripts\LevelKingCrab.cs" />
-    <Compile Include="Assets\_GAME\Levels\LvMakeSushi\Scripts\Stage1\CookerButton.cs" />
+    <Compile Include="Assets\_GAME\Levels\SonLevelDonut\Scripts\Flour.cs" />
+    <Compile Include="Assets\_GAME\Levels\SonLevelDonut\Scripts\AnimEgg.cs" />
+    <Compile Include="Assets\_GAME\Levels\SonLevelDonut\Scripts\Phase.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\MGUtils.cs" />
+    <Compile Include="Assets\_GAME\Levels\SonLevelDonut\Scripts\TapToMiniFlour.cs" />
+    <Compile Include="Assets\Scripts\UI\UIScreen.cs" />
     <Compile Include="Assets\DOTween\Modules\DOTweenModuleUnityVersion.cs" />
     <Compile Include="Assets\DOTween\Modules\DOTweenModulePhysics.cs" />
-    <Compile Include="Assets\Scripts\ItemDropGroup.cs" />
-    <Compile Include="Assets\_GAME\Levels\LvKingCrab\Scripts\BlockUI.cs" />
-    <Compile Include="Assets\_GAME\Levels\LvMakeSushi\Scripts\Tmp\Peel.cs" />
-    <Compile Include="Assets\_GAME\Levels\LvKingCrab\Scripts\CrabLeg.cs" />
-    <Compile Include="Assets\_GAME\Levels\LvKingCrab\Scripts\KingCrabTool.cs" />
+    <Compile Include="Assets\_GAME\Levels\SonLevelDonut\Scripts\ContactColider.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\SonNv\ScalingOnPick.cs" />
+    <Compile Include="Assets\_GAME\Levels\SonLevelDonut\Scripts\Phase1Donut.cs" />
     <Compile Include="Assets\AllIn1SpriteShader\Scripts\AllIn1ShaderWindow.cs" />
-    <Compile Include="Assets\_GAME\Levels\LvKingCrab\Scripts\CrabSpoon.cs" />
-    <Compile Include="Assets\_GAME\Levels\LvMakeSushi\Scripts\Stage1\Vegetable.cs" />
     <Compile Include="Assets\AllIn1SpriteShader\Scripts\SetGlobalTimeUnity2018.cs" />
     <Compile Include="Assets\AllIn1SpriteShader\Scripts\AllIn1Shader.cs" />
+    <Compile Include="Assets\_GAME\Levels\SonLevelDonut\Scripts\BeaterInBowl.cs" />
     <Compile Include="Assets\AllIn1SpriteShader\Scripts\SetGlobalTimeNew.cs" />
-    <Compile Include="Assets\Scripts\LegsGroup.cs" />
     <Compile Include="Assets\Scripts\Tmp\APDUtilities.cs" />
     <Compile Include="Assets\Scripts\Manager\SoundManager.cs" />
-    <Compile Include="Assets\_GAME\Levels\LvKingCrab\Scripts\CrabPry.cs" />
     <Compile Include="Assets\AllIn1SpriteShader\Scripts\SetAtlasUvs.cs" />
-    <Compile Include="Assets\_GAME\Levels\LvMakeSushi\Scripts\Tmp\Lid.cs" />
+    <Compile Include="Assets\_GAME\Levels\SonLevelDonut\Scripts\FlatSpoonInBowl.cs" />
+    <Compile Include="Assets\_GAME\Levels\SonLevelDonut\Scripts\DragNilong.cs" />
     <Compile Include="Assets\Scripts\LevelBase.cs" />
+    <Compile Include="Assets\_GAME\Levels\SonLevelDonut\Scripts\ChangeLayer.cs" />
     <Compile Include="Assets\Scripts\UI\Progress.cs" />
     <Compile Include="Assets\_GAME\Levels\29\Scripts\EmojiControl.cs" />
-    <Compile Include="Assets\_GAME\Levels\LvKingCrab\Scripts\CrabPart.cs" />
-    <Compile Include="Assets\Scripts\ItemCrabGroup.cs" />
+    <Compile Include="Assets\_GAME\Levels\SonLevelDonut\Scripts\FlatSpoonIbBowlColor.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\SonNv\SonUtilities.cs" />
+    <Compile Include="Assets\Scripts\Object\ShowItem.cs" />
     <Compile Include="Assets\DOTween\Modules\DOTweenModulePhysics2D.cs" />
-    <Compile Include="Assets\_GAME\Levels\LvMakeSushi\Scripts\Stage1\Peeler.cs" />
+    <Compile Include="Assets\_GAME\Levels\SonLevelDonut\Scripts\RollingForwarder.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\SonNv\SonMonoBehaviour.cs" />
     <Compile Include="Assets\DOTween\Modules\DOTweenModuleUI.cs" />
     <Compile Include="Assets\DOTween\Modules\DOTweenModuleSprite.cs" />
-    <Compile Include="Assets\_GAME\Levels\LvMakeSushi\Scripts\Stage1\CuttingBoard.cs" />
-    <Compile Include="Assets\Scripts\MaskGroupCustom.cs" />
-    <Compile Include="Assets\_GAME\Levels\LvKingCrab\Scripts\CrabBowl.cs" />
-    <Compile Include="Assets\_GAME\Levels\LvMakeSushi\Scripts\Stage1\Knife.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\SonNv\NextStepLevel.cs" />
+    <Compile Include="Assets\_GAME\Levels\SonLevelDonut\Scripts\DonutInPan.cs" />
+    <Compile Include="Assets\_GAME\Levels\SonLevelDonut\Scripts\ClockTimer.cs" />
+    <Compile Include="Assets\_GAME\Levels\SonLevelDonut\Scripts\PlayAnimationManually.cs" />
     <Compile Include="Assets\Scripts\Manager\GameManager.cs" />
+    <Compile Include="Assets\Scripts\UI\UIUnit.cs" />
+    <Compile Include="Assets\_GAME\Levels\SonLevelDonut\Scripts\TapInFlour.cs" />
     <Compile Include="Assets\Scripts\Pool\EffectPool.cs" />
-    <Compile Include="Assets\_GAME\Levels\LvKingCrab\Scripts\DragToTargetObj.cs" />
-    <Compile Include="Assets\_GAME\Levels\LvKingCrab\Scripts\CrabRazor.cs" />
-    <Compile Include="Assets\_GAME\Levels\LvMakeSushi\Scripts\Stage1\RiceCooker.cs" />
-    <Compile Include="Assets\_GAME\Levels\LvKingCrab\Scripts\Scissors.cs" />
-    <Compile Include="Assets\Scripts\ItemDrop.cs" />
+    <Compile Include="Assets\_GAME\Levels\SonLevelDonut\Scripts\DonutInPanHolder.cs" />
+    <Compile Include="Assets\_GAME\Levels\SonLevelDonut\Scripts\HandCatSteal.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\SonNv\ItemRotateAround.cs" />
     <Compile Include="Assets\Scripts\Manager\Singleton.cs" />
-    <Compile Include="Assets\_GAME\Levels\LvMakeSushi\Scripts\Tmp\LockObjectInsideScreen.cs" />
     <Compile Include="Assets\Scripts\Pool\GameUnit.cs" />
     <Compile Include="Assets\Scripts\UI\GamePlayScreen.cs" />
     <Compile Include="Assets\DOTween\Modules\DOTweenModuleUtils.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\SonNv\SonLevelBase.cs" />
     <Compile Include="Assets\Scripts\Manager\TutorialManager.cs" />
-    <Compile Include="Assets\_GAME\Levels\LvKingCrab\Scripts\CrabTweezers.cs" />
-    <Compile Include="Assets\_GAME\Levels\LvMakeSushi\Scripts\Tmp\H3MonoBehaviour.cs" />
-    <Compile Include="Assets\_GAME\Levels\LvMakeSushi\Scripts\Stage1\WaterValue.cs" />
-    <Compile Include="Assets\_GAME\Levels\LvMakeSushi\Scripts\Tmp\ObjectPoolDictArray.cs" />
+    <Compile Include="Assets\_GAME\Levels\SonLevelDonut\Scripts\IngredientHolderColor.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Spine\version.txt" />
-    <None Include="Assets\_GAME\Levels\LvKingCrab\Textures\crab_json\crap.atlas.txt" />
     <None Include="Assets\AllIn1SpriteShader\Resources_moved\AllIn1SpriteShader.shader" />
     <None Include="Assets\DOTween\DOTween.dll" />
     <None Include="Assets\AllIn1SpriteShader\Resources_moved\AllIn1OneShaderFunctions.cginc" />
@@ -487,6 +490,18 @@
     </Reference>
     <Reference Include="DOTween">
       <HintPath>Assets\DOTween\DOTween.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.Android.Types">
+      <HintPath>D:\_App\Unity\UnityInstall\2022.3.41f1\Editor\Data\PlaybackEngines\AndroidPlayer\Unity.Android.Types.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.Android.Gradle">
+      <HintPath>D:\_App\Unity\UnityInstall\2022.3.41f1\Editor\Data\PlaybackEngines\AndroidPlayer\Unity.Android.Gradle.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.Android.GradleProject">
+      <HintPath>D:\_App\Unity\UnityInstall\2022.3.41f1\Editor\Data\PlaybackEngines\AndroidPlayer\Unity.Android.GradleProject.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="netstandard">

@@ -2,9 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LevelBase : MonoBehaviour
+public class LevelBase : Singleton<LevelBase>
 {
-
+    public bool isEndingGame;
+    public event System.Action onBlockPlayerInteractChanged = null;
+    public bool IsAllowInteract => true;
     protected Sprite _hint;
 
     public void SetStep(int step)
@@ -15,17 +17,8 @@ public class LevelBase : MonoBehaviour
         // }
     }
 
-    protected virtual void Awake()
-    {
-        // LevelBase.instance = this;
-    }
-
     protected virtual void Start()
     {
-        // if (onBlockPlayerInteractChanged != null)
-        // {
-        //     onBlockPlayerInteractChanged();
-        // }
     }
 
     protected void EndGame()
