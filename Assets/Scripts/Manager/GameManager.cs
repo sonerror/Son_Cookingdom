@@ -1,9 +1,8 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using DG.Tweening;
 using UnityEngine;
 using Luna.Unity;
+using System.Collections.Generic;
+using System.Collections;
 
 public class GameManager : Singleton<GameManager>
 {
@@ -13,13 +12,12 @@ public class GameManager : Singleton<GameManager>
 
     public void ChangeState()
     {
-
         StartCoroutine(IE_ChangeState());
     }
 
-    private IEnumerator IE_ChangeState()
+    protected IEnumerator IE_ChangeState()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.75f);
         gameActiveState1.ForEach(item =>
         {
             item.MoveObjHide();
@@ -58,5 +56,10 @@ public class GameManager : Singleton<GameManager>
     public void PlaySoundWater()
     {
         SoundManager.Ins.PlayFxAfterTime(FxType.DropWater, 0.3f);
+    }
+
+    public void PlaySoundDrop()
+    {
+        SoundManager.Ins.PlayFxAfterTime(FxType.ShakeDrop, 0.3f);
     }
 }

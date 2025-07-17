@@ -16,6 +16,7 @@ public enum FxType
     RotateSfx = 9,
     EmojiPositive = 10,
     EmojiNegative = 11,
+    ShakeDrop = 12,
 
     None = 20,
 }
@@ -24,7 +25,7 @@ public class SoundManager : Singleton<SoundManager>
 {
     public AudioClip[] audioClips;
     public AudioSource bgm;
-    private AudioSource[] fx = new AudioSource[11];
+    private AudioSource[] fx = new AudioSource[13];
 
     bool isMute = false;
 

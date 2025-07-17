@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
-// using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
@@ -15,6 +14,8 @@ public class Progress : MonoBehaviour
     public int totalProgress = 100;
     public int currProgress = 0;
     public bool isReduceProgress = false;
+    public float speedFloatingIdle = 0.5f;
+
 
     private void Start()
     {
@@ -33,7 +34,7 @@ public class Progress : MonoBehaviour
         greenPanel.fillAmount = 0;
     }
 
-    public void increaseProgress(int from, int to)
+    public virtual void increaseProgress(int from, int to)
     {
         setProgerss(currProgress + (int)Random.Range(from, to));
     }
@@ -41,13 +42,13 @@ public class Progress : MonoBehaviour
     public void reduceProgress(int from, int to)
     {
         var a = (int)Random.Range(from, to);
-        Debug.Log("A" + a);
         setProgerss(currProgress - a);
     }
 
     public void setProgerss(int progress)
     {
-        // currProgress = progress;
+        // Debug.Log("setProgerss: " + progress);
+        currProgress = progress;
         // txtProgressValue.text = currProgress.ToString();
         greenPanelFillAmount = (float)currProgress / totalProgress;
     }
@@ -63,14 +64,14 @@ public class Progress : MonoBehaviour
         {
             if (greenPanel.fillAmount > greenPanelFillAmount)
             {
-                greenPanel.fillAmount -= greenPanelFillAmount * Time.deltaTime * 2f;
+                greenPanel.fillAmount -= greenPanelFillAmount * Time.deltaTime * speedFloatingIdle;
             }
         }
         else
         {
             if (greenPanel.fillAmount < greenPanelFillAmount)
             {
-                greenPanel.fillAmount += greenPanelFillAmount * Time.deltaTime * 2f;
+                greenPanel.fillAmount += greenPanelFillAmount * Time.deltaTime * speedFloatingIdle;
             }
         }
     }

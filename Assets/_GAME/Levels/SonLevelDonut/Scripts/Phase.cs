@@ -8,6 +8,7 @@ namespace sonnv
         public void OnEndStep(bool playSound = false)
         {
             Level628.Ins.OnEndStep(playSound);
+            EventManager.TriggerEvent(EventType.IncreaseProgress.ToString());
         }
         public void FinishStep()
         {

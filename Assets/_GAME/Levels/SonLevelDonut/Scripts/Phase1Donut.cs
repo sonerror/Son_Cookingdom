@@ -244,6 +244,7 @@ namespace sonnv
                 flourBowl.Tf.DOMove(PosToFlourBowl.position, 0.25f).OnComplete(() =>
                 {
                     animFlour.Play();
+                    GameManager.Ins.PlaySoundDrop();
                     flourInBowl.DOFade(1f, 1f).SetDelay(0.4f)
                         .OnStart(() =>
                         {

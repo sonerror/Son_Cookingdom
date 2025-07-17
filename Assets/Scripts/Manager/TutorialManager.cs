@@ -158,11 +158,11 @@ public class TutorialManager : Singleton<TutorialManager>
         var pos2 = phase1Donut.Tf.position;
         handCtrl.ShowHandPosToPos(pos1, pos2);
     }
+
     public void PlayTutState5()
     {
         var pos1 = phase1Donut.spoon.Tf.position;
         var pos2 = phase1Donut.Tf.position;
-
         if (!FoodSpriteSpoon.enabled)
         {
             pos2 = phase1Donut.saltBowl.Tf.position;

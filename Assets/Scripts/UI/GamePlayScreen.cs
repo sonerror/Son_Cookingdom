@@ -5,6 +5,7 @@ using UnityEngine;
 public class GamePlayScreen : UIScreen
 {
     public GameObject btnPlay;
+    public GameObject TextTutorial;
 
     public void gotoStore()
     {
@@ -13,12 +14,14 @@ public class GamePlayScreen : UIScreen
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            btnPlay.SetActive(true);
-
-        }
+        // if (Input.GetMouseButtonDown(0))
+        // {
+        //     btnPlay.SetActive(true);
+        //     TextTutorial.SetActive(false);
+        // }
     }
+
+
 
     public override void Resize(Vector2 gameSize)
     {

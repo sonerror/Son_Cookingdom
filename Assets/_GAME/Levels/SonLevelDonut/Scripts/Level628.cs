@@ -18,7 +18,6 @@ namespace sonnv
         [SerializeField] private float maxZoom = 10f;
         [SerializeField] private float zoomDuration = 0.25f;
         private Tween currentTween;
-        public AudioSource SfxSource { get; private set; }
 
         [SerializeField] private Phase1Donut phase1;
         public static Level628 Ins;
@@ -35,43 +34,8 @@ namespace sonnv
                 Destroy(gameObject);
                 return;
             }
-            SfxSource = gameObject.AddComponent<AudioSource>();
         }
 
-        public void PlaySFX(AudioClip clips, float volume = 1f)
-        {
-            SfxSource.PlayOneShot(clips, volume);
-        }
-
-        public AudioSource PlayLoopSFX(AudioClip clip, float startVolume = 0f)
-        {
-            if (clip == null) return null;
-
-            SfxSource.clip = clip;
-            SfxSource.volume = startVolume;
-            SfxSource.loop = true;
-            SfxSource.Play();
-            return SfxSource;
-        }
-
-        public void FadeVolumeUp(AudioSource source, SpriteRenderer oilFry, float targetVolume, float duration)
-        {
-            if (source == null || oilFry == null) return;
-
-            source.DOFade(targetVolume, duration);
-
-            DOTween.To(
-                () => oilFry.color.a,
-                a =>
-                {
-                    Color color = oilFry.color;
-                    color.a = a;
-                    oilFry.color = color;
-                },
-                1f,
-                duration
-            );
-        }
         public void OnEndStep(bool playSound = false)
         {
             DoneStep(true, playSound);
