@@ -79,12 +79,12 @@ namespace sonnv
         protected override void InitStepActions()
         {
             //Phase 1
-            AddStepAction(1, phase1.OnCallStep1);
-            AddStepAction(2, phase1.OnCallStep2);
-            AddStepAction(3, phase1.OnCallStep3);
-            AddStepAction(4, phase1.OnCallStep4);
-            AddStepAction(5, phase1.OnCallStep5);
-            AddStepAction(6, phase1.OnCallStep6);
+            // AddStepAction(1, phase1.OnCallStep1);
+            // AddStepAction(2, phase1.OnCallStep2);
+            // AddStepAction(3, phase1.OnCallStep3);
+            // AddStepAction(4, phase1.OnCallStep4);
+            // AddStepAction(5, phase1.OnCallStep5);
+            // AddStepAction(6, phase1.OnCallStep6);
 
         }
         protected override void Start()

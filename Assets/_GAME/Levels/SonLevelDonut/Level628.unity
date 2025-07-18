@@ -342,7 +342,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f80831affbc01ae44882e48958fbf379, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  checkMove: 0
   col: {fileID: 62190374}
   onDragStart:
     m_PersistentCalls:
@@ -456,7 +455,6 @@ MonoBehaviour:
   maxLayer: 10
   spriteRenderer: {fileID: 62190370}
   spriteRendererChid: {fileID: 0}
-  listSpriteRendererChid: []
 --- !u!65 &62190374
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1709,7 +1707,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f80831affbc01ae44882e48958fbf379, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  checkMove: 0
   col: {fileID: 357371008}
   onDragStart:
     m_PersistentCalls:
@@ -1847,7 +1844,6 @@ MonoBehaviour:
   maxLayer: 10
   spriteRenderer: {fileID: 357371003}
   spriteRendererChid: {fileID: 310162229}
-  listSpriteRendererChid: []
 --- !u!114 &357371007
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2066,7 +2062,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f80831affbc01ae44882e48958fbf379, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  checkMove: 0
   col: {fileID: 0}
   onDragStart:
     m_PersistentCalls:
@@ -2232,7 +2227,6 @@ MonoBehaviour:
   maxLayer: 10
   spriteRenderer: {fileID: 412790594}
   spriteRendererChid: {fileID: 0}
-  listSpriteRendererChid: []
 --- !u!136 &412790596
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -5085,7 +5079,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f80831affbc01ae44882e48958fbf379, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  checkMove: 0
   col: {fileID: 1339947687}
   onDragStart:
     m_PersistentCalls:
@@ -5267,7 +5260,6 @@ MonoBehaviour:
   maxLayer: 10
   spriteRenderer: {fileID: 1339947685}
   spriteRendererChid: {fileID: 1345893799}
-  listSpriteRendererChid: []
 --- !u!135 &1339947687
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -5794,7 +5786,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f80831affbc01ae44882e48958fbf379, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  checkMove: 0
   col: {fileID: 1370299065}
   onDragStart:
     m_PersistentCalls:
@@ -5908,7 +5899,6 @@ MonoBehaviour:
   maxLayer: 10
   spriteRenderer: {fileID: 1370299062}
   spriteRendererChid: {fileID: 0}
-  listSpriteRendererChid: []
 --- !u!65 &1370299065
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6445,7 +6435,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f80831affbc01ae44882e48958fbf379, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  checkMove: 0
   col: {fileID: 1522984622}
   onDragStart:
     m_PersistentCalls:
@@ -6640,7 +6629,6 @@ MonoBehaviour:
   maxLayer: 10
   spriteRenderer: {fileID: 1522984618}
   spriteRendererChid: {fileID: 494845674}
-  listSpriteRendererChid: []
 --- !u!65 &1522984622
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7422,7 +7410,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f80831affbc01ae44882e48958fbf379, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  checkMove: 0
   col: {fileID: 0}
   onDragStart:
     m_PersistentCalls:
@@ -7588,7 +7575,6 @@ MonoBehaviour:
   maxLayer: 10
   spriteRenderer: {fileID: 1717605956}
   spriteRendererChid: {fileID: 0}
-  listSpriteRendererChid: []
 --- !u!136 &1717605958
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -8668,10 +8654,6 @@ MonoBehaviour:
   handCtrl: {fileID: 8503599624746200675}
   TimeHint: 5
   timeEndGame: 45
-  phase1Donut: {fileID: 1677818996}
-  egg1: {fileID: 1717605952}
-  egg2: {fileID: 412790590}
-  FoodSpriteSpoon: {fileID: 494845674}
 --- !u!114 &1910561424
 MonoBehaviour:
   m_ObjectHideFlags: 0

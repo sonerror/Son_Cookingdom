@@ -28,6 +28,7 @@ public class SoundManager : Singleton<SoundManager>
     private AudioSource[] fx = new AudioSource[13];
 
     bool isMute = false;
+    public bool IsMute => isMute;
 
     public void PlayFx(FxType fxType)
     {
@@ -92,6 +93,7 @@ public class SoundManager : Singleton<SoundManager>
     public void Mute()
     {
         bgm.Stop();
+        isMute = true;
         for (int i = 0; i < fx.Length; i++)
         {
             if (fx[i] != null)

@@ -9,7 +9,6 @@ namespace sonnv
 {
     public class DragController : SonMonoBehaviour
     {
-        [SerializeField] private bool checkMove;
         [SerializeField] private Collider col;
         public UnityEvent onDragStart;
         public UnityEvent onDragStop;
@@ -22,26 +21,19 @@ namespace sonnv
         public float centerSnapDistance; // Snap to center if within this distance
 
         private float _centerSnapDistanceSqr; // Squared value of the center snap distance
-        private bool _dragging;         // Indicates whether the object is currently being dragged
+        protected bool _dragging;         // Indicates whether the object is currently being dragged
         private Vector3 _offset;        // Offset from cursor to object position during drag
         private Tween _twnReturn;       // Tween used for returning object to screen
 
         // Handle MoveBack
-        [SerializeField] private bool moveBackOnRelease;
+        [SerializeField] protected bool moveBackOnRelease;
         [SerializeField] private float moveBackDuration = 0.3f;
         [SerializeField] private AnimationCurve movementCurve = AnimationCurve.Linear(0, 0, 1, 1);
-        [SerializeField] private bool overrideLocalBackPos;
-        [SerializeField] private Vector3 localBackPosOverride;
-        [SerializeField] private bool isCheck;
-        [SerializeField] private GameObject contactCol;
-
-
-
 
         public bool IsDragging => _dragging;
         public Collider Col => col;
 
-        [SerializeField] protected SonLevelBase level;
+        [SerializeField] protected Level630 level;
 
         // move back
         private Vector3 _currentBackPos;
@@ -55,51 +47,26 @@ namespace sonnv
         {
             _backPos = Tf.position;
         }
-        public void ReSetBackPos()
-        {
-            _backPos = Tf.position;
 
-        }
         protected virtual void Awake()
         {
             if (moveBackOnRelease)
             {
-                _backPos = overrideLocalBackPos ? Tf.TransformPoint(localBackPosOverride) : Tf.position;
+                _backPos = Tf.position;
             }
             if (!col) col = GetComponent<Collider>();
         }
 
         protected virtual void Start()
         {
-            level = LevelBase.Ins as SonLevelBase;
-            Debug.Log("LevelBase: " + LevelBase.Ins);
-            if (level)
-            {
-                level.onBlockPlayerInteractChanged += OnBlockPlayerInteractChanged;
-                if (moveBackOnRelease) _canMoveBack = true;
-            }
-            OnStart();
+            level = LevelBase.Ins as Level630;
+            if (moveBackOnRelease) _canMoveBack = true;
         }
 
-        protected virtual void OnStart()
-        {
 
-        }
-        public void SetCheckMove(bool _checkMove)
-        {
-            checkMove = _checkMove;
-        }
-        private void OnBlockPlayerInteractChanged()
-        {
-            if (!level.IsAllowInteract)
-            {
-                OnMouseUp();
-            }
-        }
 
         private void Update()
         {
-            if (checkMove == true) return;
             if (!level.IsAllowInteract) return;
             if (_dragging)
             {
@@ -113,18 +80,13 @@ namespace sonnv
                 Tf.position = Vector3.Lerp(_currentBackPos, _backPos, curveValue);
                 if (!(_elapsedTime >= moveBackDuration)) return;
                 Tf.position = _backPos;
-                if (isCheck == true)
-                {
-                    contactCol.SetActive(true);
-                }
                 _isMovingBack = false;
-
+                onDragStop?.Invoke();
             }
         }
 
         private void OnDrawGizmos()
         {
-            if (checkMove == true) return;
             if (!restrictWithinRect) return;
             // Draw rectangle boundary in the editor
             Gizmos.color = Color.red;
@@ -133,18 +95,19 @@ namespace sonnv
 
         private void OnMouseDown()
         {
-            if (checkMove == true) return;
-            if (!level.IsAllowInteract) return;
             if (enabled)
             {
-
                 OnDragStart();
             }
         }
 
         public void OnMouseUp()
         {
-            if (checkMove == true) return;
+            ActionOnMouseUp();
+        }
+
+        protected virtual void ActionOnMouseUp()
+        {
             if (enabled)
             {
                 OnDragStop();
@@ -156,7 +119,8 @@ namespace sonnv
             TutorialManager.Ins.MouseUpItem();
         }
 
-        private void StartRelease()
+
+        protected void StartRelease()
         {
             _currentBackPos = Tf.position;
             _elapsedTime = 0;
@@ -232,7 +196,7 @@ namespace sonnv
 
             // Calculate the offset between the object and the cursor
             _offset = Tf.position - level.Camera.ScreenToWorldPoint(Input.mousePosition);
-            Level628.Ins.PlayPickSfx();
+            // Level628.Ins.PlayPickSfx();
             _dragging = true;
             onDragStart?.Invoke();
         }
@@ -240,7 +204,7 @@ namespace sonnv
         /// <summary>
         /// Called when dragging stops, invokes events and checks offscreen position.
         /// </summary>
-        private void OnDragStop()
+        protected void OnDragStop()
         {
             _dragging = false;
             onDragStop?.Invoke();

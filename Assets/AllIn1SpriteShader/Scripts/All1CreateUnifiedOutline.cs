@@ -14,12 +14,12 @@ namespace AllIn1SpriteShader
         [SerializeField] private Transform outlineParentTransform = null;
 
         [Space]
-        [Header("Only needed if Sprite (ignored if UI)")]
+        //("Only needed if Sprite (ignored if UI)")]
         [SerializeField] private int duplicateOrderInLayer = -100;
         [SerializeField] private string duplicateSortingLayer = "Default";
 
         [Space]
-        [Header("This operation will delete the component")]
+        //("This operation will delete the component")]
         [SerializeField] private bool createUnifiedOutline;
 
         void Update()

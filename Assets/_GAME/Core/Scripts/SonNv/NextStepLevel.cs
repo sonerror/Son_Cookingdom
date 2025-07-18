@@ -10,7 +10,7 @@ namespace sonnv
     {
         #region Base
 
-        [Header("Step Tracking")]
+        //("Step Tracking")]
 
         [SerializeField] private int currentStep;
         private readonly HashSet<int> _doneSteps = new HashSet<int>();

@@ -21,6 +21,10 @@ public class LevelBase : Singleton<LevelBase>
     {
     }
 
+    protected virtual void Update()
+    {
+    }
+
     protected void EndGame()
     {
         // if (onEndGame != null)

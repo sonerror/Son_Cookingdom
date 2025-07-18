@@ -12,7 +12,7 @@ namespace sonnv
         private Vector3 _originalScale;
         [SerializeField] private SpriteRenderer spriteRenderer;
         [SerializeField] private SpriteRenderer spriteRendererChid;
-        [SerializeField] private List<InforSprite> listSpriteRendererChid;
+        // [SerializeField] private List<InforSprite> listSpriteRendererChid;
         private int _originnalLayer;
         private int _originnalLayerChid;
 
@@ -69,13 +69,13 @@ namespace sonnv
                 {
                     spriteRendererChid.sortingOrder = maxLayer + 1;
                 }
-                if (listSpriteRendererChid.Count > 0)
-                {
-                    foreach (var chid in listSpriteRendererChid)
-                    {
-                        chid.ChangeLayerNew(maxLayer + 1);
-                    }
-                }
+                // if (listSpriteRendererChid.Count > 0)
+                // {
+                //     foreach (var chid in listSpriteRendererChid)
+                //     {
+                //         chid.ChangeLayerNew(maxLayer + 1);
+                //     }
+                // }
             }
         }
         public void ScaleUp(float detal)
@@ -109,13 +109,13 @@ namespace sonnv
                 {
                     spriteRendererChid.sortingOrder = _originnalLayerChid;
                 }
-                if (listSpriteRendererChid.Count > 0)
-                {
-                    foreach (var chid in listSpriteRendererChid)
-                    {
-                        chid.ChangeLayerOrig();
-                    }
-                }
+                // if (listSpriteRendererChid.Count > 0)
+                // {
+                //     foreach (var chid in listSpriteRendererChid)
+                //     {
+                //         chid.ChangeLayerOrig();
+                //     }
+                // }
             }
         }
 
