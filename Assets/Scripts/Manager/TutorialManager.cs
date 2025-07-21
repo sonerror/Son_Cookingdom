@@ -13,12 +13,11 @@ public class TutorialManager : Singleton<TutorialManager>
 
     public float timeEndGame = 30f;
     private bool isClickTrueItem = false;
-
+    [SerializeField] private Level630 currLevel;
 
 
     void Start()
     {
-
         PlayTutState();
     }
 
@@ -26,7 +25,7 @@ public class TutorialManager : Singleton<TutorialManager>
     {
         if (Input.GetMouseButtonDown(0))
         {
-            ResetTimeHint();
+            // ResetTimeHint();
             isClickTrueItem = true;
         }
 
@@ -58,83 +57,55 @@ public class TutorialManager : Singleton<TutorialManager>
     private void PlayTutState()
     {
         isShowHint = true;
-        var currstate = 100;
-        switch (currstate)
+
+        if (Level630.IsState2) PlayStateGame2();
+        else PlayStateGame1();
+    }
+
+    void PlayStateGame1()
+    {
+        if (currLevel.itemHolderBroad.IsOccupied)
         {
-            case 0:
-                PlayTutState0();
-                break;
-            case 1:
-                PlayTutState1();
-                break;
-            case 2:
-                PlayTutState2();
-                break;
-            case 3:
-                PlayTutState3();
-                break;
-            case 4:
-                PlayTutState4();
-                break;
-            case 5:
-                PlayTutState5();
-                break;
-            case 6:
-                PlayTutState6();
-                break;
-            default:
-                handCtrl.gameObject.SetActive(false);
-                break;
+            var pos1 = currLevel.knife.Tf.position;
+            var pos2 = currLevel.itemHolderBroad.Tf.position;
+            handCtrl.ShowHandPosToPos(pos1, pos2);
+            return;
+        }
+        else
+        {
+            for (var i = 0; i < currLevel.itemState1.Count; i++)
+            {
+                if (!currLevel.itemState1[i].IsDone)
+                {
+                    var pos1 = currLevel.itemState1[i].Tf.position;
+                    var pos2 = currLevel.itemState1[i].GetTargetPosition;
+                    handCtrl.ShowHandPosToPos(pos1, pos2);
+                    return;
+                }
+            }
+        }
+
+        if (currLevel.itemClick != null && !currLevel.itemClick.IsDone)
+        {
+            handCtrl.ShowHandStateAtPos(currLevel.itemClick.Tf.position);
+            return;
         }
     }
 
-    private void PlayTutState0()
+    void PlayStateGame2()
     {
-
-    }
-    private void PlayTutState1()
-    {
-
-    }
-    private void PlayTutState2()
-    {
-
-
-    }
-    private void PlayTutState3()
-    {
-
-
-
-    }
-    private void PlayTutState3_5()
-    {
-
+        for (var i = 0; i < currLevel.itemState2.Count; i++)
+        {
+            if (currLevel.itemState2[i].gameObject.activeSelf)
+            {
+                var pos1 = currLevel.itemState2[i].Tf.position;
+                var pos2 = currLevel.itemState2[i].GetTargetPosition;
+                handCtrl.ShowHandPosToPos(pos1, pos2);
+                return;
+            }
+        }
     }
 
-    public void PlayTutState4()
-    {
-
-    }
-
-    public void PlayTutState5()
-    {
-
-    }
-
-    public void PlayTutState6()
-    {
-
-    }
-
-    public void PlayTutState7()
-    {
-        // var pos1 = phase1Donut.Tf.position;
-        // var radial = phase1Donut.spoonPosToPour.position - pos1;
-        // var fromAngle = Mathf.Atan2(radial.y, radial.x);
-
-        // handCtrl.ShowHandArrow(pos1, fromAngle, 2.5f);
-    }
 
     public void ResetTimeHint()
     {

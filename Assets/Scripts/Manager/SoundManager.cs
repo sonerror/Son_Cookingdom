@@ -5,19 +5,12 @@ using UnityEngine;
 public enum FxType
 {
     Click = 0,
-    EggCrack = 1,
-    EggKeng = 2,
-    DropWater = 3,
-    TakeSalt = 4,
-    PlacePiece = 5,
-    LeafChild = 6,
-    PicturePart = 7,
-    PickPaper = 8,
-    RotateSfx = 9,
-    EmojiPositive = 10,
-    EmojiNegative = 11,
-    ShakeDrop = 12,
-
+    EmojiPositive = 1,
+    EmojiNegative = 2,
+    Blink = 3,
+    Close = 4,
+    Fire = 5,
+    OpenLid = 6,
     None = 20,
 }
 

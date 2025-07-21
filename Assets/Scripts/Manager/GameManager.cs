@@ -6,30 +6,8 @@ using System.Collections;
 
 public class GameManager : Singleton<GameManager>
 {
-    public List<ShowItem> gameActiveState1 = new List<ShowItem>();
 
-    public List<ShowItem> gameActiveState2 = new List<ShowItem>();
-
-    public void ChangeState()
-    {
-        StartCoroutine(IE_ChangeState());
-    }
-
-    protected IEnumerator IE_ChangeState()
-    {
-        yield return new WaitForSeconds(0.75f);
-        gameActiveState1.ForEach(item =>
-        {
-            item.MoveObjHide();
-        });
-        gameActiveState2.ForEach(item =>
-        {
-            item.gameObject.SetActive(true);
-            item.MoveObjShow();
-        });
-    }
-
-    public void gotoStore()
+    public void GotoStore()
     {
         Debug.Log("Goto Store");
         LifeCycle.GameEnded();
@@ -41,25 +19,15 @@ public class GameManager : Singleton<GameManager>
     {
         if (isEndGame && Input.GetMouseButtonDown(0))
         {
-            gotoStore();
+            GotoStore();
         }
     }
 
     public bool isEndGame = false;
 
-    public void showEndGame()
+    public void ActiveListenToStore()
     {
-        Debug.Log("End Game");
+        Debug.Log("End Game - ActiveListenToStore");
         isEndGame = true;
-    }
-
-    public void PlaySoundWater()
-    {
-        SoundManager.Ins.PlayFxAfterTime(FxType.DropWater, 0.3f);
-    }
-
-    public void PlaySoundDrop()
-    {
-        SoundManager.Ins.PlayFxAfterTime(FxType.ShakeDrop, 0.3f);
     }
 }

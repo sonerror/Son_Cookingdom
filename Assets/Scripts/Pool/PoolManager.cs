@@ -4,13 +4,10 @@ using UnityEngine;
 
 public enum PoolType
 {
-    Wood,
-    Brick,
-    Stone,
-    Paddy,
-    Potato,
-    Tomato,
-    Star,
+    SfxMove = 0,
+    SfxCut = 1,
+    SfxCut2 = 2,
+    SfxClose = 3,
 }
 
 public class PoolManager : Singleton<PoolManager>

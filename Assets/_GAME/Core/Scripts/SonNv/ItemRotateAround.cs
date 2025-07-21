@@ -40,15 +40,15 @@ namespace sonnv
 
         private void OnBlockInteract()
         {
-            if (_level.IsAllowInteract)
-            {
-                _canInteract = true;
-            }
-            else
-            {
-                if (_isDragging) EndDetect();
-                _canInteract = false;
-            }
+            // if (_level.IsAllowInteract)
+            // {
+            _canInteract = true;
+            // }
+            // else
+            // {
+            //     if (_isDragging) EndDetect();
+            //     _canInteract = false;
+            // }
         }
 
         public void StartDetect()

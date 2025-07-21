@@ -9,16 +9,16 @@ public class GamePlayScreen : UIScreen
 
     public void gotoStore()
     {
-        GameManager.Ins.gotoStore();
+        GameManager.Ins.GotoStore();
     }
 
     void Update()
     {
-        // if (Input.GetMouseButtonDown(0))
-        // {
-        //     btnPlay.SetActive(true);
-        //     TextTutorial.SetActive(false);
-        // }
+        if (Input.GetMouseButtonDown(0))
+        {
+            btnPlay.SetActive(true);
+            TextTutorial.SetActive(false);
+        }
     }
 
 

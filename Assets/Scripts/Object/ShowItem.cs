@@ -10,18 +10,25 @@ public class ShowItem : GameUnit
 
     public void MoveObjShow()
     {
-
+        gameObject.SetActive(true);
+        PoolManager.Ins.Spawn(PoolType.SfxMove, Tf.position, Quaternion.identity);
         if (actionOnTheLeft)
         {
             Vector3 targetPosition = Tf.position;
             Tf.position = Tf.position + Vector3.left * distance;
-            Tf.DOMove(targetPosition, 1f);
+            Tf.DOMove(targetPosition, 0.5f).OnComplete(() =>
+            {
+                PoolManager.Ins.Spawn(PoolType.SfxMove, Tf.position, Quaternion.identity);
+            });
         }
         else
         {
             Vector3 targetPosition = Tf.position;
             Tf.position = Tf.position + Vector3.right * distance;
-            Tf.DOMove(targetPosition, 1f);
+            Tf.DOMove(targetPosition, 0.5f).OnComplete(() =>
+            {
+                PoolManager.Ins.Spawn(PoolType.SfxMove, Tf.position, Quaternion.identity);
+            });
         }
     }
 
@@ -30,7 +37,7 @@ public class ShowItem : GameUnit
         if (actionOnTheLeft)
         {
             var pos = Tf.position + Vector3.left * distance;
-            Tf.DOMove(pos, 1f).OnComplete(() =>
+            Tf.DOMove(pos, 0.75f).OnComplete(() =>
             {
                 Tf.gameObject.SetActive(false);
             });
@@ -38,7 +45,7 @@ public class ShowItem : GameUnit
         else
         {
             var pos = Tf.position + Vector3.right * distance;
-            Tf.DOMove(pos, 1f).OnComplete(() =>
+            Tf.DOMove(pos, 0.75f).OnComplete(() =>
             {
                 Tf.gameObject.SetActive(false);
             });

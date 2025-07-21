@@ -9,6 +9,7 @@ public class ItemMove : DragController, IItem
     private bool isDone = false;
     public bool IsDone { get => isDone; }
     [SerializeField] private ItemHolder itemTarget;
+    public Vector3 GetTargetPosition => itemTarget ? itemTarget.Tf.position : Vector3.zero;
 
     public void OnActionEnd()
     {
@@ -74,12 +75,12 @@ public class ItemMove : DragController, IItem
 
     IEnumerator IE_PlayAnimCut()
     {
-        yield return Cache.GetWFS(0.5f);
+        yield return Cache.GetWFS(0.25f);
         parState1.Play();
         yield return Cache.GetWFS(0.75f);
         State0.SetActive(false);
         State1.SetActive(true);
-        yield return Cache.GetWFS(1f);
+        yield return Cache.GetWFS(0.5f);
         State2.SetActive(true);
         mask1.DOMove(FinishPoint.position, 1f);
         mask2.DOMove(FinishPoint.position, 1f).OnComplete(() =>

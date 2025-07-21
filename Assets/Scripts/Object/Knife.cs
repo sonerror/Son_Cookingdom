@@ -61,16 +61,22 @@ public class Knife : DragController, IItem
 
     IEnumerator IE_PlayAnimCut(Transform startPoint, Transform finishPoint)
     {
-        yield return Cache.GetWFS(0.5f);
+        yield return Cache.GetWFS(0.25f);
         anim.SetTrigger("tomatocut");
-        yield return Cache.GetWFS(0.75f);
-        yield return Cache.GetWFS(1f);
+        for (int i = 0; i < 3; i++)
+        {
+            PoolManager.Ins.Spawn(PoolType.SfxCut2, Tf.position, Quaternion.identity);
+            yield return Cache.GetWFS(0.15f);
+        }
+        yield return Cache.GetWFS(0.3f);
+        yield return Cache.GetWFS(0.5f);
         Tf.DOMove(finishPoint.position + Vector3.right * 0.5f, 1f);
         var par = itemTarget.ItemMove.parState2;
         for (int i = 0; i < 5; i++)
         {
             anim.SetTrigger("cut");
-            par.Play();
+            if (par != null) par.Play();
+            PoolManager.Ins.Spawn(PoolType.SfxCut, Tf.position, Quaternion.identity);
             yield return Cache.GetWFS(0.2f);
         }
         yield return Cache.GetWFS(0.5f);

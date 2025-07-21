@@ -66,6 +66,7 @@
   <ItemGroup>
     <Compile Include="Assets\_GAME\Levels\SonLevelDonut\Scripts\IngredientHolderTopping.cs" />
     <Compile Include="Assets\Scripts\Object\HandCtrl.cs" />
+    <Compile Include="Assets\Scripts\Pool\SoundFxPool.cs" />
     <Compile Include="Assets\_GAME\Levels\SonLevelDonut\Scripts\SpoonForwarder.cs" />
     <Compile Include="Assets\_GAME\Levels\SonLevelDonut\Scripts\IngredientForwarderAnim.cs" />
     <Compile Include="Assets\_GAME\Levels\SonLevelDonut\Scripts\InforSprite.cs" />
@@ -98,6 +99,8 @@
     <Compile Include="Assets\_GAME\Levels\SonLevelDonut\Scripts\ContactColider.cs" />
     <Compile Include="Assets\_GAME\Core\Scripts\SonNv\ScalingOnPick.cs" />
     <Compile Include="Assets\_GAME\Levels\SonLevelDonut\Scripts\Phase1Donut.cs" />
+    <Compile Include="Assets\Scripts\Object\ItemMoveState2.cs" />
+    <Compile Include="Assets\Scripts\Helper\Helper.cs" />
     <Compile Include="Assets\AllIn1SpriteShader\Scripts\AllIn1ShaderWindow.cs" />
     <Compile Include="Assets\Scripts\UI\ProgressWidth.cs" />
     <Compile Include="Assets\AllIn1SpriteShader\Scripts\SetGlobalTimeUnity2018.cs" />

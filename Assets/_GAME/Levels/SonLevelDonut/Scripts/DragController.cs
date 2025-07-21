@@ -12,6 +12,9 @@ namespace sonnv
         [SerializeField] private Collider col;
         public UnityEvent onDragStart;
         public UnityEvent onDragStop;
+        [SerializeField] private bool callOnReleased = false; // Call onDragStop when mouse is released
+        [SerializeField] private FxType FxMouseDown = FxType.Click; // Sound effect when mouse is pressed down
+        [SerializeField] private FxType FxMouseUp = FxType.None; // Sound effect when mouse is released
         public bool zeroOnDragStart;   // Set position to cursor on drag start (ignores Z-axis)
         public bool restrictX;         // Restrict movement on X-axis
         public bool restrictY;         // Restrict movement on Y-axis
@@ -67,7 +70,6 @@ namespace sonnv
 
         private void Update()
         {
-            if (!level.IsAllowInteract) return;
             if (_dragging)
             {
                 HandleDragging();
@@ -81,7 +83,7 @@ namespace sonnv
                 if (!(_elapsedTime >= moveBackDuration)) return;
                 Tf.position = _backPos;
                 _isMovingBack = false;
-                onDragStop?.Invoke();
+                if (callOnReleased) onDragStop?.Invoke();
             }
         }
 
@@ -95,14 +97,17 @@ namespace sonnv
 
         private void OnMouseDown()
         {
+            TutorialManager.Ins.MouseDownItem();
             if (enabled)
             {
+                SoundManager.Ins.PlayFx(FxMouseDown);
                 OnDragStart();
             }
         }
 
         public void OnMouseUp()
         {
+            TutorialManager.Ins.MouseUpItem();
             ActionOnMouseUp();
         }
 
@@ -110,6 +115,8 @@ namespace sonnv
         {
             if (enabled)
             {
+                SoundManager.Ins.PlayFx(FxMouseUp);
+
                 OnDragStop();
                 if (moveBackOnRelease)
                 {
@@ -207,7 +214,7 @@ namespace sonnv
         protected void OnDragStop()
         {
             _dragging = false;
-            onDragStop?.Invoke();
+            if (!callOnReleased) onDragStop?.Invoke();
 
             if (returnOffScreen)
             {

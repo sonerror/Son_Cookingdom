@@ -218,7 +218,7 @@ namespace sonnv
             isRotateBeater = false;
             OnEndStep(true);
 
-            GameManager.Ins.ChangeState();
+            // GameManager.Ins.ChangeState();
         }
         //Step 4 them bot
         [SerializeField] public IngredientForwarder flourBowl;
@@ -244,7 +244,7 @@ namespace sonnv
                 flourBowl.Tf.DOMove(PosToFlourBowl.position, 0.25f).OnComplete(() =>
                 {
                     animFlour.Play();
-                    GameManager.Ins.PlaySoundDrop();
+                    // GameManager.Ins.PlaySoundDrop();
                     flourInBowl.DOFade(1f, 1f).SetDelay(0.4f)
                         .OnStart(() =>
                         {
@@ -303,7 +303,7 @@ namespace sonnv
         private void OnStartStep6()
         {
             Debug.Log("End Game Phase 1");
-            GameManager.Ins.showEndGame();
+            GameManager.Ins.ActiveListenToStore();
             spatula.SetIngredient(IngredientType.Spatula, false);
             mixFlourBowl.OnIngredientDone = OnAddEggSpatula;
         }

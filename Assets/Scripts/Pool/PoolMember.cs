@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PoolMember : GameUnit
 {
-    private PoolType poolType;
+    [SerializeField] private PoolType poolType;
     public PoolType PoolType
     {
         get => poolType;

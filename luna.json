@@ -2,7 +2,7 @@
     "version": "6.2.1",
     "projectId": "f42e7ff96e4545544bb6cd68f51ab634",
     "applicationID": 0,
-    "creativeName": "Cookingdom_v3GG",
+    "creativeName": "Cookingdom_v4",
     "pgServer": "EU",
     "window": {
         "‐‵": true
@@ -11,6 +11,7 @@
         "environmentID": 1144181199,
         "scripts": {
             "excludes": [
+                "Assets/FindMissingScriptsRecursively.cs",
                 "**/Editor/",
                 "**/Luna/RuntimeScripts/",
                 "**/FacebookSDK/",
@@ -132,9 +133,11 @@
             ]
         },
         "scenes": [
+            "Assets/Scenes/PlyScene.unity"
+        ],
+        "disabledScenes": [
             "Assets/_GAME/Levels/SonLevelDonut/Level628.unity"
         ],
-        "disabledScenes": [],
         "startupScene": 0,
         "packages": {
             "default": {
@@ -163,7 +166,7 @@
         "minify": true,
         "forceUncompressed": false,
         "forceBase64": true,
-        "graphicsConstraint": 24,
+        "graphicsConstraint": 28,
         "genericCheck": true,
         "disableAntiAliasing": true,
         "forceStableRandomSeed": false,
@@ -7870,10 +7873,6 @@
                 "excluded": true
             },
             {
-                "name": "Spine.AnimationStateAdapter",
-                "excluded": true
-            },
-            {
                 "name": "Spine.AtlasPage",
                 "excluded": true
             },
@@ -7930,10 +7929,6 @@
                 "excluded": true
             },
             {
-                "name": "Spine.UnityColor",
-                "excluded": true
-            },
-            {
                 "name": "Spine.Atlas",
                 "excluded": true
             },
@@ -7975,10 +7970,6 @@
             },
             {
                 "name": "Spine.IHasRendererObject",
-                "excluded": true
-            },
-            {
-                "name": "Spine.IHasTextureRegion",
                 "excluded": true
             },
             {
@@ -8039,10 +8030,6 @@
             },
             {
                 "name": "DG.Tweening.DOTweenModuleUnityVersion",
-                "excluded": true
-            },
-            {
-                "name": "PoolManager.PoolAmount",
                 "excluded": true
             },
             {
@@ -8322,12 +8309,8 @@
                 "excluded": true
             },
             {
-                "name": "IAmAnEmptyScriptJustToMakeCodelessProjectsCompileProperty",
-                "excluded": true
-            },
-            {
                 "name": "PoolType",
-                "excluded": true
+                "excluded": false
             },
             {
                 "name": "Spine.Unity.ISpineComponent",
@@ -8523,10 +8506,6 @@
             },
             {
                 "name": "sonnv.ToppingForwarder",
-                "excluded": true
-            },
-            {
-                "name": "PoolMember",
                 "excluded": true
             },
             {
@@ -8884,6 +8863,38 @@
             {
                 "name": "TMPro.TextMeshProUGUI",
                 "excluded": false
+            },
+            {
+                "name": "UtilExtensions",
+                "excluded": true
+            },
+            {
+                "name": "IItem",
+                "excluded": false
+            },
+            {
+                "name": "Spine.AnimationStateAdapter",
+                "excluded": true
+            },
+            {
+                "name": "Spine.UnityColor",
+                "excluded": true
+            },
+            {
+                "name": "Spine.IHasTextureRegion",
+                "excluded": true
+            },
+            {
+                "name": "IAmAnEmptyScriptJustToMakeCodelessProjectsCompileProperty",
+                "excluded": true
+            },
+            {
+                "name": "pc.Debugger.Components.EditorCamera",
+                "excluded": true
+            },
+            {
+                "name": "pc.Debugger.Components.EditorGUI",
+                "excluded": true
             }
         ],
         "unusedMethods": [
@@ -15427,7 +15438,7 @@
                     },
                     {
                         "name": "value#get",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "value#set",
@@ -17729,7 +17740,7 @@
                     },
                     {
                         "name": "hdr#get",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "hdr#set",
@@ -17745,7 +17756,7 @@
                     },
                     {
                         "name": "clearFlags#get",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "clearFlags#set",
@@ -17849,7 +17860,7 @@
                     },
                     {
                         "name": "targetTexture#get",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "targetTexture#set",
@@ -17861,7 +17872,7 @@
                     },
                     {
                         "name": "depth#get",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "depth#set",
@@ -17881,7 +17892,7 @@
                     },
                     {
                         "name": "rect#get",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "rect#set",
@@ -17901,7 +17912,7 @@
                     },
                     {
                         "name": "targetDisplay#get",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "targetDisplay#set",
@@ -18317,7 +18328,7 @@
                     },
                     {
                         "name": "anchorMax#get",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "anchorMax#set",
@@ -18325,7 +18336,7 @@
                     },
                     {
                         "name": "anchorMin#get",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "anchorMin#set",
@@ -18333,7 +18344,7 @@
                     },
                     {
                         "name": "offsetMin#get",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "offsetMin#set",
@@ -18341,7 +18352,7 @@
                     },
                     {
                         "name": "offsetMax#get",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "offsetMax#set",
@@ -18357,7 +18368,7 @@
                     },
                     {
                         "name": "anchoredPosition#get",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "anchoredPosition#set",
@@ -18365,7 +18376,7 @@
                     },
                     {
                         "name": "sizeDelta#get",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "sizeDelta#set",
@@ -20584,11 +20595,11 @@
                 "staticMethods": [],
                 "instanceMethods": [
                     {
-                        "name": "ctor",
+                        "name": "Clone",
                         "excluded": true
                     },
                     {
-                        "name": "Clone",
+                        "name": "ctor",
                         "excluded": true
                     }
                 ]
@@ -20602,19 +20613,7 @@
                         "excluded": true
                     },
                     {
-                        "name": "Wrap",
-                        "excluded": true
-                    },
-                    {
                         "name": "CheckMatch",
-                        "excluded": true
-                    },
-                    {
-                        "name": "Items#get",
-                        "excluded": true
-                    },
-                    {
-                        "name": "Items#set",
                         "excluded": true
                     },
                     {
@@ -20891,6 +20890,18 @@
                     },
                     {
                         "name": "TrueForAll",
+                        "excluded": true
+                    },
+                    {
+                        "name": "Wrap",
+                        "excluded": true
+                    },
+                    {
+                        "name": "Items#get",
+                        "excluded": true
+                    },
+                    {
+                        "name": "Items#set",
                         "excluded": true
                     }
                 ]
@@ -21284,31 +21295,15 @@
                         "excluded": false
                     },
                     {
-                        "name": "gotoStore",
-                        "excluded": false
-                    },
-                    {
                         "name": "Update",
                         "excluded": false
                     },
                     {
-                        "name": "showEndGame",
-                        "excluded": false
+                        "name": "GotoStore",
+                        "excluded": true
                     },
                     {
-                        "name": "ChangeState",
-                        "excluded": false
-                    },
-                    {
-                        "name": "PlaySoundWater",
-                        "excluded": false
-                    },
-                    {
-                        "name": "IE_ChangeState",
-                        "excluded": false
-                    },
-                    {
-                        "name": "PlaySoundWater1",
+                        "name": "ActiveListenToStore",
                         "excluded": true
                     }
                 ]
@@ -21323,7 +21318,7 @@
                     },
                     {
                         "name": "init",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "Awake",
@@ -21386,6 +21381,10 @@
                     {
                         "name": "PlayFxAfterTime",
                         "excluded": false
+                    },
+                    {
+                        "name": "IsMute#get",
+                        "excluded": true
                     }
                 ]
             },
@@ -21393,6 +21392,10 @@
                 "className": "Spine.TrackEntry",
                 "staticMethods": [],
                 "instanceMethods": [
+                    {
+                        "name": "toString",
+                        "excluded": true
+                    },
                     {
                         "name": "ctor",
                         "excluded": true
@@ -21447,10 +21450,6 @@
                     },
                     {
                         "name": "GetListener",
-                        "excluded": true
-                    },
-                    {
-                        "name": "toString",
                         "excluded": true
                     }
                 ]
@@ -22767,7 +22766,7 @@
                     },
                     {
                         "name": "name#get",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "name#set",
@@ -25245,7 +25244,7 @@
                     },
                     {
                         "name": "eventMask#get",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "eventMask#set",
@@ -25296,7 +25295,7 @@
                         "excluded": false
                     },
                     {
-                        "name": "IsAllowInteract#get",
+                        "name": "Update",
                         "excluded": false
                     }
                 ]
@@ -28844,18 +28843,6 @@
                         "excluded": false
                     },
                     {
-                        "name": "ShowHandState1",
-                        "excluded": false
-                    },
-                    {
-                        "name": "setHandPlayBox",
-                        "excluded": true
-                    },
-                    {
-                        "name": "Awake",
-                        "excluded": false
-                    },
-                    {
                         "name": "ShowHandArrow",
                         "excluded": false
                     },
@@ -28866,6 +28853,10 @@
                     {
                         "name": "IEShowHandRotate",
                         "excluded": false
+                    },
+                    {
+                        "name": "ShowHandStateAtPos",
+                        "excluded": true
                     }
                 ]
             },
@@ -28914,39 +28905,11 @@
                         "excluded": false
                     },
                     {
-                        "name": "PlayTutState0",
+                        "name": "PlayStateGame1",
                         "excluded": false
                     },
                     {
-                        "name": "PlayTutState1",
-                        "excluded": false
-                    },
-                    {
-                        "name": "PlayTutState2",
-                        "excluded": false
-                    },
-                    {
-                        "name": "PlayTutState3",
-                        "excluded": false
-                    },
-                    {
-                        "name": "PlayTutState3_5",
-                        "excluded": false
-                    },
-                    {
-                        "name": "PlayTutState4",
-                        "excluded": false
-                    },
-                    {
-                        "name": "PlayTutState5",
-                        "excluded": true
-                    },
-                    {
-                        "name": "PlayTutState6",
-                        "excluded": true
-                    },
-                    {
-                        "name": "PlayTutState7",
+                        "name": "PlayStateGame2",
                         "excluded": true
                     }
                 ]
@@ -30550,32 +30513,6 @@
                 ]
             },
             {
-                "className": "Spine.Ref$1",
-                "staticMethods": [],
-                "instanceMethods": [
-                    {
-                        "name": "Value#get",
-                        "excluded": true
-                    },
-                    {
-                        "name": "Value#set",
-                        "excluded": true
-                    },
-                    {
-                        "name": "v#get",
-                        "excluded": true
-                    },
-                    {
-                        "name": "v#set",
-                        "excluded": true
-                    },
-                    {
-                        "name": "ctor",
-                        "excluded": true
-                    }
-                ]
-            },
-            {
                 "className": "UnityEngine.AnimationState",
                 "staticMethods": [],
                 "instanceMethods": [
@@ -31172,20 +31109,6 @@
                 ]
             },
             {
-                "className": "HoangHH.PlayAnimationManually",
-                "staticMethods": [],
-                "instanceMethods": [
-                    {
-                        "name": "PlayAnimation",
-                        "excluded": false
-                    },
-                    {
-                        "name": "PlayAnimation$1",
-                        "excluded": true
-                    }
-                ]
-            },
-            {
                 "className": "SonMonoBehaviour",
                 "staticMethods": [],
                 "instanceMethods": [
@@ -31306,6 +31229,34 @@
                     {
                         "name": "Awake",
                         "excluded": false
+                    },
+                    {
+                        "name": "init",
+                        "excluded": false
+                    },
+                    {
+                        "name": "Cam#get",
+                        "excluded": true
+                    },
+                    {
+                        "name": "Start",
+                        "excluded": false
+                    },
+                    {
+                        "name": "Update",
+                        "excluded": false
+                    },
+                    {
+                        "name": "setCameraSize",
+                        "excluded": false
+                    },
+                    {
+                        "name": "setCamPos",
+                        "excluded": false
+                    },
+                    {
+                        "name": "ResizeCam",
+                        "excluded": false
                     }
                 ]
             },
@@ -31334,27 +31285,11 @@
                         "excluded": true
                     },
                     {
-                        "name": "ReSetBackPos",
-                        "excluded": true
-                    },
-                    {
                         "name": "Awake",
                         "excluded": false
                     },
                     {
                         "name": "Start",
-                        "excluded": false
-                    },
-                    {
-                        "name": "OnStart",
-                        "excluded": false
-                    },
-                    {
-                        "name": "SetCheckMove",
-                        "excluded": true
-                    },
-                    {
-                        "name": "OnBlockPlayerInteractChanged",
                         "excluded": false
                     },
                     {
@@ -31408,6 +31343,10 @@
                     {
                         "name": "SetCanMoveBack",
                         "excluded": false
+                    },
+                    {
+                        "name": "ActionOnMouseUp",
+                        "excluded": true
                     }
                 ]
             },
@@ -33224,10 +33163,6 @@
                     {
                         "name": "MoveObjHide",
                         "excluded": false
-                    },
-                    {
-                        "name": "PlaySoundDrop",
-                        "excluded": true
                     }
                 ]
             },
@@ -36677,7 +36612,7 @@
                     },
                     {
                         "name": "ctor",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "RefreshStyle",
@@ -38188,6 +38123,346 @@
                     {
                         "name": "updateFill",
                         "excluded": false
+                    }
+                ]
+            },
+            {
+                "className": "Level630",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "init",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnItemState0Done",
+                        "excluded": true
+                    },
+                    {
+                        "name": "OnItemState1Done",
+                        "excluded": true
+                    },
+                    {
+                        "name": "OnNextState",
+                        "excluded": true
+                    },
+                    {
+                        "name": "IE_ChangeState",
+                        "excluded": true
+                    },
+                    {
+                        "name": "InitState2",
+                        "excluded": true
+                    },
+                    {
+                        "name": "PlayEmojiHeart",
+                        "excluded": true
+                    },
+                    {
+                        "name": "NextStepInState2",
+                        "excluded": true
+                    }
+                ]
+            },
+            {
+                "className": "Spine.Ref$1",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "Value#get",
+                        "excluded": true
+                    },
+                    {
+                        "name": "Value#set",
+                        "excluded": true
+                    },
+                    {
+                        "name": "v#get",
+                        "excluded": true
+                    },
+                    {
+                        "name": "v#set",
+                        "excluded": true
+                    },
+                    {
+                        "name": "ctor",
+                        "excluded": true
+                    }
+                ]
+            },
+            {
+                "className": "PoolManager.PoolAmount",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "getDefaultValue",
+                        "excluded": true
+                    },
+                    {
+                        "name": "ctor",
+                        "excluded": false
+                    },
+                    {
+                        "name": "getHashCode",
+                        "excluded": true
+                    },
+                    {
+                        "name": "equals",
+                        "excluded": true
+                    },
+                    {
+                        "name": "$clone",
+                        "excluded": true
+                    }
+                ]
+            },
+            {
+                "className": "PoolMember",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "PoolType#get",
+                        "excluded": true
+                    },
+                    {
+                        "name": "PoolType#set",
+                        "excluded": true
+                    }
+                ]
+            },
+            {
+                "className": "ItemClick",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "IsDone#get",
+                        "excluded": true
+                    },
+                    {
+                        "name": "IsDone#set",
+                        "excluded": true
+                    },
+                    {
+                        "name": "Col#get",
+                        "excluded": true
+                    },
+                    {
+                        "name": "init",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnActionEnd",
+                        "excluded": true
+                    },
+                    {
+                        "name": "OnActionStart",
+                        "excluded": true
+                    },
+                    {
+                        "name": "OnMouseDown",
+                        "excluded": true
+                    },
+                    {
+                        "name": "OnMouseUp",
+                        "excluded": true
+                    },
+                    {
+                        "name": "PlayAction",
+                        "excluded": true
+                    },
+                    {
+                        "name": "IEPlayAction",
+                        "excluded": true
+                    },
+                    {
+                        "name": "DelayCallDone",
+                        "excluded": true
+                    }
+                ]
+            },
+            {
+                "className": "ItemHolder",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "ItemMove#get",
+                        "excluded": true
+                    },
+                    {
+                        "name": "IsOccupied#get",
+                        "excluded": true
+                    },
+                    {
+                        "name": "IsDone#get",
+                        "excluded": true
+                    },
+                    {
+                        "name": "IsDone#set",
+                        "excluded": true
+                    },
+                    {
+                        "name": "IsActiveMove#get",
+                        "excluded": true
+                    },
+                    {
+                        "name": "IsActiveMove#set",
+                        "excluded": true
+                    },
+                    {
+                        "name": "Col#get",
+                        "excluded": true
+                    },
+                    {
+                        "name": "AddItem",
+                        "excluded": true
+                    },
+                    {
+                        "name": "ActionOnAddItem",
+                        "excluded": true
+                    },
+                    {
+                        "name": "ActionOnAddKnife",
+                        "excluded": true
+                    },
+                    {
+                        "name": "ActionOnAddKnife$1",
+                        "excluded": true
+                    },
+                    {
+                        "name": "OnActionStart",
+                        "excluded": true
+                    },
+                    {
+                        "name": "OnActionEnd",
+                        "excluded": true
+                    },
+                    {
+                        "name": "DoneActionCut",
+                        "excluded": true
+                    }
+                ]
+            },
+            {
+                "className": "ItemMove",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "IsDone#get",
+                        "excluded": true
+                    },
+                    {
+                        "name": "GetTargetPosition#get",
+                        "excluded": true
+                    },
+                    {
+                        "name": "init",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnActionEnd",
+                        "excluded": true
+                    },
+                    {
+                        "name": "OnActionStart",
+                        "excluded": true
+                    },
+                    {
+                        "name": "ActionOnMouseUp",
+                        "excluded": true
+                    },
+                    {
+                        "name": "PlayAnimCut",
+                        "excluded": true
+                    },
+                    {
+                        "name": "IE_PlayAnimCut",
+                        "excluded": true
+                    }
+                ]
+            },
+            {
+                "className": "ItemMoveState2",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "IsDone#get",
+                        "excluded": true
+                    },
+                    {
+                        "name": "GetTargetPosition#get",
+                        "excluded": true
+                    },
+                    {
+                        "name": "init",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnActionEnd",
+                        "excluded": true
+                    },
+                    {
+                        "name": "OnActionStart",
+                        "excluded": true
+                    },
+                    {
+                        "name": "ActionOnMouseUp",
+                        "excluded": true
+                    }
+                ]
+            },
+            {
+                "className": "Knife",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "IsDone#get",
+                        "excluded": true
+                    },
+                    {
+                        "name": "IsDone#set",
+                        "excluded": true
+                    },
+                    {
+                        "name": "IsActiveMove#get",
+                        "excluded": true
+                    },
+                    {
+                        "name": "IsActiveMove#set",
+                        "excluded": true
+                    },
+                    {
+                        "name": "OnActionEnd",
+                        "excluded": true
+                    },
+                    {
+                        "name": "OnActionStart",
+                        "excluded": true
+                    },
+                    {
+                        "name": "ActionOnMouseUp",
+                        "excluded": true
+                    },
+                    {
+                        "name": "PlayAnimCut",
+                        "excluded": true
+                    },
+                    {
+                        "name": "IE_PlayAnimCut",
+                        "excluded": true
+                    }
+                ]
+            },
+            {
+                "className": "SoundFxPool",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "OnEnable",
+                        "excluded": true
+                    },
+                    {
+                        "name": "DespawnEffect",
+                        "excluded": true
                     }
                 ]
             }

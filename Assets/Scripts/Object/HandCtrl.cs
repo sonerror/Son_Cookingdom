@@ -9,12 +9,6 @@ public class HandCtrl : GameUnit
     private Vector3 pos1;
     private Vector3 pos2;
 
-    private Vector3 localPosBodyHand;
-
-    void Awake()
-    {
-        localPosBodyHand = animator.transform.localPosition;
-    }
     private float distance = 1f;
     private Vector3[] paths = new Vector3[8];
     public void ShowHandArrow(Vector3 posRot, float fromAngle, float dist)
@@ -38,7 +32,7 @@ public class HandCtrl : GameUnit
     private void ShowHandArrowLoop()
     {
         animator.SetTrigger("HandDown");
-        transform.DOPath(paths, 1.5f, PathType.CatmullRom).SetLoops(2).SetDelay(0.75f).onComplete = () =>
+        Tf.DOPath(paths, 1.5f, PathType.CatmullRom).SetLoops(2).SetDelay(0.75f).onComplete = () =>
         {
             animator.SetTrigger("HandUp");
         };
@@ -52,23 +46,16 @@ public class HandCtrl : GameUnit
             ShowHandArrowLoop();
     }
 
-    public void ShowHandState1(Vector3 pos)
+    public void ShowHandStateAtPos(Vector3 pos)
     {
         animator.gameObject.SetActive(true);
         animator.Play("Hand");
-        transform.position = pos;
+        Tf.position = pos;
     }
 
     public void HideHand()
     {
         animator.gameObject.SetActive(false);
-    }
-
-    public void setHandPlayBox(Vector3 pos)
-    {
-        animator.gameObject.SetActive(true);
-        animator.Play("Hand");
-        transform.position = pos;
     }
 
     public void ShowHandPosToPos(Vector3 pos1, Vector3 pos2)
@@ -83,9 +70,9 @@ public class HandCtrl : GameUnit
 
     void ShowHand()
     {
-        transform.position = pos1;
+        Tf.position = pos1;
         animator.SetTrigger("HandDown");
-        transform.DOMove(pos2, 1f).SetDelay(0.75f).onComplete = () =>
+        Tf.DOMove(pos2, 1f).SetDelay(0.75f).onComplete = () =>
         {
             animator.SetTrigger("HandUp");
         };
