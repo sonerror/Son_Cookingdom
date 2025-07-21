@@ -2401,7 +2401,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 5
+  m_SortingOrder: 6
   m_Sprite: {fileID: 21300000, guid: 2509b2ea81d760e49ae8bcd3f7336c5b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -8612,7 +8612,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1186834015}
-  - component: {fileID: 1186834016}
   m_Layer: 0
   m_Name: PieceDone
   m_TagString: Untagged
@@ -8636,18 +8635,6 @@ Transform:
   - {fileID: 626266623}
   m_Father: {fileID: 1526053191436428960}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!210 &1186834016
-SortingGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1186834014}
-  m_Enabled: 1
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 2
-  m_SortAtRoot: 0
 --- !u!1001 &1194238043
 PrefabInstance:
   m_ObjectHideFlags: 0
