@@ -3309,10 +3309,6 @@
                 "excluded": true
             },
             {
-                "name": "LunaUnity.Utils.Delay",
-                "excluded": true
-            },
-            {
                 "name": "LunaUnity.Utils.Interval",
                 "excluded": true
             },
@@ -8869,10 +8865,6 @@
                 "excluded": true
             },
             {
-                "name": "IItem",
-                "excluded": false
-            },
-            {
                 "name": "Spine.AnimationStateAdapter",
                 "excluded": true
             },
@@ -9402,11 +9394,11 @@
                     },
                     {
                         "name": "trunc",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "div",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "mod",
@@ -12852,7 +12844,7 @@
                     },
                     {
                         "name": "Enqueue",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "GetEnumerator",
@@ -12868,7 +12860,7 @@
                     },
                     {
                         "name": "Dequeue",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "Peek",
@@ -12888,11 +12880,11 @@
                     },
                     {
                         "name": "SetCapacity",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "MoveNext",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "TrimExcess",
@@ -17380,7 +17372,7 @@
                     },
                     {
                         "name": "SetPositionAndRotation",
-                        "excluded": true
+                        "excluded": false
                     }
                 ]
             },
@@ -21322,15 +21314,15 @@
                     },
                     {
                         "name": "Awake",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "OnInit",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "Spawn$1",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "Spawn",
@@ -21338,11 +21330,11 @@
                     },
                     {
                         "name": "Despawn",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "GetPrefab",
-                        "excluded": true
+                        "excluded": false
                     }
                 ]
             },
@@ -21384,7 +21376,7 @@
                     },
                     {
                         "name": "IsMute#get",
-                        "excluded": true
+                        "excluded": false
                     }
                 ]
             },
@@ -22774,7 +22766,7 @@
                     },
                     {
                         "name": "length#get",
-                        "excluded": true
+                        "excluded": false
                     }
                 ]
             },
@@ -26344,7 +26336,7 @@
                     },
                     {
                         "name": "bounds#get",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "isTrigger#get",
@@ -29430,11 +29422,11 @@
                     },
                     {
                         "name": "FromAlpha#get",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "ToAlpha#get",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "AddTime",
@@ -30908,7 +30900,7 @@
                     },
                     {
                         "name": "Play",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "Play$1",
@@ -38136,7 +38128,7 @@
                     },
                     {
                         "name": "OnItemState0Done",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "OnItemState1Done",
@@ -38156,7 +38148,7 @@
                     },
                     {
                         "name": "PlayEmojiHeart",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "NextStepInState2",
@@ -38222,7 +38214,7 @@
                 "instanceMethods": [
                     {
                         "name": "PoolType#get",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "PoolType#set",
@@ -38286,39 +38278,23 @@
                 "instanceMethods": [
                     {
                         "name": "ItemMove#get",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "IsOccupied#get",
-                        "excluded": true
-                    },
-                    {
-                        "name": "IsDone#get",
-                        "excluded": true
-                    },
-                    {
-                        "name": "IsDone#set",
-                        "excluded": true
-                    },
-                    {
-                        "name": "IsActiveMove#get",
-                        "excluded": true
-                    },
-                    {
-                        "name": "IsActiveMove#set",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "Col#get",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "AddItem",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "ActionOnAddItem",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "ActionOnAddKnife",
@@ -38326,7 +38302,7 @@
                     },
                     {
                         "name": "ActionOnAddKnife$1",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "OnActionStart",
@@ -38338,7 +38314,7 @@
                     },
                     {
                         "name": "DoneActionCut",
-                        "excluded": true
+                        "excluded": false
                     }
                 ]
             },
@@ -38359,24 +38335,16 @@
                         "excluded": false
                     },
                     {
-                        "name": "OnActionEnd",
-                        "excluded": true
-                    },
-                    {
-                        "name": "OnActionStart",
-                        "excluded": true
-                    },
-                    {
                         "name": "ActionOnMouseUp",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "PlayAnimCut",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "IE_PlayAnimCut",
-                        "excluded": true
+                        "excluded": false
                     }
                 ]
             },
@@ -38415,40 +38383,20 @@
                 "staticMethods": [],
                 "instanceMethods": [
                     {
-                        "name": "IsDone#get",
-                        "excluded": true
-                    },
-                    {
-                        "name": "IsDone#set",
-                        "excluded": true
-                    },
-                    {
-                        "name": "IsActiveMove#get",
-                        "excluded": true
-                    },
-                    {
-                        "name": "IsActiveMove#set",
-                        "excluded": true
-                    },
-                    {
-                        "name": "OnActionEnd",
-                        "excluded": true
-                    },
-                    {
-                        "name": "OnActionStart",
-                        "excluded": true
-                    },
-                    {
                         "name": "ActionOnMouseUp",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "PlayAnimCut",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "IE_PlayAnimCut",
-                        "excluded": true
+                        "excluded": false
+                    },
+                    {
+                        "name": "init",
+                        "excluded": false
                     }
                 ]
             },
@@ -38458,11 +38406,33 @@
                 "instanceMethods": [
                     {
                         "name": "OnEnable",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "DespawnEffect",
+                        "excluded": false
+                    }
+                ]
+            },
+            {
+                "className": "LunaUnity.Utils.Delay",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "init",
+                        "excluded": false
+                    },
+                    {
+                        "name": "ctor",
+                        "excluded": false
+                    },
+                    {
+                        "name": "Stop",
                         "excluded": true
+                    },
+                    {
+                        "name": "Tick",
+                        "excluded": false
                     }
                 ]
             }

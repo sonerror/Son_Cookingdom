@@ -23,7 +23,7 @@ public class ItemMove : DragController
     public Transform StartPoint;
     public Transform FinishPoint;
 
-    [SerializeField] private Transform mask1;
+    // [SerializeField] private Transform mask1;
     [SerializeField] private Transform mask2;
 
     protected override void ActionOnMouseUp()
@@ -73,11 +73,11 @@ public class ItemMove : DragController
         State1.SetActive(true);
         yield return Cache.GetWFS(0.5f);
         State2.SetActive(true);
-        mask1.DOMove(FinishPoint.position, 1f);
+        // mask1.DOMove(FinishPoint.position, 1f);
         mask2.DOMove(FinishPoint.position, 1f).OnComplete(() =>
         {
             State1.SetActive(false);
-            mask1.gameObject.SetActive(false);
+            mask2.gameObject.SetActive(false);
         });
         yield return Cache.GetWFS(1f);
         level.PlayEmojiHeart();
