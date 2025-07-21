@@ -4,22 +4,13 @@ using DG.Tweening;
 using sonnv;
 using UnityEngine;
 
-public class ItemMove : DragController, IItem
+public class ItemMove : DragController
 {
     private bool isDone = false;
     public bool IsDone { get => isDone; }
     [SerializeField] private ItemHolder itemTarget;
     public Vector3 GetTargetPosition => itemTarget ? itemTarget.Tf.position : Vector3.zero;
 
-    public void OnActionEnd()
-    {
-        throw new System.NotImplementedException();
-    }
-
-    public void OnActionStart()
-    {
-        throw new System.NotImplementedException();
-    }
 
     public bool isTofu = false;
     public ParticleSystem parState1;

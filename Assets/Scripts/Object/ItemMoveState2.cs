@@ -4,7 +4,7 @@ using DG.Tweening;
 using sonnv;
 using UnityEngine;
 
-public class ItemMoveState2 : DragController, IItem
+public class ItemMoveState2 : DragController
 {
     private bool isDone = false;
     public bool IsDone { get => isDone; }

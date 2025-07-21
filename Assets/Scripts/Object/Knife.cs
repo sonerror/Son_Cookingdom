@@ -4,23 +4,10 @@ using DG.Tweening;
 using sonnv;
 using UnityEngine;
 
-public class Knife : DragController, IItem
+public class Knife : DragController
 {
-    public bool IsDone { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
-    public bool IsActiveMove { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
-
+    public bool IsDone = false;
     [SerializeField] private ItemHolder itemTarget;
-
-    public void OnActionEnd()
-    {
-        throw new System.NotImplementedException();
-    }
-
-    public void OnActionStart()
-    {
-        throw new System.NotImplementedException();
-    }
-
     [SerializeField] private Animator anim;
 
     protected override void ActionOnMouseUp()

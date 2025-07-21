@@ -2,14 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ItemHolder : GameUnit, IItem
+public class ItemHolder : GameUnit
 {
     private ItemMove itemMove = null;
     public ItemMove ItemMove => itemMove;
     public bool IsOccupied => itemMove != null;
-
-    public bool IsDone { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
-    public bool IsActiveMove { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
     [SerializeField] private Collider col;
     public Collider Col => col;
 

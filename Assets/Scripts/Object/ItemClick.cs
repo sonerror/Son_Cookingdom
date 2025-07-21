@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
 
-public class ItemClick : GameUnit, IItem
+public class ItemClick : GameUnit
 {
     private bool isDone = false;
     public bool IsDone { get => isDone; private set => isDone = value; }

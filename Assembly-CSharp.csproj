@@ -107,7 +107,6 @@
     <Compile Include="Assets\AllIn1SpriteShader\Scripts\AllIn1Shader.cs" />
     <Compile Include="Assets\_GAME\Levels\SonLevelDonut\Scripts\BeaterInBowl.cs" />
     <Compile Include="Assets\AllIn1SpriteShader\Scripts\SetGlobalTimeNew.cs" />
-    <Compile Include="Assets\Scripts\Object\IItem.cs" />
     <Compile Include="Assets\Scripts\Tmp\APDUtilities.cs" />
     <Compile Include="Assets\Scripts\Manager\SoundManager.cs" />
     <Compile Include="Assets\AllIn1SpriteShader\Scripts\SetAtlasUvs.cs" />
