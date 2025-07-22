@@ -1400,7 +1400,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 248974426}
-  - component: {fileID: 248974427}
   m_Layer: 0
   m_Name: Scale
   m_TagString: Untagged
@@ -1435,18 +1434,6 @@ Transform:
   - {fileID: 5598759778065010025}
   m_Father: {fileID: 440142468}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!210 &248974427
-SortingGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 248974425}
-  m_Enabled: 1
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 1
-  m_SortAtRoot: 0
 --- !u!1 &263810975
 GameObject:
   m_ObjectHideFlags: 0

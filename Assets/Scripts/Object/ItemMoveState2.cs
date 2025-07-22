@@ -14,15 +14,6 @@ public class ItemMoveState2 : DragController
     public Vector3 GetTargetPosition => itemTarget ? itemTarget.Tf.position : Vector3.zero;
     [SerializeField] private FxType fxDone = FxType.None;
 
-    public void OnActionEnd()
-    {
-        throw new System.NotImplementedException();
-    }
-
-    public void OnActionStart()
-    {
-        throw new System.NotImplementedException();
-    }
 
     protected override void ActionOnMouseUp()
     {

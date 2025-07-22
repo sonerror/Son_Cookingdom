@@ -3509,10 +3509,6 @@
                 "excluded": true
             },
             {
-                "name": "UnityEngine.PhysicMaterial",
-                "excluded": true
-            },
-            {
                 "name": "UnityEngine.Rendering.CommandBuffer",
                 "excluded": true
             },
@@ -15746,7 +15742,7 @@
                     },
                     {
                         "name": "position#get",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "position#set",
@@ -16982,11 +16978,11 @@
                     },
                     {
                         "name": "width#get",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "height#get",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "filterMode#get",
@@ -21292,7 +21288,7 @@
                     },
                     {
                         "name": "GotoStore",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "ActiveListenToStore",
@@ -26340,7 +26336,7 @@
                     },
                     {
                         "name": "isTrigger#get",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "isTrigger#set",
@@ -26348,7 +26344,7 @@
                     },
                     {
                         "name": "material#get",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "material#set",
@@ -28902,7 +28898,7 @@
                     },
                     {
                         "name": "PlayStateGame2",
-                        "excluded": true
+                        "excluded": false
                     }
                 ]
             },
@@ -31824,7 +31820,7 @@
                 "instanceMethods": [
                     {
                         "name": "radius#get",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "radius#set",
@@ -31832,7 +31828,7 @@
                     },
                     {
                         "name": "center#get",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "center#set",
@@ -38136,15 +38132,15 @@
                     },
                     {
                         "name": "OnNextState",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "IE_ChangeState",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "InitState2",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "PlayEmojiHeart",
@@ -38232,11 +38228,11 @@
                     },
                     {
                         "name": "IsDone#set",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "Col#get",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "init",
@@ -38252,23 +38248,23 @@
                     },
                     {
                         "name": "OnMouseDown",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "OnMouseUp",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "PlayAction",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "IEPlayAction",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "DelayCallDone",
-                        "excluded": true
+                        "excluded": false
                     }
                 ]
             },
@@ -38324,11 +38320,11 @@
                 "instanceMethods": [
                     {
                         "name": "IsDone#get",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "GetTargetPosition#get",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "init",
@@ -38358,23 +38354,15 @@
                     },
                     {
                         "name": "GetTargetPosition#get",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "init",
                         "excluded": false
                     },
                     {
-                        "name": "OnActionEnd",
-                        "excluded": true
-                    },
-                    {
-                        "name": "OnActionStart",
-                        "excluded": true
-                    },
-                    {
                         "name": "ActionOnMouseUp",
-                        "excluded": true
+                        "excluded": false
                     }
                 ]
             },
@@ -38433,6 +38421,68 @@
                     {
                         "name": "Tick",
                         "excluded": false
+                    },
+                    {
+                        "name": "Tick\",this)}this.c$-=t;if(this.c$<=0){pc.Application.getApplication().events.off(\"update",
+                        "excluded": false
+                    }
+                ]
+            },
+            {
+                "className": "UnityEngine.PhysicMaterial",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "name#get",
+                        "excluded": true
+                    },
+                    {
+                        "name": "name#set",
+                        "excluded": true
+                    },
+                    {
+                        "name": "bounciness#get",
+                        "excluded": true
+                    },
+                    {
+                        "name": "bounciness#set",
+                        "excluded": true
+                    },
+                    {
+                        "name": "dynamicFriction#get",
+                        "excluded": true
+                    },
+                    {
+                        "name": "dynamicFriction#set",
+                        "excluded": true
+                    },
+                    {
+                        "name": "staticFriction#get",
+                        "excluded": true
+                    },
+                    {
+                        "name": "staticFriction#set",
+                        "excluded": true
+                    },
+                    {
+                        "name": "frictionCombine#get",
+                        "excluded": true
+                    },
+                    {
+                        "name": "frictionCombine#set",
+                        "excluded": true
+                    },
+                    {
+                        "name": "bounceCombine#get",
+                        "excluded": true
+                    },
+                    {
+                        "name": "bounceCombine#set",
+                        "excluded": true
+                    },
+                    {
+                        "name": "ctor",
+                        "excluded": true
                     }
                 ]
             }

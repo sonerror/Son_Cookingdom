@@ -66,8 +66,6 @@ namespace sonnv
             if (moveBackOnRelease) _canMoveBack = true;
         }
 
-
-
         private void Update()
         {
             if (_dragging)

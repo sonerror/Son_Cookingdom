@@ -8,7 +8,7 @@ public class ItemHolder : GameUnit
     public ItemMove ItemMove => itemMove;
     public bool IsOccupied => itemMove != null;
     [SerializeField] private Collider col;
-    public Collider Col => col;
+    public Collider Col => col ? col : col = GetComponent<Collider>();
 
 
     public void AddItem(ItemMove item)
