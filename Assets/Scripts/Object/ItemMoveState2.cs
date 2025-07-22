@@ -22,7 +22,7 @@ public class ItemMoveState2 : DragController
             OnDragStop();
             if (IsEnableCheck && itemTarget != null && !itemTarget.IsOccupied)
             {
-                if (Col.bounds.Intersects(itemTarget.Col.bounds))
+                if (Col.bounds.Intersects(level.stoveCollider.bounds))
                 {
                     Col.enabled = false;
 
@@ -34,6 +34,7 @@ public class ItemMoveState2 : DragController
                             gameObject.SetActive(false);
                             level.NextStepInState2();
                             SoundManager.Ins.PlayFx(fxDone);
+                            EventManager.TriggerEvent(EventType.IncreaseProgress.ToString());
                         });
                     return;
                 }

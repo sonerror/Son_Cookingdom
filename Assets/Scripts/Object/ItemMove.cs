@@ -44,6 +44,7 @@ public class ItemMove : DragController
                         {
                             level.PlayEmojiHeart();
                             itemTarget.ActionOnAddItem();
+                            EventManager.TriggerEvent(EventType.IncreaseProgress.ToString());
                         });
                     return;
                 }
@@ -71,6 +72,7 @@ public class ItemMove : DragController
         yield return Cache.GetWFS(0.75f);
         State0.SetActive(false);
         State1.SetActive(true);
+        mask2.gameObject.SetActive(true);
         yield return Cache.GetWFS(0.5f);
         State2.SetActive(true);
         // mask1.DOMove(FinishPoint.position, 1f);
@@ -83,7 +85,7 @@ public class ItemMove : DragController
         level.PlayEmojiHeart();
         yield return Cache.GetWFS(0.5f);
         StartRelease();
-
+        EventManager.TriggerEvent(EventType.IncreaseProgress.ToString());
         if (isTofu)
         {
             yield return Cache.GetWFS(0.3f);

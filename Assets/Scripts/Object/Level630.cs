@@ -8,6 +8,8 @@ using UnityEngine;
 public class Level630 : SonLevelBase
 {
     public static bool IsState2 = false;
+    public static bool haveKnife = false;
+
 
     [SerializeField] private List<ShowItem> itemsShowState0 = new List<ShowItem>();
     [SerializeField] private List<ShowItem> itemsShowState1 = new List<ShowItem>();
@@ -24,6 +26,8 @@ public class Level630 : SonLevelBase
     [SerializeField] public Knife knife;
 
     public List<ItemMoveState2> itemState2 = new List<ItemMoveState2>();
+
+    [SerializeField] public Collider stoveCollider;
 
     private int CountItemState0 = 0;
     public void OnItemState0Done()
@@ -51,9 +55,9 @@ public class Level630 : SonLevelBase
     IEnumerator IE_ChangeState()
     {
         capybaraTf.gameObject.SetActive(true);
-        var pos = capybaraTf.localPosition;
-        capybaraTf.localPosition = pos + Vector3.down * 1.85f;
-        capybaraTf.DOLocalMove(pos, 1f);
+        var pos = capybaraTf.position;
+        // capybaraTf.position = pos + Vector3.down * 1.5f;
+        capybaraTf.DOMove(pos + Vector3.up * 1.5f, 1f);
         yield return Cache.GetWFS(0.5f);
         SoundManager.Ins.PlayFx(FxType.EmojiPositive);
         parHeart.Play();

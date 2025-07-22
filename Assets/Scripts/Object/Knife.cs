@@ -15,10 +15,11 @@ public class Knife : DragController
         if (enabled)
         {
 
-            if (itemTarget != null && itemTarget.IsOccupied)
+            if (!Level630.haveKnife && itemTarget != null && itemTarget.IsOccupied)
             {
                 if (Col.bounds.Intersects(itemTarget.Col.bounds))
                 {
+                    Level630.haveKnife = true;
                     Col.enabled = false;
                     var time = Vector3.Distance(Tf.position, itemTarget.ItemMove.StartPoint.position + Vector3.right * 0.5f) / 3f;
                     Tf.DOMove(itemTarget.ItemMove.StartPoint.position + Vector3.right * 0.5f, time)
@@ -70,6 +71,7 @@ public class Knife : DragController
         StartRelease();
         itemTarget.DoneActionCut();
         Col.enabled = true;
+        Level630.haveKnife = false;
     }
 
 
