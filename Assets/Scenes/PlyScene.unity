@@ -3431,6 +3431,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anim: {fileID: 929491874}
   col: {fileID: 929491876}
+  spriteNotDone: {fileID: 96496527}
 --- !u!65 &929491876
 BoxCollider:
   m_ObjectHideFlags: 0

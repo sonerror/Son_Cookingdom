@@ -11,6 +11,8 @@ public class ItemClick : GameUnit
 
     [SerializeField] private Animator anim;
     [SerializeField] private Collider col;
+    [SerializeField] private GameObject spriteNotDone;
+
 
     public void OnActionEnd()
     {
@@ -49,6 +51,7 @@ public class ItemClick : GameUnit
             PoolManager.Ins.Spawn(PoolType.SfxClose, Tf.position, Quaternion.identity);
             yield return Cache.GetWFS(0.4f);
         }
+        spriteNotDone.SetActive(false);
     }
 
     private async void DelayCallDone()
