@@ -44,6 +44,7 @@ public class ItemMove : DragController
                         {
                             level.PlayEmojiHeart();
                             itemTarget.ActionOnAddItem();
+                            SoundManager.Ins.PlayFx(FxType.PlaceBroad);
                             EventManager.TriggerEvent(EventType.IncreaseProgress.ToString());
                         });
                     return;

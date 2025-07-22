@@ -30,4 +30,11 @@ public class GameManager : Singleton<GameManager>
         Debug.Log("End Game - ActiveListenToStore");
         isEndGame = true;
     }
+
+    public void PlaySoundDisk()
+    {
+        SoundManager.Ins.PlayFx(FxType.PlaceDisk);
+    }
+
+
 }

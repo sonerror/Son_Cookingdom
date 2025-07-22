@@ -1610,6 +1610,21 @@ MonoBehaviour:
   onDragStop:
     m_PersistentCalls:
       m_Calls: []
+  onReleased:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 886780812}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: PlaySoundDisk
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   callOnReleased: 0
   FxMouseDown: 0
   FxMouseUp: 20
@@ -2353,6 +2368,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  onReleased:
+    m_PersistentCalls:
+      m_Calls: []
   callOnReleased: 1
   FxMouseDown: 0
   FxMouseUp: 20
@@ -2995,6 +3013,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   onDragStop:
+    m_PersistentCalls:
+      m_Calls: []
+  onReleased:
     m_PersistentCalls:
       m_Calls: []
   callOnReleased: 0
@@ -10105,6 +10126,9 @@ MonoBehaviour:
   onDragStop:
     m_PersistentCalls:
       m_Calls: []
+  onReleased:
+    m_PersistentCalls:
+      m_Calls: []
   callOnReleased: 0
   FxMouseDown: 0
   FxMouseUp: 20
@@ -10372,6 +10396,9 @@ MonoBehaviour:
   onDragStop:
     m_PersistentCalls:
       m_Calls: []
+  onReleased:
+    m_PersistentCalls:
+      m_Calls: []
   callOnReleased: 0
   FxMouseDown: 0
   FxMouseUp: 20
@@ -10471,6 +10498,21 @@ MonoBehaviour:
   onDragStop:
     m_PersistentCalls:
       m_Calls: []
+  onReleased:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 886780812}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: PlaySoundDisk
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   callOnReleased: 0
   FxMouseDown: 0
   FxMouseUp: 20
@@ -11006,6 +11048,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  onReleased:
+    m_PersistentCalls:
+      m_Calls: []
   callOnReleased: 0
   FxMouseDown: 0
   FxMouseUp: 20
@@ -11118,6 +11163,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 6a4d8997680cee14ca40fd6f04df6200, type: 3}
   - {fileID: 8300000, guid: ccbef931c0ab8f4479dcfa1cbe923eb7, type: 3}
   - {fileID: 8300000, guid: 4e3e546a27bb2c548bd718789a10fe20, type: 3}
+  - {fileID: 8300000, guid: 9258016ecd8d7de44b0896460a43ac3a, type: 3}
+  - {fileID: 8300000, guid: 3fbcd39ef282427468b9937562c50ffb, type: 3}
   bgm: {fileID: 1888016940}
 --- !u!1 &1888016938
 GameObject:
@@ -15177,6 +15224,21 @@ MonoBehaviour:
   onDragStop:
     m_PersistentCalls:
       m_Calls: []
+  onReleased:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 886780812}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: PlaySoundDisk
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   callOnReleased: 0
   FxMouseDown: 0
   FxMouseUp: 20
@@ -15919,6 +15981,21 @@ MonoBehaviour:
   onDragStop:
     m_PersistentCalls:
       m_Calls: []
+  onReleased:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 886780812}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: PlaySoundDisk
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   callOnReleased: 0
   FxMouseDown: 0
   FxMouseUp: 20
@@ -16163,6 +16240,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  onReleased:
+    m_PersistentCalls:
+      m_Calls: []
   callOnReleased: 1
   FxMouseDown: 0
   FxMouseUp: 20

@@ -12,6 +12,8 @@ namespace sonnv
         [SerializeField] private Collider col;
         public UnityEvent onDragStart;
         public UnityEvent onDragStop;
+        public UnityEvent onReleased;
+
         [SerializeField] private bool callOnReleased = false; // Call onDragStop when mouse is released
         [SerializeField] private FxType FxMouseDown = FxType.Click; // Sound effect when mouse is pressed down
         [SerializeField] private FxType FxMouseUp = FxType.None; // Sound effect when mouse is released
@@ -81,6 +83,7 @@ namespace sonnv
                 if (!(_elapsedTime >= moveBackDuration)) return;
                 Tf.position = _backPos;
                 _isMovingBack = false;
+                onReleased?.Invoke();
                 if (callOnReleased) onDragStop?.Invoke();
             }
         }

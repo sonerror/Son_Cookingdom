@@ -11,6 +11,8 @@ public enum FxType
     Close = 4,
     Fire = 5,
     OpenLid = 6,
+    PlaceBroad = 7,
+    PlaceDisk = 8,
     None = 20,
 }
 
