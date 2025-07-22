@@ -9,7 +9,7 @@ public class TutorialManager : Singleton<TutorialManager>
 {
     [SerializeField] private HandCtrl handCtrl;
     [SerializeField] float TimeHint = 5f;
-    private float timeCountHint = 0f;
+    [SerializeField] private float timeCountHint = 0f;
 
     public float timeEndGame = 30f;
     private bool isClickTrueItem = false;
@@ -46,6 +46,7 @@ public class TutorialManager : Singleton<TutorialManager>
     private void CalculateTimeHint()
     {
         if (!enableCountTime) return;
+        if (currLevel.itemHolderBroad.IsPlaying) return;
         if (isShowHint) return;
         timeCountHint -= Time.deltaTime;
         if (timeCountHint <= 0)
@@ -66,6 +67,11 @@ public class TutorialManager : Singleton<TutorialManager>
     {
         if (currLevel.itemHolderBroad.IsOccupied)
         {
+            if (currLevel.itemHolderBroad.IsKnife)
+            {
+                handCtrl.ShowHandStateAtPos(currLevel.knife.Tf.position);
+                return;
+            }
             var pos1 = currLevel.knife.Tf.position;
             var pos2 = currLevel.itemHolderBroad.Tf.position;
             handCtrl.ShowHandPosToPos(pos1, pos2);

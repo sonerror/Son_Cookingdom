@@ -41,6 +41,7 @@ public class ItemClick : GameUnit
         anim.SetTrigger("Play");
         DelayCallDone();
         StartCoroutine(IEPlayAction());
+        EventManager.TriggerEvent(EventType.IncreaseProgress.ToString());
     }
 
     IEnumerator IEPlayAction()

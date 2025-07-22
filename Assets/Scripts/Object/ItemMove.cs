@@ -74,15 +74,26 @@ public class ItemMove : DragController
         State0.SetActive(false);
         State1.SetActive(true);
         mask2.gameObject.SetActive(true);
-        yield return Cache.GetWFS(0.5f);
         State2.SetActive(true);
-        // mask1.DOMove(FinishPoint.position, 1f);
-        mask2.DOMove(FinishPoint.position, 1f).OnComplete(() =>
-        {
-            State1.SetActive(false);
-            mask2.gameObject.SetActive(false);
-        });
-        yield return Cache.GetWFS(1f);
+    }
+
+    public void PlayAnimCutClick(int index)
+    {
+        var tarPos = ((FinishPoint.position - StartPoint.position) * index / 3) + StartPoint.position;
+        mask2.DOMove(tarPos, 0.3f);
+    }
+
+    public void DoneActionCut()
+    {
+        StartCoroutine(IE_DoneActionCut());
+
+    }
+
+    IEnumerator IE_DoneActionCut()
+    {
+        State1.SetActive(false);
+        mask2.gameObject.SetActive(false);
+        yield return Cache.GetWFS(0.1f);
         level.PlayEmojiHeart();
         yield return Cache.GetWFS(0.5f);
         StartRelease();
@@ -98,5 +109,4 @@ public class ItemMove : DragController
         isDone = true;
         level.OnItemState0Done();
     }
-
 }

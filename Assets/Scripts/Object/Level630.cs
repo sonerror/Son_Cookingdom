@@ -83,8 +83,7 @@ public class Level630 : SonLevelBase
 
     void InitState2()
     {
-
-
+        GameManager.Ins.ActiveListenToStore();
         for (var i = 0; i < itemState2.Count; i++)
         {
             itemState2[i].IsEnableCheck = false;

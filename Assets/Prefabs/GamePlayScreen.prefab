@@ -1323,7 +1323,7 @@ MonoBehaviour:
   maxWidth: 840
   minWidth: 0
   progressSpeed: 70
-  sizeRandom: {x: 40, y: 50}
+  sizeRandom: {x: 30, y: 45}
   isFillUp: 1
   currWidth: 0
   progressImage: {fileID: 1440063866603988154}

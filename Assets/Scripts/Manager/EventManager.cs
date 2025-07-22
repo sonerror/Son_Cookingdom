@@ -5,15 +5,8 @@ using System.Collections.Generic;
 public enum EventType
 {
     IncreaseProgress = 1,
-    ShowBtnInstall = 2,
-    StartCountTime = 3,
-    TimeOut = 4,
-    HideBtnInstall = 5,
-    ShowTimmer = 6,
-    OnClickRoomTutOpacity = 7,
-    ReduceProgress = 8,
-    StopCountTime = 9,
-    IQ0 = 10,
+    IncreaseProgressScaled = 2,
+
 }
 
 public class EventManager : MonoBehaviour

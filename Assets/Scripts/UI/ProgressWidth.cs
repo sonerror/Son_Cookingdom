@@ -10,6 +10,7 @@ public class ProgressWidth : MonoBehaviour
     [SerializeField] private int minWidth;
     [SerializeField] private float progressSpeed = 0.5f;
     [SerializeField] private Vector2 sizeRandom = new Vector2(0, 0);
+
     // [SerializeField] private Vector2 IqRange = new Vector2(0, 0);
     // public TextMeshProUGUI textIq;
 
@@ -26,6 +27,11 @@ public class ProgressWidth : MonoBehaviour
         {
             IncreseProgress();
         });
+
+        EventManager.StartListening(EventType.IncreaseProgressScaled.ToString(), () =>
+        {
+            IncreaseProgressScaled();
+        });
     }
 
     public void IncreseProgress()
@@ -33,7 +39,13 @@ public class ProgressWidth : MonoBehaviour
         isFillUp = true;
         targetWidth += Random.Range(sizeRandom.x, sizeRandom.y);
         if (targetWidth > maxWidth) targetWidth = maxWidth;
+    }
 
+    public void IncreaseProgressScaled()
+    {
+        isFillUp = true;
+        targetWidth += 10f;
+        if (targetWidth > maxWidth) targetWidth = maxWidth;
     }
 
     public bool enableFill = true;

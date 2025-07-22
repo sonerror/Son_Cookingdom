@@ -22,7 +22,7 @@ public class Knife : DragController
                     Level630.haveKnife = true;
                     Col.enabled = false;
                     var time = Vector3.Distance(Tf.position, itemTarget.ItemMove.StartPoint.position + Vector3.right * 0.5f) / 3f;
-                    Tf.DOMove(itemTarget.ItemMove.StartPoint.position + Vector3.right * 0.5f, time)
+                    Tf.DOMove(itemTarget.ItemMove.StartPoint.position + Vector3.right * 0.3f, time)
                         .OnComplete(() =>
                         {
                             itemTarget.ActionOnAddKnife(this);
@@ -41,13 +41,16 @@ public class Knife : DragController
         }
         // TutorialManager.Ins.MouseUpItem();
     }
-
+    private Vector3 startPoint;
+    private Vector3 finishPoint;
     public void PlayAnimCut(Transform startPoint, Transform finishPoint)
     {
-        StartCoroutine(IE_PlayAnimCut(startPoint, finishPoint));
+        this.startPoint = startPoint.position + Vector3.right * 0.3f;
+        this.finishPoint = finishPoint.position + Vector3.right * 0.3f;
+        StartCoroutine(IE_PlayAnimCut());
     }
 
-    IEnumerator IE_PlayAnimCut(Transform startPoint, Transform finishPoint)
+    IEnumerator IE_PlayAnimCut()
     {
         yield return Cache.GetWFS(0.25f);
         anim.SetTrigger("tomatocut");
@@ -57,19 +60,30 @@ public class Knife : DragController
             yield return Cache.GetWFS(0.15f);
         }
         yield return Cache.GetWFS(0.3f);
-        yield return Cache.GetWFS(0.5f);
-        Tf.DOMove(finishPoint.position + Vector3.right * 0.5f, 1f);
+    }
+
+
+    public void PlayAnimCutClick(int index)
+    {
+        var targetPos = ((finishPoint - startPoint) * index / 3) + startPoint;
+        Tf.DOMove(targetPos, 0.3f);
         var par = itemTarget.ItemMove.parState2;
-        for (int i = 0; i < 5; i++)
-        {
-            anim.SetTrigger("cut");
-            if (par != null) par.Play();
-            PoolManager.Ins.Spawn(PoolType.SfxCut, Tf.position, Quaternion.identity);
-            yield return Cache.GetWFS(0.2f);
-        }
+        anim.SetTrigger("cut");
+        if (par != null) par.Play();
+        PoolManager.Ins.Spawn(PoolType.SfxCut, Tf.position, Quaternion.identity);
+    }
+
+    public void DoneActionCut()
+    {
+        StartCoroutine(IE_DoneActionCut());
+
+    }
+
+    IEnumerator IE_DoneActionCut()
+    {
+        yield return Cache.GetWFS(0.1f);
         yield return Cache.GetWFS(0.5f);
         StartRelease();
-        itemTarget.DoneActionCut();
         Col.enabled = true;
         Level630.haveKnife = false;
     }
