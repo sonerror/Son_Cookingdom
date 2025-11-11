@@ -2,12 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Singleton<T> : MonoBehaviour
+public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
 {
-    public static T Ins;
+  public static T Ins { get; private set; }
 
-    protected virtual void Awake()
+  protected virtual void Awake()
+  {
+    if (Ins != null && Ins != this as T)
     {
-        Ins = GetComponent<T>();
+      Destroy(gameObject);
+      return;
     }
+
+    Ins = this as T;
+  }
 }
