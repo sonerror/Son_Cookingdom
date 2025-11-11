@@ -24,34 +24,50 @@ namespace AnhPD.Tanghulu
     {
       _isReady = true;
     }
-    private void OnMouseDown()
-    {
-      if (!LevelBase.Ins.IsAllowInteract || !_isReady) return;
-      // AudioManager.PlaySFX(sfxOpen);
-      _isReady = false;
-      _isOpen = !_isOpen;
-      open.SetActive(_isOpen);
-      close.SetActive(!_isOpen);
-      if (_isOpen)
-      {
-        if (_isBaked)
-        {
-          onBakedOpen?.Invoke();
-          OnComplete();
-        }
-        else onOpen?.Invoke();
-      }
-      else
-      {
-        onClose?.Invoke();
-      }
-    }
+    // private void OnMouseDown()
+    // {
+    //   if (!LevelBase.Ins.IsAllowInteract || !_isReady) return;
+    //   // AudioManager.PlaySFX(sfxOpen);
+    //   _isReady = false;
+    //   _isOpen = !_isOpen;
+    //   open.SetActive(_isOpen);
+    //   close.SetActive(!_isOpen);
+    //   if (_isOpen)
+    //   {
+    //     if (_isBaked)
+    //     {
+    //       onBakedOpen?.Invoke();
+    //       OnComplete();
+    //     }
+    //     else onOpen?.Invoke();
+    //   }
+    //   else
+    //   {
+    //     onClose?.Invoke();
+    //   }
+    // }
+
+
 
     public void OnPutBowlIn()
     {
       bowl.Appear();
       _isReady = true;
       _isHaveObject = true;
+
+      StartCoroutine(IE_PutBowlIn());
+    }
+
+    IEnumerator IE_PutBowlIn()
+    {
+      yield return new WaitForSeconds(0.5f);
+      open.SetActive(false);
+      close.SetActive(true);
+      onClose?.Invoke();
+      yield return new WaitForSeconds(0.2f);
+      CheckBake();
+      // onBakedOpen?.Invoke();
+      // OnComplete();
     }
 
     private void OnComplete()
@@ -77,8 +93,14 @@ namespace AnhPD.Tanghulu
 
       transform.DOShakePosition(5f, .03f, 300).OnComplete(() =>
       {
-        // AudioManager.PlaySFX(sfxDone);
+        // AudioManager.PlaySFX(sfxDone);          
+        open.SetActive(true);
+        close.SetActive(false);
         _isReady = true;
+        DOVirtual.DelayedCall(0.3f, () =>
+        {
+          OnComplete();
+        });
       });
 
 

@@ -101,6 +101,7 @@ namespace AnhPD.CookV2
       return Camera.main.ScreenToWorldPoint(mousePoint);
     }
 
+
     protected virtual void MouseDown(BaseEventData eventData)
     {
       if (!LevelBase.Ins.IsAllowInteract) return;
@@ -149,7 +150,7 @@ namespace AnhPD.CookV2
     #endregion
 
     #region Action
-    protected virtual void Rewind(Action completeAction = null)
+    public virtual void Rewind(Action completeAction = null)
     {
       isDragging = false;
       float duration = rewindDuration;
