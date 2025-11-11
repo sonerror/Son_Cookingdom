@@ -9,7 +9,7 @@ namespace AnhPD.Cook
   public class TapButton : MonoBehaviour
   {
     [SerializeField] private Collider2D coll2D;
-    [SerializeField] private AudioClip sfxClick;
+    [SerializeField] private FxType fxType = FxType.Xe;
 
     public bool IsReady;
     public bool isAlwaysReady;
@@ -22,6 +22,7 @@ namespace AnhPD.Cook
       if (!isAlwaysReady)
         IsReady = false;
       // AudioManager.PlaySFX(sfxClick);
+      SoundManager.Ins.PlayFx(fxType);
       clickEvent?.Invoke();
     }
     public void EnableCollider(bool isEnable = true)

@@ -24,8 +24,8 @@ namespace AnhPD.CookV2
     [FoldoutGroup("Base Config")][SerializeField] protected SortingGroup sortingGroup;
     [FoldoutGroup("Base Config")][SerializeField] protected Shadow shadow;
 
-    [FoldoutGroup("Base Config")][SerializeField] protected AudioClip sfxPick;
-    [FoldoutGroup("Base Config")][SerializeField] protected AudioClip sfxPlace;
+    [FoldoutGroup("Base Config")][SerializeField] protected FxType sfxPick = FxType.None;
+    [FoldoutGroup("Base Config")][SerializeField] protected FxType sfxPlace = FxType.None;
 
     [FoldoutGroup("Base Config")]
     [Header("Parameters")]
@@ -107,8 +107,7 @@ namespace AnhPD.CookV2
       if (!LevelBase.Ins.IsAllowInteract) return;
 
       onMouseDown?.Invoke();
-
-      // AudioManager.PlaySFxRandomPitch(sfxPick);
+      SoundManager.Ins.PlayFx(sfxPick);
       if (isGetMouseOffset) mOffset = Tf.position - GetMouseWorldPos();
       else ClampPosition();
 
@@ -166,9 +165,8 @@ namespace AnhPD.CookV2
       }
       Tf.DOMove(startPos, duration).OnComplete(() =>
       {
-        if (sfxPlace && gameObject.activeSelf) // AudioManager.PlaySFxRandomPitch(sfxPlace);
-                                               // MMVibrationManager.Haptic(HapticTypes.Selection);
-          sortingGroup.sortingOrder = minLayer;
+        if (gameObject.activeSelf) SoundManager.Ins.PlayFx(sfxPlace);
+        sortingGroup.sortingOrder = minLayer;
 
         onRewound?.Invoke();
         completeAction?.Invoke();

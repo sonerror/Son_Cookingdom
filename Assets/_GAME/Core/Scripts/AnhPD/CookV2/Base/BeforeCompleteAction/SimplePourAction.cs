@@ -13,7 +13,7 @@ namespace AnhPD.CookV2
     [SerializeField] private SpriteRenderer pouringSprite;
     [SerializeField] private float pouringAngle;
     [SerializeField] private Vector3 offset = new Vector3(1, 1, 0);
-    [SerializeField] private AudioClip sfxPour;
+    [SerializeField] private FxType sfxPour = FxType.Do;
 
     public UnityEvent onStart;
     public override void DoAction(Transform target, Action onDone)
@@ -26,6 +26,7 @@ namespace AnhPD.CookV2
       void Pour()
       {
         // AudioManager.PlaySFX(sfxPour);
+        SoundManager.Ins.PlayFx(sfxPour);
         pouringSprite.SetAlpha(1);
         pouringSprite.enabled = true;
         pouringSprite.DOFade(0, .1f).SetDelay(0.3f)

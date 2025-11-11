@@ -7,215 +7,149 @@ using UnityEngine.XR;
 
 public class TutorialManager : Singleton<TutorialManager>
 {
-    [SerializeField] private HandCtrl handCtrl;
-    [SerializeField] float TimeHint = 5f;
-    private float timeCountHint = 0f;
+  [SerializeField] private HandCtrl handCtrl;
+  [SerializeField] float TimeHint = 5f;
+  private float timeCountHint = 2f;
 
-    public float timeEndGame = 30f;
-    private bool isClickTrueItem = false;
+  public float timeEndGame = 30f;
 
-    private Level628 level;
-    [SerializeField] private Phase1Donut phase1Donut;
-    [SerializeField] private Transform egg1;
-    [SerializeField] private Transform egg2;
-    [SerializeField] private SpriteRenderer FoodSpriteSpoon;
+  public Transform CandyBag, CandyBowl, Oven, ChocoBowl, FlourBowl, Pot;
 
+  private bool isEndGame = false;
 
+  private int[] tutData = new int[] { 0, 1, 2, 3 };
 
-    void Start()
+  public void RemoveStep(int step)
+  {
+    tutData = tutData.Where(x => x != step).ToArray();
+    ResetTimeHint();
+  }
+
+  private void Update()
+  {
+    if (isEndGame) return;
+
+    if (Input.GetMouseButtonDown(0))
     {
-        level = Level628.Ins;
-
-        PlayTutState();
+      ResetTimeHint();
     }
 
-    private void Update()
+    if (Input.GetMouseButton(0)) return;
+
+    CalculateTimeHint();
+  }
+
+  private bool isShowHint = false;
+  private bool enableCountTime = true;
+  private void CalculateTimeHint()
+  {
+    if (!enableCountTime) return;
+    if (isShowHint) return;
+    timeCountHint -= Time.deltaTime;
+    if (timeCountHint <= 0)
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            ResetTimeHint();
-            isClickTrueItem = true;
-        }
+      PlayTutState();
+    }
+  }
 
-        if (Input.GetMouseButton(0)) return;
+  private void PlayTutState()
+  {
+    if (isEndGame) return;
+    isShowHint = true;
 
-        CalculateTimeHint();
-        if (GameManager.Ins.isEndGame) return;
-        if (!isClickTrueItem) return;
-        timeEndGame -= Time.deltaTime;
-        if (timeEndGame <= 0)
-        {
-            GameManager.Ins.isEndGame = true;
-        }
+    if (tutData.Length == 0)
+    {
+      handCtrl.gameObject.SetActive(false);
+      return;
     }
 
-    private bool isShowHint = true;
-    private bool enableCountTime = true;
-    private void CalculateTimeHint()
+
+    var currstate = tutData[0];
+    switch (currstate)
     {
-        if (!enableCountTime) return;
-        if (isShowHint) return;
-        timeCountHint -= Time.deltaTime;
-        if (timeCountHint <= 0)
-        {
-            PlayTutState();
-        }
+      case 0:
+        PlayTutState0();
+        break;
+      case 1:
+        PlayTutState1();
+        break;
+      case 2:
+        PlayTutState2();
+        break;
+      case 3:
+        PlayTutState3();
+        break;
+      default:
+        handCtrl.gameObject.SetActive(false);
+        break;
     }
+  }
 
-    private void PlayTutState()
-    {
-        isShowHint = true;
-        var currstate = level.CurStep;
-        switch (currstate)
-        {
-            case 0:
-                PlayTutState0();
-                break;
-            case 1:
-                PlayTutState1();
-                break;
-            case 2:
-                PlayTutState2();
-                break;
-            case 3:
-                PlayTutState3();
-                break;
-            case 4:
-                PlayTutState4();
-                break;
-            case 5:
-                PlayTutState5();
-                break;
-            case 6:
-                PlayTutState6();
-                break;
-            default:
-                handCtrl.gameObject.SetActive(false);
-                break;
-        }
-    }
-
-    private void PlayTutState0()
-    {
-        var pos1 = phase1Donut.milkCup.Tf.position;
-        var pos2 = phase1Donut.Tf.position;
-        handCtrl.ShowHandPosToPos(pos1, pos2);
-    }
-    private void PlayTutState1()
-    {
-        var pos1 = egg1.position;
-        if (!egg1.gameObject.activeSelf)
-        {
-            pos1 = egg2.position;
-        }
-        var pos2 = phase1Donut.Tf.position;
-        handCtrl.ShowHandPosToPos(pos1, pos2);
-    }
-    private void PlayTutState2()
-    {
-        var pos1 = phase1Donut.spoon.Tf.position;
-        var pos2 = phase1Donut.Tf.position;
-
-        if (!FoodSpriteSpoon.enabled)
-        {
-            if (phase1Donut.yeastBowl.CanContact)
-            {
-                pos2 = phase1Donut.yeastBowl.Tf.position;
-            }
-            else if (phase1Donut.sugarBowl.CanContact)
-            {
-                pos2 = phase1Donut.sugarBowl.Tf.position;
-            }
-        }
-
-        handCtrl.ShowHandPosToPos(pos1, pos2);
-    }
-    private void PlayTutState3()
-    {
-        if (phase1Donut.spoonPosToPour.gameObject.activeSelf)
-        {
-            PlayTutState3_5();
-            return;
-        }
-        var pos1 = phase1Donut.beater.Tf.position;
-        var pos2 = phase1Donut.Tf.position;
-        handCtrl.ShowHandPosToPos(pos1, pos2);
+  private void PlayTutState0()
+  {
+    Debug.Log("CandyBag");
+    var pos2 = CandyBag.position;
+    handCtrl.ShowHandAtPos(pos2);
+  }
+  private void PlayTutState1()
+  {
+    var pos1 = CandyBowl.position;
+    var pos2 = Oven.position;
+    handCtrl.ShowHandPosToPos(pos1, pos2);
+  }
+  private void PlayTutState2()
+  {
+    var pos1 = ChocoBowl.position;
+    var pos2 = Pot.position;
+    handCtrl.ShowHandPosToPos(pos1, pos2);
+  }
+  private void PlayTutState3()
+  {
+    var pos1 = FlourBowl.position;
+    var pos2 = Pot.position;
+    handCtrl.ShowHandPosToPos(pos1, pos2);
 
 
-    }
-    private void PlayTutState3_5()
-    {
-        var pos1 = phase1Donut.Tf.position;
-        var radial = phase1Donut.spoonPosToPour.position - pos1;
-        var fromAngle = Mathf.Atan2(radial.y, radial.x);
+  }
 
-        handCtrl.ShowHandArrow(pos1, fromAngle, 2.5f);
-    }
+  public void ResetTimeHint()
+  {
+    if (isEndGame) return;
 
-    public void PlayTutState4()
-    {
-        var pos1 = phase1Donut.flourBowl.Tf.position;
-        var pos2 = phase1Donut.Tf.position;
-        handCtrl.ShowHandPosToPos(pos1, pos2);
-    }
+    StopState();
+    this.isShowHint = false;
+    this.timeCountHint = TimeHint;
+  }
 
-    public void PlayTutState5()
-    {
-        var pos1 = phase1Donut.spoon.Tf.position;
-        var pos2 = phase1Donut.Tf.position;
-        if (!FoodSpriteSpoon.enabled)
-        {
-            pos2 = phase1Donut.saltBowl.Tf.position;
-        }
+  public void MouseDownItem()
+  {
+    if (isEndGame) return;
 
-        handCtrl.ShowHandPosToPos(pos1, pos2);
-    }
+    enableCountTime = false;
+    handCtrl.HideHand();
+  }
 
-    public void PlayTutState6()
-    {
-        if (phase1Donut.spatulaInBowl.activeSelf)
-        {
-            PlayTutState7();
-            return;
-        }
+  public void MouseUpItem()
+  {
+    if (isEndGame) return;
 
-        var pos1 = phase1Donut.spatula.Tf.position;
-        var pos2 = phase1Donut.Tf.position;
-        handCtrl.ShowHandPosToPos(pos1, pos2);
-    }
+    enableCountTime = true;
+    ResetTimeHint();
+  }
 
-    public void PlayTutState7()
-    {
-        var pos1 = phase1Donut.Tf.position;
-        var radial = phase1Donut.spoonPosToPour.position - pos1;
-        var fromAngle = Mathf.Atan2(radial.y, radial.x);
+  public void StopState()
+  {
+    if (isEndGame) return;
 
-        handCtrl.ShowHandArrow(pos1, fromAngle, 2.5f);
-    }
+    handCtrl.HideHand();
+  }
 
-    public void ResetTimeHint()
-    {
-        StopState();
-        this.isShowHint = false;
-        this.timeCountHint = TimeHint;
-    }
-
-    public void MouseDownItem()
-    {
-        enableCountTime = false;
-        handCtrl.HideHand();
-
-        isClickTrueItem = true;
-    }
-
-    public void MouseUpItem()
-    {
-        enableCountTime = true;
-        ResetTimeHint();
-    }
-
-    public void StopState()
-    {
-        handCtrl.HideHand();
-    }
+  public void FinishTutorial()
+  {
+    isEndGame = true;
+    var pos1 = FlourBowl.position;
+    var pos2 = Pot.position;
+    handCtrl.ShowHandPosToPos(pos1, pos2);
+    // handCtrl.gameObject.SetActive(false);
+  }
 }

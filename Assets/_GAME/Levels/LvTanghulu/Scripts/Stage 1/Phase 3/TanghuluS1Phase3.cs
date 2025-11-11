@@ -32,7 +32,7 @@ namespace AnhPD.Tanghulu
         int i1 = i;
 
         ingredientDrag[i].OnReady();
-        if (i < 2)
+        if (i < 1)
         {
           ingredientDrag[i].SetCondition(() => !pot.isHaveChoco);
           ingredientDrag[i].onComplete.AddListener(() => SetHintAccordingToGroup(i1));

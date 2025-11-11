@@ -282,6 +282,7 @@
     <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\CookV2\Utilities\Garbage\GarbageDrag.cs" />
     <Compile Include="Assets\_GAME\Core\Scripts\SonNv\ItemRotateAround.cs" />
     <Compile Include="Assets\_GAME\Levels\LvTanghulu\Scripts\Stage 2\TanghuluReplayButton.cs" />
+    <Compile Include="Assets\Scripts\Object\Pot.cs" />
     <Compile Include="Assets\Scripts\Manager\Singleton.cs" />
     <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\Cook\BeaterInBowl.cs" />
     <Compile Include="Assets\Scripts\Pool\PoolMember.cs" />

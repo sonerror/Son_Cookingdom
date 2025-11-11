@@ -4,100 +4,92 @@ using UnityEngine;
 
 public enum FxType
 {
-    Click = 0,
-    EggCrack = 1,
-    EggKeng = 2,
-    DropWater = 3,
-    TakeSalt = 4,
-    PlacePiece = 5,
-    LeafChild = 6,
-    PicturePart = 7,
-    PickPaper = 8,
-    RotateSfx = 9,
-    EmojiPositive = 10,
-    EmojiNegative = 11,
-    ShakeDrop = 12,
+  Xe = 0,
+  Do = 1,
 
-    None = 20,
+  EmojiPositive = 10,
+  EmojiNegative = 11,
+  None = 20,
 }
 
 public class SoundManager : Singleton<SoundManager>
 {
-    public AudioClip[] audioClips;
-    public AudioSource bgm;
-    private AudioSource[] fx = new AudioSource[13];
+  public AudioClip[] audioClips;
+  public AudioSource bgm;
+  private AudioSource[] fx = new AudioSource[13];
 
-    bool isMute = false;
+  bool isMute = false;
 
-    public void PlayFx(FxType fxType)
+  public void PlayFx(FxType fxType)
+  {
+    if (fxType == FxType.None) return;
+    if (!isMute)
     {
-        if (fxType == FxType.None) return;
-        if (!isMute)
-        {
-            if (fx[(int)fxType] == null)
-            {
-                fx[(int)fxType] = new GameObject().AddComponent<AudioSource>();
-                fx[(int)fxType].clip = audioClips[(int)fxType];
-            }
+      if (fx[(int)fxType] == null)
+      {
+        fx[(int)fxType] = new GameObject().AddComponent<AudioSource>();
+        fx[(int)fxType].clip = audioClips[(int)fxType];
+      }
 
-            fx[(int)fxType].Play();
-        }
+      fx[(int)fxType].Play();
     }
+  }
 
-    public void PlaySoundLoop(FxType fxType)
+  public void PlaySoundLoop(FxType fxType)
+  {
+    if (!isMute)
     {
-        if (!isMute)
-        {
-            if (fx[(int)fxType] == null)
-            {
-                fx[(int)fxType] = new GameObject().AddComponent<AudioSource>();
-                fx[(int)fxType].clip = audioClips[(int)fxType];
-            }
+      if (fx[(int)fxType] == null)
+      {
+        fx[(int)fxType] = new GameObject().AddComponent<AudioSource>();
+        fx[(int)fxType].clip = audioClips[(int)fxType];
+      }
 
-            fx[(int)fxType].loop = true;
-            fx[(int)fxType].Play();
-        }
+      fx[(int)fxType].loop = true;
+      fx[(int)fxType].Play();
     }
+  }
 
-    public void StopSoundLoop(FxType fxType)
+  public void StopSoundLoop(FxType fxType)
+  {
+    if (fx[(int)fxType] != null)
     {
-        if (fx[(int)fxType] != null)
-        {
-            fx[(int)fxType].loop = false;
-            fx[(int)fxType].Stop();
-        }
+      fx[(int)fxType].loop = false;
+      fx[(int)fxType].Stop();
     }
+  }
 
-    public IEnumerator IE_PlayFxAfterTime(FxType fxType, float time)
+  public IEnumerator IE_PlayFxAfterTime(FxType fxType, float time)
+  {
+    yield return Cache.GetWFS(time);
+    if (!isMute)
     {
-        yield return Cache.GetWFS(time);
-        if (!isMute)
-        {
-            if (fx[(int)fxType] == null)
-            {
-                fx[(int)fxType] = new GameObject().AddComponent<AudioSource>();
-                fx[(int)fxType].clip = audioClips[(int)fxType];
-            }
+      if (fx[(int)fxType] == null)
+      {
+        fx[(int)fxType] = new GameObject().AddComponent<AudioSource>();
+        fx[(int)fxType].clip = audioClips[(int)fxType];
+      }
 
-            fx[(int)fxType].Play();
-        }
+      fx[(int)fxType].Play();
     }
+  }
 
-    public void PlayFxAfterTime(FxType fxType, float time)
+  public void PlayFxAfterTime(FxType fxType, float time)
+  {
+    if (fxType == FxType.None) return;
+    StartCoroutine(IE_PlayFxAfterTime(fxType, time));
+  }
+
+  public void Mute()
+  {
+    bgm.Stop();
+    isMute = true;
+    for (int i = 0; i < fx.Length; i++)
     {
-        if (fxType == FxType.None) return;
-        StartCoroutine(IE_PlayFxAfterTime(fxType, time));
+      if (fx[i] != null)
+      {
+        fx[i].Stop();
+      }
     }
-
-    public void Mute()
-    {
-        bgm.Stop();
-        for (int i = 0; i < fx.Length; i++)
-        {
-            if (fx[i] != null)
-            {
-                fx[i].Stop();
-            }
-        }
-    }
+  }
 }

@@ -1,5 +1,6 @@
 using AnhPD.Cook;
 using AnhPD.CookV2;
+using DG.Tweening;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -36,6 +37,8 @@ namespace AnhPD.Tanghulu
       {
         ingredients[1].SetAlpha(1f);
         ingredients[1].gameObject.SetActive(true);
+
+        TutorialManager.Ins.RemoveStep(3);
       }
       else
       {
@@ -44,6 +47,7 @@ namespace AnhPD.Tanghulu
         ingredients[0].SetAlpha(1f);
         ingredients[0].gameObject.SetActive(true);
         drag.SwitchTarget(index);
+        TutorialManager.Ins.RemoveStep(2);
       }
 
       _ingredientCount++;

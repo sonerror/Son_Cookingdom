@@ -4,22 +4,22 @@ using System.Collections.Generic;
 using UnityEngine;
 namespace sonnv
 {
-    public class AnimEgg : SonMonoBehaviour
+  public class AnimEgg : SonMonoBehaviour
+  {
+    [SerializeField] private Transform tfBowl;
+    public void SfxCrack()
     {
-        [SerializeField] private Transform tfBowl;
-        public void SfxCrack()
-        {
-            SoundManager.Ins.PlayFx(FxType.EggCrack);
-        }
-        public void SfxKeng()
-        {
-            SoundManager.Ins.PlayFx(FxType.EggKeng);
-        }
-        public void ShakeBowl()
-        {
-            if (tfBowl == null) return;
-            tfBowl.DOShakePosition(0.2f, strength: new Vector3(0.1f, 0.1f, 0f), vibrato: 10, randomness: 90, snapping: false, fadeOut: true);
-        }
+      // SoundManager.Ins.PlayFx(FxType.EggCrack);
     }
+    public void SfxKeng()
+    {
+      // SoundManager.Ins.PlayFx(FxType.EggKeng);
+    }
+    public void ShakeBowl()
+    {
+      if (tfBowl == null) return;
+      tfBowl.DOShakePosition(0.2f, strength: new Vector3(0.1f, 0.1f, 0f), vibrato: 10, randomness: 90, snapping: false, fadeOut: true);
+    }
+  }
 
 }
