@@ -24,7 +24,7 @@ namespace AnhPD.Cook
 
     public bool IsHaveSpice => _currentSpice != null;
 
-    [FoldoutGroup("Event")] public UnityEvent onStartAnim;
+    public UnityEvent onStartAnim;
     protected override void Start()
     {
       base.Start();

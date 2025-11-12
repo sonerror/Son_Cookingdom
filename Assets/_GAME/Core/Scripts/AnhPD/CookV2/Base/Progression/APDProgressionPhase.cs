@@ -44,9 +44,9 @@ namespace AnhPD.CookV2
     }
 
     #region hint
-    [FoldoutGroup("Hint")][SerializeField] private Sprite[] hints;
-    [FoldoutGroup("Hint")][SerializeField] protected ParallelHintController hintSupporter;
-    [FoldoutGroup("Hint")][SerializeField] private int hintTextPhase;
+    [SerializeField] private Sprite[] hints;
+    [SerializeField] protected ParallelHintController hintSupporter;
+    [SerializeField] private int hintTextPhase;
     private bool IsHaveHint => hints.Length > 0;
 
     public Action<Sprite> OnHintChange;

@@ -12,7 +12,7 @@ namespace AnhPD.Tanghulu
   {
     [SerializeField] private GameObject open, close;
     // [SerializeField] private ClockTimer clock;
-    [SerializeField] private AudioClip sfxOpen, sfxDone;
+    [SerializeField] private FxType sfxOpen = FxType.None, sfxDone = FxType.None, Playing = FxType.OvenRunning;
     [SerializeField] private Transform bowl;
     [SerializeField] private SortingGroup bowlSortingGroup;
     [SerializeField] private SpriteRenderer melt;
@@ -63,6 +63,7 @@ namespace AnhPD.Tanghulu
       yield return new WaitForSeconds(0.5f);
       open.SetActive(false);
       close.SetActive(true);
+      SoundManager.Ins.PlayFx(sfxOpen);
       onClose?.Invoke();
       yield return new WaitForSeconds(0.2f);
       CheckBake();
@@ -90,10 +91,13 @@ namespace AnhPD.Tanghulu
       onBake?.Invoke();
       // clock.Show(5f);
       melt.DOFade(1, 5f);
+      SoundManager.Ins.PlaySoundLoop(Playing);
 
       transform.DOShakePosition(5f, .03f, 300).OnComplete(() =>
       {
-        // AudioManager.PlaySFX(sfxDone);          
+        // AudioManager.PlaySFX(sfxDone); 
+        SoundManager.Ins.StopSoundLoop(Playing);
+        SoundManager.Ins.PlayFx(sfxDone);
         open.SetActive(true);
         close.SetActive(false);
         _isReady = true;

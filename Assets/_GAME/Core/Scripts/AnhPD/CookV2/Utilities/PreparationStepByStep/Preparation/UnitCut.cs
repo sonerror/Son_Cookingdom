@@ -9,13 +9,13 @@ namespace AnhPD.CookV2
 {
   public class UnitCut : FruitPreparation
   {
-    [FoldoutGroup("References")][SerializeField] private GameObject[] afterCutFruits;
-    [FoldoutGroup("References")][SerializeField] private Transform knife;
-    [FoldoutGroup("References")][SerializeField] private Collider2D coll2D;
-    [FoldoutGroup("References")][SerializeField] private AudioClip sfxKnifeAppear, sfxKnifeCut;
-    [FoldoutGroup("References")][SerializeField] private ParticleSystem vfxCut;
-    [FoldoutGroup("Parameters")][SerializeField] private Vector3 knifeOffset;
-    [FoldoutGroup("Parameters")][SerializeField] private float cutOffset = .5f;
+    [SerializeField] private GameObject[] afterCutFruits;
+    [SerializeField] private Transform knife;
+    [SerializeField] private Collider2D coll2D;
+    [SerializeField] private AudioClip sfxKnifeAppear, sfxKnifeCut;
+    [SerializeField] private ParticleSystem vfxCut;
+    [SerializeField] private Vector3 knifeOffset;
+    [SerializeField] private float cutOffset = .5f;
     private bool _isReady = false;
 
     public override void OnHaveTool()

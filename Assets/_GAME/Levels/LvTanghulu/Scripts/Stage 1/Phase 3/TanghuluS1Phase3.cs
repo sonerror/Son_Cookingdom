@@ -43,7 +43,7 @@ namespace AnhPD.Tanghulu
 
       pot.OnRestart += () =>
       {
-        ingredientDrag[^1].OnReReady();
+        ingredientDrag[^1].OnReReady(false);
       };
       pot.OnDone += OnStoveComplete;
       pot.onFullIngredient.AddListener(OnPotFull);

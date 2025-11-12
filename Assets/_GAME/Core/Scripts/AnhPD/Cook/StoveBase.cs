@@ -12,13 +12,13 @@ namespace AnhPD.Cook
 {
   public class StoveBase : MonoBehaviour
   {
-    [FoldoutGroup("Base Config")][SerializeField] private GameObject stove_on;
-    [FoldoutGroup("Base Config")][SerializeField] private Transform vfxGlow;
-    [FoldoutGroup("Base Config")][SerializeField] private Image waitingBar;
-    [FoldoutGroup("Base Config")][SerializeField] protected AudioClip sfxClick;
+    [SerializeField] private GameObject stove_on;
+    [SerializeField] private Transform vfxGlow;
+    [SerializeField] private Image waitingBar;
+    [SerializeField] protected AudioClip sfxClick;
 
-    [FoldoutGroup("Base Config")] public bool IsReady;
-    [FoldoutGroup("Base Config")] protected bool isOn;
+    public bool IsReady;
+    protected bool isOn;
 
     public void OnClick()
     {

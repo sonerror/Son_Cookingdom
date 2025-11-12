@@ -42,6 +42,7 @@ namespace Satisgame
       spriteAnimator1.gameObject.SetActive(false);
       spriteAnimator.gameObject.SetActive(true);
       spriteAnimator.Play(AnimPositive);
+      SoundManager.Ins.PlayFx(FxType.EmojiPositive);
       _sequenceShowEmoji = DOTween.Sequence();
       if (delay > 0) _sequenceShowEmoji.AppendInterval(delay);
       _sequenceShowEmoji
@@ -57,6 +58,7 @@ namespace Satisgame
       spriteAnimator.gameObject.SetActive(false);
       spriteAnimator1.gameObject.SetActive(true);
       spriteAnimator1.Play(AnimNegative);
+      SoundManager.Ins.PlayFx(FxType.EmojiNegative);
       _sequenceShowEmoji = DOTween.Sequence();
       if (delay > 0) _sequenceShowEmoji.AppendInterval(delay);
       _sequenceShowEmoji

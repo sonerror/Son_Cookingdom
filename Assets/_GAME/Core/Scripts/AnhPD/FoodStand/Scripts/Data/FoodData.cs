@@ -10,10 +10,10 @@ namespace AnhPD.FoodStall
 {
   public abstract class FoodData : MonoBehaviour
   {
-    [FoldoutGroup("Base")] public FoodDisplay display;
-    [FoldoutGroup("Base")] public OrderType orderType;
-    [FoldoutGroup("Base")] public FoodColorTag colorTag;
-    [FoldoutGroup("Base")] public bool isOrder;
+    public FoodDisplay display;
+    public OrderType orderType;
+    public FoodColorTag colorTag;
+    public bool isOrder;
 
     public void SetOrderType(OrderType newOderType)
     {

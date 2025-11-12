@@ -19,7 +19,7 @@ namespace AnhPD.Cook
     public bool IsContainWater { get; private set; }
     public bool IsHaveLid { get; private set; }
 
-    [FoldoutGroup("Event")] public UnityEvent ContainWaterEvent, WateringEvent;
+    public UnityEvent ContainWaterEvent, WateringEvent;
 
     float deltaY = .8f;
     Sequence anim;

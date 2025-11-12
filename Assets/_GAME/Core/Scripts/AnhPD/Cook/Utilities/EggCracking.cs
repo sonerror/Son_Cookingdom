@@ -16,7 +16,7 @@ namespace AnhPD.Cook
     [SerializeField] private float height = 1.5f;
 
     public bool isReAppear = false;
-    [FoldoutGroup("Event")] public UnityEvent onReReady;
+    public UnityEvent onReReady;
     public UnityEvent onStartAnim;
 
     protected override void CheckTarget()

@@ -42,17 +42,18 @@ namespace AnhPD.Tanghulu
         transform.DOScale(0f, .3f).SetEase(Ease.InBack);
         return;
       }
+
       float distance = Vector2.Distance(skewer.position, skewerRoot.position);
-      switch (distance)
+
+      if (distance > 0.2f && !_isHide)
       {
-        case > .2f when !_isHide:
-          _isHide = true;
-          transform.DOScale(0f, .3f).SetEase(Ease.InBack);
-          break;
-        case <= .2f when _isHide && skewer.gameObject.activeSelf:
-          _isHide = false;
-          transform.DOScale(.3f, .3f).SetEase(Ease.OutBack);
-          break;
+        _isHide = true;
+        transform.DOScale(0f, 0.3f).SetEase(Ease.InBack);
+      }
+      else if (distance <= 0.2f && _isHide && skewer.gameObject.activeSelf)
+      {
+        _isHide = false;
+        transform.DOScale(0.3f, 0.3f).SetEase(Ease.OutBack);
       }
     }
   }

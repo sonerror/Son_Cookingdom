@@ -17,33 +17,33 @@ namespace AnhPD.CookV2
   {
     #region Properties
 
-    [FoldoutGroup("Base Config")]
+
     [Header("References")]
-    [FoldoutGroup("Base Config")][SerializeField] protected Collider2D coll2D;
-    [FoldoutGroup("Base Config")][SerializeField] protected SpriteRenderer spriteRenderer;
-    [FoldoutGroup("Base Config")][SerializeField] protected SortingGroup sortingGroup;
-    [FoldoutGroup("Base Config")][SerializeField] protected Shadow shadow;
+    [SerializeField] protected Collider2D coll2D;
+    [SerializeField] protected SpriteRenderer spriteRenderer;
+    [SerializeField] protected SortingGroup sortingGroup;
+    [SerializeField] protected Shadow shadow;
 
-    [FoldoutGroup("Base Config")][SerializeField] protected FxType sfxPick = FxType.None;
-    [FoldoutGroup("Base Config")][SerializeField] protected FxType sfxPlace = FxType.None;
+    [SerializeField] protected FxType sfxPick = FxType.None;
+    [SerializeField] protected FxType sfxPlace = FxType.None;
 
-    [FoldoutGroup("Base Config")]
+
     [Header("Parameters")]
-    [FoldoutGroup("Base Config")][SerializeField] protected Vector3 sizeInit;
-    [FoldoutGroup("Base Config")][SerializeField] protected Vector3 sizeInCrease;
-    [FoldoutGroup("Base Config")][SerializeField] protected Vector2 startPos;
-    [FoldoutGroup("Base Config")][SerializeField] protected Vector3 startRotation;
+    [SerializeField] protected Vector3 sizeInit;
+    [SerializeField] protected Vector3 sizeInCrease;
+    [SerializeField] protected Vector2 startPos;
+    [SerializeField] protected Vector3 startRotation;
 
-    [FoldoutGroup("Base Config")][SerializeField] protected int minLayer = 2;
-    [FoldoutGroup("Base Config")][SerializeField] protected float dropDistance = 1f;
-    [FoldoutGroup("Base Config")][SerializeField] protected float minY = -4f;
-    [FoldoutGroup("Base Config")][SerializeField] protected float rewindDuration = 0.5f;
+    [SerializeField] protected int minLayer = 2;
+    [SerializeField] protected float dropDistance = 1f;
+    [SerializeField] protected float minY = -4f;
+    [SerializeField] protected float rewindDuration = 0.5f;
 
-    [FoldoutGroup("Base Config")]
+
     [Header("Bool")]
-    [FoldoutGroup("Base Config")] public bool IsReady;
-    [FoldoutGroup("Base Config")] public bool IsResetPosOnReReady = true;
-    [FoldoutGroup("Base Config")] public bool isGetMouseOffset = true;
+    public bool IsReady;
+    public bool IsResetPosOnReReady = true;
+    public bool isGetMouseOffset = true;
 
     protected bool isDragging = false;
 
@@ -54,7 +54,7 @@ namespace AnhPD.CookV2
 
     protected int maxLayer => APDLevelBase.maxLayer;
 
-    [FoldoutGroup("Event")] public UnityEvent onComplete, onMouseDown, onMouseUp, onRewound, onIncorrectUse;
+    public UnityEvent onComplete, onMouseDown, onMouseUp, onRewound, onIncorrectUse;
 
     #endregion
 

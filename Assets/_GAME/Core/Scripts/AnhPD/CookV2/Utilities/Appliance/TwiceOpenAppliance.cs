@@ -13,13 +13,13 @@ namespace AnhPD.CookV2
 {
   public class TwiceOpenAppliance : LiddedAppliance
   {
-    // [FoldoutGroup("References")][SerializeField] private ClockTimer clock;
-    [FoldoutGroup("Parameters")][SerializeField] protected float duration = 5f;
+    // [SerializeField] private ClockTimer clock;
+    [SerializeField] protected float duration = 5f;
     private bool _isDoneWaiting;
 
-    [FoldoutGroup("Bool")] public bool isShake;
-    [FoldoutGroup("Bool")] public bool isWaitingAfterClose = true;
-    [FoldoutGroup("Events")] public UnityEvent onOpenAgain, onStartWaiting;
+    public bool isShake;
+    public bool isWaitingAfterClose = true;
+    public UnityEvent onOpenAgain, onStartWaiting;
 
     private void Start()
     {

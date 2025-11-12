@@ -53,9 +53,9 @@ namespace AnhPD.Tanghulu
       _isAlmond = isAlmond;
     }
     #region almond
-    [FoldoutGroup("Almond")][SerializeField] private AlmondRoasted[] almonds;
-    [FoldoutGroup("Almond")][SerializeField] private AudioClip sfxPop;
-    [FoldoutGroup("Almond")][SerializeField] private Transform almondGroup;
+    [SerializeField] private AlmondRoasted[] almonds;
+    [SerializeField] private AudioClip sfxPop;
+    [SerializeField] private Transform almondGroup;
 
     public Action OnAlmondReadyFlip, OnAllAlmondFlipped, OnAlmondCooked;
 
@@ -116,8 +116,8 @@ namespace AnhPD.Tanghulu
     #endregion
 
     #region sesame
-    [FoldoutGroup("Sesame")][SerializeField] private SpriteRenderer sesameDone, salt;
-    [FoldoutGroup("Sesame")][SerializeField] private Transform sesameRaw;
+    [SerializeField] private SpriteRenderer sesameDone, salt;
+    [SerializeField] private Transform sesameRaw;
 
     public Action OnSesameCooked;
 

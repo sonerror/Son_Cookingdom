@@ -11,10 +11,10 @@ namespace AnhPD.CookV2
 {
   public class APDv2Drag : APDv2CookingToolBase
   {
-    [FoldoutGroup("Bool")] public bool isMouseUpCheck = true;
-    [FoldoutGroup("Bool")] public bool isHideAfterComplete = true;
-    [FoldoutGroup("Bool")] public bool isRotateWhenPickUp;
-    [FoldoutGroup("Bool")] public bool isReReadyAfterComplete;
+    public bool isMouseUpCheck = true;
+    public bool isHideAfterComplete = true;
+    public bool isRotateWhenPickUp;
+    public bool isReReadyAfterComplete;
 
     [SerializeField] protected TargetConfig[] targets;
     [SerializeField] protected Transform target, center;
@@ -22,7 +22,7 @@ namespace AnhPD.CookV2
     [SerializeField] protected float pickupAngle;
     private Func<bool> _conditionFunc;
 
-    [FoldoutGroup("Event")] public UnityEvent onCompleteBaseSwitchTarget;
+    public UnityEvent onCompleteBaseSwitchTarget;
 
     protected bool IsSatisfyCondition => _conditionFunc == null || _conditionFunc.Invoke();
     public bool IsComplete { get; protected set; }

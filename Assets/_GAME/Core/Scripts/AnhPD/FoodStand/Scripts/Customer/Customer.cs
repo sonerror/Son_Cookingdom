@@ -78,13 +78,13 @@ namespace AnhPD.FoodStall
   public class CustomerState
   {
     [ReadOnly][SerializeField] private Customer.State state;
-    [FoldoutGroup("Spine")][SerializeField][SpineAnimation(dataField = "skeletonAnimation")] private string anim;
-    [FoldoutGroup("Spine")][SerializeField] private float timeScale = 1f;
-    [FoldoutGroup("Spine")][SerializeField] private bool isLoopAnim;
+    [SerializeField][SpineAnimation(dataField = "skeletonAnimation")] private string anim;
+    [SerializeField] private float timeScale = 1f;
+    [SerializeField] private bool isLoopAnim;
 
-    [FoldoutGroup("Audio")][SerializeField] private AudioClip sfx;
-    [FoldoutGroup("Audio")][SerializeField, Range(0, 1)] private float volume = 1;
-    [FoldoutGroup("Audio")][SerializeField] private bool isRandomPitch;
+    [SerializeField] private AudioClip sfx;
+    [SerializeField, Range(0, 1)] private float volume = 1;
+    [SerializeField] private bool isRandomPitch;
 
     public Action OnCompleteAnimationConst, OnCompleteAnimation;
 

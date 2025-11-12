@@ -12,14 +12,14 @@ namespace AnhPD.Cook
 {
   public class ClockerStoveBase : MonoBehaviour
   {
-    [FoldoutGroup("Base Config")][SerializeField] private Transform vfxGlow;
-    [FoldoutGroup("Base Config")][SerializeField] protected ParticleSystem vfxSmoke;
-    // [FoldoutGroup("Base Config")][SerializeField] protected ClockTimer clocker;
-    [FoldoutGroup("Base Config")][SerializeField] protected KitchenTimer timer;
-    [FoldoutGroup("Base Config")][SerializeField] protected AudioClip sfxPip;
+    [SerializeField] private Transform vfxGlow;
+    [SerializeField] protected ParticleSystem vfxSmoke;
+    // [SerializeField] protected ClockTimer clocker;
+    [SerializeField] protected KitchenTimer timer;
+    [SerializeField] protected FxType sfxPip = FxType.None;
 
-    [FoldoutGroup("Base Config")] public bool IsReady;
-    [FoldoutGroup("Base Config")] protected bool isOn;
+    public bool IsReady;
+    protected bool isOn;
 
     public UnityEvent onTurnOn, onTurnOff;
 
@@ -38,7 +38,7 @@ namespace AnhPD.Cook
     }
     protected virtual void OnTurnOn()
     {
-      // AudioManager.PlaySFX(sfxPip);
+      SoundManager.Ins.PlayFx(sfxPip);
       vfxGlow.DOScale(1, 1f);
       vfxSmoke.Play();
       isOn = true;
@@ -47,7 +47,7 @@ namespace AnhPD.Cook
     }
     protected virtual void OnTurnOff()
     {
-      // AudioManager.PlaySFX(sfxPip);
+      SoundManager.Ins.PlayFx(sfxPip);
 
       IsReady = false;
       isOn = false;

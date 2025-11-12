@@ -16,7 +16,7 @@ namespace AnhPD.Cook
     [SerializeField] private AudioClip sfxWater, sfxPutDown;
     [SerializeField] private float zAngle;
 
-    [FoldoutGroup("Event")] public UnityEvent completeEvent, mouseDownEvent, mouseUpEvent, landEvent, haveSoupEvent, giveBackSoupEvent;
+    public UnityEvent completeEvent, mouseDownEvent, mouseUpEvent, landEvent, haveSoupEvent, giveBackSoupEvent;
 
     public bool IsHideSource, IsBlock = false;
     private bool isHaveSoup;

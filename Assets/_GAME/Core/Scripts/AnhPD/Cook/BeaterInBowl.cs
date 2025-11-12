@@ -12,8 +12,8 @@ namespace AnhPD.Cook
     [SerializeField] SpriteRenderer mixerFlour;
     [SerializeField] private int number;
     [SerializeField] private float speed = 2.5f;
-    [SerializeField] private AudioClip sfx;
-    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private FxType sfxType = FxType.None;
+    // [SerializeField] private AudioSource audioSource;
     public UnityEvent draggingEvent, oneLapEvent, completeEvent;
     public bool IsLockRotation = true;
     public bool isLoopAudio;
@@ -27,11 +27,24 @@ namespace AnhPD.Cook
     {
       transform.Appear();
     }
+
+    bool isMouseDown = false;
     private void Update()
     {
       if (IsLockRotation)
       {
         transform.eulerAngles = Vector3.zero;
+      }
+
+      if (Input.GetMouseButtonDown(0) && !isMouseDown)
+      {
+        isMouseDown = true;
+        SoundManager.Ins.PlaySoundLoop(sfxType);
+      }
+      else if (Input.GetMouseButtonUp(0) && isMouseDown)
+      {
+        isMouseDown = false;
+        SoundManager.Ins.StopSoundLoop(sfxType);
       }
     }
 
@@ -56,6 +69,7 @@ namespace AnhPD.Cook
         if (count >= number)
         {
           gameObject.SetActive(false);
+          SoundManager.Ins.StopSoundLoop(sfxType);
           completeEvent?.Invoke();
         }
         else
@@ -66,7 +80,7 @@ namespace AnhPD.Cook
           }
           else
           {
-            if (!audioSource.isPlaying) audioSource.Play();
+            // if (!audioSource.isPlaying) audioSource.Play();
           }
         }
         oneLapEvent?.Invoke();
@@ -75,11 +89,6 @@ namespace AnhPD.Cook
       mixerFlour.SetAlpha(rate + (deltaAngle / 360f) * 1 / number);
       if (offset > .1f)
         draggingEvent?.Invoke();
-    }
-
-    private void OnMouseUp()
-    {
-      if (isLoopAudio) audioSource.Stop();
     }
 
     private float GetAngleABC(Vector2 pointA, Vector2 pointB, Vector2 pointC)

@@ -9,8 +9,8 @@ namespace AnhPD.CookV2
 {
   public class OvenAppliance : TwiceOpenAppliance
   {
-    [FoldoutGroup("References")][SerializeField] private SpriteRenderer[] bakeSprite;
-    [FoldoutGroup("Audio")][SerializeField] private AudioClip sfxDone;
+    [SerializeField] private SpriteRenderer[] bakeSprite;
+    [SerializeField] private AudioClip sfxDone;
     private bool _isReadyBake;
 
     private void Awake()

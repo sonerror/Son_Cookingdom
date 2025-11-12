@@ -12,15 +12,15 @@ public class Pot : MonoBehaviour
   {
     DOVirtual.DelayedCall(1f, () =>
     {
-      targetDrag.OnComplete();
+      targetDrag.OnComplete(); TutorialManager.Ins.RemoveStep(5);
     });
 
 
-    DOVirtual.DelayedCall(3f, () =>
-    {
-      GameManager.Ins.showEndGame();
-      TutorialManager.Ins.FinishTutorial();
-    });
+    // DOVirtual.DelayedCall(3f, () =>
+    // {
+    //   GameManager.Ins.showEndGame();
+    //   // TutorialManager.Ins.FinishTutorial();
+    // });
 
   }
 }

@@ -13,25 +13,25 @@ namespace AnhPD.Cook
 {
   public class APDCookingToolBase : MonoBehaviour
   {
-    [FoldoutGroup("Base Config")][SerializeField] protected Collider2D coll2D;
-    [FoldoutGroup("Base Config")][SerializeField] protected SpriteRenderer spriteRenderer;
+    [SerializeField] protected Collider2D coll2D;
+    [SerializeField] protected SpriteRenderer spriteRenderer;
 
-    [FoldoutGroup("Base Config")][SerializeField] protected AudioClip sfxPick;
-    [FoldoutGroup("Base Config")][SerializeField] protected AudioClip sfxPlace;
+    [SerializeField] protected AudioClip sfxPick;
+    [SerializeField] protected AudioClip sfxPlace;
 
-    [FoldoutGroup("Base Config")][SerializeField] protected Vector3 sizeInit;
-    [FoldoutGroup("Base Config")][SerializeField] protected Vector3 sizeInCrease;
-    [FoldoutGroup("Base Config")][SerializeField] protected int minLayer = 2;
-    [FoldoutGroup("Base Config")][SerializeField] protected float dropDistance = 1f;
-    [FoldoutGroup("Base Config")][SerializeField] protected float minY = -4f;
-    [FoldoutGroup("Base Config")][SerializeField] protected float rewindDuration = 0.5f;
+    [SerializeField] protected Vector3 sizeInit;
+    [SerializeField] protected Vector3 sizeInCrease;
+    [SerializeField] protected int minLayer = 2;
+    [SerializeField] protected float dropDistance = 1f;
+    [SerializeField] protected float minY = -4f;
+    [SerializeField] protected float rewindDuration = 0.5f;
 
-    [FoldoutGroup("Base Config")][SerializeField] protected Vector2 startPos;
-    [FoldoutGroup("Base Config")][SerializeField] protected Vector3 startRotation;
-    [FoldoutGroup("Base Config")][SerializeField] protected Shadow shadow;
-    [FoldoutGroup("Base Config")][SerializeField] private bool IsEnableMouseUpWarning = false;
+    [SerializeField] protected Vector2 startPos;
+    [SerializeField] protected Vector3 startRotation;
+    [SerializeField] protected Shadow shadow;
+    [SerializeField] private bool IsEnableMouseUpWarning = false;
 
-    [FoldoutGroup("Base Config")][ShowInInspector] public bool IsReady;
+    [ShowInInspector] public bool IsReady;
 
     [SerializeField] protected SpriteRenderer[] parts;
 
@@ -222,7 +222,7 @@ namespace AnhPD.Cook
     {
       StopAllCoroutines();
     }
-    [FoldoutGroup("Base Config")] public bool IsHalfHeart = false;
+    public bool IsHalfHeart = false;
     protected virtual void OnIncorrectUse()
     {
       if (Vector2.Distance(Tf.position, startPos) > APDCookConfig.INCORRECT_SAFE_DISTANCE)

@@ -1,6 +1,8 @@
 
 using System.Collections.Generic;
 using System.Linq;
+using AnhPD;
+using DG.Tweening;
 using sonnv;
 using UnityEngine;
 using UnityEngine.XR;
@@ -13,16 +15,55 @@ public class TutorialManager : Singleton<TutorialManager>
 
   public float timeEndGame = 30f;
 
-  public Transform CandyBag, CandyBowl, Oven, ChocoBowl, FlourBowl, Pot;
+  public Transform CandyBag, CandyBowl, Oven, ChocoBowl, FlourBowl, Pot, Whisk, FlourBowParent;
 
   private bool isEndGame = false;
 
-  private int[] tutData = new int[] { 0, 1, 2, 3 };
+  private int[] tutData = new int[] { 0, 1, 2, 3, 4, 5 };
+
+  private APDLevelBase levelBase;
+
+  private void Start()
+  {
+    levelBase = APDLevelBase.Ins as APDLevelBase;
+  }
 
   public void RemoveStep(int step)
   {
+    Debug.Log("Remove Step: " + step);
     tutData = tutData.Where(x => x != step).ToArray();
     ResetTimeHint();
+
+    DOVirtual.DelayedCall(2f, () =>
+    {
+      if (tutData.Length == 0)
+      {
+        FinishTutorial();
+      }
+    });
+
+    switch (step)
+    {
+      case 0:
+        levelBase.ShowPositiveEmojiAtPos(CandyBag.position);
+        break;
+      case 1:
+        levelBase.ShowPositiveEmojiAtPos(Oven.position);
+        break;
+      case 2:
+        levelBase.ShowPositiveEmojiAtPos(Pot.position);
+        break;
+      case 3:
+        levelBase.ShowPositiveEmojiAtPos(Pot.position);
+        break;
+      default:
+        break;
+    }
+  }
+
+  public void SShowPositiveEmojiAtPot()
+  {
+    levelBase.ShowPositiveEmojiAtPos(Pot.position);
   }
 
   private void Update()
@@ -59,7 +100,7 @@ public class TutorialManager : Singleton<TutorialManager>
 
     if (tutData.Length == 0)
     {
-      handCtrl.gameObject.SetActive(false);
+      FinishTutorial();
       return;
     }
 
@@ -79,8 +120,14 @@ public class TutorialManager : Singleton<TutorialManager>
       case 3:
         PlayTutState3();
         break;
+      case 4:
+        PlayTutState4();
+        break;
+      case 5:
+        PlayTutState5();
+        break;
       default:
-        handCtrl.gameObject.SetActive(false);
+        FinishTutorial();
         break;
     }
   }
@@ -108,9 +155,21 @@ public class TutorialManager : Singleton<TutorialManager>
     var pos1 = FlourBowl.position;
     var pos2 = Pot.position;
     handCtrl.ShowHandPosToPos(pos1, pos2);
-
-
   }
+
+  private void PlayTutState4()
+  {
+    var pos2 = Pot.position;
+    var pos1 = Whisk.position;
+    handCtrl.ShowHandPosToPos(pos1, pos2);
+  }
+
+  private void PlayTutState5()
+  {
+    var pos1 = Pot.position;
+    handCtrl.ShowHandArrow(pos1, 0f, 0.5f);
+  }
+
 
   public void ResetTimeHint()
   {
@@ -147,9 +206,10 @@ public class TutorialManager : Singleton<TutorialManager>
   public void FinishTutorial()
   {
     isEndGame = true;
-    var pos1 = FlourBowl.position;
+    var pos1 = FlourBowParent.position;
     var pos2 = Pot.position;
     handCtrl.ShowHandPosToPos(pos1, pos2);
+    GameManager.Ins.showEndGame();
     // handCtrl.gameObject.SetActive(false);
   }
 }

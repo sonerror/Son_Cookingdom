@@ -17,7 +17,7 @@ namespace AnhPD.CookV2
     [SerializeField] private float distance = 1f;
     private Vector2 _startMousePos;
     private bool _isSliced;
-    [FoldoutGroup("Events")] public UnityEvent onHaveTool;
+    public UnityEvent onHaveTool;
     private void OnMouseDown()
     {
       if (!LevelBase.Ins.IsAllowInteract || _isSliced) return;

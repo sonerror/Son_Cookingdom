@@ -9,16 +9,16 @@ namespace AnhPD.Cook
 {
   public class SpeederWhisk : MonoBehaviour
   {
-    [FoldoutGroup("References")][SerializeField] private WhiskBowl bowl;
-    [FoldoutGroup("References")][SerializeField] private Transform tfRoot, tfMask;
-    [FoldoutGroup("References")][SerializeField] private SpriteRenderer mixerFlour;
-    [FoldoutGroup("References")][SerializeField] private AudioSource sfx;
+    [SerializeField] private WhiskBowl bowl;
+    [SerializeField] private Transform tfRoot, tfMask;
+    [SerializeField] private SpriteRenderer mixerFlour;
+    [SerializeField] private AudioSource sfx;
 
-    [FoldoutGroup("Parameters")][SerializeField] private int number = 5;
-    [FoldoutGroup("Parameters")][SerializeField] private float speed_max = 10f, speed_min = 1f, angle_min = 20f;
-    [FoldoutGroup("Parameters")][SerializeField] private float deltaY_mask = 1f;
+    [SerializeField] private int number = 5;
+    [SerializeField] private float speed_max = 10f, speed_min = 1f, angle_min = 20f;
+    [SerializeField] private float deltaY_mask = 1f;
 
-    [FoldoutGroup("Event")] public UnityEvent draggingEvent, oneLapEvent, completeEvent;
+    public UnityEvent draggingEvent, oneLapEvent, completeEvent;
 
     private Vector2 mouseStarPos;
     private int count = 0;

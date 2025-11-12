@@ -10,12 +10,12 @@ namespace AnhPD.CookV2
 {
   public class UnitCutSpin : FruitPreparation
   {
-    [FoldoutGroup("References")][SerializeField] private Transform knife;
-    [FoldoutGroup("References")][SerializeField] private AudioClip sfxKnifeAppear, sfxKnifeCut;
-    [FoldoutGroup("Parameters")][SerializeField] private Vector3 knifeOffset;
-    [FoldoutGroup("Parameters")][SerializeField] private float cutOffset = .5f;
-    [FoldoutGroup("Parameters")][SerializeField] private int loopNumber = 2;
-    [FoldoutGroup("Events")] public UnityEvent onDoneStep;
+    [SerializeField] private Transform knife;
+    [SerializeField] private AudioClip sfxKnifeAppear, sfxKnifeCut;
+    [SerializeField] private Vector3 knifeOffset;
+    [SerializeField] private float cutOffset = .5f;
+    [SerializeField] private int loopNumber = 2;
+    public UnityEvent onDoneStep;
 
     public override void OnHaveTool()
     {

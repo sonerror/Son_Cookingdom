@@ -9,11 +9,11 @@ namespace AnhPD.Cook
 {
   public class RollingPinV2 : MonoBehaviour
   {
-    [FoldoutGroup("References")][SerializeField] private Collider2D coll2D;
-    [FoldoutGroup("References")][SerializeField] private GameObject sfx;
+    [SerializeField] private Collider2D coll2D;
+    [SerializeField] private GameObject sfx;
 
-    [FoldoutGroup("Paramaters")][SerializeField] private float speed = 2f, timer = 0f, duration = 2f, rate_validRange = .5f;
-    [FoldoutGroup("Paramaters")][SerializeField] private RollAxis axis = RollAxis.Horizontal;
+    [SerializeField] private float speed = 2f, timer = 0f, duration = 2f, rate_validRange = .5f;
+    [SerializeField] private RollAxis axis = RollAxis.Horizontal;
 
     public UnityEvent rollingEvent, completeEvent;
     public float DistanceRate => centerDistanceRate;

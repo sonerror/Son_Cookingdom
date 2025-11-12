@@ -19,28 +19,28 @@ namespace AnhPD.FoodStall
   public class CustomerLine : MonoBehaviour
   {
     #region Properties
-    [FoldoutGroup("References")][SerializeField] private Transform orderRoot;
-    [FoldoutGroup("References")][SerializeField] private OrderTimer timer;
-    [FoldoutGroup("References")][SerializeField] private EmojiControl emoji;
-    [FoldoutGroup("References")][SerializeField] private CustomerDataArray customerData;
-    [FoldoutGroup("References")][SerializeField] private FSCharacterConfigSO _customerConfig;
-    [FoldoutGroup("References")][SerializeField] private Transform _customerContainer;
-    [FoldoutGroup("References")][SerializeField] private TextMeshProUGUI _numberTex;
+    [SerializeField] private Transform orderRoot;
+    [SerializeField] private OrderTimer timer;
+    [SerializeField] private EmojiControl emoji;
+    [SerializeField] private CustomerDataArray customerData;
+    [SerializeField] private FSCharacterConfigSO _customerConfig;
+    [SerializeField] private Transform _customerContainer;
+    [SerializeField] private TextMeshProUGUI _numberTex;
     public FoodData data;
 
-    [FoldoutGroup("Bool")][SerializeField] private bool isUseTimer;
+    [SerializeField] private bool isUseTimer;
 
-    [FoldoutGroup("Parameters")][SerializeField] private float moveDistance = 5f;
-    [FoldoutGroup("Parameters")][SerializeField] private MoveDirection appearDirection = MoveDirection.Up, disappearDirection = MoveDirection.Down;
-    [FoldoutGroup("Parameters")][SerializeField] private float appearDuration = 0.5f;
-    [FoldoutGroup("Parameters")][SerializeField] private float waitTime = 30f;
-    [FoldoutGroup("Events")] public UnityEvent showOrder, showOrderComplete, hideOrder, onDoneStep, onComplete;
+    [SerializeField] private float moveDistance = 5f;
+    [SerializeField] private MoveDirection appearDirection = MoveDirection.Up, disappearDirection = MoveDirection.Down;
+    [SerializeField] private float appearDuration = 0.5f;
+    [SerializeField] private float waitTime = 30f;
+    public UnityEvent showOrder, showOrderComplete, hideOrder, onDoneStep, onComplete;
     public Transform targetPos;
 
     private bool _isChangingCustomer;
     private int _count = -1;
     private Dictionary<int, Customer> _customerDict = new Dictionary<int, Customer>();
-    private List<AsyncOperationHandle<GameObject>> _usedOps = new();
+    private List<AsyncOperationHandle<GameObject>> _usedOps = new List<AsyncOperationHandle<GameObject>>();
     public enum MoveDirection
     {
       Up,

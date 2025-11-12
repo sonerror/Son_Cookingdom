@@ -9,12 +9,12 @@ namespace AnhPD.CookV2
 {
   public class LiddedAppliance : MonoBehaviour
   {
-    [FoldoutGroup("References")][SerializeField] private GameObject lidOpen, lidClose;
-    [FoldoutGroup("Audio")][SerializeField] private AudioClip sfxOpen;
-    [FoldoutGroup("Events")] public UnityEvent onOpen, onClose;
+    [SerializeField] private GameObject lidOpen, lidClose;
+    [SerializeField] private AudioClip sfxOpen;
+    public UnityEvent onOpen, onClose;
 
-    [FoldoutGroup("Bool")] public bool isReadyOnEnable;
-    [FoldoutGroup("Bool")] public bool isOpen;
+    public bool isReadyOnEnable;
+    public bool isOpen;
     private bool _isReady;
 
     private void OnEnable()

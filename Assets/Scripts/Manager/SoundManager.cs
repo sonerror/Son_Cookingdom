@@ -6,9 +6,18 @@ public enum FxType
 {
   Xe = 0,
   Do = 1,
+  Pickup1 = 2,
+  Place1 = 3,
+  Pickup2 = 4,
+  Pickup3 = 5,
+  Soup = 6,
+  OvenClose = 7,
+  OvenDone = 8,
+  OvenRunning = 9,
+  Fire = 10,
 
-  EmojiPositive = 10,
-  EmojiNegative = 11,
+  EmojiPositive = 11,
+  EmojiNegative = 12,
   None = 20,
 }
 
@@ -43,6 +52,7 @@ public class SoundManager : Singleton<SoundManager>
       {
         fx[(int)fxType] = new GameObject().AddComponent<AudioSource>();
         fx[(int)fxType].clip = audioClips[(int)fxType];
+        fx[(int)fxType].playOnAwake = false;
       }
 
       fx[(int)fxType].loop = true;

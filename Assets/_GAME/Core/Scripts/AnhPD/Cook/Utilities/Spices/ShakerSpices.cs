@@ -16,7 +16,7 @@ namespace AnhPD.HotDog
     [SerializeField] private ParticleSystem vfx;
     [SerializeField] private AudioClip sfxShaker;
 
-    [FoldoutGroup("Event")] public UnityEvent onStartAnim;
+    public UnityEvent onStartAnim;
 
     protected override void Start()
     {
