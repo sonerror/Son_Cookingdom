@@ -459,7 +459,7 @@ MonoBehaviour:
     - DOODLE_ON
   _includedShaderVariants: []
   _excludedShaderVariants: []
-  version: 523
+  version: 528
   _shaderParsedShaders:
   - ParsedSubShaders:
     - Index: 0

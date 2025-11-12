@@ -13,11 +13,9 @@ namespace AnhPD.Cook
     [SerializeField] private int number;
     [SerializeField] private float speed = 2.5f;
     [SerializeField] private FxType sfxType = FxType.None;
-    // [SerializeField] private AudioSource audioSource;
     public UnityEvent draggingEvent, oneLapEvent, completeEvent;
     public bool IsLockRotation = true;
     public bool isLoopAudio;
-    Vector2 mouseStarPos;
     int count = 0;
     float deltaAngle = 0, rate;
 
