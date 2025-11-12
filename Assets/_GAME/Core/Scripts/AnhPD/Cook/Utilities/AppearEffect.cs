@@ -21,19 +21,12 @@ namespace AnhPD.Cook
       FallAppearLocal = 7,
       AppearVertical = 8,
     }
-    [ShowIf("@type == AppearType.AppearFromLeft || type == AppearType.AppearFromRight " +
-            "|| type == AppearType.FallAppearAndMoveRight" +
-            "|| type == AppearType.AppearVertical")]
     public float distance = 5f;
-
-    [ShowIf("@type == AppearType.FadeIn")]
     [SerializeField] private SpriteRenderer spriteRenderer;
 
     public AppearType type;
     public bool isPlayOnEnable = true;
 
-    [ShowIf("@type == AppearType.AppearFromLeft || type == AppearType.AppearFromRight" +
-            "|| type == AppearType.AppearVertical")]
     public UnityEvent onAppeared;
     private void OnEnable()
     {

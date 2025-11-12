@@ -11,6 +11,7 @@
         "environmentID": 1144181199,
         "scripts": {
             "excludes": [
+                "Assets/FindMissingScriptsRecursively.cs",
                 "**/Editor/",
                 "**/Luna/RuntimeScripts/",
                 "**/FacebookSDK/",

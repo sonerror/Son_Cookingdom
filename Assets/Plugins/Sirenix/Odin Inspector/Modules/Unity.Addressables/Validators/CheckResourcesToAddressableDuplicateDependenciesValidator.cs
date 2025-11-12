@@ -152,12 +152,10 @@ namespace Sirenix.OdinInspector.Modules.Addressables.Editor
 			[FolderPath]
 			[PropertySpace(10)]
 			[ValidateInput(nameof(ValidateFolderPath))]
-			[ShowIf("FixChoice", FixChoice.MoveAsset, Animate = false)]
 			public string NewFolder = "Assets/Resources_moved";
 
 			[LabelWidth(120f)]
 			[PropertySpace(10)]
-			[ShowIf("FixChoice", FixChoice.Ignore, Animate = false)]
 			public bool IgnoreForEveryone = true;
 
 			private bool ValidateFolderPath(string path, ref string message)

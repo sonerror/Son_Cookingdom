@@ -84,17 +84,6 @@ namespace AnhPD.FoodStall
       }
       else ShowRandomCustomer(delay);
     }
-    private void RandomCustomer()
-    {
-      int randomIndex = Random.Range(0, _customerConfig.AssetRefNumber);
-      if (randomIndex == _currentCustomerIndex)
-      {
-        RandomCustomer();
-        return;
-      }
-
-      _currentCustomerIndex = randomIndex;
-    }
     private async void ShowRandomCustomer(float delay = 0)
     {
       try
@@ -108,7 +97,7 @@ namespace AnhPD.FoodStall
 
         data.RandomOrder();
 
-        RandomCustomer();
+        // RandomCustomer();
 
         if (!_customerDict.ContainsKey(_currentCustomerIndex))
           await LoadCustomer(_currentCustomerIndex);
@@ -159,17 +148,17 @@ namespace AnhPD.FoodStall
       //    Addressables.Release(_opLoadCustomer);
       //    _opLoadCustomer = default;
       //}
-      AssetReference assetRef = _customerConfig.GetAssetReferenceById(id);
-      if (assetRef.RuntimeKeyIsValid())
-      {
-        _opLoadCustomer = Addressables.LoadAssetAsync<GameObject>(assetRef);
-        _usedOps.Add(_opLoadCustomer);
-        await _opLoadCustomer.Task;
-        GameObject prefab = _opLoadCustomer.Result;
-        Customer customer = Instantiate(prefab, _customerContainer).GetComponent<Customer>();
-        _customerDict.Add(id, customer);
-      }
-      else Debug.LogError("Customer id " + id + " not found");
+      // AssetReference assetRef = _customerConfig.GetAssetReferenceById(id);
+      // if (assetRef.RuntimeKeyIsValid())
+      // {
+      //   _opLoadCustomer = Addressables.LoadAssetAsync<GameObject>(assetRef);
+      //   _usedOps.Add(_opLoadCustomer);
+      //   await _opLoadCustomer.Task;
+      //   GameObject prefab = _opLoadCustomer.Result;
+      //   Customer customer = Instantiate(prefab, _customerContainer).GetComponent<Customer>();
+      //   _customerDict.Add(id, customer);
+      // }
+      // else Debug.LogError("Customer id " + id + " not found");
     }
     #endregion
 

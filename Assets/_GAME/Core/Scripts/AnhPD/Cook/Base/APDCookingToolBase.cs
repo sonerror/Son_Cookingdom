@@ -55,7 +55,7 @@ namespace AnhPD.Cook
         landAction += shadow.OnPutDown;
       }
     }
-    [HorizontalGroup("Init")]
+
     [Sirenix.OdinInspector.Button]
     public virtual void InitProperties()
     {
@@ -259,7 +259,7 @@ namespace AnhPD.Cook
       Tf.localScale = sizeInit;
     }
 #if UNITY_EDITOR
-    [HorizontalGroup("Init")]
+
     [Sirenix.OdinInspector.Button]
     private void SetUpEventTrigger()
     {
@@ -278,7 +278,7 @@ namespace AnhPD.Cook
         eventTrigger.triggers.Add(entry);
       }
     }
-    [HorizontalGroup("Init")]
+
     [Sirenix.OdinInspector.Button]
     private void SetCurrentMinLayer()
     {

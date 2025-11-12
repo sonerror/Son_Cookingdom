@@ -161,16 +161,13 @@ namespace Sirenix.OdinInspector.Modules.Addressables.Editor
 			[PropertySpace(10)]
 			[ValueDropdown("Groups")]
 			//[Title("Group To Add To", TitleAlignment = TitleAlignments.Centered)]
-			[ShowIf(nameof(FixChoice), FixChoice.AddToGroup, Animate = false)]
 			public string Group = "Duplicate Asset Isolation";
 
 			[ValidateInput(nameof(ValidateGroupName), "The group name cannot be empty")]
-			[ShowIf(nameof(ShowNewGroupName), Animate = false)]
 			public string GroupName;
 
 			[LabelWidth(120f)]
 			[PropertySpace(10)]
-			[ShowIf("FixChoice", FixChoice.Ignore, Animate = false)]
 			public bool IgnoreForEveryone = true;
 
 			[OnInspectorGUI]

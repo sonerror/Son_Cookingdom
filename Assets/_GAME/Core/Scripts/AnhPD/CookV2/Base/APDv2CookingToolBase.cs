@@ -68,7 +68,7 @@ namespace AnhPD.CookV2
         onRewound.AddListener(shadow.OnPutDown);
       }
     }
-    [HorizontalGroup("Init")]
+
     [Button]
     public virtual void InitProperties()
     {
@@ -251,7 +251,7 @@ namespace AnhPD.CookV2
 
 
 #if UNITY_EDITOR
-    [HorizontalGroup("Init")]
+
     [Sirenix.OdinInspector.Button]
     private void SetUpEventTrigger()
     {
