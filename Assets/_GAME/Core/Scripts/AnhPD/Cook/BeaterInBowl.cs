@@ -48,7 +48,7 @@ namespace AnhPD.Cook
       }
     }
 
-    private void OnMouseDrag()
+    public void OnMouseDrag1()
     {
       if (!LevelBase.Ins.IsAllowInteract) return;
 

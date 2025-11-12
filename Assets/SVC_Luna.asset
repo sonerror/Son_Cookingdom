@@ -427,10 +427,714 @@ MonoBehaviour:
     subShaderIndex: 0
     upToDate: 0
     keywords: []
+  - shaderCompilerPlatform: 5
+    shader: {fileID: 10720, guid: 0000000000000000f000000000000000, type: 0}
+    passType: 0
+    passId: 0
+    subShaderIndex: 0
+    upToDate: 0
+    keywords: []
+  - shaderCompilerPlatform: 9
+    shader: {fileID: 10720, guid: 0000000000000000f000000000000000, type: 0}
+    passType: 0
+    passId: 0
+    subShaderIndex: 0
+    upToDate: 0
+    keywords: []
+  - shaderCompilerPlatform: 5
+    shader: {fileID: 4800000, guid: a36b7719ff0465b42ab1407d67672c5f, type: 3}
+    passType: 0
+    passId: 0
+    subShaderIndex: 0
+    upToDate: 0
+    keywords:
+    - DOODLE_ON
+  - shaderCompilerPlatform: 9
+    shader: {fileID: 4800000, guid: a36b7719ff0465b42ab1407d67672c5f, type: 3}
+    passType: 0
+    passId: 0
+    subShaderIndex: 0
+    upToDate: 0
+    keywords:
+    - DOODLE_ON
   _includedShaderVariants: []
   _excludedShaderVariants: []
-  version: 466
+  version: 523
   _shaderParsedShaders:
+  - ParsedSubShaders:
+    - Index: 0
+      Passes:
+      - Shader: {fileID: 4800000, guid: a36b7719ff0465b42ab1407d67672c5f, type: 3}
+        ShaderVariants:
+        - ShaderCompilerPlatform: 5
+          NoShaderVariant: 0
+          VertexProgram: "\n#version 100\n\nuniform \tvec4 hlslcc_mtx4x4unity_ObjectToWorld[4];\nuniform
+            \tvec4 hlslcc_mtx4x4unity_MatrixVP[4];\nuniform \tmediump vec4 _MainTex_ST;\nattribute
+            highp vec4 in_POSITION0;\nattribute highp vec2 in_TEXCOORD0;\nattribute
+            mediump vec4 in_COLOR0;\nvarying highp vec2 vs_TEXCOORD0;\nvarying mediump
+            vec4 vs_COLOR0;\nvec4 u_xlat0;\nvec4 u_xlat1;\nvoid main()\n{\n    vs_TEXCOORD0.xy
+            = in_TEXCOORD0.xy * _MainTex_ST.xy + _MainTex_ST.zw;\n    u_xlat0 = in_POSITION0.yyyy
+            * hlslcc_mtx4x4unity_ObjectToWorld[1];\n    u_xlat0 = hlslcc_mtx4x4unity_ObjectToWorld[0]
+            * in_POSITION0.xxxx + u_xlat0;\n    u_xlat0 = hlslcc_mtx4x4unity_ObjectToWorld[2]
+            * in_POSITION0.zzzz + u_xlat0;\n    u_xlat0 = u_xlat0 + hlslcc_mtx4x4unity_ObjectToWorld[3];\n   
+            u_xlat1 = u_xlat0.yyyy * hlslcc_mtx4x4unity_MatrixVP[1];\n    u_xlat1
+            = hlslcc_mtx4x4unity_MatrixVP[0] * u_xlat0.xxxx + u_xlat1;\n    u_xlat1
+            = hlslcc_mtx4x4unity_MatrixVP[2] * u_xlat0.zzzz + u_xlat1;\n    gl_Position
+            = hlslcc_mtx4x4unity_MatrixVP[3] * u_xlat0.wwww + u_xlat1;\n    vs_COLOR0
+            = in_COLOR0;\n    return;\n}\n\n"
+          FragmentProgram: "\n#version 100\n\n#ifdef GL_FRAGMENT_PRECISION_HIGH\n   
+            precision highp float;\n#else\n    precision mediump float;\n#endif\nprecision
+            highp int;\nuniform \tmediump vec4 _Color;\nuniform \tmediump float _Alpha;\nuniform
+            lowp sampler2D _MainTex;\nvarying highp vec2 vs_TEXCOORD0;\nvarying mediump
+            vec4 vs_COLOR0;\n#define SV_Target0 gl_FragData[0]\nmediump vec4 u_xlat16_0;\nlowp
+            vec4 u_xlat10_0;\nvoid main()\n{\n    u_xlat10_0 = texture2D(_MainTex,
+            vs_TEXCOORD0.xy);\n    u_xlat16_0 = u_xlat10_0 * vs_COLOR0;\n    u_xlat16_0.w
+            = u_xlat16_0.w * _Alpha;\n    SV_Target0 = u_xlat16_0 * _Color;\n   
+            return;\n}\n\n"
+          LOD: 0
+          readDepth: 0
+          PassId: 0
+          SubShaderIndex: 0
+          Keywords: []
+          Tags:
+          - Key: CanUseSpriteAtlas
+            Value: true
+          - Key: IGNOREPROJECTOR
+            Value: true
+          - Key: PreviewType
+            Value: Plane
+          - Key: QUEUE
+            Value: Transparent
+          - Key: RenderType
+            Value: Transparent
+        - ShaderCompilerPlatform: 9
+          NoShaderVariant: 0
+          VertexProgram: "\n#version 300 es\n\n#define HLSLCC_ENABLE_UNIFORM_BUFFERS
+            0\n#if HLSLCC_ENABLE_UNIFORM_BUFFERS\n#define UNITY_UNIFORM\n#else\n#define
+            UNITY_UNIFORM uniform\n#endif\n#define UNITY_SUPPORTS_UNIFORM_LOCATION
+            0\n#if UNITY_SUPPORTS_UNIFORM_LOCATION\n#define UNITY_LOCATION(x) layout(location
+            = x)\n#define UNITY_BINDING(x) layout(binding = x, std140)\n#else\n#define
+            UNITY_LOCATION(x)\n#define UNITY_BINDING(x) layout(std140)\n#endif\nuniform
+            \tvec4 hlslcc_mtx4x4unity_ObjectToWorld[4];\nuniform \tvec4 hlslcc_mtx4x4unity_MatrixVP[4];\nuniform
+            \tmediump vec4 _MainTex_ST;\nin highp vec4 in_POSITION0;\nin highp vec2
+            in_TEXCOORD0;\nin mediump vec4 in_COLOR0;\nout highp vec2 vs_TEXCOORD0;\nout
+            mediump vec4 vs_COLOR0;\nvec4 u_xlat0;\nvec4 u_xlat1;\nvoid main()\n{\n   
+            vs_TEXCOORD0.xy = in_TEXCOORD0.xy * _MainTex_ST.xy + _MainTex_ST.zw;\n   
+            u_xlat0 = in_POSITION0.yyyy * hlslcc_mtx4x4unity_ObjectToWorld[1];\n   
+            u_xlat0 = hlslcc_mtx4x4unity_ObjectToWorld[0] * in_POSITION0.xxxx + u_xlat0;\n   
+            u_xlat0 = hlslcc_mtx4x4unity_ObjectToWorld[2] * in_POSITION0.zzzz + u_xlat0;\n   
+            u_xlat0 = u_xlat0 + hlslcc_mtx4x4unity_ObjectToWorld[3];\n    u_xlat1
+            = u_xlat0.yyyy * hlslcc_mtx4x4unity_MatrixVP[1];\n    u_xlat1 = hlslcc_mtx4x4unity_MatrixVP[0]
+            * u_xlat0.xxxx + u_xlat1;\n    u_xlat1 = hlslcc_mtx4x4unity_MatrixVP[2]
+            * u_xlat0.zzzz + u_xlat1;\n    gl_Position = hlslcc_mtx4x4unity_MatrixVP[3]
+            * u_xlat0.wwww + u_xlat1;\n    vs_COLOR0 = in_COLOR0;\n    return;\n}\n\n"
+          FragmentProgram: "\n#version 300 es\n\nprecision highp float;\nprecision
+            highp int;\n#define HLSLCC_ENABLE_UNIFORM_BUFFERS 0\n#if HLSLCC_ENABLE_UNIFORM_BUFFERS\n#define
+            UNITY_UNIFORM\n#else\n#define UNITY_UNIFORM uniform\n#endif\n#define
+            UNITY_SUPPORTS_UNIFORM_LOCATION 0\n#if UNITY_SUPPORTS_UNIFORM_LOCATION\n#define
+            UNITY_LOCATION(x) layout(location = x)\n#define UNITY_BINDING(x) layout(binding
+            = x, std140)\n#else\n#define UNITY_LOCATION(x)\n#define UNITY_BINDING(x)
+            layout(std140)\n#endif\nuniform \tmediump vec4 _Color;\nuniform \tmediump
+            float _Alpha;\nUNITY_LOCATION(0) uniform mediump sampler2D _MainTex;\nin
+            highp vec2 vs_TEXCOORD0;\nin mediump vec4 vs_COLOR0;\nlayout(location
+            = 0) out mediump vec4 SV_Target0;\nmediump vec4 u_xlat16_0;\nvoid main()\n{\n   
+            u_xlat16_0 = texture(_MainTex, vs_TEXCOORD0.xy);\n    u_xlat16_0 = u_xlat16_0
+            * vs_COLOR0;\n    u_xlat16_0.w = u_xlat16_0.w * _Alpha;\n    SV_Target0
+            = u_xlat16_0 * _Color;\n    return;\n}\n\n"
+          LOD: 0
+          readDepth: 0
+          PassId: 0
+          SubShaderIndex: 0
+          Keywords: []
+          Tags:
+          - Key: CanUseSpriteAtlas
+            Value: true
+          - Key: IGNOREPROJECTOR
+            Value: true
+          - Key: PreviewType
+            Value: Plane
+          - Key: QUEUE
+            Value: Transparent
+          - Key: RenderType
+            Value: Transparent
+        - ShaderCompilerPlatform: 5
+          NoShaderVariant: 0
+          VertexProgram: "\n#version 100\n\nuniform \tvec4 hlslcc_mtx4x4unity_ObjectToWorld[4];\nuniform
+            \tvec4 hlslcc_mtx4x4unity_MatrixVP[4];\nuniform \tmediump vec4 _MainTex_ST;\nattribute
+            highp vec4 in_POSITION0;\nattribute highp vec2 in_TEXCOORD0;\nattribute
+            mediump vec4 in_COLOR0;\nvarying highp vec2 vs_TEXCOORD0;\nvarying mediump
+            vec4 vs_COLOR0;\nvec4 u_xlat0;\nvec4 u_xlat1;\nvoid main()\n{\n    vs_TEXCOORD0.xy
+            = in_TEXCOORD0.xy * _MainTex_ST.xy + _MainTex_ST.zw;\n    u_xlat0 = in_POSITION0.yyyy
+            * hlslcc_mtx4x4unity_ObjectToWorld[1];\n    u_xlat0 = hlslcc_mtx4x4unity_ObjectToWorld[0]
+            * in_POSITION0.xxxx + u_xlat0;\n    u_xlat0 = hlslcc_mtx4x4unity_ObjectToWorld[2]
+            * in_POSITION0.zzzz + u_xlat0;\n    u_xlat0 = u_xlat0 + hlslcc_mtx4x4unity_ObjectToWorld[3];\n   
+            u_xlat1 = u_xlat0.yyyy * hlslcc_mtx4x4unity_MatrixVP[1];\n    u_xlat1
+            = hlslcc_mtx4x4unity_MatrixVP[0] * u_xlat0.xxxx + u_xlat1;\n    u_xlat1
+            = hlslcc_mtx4x4unity_MatrixVP[2] * u_xlat0.zzzz + u_xlat1;\n    gl_Position
+            = hlslcc_mtx4x4unity_MatrixVP[3] * u_xlat0.wwww + u_xlat1;\n    vs_COLOR0
+            = in_COLOR0;\n    return;\n}\n\n"
+          FragmentProgram: "\n#version 100\n\n#ifdef GL_FRAGMENT_PRECISION_HIGH\n   
+            precision highp float;\n#else\n    precision mediump float;\n#endif\nprecision
+            highp int;\nuniform \tvec4 _Time;\nuniform \tmediump vec4 _Color;\nuniform
+            \tmediump float _Alpha;\nuniform \tfloat _RandomSeed;\nuniform \tmediump
+            float _HandDrawnAmount;\nuniform \tmediump float _HandDrawnSpeed;\nuniform
+            lowp sampler2D _MainTex;\nvarying highp vec2 vs_TEXCOORD0;\nvarying mediump
+            vec4 vs_COLOR0;\n#define SV_Target0 gl_FragData[0]\nvec2 u_xlat0;\nmediump
+            vec4 u_xlat16_0;\nlowp vec4 u_xlat10_0;\nmediump vec2 u_xlat16_1;\nmediump
+            vec2 u_xlat16_2;\nvoid main()\n{\n    u_xlat0.x = _Time.x + _RandomSeed;\n   
+            u_xlat0.x = u_xlat0.x * 20.0;\n    u_xlat0.x = u_xlat0.x * _HandDrawnSpeed;\n   
+            u_xlat0.x = floor(u_xlat0.x);\n    u_xlat16_1.xy = vs_TEXCOORD0.xy *
+            vec2(_HandDrawnAmount) + u_xlat0.xx;\n    u_xlat16_1.xy = u_xlat16_1.xy
+            * vec2(4.0, 4.0);\n    u_xlat16_2.x = sin(u_xlat16_1.x);\n    u_xlat16_2.y
+            = cos(u_xlat16_1.y);\n    u_xlat16_1.x = _HandDrawnAmount * 0.000500000024;\n   
+            u_xlat0.xy = u_xlat16_1.xx * u_xlat16_2.xy + vs_TEXCOORD0.xy;\n    u_xlat10_0
+            = texture2D(_MainTex, u_xlat0.xy);\n    u_xlat16_0 = u_xlat10_0 * vs_COLOR0;\n   
+            u_xlat16_0.w = u_xlat16_0.w * _Alpha;\n    SV_Target0 = u_xlat16_0 *
+            _Color;\n    return;\n}\n\n"
+          LOD: 0
+          readDepth: 0
+          PassId: 0
+          SubShaderIndex: 0
+          Keywords:
+          - DOODLE_ON
+          Tags:
+          - Key: CanUseSpriteAtlas
+            Value: true
+          - Key: IGNOREPROJECTOR
+            Value: true
+          - Key: PreviewType
+            Value: Plane
+          - Key: QUEUE
+            Value: Transparent
+          - Key: RenderType
+            Value: Transparent
+        - ShaderCompilerPlatform: 9
+          NoShaderVariant: 0
+          VertexProgram: "\n#version 300 es\n\n#define HLSLCC_ENABLE_UNIFORM_BUFFERS
+            0\n#if HLSLCC_ENABLE_UNIFORM_BUFFERS\n#define UNITY_UNIFORM\n#else\n#define
+            UNITY_UNIFORM uniform\n#endif\n#define UNITY_SUPPORTS_UNIFORM_LOCATION
+            0\n#if UNITY_SUPPORTS_UNIFORM_LOCATION\n#define UNITY_LOCATION(x) layout(location
+            = x)\n#define UNITY_BINDING(x) layout(binding = x, std140)\n#else\n#define
+            UNITY_LOCATION(x)\n#define UNITY_BINDING(x) layout(std140)\n#endif\nuniform
+            \tvec4 hlslcc_mtx4x4unity_ObjectToWorld[4];\nuniform \tvec4 hlslcc_mtx4x4unity_MatrixVP[4];\nuniform
+            \tmediump vec4 _MainTex_ST;\nin highp vec4 in_POSITION0;\nin highp vec2
+            in_TEXCOORD0;\nin mediump vec4 in_COLOR0;\nout highp vec2 vs_TEXCOORD0;\nout
+            mediump vec4 vs_COLOR0;\nvec4 u_xlat0;\nvec4 u_xlat1;\nvoid main()\n{\n   
+            vs_TEXCOORD0.xy = in_TEXCOORD0.xy * _MainTex_ST.xy + _MainTex_ST.zw;\n   
+            u_xlat0 = in_POSITION0.yyyy * hlslcc_mtx4x4unity_ObjectToWorld[1];\n   
+            u_xlat0 = hlslcc_mtx4x4unity_ObjectToWorld[0] * in_POSITION0.xxxx + u_xlat0;\n   
+            u_xlat0 = hlslcc_mtx4x4unity_ObjectToWorld[2] * in_POSITION0.zzzz + u_xlat0;\n   
+            u_xlat0 = u_xlat0 + hlslcc_mtx4x4unity_ObjectToWorld[3];\n    u_xlat1
+            = u_xlat0.yyyy * hlslcc_mtx4x4unity_MatrixVP[1];\n    u_xlat1 = hlslcc_mtx4x4unity_MatrixVP[0]
+            * u_xlat0.xxxx + u_xlat1;\n    u_xlat1 = hlslcc_mtx4x4unity_MatrixVP[2]
+            * u_xlat0.zzzz + u_xlat1;\n    gl_Position = hlslcc_mtx4x4unity_MatrixVP[3]
+            * u_xlat0.wwww + u_xlat1;\n    vs_COLOR0 = in_COLOR0;\n    return;\n}\n\n"
+          FragmentProgram: "\n#version 300 es\n\nprecision highp float;\nprecision
+            highp int;\n#define HLSLCC_ENABLE_UNIFORM_BUFFERS 0\n#if HLSLCC_ENABLE_UNIFORM_BUFFERS\n#define
+            UNITY_UNIFORM\n#else\n#define UNITY_UNIFORM uniform\n#endif\n#define
+            UNITY_SUPPORTS_UNIFORM_LOCATION 0\n#if UNITY_SUPPORTS_UNIFORM_LOCATION\n#define
+            UNITY_LOCATION(x) layout(location = x)\n#define UNITY_BINDING(x) layout(binding
+            = x, std140)\n#else\n#define UNITY_LOCATION(x)\n#define UNITY_BINDING(x)
+            layout(std140)\n#endif\nuniform \tvec4 _Time;\nuniform \tmediump vec4
+            _Color;\nuniform \tmediump float _Alpha;\nuniform \tfloat _RandomSeed;\nuniform
+            \tmediump float _HandDrawnAmount;\nuniform \tmediump float _HandDrawnSpeed;\nUNITY_LOCATION(0)
+            uniform mediump sampler2D _MainTex;\nin highp vec2 vs_TEXCOORD0;\nin
+            mediump vec4 vs_COLOR0;\nlayout(location = 0) out mediump vec4 SV_Target0;\nvec2
+            u_xlat0;\nmediump vec4 u_xlat16_0;\nmediump vec2 u_xlat16_1;\nmediump
+            vec2 u_xlat16_2;\nvoid main()\n{\n    u_xlat0.x = _Time.x + _RandomSeed;\n   
+            u_xlat0.x = u_xlat0.x * 20.0;\n    u_xlat0.x = u_xlat0.x * _HandDrawnSpeed;\n   
+            u_xlat0.x = floor(u_xlat0.x);\n    u_xlat16_1.xy = vs_TEXCOORD0.xy *
+            vec2(_HandDrawnAmount) + u_xlat0.xx;\n    u_xlat16_1.xy = u_xlat16_1.xy
+            * vec2(4.0, 4.0);\n    u_xlat16_2.x = sin(u_xlat16_1.x);\n    u_xlat16_2.y
+            = cos(u_xlat16_1.y);\n    u_xlat16_1.x = _HandDrawnAmount * 0.000500000024;\n   
+            u_xlat0.xy = u_xlat16_1.xx * u_xlat16_2.xy + vs_TEXCOORD0.xy;\n    u_xlat16_0
+            = texture(_MainTex, u_xlat0.xy);\n    u_xlat16_0 = u_xlat16_0 * vs_COLOR0;\n   
+            u_xlat16_0.w = u_xlat16_0.w * _Alpha;\n    SV_Target0 = u_xlat16_0 *
+            _Color;\n    return;\n}\n\n"
+          LOD: 0
+          readDepth: 0
+          PassId: 0
+          SubShaderIndex: 0
+          Keywords:
+          - DOODLE_ON
+          Tags:
+          - Key: CanUseSpriteAtlas
+            Value: true
+          - Key: IGNOREPROJECTOR
+            Value: true
+          - Key: PreviewType
+            Value: Plane
+          - Key: QUEUE
+            Value: Transparent
+          - Key: RenderType
+            Value: Transparent
+        DefinedKeywords:
+        - ALPHACUTOFF_ON
+        - ALPHAOUTLINE_ON
+        - ALPHAROUND_ON
+        - ATLAS_ON
+        - BILBOARDY_ON
+        - BILBOARD_ON
+        - BLURISHD_ON
+        - BLUR_ON
+        - CHANGECOLOR2_ON
+        - CHANGECOLOR3_ON
+        - CHANGECOLOR_ON
+        - CHROMABERR_ON
+        - CLIPPING_ON
+        - COLORRAMPOUTLINE_ON
+        - COLORRAMP_ON
+        - COLORSWAP_ON
+        - CONTRAST_ON
+        - DISTORT_ON
+        - DOODLE_ON
+        - FADE_ON
+        - FISHEYE_ON
+        - FLICKER_ON
+        - FOG_ON
+        - GHOST_ON
+        - GLITCH_ON
+        - GLOWTEX_ON
+        - GLOW_ON
+        - GRADIENT2COL_ON
+        - GRADIENTCOLORRAMP_ON
+        - GRADIENT_ON
+        - GREYSCALEOUTLINE_ON
+        - GREYSCALE_ON
+        - HITEFFECT_ON
+        - HOLOGRAM_ON
+        - HSV_ON
+        - INNEROUTLINE_ON
+        - MANUALWIND_ON
+        - MOTIONBLUR_ON
+        - NEGATIVE_ON
+        - OFFSETUV_ON
+        - ONLYINNEROUTLINE_ON
+        - ONLYOUTLINE_ON
+        - OUTBASE8DIR_ON
+        - OUTBASEPIXELPERF_ON
+        - OUTBASE_ON
+        - OUTDIST_ON
+        - OUTTEX_ON
+        - OVERLAYMULT_ON
+        - OVERLAY_ON
+        - PINCH_ON
+        - PIXELATE_ON
+        - POLARUV_ON
+        - POSTERIZEOUTLINE_ON
+        - POSTERIZE_ON
+        - PREMULTIPLYALPHA_ON
+        - RADIALGRADIENT_ON
+        - RECTSIZE_ON
+        - ROTATEUV_ON
+        - ROUNDWAVEUV_ON
+        - SHADOW_ON
+        - SHAKEUV_ON
+        - SHINE_ON
+        - STEREO_CUBEMAP_RENDER_ON
+        - STEREO_INSTANCING_ON
+        - STEREO_MULTIVIEW_ON
+        - TEXTURESCROLLLOOP_ON
+        - TEXTURESCROLL_ON
+        - TWISTUV_ON
+        - UNITY_SINGLE_PASS_STEREO
+        - WAVEUV_ON
+        - WIND_ON
+        - ZOOMUV_ON
+        - _
+        - __
+        - FOG_LINEAR
+        - FOG_EXP
+        - FOG_EXP2
+        KeywordGroups:
+        - Keywords:
+          - _
+          - GLOW_ON
+        - Keywords:
+          - _
+          - FADE_ON
+        - Keywords:
+          - _
+          - OUTBASE_ON
+        - Keywords:
+          - _
+          - ONLYOUTLINE_ON
+        - Keywords:
+          - _
+          - GRADIENT_ON
+        - Keywords:
+          - _
+          - GRADIENT2COL_ON
+        - Keywords:
+          - _
+          - RADIALGRADIENT_ON
+        - Keywords:
+          - _
+          - COLORSWAP_ON
+        - Keywords:
+          - _
+          - HSV_ON
+        - Keywords:
+          - _
+          - CHANGECOLOR_ON
+        - Keywords:
+          - _
+          - CHANGECOLOR2_ON
+        - Keywords:
+          - _
+          - CHANGECOLOR3_ON
+        - Keywords:
+          - _
+          - COLORRAMP_ON
+        - Keywords:
+          - _
+          - GRADIENTCOLORRAMP_ON
+        - Keywords:
+          - _
+          - HITEFFECT_ON
+        - Keywords:
+          - _
+          - NEGATIVE_ON
+        - Keywords:
+          - _
+          - PIXELATE_ON
+        - Keywords:
+          - _
+          - GREYSCALE_ON
+        - Keywords:
+          - _
+          - POSTERIZE_ON
+        - Keywords:
+          - _
+          - BLUR_ON
+        - Keywords:
+          - _
+          - MOTIONBLUR_ON
+        - Keywords:
+          - _
+          - GHOST_ON
+        - Keywords:
+          - _
+          - ALPHAOUTLINE_ON
+        - Keywords:
+          - _
+          - INNEROUTLINE_ON
+        - Keywords:
+          - _
+          - ONLYINNEROUTLINE_ON
+        - Keywords:
+          - _
+          - HOLOGRAM_ON
+        - Keywords:
+          - _
+          - CHROMABERR_ON
+        - Keywords:
+          - _
+          - GLITCH_ON
+        - Keywords:
+          - _
+          - FLICKER_ON
+        - Keywords:
+          - _
+          - SHADOW_ON
+        - Keywords:
+          - _
+          - SHINE_ON
+        - Keywords:
+          - _
+          - CONTRAST_ON
+        - Keywords:
+          - _
+          - OVERLAY_ON
+        - Keywords:
+          - _
+          - OVERLAYMULT_ON
+        - Keywords:
+          - _
+          - ALPHACUTOFF_ON
+        - Keywords:
+          - _
+          - ALPHAROUND_ON
+        - Keywords:
+          - _
+          - DOODLE_ON
+        - Keywords:
+          - _
+          - WIND_ON
+        - Keywords:
+          - _
+          - WAVEUV_ON
+        - Keywords:
+          - _
+          - ROUNDWAVEUV_ON
+        - Keywords:
+          - _
+          - RECTSIZE_ON
+        - Keywords:
+          - _
+          - OFFSETUV_ON
+        - Keywords:
+          - _
+          - CLIPPING_ON
+        - Keywords:
+          - _
+          - TEXTURESCROLL_ON
+        - Keywords:
+          - _
+          - TEXTURESCROLLLOOP_ON
+        - Keywords:
+          - _
+          - ZOOMUV_ON
+        - Keywords:
+          - _
+          - DISTORT_ON
+        - Keywords:
+          - _
+          - TWISTUV_ON
+        - Keywords:
+          - _
+          - ROTATEUV_ON
+        - Keywords:
+          - _
+          - POLARUV_ON
+        - Keywords:
+          - _
+          - FISHEYE_ON
+        - Keywords:
+          - _
+          - PINCH_ON
+        - Keywords:
+          - _
+          - SHAKEUV_ON
+        - Keywords:
+          - _
+          - GLOWTEX_ON
+        - Keywords:
+          - _
+          - OUTTEX_ON
+        - Keywords:
+          - _
+          - OUTDIST_ON
+        - Keywords:
+          - _
+          - OUTBASE8DIR_ON
+        - Keywords:
+          - _
+          - OUTBASEPIXELPERF_ON
+        - Keywords:
+          - _
+          - COLORRAMPOUTLINE_ON
+        - Keywords:
+          - _
+          - GREYSCALEOUTLINE_ON
+        - Keywords:
+          - _
+          - POSTERIZEOUTLINE_ON
+        - Keywords:
+          - _
+          - BLURISHD_ON
+        - Keywords:
+          - _
+          - MANUALWIND_ON
+        - Keywords:
+          - _
+          - ATLAS_ON
+        - Keywords:
+          - _
+          - PREMULTIPLYALPHA_ON
+        - Keywords:
+          - _
+          - BILBOARD_ON
+        - Keywords:
+          - _
+          - BILBOARDY_ON
+        - Keywords:
+          - _
+          - FOG_ON
+        - Keywords:
+          - __
+          - FOG_LINEAR
+          - FOG_EXP
+          - FOG_EXP2
+        KeywordsMinimalCardinality: 0
+        ContainsInvalidVariant: 0
+        VariantStructures:
+        - shaderCompilerPlatform: 5
+          shader: {fileID: 4800000, guid: a36b7719ff0465b42ab1407d67672c5f, type: 3}
+          passType: 0
+          passId: 0
+          subShaderIndex: 0
+          upToDate: 0
+          keywords: []
+        - shaderCompilerPlatform: 9
+          shader: {fileID: 4800000, guid: a36b7719ff0465b42ab1407d67672c5f, type: 3}
+          passType: 0
+          passId: 0
+          subShaderIndex: 0
+          upToDate: 0
+          keywords: []
+        - shaderCompilerPlatform: 5
+          shader: {fileID: 4800000, guid: a36b7719ff0465b42ab1407d67672c5f, type: 3}
+          passType: 0
+          passId: 0
+          subShaderIndex: 0
+          upToDate: 0
+          keywords:
+          - DOODLE_ON
+        - shaderCompilerPlatform: 9
+          shader: {fileID: 4800000, guid: a36b7719ff0465b42ab1407d67672c5f, type: 3}
+          passType: 0
+          passId: 0
+          subShaderIndex: 0
+          upToDate: 0
+          keywords:
+          - DOODLE_ON
+        CompilationErrors: []
+        HasDepthReader: 0
+        Id: 0
+        SubShaderIndex: 0
+        SerializedObjectId: 0
+        Tags:
+        - Key: CanUseSpriteAtlas
+          Value: true
+        - Key: IGNOREPROJECTOR
+          Value: true
+        - Key: PreviewType
+          Value: Plane
+        - Key: QUEUE
+          Value: Transparent
+        - Key: RenderType
+          Value: Transparent
+        UsePass:
+          shader: 
+          pass: 
+        GrabPassTextureName: 
+        PlatformMask: -1
+      Shader: {fileID: 4800000, guid: a36b7719ff0465b42ab1407d67672c5f, type: 3}
+      Tags:
+      - Key: CanUseSpriteAtlas
+        Value: true
+      - Key: IGNOREPROJECTOR
+        Value: true
+      - Key: PreviewType
+        Value: Plane
+      - Key: QUEUE
+        Value: Transparent
+      - Key: RenderType
+        Value: Transparent
+    Shader: {fileID: 4800000, guid: a36b7719ff0465b42ab1407d67672c5f, type: 3}
+    ShaderPath: Assets/AllIn1SpriteShader/Resources_moved/AllIn1SpriteShader.shader
+    ShaderDefinedKeywords:
+    - ALPHACUTOFF_ON
+    - ALPHAOUTLINE_ON
+    - ALPHAROUND_ON
+    - ATLAS_ON
+    - BILBOARDY_ON
+    - BILBOARD_ON
+    - BLURISHD_ON
+    - BLUR_ON
+    - CHANGECOLOR2_ON
+    - CHANGECOLOR3_ON
+    - CHANGECOLOR_ON
+    - CHROMABERR_ON
+    - CLIPPING_ON
+    - COLORRAMPOUTLINE_ON
+    - COLORRAMP_ON
+    - COLORSWAP_ON
+    - CONTRAST_ON
+    - DISTORT_ON
+    - DOODLE_ON
+    - FADE_ON
+    - FISHEYE_ON
+    - FLICKER_ON
+    - FOG_ON
+    - GHOST_ON
+    - GLITCH_ON
+    - GLOWTEX_ON
+    - GLOW_ON
+    - GRADIENT2COL_ON
+    - GRADIENTCOLORRAMP_ON
+    - GRADIENT_ON
+    - GREYSCALEOUTLINE_ON
+    - GREYSCALE_ON
+    - HITEFFECT_ON
+    - HOLOGRAM_ON
+    - HSV_ON
+    - INNEROUTLINE_ON
+    - MANUALWIND_ON
+    - MOTIONBLUR_ON
+    - NEGATIVE_ON
+    - OFFSETUV_ON
+    - ONLYINNEROUTLINE_ON
+    - ONLYOUTLINE_ON
+    - OUTBASE8DIR_ON
+    - OUTBASEPIXELPERF_ON
+    - OUTBASE_ON
+    - OUTDIST_ON
+    - OUTTEX_ON
+    - OVERLAYMULT_ON
+    - OVERLAY_ON
+    - PINCH_ON
+    - PIXELATE_ON
+    - POLARUV_ON
+    - POSTERIZEOUTLINE_ON
+    - POSTERIZE_ON
+    - PREMULTIPLYALPHA_ON
+    - RADIALGRADIENT_ON
+    - RECTSIZE_ON
+    - ROTATEUV_ON
+    - ROUNDWAVEUV_ON
+    - SHADOW_ON
+    - SHAKEUV_ON
+    - SHINE_ON
+    - TEXTURESCROLLLOOP_ON
+    - TEXTURESCROLL_ON
+    - TWISTUV_ON
+    - WAVEUV_ON
+    - WIND_ON
+    - ZOOMUV_ON
+    - STEREO_CUBEMAP_RENDER_ON
+    - STEREO_INSTANCING_ON
+    - STEREO_MULTIVIEW_ON
+    - UNITY_SINGLE_PASS_STEREO
+    - _
+    - __
+    - FOG_LINEAR
+    - FOG_EXP
+    - FOG_EXP2
+    fallbackShader: {fileID: 0}
+    CompilationErrors: []
+    Variants:
+    - shaderCompilerPlatform: 5
+      shader: {fileID: 4800000, guid: a36b7719ff0465b42ab1407d67672c5f, type: 3}
+      passType: 0
+      passId: 0
+      subShaderIndex: 0
+      upToDate: 0
+      keywords: []
+    - shaderCompilerPlatform: 9
+      shader: {fileID: 4800000, guid: a36b7719ff0465b42ab1407d67672c5f, type: 3}
+      passType: 0
+      passId: 0
+      subShaderIndex: 0
+      upToDate: 0
+      keywords: []
+    - shaderCompilerPlatform: 5
+      shader: {fileID: 4800000, guid: a36b7719ff0465b42ab1407d67672c5f, type: 3}
+      passType: 0
+      passId: 0
+      subShaderIndex: 0
+      upToDate: 0
+      keywords:
+      - DOODLE_ON
+    - shaderCompilerPlatform: 9
+      shader: {fileID: 4800000, guid: a36b7719ff0465b42ab1407d67672c5f, type: 3}
+      passType: 0
+      passId: 0
+      subShaderIndex: 0
+      upToDate: 0
+      keywords:
+      - DOODLE_ON
   - ParsedSubShaders:
     - Index: 0
       Passes:
@@ -1333,6 +2037,181 @@ MonoBehaviour:
       shader: {fileID: 6, guid: 0000000000000000f000000000000000, type: 0}
       passType: 2
       passId: 1
+      subShaderIndex: 0
+      upToDate: 0
+      keywords: []
+  - ParsedSubShaders:
+    - Index: 0
+      Passes:
+      - Shader: {fileID: 10720, guid: 0000000000000000f000000000000000, type: 0}
+        ShaderVariants:
+        - ShaderCompilerPlatform: 5
+          NoShaderVariant: 0
+          VertexProgram: "\n#version 100\n\nuniform \tvec4 hlslcc_mtx4x4unity_ObjectToWorld[4];\nuniform
+            \tvec4 hlslcc_mtx4x4unity_MatrixVP[4];\nuniform \tvec4 _MainTex_ST;\nattribute
+            highp vec3 in_POSITION0;\nattribute mediump vec4 in_COLOR0;\nattribute
+            highp vec3 in_TEXCOORD0;\nvarying mediump vec4 vs_COLOR0;\nvarying highp
+            vec2 vs_TEXCOORD0;\nvec4 u_xlat0;\nvec4 u_xlat1;\nvoid main()\n{\n   
+            vs_COLOR0 = in_COLOR0;\n    vs_COLOR0 = clamp(vs_COLOR0, 0.0, 1.0);\n   
+            vs_TEXCOORD0.xy = in_TEXCOORD0.xy * _MainTex_ST.xy + _MainTex_ST.zw;\n   
+            u_xlat0 = in_POSITION0.yyyy * hlslcc_mtx4x4unity_ObjectToWorld[1];\n   
+            u_xlat0 = hlslcc_mtx4x4unity_ObjectToWorld[0] * in_POSITION0.xxxx + u_xlat0;\n   
+            u_xlat0 = hlslcc_mtx4x4unity_ObjectToWorld[2] * in_POSITION0.zzzz + u_xlat0;\n   
+            u_xlat0 = u_xlat0 + hlslcc_mtx4x4unity_ObjectToWorld[3];\n    u_xlat1
+            = u_xlat0.yyyy * hlslcc_mtx4x4unity_MatrixVP[1];\n    u_xlat1 = hlslcc_mtx4x4unity_MatrixVP[0]
+            * u_xlat0.xxxx + u_xlat1;\n    u_xlat1 = hlslcc_mtx4x4unity_MatrixVP[2]
+            * u_xlat0.zzzz + u_xlat1;\n    gl_Position = hlslcc_mtx4x4unity_MatrixVP[3]
+            * u_xlat0.wwww + u_xlat1;\n    return;\n}\n\n"
+          FragmentProgram: "\n#version 100\n\n#ifdef GL_FRAGMENT_PRECISION_HIGH\n   
+            precision highp float;\n#else\n    precision mediump float;\n#endif\nprecision
+            highp int;\nuniform lowp sampler2D _MainTex;\nvarying mediump vec4 vs_COLOR0;\nvarying
+            highp vec2 vs_TEXCOORD0;\n#define SV_Target0 gl_FragData[0]\nlowp vec4
+            u_xlat10_0;\nvoid main()\n{\n    u_xlat10_0 = texture2D(_MainTex, vs_TEXCOORD0.xy);\n   
+            SV_Target0 = u_xlat10_0 * vs_COLOR0;\n    return;\n}\n\n"
+          LOD: 0
+          readDepth: 0
+          PassId: 0
+          SubShaderIndex: 0
+          Keywords: []
+          Tags:
+          - Key: IGNOREPROJECTOR
+            Value: true
+          - Key: PreviewType
+            Value: Plane
+          - Key: QUEUE
+            Value: Transparent
+          - Key: RenderType
+            Value: Transparent
+        - ShaderCompilerPlatform: 9
+          NoShaderVariant: 0
+          VertexProgram: "\n#version 300 es\n\n#define HLSLCC_ENABLE_UNIFORM_BUFFERS
+            0\n#if HLSLCC_ENABLE_UNIFORM_BUFFERS\n#define UNITY_UNIFORM\n#else\n#define
+            UNITY_UNIFORM uniform\n#endif\n#define UNITY_SUPPORTS_UNIFORM_LOCATION
+            0\n#if UNITY_SUPPORTS_UNIFORM_LOCATION\n#define UNITY_LOCATION(x) layout(location
+            = x)\n#define UNITY_BINDING(x) layout(binding = x, std140)\n#else\n#define
+            UNITY_LOCATION(x)\n#define UNITY_BINDING(x) layout(std140)\n#endif\nuniform
+            \tvec4 hlslcc_mtx4x4unity_ObjectToWorld[4];\nuniform \tvec4 hlslcc_mtx4x4unity_MatrixVP[4];\nuniform
+            \tvec4 _MainTex_ST;\nin highp vec3 in_POSITION0;\nin mediump vec4 in_COLOR0;\nin
+            highp vec3 in_TEXCOORD0;\nout mediump vec4 vs_COLOR0;\nout highp vec2
+            vs_TEXCOORD0;\nvec4 u_xlat0;\nvec4 u_xlat1;\nvoid main()\n{\n    vs_COLOR0
+            = in_COLOR0;\n    vs_COLOR0 = clamp(vs_COLOR0, 0.0, 1.0);\n    vs_TEXCOORD0.xy
+            = in_TEXCOORD0.xy * _MainTex_ST.xy + _MainTex_ST.zw;\n    u_xlat0 = in_POSITION0.yyyy
+            * hlslcc_mtx4x4unity_ObjectToWorld[1];\n    u_xlat0 = hlslcc_mtx4x4unity_ObjectToWorld[0]
+            * in_POSITION0.xxxx + u_xlat0;\n    u_xlat0 = hlslcc_mtx4x4unity_ObjectToWorld[2]
+            * in_POSITION0.zzzz + u_xlat0;\n    u_xlat0 = u_xlat0 + hlslcc_mtx4x4unity_ObjectToWorld[3];\n   
+            u_xlat1 = u_xlat0.yyyy * hlslcc_mtx4x4unity_MatrixVP[1];\n    u_xlat1
+            = hlslcc_mtx4x4unity_MatrixVP[0] * u_xlat0.xxxx + u_xlat1;\n    u_xlat1
+            = hlslcc_mtx4x4unity_MatrixVP[2] * u_xlat0.zzzz + u_xlat1;\n    gl_Position
+            = hlslcc_mtx4x4unity_MatrixVP[3] * u_xlat0.wwww + u_xlat1;\n    return;\n}\n\n"
+          FragmentProgram: "\n#version 300 es\n\nprecision highp float;\nprecision
+            highp int;\n#define UNITY_SUPPORTS_UNIFORM_LOCATION 0\n#if UNITY_SUPPORTS_UNIFORM_LOCATION\n#define
+            UNITY_LOCATION(x) layout(location = x)\n#define UNITY_BINDING(x) layout(binding
+            = x, std140)\n#else\n#define UNITY_LOCATION(x)\n#define UNITY_BINDING(x)
+            layout(std140)\n#endif\nUNITY_LOCATION(0) uniform mediump sampler2D _MainTex;\nin
+            mediump vec4 vs_COLOR0;\nin highp vec2 vs_TEXCOORD0;\nlayout(location
+            = 0) out mediump vec4 SV_Target0;\nmediump vec4 u_xlat16_0;\nvoid main()\n{\n   
+            u_xlat16_0 = texture(_MainTex, vs_TEXCOORD0.xy);\n    SV_Target0 = u_xlat16_0
+            * vs_COLOR0;\n    return;\n}\n\n"
+          LOD: 0
+          readDepth: 0
+          PassId: 0
+          SubShaderIndex: 0
+          Keywords: []
+          Tags:
+          - Key: IGNOREPROJECTOR
+            Value: true
+          - Key: PreviewType
+            Value: Plane
+          - Key: QUEUE
+            Value: Transparent
+          - Key: RenderType
+            Value: Transparent
+        DefinedKeywords:
+        - FOG_EXP
+        - FOG_EXP2
+        - FOG_LINEAR
+        - STEREO_CUBEMAP_RENDER_ON
+        - STEREO_INSTANCING_ON
+        - STEREO_MULTIVIEW_ON
+        - UNITY_SINGLE_PASS_STEREO
+        - _
+        KeywordGroups:
+        - Keywords:
+          - _
+          - FOG_LINEAR
+          - FOG_EXP
+          - FOG_EXP2
+        KeywordsMinimalCardinality: 0
+        ContainsInvalidVariant: 0
+        VariantStructures:
+        - shaderCompilerPlatform: 5
+          shader: {fileID: 10720, guid: 0000000000000000f000000000000000, type: 0}
+          passType: 0
+          passId: 0
+          subShaderIndex: 0
+          upToDate: 0
+          keywords: []
+        - shaderCompilerPlatform: 9
+          shader: {fileID: 10720, guid: 0000000000000000f000000000000000, type: 0}
+          passType: 0
+          passId: 0
+          subShaderIndex: 0
+          upToDate: 0
+          keywords: []
+        CompilationErrors: []
+        HasDepthReader: 0
+        Id: 0
+        SubShaderIndex: 0
+        SerializedObjectId: 0
+        Tags:
+        - Key: IGNOREPROJECTOR
+          Value: true
+        - Key: PreviewType
+          Value: Plane
+        - Key: QUEUE
+          Value: Transparent
+        - Key: RenderType
+          Value: Transparent
+        UsePass:
+          shader: 
+          pass: 
+        GrabPassTextureName: 
+        PlatformMask: -1
+      Shader: {fileID: 10720, guid: 0000000000000000f000000000000000, type: 0}
+      Tags:
+      - Key: IGNOREPROJECTOR
+        Value: true
+      - Key: PreviewType
+        Value: Plane
+      - Key: QUEUE
+        Value: Transparent
+      - Key: RenderType
+        Value: Transparent
+    Shader: {fileID: 10720, guid: 0000000000000000f000000000000000, type: 0}
+    ShaderPath: Resources/unity_builtin_extra
+    ShaderDefinedKeywords:
+    - FOG_EXP
+    - FOG_EXP2
+    - FOG_LINEAR
+    - STEREO_CUBEMAP_RENDER_ON
+    - STEREO_INSTANCING_ON
+    - STEREO_MULTIVIEW_ON
+    - UNITY_SINGLE_PASS_STEREO
+    - _
+    fallbackShader: {fileID: 0}
+    CompilationErrors: []
+    Variants:
+    - shaderCompilerPlatform: 5
+      shader: {fileID: 10720, guid: 0000000000000000f000000000000000, type: 0}
+      passType: 0
+      passId: 0
+      subShaderIndex: 0
+      upToDate: 0
+      keywords: []
+    - shaderCompilerPlatform: 9
+      shader: {fileID: 10720, guid: 0000000000000000f000000000000000, type: 0}
+      passType: 0
+      passId: 0
       subShaderIndex: 0
       upToDate: 0
       keywords: []
@@ -12889,7 +13768,7 @@ MonoBehaviour:
   _sceneLightData:
     PointLightCount: 0
     SpotLightCount: 0
-    DirectionalLightCount: 29
+    DirectionalLightCount: 0
     LightmapOn: 0
     DirlightmapCombined: 0
     DirectionalCookieExists: 0

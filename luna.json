@@ -2,7 +2,7 @@
     "version": "6.2.1",
     "projectId": "f42e7ff96e4545544bb6cd68f51ab634",
     "applicationID": 27404,
-    "creativeName": "Cookingdom_v3GG",
+    "creativeName": "Cookingdom_v5",
     "pgServer": "EU",
     "window": {
         "‐‵": true
@@ -133,9 +133,11 @@
             ]
         },
         "scenes": [
+            "Assets/Scenes/GamePlayScene.unity"
+        ],
+        "disabledScenes": [
             "Assets/_GAME/Levels/SonLevelDonut/Level628.unity"
         ],
-        "disabledScenes": [],
         "startupScene": 0,
         "packages": {
             "default": {
@@ -3608,10 +3610,6 @@
             },
             {
                 "name": "UnityEngine.ReflectionProbe",
-                "excluded": true
-            },
-            {
-                "name": "UnityEngine.Rendering.SortingGroup",
                 "excluded": true
             },
             {
@@ -8299,10 +8297,6 @@
                 "excluded": true
             },
             {
-                "name": "Spine.Unity.PointFollower",
-                "excluded": true
-            },
-            {
                 "name": "Spine.Unity.SkeletonRenderer",
                 "excluded": true
             },
@@ -8328,11 +8322,11 @@
             },
             {
                 "name": "PoolType",
-                "excluded": true
+                "excluded": false
             },
             {
                 "name": "Spine.Unity.ISpineComponent",
-                "excluded": true
+                "excluded": false
             },
             {
                 "name": "Spine.Unity.AtlasAssetBase",
@@ -8396,11 +8390,11 @@
             },
             {
                 "name": "Spine.Unity.IHasSkeletonComponent",
-                "excluded": true
+                "excluded": false
             },
             {
                 "name": "Spine.Unity.IHasSkeletonRenderer",
-                "excluded": true
+                "excluded": false
             },
             {
                 "name": "Spine.Unity.ISkeletonAnimation",
@@ -8524,10 +8518,6 @@
             },
             {
                 "name": "sonnv.ToppingForwarder",
-                "excluded": true
-            },
-            {
-                "name": "PoolMember",
                 "excluded": true
             },
             {
@@ -8885,6 +8875,694 @@
             {
                 "name": "TMPro.TextMeshProUGUI",
                 "excluded": false
+            },
+            {
+                "name": "Newtonsoft.Json.JsonException",
+                "excluded": true
+            },
+            {
+                "name": "Newtonsoft.Json.JsonPropertyAttribute",
+                "excluded": true
+            },
+            {
+                "name": "Newtonsoft.Json.JsonSerializerSettings",
+                "excluded": true
+            },
+            {
+                "name": "Newtonsoft.Json.Utils.AssemblyVersion",
+                "excluded": true
+            },
+            {
+                "name": "Newtonsoft.Json.JsonSerializationException",
+                "excluded": true
+            },
+            {
+                "name": "Newtonsoft.Json.DefaultValueHandling",
+                "excluded": true
+            },
+            {
+                "name": "Newtonsoft.Json.Formatting",
+                "excluded": true
+            },
+            {
+                "name": "Newtonsoft.Json.JsonConstructorAttribute",
+                "excluded": true
+            },
+            {
+                "name": "Newtonsoft.Json.JsonIgnoreAttribute",
+                "excluded": true
+            },
+            {
+                "name": "Newtonsoft.Json.NullValueHandling",
+                "excluded": true
+            },
+            {
+                "name": "Newtonsoft.Json.ObjectCreationHandling",
+                "excluded": true
+            },
+            {
+                "name": "Newtonsoft.Json.Required",
+                "excluded": true
+            },
+            {
+                "name": "Newtonsoft.Json.Serialization.IContractResolver",
+                "excluded": true
+            },
+            {
+                "name": "Newtonsoft.Json.Serialization.ISerializationBinder",
+                "excluded": true
+            },
+            {
+                "name": "Newtonsoft.Json.TypeNameHandling",
+                "excluded": true
+            },
+            {
+                "name": "Newtonsoft.Json.Serialization.CamelCasePropertyNamesContractResolver",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.APDEnumUtilities",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.APDSpriteRendererExtensions",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.Cook.APDCookConfig",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.Cook.APDCookEffectManager",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.Cook.APDCookingToolBase",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.Cook.AppearCombo",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.Cook.AppearSfx",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.Cook.ClickableButton",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.Cook.DirtCleanInSink",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.Cook.DirtyClean",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.Cook.DirtyManager",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.Cook.GarbageDrag",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.Cook.GarbageManager",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.Cook.MixingBowl",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.Cook.OnOffButton",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.Cook.OnReadyButton",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.Cook.Oven",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.Cook.OvenButton",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.Cook.PouringObject",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.Cook.RationSpeedMix",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.Cook.RollingBoard",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.Cook.RollingObject",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.Cook.RollingPin",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.Cook.RollingPinV2",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.Cook.RotateToMouseDirection",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.Cook.SauceSpash",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.Cook.Shadow",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.Cook.Sink",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.Cook.SpeederWhisk",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.Cook.SpiceData",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.Cook.Spoon",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.Cook.StoveBase",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.Cook.StoveButton",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.Cook.StretchPulling",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.Cook.TearStrip",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.Cook.WhiskBowl",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.Cook.WhiskBowlIngredient",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.CookV2.APDProgressionTransion",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.CookV2.FruitPreparationStep",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.CookV2.DirtyObject",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.CookV2.FruitPreparation",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.CookV2.GarbageCan",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.CookV2.GeneralPreparation",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.CookV2.KitchenTimer",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.CookV2.LiddedAppliance",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.CookV2.PrickController",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.CookV2.PrickObject",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.CookV2.RandomSprite",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.CookV2.RollingPin",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.CookV2.ScoopSphereSpoon",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.FoodStall.ColorConfigSO",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.FoodStall.ColorTagConfig",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.FoodStall.ColorTagSO",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.FoodStall.Customer",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.FoodStall.CustomerLine",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.FoodStall.CustomerLineController",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.FoodStall.CustomerState",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.FoodStall.ExclusiveTagGroup",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.FoodStall.FoodColorTag",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.FoodStall.FoodData",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.FoodStall.FoodDisplay",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.FoodStall.FSAPDLevelBase",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.FoodStall.FSTrashCan",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.FoodStall.MaterialInstancer",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.FoodStall.OrderTimer",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.FoodStall.RefillClock",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.FoodStall.RefillStock",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.FoodStand.CustomerData",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.FoodStand.CustomerDataArray",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.FoodStand.FoodStallData",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.FoodStand.JsonDataHolder",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.FoodStand.ToppingData",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.Tanghulu.AlmondRoasted",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.Tanghulu.CaneJuicer",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.Tanghulu.Sickle",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.Tanghulu.SimpleSink",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.Tanghulu.Sugarcane",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.Tanghulu.TanghuluBeater",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.Tanghulu.TanghuluMortar",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.Tanghulu.TanghuluReplayButton",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.Cook.APDCookingDrag",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.Cook.APDCookingDragMultiTarget",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.Cook.APDCookingPour",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.Cook.APDCookingSpoon",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.Cook.DirtyTowel",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.Cook.FreeSpoon",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.Cook.HoneySpoon",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.Cook.MixClean",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.Cook.SoupSpoon",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.CookV2.CrackNutShellStep",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.CookV2.KnifePeeling",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.CookV2.MaskTransition",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.CookV2.TwiceOpenAppliance",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.CookV2.PluckStemStep",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.CookV2.PourAction",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.CookV2.ReplaceByTargetAction",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.CookV2.ScoopSphere",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.CookV2.SliceInHalf",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.CookV2.SpiceShakingAction",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.CookV2.TapState",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.CookV2.UnitCut",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.CookV2.UnitCutSpin",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.CookV2.UnitCutSpinStep",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.FoodStall.BlurDisplay",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.FoodStall.ColorShapeDisplay",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.FoodStall.EmptyDisplay",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.FoodStall.GrayScaleDisplay",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.FoodStand.FinishedDishDrag1",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.Tanghulu.FlyingUnitStep",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.Tanghulu.LinerSpreadAction",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.Tanghulu.SugarcanePot",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.Tanghulu.TanghuluData",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.Tanghulu.TanghuluDisplay",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.Tanghulu.TanghuluFinalPhase",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.Tanghulu.TanghuluFruitDrag",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.Tanghulu.TanghuluNutPot",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.Tanghulu.TanghuluS1Phase1",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.Tanghulu.TanghuluS1Phase2",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.Tanghulu.TanghuluS1Phase4",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.Cook.APDCookingDragWithCondition",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.Cook.APDCookingPourMultiTarget",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.Cook.APDCookingPourWithCondition",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.Cook.APDCookingSpoonMultiTarget",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.Cook.EggCracking",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.Cook.GarbageDragTool",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.Cook.KnifeDrag",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.Cook.Shaker",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.HotDog.ShakerSpices",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.CookV2.APDv2MultiTargetDrag",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.CookV2.FreeSpiceSpoon",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.CookV2.GarbageDrag",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.CookV2.OvenAppliance",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.CookV2.ScoopSpoon",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.FoodStall.APDv2DragStock",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.Tanghulu.TanghuluNutSpoon",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.Cook.ShakerSpicesWithCondition",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.CookV2.APDProgressionLevelBase",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.FoodStall.APDDragStock",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.Cook.APDCookEffectManager.EffectType",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.Cook.AppearEffect.AppearType",
+                "excluded": false
+            },
+            {
+                "name": "AnhPD.Cook.PourTarget",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.Cook.RollingPinV2.RollAxis",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.CookV2.BeforeCompleteAction",
+                "excluded": false
+            },
+            {
+                "name": "AnhPD.CookV2.SpiceConfig",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.CookV2.TargetConfig",
+                "excluded": false
+            },
+            {
+                "name": "AnhPD.FoodStall.DisplayBase",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.FoodStall.ColorTag",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.FoodStall.Customer.State",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.FoodStall.CustomerLine.MoveDirection",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.FoodStall.FSCharacterConfigSO",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.FoodStall.OrderType",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.FoodStand.IngredientData",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.Tanghulu.TanghuluChocoConfig",
+                "excluded": false
+            },
+            {
+                "name": "AnhPD.Tanghulu.TanghuluData.CoatingType",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.Tanghulu.TanghuluData.DecorType",
+                "excluded": true
+            },
+            {
+                "name": "AnhPD.Tanghulu.TanghuluData.FruitType",
+                "excluded": true
             }
         ],
         "unusedMethods": [
@@ -15744,7 +16422,7 @@
                     },
                     {
                         "name": "position#get",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "position#set",
@@ -16980,11 +17658,11 @@
                     },
                     {
                         "name": "width#get",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "height#get",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "filterMode#get",
@@ -17158,7 +17836,7 @@
                     },
                     {
                         "name": "localEulerAngles#set",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "eulerAngles#set",
@@ -21309,7 +21987,7 @@
                         "excluded": false
                     },
                     {
-                        "name": "PlaySoundWater1",
+                        "name": "PlaySoundDrop",
                         "excluded": true
                     }
                 ]
@@ -21324,15 +22002,15 @@
                     },
                     {
                         "name": "init",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "Awake",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "OnInit",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "Spawn$1",
@@ -25299,6 +25977,10 @@
                     {
                         "name": "IsAllowInteract#get",
                         "excluded": false
+                    },
+                    {
+                        "name": "OnDestroy",
+                        "excluded": true
                     }
                 ]
             },
@@ -27520,7 +28202,7 @@
                     },
                     {
                         "name": "DOShakePosition$2",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "DOShakePosition$3",
@@ -28743,6 +29425,42 @@
                     {
                         "name": "MoveY",
                         "excluded": false
+                    },
+                    {
+                        "name": "MoveYLiner",
+                        "excluded": true
+                    },
+                    {
+                        "name": "Appear",
+                        "excluded": false
+                    },
+                    {
+                        "name": "FallAppear",
+                        "excluded": false
+                    },
+                    {
+                        "name": "FallAppearLocal",
+                        "excluded": true
+                    },
+                    {
+                        "name": "TossAppear",
+                        "excluded": true
+                    },
+                    {
+                        "name": "Floating",
+                        "excluded": true
+                    },
+                    {
+                        "name": "GetNearestTranform",
+                        "excluded": true
+                    },
+                    {
+                        "name": "GetNearestTranformIndex",
+                        "excluded": true
+                    },
+                    {
+                        "name": "ReplaceByTarget",
+                        "excluded": true
                     }
                 ]
             },
@@ -28845,10 +29563,6 @@
                         "excluded": false
                     },
                     {
-                        "name": "ShowHandState1",
-                        "excluded": false
-                    },
-                    {
                         "name": "setHandPlayBox",
                         "excluded": true
                     },
@@ -28866,6 +29580,10 @@
                     },
                     {
                         "name": "IEShowHandRotate",
+                        "excluded": false
+                    },
+                    {
+                        "name": "ShowHandAtPos",
                         "excluded": false
                     }
                 ]
@@ -28931,24 +29649,24 @@
                         "excluded": false
                     },
                     {
-                        "name": "PlayTutState3_5",
-                        "excluded": false
-                    },
-                    {
                         "name": "PlayTutState4",
                         "excluded": false
                     },
                     {
                         "name": "PlayTutState5",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
-                        "name": "PlayTutState6",
-                        "excluded": true
+                        "name": "RemoveStep",
+                        "excluded": false
                     },
                     {
-                        "name": "PlayTutState7",
-                        "excluded": true
+                        "name": "SShowPositiveEmojiAtPot",
+                        "excluded": false
+                    },
+                    {
+                        "name": "FinishTutorial",
+                        "excluded": false
                     }
                 ]
             },
@@ -30972,7 +31690,7 @@
                     },
                     {
                         "name": "Play",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "Play$1",
@@ -31169,20 +31887,6 @@
                     {
                         "name": "ctor",
                         "excluded": false
-                    }
-                ]
-            },
-            {
-                "className": "HoangHH.PlayAnimationManually",
-                "staticMethods": [],
-                "instanceMethods": [
-                    {
-                        "name": "PlayAnimation",
-                        "excluded": false
-                    },
-                    {
-                        "name": "PlayAnimation$1",
-                        "excluded": true
                     }
                 ]
             },
@@ -31802,10 +32506,6 @@
                 "instanceMethods": [
                     {
                         "name": "init",
-                        "excluded": false
-                    },
-                    {
-                        "name": "Awake",
                         "excluded": false
                     },
                     {
@@ -33225,10 +33925,6 @@
                     {
                         "name": "MoveObjHide",
                         "excluded": false
-                    },
-                    {
-                        "name": "PlaySoundDrop",
-                        "excluded": true
                     }
                 ]
             },
@@ -35336,7 +36032,7 @@
                     },
                     {
                         "name": "ResizeInternalArray",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "ResizeInternalArray$1",
@@ -36678,7 +37374,7 @@
                     },
                     {
                         "name": "ctor",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "RefreshStyle",
@@ -38188,6 +38884,942 @@
                     },
                     {
                         "name": "updateFill",
+                        "excluded": false
+                    }
+                ]
+            },
+            {
+                "className": "Newtonsoft.Json.JsonConvert",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "stringify",
+                        "excluded": true
+                    },
+                    {
+                        "name": "parse",
+                        "excluded": true
+                    },
+                    {
+                        "name": "getEnumerableElementType",
+                        "excluded": true
+                    },
+                    {
+                        "name": "validateReflectable",
+                        "excluded": true
+                    },
+                    {
+                        "name": "defaultGuard",
+                        "excluded": true
+                    },
+                    {
+                        "name": "getValue",
+                        "excluded": true
+                    },
+                    {
+                        "name": "getCacheByType",
+                        "excluded": true
+                    },
+                    {
+                        "name": "getMembers",
+                        "excluded": true
+                    },
+                    {
+                        "name": "preRawProcess",
+                        "excluded": true
+                    },
+                    {
+                        "name": "preProcess",
+                        "excluded": true
+                    },
+                    {
+                        "name": "PopulateObject",
+                        "excluded": true
+                    },
+                    {
+                        "name": "BindToName",
+                        "excluded": true
+                    },
+                    {
+                        "name": "BindToType",
+                        "excluded": true
+                    },
+                    {
+                        "name": "SplitFullyQualifiedTypeName",
+                        "excluded": true
+                    },
+                    {
+                        "name": "GetAssemblyDelimiterIndex",
+                        "excluded": true
+                    },
+                    {
+                        "name": "Trim",
+                        "excluded": true
+                    },
+                    {
+                        "name": "SerializeObject",
+                        "excluded": true
+                    },
+                    {
+                        "name": "getInstanceBuilder",
+                        "excluded": true
+                    },
+                    {
+                        "name": "createInstance",
+                        "excluded": true
+                    },
+                    {
+                        "name": "needReuse",
+                        "excluded": true
+                    },
+                    {
+                        "name": "tryToGetCastOperator",
+                        "excluded": true
+                    },
+                    {
+                        "name": "DeserializeObject",
+                        "excluded": true
+                    }
+                ]
+            },
+            {
+                "className": "UnityEngine.Rendering.SortingGroup",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "UpdateAllSortingGroups",
+                        "excluded": true
+                    },
+                    {
+                        "name": "sortingLayerIndex#get",
+                        "excluded": true
+                    },
+                    {
+                        "name": "sortingLayerIndex#set",
+                        "excluded": true
+                    },
+                    {
+                        "name": "sortingLayerID#get",
+                        "excluded": true
+                    },
+                    {
+                        "name": "sortingLayerID#set",
+                        "excluded": true
+                    },
+                    {
+                        "name": "sortingOrder#get",
+                        "excluded": true
+                    },
+                    {
+                        "name": "sortingOrder#set",
+                        "excluded": false
+                    },
+                    {
+                        "name": "sortingLayerName#get",
+                        "excluded": true
+                    },
+                    {
+                        "name": "ctor",
+                        "excluded": false
+                    }
+                ]
+            },
+            {
+                "className": "AnhPD.Cook.AppearEffect",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "init",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnEnable",
+                        "excluded": false
+                    },
+                    {
+                        "name": "PlayEffect",
+                        "excluded": false
+                    }
+                ]
+            },
+            {
+                "className": "AnhPD.Cook.BeaterInBowl",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "Rate#get",
+                        "excluded": false
+                    },
+                    {
+                        "name": "init",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnEnable",
+                        "excluded": false
+                    },
+                    {
+                        "name": "Update",
+                        "excluded": false
+                    },
+                    {
+                        "name": "GetAngleABC",
+                        "excluded": false
+                    },
+                    {
+                        "name": "Restart",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnMouseDrag",
+                        "excluded": true
+                    }
+                ]
+            },
+            {
+                "className": "AnhPD.Cook.ClockerStoveBase",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "init",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnClick",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnTurnOn",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnTurnOff",
+                        "excluded": true
+                    },
+                    {
+                        "name": "OnReady",
+                        "excluded": true
+                    }
+                ]
+            },
+            {
+                "className": "AnhPD.Cook.MixingSauce",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "init",
+                        "excluded": false
+                    },
+                    {
+                        "name": "FlipX",
+                        "excluded": false
+                    },
+                    {
+                        "name": "FlipY",
+                        "excluded": false
+                    },
+                    {
+                        "name": "FixedUpdate",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnMixing",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnRestart",
+                        "excluded": true
+                    },
+                    {
+                        "name": "OnComplete",
+                        "excluded": true
+                    }
+                ]
+            },
+            {
+                "className": "AnhPD.Cook.PunchScaleButton",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "Start",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnMouseDown",
+                        "excluded": true
+                    },
+                    {
+                        "name": "Block",
+                        "excluded": true
+                    }
+                ]
+            },
+            {
+                "className": "AnhPD.Cook.TapButton",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "init",
+                        "excluded": false
+                    },
+                    {
+                        "name": "EnableCollider",
+                        "excluded": true
+                    },
+                    {
+                        "name": "OnReady",
+                        "excluded": true
+                    },
+                    {
+                        "name": "AddBoxCollider",
+                        "excluded": true
+                    },
+                    {
+                        "name": "OnMouseDown1",
+                        "excluded": false
+                    }
+                ]
+            },
+            {
+                "className": "AnhPD.CookV2.APDProgressionPhase",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "IsHaveHint#get",
+                        "excluded": false
+                    },
+                    {
+                        "name": "Awake",
+                        "excluded": false
+                    },
+                    {
+                        "name": "Setup",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnStart",
+                        "excluded": true
+                    },
+                    {
+                        "name": "OnComplete",
+                        "excluded": false
+                    },
+                    {
+                        "name": "DoneStepImageOfGroup",
+                        "excluded": false
+                    },
+                    {
+                        "name": "DoneStepText",
+                        "excluded": false
+                    },
+                    {
+                        "name": "GetUnfinishedHint",
+                        "excluded": false
+                    },
+                    {
+                        "name": "GetHintOfGroup",
+                        "excluded": false
+                    },
+                    {
+                        "name": "SetHintAccordingToGroup",
+                        "excluded": false
+                    },
+                    {
+                        "name": "ResetHintOfGroup",
+                        "excluded": true
+                    },
+                    {
+                        "name": "ResetAllHint",
+                        "excluded": true
+                    }
+                ]
+            },
+            {
+                "className": "AnhPD.CookV2.APDProgressionStage",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "init",
+                        "excluded": false
+                    },
+                    {
+                        "name": "Start",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnEnter",
+                        "excluded": true
+                    },
+                    {
+                        "name": "OnComplete",
+                        "excluded": true
+                    },
+                    {
+                        "name": "NextPhase",
+                        "excluded": true
+                    },
+                    {
+                        "name": "Register",
+                        "excluded": true
+                    },
+                    {
+                        "name": "Unregister",
+                        "excluded": true
+                    },
+                    {
+                        "name": "ForceCompletePhase",
+                        "excluded": true
+                    }
+                ]
+            },
+            {
+                "className": "AnhPD.CookV2.APDv2CookingToolBase",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "Tf#get",
+                        "excluded": false
+                    },
+                    {
+                        "name": "maxLayer#get",
+                        "excluded": false
+                    },
+                    {
+                        "name": "init",
+                        "excluded": false
+                    },
+                    {
+                        "name": "Start",
+                        "excluded": false
+                    },
+                    {
+                        "name": "InitProperties",
+                        "excluded": true
+                    },
+                    {
+                        "name": "GetMouseWorldPos",
+                        "excluded": false
+                    },
+                    {
+                        "name": "MouseDown",
+                        "excluded": false
+                    },
+                    {
+                        "name": "MouseUp",
+                        "excluded": false
+                    },
+                    {
+                        "name": "MouseDrag",
+                        "excluded": false
+                    },
+                    {
+                        "name": "ClampPosition",
+                        "excluded": false
+                    },
+                    {
+                        "name": "Rewind",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnReady",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnComplete",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnIncorrectUse",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnReReady",
+                        "excluded": false
+                    },
+                    {
+                        "name": "EnableCollider",
+                        "excluded": false
+                    },
+                    {
+                        "name": "ReturnToStartPos",
+                        "excluded": false
+                    },
+                    {
+                        "name": "IsInRange",
+                        "excluded": true
+                    },
+                    {
+                        "name": "IsInRange$1",
+                        "excluded": true
+                    },
+                    {
+                        "name": "IsInRange$2",
+                        "excluded": false
+                    },
+                    {
+                        "name": "SetMaskInteraction",
+                        "excluded": true
+                    }
+                ]
+            },
+            {
+                "className": "AnhPD.CookV2.DelayFrameEvent",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "init",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnEnable",
+                        "excluded": false
+                    },
+                    {
+                        "name": "Active",
+                        "excluded": false
+                    }
+                ]
+            },
+            {
+                "className": "AnhPD.CookV2.MoveToTarget",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "init",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnEnable",
+                        "excluded": false
+                    },
+                    {
+                        "name": "Move",
+                        "excluded": true
+                    }
+                ]
+            },
+            {
+                "className": "AnhPD.CookV2.ParallelHintController",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "ctor",
+                        "excluded": true
+                    },
+                    {
+                        "name": "Init",
+                        "excluded": true
+                    },
+                    {
+                        "name": "GetUnfinishedIndex",
+                        "excluded": false
+                    },
+                    {
+                        "name": "GetCurrentIndexOfGroup",
+                        "excluded": false
+                    },
+                    {
+                        "name": "GetStepIndexOfGroup",
+                        "excluded": true
+                    },
+                    {
+                        "name": "OnDoneStepOfHintGroup",
+                        "excluded": false
+                    },
+                    {
+                        "name": "RestartGroup",
+                        "excluded": true
+                    },
+                    {
+                        "name": "RestartAll",
+                        "excluded": true
+                    },
+                    {
+                        "name": "DoneAllStepOfGroup",
+                        "excluded": true
+                    },
+                    {
+                        "name": "IsGroupFinished",
+                        "excluded": false
+                    }
+                ]
+            },
+            {
+                "className": "AnhPD.CookV2.SequenceHintGroup",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "CurrentIndex#get",
+                        "excluded": false
+                    },
+                    {
+                        "name": "IsDone#get",
+                        "excluded": false
+                    },
+                    {
+                        "name": "init",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnDoneStep",
+                        "excluded": false
+                    },
+                    {
+                        "name": "Restart",
+                        "excluded": true
+                    },
+                    {
+                        "name": "DoneAllStep",
+                        "excluded": true
+                    }
+                ]
+            },
+            {
+                "className": "AnhPD.Tanghulu.TanghuluOven",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "init",
+                        "excluded": false
+                    },
+                    {
+                        "name": "Start",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnPutBowlIn",
+                        "excluded": false
+                    },
+                    {
+                        "name": "IE_PutBowlIn",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnComplete",
+                        "excluded": false
+                    },
+                    {
+                        "name": "CheckBake",
+                        "excluded": false
+                    },
+                    {
+                        "name": "Bake",
+                        "excluded": false
+                    }
+                ]
+            },
+            {
+                "className": "Candy",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "init",
+                        "excluded": false
+                    },
+                    {
+                        "name": "PlayAction",
+                        "excluded": false
+                    },
+                    {
+                        "name": "PlayActionCoroutine",
+                        "excluded": false
+                    }
+                ]
+            },
+            {
+                "className": "Pot",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "OnDone",
+                        "excluded": false
+                    }
+                ]
+            },
+            {
+                "className": "Utilities.MonoBehaviourExtension",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "WaitOneFrame",
+                        "excluded": true
+                    },
+                    {
+                        "name": "DelayOneFrame",
+                        "excluded": true
+                    },
+                    {
+                        "name": "WaitFrames",
+                        "excluded": false
+                    },
+                    {
+                        "name": "DelayFrames",
+                        "excluded": false
+                    },
+                    {
+                        "name": "WaitToDo",
+                        "excluded": false
+                    },
+                    {
+                        "name": "WaitToDoUnscaled",
+                        "excluded": true
+                    },
+                    {
+                        "name": "DelayToDo",
+                        "excluded": false
+                    },
+                    {
+                        "name": "DelayToDoUnscaled",
+                        "excluded": true
+                    },
+                    {
+                        "name": "WaitToDoUntil",
+                        "excluded": true
+                    },
+                    {
+                        "name": "DelayToDoUntil",
+                        "excluded": true
+                    },
+                    {
+                        "name": "PlayTextTransitionUnscaledTime",
+                        "excluded": true
+                    },
+                    {
+                        "name": "IEPlayTextTransitionUnscaledTime",
+                        "excluded": true
+                    }
+                ]
+            },
+            {
+                "className": "AnhPD.CookV2.APDv2Drag",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "IsSatisfyCondition#get",
+                        "excluded": false
+                    },
+                    {
+                        "name": "init",
+                        "excluded": false
+                    },
+                    {
+                        "name": "Start",
+                        "excluded": false
+                    },
+                    {
+                        "name": "SetCondition",
+                        "excluded": false
+                    },
+                    {
+                        "name": "SwitchTarget",
+                        "excluded": false
+                    },
+                    {
+                        "name": "SetTarget",
+                        "excluded": true
+                    },
+                    {
+                        "name": "CheckTarget",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnComplete",
+                        "excluded": false
+                    },
+                    {
+                        "name": "MouseDown",
+                        "excluded": false
+                    },
+                    {
+                        "name": "MouseDrag",
+                        "excluded": false
+                    },
+                    {
+                        "name": "MouseUp",
+                        "excluded": false
+                    }
+                ]
+            },
+            {
+                "className": "AnhPD.CookV2.SimplePourAction",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "init",
+                        "excluded": false
+                    },
+                    {
+                        "name": "DoAction",
+                        "excluded": false
+                    },
+                    {
+                        "name": "TurnOffSprite",
+                        "excluded": true
+                    }
+                ]
+            },
+            {
+                "className": "AnhPD.Tanghulu.TanghuluChocoPot",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "init",
+                        "excluded": false
+                    },
+                    {
+                        "name": "Start",
+                        "excluded": false
+                    },
+                    {
+                        "name": "PutInIngredient",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnTurnOn",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnMixDone",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnMixing",
+                        "excluded": false
+                    },
+                    {
+                        "name": "SetupChoco",
+                        "excluded": false
+                    },
+                    {
+                        "name": "Restart",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnTurnOff",
+                        "excluded": true
+                    }
+                ]
+            },
+            {
+                "className": "AnhPD.Tanghulu.TanghuluS1Phase3",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "Setup",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnBowlInOven",
+                        "excluded": false
+                    },
+                    {
+                        "name": "DonePurple",
+                        "excluded": true
+                    },
+                    {
+                        "name": "OnPotFull",
+                        "excluded": false
+                    },
+                    {
+                        "name": "DoneChoco",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnStoveComplete",
+                        "excluded": false
+                    },
+                    {
+                        "name": "CheckComplete",
+                        "excluded": true
+                    },
+                    {
+                        "name": "OnComplete",
+                        "excluded": true
+                    }
+                ]
+            },
+            {
+                "className": "PoolMember",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "PoolType#get",
+                        "excluded": true
+                    },
+                    {
+                        "name": "PoolType#set",
+                        "excluded": true
+                    }
+                ]
+            },
+            {
+                "className": "AnhPD.APDLevelBase",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "init",
+                        "excluded": false
+                    },
+                    {
+                        "name": "Awake",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnCompleteStage",
+                        "excluded": true
+                    },
+                    {
+                        "name": "IncreaseMaxLayer",
+                        "excluded": true
+                    },
+                    {
+                        "name": "ShowNegativeEmojiAtPos",
+                        "excluded": true
+                    },
+                    {
+                        "name": "ShowPositiveEmojiAtPos",
+                        "excluded": false
+                    }
+                ]
+            },
+            {
+                "className": "Spine.Unity.PointFollower",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "SkeletonRenderer#get",
+                        "excluded": true
+                    },
+                    {
+                        "name": "SkeletonComponent#get",
+                        "excluded": true
+                    },
+                    {
+                        "name": "IsValid#get",
+                        "excluded": true
+                    },
+                    {
+                        "name": "init",
+                        "excluded": false
+                    },
+                    {
+                        "name": "Initialize",
+                        "excluded": true
+                    },
+                    {
+                        "name": "HandleRebuildRenderer",
+                        "excluded": true
+                    },
+                    {
+                        "name": "UpdateReferences",
+                        "excluded": true
+                    },
+                    {
+                        "name": "OnDestroy",
+                        "excluded": true
+                    },
+                    {
+                        "name": "LateUpdate",
                         "excluded": false
                     }
                 ]

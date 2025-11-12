@@ -8,9 +8,9 @@ using Satisgame;
 using Sirenix.OdinInspector;
 using TMPro;
 using UnityEngine;
-using UnityEngine.AddressableAssets;
+// using UnityEngine.AddressableAssets;
 using UnityEngine.Events;
-using UnityEngine.ResourceManagement.AsyncOperations;
+// using UnityEngine.ResourceManagement.AsyncOperations;
 using Utilities;
 using Random = UnityEngine.Random;
 
@@ -40,7 +40,6 @@ namespace AnhPD.FoodStall
     private bool _isChangingCustomer;
     private int _count = -1;
     private Dictionary<int, Customer> _customerDict = new Dictionary<int, Customer>();
-    private List<AsyncOperationHandle<GameObject>> _usedOps = new List<AsyncOperationHandle<GameObject>>();
     public enum MoveDirection
     {
       Up,
@@ -140,7 +139,6 @@ namespace AnhPD.FoodStall
       _numberTex.text = _customerCount + " / " + customerData.customers.Count;
     }
 
-    private AsyncOperationHandle<GameObject> _opLoadCustomer;
     private async Task LoadCustomer(int id)
     {
       //if (_opLoadCustomer.IsValid())
@@ -232,22 +230,6 @@ namespace AnhPD.FoodStall
       _customerDict[_currentCustomerIndex].ChangeState(Customer.State.Unhappy);
     }
     #endregion
-
-    private void OnDestroy()
-    {
-      //if (_opLoadCustomer.IsValid())
-      //{
-      //    Addressables.Release(_opLoadCustomer);
-      //    _opLoadCustomer = default;
-      //}
-      foreach (var handle in _usedOps)
-      {
-        if (handle.IsValid())
-        {
-          Addressables.Release(handle);
-        }
-      }
-    }
 
 #if UNITY_EDITOR
     public async Task ShowTest()

@@ -15,13 +15,11 @@ namespace AnhPD.Cook
     public bool isAlwaysReady;
     public UnityEvent clickEvent;
 
-    private void OnMouseDown()
+    public void OnMouseDown1()
     {
       if (!LevelBase.Ins.IsAllowInteract || !IsReady) return;
 
-      if (!isAlwaysReady)
-        IsReady = false;
-      // AudioManager.PlaySFX(sfxClick);
+      if (!isAlwaysReady) IsReady = false;
       SoundManager.Ins.PlayFx(fxType);
       clickEvent?.Invoke();
     }

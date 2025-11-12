@@ -16,7 +16,6 @@ namespace AnhPD.FoodStand
   {
     [SerializeField] private TextAsset jsonFile;
 
-    [Title("Data")]
     public FoodStallData data;
 
     private Dictionary<string, IngredientData> _ingredientDataDict = new Dictionary<string, IngredientData>();
@@ -30,7 +29,6 @@ namespace AnhPD.FoodStand
       ConvertData();
     }
 
-    [VerticalGroup("button")]
     [Button]
     public void LoadJson()
     {

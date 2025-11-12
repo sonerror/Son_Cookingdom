@@ -16,9 +16,9 @@ namespace AnhPD.CookV2
     [SerializeField] private bool isMoveCamera = true;
     [SerializeField] private bool isHideOnComplete = true;
     [SerializeField] private bool isUseEmojiOnComplete;
-    [ShowIf("@isMoveCamera")]
+
     [SerializeField] private Vector3 cameraPosition = new Vector3(0, 0, -10);
-    [ShowIf("@isMoveCamera")]
+
     [SerializeField] private float delayMoveCamera = 1f;
 
     [SerializeField] private float delayOnComplete = .5f;

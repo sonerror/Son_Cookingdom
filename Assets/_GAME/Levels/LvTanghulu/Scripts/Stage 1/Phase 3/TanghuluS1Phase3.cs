@@ -9,20 +9,12 @@ namespace AnhPD.Tanghulu
 {
   public class TanghuluS1Phase3 : APDProgressionPhase
   {
-    [SerializeField] private GameObject chocoBowl;
     [SerializeField] private APDv2Drag[] ingredientDrag;
     [SerializeField] private TanghuluChocoPot pot;
     [SerializeField] private Transform bowlBrown, bowlWhite;
     [SerializeField] private Transform left, right;
     [SerializeField] private MoveToTarget move;
-    private void Start()
-    {
-      chocoBowl.SetActive(false);
-      this.WaitToDo(() =>
-      {
-        chocoBowl.SetActive(true);
-      }, 1f);
-    }
+
     protected override void Setup()
     {
       base.Setup();
@@ -43,7 +35,7 @@ namespace AnhPD.Tanghulu
 
       pot.OnRestart += () =>
       {
-        ingredientDrag[^1].OnReReady(false);
+        ingredientDrag[ingredientDrag.Length - 1].OnReReady(false);
       };
       pot.OnDone += OnStoveComplete;
       pot.onFullIngredient.AddListener(OnPotFull);
