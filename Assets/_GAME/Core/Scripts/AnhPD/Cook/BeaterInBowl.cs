@@ -33,17 +33,20 @@ namespace AnhPD.Cook
       {
         transform.eulerAngles = Vector3.zero;
       }
+    }
 
-      if (Input.GetMouseButtonDown(0) && !isMouseDown)
-      {
-        isMouseDown = true;
-        SoundManager.Ins.PlaySoundLoop(sfxType);
-      }
-      else if (Input.GetMouseButtonUp(0) && isMouseDown)
-      {
-        isMouseDown = false;
-        SoundManager.Ins.StopSoundLoop(sfxType);
-      }
+    public void OnMouseDown1()
+    {
+      if (isMouseDown) return;
+      isMouseDown = true;
+      SoundManager.Ins.PlaySoundLoop(sfxType);
+    }
+
+    public void OnMouseUp1()
+    {
+      if (!isMouseDown) return;
+      isMouseDown = false;
+      SoundManager.Ins.StopSoundLoop(sfxType);
     }
 
     public void OnMouseDrag1()
