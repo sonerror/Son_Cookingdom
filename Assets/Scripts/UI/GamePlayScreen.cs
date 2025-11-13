@@ -14,11 +14,11 @@ public class GamePlayScreen : UIScreen
 
     void Update()
     {
-        // if (Input.GetMouseButtonDown(0))
-        // {
-        //     btnPlay.SetActive(true);
-        //     TextTutorial.SetActive(false);
-        // }
+        if (Input.GetMouseButtonDown(0))
+        {
+            btnPlay.SetActive(true);
+            TextTutorial.SetActive(false);
+        }
     }
 
 

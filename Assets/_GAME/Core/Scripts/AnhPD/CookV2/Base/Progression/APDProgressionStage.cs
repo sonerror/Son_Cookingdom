@@ -84,7 +84,6 @@ namespace AnhPD.CookV2
     {
       foreach (APDProgressionPhase phase in phases)
       {
-        phase.OnHintChange += OnHintChange;
         phase.OnCompleteAction += NextPhase;
       }
     }
@@ -93,7 +92,6 @@ namespace AnhPD.CookV2
     {
       foreach (APDProgressionPhase phase in phases)
       {
-        phase.OnHintChange -= OnHintChange;
         phase.OnCompleteAction -= NextPhase;
       }
     }

@@ -48,7 +48,6 @@ namespace AnhPD.Tanghulu
 
     public void DonePeelCane()
     {
-      DoneStepImageOfGroup(_caneCount);
       DoneStepText(1);
     }
     private void OnUseKnife()
@@ -59,12 +58,10 @@ namespace AnhPD.Tanghulu
     private void ClearBoard()
     {
       DoneStepText(2);
-      DoneStepImageOfGroup(_caneCount++);
       _isBoardEmpty = true;
     }
     private void OnCompleteJuice()
     {
-      DoneStepImageOfGroup(2);
       DoneStepText(4);
       strainer.MoveX(-5f, .5f, true, 0, () =>
       {
@@ -75,7 +72,6 @@ namespace AnhPD.Tanghulu
 
     public override void OnComplete()
     {
-      DoneStepImageOfGroup(3);
       DoneStepText(5);
       // APDLevelBase.Ins.emoji.ShowPositive();
       transform.MoveX(-10f, 1f, true, .5f, () => base.OnComplete());

@@ -75,7 +75,6 @@ namespace AnhPD.Tanghulu
           return;
         }
       }
-      DoneStepImageOfGroup(0);
       DoneStepText(1);
     }
 
@@ -84,7 +83,6 @@ namespace AnhPD.Tanghulu
       _isBoardEmpty = false;
       _index = index;
       preparations[index].StartPreparation();
-      SetHintAccordingToGroup(index + 1);
     }
 
     private void OnUseKnife()
@@ -97,7 +95,6 @@ namespace AnhPD.Tanghulu
     {
       _isBoardEmpty = true;
       _count++;
-      DoneStepImageOfGroup(_index + 1);
       DoneStepText(_index + 2);
       if (_count >= cleanDrag.Length) CheckComplete();
     }
@@ -108,7 +105,6 @@ namespace AnhPD.Tanghulu
     }
     public override void OnComplete()
     {
-      DoneStepImageOfGroup(8);
       DoneStepText(9);
       // APDLevelBase.Ins.emoji.ShowPositive();
       transform.MoveX(-10f, 1f, true, 1f, () => base.OnComplete());

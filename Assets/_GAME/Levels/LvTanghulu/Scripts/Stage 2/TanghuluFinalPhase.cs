@@ -35,7 +35,7 @@ namespace AnhPD.Tanghulu
     private int _count = 0;
     public void DoneCustomer()
     {
-      DoneStepImageOfGroup(3);
+      // DoneStepImageOfGroup(3);
       DoneStepText(4);
       _count++;
       if (_count == 1)
@@ -49,11 +49,6 @@ namespace AnhPD.Tanghulu
       {
         orderData.excludeDecorTypes = new List<TanghuluData.DecorType>();
       }
-    }
-    public void OnRestart()
-    {
-      ResetAllHint();
-      SetHintAccordingToGroup(0);
     }
 
     public override void OnComplete()

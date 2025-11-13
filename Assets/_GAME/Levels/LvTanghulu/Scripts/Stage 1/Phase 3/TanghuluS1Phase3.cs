@@ -27,7 +27,7 @@ namespace AnhPD.Tanghulu
         if (i < 1)
         {
           ingredientDrag[i].SetCondition(() => !pot.isHaveChoco);
-          ingredientDrag[i].onComplete.AddListener(() => SetHintAccordingToGroup(i1));
+          // ingredientDrag[i].onComplete.AddListener(() => SetHintAccordingToGroup(i1));
         }
 
         ingredientDrag[i].onComplete.AddListener(() => pot.PutInIngredient(i1));
@@ -47,20 +47,20 @@ namespace AnhPD.Tanghulu
 
     public void OnBowlInOven()
     {
-      DoneStepImageOfGroup(3);
+      // DoneStepImageOfGroup(3);
       DoneStepText(7);
     }
     public void DonePurple()
     {
       _isDonePurple = true;
-      DoneStepImageOfGroup(3);
+      // DoneStepImageOfGroup(3);
       DoneStepText(8);
       CheckComplete();
     }
 
     private void OnPotFull()
     {
-      DoneStepImageOfGroup(pot.isBrown ? 0 : 1);
+      // DoneStepImageOfGroup(pot.isBrown ? 0 : 1);
       DoneStepText(pot.isBrown ? 1 : 3);
     }
     public void DoneChoco()
@@ -68,19 +68,19 @@ namespace AnhPD.Tanghulu
       if (pot.isBrown)
       {
         bowlBrown.MoveX(5f, 1, true, .5f);
-        DoneStepImageOfGroup(0);
+        // DoneStepImageOfGroup(0);
         DoneStepText(2);
       }
       else
       {
         bowlWhite.MoveX(5f, 1, true, .5f);
-        DoneStepImageOfGroup(1);
+        // DoneStepImageOfGroup(1);
         DoneStepText(4);
       }
     }
     private void OnStoveComplete()
     {
-      DoneStepImageOfGroup(2);
+      // DoneStepImageOfGroup(2);
       DoneStepText(5);
       _isDoneChoco = true;
       CheckComplete();
