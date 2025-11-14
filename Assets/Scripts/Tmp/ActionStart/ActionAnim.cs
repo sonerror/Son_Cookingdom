@@ -6,7 +6,7 @@ namespace Link
   public class ActionAnim : ActionBase
   {
     // [SerializeField] Animation anim;
-    [SerializeField] AnimationClip animName;
+    // [SerializeField] AnimationClip animName;
 
     public override void Active()
     {
@@ -15,7 +15,7 @@ namespace Link
       {
         gameObject.SetActive(true);
         // anim.Play(animName.name);
-        DOVirtual.DelayedCall(animName.length, OnDone);
+        // DOVirtual.DelayedCall(animName.length, OnDone);
         PlayFx();
       });
     }

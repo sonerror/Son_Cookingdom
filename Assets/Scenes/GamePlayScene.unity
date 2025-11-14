@@ -43507,22 +43507,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!111 &3542967817447327762
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7730825834623591025}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 0}
-  m_Animations:
-  - {fileID: 7400000, guid: 122e7a34ce74a974a9d271170fb2eefc, type: 2}
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
 --- !u!4 &3548714788279273907
 Transform:
   m_ObjectHideFlags: 0
@@ -98531,7 +98515,6 @@ GameObject:
   - component: {fileID: 2183150243006910758}
   - component: {fileID: 4934787726937724537}
   - component: {fileID: 2133913050362485646}
-  - component: {fileID: 3542967817447327762}
   m_Layer: 0
   m_Name: Knife
   m_TagString: Untagged
