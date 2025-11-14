@@ -9939,22 +9939,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!111 &1536601334026467724
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2564791304413668384}
-  m_Enabled: 0
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: b9e8ad5f1bed33e4a9702440d71de628, type: 2}
-  m_Animations:
-  - {fileID: 7400000, guid: b9e8ad5f1bed33e4a9702440d71de628, type: 2}
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
 --- !u!210 &1546026350235264630
 SortingGroup:
   m_ObjectHideFlags: 0
@@ -11218,22 +11202,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!111 &2013375356776838704
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2995612399507135450}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 0}
-  m_Animations:
-  - {fileID: 7400000, guid: b9e8ad5f1bed33e4a9702440d71de628, type: 2}
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
 --- !u!1 &2018584198672355702
 GameObject:
   m_ObjectHideFlags: 0
@@ -11761,21 +11729,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!111 &2213738327950036825
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4806869800063133898}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 0}
-  m_Animations: []
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
 --- !u!331 &2225182209488554353
 SpriteMask:
   m_ObjectHideFlags: 0
@@ -17585,7 +17538,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 219756576519482225}
-  - component: {fileID: 1536601334026467724}
   m_Layer: 0
   m_Name: Square
   m_TagString: Untagged
@@ -32989,7 +32941,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3652869393313223317}
-  - component: {fileID: 2013375356776838704}
   m_Layer: 0
   m_Name: Square
   m_TagString: Untagged
@@ -38230,21 +38181,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4860649444430072023}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!111 &3236419606586817159
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8135677575248125204}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 0}
-  m_Animations: []
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
 --- !u!1 &3240864656702143333
 GameObject:
   m_ObjectHideFlags: 0
@@ -56594,7 +56530,6 @@ GameObject:
   - component: {fileID: 4789570087727761669}
   - component: {fileID: 367214158181030270}
   - component: {fileID: 466163530549750226}
-  - component: {fileID: 2213738327950036825}
   m_Layer: 0
   m_Name: FishHalf_Inverse
   m_TagString: Untagged
@@ -62663,7 +62598,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1196433237468742375}
-  - component: {fileID: 5661676840657531515}
   m_Layer: 0
   m_Name: Square
   m_TagString: Untagged
@@ -73798,22 +73732,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!111 &5661676840657531515
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5205164137379562186}
-  m_Enabled: 0
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: c368e996127567b45b97617975a1b587, type: 2}
-  m_Animations:
-  - {fileID: 7400000, guid: c368e996127567b45b97617975a1b587, type: 2}
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
 --- !u!70 &5677085463921122529
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -73899,21 +73817,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!111 &5698076967616543671
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5892667773886690867}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 0}
-  m_Animations: []
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
 --- !u!4 &5704052209270079673
 Transform:
   m_ObjectHideFlags: 0
@@ -74323,7 +74226,6 @@ GameObject:
   - component: {fileID: 8839397935498191643}
   - component: {fileID: 4342134271879789434}
   - component: {fileID: 8201172995052581195}
-  - component: {fileID: 5698076967616543671}
   m_Layer: 0
   m_Name: FishSkin
   m_TagString: Untagged
@@ -92388,7 +92290,6 @@ GameObject:
   - component: {fileID: 5258247977908475589}
   - component: {fileID: 1013460715679764132}
   - component: {fileID: 4864659835938194581}
-  - component: {fileID: 9025627018351873641}
   m_Layer: 0
   m_Name: FishSkin
   m_TagString: Untagged
@@ -104536,7 +104437,6 @@ GameObject:
   - component: {fileID: 8080915296238435547}
   - component: {fileID: 3984083059737210016}
   - component: {fileID: 3759081242419436556}
-  - component: {fileID: 3236419606586817159}
   m_Layer: 0
   m_Name: FishHalf
   m_TagString: Untagged
@@ -121725,21 +121625,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 7187508137186889539}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!111 &9025627018351873641
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7175398749277914093}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 0}
-  m_Animations: []
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
 --- !u!1 &9033055514347634599
 GameObject:
   m_ObjectHideFlags: 0
