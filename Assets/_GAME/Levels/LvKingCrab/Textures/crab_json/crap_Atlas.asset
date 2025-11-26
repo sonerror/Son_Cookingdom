@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: crap_Atlas
   m_EditorClassIdentifier: 
   atlasFile: {fileID: 4900000, guid: c184a4cae407d0b4080ed0d9f73c4a7a, type: 3}
-  materials: []
+  materials:
+  - {fileID: 2100000, guid: 620beacbba76dbc4a96c26a2ca0d62fd, type: 2}

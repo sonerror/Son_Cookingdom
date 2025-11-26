@@ -1,14 +1,14 @@
 {
-    "version": "6.2.1",
+    "version": "6.0.0",
     "projectId": "f42e7ff96e4545544bb6cd68f51ab634",
     "applicationID": 27404,
     "creativeName": "Cookingdom_v1",
     "pgServer": "EU",
     "window": {
-        "‐‵": true
+        "‐ ": true
     },
     "unity": {
-        "environmentID": 1144181199,
+        "environmentID": 1144181264,
         "scripts": {
             "excludes": [
                 "Assets/FindMissingScriptsRecursively.cs",
@@ -81,8 +81,8 @@
             "externalSources": [],
             "externalJSLibraries": [],
             "scriptingDefines": [],
-            "msbuildVersion": "17.10",
-            "monoVersion": "8.0.7",
+            "msbuildVersion": "17.14",
+            "monoVersion": "9.0.7",
             "dotnetVersion": ""
         },
         "assets": {
@@ -163,9 +163,9 @@
         "minify": true,
         "forceUncompressed": false,
         "forceBase64": true,
-        "graphicsConstraint": 24,
         "genericCheck": true,
         "disableAntiAliasing": true,
+        "preferWebGl2": false,
         "forceStableRandomSeed": false,
         "unusedModules": [
             {
