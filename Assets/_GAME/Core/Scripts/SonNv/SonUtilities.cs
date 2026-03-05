@@ -9,7 +9,11 @@ namespace sonnv
         Up,
         Down,
         Left,
-        Right
+        Right,
+        UpLeft,
+        UpRight,
+        DownLeft,
+        DownRight,
     }
     [Serializable]
     public struct AudioData

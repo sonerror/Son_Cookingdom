@@ -69,11 +69,11 @@ namespace sonnv
             {
                 if (playSound)
                 {
-                    emoji.ShowPositiveWithSound();
+                    //     emoji.ShowPositiveWithSound();
                 }
                 else
                 {
-                    emoji.ShowPositive();
+                    //   emoji.ShowPositive();
                 }
             }
             // #if UNITY_EDITOR

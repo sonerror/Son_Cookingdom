@@ -23,11 +23,22 @@ public enum FxType
 
 public class SoundManager : Singleton<SoundManager>
 {
+  public AudioSource SfxSource { get; private set; }
   public AudioClip[] audioClips;
   public AudioSource bgm;
-  private AudioSource[] fx = new AudioSource[13];
-
+  private AudioSource[] fx = new AudioSource[30];
   bool isMute = false;
+  public bool IsMute => isMute;
+  protected override void Awake()
+  {
+    base.Awake();
+
+    if (SfxSource == null)
+    {
+      SfxSource = gameObject.AddComponent<AudioSource>();
+      SfxSource.playOnAwake = false;
+    }
+  }
 
   public void PlayFx(FxType fxType)
   {
@@ -43,35 +54,82 @@ public class SoundManager : Singleton<SoundManager>
       fx[(int)fxType].Play();
     }
   }
-
-  public void PlaySoundLoop(FxType fxType)
+  public static AudioSource PlaySfx(AudioClip clip, float volume = 1f, bool isLoop = false)
   {
+    Instance.SfxSource.loop = isLoop;
+    Instance.SfxSource.volume = volume;
+    Instance.SfxSource.clip = clip;
+    Instance.SfxSource.Play();
+    return Instance.SfxSource;
+  }
+  public static void PlaySFX(params AudioClip[] clips)
+  {
+    if (Instance == null) return;
+    if (Instance.SfxSource == null) return;
+    if (clips == null || clips.Length == 0) return;
+
+    AudioClip c = clips[UnityEngine.Random.Range(0, clips.Length)];
+    if (c == null) return;
+
+    Instance.SfxSource.clip = c;
+    Instance.SfxSource.Play();
+  }
+
+
+  public static void PlaySFX(AudioClip clip, float volume = 1f)
+  {
+    if (Instance == null) return;
+    if (Instance.SfxSource == null) return;
+    if (clip == null) return;
+
+    Instance.SfxSource.volume = volume;
+    Instance.SfxSource.clip = clip;
+    Instance.SfxSource.Play();
+  }
+
+  public void PlayFxIfNotPlay(FxType fxType)
+  {
+    if (fxType == FxType.None) return;
     if (!isMute)
     {
       if (fx[(int)fxType] == null)
       {
         fx[(int)fxType] = new GameObject().AddComponent<AudioSource>();
         fx[(int)fxType].clip = audioClips[(int)fxType];
-        fx[(int)fxType].playOnAwake = false;
       }
 
-      fx[(int)fxType].loop = true;
+      if (!fx[(int)fxType].isPlaying) fx[(int)fxType].Play();
+    }
+  }
+
+  public void PlaySoundLoop(FxType fxType)
+  {
+    if (fxType == FxType.None) return;
+    if (!isMute)
+    {
+      if (fx[(int)fxType] == null)
+      {
+        fx[(int)fxType] = new GameObject().AddComponent<AudioSource>();
+        fx[(int)fxType].clip = audioClips[(int)fxType];
+        fx[(int)fxType].loop = true;
+      }
+
       fx[(int)fxType].Play();
     }
   }
 
   public void StopSoundLoop(FxType fxType)
   {
+    if (fxType == FxType.None) return;
     if (fx[(int)fxType] != null)
     {
-      fx[(int)fxType].loop = false;
       fx[(int)fxType].Stop();
     }
   }
 
   public IEnumerator IE_PlayFxAfterTime(FxType fxType, float time)
   {
-    yield return Cache.GetWFS(time);
+    yield return new WaitForSeconds(time);
     if (!isMute)
     {
       if (fx[(int)fxType] == null)
@@ -92,8 +150,8 @@ public class SoundManager : Singleton<SoundManager>
 
   public void Mute()
   {
-    bgm.Stop();
     isMute = true;
+    bgm.Stop();
     for (int i = 0; i < fx.Length; i++)
     {
       if (fx[i] != null)
@@ -101,5 +159,11 @@ public class SoundManager : Singleton<SoundManager>
         fx[i].Stop();
       }
     }
+  }
+
+  public void PlayBgm()
+  {
+    if (isMute) return;
+    bgm.Play();
   }
 }
