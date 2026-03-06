@@ -1,0 +1,38 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.Events;
+
+
+namespace sonnv
+{
+    public class CuttingObject : SonMonoBehaviour
+    {
+        [SerializeField] protected Collider2D col;
+        [SerializeField] private SonTapItem tapItem;
+        [SerializeField] private bool isTapItem;
+
+        public UnityEvent eventDoneActionDance;
+        public void ActionCutDone()
+        {
+            Debug.Log("cut done Item");
+            eventDoneActionDance?.Invoke();
+        }
+
+        public void SetUp()
+        {
+            if (isTapItem)
+            {
+                tapItem.ColD.enabled = true;
+                tapItem.eventOnPointDown.AddListener(() =>
+                {
+                    CuttingBoard.Instance.ResetCanSnap();
+                });
+            }
+            else
+            {
+                CuttingBoard.Instance.ResetCanSnap();
+            }
+        }
+    }
+}

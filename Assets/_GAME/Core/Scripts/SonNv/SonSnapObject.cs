@@ -310,10 +310,47 @@ namespace sonnv
             isFloating = false;
         }
 
-        private void OnEnable()
+        public void MoveBack()
         {
-            if (isEnableCollideWhenEnableThis && col)
-                col.enabled = true;
+            if (!moveBack) return;
+
+            if (_moveBackTween != null)
+                _moveBackTween.Kill();
+
+            // reset trạng thái
+            _isDragging = false;
+            IsSnap = false;
+            _snapPoint = null;
+            Tf.localScale = Vector3.one * 1;
+            col.enabled = true;
+            col.isTrigger = false;
+
+            if (!ignoreRigidBody && rb)
+                rb.bodyType = RigidbodyType2D.Dynamic;
+
+            sprite.sortingOrder = onDropOrderLayer;
+
+            Tf.localScale = _initScale;
+
+            _moveBackTween = Tf.DOLocalMove(_initLocalPos, 0.3f)
+                .OnComplete(() =>
+                {
+                    if (onMoveBackEnd != null)
+                        onMoveBackEnd.Invoke();
+
+                    onDrop.Invoke();
+                });
+
+            if (rotateOnDrag)
+            {
+                if (_rotateTween != null)
+                    _rotateTween.Kill();
+
+                _rotateTween = Tf.DORotate(
+                    new Vector3(0, 0, _initZRot),
+                    0.3f
+                );
+            }
         }
     }
 }

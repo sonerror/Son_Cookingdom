@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.Events;
 namespace sonnv
 {
-    public class WaterCleaningSnapObject : SonSnapObject
+    public class WaterCleaningSnapObject : SonMonoBehaviour
     {
         [Header("Water Cleaning")]
         [SerializeField] private SonSinkWaterCleaning sink;
@@ -21,8 +21,8 @@ namespace sonnv
             {
                 // Sprite.sprite = cleanSprite;
                 cleanEffect.Play();
-                SoundManager.PlaySFX(soundClean);
-                Col.enabled = true;
+                SoundManager.PlaySFXOneShot(soundClean);
+                //Col.enabled = true;
             });
         }
 
@@ -31,7 +31,7 @@ namespace sonnv
             gameObject.SetActive(true);
             if (sink.HasWater)
             {
-                SoundManager.PlaySFX(splashSound);
+                SoundManager.PlaySFXOneShot(splashSound);
                 ManualEnable();
             }
             else
@@ -43,7 +43,7 @@ namespace sonnv
         public bool TryEnableByFillWater()
         {
             if (!gameObject.activeSelf) return false;
-            if (IsSnap) return false;
+            //if (IsSnap) return false;
             ManualEnable();
             return true;
         }

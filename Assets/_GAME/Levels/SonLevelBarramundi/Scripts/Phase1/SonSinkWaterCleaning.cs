@@ -1,10 +1,12 @@
 using System.Collections.Generic;
-using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.EventSystems;
+using System.Collections;
+
 namespace sonnv
 {
-    public class SonSinkWaterCleaning : SonMonoBehaviour
+    public class SonSinkWaterCleaning : SonMonoBehaviour, IPointerClickHandler
     {
         [Header("References")]
         [SerializeField] private PipeWaterCleaning drainPipe;
@@ -12,10 +14,13 @@ namespace sonnv
         [SerializeField] private Collider2D btnCollider;
         [SerializeField] private SpriteRenderer btnOn;
         [SerializeField] private SpriteRenderer btnOff;
+
         [Header("Events")]
         [SerializeField] private UnityEvent onFillWater;
+        public UnityEvent OnFillWater => onFillWater;
         [SerializeField] private UnityEvent onStopFillWater;
         [SerializeField] private UnityEvent onDrainWater;
+
         [Header("Sound")]
         [SerializeField] private AudioData btnSound;
         [SerializeField] private AudioData waterOutSound;
@@ -25,16 +30,20 @@ namespace sonnv
         private const string STOP_FILL = "full";
         private const string DRAIN_WATER = "drain";
 
-        [ShowInInspector][ReadOnly] private string _currentState;
+        [SerializeField] private string _currentState;
+
         private bool _isFillWater;
         private bool _canInteract;
-        private bool _addAdditionalInteract;
+        private bool _ignoreNextClick;
 
-        public bool HasWater => _currentState is FILL_WATER or STOP_FILL;
+        public bool HasWater => _currentState == FILL_WATER || _currentState == STOP_FILL;
         public bool IsFillWater => _isFillWater;
         public bool IsInHold => drainPipe.IsInHole;
         public PipeWaterCleaning DrainPipe => drainPipe;
-        public readonly HashSet<WaterCleaningSnapObject> needCleanSnapObjects = new();
+
+        public List<WaterCleaningSnapObject> needCleanSnapObjects = new List<WaterCleaningSnapObject>();
+        private List<WaterCleaningSnapObject> _objectsToRemove = new List<WaterCleaningSnapObject>();
+
         public UnityEvent OnStopFillWater => onStopFillWater;
 
         private void Awake()
@@ -49,6 +58,11 @@ namespace sonnv
             btnCollider.enabled = canInteract;
         }
 
+        public void IgnoreNextClick()
+        {
+            _ignoreNextClick = true;
+        }
+
         private void SetPipeInteract(bool canInteract)
         {
             drainPipe.SetInteract(canInteract);
@@ -57,22 +71,18 @@ namespace sonnv
         private bool ChangeWaterAnimation(string state)
         {
             if (_currentState == state) return false;
-            water.ResetTrigger(_currentState);
+
+            if (!string.IsNullOrEmpty(_currentState))
+                water.ResetTrigger(_currentState);
+
             water.SetTrigger(state);
+
             _currentState = state;
 
-            #region Special Case for Audio
-
             if (_currentState == FILL_WATER)
-            {
                 waterFillSound.Play();
-            }
             else
-            {
                 waterFillSound.Stop();
-            }
-
-            #endregion
 
             return true;
         }
@@ -80,75 +90,115 @@ namespace sonnv
         private void FillWater()
         {
             if (!drainPipe.IsInHole) return;
+            SetCanInteract(false);
             if (!ChangeWaterAnimation(FILL_WATER)) return;
+
             SoundManager.PlaySFX(btnSound.clip, btnSound.volume);
+
             _isFillWater = true;
+
             btnOn.enabled = true;
             btnOff.enabled = false;
+
             SetPipeInteract(false);
-            onFillWater.Invoke();
+
+            if (onFillWater != null)
+                onFillWater.Invoke();
+
             CleaningObject();
+            if (autoStopCoroutine != null)
+                StopCoroutine(autoStopCoroutine);
+
+            autoStopCoroutine = StartCoroutine(AutoStopWater());
         }
+
         public void SetIsInHole(bool value)
         {
             drainPipe.SetIsInHole(value);
         }
+
         private void StopFillWater()
         {
             if (!ChangeWaterAnimation(STOP_FILL)) return;
+
             SoundManager.PlaySFX(btnSound.clip, btnSound.volume);
+
             _isFillWater = false;
+
             btnOn.enabled = false;
             btnOff.enabled = true;
-            SetPipeInteract(true);
-            onStopFillWater?.Invoke();
-        }
 
+            // SetPipeInteract(true);
+
+            if (onStopFillWater != null)
+                onStopFillWater.Invoke();
+        }
+        public void OnSetPipeInteract(bool value)
+        {
+            SetPipeInteract(value);
+        }
         private void CleaningObject()
         {
-            var objectsToRemove = new List<WaterCleaningSnapObject>();
+            _objectsToRemove.Clear();
 
-            foreach (var snapObject in needCleanSnapObjects)
+            for (int i = 0; i < needCleanSnapObjects.Count; i++)
             {
+                var snapObject = needCleanSnapObjects[i];
+
                 if (snapObject.TryEnableByFillWater())
                 {
-                    objectsToRemove.Add(snapObject);
+                    _objectsToRemove.Add(snapObject);
                 }
             }
 
-            foreach (var snapObject in objectsToRemove)
+            for (int i = 0; i < _objectsToRemove.Count; i++)
             {
-                needCleanSnapObjects.Remove(snapObject);
+                needCleanSnapObjects.Remove(_objectsToRemove[i]);
             }
         }
 
-        private void OnMouseUpAsButton()
+        public void OnPointerClick(PointerEventData eventData)
         {
+            if (_ignoreNextClick)
+            {
+                _ignoreNextClick = false;
+                return;
+            }
+
             if (!_canInteract) return;
+
+            if (_isFillWater)
+                StopFillWater();
+            else
+                FillWater();
+        }
+
+        public void OnFillWaterDone()
+        {
+            StopFillWater();
+        }
+
+        private void DrainWater()
+        {
+            if (drainPipe.IsInHole) return;
+
+            if (HasWater && ChangeWaterAnimation(DRAIN_WATER))
+            {
+                SoundManager.PlaySFX(waterOutSound.clip, waterOutSound.volume);
+
+                if (onDrainWater != null)
+                    onDrainWater.Invoke();
+            }
+        }
+        private Coroutine autoStopCoroutine;
+        private IEnumerator AutoStopWater()
+        {
+            yield return new WaitForSeconds(3f);
 
             if (_isFillWater)
             {
                 StopFillWater();
             }
-            else
-            {
-                FillWater();
-            }
-        }
-        public void OnFillWaterDone()
-        {
-            StopFillWater();
-        }
-        private void DrainWater()
-        {
-            if (drainPipe.IsInHole) return;
-            if (HasWater && ChangeWaterAnimation(DRAIN_WATER))
-            {
-                SoundManager.PlaySFX(waterOutSound.clip, waterOutSound.volume);
-                onDrainWater?.Invoke();
-            }
         }
     }
-
 }
-

@@ -1,28 +1,32 @@
-using System.Collections.Generic;
-using System.Linq;
 using DG.Tweening;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Events;
-using Utilities;
 
 namespace sonnv
 {
     public class ShowObjectEffect : SonMonoBehaviour
     {
+        [Header("Direction")]
         [SerializeField] private Direction direction = Direction.Up;
         [SerializeField] private Direction hideDirection = Direction.Down;
+
+        [Header("Offset")]
         [SerializeField] private float xPositionShow = 2f;
         [SerializeField] private float yPositionShow = 2f;
+
+        [Header("Fade")]
         [SerializeField] private bool fadeSprite = true;
-        [ShowIf("fadeSprite")][SerializeField] private SpriteRenderer[] sprites;
-        [ShowIf("fadeSprite")][SerializeField] private float timeFade = 0.2f;
-        [ShowIf("fadeSprite")][SerializeField] private float delayFadeOut = 0.3f;
-        [ShowIf("fadeSprite")]
-        [SerializeField]
-        private bool targetAlphaToItsBaseValue;
+        [SerializeField] private SpriteRenderer[] sprites;
+        [SerializeField] private float timeFade = 0.2f;
+        [SerializeField] private float delayFadeOut = 0.3f;
 
+        [Header("Sorting Boost")]
+        [SerializeField] private bool boostSortingLayer;
+        [SerializeField] private int sortingOffset = 10;
+        [SerializeField] private float detalTimer = 0.9f;
 
+        [Header("Animation")]
         [SerializeField] private float timeShow = 0.5f;
         [SerializeField] private bool showOnEnable;
         [SerializeField] private Ease easeShow = Ease.OutBack;
@@ -30,70 +34,136 @@ namespace sonnv
 
         public UnityEvent onShow;
         public UnityEvent onHide;
-
         public UnityEvent onShowComplete;
         public UnityEvent onHideStart;
 
-        private bool _setStartPosition;
-        private Vector3 _startPosition;
+        private Vector3 startPosition;
+        private bool hasStartPosition;
 
-        private Sequence _showSeq;
-        private List<float> _baseAlphaValues;
+        private Sequence showSeq;
 
-        private bool _isValidate;
+        private float[] baseAlpha;
+        private int[] baseSorting;
 
-        private List<float> BaseAlphaValues
+        private bool initialized;
+
+        private void Init()
         {
-            get
+            if (initialized) return;
+
+            int len = sprites.Length;
+
+            baseAlpha = new float[len];
+            baseSorting = new int[len];
+
+            for (int i = 0; i < len; i++)
             {
-                if (_baseAlphaValues != null) return _baseAlphaValues;
-                SetBaseAlpha();
-                return _baseAlphaValues;
+                SpriteRenderer s = sprites[i];
+                baseAlpha[i] = s.color.a;
+                baseSorting[i] = s.sortingOrder;
+            }
+
+            initialized = true;
+        }
+
+        private Vector3 GetStartPosition()
+        {
+            if (!hasStartPosition)
+            {
+                startPosition = Tf.localPosition;
+                hasStartPosition = true;
+            }
+
+            return startPosition;
+        }
+
+        private Vector3 GetEndPosition(Direction direct)
+        {
+            Vector3 offset = Vector3.zero;
+
+            switch (direct)
+            {
+                case Direction.Up: offset = new Vector3(0, yPositionShow, 0); break;
+                case Direction.Down: offset = new Vector3(0, -yPositionShow, 0); break;
+                case Direction.Left: offset = new Vector3(-xPositionShow, 0, 0); break;
+                case Direction.Right: offset = new Vector3(xPositionShow, 0, 0); break;
+                case Direction.UpLeft: offset = new Vector3(-xPositionShow, yPositionShow, 0); break;
+                case Direction.UpRight: offset = new Vector3(xPositionShow, yPositionShow, 0); break;
+                case Direction.DownLeft: offset = new Vector3(-xPositionShow, -yPositionShow, 0); break;
+                case Direction.DownRight: offset = new Vector3(xPositionShow, -yPositionShow, 0); break;
+            }
+
+            return GetStartPosition() + offset;
+        }
+
+        private void SetAlpha(float value)
+        {
+            for (int i = 0; i < sprites.Length; i++)
+            {
+                Color c = sprites[i].color;
+                c.a = value;
+                sprites[i].color = c;
             }
         }
 
-
-        public void Show(float delay)
+        private void SetSortingBoost(bool boost)
         {
-            DOVirtual.DelayedCall(delay, Show);
+            if (!boostSortingLayer) return;
+
+            int len = sprites.Length;
+
+            if (boost)
+            {
+                for (int i = 0; i < len; i++)
+                    sprites[i].sortingOrder = baseSorting[i] + sortingOffset;
+            }
+            else
+            {
+                for (int i = 0; i < len; i++)
+                    sprites[i].sortingOrder = baseSorting[i];
+            }
         }
 
         [Button]
         public void Show()
         {
-            if (!_isValidate)
-            {
-                _isValidate = true;
-                ValidateCurrentSprite();
-            }
+            Init();
+
             gameObject.SetActive(true);
-            _showSeq?.Kill();
+
+            showSeq?.Kill();
+
             onShow?.Invoke();
+
             Tf.localPosition = GetEndPosition(direction);
-            if (targetAlphaToItsBaseValue && _baseAlphaValues == null)
-            {
-                SetBaseAlpha();
-            }
-            SetAlpha(0);
-            _showSeq = DOTween.Sequence();
-            _showSeq.Append(Tf.DOLocalMove(GetStartPosition(), timeShow).SetEase(easeShow));
+
+            if (fadeSprite)
+                SetAlpha(0f);
+
+            SetSortingBoost(true);
+
+            showSeq = DOTween.Sequence();
+
+            showSeq.Append(
+                Tf.DOLocalMove(GetStartPosition(), timeShow)
+                .SetEase(easeShow)
+            );
+
             if (fadeSprite)
             {
-                if (!targetAlphaToItsBaseValue)
-                {
-                    _showSeq.Join(DOVirtual.Float(0, 1, timeFade, SetAlpha));
-                }
-                else
-                {
-                    for (int i = 0; i < sprites.Length; i++)
-                    {
-                        int i1 = i;
-                        _showSeq.Join(DOVirtual.Float(0, BaseAlphaValues[i], timeFade,
-                            x => sprites[i1].color = sprites[i1].color.SetAlpha(x)));
-                    }
-                }
+                showSeq.Join(
+                    DOVirtual.Float(0, 1, timeFade, SetAlpha)
+                );
             }
-            _showSeq.OnComplete(() =>
+
+            float restoreTime = timeShow * detalTimer;
+
+            showSeq.InsertCallback(restoreTime, () =>
+            {
+                SetSortingBoost(false);
+            });
+
+            showSeq.OnComplete(() =>
             {
                 onShowComplete?.Invoke();
             });
@@ -102,132 +172,38 @@ namespace sonnv
         [Button]
         public void Hide()
         {
-            if (!_isValidate)
-            {
-                _isValidate = true;
-                ValidateCurrentSprite();
-            }
+            Init();
+
             onHideStart?.Invoke();
-            _showSeq?.Kill();
-            _showSeq = DOTween.Sequence();
-            _showSeq.Append(Tf.DOLocalMove(GetEndPosition(hideDirection), timeShow).SetEase(easeHide));
+
+            showSeq?.Kill();
+
+            showSeq = DOTween.Sequence();
+
+            showSeq.Append(
+                Tf.DOLocalMove(GetEndPosition(hideDirection), timeShow)
+                .SetEase(easeHide)
+            );
+
             if (fadeSprite)
             {
-                _showSeq.Join(DOVirtual.Float(1, 0, timeFade, SetAlpha).SetDelay(delayFadeOut));
+                showSeq.Join(
+                    DOVirtual.Float(1, 0, timeFade, SetAlpha)
+                    .SetDelay(delayFadeOut)
+                );
             }
-            _showSeq.OnComplete(() =>
+
+            showSeq.OnComplete(() =>
             {
                 gameObject.SetActive(false);
                 onHide?.Invoke();
             });
         }
-        public void HideSprite()
-        {
-            if (!_isValidate)
-            {
-                _isValidate = true;
-                ValidateCurrentSprite();
-            }
-            onHideStart?.Invoke();
-            _showSeq?.Kill();
-            _showSeq = DOTween.Sequence();
-            _showSeq.Append(Tf.DOLocalMove(GetEndPosition(hideDirection), timeShow).SetEase(easeHide));
-            if (fadeSprite)
-            {
-                _showSeq.Join(DOVirtual.Float(1, 0, timeFade, SetAlpha).SetDelay(delayFadeOut));
-            }
-            _showSeq.OnComplete(() =>
-            {
-                onHide?.Invoke();
-            });
-        }
-        public void Hide(float delay)
-        {
-            this.WaitToDo(Hide, delay);
-        }
 
         private void OnEnable()
         {
             if (showOnEnable)
-            {
                 Show();
-            }
-        }
-
-        private Vector3 GetStartPosition()
-        {
-            if (!_setStartPosition)
-            {
-                _startPosition = Tf.localPosition;
-                _setStartPosition = true;
-            }
-            return _startPosition;
-        }
-
-        private Vector3 GetEndPosition(Direction direct)
-        {
-            Vector3 offset = Vector3.zero;
-            switch (direct)
-            {
-                case Direction.Up:
-                    offset = new Vector3(0, yPositionShow, 0);
-                    break;
-                case Direction.Down:
-                    offset = new Vector3(0, -yPositionShow, 0);
-                    break;
-                case Direction.Left:
-                    offset = new Vector3(-yPositionShow, 0, 0);
-                    break;
-                case Direction.Right:
-                    offset = new Vector3(yPositionShow, 0, 0);
-                    break;
-                case Direction.UpLeft:
-                    offset = new Vector3(-xPositionShow, yPositionShow, 0);
-                    break;
-                case Direction.UpRight:
-                    offset = new Vector3(xPositionShow, yPositionShow, 0);
-                    break;
-                case Direction.DownLeft:
-                    offset = new Vector3(-xPositionShow, -yPositionShow, 0);
-                    break;
-                case Direction.DownRight:
-                    offset = new Vector3(xPositionShow, -yPositionShow, 0);
-                    break;
-            }
-            return GetStartPosition() + offset;
-        }
-
-        private void SetAlpha(float alpha)
-        {
-            foreach (var sprite in sprites)
-            {
-                sprite.color = sprite.color.SetAlpha(alpha);
-            }
-        }
-
-        [Button]
-        private void FindSpriteRenderer(bool includeInactive = false)
-        {
-            var spriteList = GetComponentsInChildren<SpriteRenderer>(includeInactive).ToList();
-            // to List 
-            sprites = spriteList.Where(s => s.enabled && s.color.a > 0).ToArray();
-        }
-
-        [Button]
-        private void ValidateCurrentSprite()
-        {
-            // check all sprite in list, if something missing or null, remove it
-            sprites = sprites.Where(s => s != null).ToArray();
-        }
-      
-        private void SetBaseAlpha()
-        {
-            _baseAlphaValues = new List<float>();
-            foreach (var sprite in sprites)
-            {
-                _baseAlphaValues.Add(sprite.color.a);
-            }
         }
     }
-
 }

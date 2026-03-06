@@ -86,7 +86,14 @@ public class SoundManager : Singleton<SoundManager>
     Instance.SfxSource.clip = clip;
     Instance.SfxSource.Play();
   }
+  public static void PlaySFXOneShot(AudioClip clip, float volume = 1f)
+  {
+    if (Instance == null) return;
+    if (Instance.SfxSource == null) return;
+    if (clip == null) return;
 
+    Instance.SfxSource.PlayOneShot(clip, volume);
+  }
   public void PlayFxIfNotPlay(FxType fxType)
   {
     if (fxType == FxType.None) return;
