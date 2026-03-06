@@ -150,7 +150,6 @@ public class Level1528 : LevelBase
             });
         }
     }
-    [SerializeField] private PipeWaterCleaning napCong;
 
     private void OnStartStep4()
     {

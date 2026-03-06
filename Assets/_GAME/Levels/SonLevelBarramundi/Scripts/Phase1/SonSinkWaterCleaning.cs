@@ -193,7 +193,7 @@ namespace sonnv
         private Coroutine autoStopCoroutine;
         private IEnumerator AutoStopWater()
         {
-            yield return new WaitForSeconds(3f);
+            yield return new WaitForSeconds(2f);
 
             if (_isFillWater)
             {

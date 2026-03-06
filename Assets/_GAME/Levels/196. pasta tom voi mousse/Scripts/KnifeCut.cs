@@ -87,7 +87,7 @@ namespace sonnv
         }
         public void ResetScale()
         {
-            SetScale(1);
+            SetScale(1.2f);
         }
     }
 
