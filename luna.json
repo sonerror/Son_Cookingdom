@@ -2,7 +2,7 @@
     "version": "7.1.0",
     "projectId": "f42e7ff96e4545544bb6cd68f51ab634",
     "applicationID": 27404,
-    "creativeName": "Cookingdom_v3",
+    "creativeName": "Cookingdom_v5",
     "pgServer": "EU",
     "window": {
         "‐⁙": true
@@ -133,7 +133,7 @@
             ]
         },
         "scenes": [
-            "Assets/_GAME/Levels/196. pasta tom voi mousse/SonLevel167.unity"
+            "Assets/_GAME/Levels/196. pasta tom voi mousse/Level1528.unity"
         ],
         "disabledScenes": [
             "Assets/Scenes/GamePlayScene.unity",
@@ -8286,6 +8286,10 @@
                 "excluded": true
             },
             {
+                "name": "DG.Tweening.Plugins.FloatPlugin",
+                "excluded": true
+            },
+            {
                 "name": "DG.Tweening.Plugins.IntPlugin",
                 "excluded": true
             },
@@ -9250,6 +9254,10 @@
                 "excluded": true
             },
             {
+                "name": "sonnv.SonEffectShowObject",
+                "excluded": true
+            },
+            {
                 "name": "sonnv.TapToMiniFlour",
                 "excluded": true
             },
@@ -9624,18 +9632,6 @@
             {
                 "name": "Luna.Unity.DTO.UnityEngine.Assets.Shader",
                 "excluded": false
-            },
-            {
-                "name": "sonnv.NSnapObjectToCuttingObject",
-                "excluded": false
-            },
-            {
-                "name": "pc.Debugger.Components.EditorCamera",
-                "excluded": true
-            },
-            {
-                "name": "pc.Debugger.Components.EditorGUI",
-                "excluded": true
             }
         ],
         "unusedMethods": [
@@ -17927,7 +17923,7 @@
                     },
                     {
                         "name": "localRotation#get",
-                        "excluded": false
+                        "excluded": true
                     },
                     {
                         "name": "forward#set",
@@ -21229,15 +21225,15 @@
                 "instanceMethods": [
                     {
                         "name": "getDefaultValue",
-                        "excluded": false
+                        "excluded": true
                     },
                     {
                         "name": "ctor",
-                        "excluded": false
+                        "excluded": true
                     },
                     {
                         "name": "Reset",
-                        "excluded": false
+                        "excluded": true
                     },
                     {
                         "name": "getHashCode",
@@ -21249,7 +21245,7 @@
                     },
                     {
                         "name": "$clone",
-                        "excluded": false
+                        "excluded": true
                     }
                 ]
             },
@@ -22191,11 +22187,7 @@
                     },
                     {
                         "name": "PlayBgm",
-                        "excluded": false
-                    },
-                    {
-                        "name": "PlaySFXOneShot",
-                        "excluded": false
+                        "excluded": true
                     }
                 ]
             },
@@ -23185,7 +23177,7 @@
                     },
                     {
                         "name": "sun#get",
-                        "excluded": false
+                        "excluded": true
                     },
                     {
                         "name": "customReflection#get",
@@ -23217,7 +23209,7 @@
                     },
                     {
                         "name": "mixedBakeMode#get",
-                        "excluded": false
+                        "excluded": true
                     },
                     {
                         "name": "ambientIntensity#get",
@@ -26132,6 +26124,10 @@
                         "excluded": false
                     },
                     {
+                        "name": "Start",
+                        "excluded": false
+                    },
+                    {
                         "name": "ShowPositive",
                         "excluded": false
                     },
@@ -26142,14 +26138,6 @@
                     {
                         "name": "HideEmoji",
                         "excluded": true
-                    },
-                    {
-                        "name": "Awake",
-                        "excluded": false
-                    },
-                    {
-                        "name": "PlayEmoji",
-                        "excluded": false
                     }
                 ]
             },
@@ -27965,7 +27953,7 @@
                     },
                     {
                         "name": "To$4",
-                        "excluded": false
+                        "excluded": true
                     },
                     {
                         "name": "To$1",
@@ -28465,7 +28453,7 @@
                     },
                     {
                         "name": "DOLocalRotate",
-                        "excluded": false
+                        "excluded": true
                     },
                     {
                         "name": "DOLocalRotateQuaternion",
@@ -28509,7 +28497,7 @@
                     },
                     {
                         "name": "DOJump",
-                        "excluded": false
+                        "excluded": true
                     },
                     {
                         "name": "DOLocalJump",
@@ -28815,7 +28803,7 @@
                     },
                     {
                         "name": "OnUpdate",
-                        "excluded": false
+                        "excluded": true
                     },
                     {
                         "name": "OnKill",
@@ -28851,7 +28839,7 @@
                     },
                     {
                         "name": "InsertCallback",
-                        "excluded": false
+                        "excluded": true
                     },
                     {
                         "name": "From",
@@ -28887,7 +28875,7 @@
                     },
                     {
                         "name": "SetRelative",
-                        "excluded": false
+                        "excluded": true
                     },
                     {
                         "name": "SetRelative$1",
@@ -29137,7 +29125,7 @@
                     },
                     {
                         "name": "SetRelativeEndValue",
-                        "excluded": false
+                        "excluded": true
                     },
                     {
                         "name": "GetSpeedBasedDuration",
@@ -29445,7 +29433,7 @@
                     },
                     {
                         "name": "ElapsedPercentage",
-                        "excluded": false
+                        "excluded": true
                     },
                     {
                         "name": "ElapsedDirectionalPercentage",
@@ -29744,18 +29732,6 @@
                     {
                         "name": "setHandPlayBox",
                         "excluded": true
-                    },
-                    {
-                        "name": "ShowHandLoop",
-                        "excluded": false
-                    },
-                    {
-                        "name": "ShowHandLoop$1",
-                        "excluded": true
-                    },
-                    {
-                        "name": "IEShowHandLoop",
-                        "excluded": true
                     }
                 ]
             },
@@ -29763,6 +29739,10 @@
                 "className": "TutorialManager",
                 "staticMethods": [],
                 "instanceMethods": [
+                    {
+                        "name": "Start",
+                        "excluded": false
+                    },
                     {
                         "name": "inherits",
                         "excluded": false
@@ -29780,96 +29760,60 @@
                         "excluded": false
                     },
                     {
-                        "name": "CountHintStep1#get",
-                        "excluded": true
-                    },
-                    {
-                        "name": "CountHintStep1#set",
-                        "excluded": true
-                    },
-                    {
-                        "name": "TfItem#get",
+                        "name": "ResetTimeHint",
                         "excluded": false
                     },
                     {
-                        "name": "TfBroad#get",
+                        "name": "MouseDownItem",
                         "excluded": false
                     },
                     {
-                        "name": "CanCutItem#get",
-                        "excluded": true
-                    },
-                    {
-                        "name": "StepInPhase#get",
+                        "name": "MouseUpItem",
                         "excluded": false
                     },
                     {
-                        "name": "SetCanCutItem",
+                        "name": "StopState",
                         "excluded": false
                     },
                     {
-                        "name": "IEDlaySetCutItem",
+                        "name": "PlayTutState",
                         "excluded": false
                     },
                     {
-                        "name": "SetDelayCanCutItem",
+                        "name": "PlayTutState0",
                         "excluded": false
                     },
                     {
-                        "name": "SetIsSnapKnife",
+                        "name": "PlayTutState1",
                         "excluded": false
                     },
                     {
-                        "name": "IncreaseCountHintStep1",
+                        "name": "PlayTutState2",
                         "excluded": false
                     },
                     {
-                        "name": "ShowHint",
+                        "name": "PlayTutState3",
                         "excluded": false
                     },
                     {
-                        "name": "CountHint3",
-                        "excluded": true
-                    },
-                    {
-                        "name": "TutorialStep2",
+                        "name": "PlayTutState4",
                         "excluded": false
                     },
                     {
-                        "name": "TutorialStep1",
+                        "name": "PlayTutState5",
                         "excluded": false
                     },
                     {
-                        "name": "TutorialOneHit",
-                        "excluded": true
-                    },
-                    {
-                        "name": "SetStateIsTap",
-                        "excluded": true
-                    },
-                    {
-                        "name": "HideHint",
+                        "name": "RemoveStep",
                         "excluded": false
                     },
                     {
-                        "name": "resetTimeHint",
-                        "excluded": true
+                        "name": "SShowPositiveEmojiAtPot",
+                        "excluded": false
                     },
                     {
-                        "name": "OnStepDone",
-                        "excluded": true
-                    },
-                    {
-                        "name": "IncreaseTimeHide",
-                        "excluded": true
-                    },
-                    {
-                        "name": "OnCollectFail",
-                        "excluded": true
-                    },
-                    {
-                        "name": "OnCollectSuccess",
-                        "excluded": true
+                        "name": "FinishTutorial",
+                        "excluded": false
                     }
                 ]
             },
@@ -31332,10 +31276,6 @@
                     {
                         "name": "Update",
                         "excluded": false
-                    },
-                    {
-                        "name": "init",
-                        "excluded": false
                     }
                 ]
             },
@@ -32023,7 +31963,7 @@
                     },
                     {
                         "name": "Float",
-                        "excluded": false
+                        "excluded": true
                     },
                     {
                         "name": "Int",
@@ -32039,7 +31979,7 @@
                     },
                     {
                         "name": "EasedValue",
-                        "excluded": false
+                        "excluded": true
                     },
                     {
                         "name": "EasedValue$1",
@@ -40183,15 +40123,15 @@
                     },
                     {
                         "name": "OnSnap",
-                        "excluded": false
+                        "excluded": true
                     },
                     {
                         "name": "ForceChangeSnap",
-                        "excluded": false
+                        "excluded": true
                     },
                     {
                         "name": "ChangeCanSnap",
-                        "excluded": false
+                        "excluded": true
                     }
                 ]
             },
@@ -40257,11 +40197,7 @@
                     },
                     {
                         "name": "MoveBack",
-                        "excluded": false
-                    },
-                    {
-                        "name": "OnMoveBack#get",
-                        "excluded": false
+                        "excluded": true
                     }
                 ]
             },
@@ -40270,16 +40206,32 @@
                 "staticMethods": [],
                 "instanceMethods": [
                     {
+                        "name": "BaseAlphaValues#get",
+                        "excluded": true
+                    },
+                    {
                         "name": "init",
                         "excluded": false
                     },
                     {
+                        "name": "Show$1",
+                        "excluded": true
+                    },
+                    {
                         "name": "Show",
-                        "excluded": false
+                        "excluded": true
                     },
                     {
                         "name": "Hide",
-                        "excluded": false
+                        "excluded": true
+                    },
+                    {
+                        "name": "Hide$1",
+                        "excluded": true
+                    },
+                    {
+                        "name": "HideSprite",
+                        "excluded": true
                     },
                     {
                         "name": "OnEnable",
@@ -40287,23 +40239,27 @@
                     },
                     {
                         "name": "GetStartPosition",
-                        "excluded": false
+                        "excluded": true
                     },
                     {
                         "name": "GetEndPosition",
-                        "excluded": false
+                        "excluded": true
                     },
                     {
                         "name": "SetAlpha",
-                        "excluded": false
+                        "excluded": true
                     },
                     {
-                        "name": "Init",
-                        "excluded": false
+                        "name": "FindSpriteRenderer",
+                        "excluded": true
                     },
                     {
-                        "name": "SetSortingBoost",
-                        "excluded": false
+                        "name": "ValidateCurrentSprite",
+                        "excluded": true
+                    },
+                    {
+                        "name": "SetBaseAlpha",
+                        "excluded": true
                     }
                 ]
             },
@@ -40329,7 +40285,7 @@
                     },
                     {
                         "name": "DrainPipe#get",
-                        "excluded": false
+                        "excluded": true
                     },
                     {
                         "name": "OnStopFillWater#get",
@@ -40372,35 +40328,15 @@
                         "excluded": false
                     },
                     {
+                        "name": "OnPointerClick",
+                        "excluded": false
+                    },
+                    {
                         "name": "OnFillWaterDone",
                         "excluded": true
                     },
                     {
                         "name": "DrainWater",
-                        "excluded": false
-                    },
-                    {
-                        "name": "OnFillWater#get",
-                        "excluded": false
-                    },
-                    {
-                        "name": "OnSetPipeInteract",
-                        "excluded": true
-                    },
-                    {
-                        "name": "AutoStopWater",
-                        "excluded": false
-                    },
-                    {
-                        "name": "OnPointerDown",
-                        "excluded": false
-                    },
-                    {
-                        "name": "HandleClick",
-                        "excluded": false
-                    },
-                    {
-                        "name": "IgnoreClickFrame",
                         "excluded": false
                     }
                 ]
@@ -40423,7 +40359,7 @@
                     },
                     {
                         "name": "OnSnap#get",
-                        "excluded": false
+                        "excluded": true
                     },
                     {
                         "name": "Col#get",
@@ -40494,7 +40430,7 @@
                         "excluded": false
                     },
                     {
-                        "name": "MoveBack",
+                        "name": "OnEnable",
                         "excluded": false
                     }
                 ]
@@ -40526,70 +40462,6 @@
                     {
                         "name": "ShowPositiveEmojiAtPos",
                         "excluded": true
-                    },
-                    {
-                        "name": "CurrentStep#get",
-                        "excluded": false
-                    },
-                    {
-                        "name": "IsDoneStep#get",
-                        "excluded": true
-                    },
-                    {
-                        "name": "Start$1",
-                        "excluded": false
-                    },
-                    {
-                        "name": "SetStateDoneStep",
-                        "excluded": true
-                    },
-                    {
-                        "name": "DoneStep",
-                        "excluded": false
-                    },
-                    {
-                        "name": "TryNextStep",
-                        "excluded": false
-                    },
-                    {
-                        "name": "StartStep",
-                        "excluded": false
-                    },
-                    {
-                        "name": "OnStartStep1",
-                        "excluded": false
-                    },
-                    {
-                        "name": "OnStartStep2",
-                        "excluded": false
-                    },
-                    {
-                        "name": "SetSnapObject",
-                        "excluded": false
-                    },
-                    {
-                        "name": "OnStartStep3",
-                        "excluded": false
-                    },
-                    {
-                        "name": "OnStartStep4",
-                        "excluded": false
-                    },
-                    {
-                        "name": "OnStartStep5",
-                        "excluded": false
-                    },
-                    {
-                        "name": "ShowStep2Delay",
-                        "excluded": false
-                    },
-                    {
-                        "name": "ShowNegative",
-                        "excluded": true
-                    },
-                    {
-                        "name": "ShowNegativeKnife",
-                        "excluded": true
                     }
                 ]
             },
@@ -40608,6 +40480,10 @@
                 "staticMethods": [],
                 "instanceMethods": [
                     {
+                        "name": "OnEnable$1",
+                        "excluded": true
+                    },
+                    {
                         "name": "OnActive",
                         "excluded": true
                     },
@@ -40622,10 +40498,6 @@
                     {
                         "name": "AddCleanEvent",
                         "excluded": true
-                    },
-                    {
-                        "name": "OnEnable",
-                        "excluded": false
                     }
                 ]
             },
@@ -40804,298 +40676,6 @@
                         "excluded": true
                     }
                 ]
-            },
-            {
-                "className": "sonnv.CuttingBoard",
-                "staticMethods": [],
-                "instanceMethods": [
-                    {
-                        "name": "inherits",
-                        "excluded": false
-                    },
-                    {
-                        "name": "KnifeCut#get",
-                        "excluded": true
-                    },
-                    {
-                        "name": "CurrentCuttingObject#get",
-                        "excluded": false
-                    },
-                    {
-                        "name": "CanCut#get",
-                        "excluded": false
-                    },
-                    {
-                        "name": "RegisterMoveDone",
-                        "excluded": false
-                    },
-                    {
-                        "name": "ResetInforTFTarget",
-                        "excluded": false
-                    },
-                    {
-                        "name": "ResetCanSnap",
-                        "excluded": false
-                    },
-                    {
-                        "name": "ResetCutting",
-                        "excluded": true
-                    }
-                ]
-            },
-            {
-                "className": "sonnv.CuttingObject",
-                "staticMethods": [],
-                "instanceMethods": [
-                    {
-                        "name": "TapItem#get",
-                        "excluded": false
-                    },
-                    {
-                        "name": "CutDone#get",
-                        "excluded": false
-                    },
-                    {
-                        "name": "IsTapItem#get",
-                        "excluded": false
-                    },
-                    {
-                        "name": "init",
-                        "excluded": false
-                    },
-                    {
-                        "name": "ActionCutDone",
-                        "excluded": false
-                    },
-                    {
-                        "name": "SetUp",
-                        "excluded": false
-                    }
-                ]
-            },
-            {
-                "className": "sonnv.SonTapItem",
-                "staticMethods": [],
-                "instanceMethods": [
-                    {
-                        "name": "ColD#get",
-                        "excluded": false
-                    },
-                    {
-                        "name": "IsTap#get",
-                        "excluded": false
-                    },
-                    {
-                        "name": "init",
-                        "excluded": false
-                    },
-                    {
-                        "name": "Awake",
-                        "excluded": false
-                    },
-                    {
-                        "name": "OnPointerDown",
-                        "excluded": false
-                    },
-                    {
-                        "name": "OnPointerUp",
-                        "excluded": false
-                    }
-                ]
-            },
-            {
-                "className": "sonnv.InforTFTarget",
-                "staticMethods": [],
-                "instanceMethods": [
-                    {
-                        "name": "IsSnap#get",
-                        "excluded": false
-                    },
-                    {
-                        "name": "init",
-                        "excluded": false
-                    },
-                    {
-                        "name": "ChangeIsSnap",
-                        "excluded": false
-                    }
-                ]
-            },
-            {
-                "className": "sonnv.KnifeCut",
-                "staticMethods": [],
-                "instanceMethods": [
-                    {
-                        "name": "init",
-                        "excluded": false
-                    },
-                    {
-                        "name": "OnPointerDown",
-                        "excluded": false
-                    },
-                    {
-                        "name": "SetDataObjectCut",
-                        "excluded": false
-                    },
-                    {
-                        "name": "AnimKnifeDance",
-                        "excluded": false
-                    },
-                    {
-                        "name": "SetScale",
-                        "excluded": false
-                    },
-                    {
-                        "name": "ResetScale",
-                        "excluded": false
-                    }
-                ]
-            },
-            {
-                "className": "sonnv.SonEffectShowObject",
-                "staticMethods": [],
-                "instanceMethods": [
-                    {
-                        "name": "TimeAnim#get",
-                        "excluded": true
-                    },
-                    {
-                        "name": "BaseAlphaValues#get",
-                        "excluded": true
-                    },
-                    {
-                        "name": "init",
-                        "excluded": false
-                    },
-                    {
-                        "name": "SetPositionShow",
-                        "excluded": true
-                    },
-                    {
-                        "name": "ResetStartPosition",
-                        "excluded": true
-                    },
-                    {
-                        "name": "Show$1",
-                        "excluded": false
-                    },
-                    {
-                        "name": "Show",
-                        "excluded": false
-                    },
-                    {
-                        "name": "Hide",
-                        "excluded": false
-                    },
-                    {
-                        "name": "Hide$1",
-                        "excluded": true
-                    },
-                    {
-                        "name": "OnEnable",
-                        "excluded": false
-                    },
-                    {
-                        "name": "GetStartPosition",
-                        "excluded": false
-                    },
-                    {
-                        "name": "GetEndPosition",
-                        "excluded": false
-                    },
-                    {
-                        "name": "SetAlpha",
-                        "excluded": false
-                    },
-                    {
-                        "name": "FindSpriteRenderer",
-                        "excluded": true
-                    },
-                    {
-                        "name": "ValidateCurrentSprite",
-                        "excluded": false
-                    },
-                    {
-                        "name": "SetBaseAlpha",
-                        "excluded": true
-                    }
-                ]
-            },
-            {
-                "className": "sonnv.FlourMoveToCream",
-                "staticMethods": [],
-                "instanceMethods": [
-                    {
-                        "name": "init",
-                        "excluded": false
-                    },
-                    {
-                        "name": "OnPointerDown",
-                        "excluded": false
-                    },
-                    {
-                        "name": "OnMove",
-                        "excluded": false
-                    },
-                    {
-                        "name": "ChangeScale",
-                        "excluded": false
-                    },
-                    {
-                        "name": "JumpFlour",
-                        "excluded": false
-                    },
-                    {
-                        "name": "OnPointerUp",
-                        "excluded": false
-                    },
-                    {
-                        "name": "ChangeCanBlockTap",
-                        "excluded": false
-                    },
-                    {
-                        "name": "LateUpdate",
-                        "excluded": true
-                    }
-                ]
-            },
-            {
-                "className": "DG.Tweening.Plugins.FloatPlugin",
-                "staticMethods": [],
-                "instanceMethods": [
-                    {
-                        "name": "Reset",
-                        "excluded": false
-                    },
-                    {
-                        "name": "SetFrom$1",
-                        "excluded": true
-                    },
-                    {
-                        "name": "SetFrom",
-                        "excluded": true
-                    },
-                    {
-                        "name": "ConvertToStartValue",
-                        "excluded": false
-                    },
-                    {
-                        "name": "SetRelativeEndValue",
-                        "excluded": true
-                    },
-                    {
-                        "name": "SetChangeValue",
-                        "excluded": false
-                    },
-                    {
-                        "name": "GetSpeedBasedDuration",
-                        "excluded": true
-                    },
-                    {
-                        "name": "EvaluateAndApply",
-                        "excluded": false
-                    }
-                ]
             }
         ],
         "stubberDataList": [],
@@ -41172,7 +40752,7 @@
                     "startTime": "00:00.000",
                     "endTime": "00:00.000",
                     "lengthInSeconds": 0.0,
-                    "bitrate": 32,
+                    "bitrate": 128,
                     "script": "",
                     "ext": ""
                 },
@@ -41206,26 +40786,6 @@
                         "script": "",
                         "ext": "",
                         "name": "Assets/Audios/small-water-flow-43845.mp3"
-                    },
-                    {
-                        "channels": 1,
-                        "startTime": "00:00.000",
-                        "endTime": "00:19.833",
-                        "lengthInSeconds": 19.83300018310547,
-                        "bitrate": 128,
-                        "script": "",
-                        "ext": "",
-                        "name": "Assets/_GAME/Levels/196. pasta tom voi mousse/sfx_bgm_home_2.ogg"
-                    },
-                    {
-                        "channels": 1,
-                        "startTime": "00:00.000",
-                        "endTime": "00:11.120",
-                        "lengthInSeconds": 11.119999885559082,
-                        "bitrate": 128,
-                        "script": "",
-                        "ext": "",
-                        "name": "Assets/_GAME/Levels/209/Audio/small-water-flow-43845.mp3"
                     }
                 ]
             },

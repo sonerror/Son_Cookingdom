@@ -52,8 +52,6 @@ namespace sonnv
         [SerializeField] protected float curveTimeOffSet = 0.25f;
         [SerializeField] protected float speedFloatingIdle = 0.1f;
         [SerializeField] protected bool isFloatingStart;
-        [SerializeField] protected bool isKnife = false;
-        [SerializeField] protected Level1528 levelBase;
 
         protected Vector3 floatingAnchor;
         protected float timeOffsetFloating;
@@ -200,14 +198,7 @@ namespace sonnv
                     {
                         if (!snapPoint.isSnap && !snapPoint.canSnap)
                         {
-                            if (isKnife)
-                            {
-                                levelBase.ShowNegativeKnife();
-                            }
-                            else
-                            {
-                                levelBase.ShowNegative();
-                            }
+                            // LevelRumiAilen.Ins.PlayNegativeEmoji();
                         }
                     }
                     if (!snapPoint.Tf.gameObject.activeSelf) continue;

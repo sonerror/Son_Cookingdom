@@ -7,7 +7,7 @@ public class GamePlayScreen : UIScreen
   public GameObject btnPlay;
   public GameObject TextTutorial;
   public GameObject objProcess, objImgCook;
-  private bool isTap = false;
+
   public void gotoStore()
   {
     GameManager.Ins.gotoStore();
@@ -15,14 +15,12 @@ public class GamePlayScreen : UIScreen
 
   void Update()
   {
-    if (Input.GetMouseButtonDown(0) && isTap == false)
+    if (Input.GetMouseButtonDown(0))
     {
       btnPlay.SetActive(true);
       TextTutorial.SetActive(false);
       objProcess.SetActive(true);
       objImgCook.SetActive(true);
-      SoundManager.Ins.PlayBgm();
-      isTap = true;
     }
   }
 

@@ -17,11 +17,11 @@ namespace sonnv
 
         private void OnEnable()
         {
-            SoundManager.PlaySFXOneShot(soundClean);
             DOVirtual.DelayedCall(0.5f, () =>
             {
                 // Sprite.sprite = cleanSprite;
                 cleanEffect.Play();
+                SoundManager.PlaySFXOneShot(soundClean);
                 //Col.enabled = true;
             });
         }
