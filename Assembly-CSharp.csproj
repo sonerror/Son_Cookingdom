@@ -28,7 +28,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>Temp\bin\Debug\</OutputPath>
-    <DefineConstants>UNITY_2022_3_41;UNITY_2022_3;UNITY_2022;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_2_OR_NEWER;UNITY_2017_3_OR_NEWER;UNITY_2017_4_OR_NEWER;UNITY_2018_1_OR_NEWER;UNITY_2018_2_OR_NEWER;UNITY_2018_3_OR_NEWER;UNITY_2018_4_OR_NEWER;UNITY_2019_1_OR_NEWER;UNITY_2019_2_OR_NEWER;UNITY_2019_3_OR_NEWER;UNITY_2019_4_OR_NEWER;UNITY_2020_1_OR_NEWER;UNITY_2020_2_OR_NEWER;UNITY_2020_3_OR_NEWER;UNITY_2021_1_OR_NEWER;UNITY_2021_2_OR_NEWER;UNITY_2021_3_OR_NEWER;UNITY_2022_1_OR_NEWER;UNITY_2022_2_OR_NEWER;UNITY_2022_3_OR_NEWER;UNITY_INCLUDE_TESTS;ENABLE_AUDIO;ENABLE_CLOTH;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_TEXTURE_STREAMING;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_UNITYWEBREQUEST;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_EDITOR_GAME_SERVICES;ENABLE_UNITY_GAME_SERVICES_ANALYTICS_SUPPORT;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_HUB_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_GENERATE_NATIVE_PLUGINS_FOR_ASSEMBLIES_API;ENABLE_DIRECTOR_AUDIO;ENABLE_DIRECTOR_TEXTURE;ENABLE_MANAGED_JOBS;ENABLE_MANAGED_TRANSFORM_JOBS;ENABLE_MANAGED_ANIMATION_JOBS;ENABLE_MANAGED_AUDIO_JOBS;ENABLE_ENGINE_CODE_STRIPPING;ENABLE_ONSCREEN_KEYBOARD;ENABLE_MANAGED_UNITYTLS;RENDER_SOFTWARE_CURSOR;ENABLE_VIDEO;ENABLE_ACCELERATOR_CLIENT_DEBUGGING;ENABLE_NAVIGATION_PACKAGE_DEBUG_VISUALIZATION;ENABLE_NAVIGATION_HEIGHTMESH_RUNTIME_SUPPORT;ENABLE_NAVIGATION_UI_REQUIRES_PACKAGE;PLATFORM_WEBGL;TEXTCORE_1_0_OR_NEWER;UNITY_WEBGL;UNITY_WEBGL_API;UNITY_DISABLE_WEB_VERIFICATION;UNITY_GFX_USE_PLATFORM_VSYNC;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_SPATIALTRACKING;ENABLE_MONO;NET_STANDARD_2_0;NET_STANDARD;NET_STANDARD_2_1;NETSTANDARD;NETSTANDARD2_1;ENABLE_PROFILER;DEBUG;TRACE;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_UNITY_COLLECTIONS_CHECKS;ENABLE_BURST_AOT;UNITY_TEAM_LICENSE;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_DIRECTOR;ENABLE_LOCALIZATION;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_TILEMAP;ENABLE_TIMELINE;ENABLE_LEGACY_INPUT_MANAGER;TEXTCORE_FONT_ENGINE_1_5_OR_NEWER;CSHARP_7_OR_LATER;CSHARP_7_3_OR_NEWER</DefineConstants>
+    <DefineConstants>UNITY_2022_3_41;UNITY_2022_3;UNITY_2022;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_2_OR_NEWER;UNITY_2017_3_OR_NEWER;UNITY_2017_4_OR_NEWER;UNITY_2018_1_OR_NEWER;UNITY_2018_2_OR_NEWER;UNITY_2018_3_OR_NEWER;UNITY_2018_4_OR_NEWER;UNITY_2019_1_OR_NEWER;UNITY_2019_2_OR_NEWER;UNITY_2019_3_OR_NEWER;UNITY_2019_4_OR_NEWER;UNITY_2020_1_OR_NEWER;UNITY_2020_2_OR_NEWER;UNITY_2020_3_OR_NEWER;UNITY_2021_1_OR_NEWER;UNITY_2021_2_OR_NEWER;UNITY_2021_3_OR_NEWER;UNITY_2022_1_OR_NEWER;UNITY_2022_2_OR_NEWER;UNITY_2022_3_OR_NEWER;PLATFORM_ARCH_64;UNITY_64;UNITY_INCLUDE_TESTS;ENABLE_AR;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_EVENT_QUEUE;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_TEXTURE_STREAMING;ENABLE_VIRTUALTEXTURING;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_UNITYWEBREQUEST;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_EDITOR_GAME_SERVICES;ENABLE_UNITY_GAME_SERVICES_ANALYTICS_SUPPORT;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_HUB_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_GENERATE_NATIVE_PLUGINS_FOR_ASSEMBLIES_API;ENABLE_DIRECTOR_AUDIO;ENABLE_DIRECTOR_TEXTURE;ENABLE_MANAGED_JOBS;ENABLE_MANAGED_TRANSFORM_JOBS;ENABLE_MANAGED_ANIMATION_JOBS;ENABLE_MANAGED_AUDIO_JOBS;ENABLE_MANAGED_UNITYTLS;INCLUDE_DYNAMIC_GI;ENABLE_SCRIPTING_GC_WBARRIERS;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;ENABLE_VIDEO;ENABLE_ACCELERATOR_CLIENT_DEBUGGING;ENABLE_NAVIGATION_PACKAGE_DEBUG_VISUALIZATION;ENABLE_NAVIGATION_HEIGHTMESH_RUNTIME_SUPPORT;ENABLE_NAVIGATION_UI_REQUIRES_PACKAGE;PLATFORM_STANDALONE;TEXTCORE_1_0_OR_NEWER;PLATFORM_STANDALONE_WIN;UNITY_STANDALONE_WIN;UNITY_STANDALONE;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_NVIDIA;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_OUT_OF_PROCESS_CRASH_HANDLER;ENABLE_CLUSTER_SYNC;ENABLE_CLUSTERINPUT;PLATFORM_UPDATES_TIME_OUTSIDE_OF_PLAYER_LOOP;GFXDEVICE_WAITFOREVENT_MESSAGEPUMP;PLATFORM_INITIALIZES_MEMORY_MANAGER_EXPLICITLY;ENABLE_MONO;NET_STANDARD_2_0;NET_STANDARD;NET_STANDARD_2_1;NETSTANDARD;NETSTANDARD2_1;ENABLE_PROFILER;DEBUG;TRACE;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_UNITY_COLLECTIONS_CHECKS;ENABLE_BURST_AOT;UNITY_TEAM_LICENSE;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_DIRECTOR;ENABLE_LOCALIZATION;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_TILEMAP;ENABLE_TIMELINE;ENABLE_LEGACY_INPUT_MANAGER;TEXTCORE_FONT_ENGINE_1_5_OR_NEWER;ODIN_INSPECTOR;ODIN_INSPECTOR_3;ODIN_INSPECTOR_3_1;CSHARP_7_OR_LATER;CSHARP_7_3_OR_NEWER</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <NoWarn>0169;USG0001</NoWarn>
@@ -55,7 +55,7 @@
     <UnityProjectGeneratorVersion>2.0.22</UnityProjectGeneratorVersion>
     <UnityProjectGeneratorStyle>SDK</UnityProjectGeneratorStyle>
     <UnityProjectType>Game:1</UnityProjectType>
-    <UnityBuildTarget>WebGL:20</UnityBuildTarget>
+    <UnityBuildTarget>StandaloneWindows64:19</UnityBuildTarget>
     <UnityVersion>2022.3.41f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
@@ -64,66 +64,280 @@
     <Analyzer Include="D:\_App\Unity\UnityInstall\2022.3.41f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\_GAME\Levels\LvKingCrab\Scripts\CrabHammer.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\FoodStand\Scripts\Display\DisplayBase.cs" />
+    <Compile Include="Assets\_GAME\Levels\SonLevelDonut\Scripts\IngredientHolderTopping.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\Cook\Utilities\Transition\UpTransition.cs" />
     <Compile Include="Assets\Scripts\Object\HandCtrl.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\CookV2\Utilities\Bowl\IngredientBowl.cs" />
+    <Compile Include="Assets\_GAME\Levels\SonLevelDonut\Scripts\SpoonForwarder.cs" />
+    <Compile Include="Assets\_GAME\Levels\SonLevelDonut\Scripts\CameraCenter.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\Cook\Base\APDCookingDrag.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\FoodStand\Scripts\Customer\OrderTimer.cs" />
+    <Compile Include="Assets\_GAME\Levels\LvTanghulu\Scripts\Stage 1\Phase 1\CaneJuicer.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\Cook\Utilities\SpeederWhisk\SpeederWhisk.cs" />
+    <Compile Include="Assets\_GAME\Levels\SonLevelDonut\Scripts\IngredientForwarderAnim.cs" />
+    <Compile Include="Assets\_GAME\Levels\LvTanghulu\Scripts\Stage 1\Phase 3\TanghuluOven.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\CookV2\Utilities\PreparationStepByStep\Preparation\ScoopSphere.cs" />
+    <Compile Include="Assets\_GAME\Levels\SonLevelDonut\Scripts\InforSprite.cs" />
+    <Compile Include="Assets\_GAME\Levels\SonLevelDonut\Scripts\IngredientForwarder.cs" />
+    <Compile Include="Assets\_GAME\Levels\SonLevelDonut\Scripts\IngredientHolder.cs" />
+    <Compile Include="Assets\_GAME\Levels\LvTanghulu\Scripts\Stage 1\Phase 3\TanghuluS1Phase3.cs" />
     <Compile Include="Assets\AllIn1SpriteShader\Scripts\RandomSeed.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\Cook\StoveBase.cs" />
     <Compile Include="Assets\DOTween\Modules\DOTweenModuleAudio.cs" />
-    <Compile Include="Assets\_GAME\Levels\LvKingCrab\Scripts\CrabStickTool.cs" />
-    <Compile Include="Assets\_GAME\Levels\LvKingCrab\Scripts\CrabLegPart.cs" />
-    <Compile Include="Assets\_GAME\Levels\LvKingCrab\Scripts\SimpleTransition.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\Cook\Utilities\AppearSfx.cs" />
+    <Compile Include="Assets\_GAME\Levels\LvTanghulu\Scripts\Stage 2\TanghuluFruit.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\CookV2\Utilities\PreparationStepByStep\Preparation\TapState.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\CookV2\Utilities\PreparationStepByStep\Preparation\UnitCutSpin.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\CookV2\Utilities\Appliance\TwiceOpenAppliance.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\CookV2\Utilities\PreparationStepByStep\Tool\ScoopSphereSpoon.cs" />
+    <Compile Include="Assets\_GAME\Levels\LvTanghulu\Scripts\Stage 2\TanghuluData.cs" />
     <Compile Include="Assets\AllIn1SpriteShader\Scripts\All1CreateUnifiedOutline.cs" />
-    <Compile Include="Assets\Scripts\MaskGroup.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\CookV2\Base\APDv2CookingToolBase.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\Cook\Utilities\Shaker.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\Cook\Utilities\Button\TapButton.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\CookV2\Utilities\PreparationStepByStep\Preparation\FruitPreparation.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\Cook\StoveButton.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\Cook\OvenButton.cs" />
     <Compile Include="Assets\Scripts\Pool\PoolManager.cs" />
     <Compile Include="Assets\Scripts\Manager\UIManager.cs" />
-    <Compile Include="Assets\_GAME\Levels\LvKingCrab\Scripts\CrabBody.cs" />
-    <Compile Include="Assets\Scripts\ItemInCrab.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\CookV2\Base\BeforeCompleteAction\SimplePourAction.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\MGExtensionMethods.cs" />
+    <Compile Include="Assets\_GAME\Levels\SonLevelDonut\Scripts\ToppingForwarder.cs" />
+    <Compile Include="Assets\_GAME\Levels\LvTanghulu\Scripts\Stage 2\TanghuluBeater.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\Cook\Config\APDCookConfig.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\APDUtilities.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\Cook\Base\APDCookingToolBase.cs" />
+    <Compile Include="Assets\_GAME\Levels\SonLevelDonut\Scripts\MiniFlourHolder.cs" />
+    <Compile Include="Assets\_GAME\Levels\SonLevelDonut\Scripts\DonutForwarder.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\CookV2\Utilities\Appliance\OvenAppliance.cs" />
+    <Compile Include="Assets\Scripts\Manager\EventManager.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\Cook\Utilities\DirtyTowel.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\Cook\Utilities\SubEffect\FloatingV2.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\FoodStand\Scripts\Customer\CustomerLineController.cs" />
+    <Compile Include="Assets\_GAME\Levels\SonLevelDonut\Scripts\Level628.cs" />
+    <Compile Include="Assets\_GAME\Levels\LvTanghulu\Scripts\Stage 1\Phase 4\TanghuluNutSpoon.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\APDSpriteRendererExtensions.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\SonNv\ISnapObject.cs" />
+    <Compile Include="Assets\Scripts\UI\HeaderProcgress.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\FoodStand\Scripts\Tool\APDDragStock.cs" />
+    <Compile Include="Assets\_GAME\Levels\SonLevelDonut\Scripts\DragController.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\CookV2\Utilities\Spoon\ScoopSpoon.cs" />
     <Compile Include="Assets\Scripts\Helper\Cache.cs" />
-    <Compile Include="Assets\_GAME\Levels\LvKingCrab\Scripts\LevelKingCrab.cs" />
+    <Compile Include="Assets\_GAME\Levels\LvTanghulu\Scripts\Stage 0\SugarcaneBasket.cs" />
+    <Compile Include="Assets\_GAME\Levels\SonLevelDonut\Scripts\Flour.cs" />
+    <Compile Include="Assets\_GAME\Levels\SonLevelDonut\Scripts\AnimEgg.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\FoodStand\Json\JsonDataHolder.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\FoodStand\SO\FSCharacterConfigSO.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\FoodStand\Scripts\Data\FoodData.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\CookV2\Utilities\Garbage\GarbageCan.cs" />
+    <Compile Include="Assets\_GAME\Levels\SonLevelDonut\Scripts\Phase.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\Cook\Utilities\Button\PunchScaleButton.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\FoodStand\Scripts\Display\BlurDisplay.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\MGUtils.cs" />
+    <Compile Include="Assets\_GAME\Levels\SonLevelDonut\Scripts\TapToMiniFlour.cs" />
+    <Compile Include="Assets\Scripts\UI\UIScreen.cs" />
     <Compile Include="Assets\DOTween\Modules\DOTweenModuleUnityVersion.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\FoodStand\Scripts\Tool\FSTrashCan.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\FoodStand\Scripts\FSAPDLevelBase.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\Cook\Utilities\EggCracking.cs" />
     <Compile Include="Assets\DOTween\Modules\DOTweenModulePhysics.cs" />
-    <Compile Include="Assets\Scripts\ItemDropGroup.cs" />
-    <Compile Include="Assets\_GAME\Levels\LvKingCrab\Scripts\BlockUI.cs" />
-    <Compile Include="Assets\_GAME\Levels\LvKingCrab\Scripts\CrabLeg.cs" />
-    <Compile Include="Assets\_GAME\Levels\LvKingCrab\Scripts\KingCrabTool.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\CookV2\Base\Progression\APDProgressionPhase.cs" />
+    <Compile Include="Assets\_GAME\Levels\SonLevelDonut\Scripts\ContactColider.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\Cook\Utilities\Spices\ShakerSpicesWithCondition.cs" />
+    <Compile Include="Assets\_GAME\Levels\LvTanghulu\Scripts\Stage 0\Sickle.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\Cook\OnOffButton.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\SonNv\ScalingOnPick.cs" />
+    <Compile Include="Assets\_GAME\Levels\SonLevelDonut\Scripts\Phase1Donut.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\Cook\SingleCutObject.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\FoodStand\Scripts\Tool\FinishedDishDrag1.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\FoodStand\Scripts\Display\EmptyDisplay.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\Cook\Base\APDCookingSpoon.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\Cook\Utilities\PouringObject.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\Cook\Utilities\Dish\StackPlate.cs" />
+    <Compile Include="Assets\_GAME\Levels\LvTanghulu\Scripts\Stage 1\Phase 1\SugarcanePot.cs" />
     <Compile Include="Assets\AllIn1SpriteShader\Scripts\AllIn1ShaderWindow.cs" />
-    <Compile Include="Assets\_GAME\Levels\LvKingCrab\Scripts\CrabSpoon.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\CookV2\Base\APDv2MultiTargetDrag.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\CookV2\Base\BeforeCompleteAction\PourAction.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\CookV2\Utilities\PreparationStepByStep\PreparationStep\FlyingUnitStep.cs" />
+    <Compile Include="Assets\Scripts\UI\ProgressWidth.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\FoodStand\Scripts\FoodStallEnum.cs" />
+    <Compile Include="Assets\_GAME\Levels\LvTanghulu\Scripts\Stage 1\Phase 2\SimpleSink.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\Cook\Utilities\Button\ClickableButton.cs" />
     <Compile Include="Assets\AllIn1SpriteShader\Scripts\SetGlobalTimeUnity2018.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\Cook\RollingObject.cs" />
     <Compile Include="Assets\AllIn1SpriteShader\Scripts\AllIn1Shader.cs" />
+    <Compile Include="Assets\_GAME\Levels\SonLevelDonut\Scripts\BeaterInBowl.cs" />
+    <Compile Include="Assets\Scripts\Helper\AlwayUp.cs" />
+    <Compile Include="Assets\_GAME\Levels\LvTanghulu\Scripts\Stage 1\Phase 4\TanghuluS1Phase4.cs" />
     <Compile Include="Assets\AllIn1SpriteShader\Scripts\SetGlobalTimeNew.cs" />
-    <Compile Include="Assets\Scripts\LegsGroup.cs" />
-    <Compile Include="Assets\Scripts\Tmp\APDUtilities.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\CookV2\Utilities\PreparationStepByStep\Preparation\KnifePeeling.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\Cook\Utilities\Spoon\HoneySpoon.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\FoodStand\Scripts\Display\ColorShapeDisplay.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\FoodStand\Scripts\Customer\CustomerLine.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\Cook\Utilities\SpeederWhisk\RationSpeedMix.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\Cook\Utilities\Spices\TearStrip.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\FoodStand\Scripts\Customer\Customer.cs" />
     <Compile Include="Assets\Scripts\Manager\SoundManager.cs" />
-    <Compile Include="Assets\_GAME\Levels\LvKingCrab\Scripts\CrabPry.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\CookV2\Utilities\PreparationStepByStep\PreparationStep\CrackNutShellStep.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\Cook\Utilities\Transition\BounceLoop.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\Cook\ClockerStoveBase.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\CookV2\Utilities\Prick\PrickObject.cs" />
     <Compile Include="Assets\AllIn1SpriteShader\Scripts\SetAtlasUvs.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\Cook\Utilities\SpeederWhisk\MixingBowl.cs" />
+    <Compile Include="Assets\_GAME\Levels\SonLevelDonut\Scripts\FlatSpoonInBowl.cs" />
+    <Compile Include="Assets\_GAME\Levels\SonLevelDonut\Scripts\DragNilong.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\Cook\Base\APDLevelBase.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\Cook\Sink.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\FoodStand\Scripts\Tool\RefillClock.cs" />
     <Compile Include="Assets\Scripts\LevelBase.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\Cook\Utilities\Transition\APDTransitionBase.cs" />
+    <Compile Include="Assets\_GAME\Levels\LvTanghulu\Scripts\Stage 1\Phase 1\TanghuluS1Phase1.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\APDEnumUtilities.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\Cook\Utilities\Button\OnReadyButton.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\Cook\Utilities\PeelOff\RotateToMouseDirection.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\CookV2\Utilities\Move\MoveToTarget.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\Cook\KnifeDrag.cs" />
+    <Compile Include="Assets\_GAME\Levels\SonLevelDonut\Scripts\ChangeLayer.cs" />
     <Compile Include="Assets\Scripts\UI\Progress.cs" />
     <Compile Include="Assets\_GAME\Levels\29\Scripts\EmojiControl.cs" />
-    <Compile Include="Assets\_GAME\Levels\LvKingCrab\Scripts\CrabPart.cs" />
-    <Compile Include="Assets\Scripts\ItemCrabGroup.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\Cook\Base\APDCookingDragWithCondition.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\Cook\Utilities\DirtCleanInSink.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\Cook\Utilities\RollingV2\RollingPinV2.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\Cook\Utilities\GarbageDragTool.cs" />
+    <Compile Include="Assets\_GAME\Levels\SonLevelDonut\Scripts\FlatSpoonIbBowlColor.cs" />
+    <Compile Include="Assets\_GAME\Levels\LvTanghulu\Scripts\Stage 1\Phase 4\TanghuluNutPot.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\SonNv\SonUtilities.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\Cook\Base\APDCookingPour.cs" />
+    <Compile Include="Assets\Scripts\Object\ShowItem.cs" />
     <Compile Include="Assets\DOTween\Modules\DOTweenModulePhysics2D.cs" />
+    <Compile Include="Assets\_GAME\Levels\LvTanghulu\Scripts\Stage 2\TanghuluFruitDrag.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\Cook\Utilities\SpeederWhisk\WhiskBowlIngredient.cs" />
+    <Compile Include="Assets\_GAME\Levels\LvTanghulu\Scripts\Stage 2\LinerSpreadAction.cs" />
+    <Compile Include="Assets\_GAME\Levels\LvTanghulu\Scripts\Stage 2\TanghuluIceShake.cs" />
+    <Compile Include="Assets\_GAME\Levels\SonLevelDonut\Scripts\RollingForwarder.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\SonNv\SonMonoBehaviour.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\CookV2\Utilities\Transition\MaskTransition.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\CookV2\Utilities\PreparationStepByStep\PreparationStep\FruitPreparationStep.cs" />
     <Compile Include="Assets\DOTween\Modules\DOTweenModuleUI.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\FoodStand\Scripts\Display\GrayScaleDisplay.cs" />
+    <Compile Include="Assets\_GAME\Levels\LvTanghulu\Scripts\Stage 1\Phase 4\TanghuluMortar.cs" />
     <Compile Include="Assets\DOTween\Modules\DOTweenModuleSprite.cs" />
-    <Compile Include="Assets\Scripts\MaskGroupCustom.cs" />
-    <Compile Include="Assets\_GAME\Levels\LvKingCrab\Scripts\CrabBowl.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\CookV2\Utilities\DelayFrameEvent.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\FoodStand\Scripts\Tool\RefillStock.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\SonNv\NextStepLevel.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\Cook\Utilities\Shadow\CreateShadowObject.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\Cook\RollingBoard.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\Cook\Utilities\Transition\DoorSlamTransition.cs" />
+    <Compile Include="Assets\_GAME\Levels\LvTanghulu\Scripts\Stage 2\TanghuluDisplay.cs" />
+    <Compile Include="Assets\_GAME\Levels\SonLevelDonut\Scripts\DonutInPan.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\Cook\Utilities\AppearCombo.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\CookV2\Utilities\Transition\APDProgressionTransion.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\CookV2\Utilities\PreparationStepByStep\Preparation\SliceInHalf.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\Cook\Utilities\SauceSpash.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\CookV2\Utilities\Hint\ParallelHintController.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\CookV2\Utilities\Prick\PrickController.cs" />
+    <Compile Include="Assets\Scripts\Object\Candy.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\Cook\Utilities\AppearEffect.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\Cook\Utilities\KeepStartRotation.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\Cook\Utilities\Spices\ShakerSpices.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\Cook\Utilities\DirtyManager.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\Cook\Utilities\GarbageManager.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\CookV2\Utilities\Spoon\FreeSpiceSpoon.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\CookV2\Base\BeforeCompleteAction\ReplaceByTargetAction.cs" />
+    <Compile Include="Assets\_GAME\Levels\LvTanghulu\Scripts\Stage 1\Phase 2\TanghuluS1Phase2.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\Cook\Utilities\Spoon.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\FoodStand\Scripts\Data\FoodColorTag.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\CookV2\Base\Progression\APDProgressionLevelBase.cs" />
+    <Compile Include="Assets\_GAME\Levels\SonLevelDonut\Scripts\ClockTimer.cs" />
+    <Compile Include="Assets\_GAME\Levels\SonLevelDonut\Scripts\PlayAnimationManually.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\CookV2\Utilities\PreparationStepByStep\GeneralPreparation.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\Cook\Utilities\CleanEffect.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\Cook\Utilities\Spoon\SoupSpoon.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\CookV2\Utilities\PreparationStepByStep\Preparation\UnitCut.cs" />
     <Compile Include="Assets\Scripts\Manager\GameManager.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\Cook\Utilities\PeelOff\StretchPulling.cs" />
+    <Compile Include="Assets\Scripts\UI\UIUnit.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\FoodStand\SO\ColorConfigSO.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\CookV2\Base\BeforeCompleteAction\BeforeCompleteAction.cs" />
+    <Compile Include="Assets\_GAME\Levels\SonLevelDonut\Scripts\TapInFlour.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\Cook\RollingPin.cs" />
     <Compile Include="Assets\Scripts\Pool\EffectPool.cs" />
-    <Compile Include="Assets\_GAME\Levels\LvKingCrab\Scripts\DragToTargetObj.cs" />
-    <Compile Include="Assets\_GAME\Levels\LvKingCrab\Scripts\CrabRazor.cs" />
-    <Compile Include="Assets\_GAME\Levels\LvKingCrab\Scripts\Scissors.cs" />
-    <Compile Include="Assets\Scripts\ItemDrop.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\CookV2\Base\Progression\APDProgressionStage.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\Cook\Utilities\Transition\MaskTransition.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\Cook\Utilities\Spoon\FreeSpoon.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\CookV2\Base\BeforeCompleteAction\SpiceShakingAction.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\FoodStand\Scripts\Display\MaterialInstancer.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\CookV2\Base\APDv2Drag.cs" />
+    <Compile Include="Assets\_GAME\Levels\LvTanghulu\Scripts\Stage 2\TanghuluFinalPhase.cs" />
+    <Compile Include="Assets\_GAME\Levels\SonLevelDonut\Scripts\DonutInPanHolder.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\CookV2\Utilities\Other\SimpleUseMeshFold.cs" />
+    <Compile Include="Assets\Scripts\Helper\MonoBehaviourExtension.cs" />
+    <Compile Include="Assets\_GAME\Levels\SonLevelDonut\Scripts\HandCatSteal.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\Cook\Utilities\SpeederWhisk\MixClean.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\CookV2\Utilities\Sink\DirtyObject.cs" />
+    <Compile Include="Assets\_GAME\Levels\LvTanghulu\Scripts\Stage 0\Sugarcane.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\FoodStand\Scripts\Display\FoodDisplay.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\CookV2\Utilities\PreparationStepByStep\PreparationStep\PluckStemStep.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\CookV2\Utilities\Garbage\GarbageDrag.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\SonNv\ItemRotateAround.cs" />
+    <Compile Include="Assets\_GAME\Levels\LvTanghulu\Scripts\Stage 2\TanghuluReplayButton.cs" />
+    <Compile Include="Assets\Scripts\Object\Pot.cs" />
     <Compile Include="Assets\Scripts\Manager\Singleton.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\Cook\BeaterInBowl.cs" />
+    <Compile Include="Assets\Scripts\Pool\PoolMember.cs" />
     <Compile Include="Assets\Scripts\Pool\GameUnit.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\Cook\Utilities\DirtyClean.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\FoodStand\SO\ColorTagSO.cs" />
     <Compile Include="Assets\Scripts\UI\GamePlayScreen.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\CookV2\Utilities\Appliance\LiddedAppliance.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\Cook\Utilities\SpeederWhisk\MixingSauce.cs" />
+    <Compile Include="Assets\_GAME\Levels\LvTanghulu\Scripts\Stage 1\Phase 4\AlmondRoasted.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\Cook\Base\APDCookingPourMultiTarget.cs" />
+    <Compile Include="Assets\_GAME\Levels\LvTanghulu\Scripts\Stage 1\Phase 3\TanghuluChocoPot.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\Cook\Utilities\GarbageDrag.cs" />
     <Compile Include="Assets\DOTween\Modules\DOTweenModuleUtils.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\Cook\Utilities\Shadow.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\CookV2\Utilities\Other\RollingPin.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\SonNv\SonLevelBase.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\Cook\Base\APDCookingDragMultiTarget.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\Cook\Base\APDCookingSpoonMultiTarget.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\Cook\Base\APDCookingPourWithCondition.cs" />
     <Compile Include="Assets\Scripts\Manager\TutorialManager.cs" />
-    <Compile Include="Assets\_GAME\Levels\LvKingCrab\Scripts\CrabTweezers.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\CookV2\AdditionalFeature\KitchenTimer\KitchenTimer.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\FoodStand\Scripts\Tool\APDv2DragStock.cs" />
     <Compile Include="Assets\FindMissingScriptsRecursively.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\CookV2\Utilities\PreparationStepByStep\PreparationStep\UnitCutSpinStep.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\Cook\Utilities\APDCookEffectManager.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\Cook\Oven.cs" />
+    <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\Cook\Utilities\SpeederWhisk\WhiskBowl.cs" />
+    <Compile Include="Assets\_GAME\Levels\SonLevelDonut\Scripts\IngredientHolderColor.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
     <None Include="Assets\Spine\version.txt" />
-    <None Include="Assets\_GAME\Levels\LvKingCrab\Textures\crab_json\crap.atlas.txt" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
     <None Include="Assets\AllIn1SpriteShader\Resources_moved\AllIn1SpriteShader.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
+    <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile SSD.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
+    <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
     <None Include="Assets\DOTween\DOTween.dll" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
+    <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
     <None Include="Assets\AllIn1SpriteShader\Resources_moved\AllIn1OneShaderFunctions.cginc" />
   </ItemGroup>
   <ItemGroup>
@@ -133,6 +347,10 @@
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>D:\_App\Unity\UnityInstall\2022.3.41f1\Editor\Data\Managed\UnityEngine\UnityEngine.AIModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.ARModule">
+      <HintPath>D:\_App\Unity\UnityInstall\2022.3.41f1\Editor\Data\Managed\UnityEngine\UnityEngine.ARModule.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="UnityEngine.AccessibilityModule">
@@ -157,6 +375,14 @@
     </Reference>
     <Reference Include="UnityEngine.ClothModule">
       <HintPath>D:\_App\Unity\UnityInstall\2022.3.41f1\Editor\Data\Managed\UnityEngine\UnityEngine.ClothModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.ClusterInputModule">
+      <HintPath>D:\_App\Unity\UnityInstall\2022.3.41f1\Editor\Data\Managed\UnityEngine\UnityEngine.ClusterInputModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.ClusterRendererModule">
+      <HintPath>D:\_App\Unity\UnityInstall\2022.3.41f1\Editor\Data\Managed\UnityEngine\UnityEngine.ClusterRendererModule.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="UnityEngine.ContentLoadModule">
@@ -371,8 +597,8 @@
       <HintPath>D:\_App\Unity\UnityInstall\2022.3.41f1\Editor\Data\Managed\UnityEngine\UnityEngine.VideoModule.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="UnityEngine.WebGLModule">
-      <HintPath>D:\_App\Unity\UnityInstall\2022.3.41f1\Editor\Data\PlaybackEngines\WebGLSupport\Managed\UnityEngine.WebGLModule.dll</HintPath>
+    <Reference Include="UnityEngine.VirtualTexturingModule">
+      <HintPath>D:\_App\Unity\UnityInstall\2022.3.41f1\Editor\Data\Managed\UnityEngine\UnityEngine.VirtualTexturingModule.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="UnityEngine.WindModule">
@@ -447,12 +673,36 @@
       <HintPath>D:\_App\Unity\UnityInstall\2022.3.41f1\Editor\Data\Managed\UnityEngine\UnityEditor.UnityConnectModule.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="Sirenix.Reflection.Editor">
+      <HintPath>Assets\Plugins\Sirenix\Assemblies\Sirenix.Reflection.Editor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="ReportGeneratorMerged">
       <HintPath>Library\PackageCache\com.unity.testtools.codecoverage@1.2.6\lib\ReportGenerator\ReportGeneratorMerged.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="Sirenix.Serialization">
+      <HintPath>Assets\Plugins\Sirenix\Assemblies\Sirenix.Serialization.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Sirenix.Serialization.Config">
+      <HintPath>Assets\Plugins\Sirenix\Assemblies\Sirenix.Serialization.Config.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Sirenix.OdinInspector.Editor">
+      <HintPath>Assets\Plugins\Sirenix\Assemblies\Sirenix.OdinInspector.Editor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Sirenix.OdinInspector.Attributes">
+      <HintPath>Assets\Plugins\Sirenix\Assemblies\Sirenix.OdinInspector.Attributes.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="RuntimeScripts">
-      <HintPath>E:\Luna\6.0.0\scripts\Runtime\RuntimeScripts.dll</HintPath>
+      <HintPath>E:\6.2.1\scripts\Runtime\RuntimeScripts.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Sirenix.Utilities">
+      <HintPath>Assets\Plugins\Sirenix\Assemblies\Sirenix.Utilities.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
@@ -461,6 +711,14 @@
     </Reference>
     <Reference Include="DOTween">
       <HintPath>Assets\DOTween\DOTween.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Sirenix.Utilities.Editor">
+      <HintPath>Assets\Plugins\Sirenix\Assemblies\Sirenix.Utilities.Editor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>Library\PackageCache\com.unity.nuget.newtonsoft-json@3.2.1\Runtime\Newtonsoft.Json.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.Android.Types">
@@ -963,8 +1221,76 @@
       <HintPath>D:\_App\Unity\UnityInstall\2022.3.41f1\Editor\Data\NetStandard\compat\2.1.0\shims\netfx\System.Xml.Serialization.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="Unity.EditorCoroutines.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.EditorCoroutines.Editor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.PlasticSCM.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.ResourceManager">
+      <HintPath>Library\ScriptAssemblies\Unity.ResourceManager.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.Timeline.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.VisualScripting.Shared.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.ScriptableBuildPipeline">
+      <HintPath>Library\ScriptAssemblies\Unity.ScriptableBuildPipeline.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.Localization.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.Localization.Editor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.VisualStudio.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.VisualScripting.Core">
+      <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Core.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.VisualScripting.Core.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Core.Editor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEditor.UI">
+      <HintPath>Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.Rider.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="UnityEngine.UI">
       <HintPath>Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.2D.Sprite.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.2D.Sprite.Editor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.Formats.Fbx.Runtime">
+      <HintPath>Library\ScriptAssemblies\Unity.Formats.Fbx.Runtime.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.VisualScripting.Flow">
+      <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Flow.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.VisualScripting.Flow.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Flow.Editor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.Mathematics.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.Mathematics.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.Timeline">
@@ -975,8 +1301,8 @@
       <HintPath>Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Unity.EditorCoroutines.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.EditorCoroutines.Editor.dll</HintPath>
+    <Reference Include="Unity.Localization">
+      <HintPath>Library\ScriptAssemblies\Unity.Localization.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.VisualScripting.SettingsProvider.Editor">
@@ -995,40 +1321,36 @@
       <HintPath>Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Unity.PlasticSCM.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
+    <Reference Include="Unity.Formats.Fbx.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.Formats.Fbx.Editor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.Addressables.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.Addressables.Editor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Autodesk.Fbx">
+      <HintPath>Library\ScriptAssemblies\Autodesk.Fbx.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.VisualScripting.State.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Unity.Timeline.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
+    <Reference Include="Unity.Mathematics">
+      <HintPath>Library\ScriptAssemblies\Unity.Mathematics.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Unity.VisualScripting.Shared.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.dll</HintPath>
+    <Reference Include="Autodesk.Fbx.Editor">
+      <HintPath>Library\ScriptAssemblies\Autodesk.Fbx.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Unity.VisualStudio.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll</HintPath>
+    <Reference Include="Unity.TextMeshPro">
+      <HintPath>Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Unity.VisualScripting.Core">
-      <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Core.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="UnityEditor.UI">
-      <HintPath>Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Unity.VisualScripting.Core.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Core.Editor.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Unity.Rider.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
+    <Reference Include="Unity.TextMeshPro.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.VisualScripting.State">
@@ -1039,23 +1361,23 @@
       <HintPath>Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Unity.2D.Sprite.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.2D.Sprite.Editor.dll</HintPath>
+    <Reference Include="Unity.ScriptableBuildPipeline.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.ScriptableBuildPipeline.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Unity.VisualScripting.Flow">
-      <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Flow.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Unity.VisualScripting.Flow.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Flow.Editor.dll</HintPath>
+    <Reference Include="Unity.Addressables">
+      <HintPath>Library\ScriptAssemblies\Unity.Addressables.dll</HintPath>
       <Private>False</Private>
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="Sirenix.OdinInspector.Modules.UnityMathematics.csproj" />
+    <ProjectReference Include="Sirenix.OdinInspector.Modules.UnityLocalization.csproj" />
+    <ProjectReference Include="spine-csharp.csproj" />
+    <ProjectReference Include="Sirenix.OdinInspector.Modules.Unity.Addressables.csproj" />
     <ProjectReference Include="spine-unity.csproj" />
     <ProjectReference Include="spine-unity-editor.csproj" />
-    <ProjectReference Include="spine-csharp.csproj" />
+    <ProjectReference Include="Sirenix.OdinInspector.Modules.UnityLocalization.Editor.csproj" />
   </ItemGroup>
   <Import Project="Sdk.targets" Sdk="Microsoft.NET.Sdk" />
   <ItemGroup>

@@ -4,57 +4,55 @@ using UnityEngine;
 
 public class HandCtrl : MonoBehaviour
 {
-    public Animator animator;
-    private Vector3 pos1;
-    private Vector3 pos2;
+  public Animator animator;
+  private Vector3 pos1;
+  private Vector3 pos2;
 
-    private bool isShowHandState1 = false;
-    public void ShowHandState1(Vector3 pos)
+
+  public void ShowHandAtPos(Vector3 pos)
+  {
+    gameObject.SetActive(true);
+    animator.Play("Hand");
+    transform.position = pos;
+  }
+
+  public void HideHand()
+  {
+    // Debug.Log("HideHand");
+    gameObject.SetActive(false);
+    StopAllCoroutines();
+    transform.DOKill();
+  }
+
+  public void ShowHandPosToPos(Vector3 pos1, Vector3 pos2)
+  {
+    StopAllCoroutines();
+    transform.DOKill();
+    gameObject.SetActive(true);
+    this.pos1 = pos1;
+    this.pos2 = pos2;
+
+    ShowHand();
+  }
+
+  void ShowHand()
+  {
+    transform.position = pos1;
+    animator.SetTrigger("HandDown");
+    transform.DOMove(pos2, 1f).SetDelay(0.75f)
+    .OnComplete(() =>
     {
-        if (isShowHandState1) return;
-        isShowHandState1 = true;
-        animator.gameObject.SetActive(true);
-        animator.Play("Hand");
-        transform.position = pos;
-    }
+      animator.SetTrigger("HandUp");
+    });
+    StartCoroutine(IEShowHand());
+  }
 
-    public void HideHand()
+  IEnumerator IEShowHand()
+  {
+    yield return new WaitForSeconds(3f);
+    if (gameObject.activeSelf)
     {
-        animator.gameObject.SetActive(false);
+      ShowHand();
     }
-
-    public void setHandPlayBox(Vector3 pos)
-    {
-        animator.gameObject.SetActive(true);
-        animator.Play("Hand");
-        transform.position = pos;
-    }
-
-    public void ShowHandPosToPos(Vector3 pos1, Vector3 pos2)
-    {
-        StopAllCoroutines();
-        animator.gameObject.SetActive(true);
-        this.pos1 = pos1;
-        this.pos2 = pos2;
-
-        ShowHand();
-    }
-
-    void ShowHand()
-    {
-        transform.position = pos1;
-        animator.SetTrigger("HandDown");
-        transform.DOMove(pos2, 1f).SetDelay(0.75f).onComplete = () =>
-        {
-            animator.SetTrigger("HandUp");
-        };
-        StartCoroutine(IEShowHand());
-    }
-
-    IEnumerator IEShowHand()
-    {
-        yield return Cache.GetWFS(3f);
-        if (animator.gameObject.activeSelf)
-            ShowHand();
-    }
+  }
 }

@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class GameUnit : MonoBehaviour
 {
-    public Transform tf;
-    public PoolType poolType;
+    private Transform tf;
+    public Transform Tf => tf ? tf : tf = transform;
+
 }

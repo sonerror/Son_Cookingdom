@@ -22,12 +22,12 @@ public class PoolManager : Singleton<PoolManager>
     {
         public PoolType type;
         public int amount;
-        public GameUnit gameUnit;
+        public PoolMember poolMember;
     }
 
-    private Dictionary<PoolType, Queue<GameUnit>> dict = new Dictionary<PoolType, Queue<GameUnit>>();
+    private Dictionary<PoolType, Queue<PoolMember>> dict = new Dictionary<PoolType, Queue<PoolMember>>();
 
-    public override void Awake()
+    protected override void Awake()
     {
         base.Awake();
         OnInit();
@@ -39,47 +39,47 @@ public class PoolManager : Singleton<PoolManager>
         {
             if (!dict.ContainsKey(poolAmounts[i].type))
             {
-                dict[poolAmounts[i].type] = new Queue<GameUnit>();
+                dict[poolAmounts[i].type] = new Queue<PoolMember>();
             }
 
             for (int j = 0; j < poolAmounts[i].amount; j++)
             {
-                GameUnit gameUnit = Instantiate(poolAmounts[i].gameUnit);
-                gameUnit.gameObject.SetActive(false);
-                dict[poolAmounts[i].type].Enqueue(gameUnit);
+                PoolMember poolMember = Instantiate(poolAmounts[i].poolMember);
+                poolMember.gameObject.SetActive(false);
+                dict[poolAmounts[i].type].Enqueue(poolMember);
             }
         }
     }
 
-    public GameUnit Spawn(PoolType poolType, Vector3 pos, Quaternion rot)
+    public PoolMember Spawn(PoolType poolType, Vector3 pos, Quaternion rot)
     {
-        GameUnit gameUnit = dict[poolType].Count > 0 ? dict[poolType].Dequeue() : Instantiate(GetPrefab(poolType));
+        PoolMember poolMember = dict[poolType].Count > 0 ? dict[poolType].Dequeue() : Instantiate(GetPrefab(poolType));
 
-        gameUnit.tf.SetPositionAndRotation(pos, rot);
-        gameUnit.gameObject.SetActive(true);
+        poolMember.Tf.SetPositionAndRotation(pos, rot);
+        poolMember.gameObject.SetActive(true);
 
-        return gameUnit;
+        return poolMember;
     }
 
-    public T Spawn<T>(PoolType poolType, Vector3 pos, Quaternion rot) where T : GameUnit
+    public T Spawn<T>(PoolType poolType, Vector3 pos, Quaternion rot) where T : PoolMember
     {
         return Spawn(poolType, pos, rot) as T;
     }
 
-    public void Despawn(GameUnit gameUnit)
+    public void Despawn(PoolMember poolMember)
     {
-        gameUnit.gameObject.SetActive(false);
-        dict[gameUnit.poolType].Enqueue(gameUnit);
+        poolMember.gameObject.SetActive(false);
+        dict[poolMember.PoolType].Enqueue(poolMember);
     }
 
 
-    public GameUnit GetPrefab(PoolType poolType)
+    public PoolMember GetPrefab(PoolType poolType)
     {
         for (int i = 0; i < poolAmounts.Length; i++)
         {
             if (poolAmounts[i].type == poolType)
             {
-                return poolAmounts[i].gameUnit;
+                return poolAmounts[i].poolMember;
             }
         }
 

@@ -52,8 +52,8 @@ MonoBehaviour:
   durationHold: 2
   durationHide: 0.25
   audioSource: {fileID: 5174374150010305450}
-  sfxPositive: {fileID: 0}
-  sfxNegative: {fileID: 0}
+  sfxPositive: {fileID: 8300000, guid: 8e2e30f16d22f0743a62347bb684f095, type: 3}
+  sfxNegative: {fileID: 8300000, guid: 15a19d5191e3c5d4ab08c02a8dc5828a, type: 3}
 --- !u!82 &5174374150010305450
 AudioSource:
   m_ObjectHideFlags: 0
