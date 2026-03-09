@@ -6,6 +6,7 @@ using DG.Tweening;
 using sonnv;
 using UnityEngine;
 using UnityEngine.XR;
+using System.Collections;
 
 public class TutorialManager : Singleton<TutorialManager>
 {
@@ -31,14 +32,50 @@ public class TutorialManager : Singleton<TutorialManager>
   [SerializeField] private List<Transform> tfItem = new List<Transform>();
   public List<Transform> TfItem => tfItem;
   [SerializeField] private Transform tfSink;
-
-
-
+  //step3
+  [SerializeField] private List<Transform> tfBroad = new List<Transform>();
+  public List<Transform> TfBroad => tfBroad;
+  [SerializeField] private bool canCutItem = false;
+  public bool CanCutItem => canCutItem;
+  public void SetCanCutItem(bool value)
+  {
+    canCutItem = value;
+  }
+  IEnumerator IEDlaySetCutItem(bool value)
+  {
+    yield return new WaitForSeconds(0.001f);
+    canCutItem = value;
+  }
+  public void SetDelayCanCutItem(bool value)
+  {
+    StartCoroutine(IEDlaySetCutItem(value));
+  }
   int countCollectFail = 0;
   private bool isTap = false;
 
+  [SerializeField] private CuttingBoard cuttingBoard;
   [SerializeField] private int stepInPhase = 0;
   public int StepInPhase => stepInPhase;
+
+
+  //Step broad 
+  [SerializeField] private Transform tfBroadCenter;
+  [SerializeField] private Transform tfKnife;
+  [SerializeField] private Transform tfKnifeInBroad;
+
+  [SerializeField] private bool isSnapKinfe = false;
+
+
+  //step4 
+  [SerializeField] private Transform lidOutSink;
+  [SerializeField] private Transform lidInSink;
+  //step5
+  [SerializeField] private Transform tfItem1;
+  [SerializeField] private Transform tfItem2;
+  public void SetIsSnapKnife(bool value)
+  {
+    isSnapKinfe = value;
+  }
   public void IncreaseCountHintStep1()
   {
     stepInPhase++;
@@ -83,17 +120,67 @@ public class TutorialManager : Singleton<TutorialManager>
         }
         if (StepInPhase == 1)
         {
-          handCtrl.ShowHandAtPos(Step1TfTut2.position);
+          handCtrl.ShowHandLoop(Step1TfTut2.position, Step1TfTut2.position);
+
         }
         return;
       case 1:
         TutorialStep1(0);
         return;
       case 2:
+
+        if (canCutItem)
+        {
+          if (cuttingBoard.CurrentCuttingObject.IsTapItem)
+          {
+            if (cuttingBoard.CurrentCuttingObject.TapItem.IsTap)
+            {
+              if (isSnapKinfe)
+              {
+                handCtrl.ShowHandLoop(tfBroadCenter.position, tfBroadCenter.position);
+              }
+              else
+              {
+                if (cuttingBoard.CurrentCuttingObject.CutDone)
+                {
+                  handCtrl.ShowHandLoop(tfBroadCenter.position, tfBroadCenter.position);
+
+                }
+                else
+                {
+                  handCtrl.ShowHandLoop(tfKnife.position, tfBroadCenter.position);
+                }
+              }
+            }
+            else
+            {
+              handCtrl.ShowHandLoop(tfBroadCenter.position, tfBroadCenter.position);
+            }
+          }
+          else
+          {
+            if (cuttingBoard.CurrentCuttingObject.CutDone)
+            {
+              handCtrl.ShowHandLoop(tfBroadCenter.position, tfBroadCenter.position);
+
+            }
+            else
+            {
+              handCtrl.ShowHandLoop(tfKnife.position, tfBroadCenter.position);
+            }
+            // handCtrl.ShowHandLoop(tfKnife.position, tfBroadCenter.position);
+          }
+        }
+        else
+        {
+          TutorialStep2(0);
+        }
         return;
       case 3:
+        handCtrl.ShowHandLoop(lidInSink.position, lidOutSink.position);
         return;
       case 4:
+        handCtrl.ShowHandLoop(tfItem1.position, tfItem2.position);
         return;
       case 5:
         return;
@@ -103,9 +190,14 @@ public class TutorialManager : Singleton<TutorialManager>
         return;
     }
   }
-  private void Tutorial(int indexStep)
+  [SerializeField] private int countHint3 = 0;
+  public void CountHint3()
   {
-
+    countHint3++;
+  }
+  private void TutorialStep2(int indexStep)
+  {
+    handCtrl.ShowHandLoop(tfBroad[indexStep].position, tfBroad[indexStep].position);
   }
   private void TutorialStep1(int indexStep)
   {

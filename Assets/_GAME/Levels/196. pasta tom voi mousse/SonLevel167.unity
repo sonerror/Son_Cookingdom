@@ -427,6 +427,7 @@ MonoBehaviour:
   col: {fileID: 0}
   sfxTap: {fileID: 8300000, guid: a92652c69245d4e44863c7f2cf0ed639, type: 3}
   canBlock: 0
+  isTap: 0
   eventOnPointDown:
     m_PersistentCalls:
       m_Calls: []
@@ -487,6 +488,7 @@ MonoBehaviour:
   col: {fileID: 52694084}
   sfxTap: {fileID: 8300000, guid: a92652c69245d4e44863c7f2cf0ed639, type: 3}
   canBlock: 1
+  isTap: 0
   eventOnPointDown:
     m_PersistentCalls:
       m_Calls:
@@ -689,6 +691,7 @@ MonoBehaviour:
   col: {fileID: 52694084}
   tapItem: {fileID: 52694083}
   isTapItem: 1
+  cutDone: 0
   eventDoneActionDance:
     m_PersistentCalls:
       m_Calls:
@@ -1066,6 +1069,7 @@ MonoBehaviour:
   col: {fileID: 111723532}
   tapItem: {fileID: 111723531}
   isTapItem: 0
+  cutDone: 0
   eventDoneActionDance:
     m_PersistentCalls:
       m_Calls:
@@ -1123,6 +1127,7 @@ MonoBehaviour:
   col: {fileID: 0}
   sfxTap: {fileID: 8300000, guid: a92652c69245d4e44863c7f2cf0ed639, type: 3}
   canBlock: 0
+  isTap: 0
   eventOnPointDown:
     m_PersistentCalls:
       m_Calls: []
@@ -1234,7 +1239,8 @@ MonoBehaviour:
   scaleAmount: 1.4
   col: {fileID: 111723532}
   sfxTap: {fileID: 8300000, guid: a92652c69245d4e44863c7f2cf0ed639, type: 3}
-  canBlock: 1
+  canBlock: 0
+  isTap: 0
   eventOnPointDown:
     m_PersistentCalls:
       m_Calls: []
@@ -1391,6 +1397,7 @@ MonoBehaviour:
   col: {fileID: 0}
   sfxTap: {fileID: 8300000, guid: a92652c69245d4e44863c7f2cf0ed639, type: 3}
   canBlock: 0
+  isTap: 0
   eventOnPointDown:
     m_PersistentCalls:
       m_Calls: []
@@ -1413,6 +1420,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: sonnv.ShowObjectEffect, Assembly-CSharp
         m_MethodName: Show
         m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1059739393}
+        m_TargetAssemblyTypeName: TutorialManager, Assembly-CSharp
+        m_MethodName: SetDelayCanCutItem
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -13885,6 +13904,7 @@ MonoBehaviour:
   col: {fileID: 0}
   sfxTap: {fileID: 8300000, guid: a92652c69245d4e44863c7f2cf0ed639, type: 3}
   canBlock: 0
+  isTap: 0
   eventOnPointDown:
     m_PersistentCalls:
       m_Calls: []
@@ -13945,6 +13965,7 @@ MonoBehaviour:
   col: {fileID: 508960773}
   sfxTap: {fileID: 8300000, guid: a92652c69245d4e44863c7f2cf0ed639, type: 3}
   canBlock: 1
+  isTap: 0
   eventOnPointDown:
     m_PersistentCalls:
       m_Calls:
@@ -14147,6 +14168,7 @@ MonoBehaviour:
   col: {fileID: 508960773}
   tapItem: {fileID: 508960772}
   isTapItem: 1
+  cutDone: 0
   eventDoneActionDance:
     m_PersistentCalls:
       m_Calls:
@@ -14665,7 +14687,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2108013994}
-  - {fileID: 1374924357}
   m_Father: {fileID: 1283804957}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &571247435
@@ -20634,6 +20655,7 @@ MonoBehaviour:
   col: {fileID: 0}
   sfxTap: {fileID: 8300000, guid: a92652c69245d4e44863c7f2cf0ed639, type: 3}
   canBlock: 0
+  isTap: 0
   eventOnPointDown:
     m_PersistentCalls:
       m_Calls: []
@@ -21128,7 +21150,7 @@ Transform:
   m_GameObject: {fileID: 713771055}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.15, y: 1.87, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.9, y: 0.9, z: 0.9}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -21153,6 +21175,7 @@ MonoBehaviour:
   col: {fileID: 0}
   sfxTap: {fileID: 8300000, guid: a92652c69245d4e44863c7f2cf0ed639, type: 3}
   canBlock: 0
+  isTap: 0
   eventOnPointDown:
     m_PersistentCalls:
       m_Calls: []
@@ -21175,6 +21198,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: sonnv.ShowObjectEffect, Assembly-CSharp
         m_MethodName: Show
         m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1059739393}
+        m_TargetAssemblyTypeName: TutorialManager, Assembly-CSharp
+        m_MethodName: SetDelayCanCutItem
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -26355,7 +26390,7 @@ Transform:
   m_GameObject: {fileID: 799199086}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.005, y: -0.684, z: 0}
+  m_LocalPosition: {x: -0.32, y: 1.42, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -26811,7 +26846,7 @@ Transform:
   m_GameObject: {fileID: 848709208}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.15, y: 1.87, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -26953,6 +26988,7 @@ MonoBehaviour:
   col: {fileID: 0}
   sfxTap: {fileID: 8300000, guid: a92652c69245d4e44863c7f2cf0ed639, type: 3}
   canBlock: 0
+  isTap: 0
   eventOnPointDown:
     m_PersistentCalls:
       m_Calls: []
@@ -32860,6 +32896,50 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &956199762
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 956199763}
+  - component: {fileID: 956199764}
+  m_Layer: 0
+  m_Name: EventManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &956199763
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 956199762}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1493944911}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &956199764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 956199762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59e4ab0e9c781a4478a8301bed5cb66b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &966202158
 GameObject:
   m_ObjectHideFlags: 0
@@ -38788,7 +38868,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   disableHand: 0
-  TimeHint: 5
+  TimeHint: 3
   enableCountTime: 0
   timeCountHint: 2
   handCtrl: {fileID: 809342522}
@@ -38805,8 +38885,27 @@ MonoBehaviour:
   - {fileID: 177472927}
   - {fileID: 1632484492}
   - {fileID: 1034508600}
-  tfSink: {fileID: 1930036195}
+  tfSink: {fileID: 34138654}
+  tfBroad:
+  - {fileID: 1362023502}
+  - {fileID: 1951060125}
+  - {fileID: 799199087}
+  - {fileID: 1621079747}
+  - {fileID: 385490390}
+  - {fileID: 312700986}
+  - {fileID: 511216105}
+  canCutItem: 0
+  cuttingBoard: {fileID: 1468810863}
   stepInPhase: 0
+  tfBroadCenter: {fileID: 1468810862}
+  tfKnife: {fileID: 1672744598}
+  tfKnifeInBroad: {fileID: 0}
+  isSnapKinfe: 0
+  lidOutSink: {fileID: 1235187841}
+  lidInSink: {fileID: 983749786}
+  tfItem1: {fileID: 745126600}
+  tfItem2: {fileID: 1283804957}
+  countHint3: 0
 --- !u!1 &1060736767
 GameObject:
   m_ObjectHideFlags: 0
@@ -44836,6 +44935,7 @@ MonoBehaviour:
   col: {fileID: 0}
   sfxTap: {fileID: 8300000, guid: a92652c69245d4e44863c7f2cf0ed639, type: 3}
   canBlock: 0
+  isTap: 0
   eventOnPointDown:
     m_PersistentCalls:
       m_Calls: []
@@ -45185,6 +45285,90 @@ Transform:
   - {fileID: 111723534}
   m_Father: {fileID: 1890019466}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1235187840
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1235187841}
+  - component: {fileID: 1235187842}
+  m_Layer: 0
+  m_Name: nap cong (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1235187841
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1235187840}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 2.15, y: -0.8, z: -0.087576464}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 1930036195}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &1235187842
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1235187840}
+  m_Enabled: 0
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: -9
+  m_Sprite: {fileID: 21300000, guid: b1d5f4025b351aa44b819f87a654f118, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 0.97, y: 0.97}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &1269422980
 GameObject:
   m_ObjectHideFlags: 0
@@ -50361,6 +50545,7 @@ MonoBehaviour:
   col: {fileID: 0}
   sfxTap: {fileID: 8300000, guid: a92652c69245d4e44863c7f2cf0ed639, type: 3}
   canBlock: 0
+  isTap: 0
   eventOnPointDown:
     m_PersistentCalls:
       m_Calls: []
@@ -50977,7 +51162,7 @@ Transform:
   m_GameObject: {fileID: 1362023501}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.115, y: -0.157, z: 0}
+  m_LocalPosition: {x: -1.09, y: 1.82, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -51024,90 +51209,6 @@ MonoBehaviour:
   onHideStart:
     m_PersistentCalls:
       m_Calls: []
---- !u!1 &1374924356
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1374924357}
-  - component: {fileID: 1374924358}
-  m_Layer: 0
-  m_Name: Mix2
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1374924357
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1374924356}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.0041, y: -0.51, z: 0}
-  m_LocalScale: {x: 0.54, y: 0.48, z: 0.4904822}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 569735284}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &1374924358
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1374924356}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: 4ea5e574900cefd4b8ee5c0a77e0d222, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 2.82, y: 2.75}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
 --- !u!1 &1375399071
 GameObject:
   m_ObjectHideFlags: 0
@@ -56765,6 +56866,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 956199763}
   - {fileID: 348457754}
   - {fileID: 610508451}
   - {fileID: 2044965824}
@@ -57143,6 +57245,14 @@ MonoBehaviour:
   - {fileID: 508960771}
   - {fileID: 2090597679}
   - {fileID: 111723529}
+  - {fileID: 119526830}
+  moveToBroad:
+  - {fileID: 1933714574}
+  - {fileID: 713771057}
+  - {fileID: 848709213}
+  - {fileID: 650969984}
+  - {fileID: 1285028459}
+  - {fileID: 1218518012}
   - {fileID: 119526830}
   effectHideStep1: {fileID: 947303380}
   effectShowStep2: {fileID: 351076005}
@@ -58109,6 +58219,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: sonnv.KnifeCut, Assembly-CSharp
         m_MethodName: ResetScale
         m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1059739393}
+        m_TargetAssemblyTypeName: TutorialManager, Assembly-CSharp
+        m_MethodName: SetIsSnapKnife
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -64724,6 +64846,7 @@ Transform:
   - {fileID: 603873484}
   - {fileID: 218044105}
   - {fileID: 985034747}
+  - {fileID: 1235187841}
   m_Father: {fileID: 947303379}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1930036196
@@ -64974,7 +65097,7 @@ Transform:
   m_GameObject: {fileID: 1933714569}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.15, y: 1.87, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.9, y: 0.9, z: 0.9}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -65116,6 +65239,7 @@ MonoBehaviour:
   col: {fileID: 0}
   sfxTap: {fileID: 8300000, guid: a92652c69245d4e44863c7f2cf0ed639, type: 3}
   canBlock: 0
+  isTap: 0
   eventOnPointDown:
     m_PersistentCalls:
       m_Calls: []
@@ -65448,7 +65572,7 @@ Transform:
   m_GameObject: {fileID: 1951060124}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.294, y: -2.193, z: 0}
+  m_LocalPosition: {x: -0.12, y: 0.09, z: 0}
   m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -65551,6 +65675,7 @@ MonoBehaviour:
   col: {fileID: 0}
   sfxTap: {fileID: 8300000, guid: a92652c69245d4e44863c7f2cf0ed639, type: 3}
   canBlock: 0
+  isTap: 0
   eventOnPointDown:
     m_PersistentCalls:
       m_Calls: []
@@ -65611,6 +65736,7 @@ MonoBehaviour:
   col: {fileID: 1952850132}
   sfxTap: {fileID: 8300000, guid: a92652c69245d4e44863c7f2cf0ed639, type: 3}
   canBlock: 1
+  isTap: 0
   eventOnPointDown:
     m_PersistentCalls:
       m_Calls:
@@ -65789,6 +65915,7 @@ MonoBehaviour:
   col: {fileID: 1952850132}
   tapItem: {fileID: 1952850131}
   isTapItem: 1
+  cutDone: 0
   eventDoneActionDance:
     m_PersistentCalls:
       m_Calls:
@@ -81309,6 +81436,7 @@ MonoBehaviour:
   col: {fileID: 0}
   sfxTap: {fileID: 8300000, guid: a92652c69245d4e44863c7f2cf0ed639, type: 3}
   canBlock: 0
+  isTap: 0
   eventOnPointDown:
     m_PersistentCalls:
       m_Calls: []
@@ -81369,6 +81497,7 @@ MonoBehaviour:
   col: {fileID: 2090597681}
   sfxTap: {fileID: 8300000, guid: a92652c69245d4e44863c7f2cf0ed639, type: 3}
   canBlock: 1
+  isTap: 0
   eventOnPointDown:
     m_PersistentCalls:
       m_Calls:
@@ -81571,6 +81700,7 @@ MonoBehaviour:
   col: {fileID: 2090597681}
   tapItem: {fileID: 2090597680}
   isTapItem: 1
+  cutDone: 0
   eventDoneActionDance:
     m_PersistentCalls:
       m_Calls:

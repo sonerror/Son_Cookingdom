@@ -32,6 +32,7 @@ public class Level1528 : LevelBase
     {
         emoji.ShowPositive();
         isDoneStep = true;
+        EventManager.TriggerEvent(EventType.IncreaseProgress.ToString());
     }
     protected virtual void TryNextStep()
     {
@@ -136,6 +137,7 @@ public class Level1528 : LevelBase
     }
     [SerializeField] private List<Collider2D> listBoxTapMove;
     [SerializeField] private List<FlourMoveToCream> moveToPlate;
+    [SerializeField] private List<FlourMoveToCream> moveToBroad;
     private int countMoveDone = 0;
     private void OnStartStep3()
     {
@@ -149,12 +151,27 @@ public class Level1528 : LevelBase
             FlourMoveToCream obj = moveToPlate[i];
             obj.onComplete.AddListener(() =>
             {
+                TutorialManager.Ins.SetCanCutItem(false);
                 countMoveDone++;
                 if (countMoveDone >= moveToPlate.Count)
                 {
                     DoneStep();
                     TryNextStep();
                 }
+            });
+        }
+
+
+        for (int i = 0; i < moveToBroad.Count; i++)
+        {
+            FlourMoveToCream obj = moveToBroad[i];
+            obj.onComplete.AddListener(() =>
+            {
+                TutorialManager.Ins.SetCanCutItem(true);
+                int removedIndex = moveToBroad.IndexOf(obj);
+                if (removedIndex < 0) return;
+                moveToBroad.RemoveAt(removedIndex);
+                TutorialManager.Ins.TfBroad.RemoveAt(removedIndex);
             });
         }
     }
@@ -168,7 +185,7 @@ public class Level1528 : LevelBase
             DoneStep();
             TryNextStep();
             GameManager.Ins.showEndGame();
-
+            TutorialManager.Ins.enableCountTime = false;
         });
     }
     [SerializeField] private SonEffectShowObject effectHideStep1;
@@ -182,5 +199,8 @@ public class Level1528 : LevelBase
         yield return new WaitForSeconds(1f);
         effectHideStep1.Hide();
         effectShowStep2.Show(0.75f);
+        TutorialManager.Ins.enableCountTime = true;
+
+
     }
 }

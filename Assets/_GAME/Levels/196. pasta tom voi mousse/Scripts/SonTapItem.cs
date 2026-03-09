@@ -13,6 +13,8 @@ namespace sonnv
         public Collider2D ColD => col;
         [SerializeField] protected AudioClip sfxTap;
         [SerializeField] private bool canBlock = false;
+        [SerializeField] private bool isTap = false;
+        public bool IsTap => isTap;
         public UnityEvent eventOnPointDown;
         protected Vector3 _originalScale;
         protected int _originnalLayer;
@@ -33,6 +35,7 @@ namespace sonnv
         public virtual void OnPointerDown(PointerEventData eventData)
         {
             if (blockTap) return;
+            isTap = true;
             Tf.localScale = _originalScale * scaleAmount;
             spriteRenderer.sortingOrder = maxLayer;
             if (canBlock)

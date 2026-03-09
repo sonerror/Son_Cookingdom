@@ -55,7 +55,7 @@ public class HandCtrl : GameUnit
   public void ShowHandAtPos(Vector3 pos)
   {
     animator.gameObject.SetActive(true);
-    animator.Play("Hand");
+    animator.Play("HandDown");
     transform.position = pos;
   }
 
@@ -99,5 +99,31 @@ public class HandCtrl : GameUnit
     yield return new WaitForSeconds(3f);
     if (animator.gameObject.activeSelf)
       ShowHand();
+  }
+  public void ShowHandLoop(Vector3 pos1, Vector3 pos2)
+  {
+    gameObject.SetActive(true);
+    StopAllCoroutines();
+    animator.gameObject.SetActive(true);
+    this.pos1 = pos1;
+    this.pos2 = pos2;
+
+    ShowHand();
+  }
+  void ShowHandLoop()
+  {
+    transform.position = pos1;
+    animator.SetTrigger("HandDown");
+    transform.DOMove(pos2, 1f).SetDelay(0.75f).onComplete = () =>
+    {
+      animator.SetTrigger("HandUp");
+    };
+    StartCoroutine(IEShowHand());
+  }
+  IEnumerator IEShowHandLoop()
+  {
+    yield return new WaitForSeconds(0.001f);
+    if (animator.gameObject.activeSelf)
+      ShowHandLoop();
   }
 }

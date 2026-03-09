@@ -74,10 +74,13 @@ namespace sonnv
                     SetScale(0);
                     if (knifeOut != null)
                     {
+                        TutorialManager.Ins.SetIsSnapKnife(false);
+
                         knifeOut.MoveBack();
                     }
                 }
                 eventDoneActionDance?.Invoke();
+
                 _isPlaying = false;
             });
         }

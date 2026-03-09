@@ -6,6 +6,7 @@ public class GamePlayScreen : UIScreen
 {
   public GameObject btnPlay;
   public GameObject TextTutorial;
+  public GameObject objProcess, objImgCook;
 
   public void gotoStore()
   {
@@ -18,6 +19,8 @@ public class GamePlayScreen : UIScreen
     {
       btnPlay.SetActive(true);
       TextTutorial.SetActive(false);
+      objProcess.SetActive(true);
+      objImgCook.SetActive(true);
     }
   }
 

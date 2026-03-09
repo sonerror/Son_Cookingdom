@@ -254,7 +254,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Let's Make Tanghulu
+  m_text: Drag To Cook
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 015c9baa275319a4685de906a750010b, type: 2}
   m_sharedMaterial: {fileID: -1104540688960390379, guid: 015c9baa275319a4685de906a750010b, type: 2}
@@ -400,6 +400,8 @@ MonoBehaviour:
   LimitY: 0
   btnPlay: {fileID: 7530515690035181026}
   TextTutorial: {fileID: 1319435885347253968}
+  objProcess: {fileID: 6891125839627371869}
+  objImgCook: {fileID: 8479527511009234015}
 --- !u!1 &2343087685563714177
 GameObject:
   m_ObjectHideFlags: 0
@@ -496,7 +498,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &39395895808937113
 RectTransform:
   m_ObjectHideFlags: 0
@@ -815,7 +817,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &637782063985825181
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1017,15 +1019,15 @@ RectTransform:
   m_GameObject: {fileID: 8027408328924505736}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
+  m_LocalScale: {x: 0.08, y: 0.08, z: 0.08}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 3497599409753779450}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1.4000244, y: 19.1}
-  m_SizeDelta: {x: 138, y: 444}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 1696, y: 1373}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3907777765334347141
 CanvasRenderer:
@@ -1055,7 +1057,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 442408733a0bdb343a20d6e4a20b0fcd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 04b80244dc7a9ec42a24bbe7f122a3fa, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1075,12 +1077,12 @@ GameObject:
   m_Component:
   - component: {fileID: 3143079969240331834}
   m_Layer: 5
-  m_Name: Mon
+  m_Name: ImgCook
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3143079969240331834
 RectTransform:
   m_ObjectHideFlags: 0

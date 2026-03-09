@@ -18,6 +18,7 @@ namespace sonnv
         [SerializeField] private SonSnapPoint snapPointKnife;
         [SerializeField] private InforTFTarget inforTFTarget;
         [SerializeField] private KnifeCut knifeCut;
+        public KnifeCut KnifeCut => knifeCut;
         [SerializeField] private List<NSnapObjectToCuttingObject> listSnapObjects;
 
         [SerializeField] private CuttingObject _currentCuttingCut;

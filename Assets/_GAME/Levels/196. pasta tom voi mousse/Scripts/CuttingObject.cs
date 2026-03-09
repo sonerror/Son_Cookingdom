@@ -10,12 +10,16 @@ namespace sonnv
     {
         [SerializeField] protected Collider2D col;
         [SerializeField] private SonTapItem tapItem;
+        public SonTapItem TapItem => tapItem;
         [SerializeField] private bool isTapItem;
-
+        [SerializeField] private bool cutDone = false;
+        public bool CutDone => cutDone;
+        public bool IsTapItem => isTapItem;
         public UnityEvent eventDoneActionDance;
         public void ActionCutDone()
         {
             Debug.Log("cut done Item");
+            cutDone = true;
             eventDoneActionDance?.Invoke();
         }
 

@@ -45,12 +45,13 @@ public class ProgressWidth : MonoBehaviour
 
     public virtual void FillAmount()
     {
-        if (targetWidth - currWidth < 0.25f) return;
+        if (currWidth >= targetWidth) return;
+
         currWidth += progressSpeed * Time.deltaTime;
+        currWidth = Mathf.Min(currWidth, targetWidth);
 
         updateFill();
     }
-
     private void updateFill()
     {
         progressImage.fillAmount = currWidth / maxWidth;
