@@ -12,7 +12,8 @@ public class Pot : MonoBehaviour
   {
     DOVirtual.DelayedCall(1f, () =>
     {
-      targetDrag.OnComplete(); TutorialManager.Ins.RemoveStep(5);
+      targetDrag.OnComplete();
+      //TutorialManager.Ins.RemoveStep(5);
     });
 
 

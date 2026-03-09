@@ -19,6 +19,7 @@ public class Level1528 : LevelBase
         StartStep();
     }
     [SerializeField] private int currentStep = 0;
+    public int CurrentStep => currentStep;
     private bool isDoneStep;
     public bool IsDoneStep => isDoneStep;
     public void SetStateDoneStep(bool _value)
@@ -55,6 +56,7 @@ public class Level1528 : LevelBase
                 OnStartStep4();
                 return;
             case 4:
+                OnStartStep5();
                 return;
             case 5:
                 return;
@@ -95,6 +97,9 @@ public class Level1528 : LevelBase
     [SerializeField] private SonSinkWaterCleaning sink;
     public void OnStartStep1()
     {
+        Debug.Log("Step1");
+
+        TutorialManager.Ins.enableCountTime = true;
         sink.OnFillWater.AddListener(() =>
         {
             DoneStep();
@@ -117,8 +122,11 @@ public class Level1528 : LevelBase
             SonSnapObject obj = listSnapObject[i];
             obj.OnSnap.AddListener(() =>
             {
-                countSnap++;
-                if (countSnap >= listSnapObject.Count)
+                int removedIndex = listSnapObject.IndexOf(obj);
+                if (removedIndex < 0) return;
+                listSnapObject.RemoveAt(removedIndex);
+                TutorialManager.Ins.TfItem.RemoveAt(removedIndex);
+                if (listSnapObject.Count <= 0)
                 {
                     DoneStep();
                     TryNextStep();
@@ -159,6 +167,20 @@ public class Level1528 : LevelBase
             Debug.Log("Nap Move Back");
             DoneStep();
             TryNextStep();
+            GameManager.Ins.showEndGame();
+
         });
+    }
+    [SerializeField] private SonEffectShowObject effectHideStep1;
+    [SerializeField] private SonEffectShowObject effectShowStep2;
+    private void OnStartStep5()
+    {
+        StartCoroutine(ShowStep2Delay());
+    }
+    IEnumerator ShowStep2Delay()
+    {
+        yield return new WaitForSeconds(1f);
+        effectHideStep1.Hide();
+        effectShowStep2.Show(0.75f);
     }
 }

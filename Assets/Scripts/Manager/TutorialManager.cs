@@ -9,207 +9,152 @@ using UnityEngine.XR;
 
 public class TutorialManager : Singleton<TutorialManager>
 {
-  [SerializeField] private HandCtrl handCtrl;
+  public bool disableHand = false;
   [SerializeField] float TimeHint = 5f;
-  private float timeCountHint = 2f;
-
-  public float timeEndGame = 30f;
-
-  public Transform CandyBag, CandyBowl, Oven, ChocoBowl, FlourBowl, Pot, Whisk, FlourBowParent;
-
-  private bool isEndGame = false;
-
-  private int[] tutData = new int[] { 0, 1, 2, 3, 4, 5 };
-
-  private APDLevelBase levelBase;
-
-  private void Start()
+  public bool enableCountTime = false;
+  public float timeCountHint = 2f;
+  [SerializeField] public HandCtrl handCtrl;
+  [SerializeField] private Level1528 _level;
+  //[SerializeField] private Animator animHand;
+  [SerializeField] private int countHintStep1 = 0;
+  public int CountHintStep1
   {
-    levelBase = APDLevelBase.Ins as APDLevelBase;
+    get { return countHintStep1; }
+    set { countHintStep1 = value; }
   }
+  private int CountStepDone = 0;
+  //Step1
+  [SerializeField] private Transform Step1Tf1Tut1;
+  [SerializeField] private Transform Step1Tf2Tut1;
+  [SerializeField] private Transform Step1TfTut2;
+  //Step2
+  [SerializeField] private List<Transform> tfItem = new List<Transform>();
+  public List<Transform> TfItem => tfItem;
+  [SerializeField] private Transform tfSink;
 
-  public void RemoveStep(int step)
+
+
+  int countCollectFail = 0;
+  private bool isTap = false;
+
+  [SerializeField] private int stepInPhase = 0;
+  public int StepInPhase => stepInPhase;
+  public void IncreaseCountHintStep1()
   {
-    Debug.Log("Remove Step: " + step);
-    tutData = tutData.Where(x => x != step).ToArray();
-    ResetTimeHint();
-
-    DOVirtual.DelayedCall(2f, () =>
-    {
-      if (tutData.Length == 0)
-      {
-        FinishTutorial();
-      }
-    });
-
-    switch (step)
-    {
-      case 0:
-        levelBase.ShowPositiveEmojiAtPos(CandyBag.position);
-        break;
-      case 1:
-        levelBase.ShowPositiveEmojiAtPos(Oven.position);
-        break;
-      case 2:
-        levelBase.ShowPositiveEmojiAtPos(Pot.position);
-        break;
-      case 3:
-        levelBase.ShowPositiveEmojiAtPos(Pot.position);
-        break;
-      default:
-        break;
-    }
+    stepInPhase++;
   }
-
-  public void SShowPositiveEmojiAtPot()
-  {
-    levelBase.ShowPositiveEmojiAtPos(Pot.position);
-  }
-
   private void Update()
   {
-    if (isEndGame) return;
-
     if (Input.GetMouseButtonDown(0))
     {
-      ResetTimeHint();
+      HideHint();
+      timeCountHint = countCollectFail >= 3 ? 1.5f : TimeHint;
+      enableCountTime = true;
+      return;
     }
-
-    if (Input.GetMouseButton(0)) return;
-
+    if (Input.GetMouseButton(0))
+    {
+      return;
+    }
+    if (!enableCountTime) return;
+    if (handCtrl.gameObject.activeSelf) return;
     CalculateTimeHint();
   }
-
-  private bool isShowHint = false;
-  private bool enableCountTime = true;
   private void CalculateTimeHint()
   {
-    if (!enableCountTime) return;
-    if (isShowHint) return;
     timeCountHint -= Time.deltaTime;
     if (timeCountHint <= 0)
     {
-      PlayTutState();
+      Debug.Log("show hint");
+      ShowHint();
     }
   }
-
-  private void PlayTutState()
+  void ShowHint()
   {
-    if (isEndGame) return;
-    isShowHint = true;
-
-    if (tutData.Length == 0)
-    {
-      FinishTutorial();
-      return;
-    }
-
-
-    var currstate = tutData[0];
-    switch (currstate)
+    if (disableHand) return;
+    enableCountTime = false;
+    int index = _level.CurrentStep;
+    switch (index)
     {
       case 0:
-        PlayTutState0();
-        break;
+        if (StepInPhase == 0)
+        {
+          handCtrl.ShowHandPosToPos(Step1Tf1Tut1.position, Step1Tf2Tut1.position);
+        }
+        if (StepInPhase == 1)
+        {
+          handCtrl.ShowHandAtPos(Step1TfTut2.position);
+        }
+        return;
       case 1:
-        PlayTutState1();
-        break;
+        TutorialStep1(0);
+        return;
       case 2:
-        PlayTutState2();
-        break;
+        return;
       case 3:
-        PlayTutState3();
-        break;
+        return;
       case 4:
-        PlayTutState4();
-        break;
+        return;
       case 5:
-        PlayTutState5();
-        break;
+        return;
+      case 6:
+        return;
       default:
-        FinishTutorial();
-        break;
+        return;
     }
   }
+  private void Tutorial(int indexStep)
+  {
 
-  private void PlayTutState0()
-  {
-    Debug.Log("CandyBag");
-    var pos2 = CandyBag.position;
-    handCtrl.ShowHandAtPos(pos2);
   }
-  private void PlayTutState1()
+  private void TutorialStep1(int indexStep)
   {
-    var pos1 = CandyBowl.position;
-    var pos2 = Oven.position;
-    handCtrl.ShowHandPosToPos(pos1, pos2);
-  }
-  private void PlayTutState2()
-  {
-    var pos1 = ChocoBowl.position;
-    var pos2 = Pot.position;
-    handCtrl.ShowHandPosToPos(pos1, pos2);
-  }
-  private void PlayTutState3()
-  {
-    var pos1 = FlourBowl.position;
-    var pos2 = Pot.position;
-    handCtrl.ShowHandPosToPos(pos1, pos2);
+    if (handCtrl == null) return;
+    if (indexStep >= tfItem.Count) return;
+    handCtrl.gameObject.SetActive(true);
+    var obj = tfItem[indexStep];
+    handCtrl.ShowHandPosToPos(obj.position, tfSink.position);
   }
 
-  private void PlayTutState4()
+  private void TutorialOneHit(List<Transform> _listTF, int _index)
   {
-    var pos2 = Pot.position;
-    var pos1 = Whisk.position;
-    handCtrl.ShowHandPosToPos(pos1, pos2);
+    handCtrl.ShowHandAtPos(_listTF[_index].position);
   }
-
-  private void PlayTutState5()
+  public void SetStateIsTap(bool value)
   {
-    var pos1 = Pot.position;
-    handCtrl.ShowHandArrow(pos1, 0f, 0.5f);
+    isTap = value;
   }
-
-
-  public void ResetTimeHint()
+  void HideHint()
   {
-    if (isEndGame) return;
-
-    StopState();
-    this.isShowHint = false;
-    this.timeCountHint = TimeHint;
+    handCtrl.gameObject.SetActive(false);
   }
-
-  public void MouseDownItem()
+  public void resetTimeHint()
   {
-    if (isEndGame) return;
-
-    enableCountTime = false;
-    handCtrl.HideHand();
-  }
-
-  public void MouseUpItem()
-  {
-    if (isEndGame) return;
-
+    HideHint();
+    timeCountHint = countCollectFail >= 3 ? 1.5f : TimeHint;
     enableCountTime = true;
-    ResetTimeHint();
   }
-
-  public void StopState()
+  public void OnStepDone()
   {
-    if (isEndGame) return;
-
-    handCtrl.HideHand();
+    CountStepDone++;
   }
-
-  public void FinishTutorial()
+  public void IncreaseTimeHide()
   {
-    isEndGame = true;
-    var pos1 = FlourBowParent.position;
-    var pos2 = Pot.position;
-    handCtrl.ShowHandPosToPos(pos1, pos2);
-    GameManager.Ins.showEndGame();
-    // handCtrl.gameObject.SetActive(false);
+    TimeHint = 5f;
+    resetTimeHint();
+  }
+  public void OnCollectFail()
+  {
+    countCollectFail++;
+
+    if (countCollectFail >= 3)
+    {
+      timeCountHint = 1.5f;
+    }
+  }
+  public void OnCollectSuccess()
+  {
+    countCollectFail = 0;
+    resetTimeHint();
   }
 }
