@@ -27,7 +27,12 @@ public class Level1528 : LevelBase
         isDoneStep = _value;
     }
     public EmojiControl emoji;
+    public EmojiControl emojiKnife;
     public static int maxLayer = 30;
+    public void ShowNegative()
+    {
+        emoji.ShowNegative();
+    }
     protected virtual void DoneStep()
     {
         emoji.ShowPositive();
@@ -82,10 +87,14 @@ public class Level1528 : LevelBase
 
     public void ShowNegativeEmojiAtPos(Vector3 position)
     {
-        emoji.transform.position = position + Vector3.up * 0.5f + Vector3.left * 0.5f;
-        emoji.ShowNegative();
+        emojiKnife.transform.position = position + Vector3.up * 0.5f + Vector3.left * 0.5f;
+        emojiKnife.ShowNegative();
     }
+    public void ShowNegativeKnife()
+    {
+        emojiKnife.ShowNegative();
 
+    }
     public void ShowPositiveEmojiAtPos(Vector3 position)
     {
         emoji.transform.position = position + Vector3.up * 0.5f + Vector3.left * 0.5f;
