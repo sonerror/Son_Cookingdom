@@ -1,11 +1,29 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.Events;
+using System.Collections.Generic;
 
 namespace sonnv
 {
     public class SonTapItem : SonMonoBehaviour, IPointerDownHandler, IPointerUpHandler
     {
+        [SerializeField] private bool isShowEffect = false;
+        [SerializeField] private List<ShowObjectEffect> listEffect;
+        [SerializeField] private Sprite spriteNew;
+        private void ShowEffect()
+        {
+            if (isShowEffect)
+            {
+                spriteRenderer.sprite = spriteNew;
+                if (listEffect.Count > 0)
+                {
+                    foreach (ShowObjectEffect effect in listEffect)
+                    {
+                        effect.Hide();
+                    }
+                }
+            }
+        }
         [SerializeField] protected int maxLayer = 10;
         [SerializeField] protected SpriteRenderer spriteRenderer;
         [SerializeField] protected float scaleAmount = 1.1f;
@@ -38,14 +56,15 @@ namespace sonnv
             isTap = true;
             Tf.localScale = _originalScale * scaleAmount;
             spriteRenderer.sortingOrder = maxLayer;
+            if (sfxTap != null)
+                SoundManager.PlaySFXOneShot(sfxTap);
+            ShowEffect();
+            eventOnPointDown?.Invoke();
             if (canBlock)
             {
                 blockTap = true;
                 col.enabled = false;
             }
-            if (sfxTap != null)
-                SoundManager.PlaySFXOneShot(sfxTap);
-            eventOnPointDown?.Invoke();
 
         }
 

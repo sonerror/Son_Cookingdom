@@ -28,6 +28,7 @@ namespace sonnv
             if (isTapItem)
             {
                 tapItem.ColD.enabled = true;
+                tapItem.eventOnPointDown.RemoveAllListeners();
                 tapItem.eventOnPointDown.AddListener(() =>
                 {
                     CuttingBoard.Instance.ResetCanSnap();

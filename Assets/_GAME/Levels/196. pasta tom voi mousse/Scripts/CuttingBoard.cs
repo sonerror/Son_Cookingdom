@@ -17,6 +17,7 @@ namespace sonnv
     {
         [SerializeField] private SonSnapPoint snapPointKnife;
         [SerializeField] private InforTFTarget inforTFTarget;
+        public InforTFTarget InforTFTarget => inforTFTarget;
         [SerializeField] private KnifeCut knifeCut;
         public KnifeCut KnifeCut => knifeCut;
         [SerializeField] private List<NSnapObjectToCuttingObject> listSnapObjects;
@@ -39,7 +40,7 @@ namespace sonnv
                     _currentCuttingCut = data.itemCut;
                     _currentCuttingCut.SetUp();
                     _canCut = _currentCuttingCut != null;
-
+                    TutorialManager.Ins.SetCanItemInBroad(true);
                     if (_canCut)
                     {
                         knifeCut.SetDataObjectCut(_currentCuttingCut);
