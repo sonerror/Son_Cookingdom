@@ -1,333 +1,333 @@
-using DG.Tweening;
-using Satisgame;
-using Sirenix.OdinInspector;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using Utilities;
-using sonnv;
-using UnityEngine.Events;
-
-public class Level1528 : LevelBase
-{
-    private Camera cam;
-
-    protected override void Awake()
-    {
-        base.Awake();
-        maxLayer = 30;
-        cam = Camera.main;
-    }
-
-    protected virtual void Start()
-    {
-        StartStep();
-    }
-
-    [SerializeField] private int currentStep = 0;
-    public int CurrentStep => currentStep;
-
-    private bool isDoneStep;
-    public bool IsDoneStep => isDoneStep;
-
-    public void SetStateDoneStep(bool value)
-    {
-        isDoneStep = value;
-    }
-
-    public EmojiControl emoji;
-    public EmojiControl emojiKnife;
-
-    public static int maxLayer = 30;
-
-    public void ShowNegative()
-    {
-        emoji.ShowNegative();
-    }
-
-    protected virtual void DoneStep()
-    {
-        emoji.ShowPositive();
-        isDoneStep = true;
-        EventManager.TriggerEvent(EventType.IncreaseProgress.ToString());
-    }
-
-    protected virtual void TryNextStep()
-    {
-        currentStep++;
-        StartStep();
-    }
-
-    private void StartStep()
-    {
-        isDoneStep = false;
-
-        switch (currentStep)
-        {
-            case 0:
-                OnStartStep1();
-                break;
-            case 1:
-                OnStartStep2();
-                break;
-            case 2:
-                OnStartStep3();
-                break;
-            case 3:
-                OnStartStep4();
-                break;
-            case 4:
-                OnStartStep5();
-                break;
-        }
-    }
-
-    public void OnCompleteStage(int currentStageIndex, float x)
-    {
-        emoji.ShowPositive();
-        if (cam != null)
-            cam.transform.DOMoveX(x, 1f).SetDelay(1f);
-    }
-
-    public void IncreaseMaxLayer(int increment = 4)
-    {
-        maxLayer += increment;
-    }
-
-    public void ShowNegativeEmojiAtPos(Vector3 position)
-    {
-        emojiKnife.transform.position = position + Vector3.up * 0.5f + Vector3.left * 0.5f;
-        emojiKnife.ShowNegative();
-    }
-
-    public void ShowNegativeKnife()
-    {
-        emojiKnife.ShowNegative();
-    }
+// using DG.Tweening;
+// using Satisgame;
+// using Sirenix.OdinInspector;
+// using System.Collections;
+// using System.Collections.Generic;
+// using UnityEngine;
+// using Utilities;
+// using sonnv;
+// using UnityEngine.Events;
+
+// public class Level1528 : LevelBase
+// {
+//     private Camera cam;
+
+//     protected override void Awake()
+//     {
+//         base.Awake();
+//         maxLayer = 30;
+//         cam = Camera.main;
+//     }
+
+//     protected virtual void Start()
+//     {
+//         StartStep();
+//     }
+
+//     [SerializeField] private int currentStep = 0;
+//     public int CurrentStep => currentStep;
+
+//     private bool isDoneStep;
+//     public bool IsDoneStep => isDoneStep;
+
+//     public void SetStateDoneStep(bool value)
+//     {
+//         isDoneStep = value;
+//     }
+
+//     public EmojiControl emoji;
+//     public EmojiControl emojiKnife;
+
+//     public static int maxLayer = 30;
+
+//     public void ShowNegative()
+//     {
+//         emoji.ShowNegative();
+//     }
+
+//     protected virtual void DoneStep()
+//     {
+//         emoji.ShowPositive();
+//         isDoneStep = true;
+//         EventManager.TriggerEvent(EventType.IncreaseProgress.ToString());
+//     }
+
+//     protected virtual void TryNextStep()
+//     {
+//         currentStep++;
+//         StartStep();
+//     }
+
+//     private void StartStep()
+//     {
+//         isDoneStep = false;
+
+//         switch (currentStep)
+//         {
+//             case 0:
+//                 OnStartStep1();
+//                 break;
+//             case 1:
+//                 OnStartStep2();
+//                 break;
+//             case 2:
+//                 OnStartStep3();
+//                 break;
+//             case 3:
+//                 OnStartStep4();
+//                 break;
+//             case 4:
+//                 OnStartStep5();
+//                 break;
+//         }
+//     }
+
+//     public void OnCompleteStage(int currentStageIndex, float x)
+//     {
+//         emoji.ShowPositive();
+//         if (cam != null)
+//             cam.transform.DOMoveX(x, 1f).SetDelay(1f);
+//     }
+
+//     public void IncreaseMaxLayer(int increment = 4)
+//     {
+//         maxLayer += increment;
+//     }
+
+//     public void ShowNegativeEmojiAtPos(Vector3 position)
+//     {
+//         emojiKnife.transform.position = position + Vector3.up * 0.5f + Vector3.left * 0.5f;
+//         emojiKnife.ShowNegative();
+//     }
+
+//     public void ShowNegativeKnife()
+//     {
+//         emojiKnife.ShowNegative();
+//     }
 
-    public void ShowPositiveEmojiAtPos(Vector3 position)
-    {
-        emoji.transform.position = position + Vector3.up * 0.5f + Vector3.left * 0.5f;
-        emoji.ShowPositive();
-    }
+//     public void ShowPositiveEmojiAtPos(Vector3 position)
+//     {
+//         emoji.transform.position = position + Vector3.up * 0.5f + Vector3.left * 0.5f;
+//         emoji.ShowPositive();
+//     }
 
-    [SerializeField] private List<SonSnapObject> listSnapObject;
-    [SerializeField] private List<SonSnapPoint> listSnapPoint;
-    [SerializeField] private SonSinkWaterCleaning sink;
+//     [SerializeField] private List<SonSnapObject> listSnapObject;
+//     [SerializeField] private List<SonSnapPoint> listSnapPoint;
+//     [SerializeField] private SonSinkWaterCleaning sink;
 
-    private Dictionary<SonSnapObject, UnityAction> snapActions = new Dictionary<SonSnapObject, UnityAction>();
-    private Dictionary<FlourMoveToCream, UnityAction> plateActions = new Dictionary<FlourMoveToCream, UnityAction>();
-    private Dictionary<FlourMoveToCream, UnityAction> broadActions = new Dictionary<FlourMoveToCream, UnityAction>();
+//     private Dictionary<SonSnapObject, UnityAction> snapActions = new Dictionary<SonSnapObject, UnityAction>();
+//     private Dictionary<FlourMoveToCream, UnityAction> plateActions = new Dictionary<FlourMoveToCream, UnityAction>();
+//     private Dictionary<FlourMoveToCream, UnityAction> broadActions = new Dictionary<FlourMoveToCream, UnityAction>();
 
-    void OnDisable()
-    {
-        snapActions.Clear();
-        plateActions.Clear();
-        broadActions.Clear();
-    }
+//     void OnDisable()
+//     {
+//         snapActions.Clear();
+//         plateActions.Clear();
+//         broadActions.Clear();
+//     }
 
-    #region STEP 1
+//     #region STEP 1
 
-    private void OnPipeInHoleHandler()
-    {
-        sink.DrainPipe.SetInteract(false);
-        sink.DrainPipe.OnPipeInHole.RemoveListener(OnPipeInHoleHandler);
-    }
+//     private void OnPipeInHoleHandler()
+//     {
+//         sink.DrainPipe.SetInteract(false);
+//         sink.DrainPipe.OnPipeInHole.RemoveListener(OnPipeInHoleHandler);
+//     }
 
-    private void OnFillWaterHandler()
-    {
-        sink.OnFillWater.RemoveListener(OnFillWaterHandler);
+//     private void OnFillWaterHandler()
+//     {
+//         sink.OnFillWater.RemoveListener(OnFillWaterHandler);
 
-        DoneStep();
-        TryNextStep();
-    }
+//         DoneStep();
+//         TryNextStep();
+//     }
 
-    public void OnStartStep1()
-    {
-        Debug.Log("Step1");
+//     public void OnStartStep1()
+//     {
+//         Debug.Log("Step1");
 
-        TutorialManager.Ins.enableCountTime = true;
+//         TutorialManager.Ins.enableCountTime = true;
 
-        sink.DrainPipe.OnPipeInHole.AddListener(OnPipeInHoleHandler);
-        sink.OnFillWater.AddListener(OnFillWaterHandler);
-    }
+//         sink.DrainPipe.OnPipeInHole.AddListener(OnPipeInHoleHandler);
+//         sink.OnFillWater.AddListener(OnFillWaterHandler);
+//     }
 
-    #endregion
+//     #endregion
 
-    #region STEP 2
+//     #region STEP 2
 
-    private void OnStartStep2()
-    {
-        SetSnapObject();
-    }
+//     private void OnStartStep2()
+//     {
+//         SetSnapObject();
+//     }
 
-    private void SetSnapObject()
-    {
-        foreach (SonSnapPoint point in listSnapPoint)
-            point.ChangeCanSnap(true);
+//     private void SetSnapObject()
+//     {
+//         foreach (SonSnapPoint point in listSnapPoint)
+//             point.ChangeCanSnap(true);
 
-        foreach (SonSnapObject obj in listSnapObject)
-        {
-            SonSnapObject cache = obj;
+//         foreach (SonSnapObject obj in listSnapObject)
+//         {
+//             SonSnapObject cache = obj;
 
-            UnityAction action = () => OnSnapHandler(cache);
-            snapActions[cache] = action;
+//             UnityAction action = () => OnSnapHandler(cache);
+//             snapActions[cache] = action;
 
-            cache.OnSnap.AddListener(action);
-        }
-    }
+//             cache.OnSnap.AddListener(action);
+//         }
+//     }
 
-    private void OnSnapHandler(SonSnapObject obj)
-    {
-        UnityAction action;
+//     private void OnSnapHandler(SonSnapObject obj)
+//     {
+//         UnityAction action;
 
-        if (snapActions.TryGetValue(obj, out action))
-        {
-            obj.OnSnap.RemoveListener(action);
-            snapActions.Remove(obj);
-        }
+//         if (snapActions.TryGetValue(obj, out action))
+//         {
+//             obj.OnSnap.RemoveListener(action);
+//             snapActions.Remove(obj);
+//         }
 
-        int removedIndex = listSnapObject.IndexOf(obj);
-        if (removedIndex < 0) return;
+//         int removedIndex = listSnapObject.IndexOf(obj);
+//         if (removedIndex < 0) return;
 
-        listSnapObject.RemoveAt(removedIndex);
+//         listSnapObject.RemoveAt(removedIndex);
 
-        if (removedIndex < TutorialManager.Ins.TfItem.Count)
-            TutorialManager.Ins.TfItem.RemoveAt(removedIndex);
+//         if (removedIndex < TutorialManager.Ins.TfItem.Count)
+//             TutorialManager.Ins.TfItem.RemoveAt(removedIndex);
 
-        if (listSnapObject.Count <= 0)
-        {
-            DoneStep();
-            TryNextStep();
-        }
-    }
+//         if (listSnapObject.Count <= 0)
+//         {
+//             DoneStep();
+//             TryNextStep();
+//         }
+//     }
 
-    #endregion
+//     #endregion
 
-    #region STEP 3
+//     #region STEP 3
 
-    [SerializeField] private List<Collider2D> listBoxTapMove;
-    [SerializeField] private List<FlourMoveToCream> moveToPlate;
-    [SerializeField] private List<FlourMoveToCream> moveToBroad;
+//     [SerializeField] private List<Collider2D> listBoxTapMove;
+//     [SerializeField] private List<FlourMoveToCream> moveToPlate;
+//     [SerializeField] private List<FlourMoveToCream> moveToBroad;
 
-    private int countMoveDone = 0;
+//     private int countMoveDone = 0;
 
-    private void OnStartStep3()
-    {
-        foreach (Collider2D obj in listBoxTapMove)
-            obj.enabled = true;
+//     private void OnStartStep3()
+//     {
+//         foreach (Collider2D obj in listBoxTapMove)
+//             obj.enabled = true;
 
-        foreach (FlourMoveToCream obj in moveToPlate)
-        {
-            FlourMoveToCream cache = obj;
+//         foreach (FlourMoveToCream obj in moveToPlate)
+//         {
+//             FlourMoveToCream cache = obj;
 
-            UnityAction action = () => OnMoveToPlateComplete(cache);
-            plateActions[cache] = action;
+//             UnityAction action = () => OnMoveToPlateComplete(cache);
+//             plateActions[cache] = action;
 
-            cache.onComplete.AddListener(action);
-        }
+//             cache.onComplete.AddListener(action);
+//         }
 
-        foreach (FlourMoveToCream obj in moveToBroad)
-        {
-            FlourMoveToCream cache = obj;
+//         foreach (FlourMoveToCream obj in moveToBroad)
+//         {
+//             FlourMoveToCream cache = obj;
 
-            UnityAction action = () => OnMoveToBroadComplete(cache);
-            broadActions[cache] = action;
+//             UnityAction action = () => OnMoveToBroadComplete(cache);
+//             broadActions[cache] = action;
 
-            cache.onComplete.AddListener(action);
-        }
-    }
+//             cache.onComplete.AddListener(action);
+//         }
+//     }
 
-    private void OnMoveToPlateComplete(FlourMoveToCream obj)
-    {
-        UnityAction action;
+//     private void OnMoveToPlateComplete(FlourMoveToCream obj)
+//     {
+//         UnityAction action;
 
-        if (plateActions.TryGetValue(obj, out action))
-        {
-            obj.onComplete.RemoveListener(action);
-            plateActions.Remove(obj);
-        }
+//         if (plateActions.TryGetValue(obj, out action))
+//         {
+//             obj.onComplete.RemoveListener(action);
+//             plateActions.Remove(obj);
+//         }
 
-        countMoveDone++;
+//         countMoveDone++;
 
-        TutorialManager.Ins.SetCanItemInBroad(false);
+//         TutorialManager.Ins.SetCanItemInBroad(false);
 
-        if (countMoveDone >= moveToPlate.Count)
-        {
-            DoneStep();
-            TryNextStep();
-        }
-    }
+//         if (countMoveDone >= moveToPlate.Count)
+//         {
+//             DoneStep();
+//             TryNextStep();
+//         }
+//     }
 
-    private void OnMoveToBroadComplete(FlourMoveToCream obj)
-    {
-        UnityAction action;
+//     private void OnMoveToBroadComplete(FlourMoveToCream obj)
+//     {
+//         UnityAction action;
 
-        if (broadActions.TryGetValue(obj, out action))
-        {
-            obj.onComplete.RemoveListener(action);
-            broadActions.Remove(obj);
-        }
+//         if (broadActions.TryGetValue(obj, out action))
+//         {
+//             obj.onComplete.RemoveListener(action);
+//             broadActions.Remove(obj);
+//         }
 
-        if (CuttingBoard.Instance != null)
-        {
-            CuttingBoard.Instance.RegisterMoveDone(obj);
-        }
+//         if (CuttingBoard.Instance != null)
+//         {
+//             CuttingBoard.Instance.RegisterMoveDone(obj);
+//         }
 
-        int removedIndex = moveToBroad.IndexOf(obj);
-        if (removedIndex < 0) return;
+//         int removedIndex = moveToBroad.IndexOf(obj);
+//         if (removedIndex < 0) return;
 
-        moveToBroad.RemoveAt(removedIndex);
+//         moveToBroad.RemoveAt(removedIndex);
 
-        if (removedIndex < TutorialManager.Ins.TfBroad.Count)
-            TutorialManager.Ins.TfBroad.RemoveAt(removedIndex);
-    }
+//         if (removedIndex < TutorialManager.Ins.TfBroad.Count)
+//             TutorialManager.Ins.TfBroad.RemoveAt(removedIndex);
+//     }
 
-    #endregion
+//     #endregion
 
-    #region STEP 4
+//     #region STEP 4
 
-    private void OnStartStep4()
-    {
-        sink.DrainPipe.SetInteract(true);
-        sink.DrainPipe.OnMoveBack.AddListener(OnMoveBackHandler);
-    }
+//     private void OnStartStep4()
+//     {
+//         sink.DrainPipe.SetInteract(true);
+//         sink.DrainPipe.OnMoveBack.AddListener(OnMoveBackHandler);
+//     }
 
-    private void OnMoveBackHandler()
-    {
-        sink.DrainPipe.OnMoveBack.RemoveListener(OnMoveBackHandler);
+//     private void OnMoveBackHandler()
+//     {
+//         sink.DrainPipe.OnMoveBack.RemoveListener(OnMoveBackHandler);
 
-        Debug.Log("Nap Move Back");
+//         Debug.Log("Nap Move Back");
 
-        DoneStep();
-        TryNextStep();
+//         DoneStep();
+//         TryNextStep();
 
-        GameManager.Ins.showEndGame();
-        TutorialManager.Ins.enableCountTime = false;
-    }
+//         GameManager.Ins.showEndGame();
+//         TutorialManager.Ins.enableCountTime = false;
+//     }
 
-    #endregion
+//     #endregion
 
-    #region STEP 5
+//     #region STEP 5
 
-    [SerializeField] private SonEffectShowObject effectHideStep1;
-    [SerializeField] private SonEffectShowObject effectShowStep2;
+//     [SerializeField] private SonEffectShowObject effectHideStep1;
+//     [SerializeField] private SonEffectShowObject effectShowStep2;
 
-    private void OnStartStep5()
-    {
-        StartCoroutine(ShowStep2Delay());
-    }
+//     private void OnStartStep5()
+//     {
+//         StartCoroutine(ShowStep2Delay());
+//     }
 
-    IEnumerator ShowStep2Delay()
-    {
-        yield return null;
-        yield return new WaitForSeconds(1f);
+//     IEnumerator ShowStep2Delay()
+//     {
+//         yield return null;
+//         yield return new WaitForSeconds(1f);
 
-        effectHideStep1.Hide();
-        effectShowStep2.Show(0.75f);
+//         effectHideStep1.Hide();
+//         effectShowStep2.Show(0.75f);
 
-        TutorialManager.Ins.enableCountTime = true;
-    }
+//         TutorialManager.Ins.enableCountTime = true;
+//     }
 
-    #endregion
-}
+//     #endregion
+// }

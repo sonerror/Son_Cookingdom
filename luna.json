@@ -2,7 +2,7 @@
     "version": "7.1.0",
     "projectId": "f42e7ff96e4545544bb6cd68f51ab634",
     "applicationID": 27404,
-    "creativeName": "Cookingdom_v3GG",
+    "creativeName": "Cookingdom_v2",
     "pgServer": "EU",
     "window": {
         "‐⁙": true
@@ -133,10 +133,11 @@
             ]
         },
         "scenes": [
-            "Assets/_GAME/Levels/196. pasta tom voi mousse/SonLevel167.unity"
+            "Assets/_GAME/Levels/LevelSkewers/LevelSkewers.unity"
         ],
         "disabledScenes": [
             "Assets/Scenes/GamePlayScene.unity",
+            "Assets/_GAME/Levels/196. pasta tom voi mousse/SonLevel167.unity",
             "Assets/_GAME/Levels/SonLevelDonut/Level628.unity"
         ],
         "startupScene": 0,
@@ -40862,6 +40863,10 @@
                     {
                         "name": "SetSortingBoost",
                         "excluded": false
+                    },
+                    {
+                        "name": "Show$1",
+                        "excluded": false
                     }
                 ]
             },
@@ -40985,7 +40990,7 @@
                     },
                     {
                         "name": "Col#get",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "init",
@@ -41058,128 +41063,6 @@
                 ]
             },
             {
-                "className": "Level1528",
-                "staticMethods": [],
-                "instanceMethods": [
-                    {
-                        "name": "init",
-                        "excluded": false
-                    },
-                    {
-                        "name": "Awake",
-                        "excluded": false
-                    },
-                    {
-                        "name": "OnCompleteStage",
-                        "excluded": true
-                    },
-                    {
-                        "name": "IncreaseMaxLayer",
-                        "excluded": true
-                    },
-                    {
-                        "name": "ShowNegativeEmojiAtPos",
-                        "excluded": true
-                    },
-                    {
-                        "name": "ShowPositiveEmojiAtPos",
-                        "excluded": true
-                    },
-                    {
-                        "name": "CurrentStep#get",
-                        "excluded": false
-                    },
-                    {
-                        "name": "IsDoneStep#get",
-                        "excluded": true
-                    },
-                    {
-                        "name": "Start$1",
-                        "excluded": false
-                    },
-                    {
-                        "name": "SetStateDoneStep",
-                        "excluded": true
-                    },
-                    {
-                        "name": "DoneStep",
-                        "excluded": false
-                    },
-                    {
-                        "name": "TryNextStep",
-                        "excluded": false
-                    },
-                    {
-                        "name": "StartStep",
-                        "excluded": false
-                    },
-                    {
-                        "name": "OnStartStep1",
-                        "excluded": false
-                    },
-                    {
-                        "name": "OnStartStep2",
-                        "excluded": false
-                    },
-                    {
-                        "name": "SetSnapObject",
-                        "excluded": false
-                    },
-                    {
-                        "name": "OnStartStep3",
-                        "excluded": false
-                    },
-                    {
-                        "name": "OnStartStep4",
-                        "excluded": false
-                    },
-                    {
-                        "name": "OnStartStep5",
-                        "excluded": false
-                    },
-                    {
-                        "name": "ShowStep2Delay",
-                        "excluded": false
-                    },
-                    {
-                        "name": "ShowNegative",
-                        "excluded": true
-                    },
-                    {
-                        "name": "ShowNegativeKnife",
-                        "excluded": true
-                    },
-                    {
-                        "name": "OnPipeInHoleHandler",
-                        "excluded": false
-                    },
-                    {
-                        "name": "OnFillWaterHandler",
-                        "excluded": false
-                    },
-                    {
-                        "name": "OnSnapHandler",
-                        "excluded": false
-                    },
-                    {
-                        "name": "OnMoveToPlateComplete",
-                        "excluded": false
-                    },
-                    {
-                        "name": "OnMoveToBroadComplete",
-                        "excluded": false
-                    },
-                    {
-                        "name": "OnMoveBackHandler",
-                        "excluded": false
-                    },
-                    {
-                        "name": "OnDisable",
-                        "excluded": true
-                    }
-                ]
-            },
-            {
                 "className": "sonnv.NSnapPointNoCheckSnap",
                 "staticMethods": [],
                 "instanceMethods": [
@@ -41195,7 +41078,7 @@
                 "instanceMethods": [
                     {
                         "name": "OnActive",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "TryEnableByFillWater",
@@ -41203,7 +41086,7 @@
                     },
                     {
                         "name": "ManualEnable",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "AddCleanEvent",
@@ -41412,10 +41295,6 @@
                         "excluded": false
                     },
                     {
-                        "name": "RegisterMoveDone",
-                        "excluded": false
-                    },
-                    {
                         "name": "ResetInforTFTarget",
                         "excluded": false
                     },
@@ -41429,6 +41308,14 @@
                     },
                     {
                         "name": "InforTFTarget#get",
+                        "excluded": false
+                    },
+                    {
+                        "name": "GetFirstSnapTarget",
+                        "excluded": false
+                    },
+                    {
+                        "name": "RegisterSnapDone",
                         "excluded": false
                     }
                 ]
@@ -41460,6 +41347,18 @@
                     {
                         "name": "SetUp",
                         "excluded": false
+                    },
+                    {
+                        "name": "DelayAutoMove",
+                        "excluded": false
+                    },
+                    {
+                        "name": "AutoMoveTarget",
+                        "excluded": false
+                    },
+                    {
+                        "name": "SetDataTargetMove",
+                        "excluded": false
                     }
                 ]
             },
@@ -41490,6 +41389,10 @@
                     {
                         "name": "OnPointerUp",
                         "excluded": false
+                    },
+                    {
+                        "name": "ShowEffect",
+                        "excluded": true
                     }
                 ]
             },
@@ -41507,6 +41410,14 @@
                     },
                     {
                         "name": "ChangeIsSnap",
+                        "excluded": false
+                    },
+                    {
+                        "name": "Effect#get",
+                        "excluded": false
+                    },
+                    {
+                        "name": "DelayAutoMove",
                         "excluded": false
                     }
                 ]
@@ -41645,6 +41556,10 @@
                     },
                     {
                         "name": "LateUpdate",
+                        "excluded": false
+                    },
+                    {
+                        "name": "SetData",
                         "excluded": false
                     }
                 ]
@@ -41794,6 +41709,104 @@
                         "excluded": true
                     }
                 ]
+            },
+            {
+                "className": "LevelSkewers",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "init",
+                        "excluded": false
+                    },
+                    {
+                        "name": "CurrentStep#get",
+                        "excluded": true
+                    },
+                    {
+                        "name": "IsDoneStep#get",
+                        "excluded": true
+                    },
+                    {
+                        "name": "Awake",
+                        "excluded": false
+                    },
+                    {
+                        "name": "Start$1",
+                        "excluded": false
+                    },
+                    {
+                        "name": "SetStateDoneStep",
+                        "excluded": true
+                    },
+                    {
+                        "name": "ShowNegative",
+                        "excluded": true
+                    },
+                    {
+                        "name": "DoneStep",
+                        "excluded": false
+                    },
+                    {
+                        "name": "TryNextStep",
+                        "excluded": false
+                    },
+                    {
+                        "name": "StartStep",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnCompleteStage",
+                        "excluded": true
+                    },
+                    {
+                        "name": "IncreaseMaxLayer",
+                        "excluded": true
+                    },
+                    {
+                        "name": "ShowNegativeEmojiAtPos",
+                        "excluded": true
+                    },
+                    {
+                        "name": "ShowNegativeKnife",
+                        "excluded": true
+                    },
+                    {
+                        "name": "ShowPositiveEmojiAtPos",
+                        "excluded": true
+                    },
+                    {
+                        "name": "OnDisable",
+                        "excluded": true
+                    },
+                    {
+                        "name": "OnPipeInHoleHandler",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnFillWaterHandler",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnStartStep1",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnStartStep2",
+                        "excluded": false
+                    },
+                    {
+                        "name": "SetSnapObject",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnSnapHandler",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnStartStep3",
+                        "excluded": false
+                    }
+                ]
             }
         ],
         "stubberDataList": [],
@@ -41853,14 +41866,24 @@
                         "name": "Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Fallback.asset"
                     },
                     {
-                        "maxWidth": 512,
-                        "maxHeight": 512,
+                        "maxWidth": 256,
+                        "maxHeight": 256,
                         "format": "png32",
                         "compression": "none",
                         "quality": 65,
                         "script": "",
                         "ext": "",
                         "name": "Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF.asset"
+                    },
+                    {
+                        "maxWidth": 256,
+                        "maxHeight": 256,
+                        "format": "png32",
+                        "compression": "quantSize",
+                        "quality": 65,
+                        "script": "",
+                        "ext": "",
+                        "name": "Assets/_GAME/Levels/LevelSkewers/thumb-cook-lv-1097.png"
                     }
                 ]
             },
@@ -41870,7 +41893,7 @@
                     "startTime": "00:00.000",
                     "endTime": "00:00.000",
                     "lengthInSeconds": 0.0,
-                    "bitrate": 128,
+                    "bitrate": 32,
                     "script": "",
                     "ext": ""
                 },
@@ -41904,6 +41927,36 @@
                         "script": "",
                         "ext": "",
                         "name": "Assets/Audios/small-water-flow-43845.mp3"
+                    },
+                    {
+                        "channels": 1,
+                        "startTime": "00:00.000",
+                        "endTime": "00:19.733",
+                        "lengthInSeconds": 19.732999801635743,
+                        "bitrate": 32,
+                        "script": "",
+                        "ext": "",
+                        "name": "Assets/_GAME/Levels/LevelSkewers/sfx_bgm_play_2.ogg"
+                    },
+                    {
+                        "channels": 1,
+                        "startTime": "00:00.000",
+                        "endTime": "00:19.733",
+                        "lengthInSeconds": 19.732999801635743,
+                        "bitrate": 32,
+                        "script": "",
+                        "ext": "",
+                        "name": "Assets/_GAME/Levels/209/Audio/small-water-flow-43845.mp3"
+                    },
+                    {
+                        "channels": 1,
+                        "startTime": "00:00.000",
+                        "endTime": "00:00.000",
+                        "lengthInSeconds": 0.0,
+                        "bitrate": 32,
+                        "script": "",
+                        "ext": "",
+                        "name": "Assets/_GAME/Levels/TidyHlvCleanVegetable/_AudioLvCleanVegetable/clean.ogg"
                     }
                 ]
             },

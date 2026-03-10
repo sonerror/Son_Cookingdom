@@ -69,6 +69,7 @@ public class LevelSkewers : LevelBase
                 OnStartStep2();
                 break;
             case 2:
+                OnStartStep3();
                 break;
             case 3:
                 break;
@@ -200,5 +201,43 @@ public class LevelSkewers : LevelBase
 
     #endregion
 
+    #region STEP 3
+    [SerializeField] private ShowObjectEffect effectBox;
 
+    [SerializeField] private ShowObjectEffect effectBoard;
+    [SerializeField] private ShowObjectEffect effectKinfe;
+    [SerializeField] private List<SonSnapObject> listSnapObjectInSink;
+    [SerializeField] private List<FlourMoveToCream> listMoveObj;
+
+    private void OnStartStep3()
+    {
+        effectBox.Hide();
+        effectBoard.Show(1);
+        effectKinfe.Show(1);
+        for (int i = 0; i < listSnapObjectInSink.Count; i++)
+        {
+            SonSnapObject obj = listSnapObjectInSink[i];
+            obj.OnSnap.AddListener(() =>
+            {
+                CuttingBoard.Ins.RegisterSnapDone(obj);
+            });
+        }
+        for (int i = 0; i < listMoveObj.Count; i++)
+        {
+            FlourMoveToCream obj = listMoveObj[i];
+            obj.onComplete.AddListener(() =>
+            {
+                int removedIndex = listMoveObj.IndexOf(obj);
+                if (removedIndex < 0) return;
+
+                listMoveObj.RemoveAt(removedIndex);
+                if (listMoveObj.Count <= 0)
+                {
+                    DoneStep();
+                    TryNextStep();
+                }
+            });
+        }
+    }
+    #endregion
 }

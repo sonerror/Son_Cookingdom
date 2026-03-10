@@ -9,10 +9,11 @@ namespace sonnv
     public class CuttingObject : SonMonoBehaviour
     {
         [SerializeField] protected Collider2D col;
-        [SerializeField] private SonTapItem tapItem;
-        public SonTapItem TapItem => tapItem;
+        [SerializeField] private FlourMoveToCream tapToMove;
+        public FlourMoveToCream TapItem => tapToMove;
         [SerializeField] private bool isTapItem;
         [SerializeField] private bool cutDone = false;
+        [SerializeField] private float delayMove = 0.5f;
         public bool CutDone => cutDone;
         public bool IsTapItem => isTapItem;
         public UnityEvent eventDoneActionDance;
@@ -21,22 +22,27 @@ namespace sonnv
             Debug.Log("cut done Item");
             cutDone = true;
             eventDoneActionDance?.Invoke();
+            StartCoroutine(DelayAutoMove());
         }
-
+        private IEnumerator DelayAutoMove()
+        {
+            yield return new WaitForSeconds(delayMove);
+            AutoMoveTarget();
+        }
+        private void AutoMoveTarget()
+        {
+            tapToMove.OnMove();
+        }
         public void SetUp()
         {
-            if (isTapItem)
+            CuttingBoard.Instance.ResetCanSnap();
+        }
+        public void SetDataTargetMove(InforTFTarget _tfTarget)
+        {
+            if (_tfTarget != null)
             {
-                tapItem.ColD.enabled = true;
-                tapItem.eventOnPointDown.RemoveAllListeners();
-                tapItem.eventOnPointDown.AddListener(() =>
-                {
-                    CuttingBoard.Instance.ResetCanSnap();
-                });
-            }
-            else
-            {
-                CuttingBoard.Instance.ResetCanSnap();
+                tapToMove.SetData(_tfTarget);
+
             }
         }
     }

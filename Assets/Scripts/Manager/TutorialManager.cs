@@ -17,7 +17,7 @@ public class TutorialManager : Singleton<TutorialManager>
 
   [SerializeField] public HandCtrl handCtrl;
 
-  [SerializeField] private Level1528 _level;
+  [SerializeField] private LevelSkewers _level;
 
   [SerializeField] private int countHintStep1 = 0;
   public int CountHintStep1
@@ -94,7 +94,7 @@ public class TutorialManager : Singleton<TutorialManager>
   void Start()
   {
     if (_level == null)
-      _level = FindObjectOfType<Level1528>();
+      _level = FindObjectOfType<LevelSkewers>();
 
     if (handCtrl == null)
       Debug.LogError("HandCtrl missing in TutorialManager");

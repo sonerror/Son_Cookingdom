@@ -9,7 +9,14 @@ namespace sonnv
     public class FlourMoveToCream : SonTapItem
     {
         [SerializeField] private InforTFTarget tfTarget;
-
+        public void SetData(InforTFTarget _tfTarget)
+        {
+            tfTarget = _tfTarget;
+            if (tfTarget != null)
+            {
+                tfTarget.Effect.Show();
+            }
+        }
         [Header("move")]
         [SerializeField] private int sortOrderMax = 10;
         [SerializeField] private float timerMove = 0.5f;
@@ -85,7 +92,6 @@ namespace sonnv
 
                     Tf.SetParent(plateTransform, true);
                     Tf.localPosition = Vector3.zero;
-                    CuttingBoard.Instance.RegisterMoveDone(this);
 
                     onComplete?.Invoke();
                     action?.Invoke();

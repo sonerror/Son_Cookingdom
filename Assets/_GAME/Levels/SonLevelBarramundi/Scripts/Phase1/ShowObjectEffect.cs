@@ -207,5 +207,9 @@ namespace sonnv
             if (showOnEnable)
                 Show();
         }
+        public void Show(float delay)
+        {
+            DOVirtual.DelayedCall(delay, Show);
+        }
     }
 }

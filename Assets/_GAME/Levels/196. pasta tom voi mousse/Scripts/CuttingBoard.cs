@@ -8,44 +8,51 @@ namespace sonnv
     [Serializable]
     public class NSnapObjectToCuttingObject
     {
-        public FlourMoveToCream itemMove;
+        public SonSnapObject itemDrag;
         public CuttingObject itemCut;
         public UnityEvent onEnableCuttingObject;
     }
-
     public class CuttingBoard : Singleton<CuttingBoard>
     {
         [SerializeField] private SonSnapPoint snapPointKnife;
-        [SerializeField] private InforTFTarget inforTFTarget;
-        public InforTFTarget InforTFTarget => inforTFTarget;
+        [SerializeField] private SonSnapPoint inforTFTarget;
+        public SonSnapPoint InforTFTarget => inforTFTarget;
         [SerializeField] private KnifeCut knifeCut;
         public KnifeCut KnifeCut => knifeCut;
         [SerializeField] private List<NSnapObjectToCuttingObject> listSnapObjects;
-
         [SerializeField] private CuttingObject _currentCuttingCut;
-
         [SerializeField] private bool _canCut;
 
         public CuttingObject CurrentCuttingObject => _currentCuttingCut;
         public bool CanCut => _canCut;
-
-        public void RegisterMoveDone(FlourMoveToCream moveItem)
+        [SerializeField] private List<InforTFTarget> listTarget;
+        private InforTFTarget GetFirstSnapTarget()
+        {
+            for (int i = 0; i < listTarget.Count; i++)
+            {
+                if (listTarget[i].IsSnap)
+                {
+                    return listTarget[i];
+                }
+            }
+            return null;
+        }
+        public void RegisterSnapDone(SonSnapObject moveItem)
         {
             for (int i = 0; i < listSnapObjects.Count; i++)
             {
                 NSnapObjectToCuttingObject data = listSnapObjects[i];
 
-                if (data.itemMove == moveItem)
+                if (data.itemDrag == moveItem)
                 {
                     _currentCuttingCut = data.itemCut;
                     _currentCuttingCut.SetUp();
                     _canCut = _currentCuttingCut != null;
-                    TutorialManager.Ins.SetCanItemInBroad(true);
                     if (_canCut)
                     {
                         knifeCut.SetDataObjectCut(_currentCuttingCut);
                     }
-
+                    _currentCuttingCut.SetDataTargetMove(GetFirstSnapTarget());
                     data.onEnableCuttingObject?.Invoke();
                     return;
                 }
@@ -53,7 +60,8 @@ namespace sonnv
         }
         public void ResetInforTFTarget()
         {
-            inforTFTarget.ChangeIsSnap(true);
+            inforTFTarget.ChangeCanSnap(true);
+            inforTFTarget.ForceChangeSnap(false);
         }
         public void ResetCanSnap()
         {
