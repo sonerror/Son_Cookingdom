@@ -6,7 +6,7 @@ using System.Collections;
 
 namespace sonnv
 {
-    public class SonSinkWaterCleaning : SonMonoBehaviour, IPointerClickHandler
+    public class SonSinkWaterCleaning : SonMonoBehaviour, IPointerDownHandler
     {
         [Header("References")]
         [SerializeField] private PipeWaterCleaning drainPipe;
@@ -60,7 +60,14 @@ namespace sonnv
 
         public void IgnoreNextClick()
         {
+            StartCoroutine(IgnoreClickFrame());
+        }
+
+        private IEnumerator IgnoreClickFrame()
+        {
             _ignoreNextClick = true;
+            yield return null;
+            _ignoreNextClick = false;
         }
 
         private void SetPipeInteract(bool canInteract)
@@ -157,7 +164,12 @@ namespace sonnv
             }
         }
 
-        public void OnPointerClick(PointerEventData eventData)
+        public void OnPointerDown(PointerEventData eventData)
+        {
+            HandleClick();
+        }
+
+        private void HandleClick()
         {
             if (_ignoreNextClick)
             {

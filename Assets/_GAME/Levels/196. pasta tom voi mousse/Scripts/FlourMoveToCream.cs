@@ -24,7 +24,11 @@ namespace sonnv
         [SerializeField] private bool isChangeScale = false;
         [SerializeField] private float detalSacle = 1;
 
+        [SerializeField] private int forceScaleFrame = 0;
+
         public UnityEvent onComplete;
+
+        private Vector3 forceScaleValue;
 
         public override void OnPointerDown(PointerEventData eventData)
         {
@@ -33,17 +37,20 @@ namespace sonnv
             base.OnPointerDown(eventData);
             OnMove();
         }
+
         public void OnMove()
         {
             if (tfTarget != null && tfTarget.IsSnap)
             {
                 tfTarget.ChangeIsSnap(false);
+
                 JumpFlour(tfTarget.Tf, () =>
                 {
                     ChangeScale();
                 });
             }
         }
+
         private void ChangeScale()
         {
             if (isChangeScale)
@@ -51,9 +58,10 @@ namespace sonnv
                 Tf.localScale = Vector3.one * detalSacle;
             }
         }
+
         private void JumpFlour(Transform plateTransform, UnityAction action = null)
         {
-            transform.DOKill();
+            Tf.DOKill(true);
 
             col.enabled = false;
             spriteRenderer.sortingOrder = sortOrderMax;
@@ -64,27 +72,32 @@ namespace sonnv
                 plateTransform.position.z
             );
 
-            transform
+            Tf
                 .DOJump(target, jumpPower, numJumps, timerMove)
                 .SetEase(Ease.OutQuad)
-                .Join(transform.DORotate(new Vector3(0, 0, 360), timerMove, RotateMode.FastBeyond360))
+                .Join(Tf.DORotate(new Vector3(0, 0, 360), timerMove, RotateMode.FastBeyond360))
                 .OnComplete(() =>
                 {
                     if (sfxSnap != null)
                         SoundManager.PlaySFXOneShot(sfxSnap);
 
-                    Tf.localScale = isChangeScaleOnMove ? scaleOnMove : _originalScale;
-
                     spriteRenderer.sortingOrder = _originnalLayer;
 
-                    transform.SetParent(plateTransform);
-
+                    Tf.SetParent(plateTransform, true);
+                    Tf.localPosition = Vector3.zero;
                     CuttingBoard.Instance.RegisterMoveDone(this);
 
                     onComplete?.Invoke();
                     action?.Invoke();
+
+                    if (isChangeScale)
+                    {
+                        forceScaleValue = Vector3.one * detalSacle;
+                        forceScaleFrame = 10;
+                    }
                 });
         }
+
         public override void OnPointerUp(PointerEventData eventData)
         {
             if (canClockTap) return;
@@ -96,6 +109,19 @@ namespace sonnv
         public void ChangeCanBlockTap(bool value)
         {
             canClockTap = value;
+        }
+
+        private void LateUpdate()
+        {
+            if (forceScaleFrame > 0)
+            {
+                if (Tf.localScale != forceScaleValue)
+                {
+                    Tf.localScale = forceScaleValue;
+                }
+
+                forceScaleFrame--;
+            }
         }
     }
 }

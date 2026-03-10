@@ -2,13 +2,14 @@ using DG.Tweening;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
-
+using Satisgame;
 namespace sonnv
 {
     [RequireComponent(typeof(SpriteRenderer), typeof(Collider2D))]
     public class SonSnapObject : SonMonoBehaviour, SonISnapObject,
         IPointerDownHandler, IDragHandler, IPointerUpHandler
     {
+        [SerializeField] private EmojiControl emoji;
         [SerializeField] protected SonSnapPoint[] snapToPosition;
         private SonSnapPoint _snapPoint;
         public SonSnapPoint SnapPoint => _snapPoint;
@@ -52,6 +53,7 @@ namespace sonnv
         [SerializeField] protected float curveTimeOffSet = 0.25f;
         [SerializeField] protected float speedFloatingIdle = 0.1f;
         [SerializeField] protected bool isFloatingStart;
+        [SerializeField] protected bool isKnife = false;
 
         protected Vector3 floatingAnchor;
         protected float timeOffsetFloating;
@@ -198,7 +200,14 @@ namespace sonnv
                     {
                         if (!snapPoint.isSnap && !snapPoint.canSnap)
                         {
-                            // LevelRumiAilen.Ins.PlayNegativeEmoji();
+                            emoji.ShowNegative();
+                        }
+                        if (isKnife)
+                        {
+                            if (snapPoint.isSnap && snapPoint.canSnap)
+                            {
+                                emoji.ShowNegative();
+                            }
                         }
                     }
                     if (!snapPoint.Tf.gameObject.activeSelf) continue;
