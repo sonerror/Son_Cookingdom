@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.Events;
 namespace sonnv
 {
-    public class WaterCleaningSnapObject : SonMonoBehaviour
+    public class WaterCleaningSnapObject : SonSnapObject
     {
         [Header("Water Cleaning")]
         [SerializeField] private SonSinkWaterCleaning sink;
@@ -22,7 +22,8 @@ namespace sonnv
             {
                 // Sprite.sprite = cleanSprite;
                 cleanEffect.Play();
-                //Col.enabled = true;
+                Col.enabled = true;
+                this.enabled = true;
             });
         }
 

@@ -140,95 +140,95 @@ public class TutorialManager : Singleton<TutorialManager>
 
   void ShowHint()
   {
-    if (disableHand) return;
-    if (_level == null) return;
-    if (handCtrl == null) return;
+    // if (disableHand) return;
+    // if (_level == null) return;
+    // if (handCtrl == null) return;
 
-    enableCountTime = false;
+    // enableCountTime = false;
 
-    int index = _level.CurrentStep;
+    // int index = _level.CurrentStep;
 
-    switch (index)
-    {
-      case 0:
+    // switch (index)
+    // {
+    //   case 0:
 
-        if (StepInPhase == 0)
-        {
-          handCtrl.ShowHandPosToPos(Step1Tf1Tut1.position, Step1Tf2Tut1.position);
-        }
+    //     if (StepInPhase == 0)
+    //     {
+    //       handCtrl.ShowHandPosToPos(Step1Tf1Tut1.position, Step1Tf2Tut1.position);
+    //     }
 
-        if (StepInPhase == 1)
-        {
-          handCtrl.ShowHandLoop(Step1TfTut2.position, Step1TfTut2.position);
-        }
+    //     if (StepInPhase == 1)
+    //     {
+    //       handCtrl.ShowHandLoop(Step1TfTut2.position, Step1TfTut2.position);
+    //     }
 
-        return;
+    //     return;
 
-      case 1:
+    //   case 1:
 
-        TutorialStep1(0);
-        return;
+    //     TutorialStep1(0);
+    //     return;
 
-      case 2:
+    //   case 2:
 
-        if (cuttingBoard == null) return;
+    //     if (cuttingBoard == null) return;
 
-        var cuttingObj = cuttingBoard.CurrentCuttingObject;
+    //     var cuttingObj = cuttingBoard.CurrentCuttingObject;
 
-        if (cuttingObj == null)
-        {
-          TutorialStep2(0);
-          return;
-        }
-        canCutItem = !cuttingBoard.InforTFTarget.IsSnap;
-        if (canCutItem)
-        {
-          if (cuttingObj.IsTapItem)
-          {
-            if (cuttingObj.TapItem != null && cuttingObj.TapItem.IsTap)
-            {
-              if (isSnapKinfe)
-              {
-                handCtrl.ShowHandLoop(tfBroadCenter.position, tfBroadCenter.position);
-              }
-              else
-              {
-                if (cuttingObj.CutDone)
-                  handCtrl.ShowHandLoop(tfBroadCenter.position, tfBroadCenter.position);
-                else
-                  handCtrl.ShowHandLoop(tfKnife.position, tfBroadCenter.position);
-              }
-            }
-            else
-            {
-              handCtrl.ShowHandLoop(tfBroadCenter.position, tfBroadCenter.position);
-            }
-          }
-          else
-          {
-            if (cuttingObj.CutDone)
-              handCtrl.ShowHandLoop(tfBroadCenter.position, tfBroadCenter.position);
-            else
-              handCtrl.ShowHandLoop(tfKnife.position, tfBroadCenter.position);
-          }
-        }
-        else
-        {
-          TutorialStep2(0);
-        }
+    //     if (cuttingObj == null)
+    //     {
+    //       TutorialStep2(0);
+    //       return;
+    //     }
+    //     canCutItem = !cuttingBoard.InforTFTarget.IsSnap;
+    //     if (canCutItem)
+    //     {
+    //       if (cuttingObj.IsTapItem)
+    //       {
+    //         if (cuttingObj.TapItem != null && cuttingObj.TapItem.IsTap)
+    //         {
+    //           if (isSnapKinfe)
+    //           {
+    //             handCtrl.ShowHandLoop(tfBroadCenter.position, tfBroadCenter.position);
+    //           }
+    //           else
+    //           {
+    //             if (cuttingObj.CutDone)
+    //               handCtrl.ShowHandLoop(tfBroadCenter.position, tfBroadCenter.position);
+    //             else
+    //               handCtrl.ShowHandLoop(tfKnife.position, tfBroadCenter.position);
+    //           }
+    //         }
+    //         else
+    //         {
+    //           handCtrl.ShowHandLoop(tfBroadCenter.position, tfBroadCenter.position);
+    //         }
+    //       }
+    //       else
+    //       {
+    //         if (cuttingObj.CutDone)
+    //           handCtrl.ShowHandLoop(tfBroadCenter.position, tfBroadCenter.position);
+    //         else
+    //           handCtrl.ShowHandLoop(tfKnife.position, tfBroadCenter.position);
+    //       }
+    //     }
+    //     else
+    //     {
+    //       TutorialStep2(0);
+    //     }
 
-        return;
+    //     return;
 
-      case 3:
+    //   case 3:
 
-        handCtrl.ShowHandLoop(lidInSink.position, lidOutSink.position);
-        return;
+    //     handCtrl.ShowHandLoop(lidInSink.position, lidOutSink.position);
+    //     return;
 
-      case 4:
+    //   case 4:
 
-        handCtrl.ShowHandLoop(tfItem1.position, tfItem2.position);
-        return;
-    }
+    //     handCtrl.ShowHandLoop(tfItem1.position, tfItem2.position);
+    //     return;
+    // }
   }
 
   [SerializeField] private int countHint3 = 0;

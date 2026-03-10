@@ -183,7 +183,7 @@ namespace sonnv
             _isDragging = false;
             StartFloating();
 
-            sprite.sortingOrder = onDropOrderLayer;
+
 
             if (!ignoreRigidBody && rb)
                 rb.bodyType = RigidbodyType2D.Dynamic;
@@ -265,6 +265,7 @@ namespace sonnv
                 _moveBackTween = Tf.DOLocalMove(_initLocalPos, 0.3f)
                     .OnComplete(() =>
                     {
+                        sprite.sortingOrder = onDropOrderLayer;
                         if (onMoveBackEnd != null)
                             onMoveBackEnd.Invoke();
 
@@ -273,6 +274,8 @@ namespace sonnv
             }
             else
             {
+                sprite.sortingOrder = onDropOrderLayer;
+
                 onDrop.Invoke();
             }
 

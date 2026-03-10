@@ -36,6 +36,7 @@ namespace sonnv
         public UnityEvent onHide;
         public UnityEvent onShowComplete;
         public UnityEvent onHideStart;
+        public UnityEvent onHitWater;
 
         private Vector3 startPosition;
         private bool hasStartPosition;
@@ -160,6 +161,7 @@ namespace sonnv
 
             showSeq.InsertCallback(restoreTime, () =>
             {
+                onHitWater?.Invoke();
                 SetSortingBoost(false);
             });
 
