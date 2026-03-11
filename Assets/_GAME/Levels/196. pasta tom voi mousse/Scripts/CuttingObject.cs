@@ -8,6 +8,8 @@ namespace sonnv
 {
     public class CuttingObject : SonMonoBehaviour
     {
+        [SerializeField] private KnifeCutType typeCut;
+        public KnifeCutType TypeCut => typeCut;
         [SerializeField] protected Collider2D col;
         [SerializeField] private FlourMoveToCream tapToMove;
         public FlourMoveToCream TapItem => tapToMove;

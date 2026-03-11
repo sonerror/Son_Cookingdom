@@ -6,6 +6,23 @@ using UnityEngine.Events;
 namespace sonnv
 {
     [Serializable]
+
+    public enum KnifeCutType
+    {
+        None = 0,
+
+        Slice,          // Cắt lát (ví dụ: cà rốt, dưa leo)
+        Chop,           // Chặt nhanh
+        Dice,           // Cắt hạt lựu
+        HalfCut,        // Cắt đôi
+        CrossCut,       // Cắt ngang
+        VerticalCut,    // Cắt dọc
+        DiagonalCut,    // Cắt chéo
+        Smash,          // Đập (ví dụ: đập tỏi)
+        Peel,           // Gọt vỏ
+        Trim            // Cắt bỏ phần thừa
+    }
+    [Serializable]
     public class NSnapObjectToCuttingObject
     {
         public SonSnapObject itemDrag;
@@ -52,6 +69,7 @@ namespace sonnv
                     {
                         knifeCut.SetDataObjectCut(_currentCuttingCut);
                     }
+                    knifeCut.SetTypeCut(_currentCuttingCut.TypeCut);
                     _currentCuttingCut.SetDataTargetMove(GetFirstSnapTarget());
                     data.onEnableCuttingObject?.Invoke();
                     return;
