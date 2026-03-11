@@ -51,7 +51,7 @@ namespace sonnv
 
         public bool IsInHole { get; private set; }
 
-        private bool IsNearHole => DistanceToInSqrVec2(holePos) < 0.25f;
+        private bool IsNearHole => DistanceToInSqrVec2(holePos) < 1f;
 
         public void SetInteract(bool canMove)
         {

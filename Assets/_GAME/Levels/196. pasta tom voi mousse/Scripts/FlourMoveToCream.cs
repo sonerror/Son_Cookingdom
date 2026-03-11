@@ -34,6 +34,7 @@ namespace sonnv
         [SerializeField] private int forceScaleFrame = 0;
 
         public UnityEvent onComplete;
+        public UnityEvent onStartMoveComplete;
 
         private Vector3 forceScaleValue;
 
@@ -50,7 +51,7 @@ namespace sonnv
             if (tfTarget != null && tfTarget.IsSnap)
             {
                 tfTarget.ChangeIsSnap(false);
-
+                onStartMoveComplete?.Invoke();
                 JumpFlour(tfTarget.Tf, () =>
                 {
                     ChangeScale();

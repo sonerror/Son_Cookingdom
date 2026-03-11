@@ -34,8 +34,11 @@ public class LevelSkewers : LevelBase
         isDoneStep = value;
     }
 
-    public EmojiControl emoji;
-
+    [SerializeField] private EmojiControl emoji;
+    private void SetNewEmoji(EmojiControl _emoji)
+    {
+        emoji = _emoji;
+    }
     public static int maxLayer = 30;
 
     public void ShowNegative()
@@ -72,8 +75,10 @@ public class LevelSkewers : LevelBase
                 OnStartStep3();
                 break;
             case 3:
+                OnStartStep4();
                 break;
             case 4:
+                OnStartStep5();
                 break;
         }
     }
@@ -239,5 +244,61 @@ public class LevelSkewers : LevelBase
             });
         }
     }
+    [SerializeField] private List<ShowObjectEffect> listEffectStep3;
+
+    [SerializeField] private List<SonSnapPoint> listSnapPointSauce;
+    [SerializeField] private List<SonSnapObject> listSnapObjSauce;
+    [SerializeField] private EmojiControl emojiStep4;
+
+    private int countOnMoveBack = 0;
+    private void OnStartStep4()
+    {
+        SetNewEmoji(emojiStep4);
+        effectBoard.Hide();
+        foreach (ShowObjectEffect effect in listEffectStep3)
+        {
+            effect.Show(1f);
+        }
+        foreach (SonSnapPoint point in listSnapPointSauce)
+        {
+            point.ChangeCanSnap(true);
+        }
+        for (int i = 0; i < listSnapObjSauce.Count; i++)
+        {
+            SonSnapObject obj = listSnapObjSauce[i];
+            obj.OnMovebackDone.AddListener(() =>
+            {
+                countOnMoveBack++;
+                if (countOnMoveBack >= listSnapObjSauce.Count)
+                {
+                    DoneStep();
+                    TryNextStep();
+                }
+            });
+        }
+    }
+    [SerializeField] private SonSnapPoint snapPointSpoon;
+    [SerializeField] private BowlMixer bowl;
+
+    private void OnStartStep5()
+    {
+        snapPointSpoon.ChangeCanSnap(true);
+        bowl.OnDone.AddListener(() =>
+        {
+            DoneStep();
+            TryNextStep();
+        });
+    }
     #endregion
+    private void OnStartStep6()
+    {
+        sink.DrainPipe.SetInteract(true);
+        sink.DrainPipe.OnMoveBack.AddListener(OnMoveBackHandler);
+    }
+    private void OnMoveBackHandler()
+    {
+        sink.DrainPipe.OnMoveBack.RemoveListener(OnMoveBackHandler);
+        DoneStep();
+        TryNextStep();
+    }
 }

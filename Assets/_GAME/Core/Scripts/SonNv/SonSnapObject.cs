@@ -39,6 +39,8 @@ namespace sonnv
         [SerializeField] protected UnityEvent onDrop;
         [SerializeField] protected UnityEvent onMouseUp;
         [SerializeField] protected UnityEvent notSnapWhenNearSnapPoint;
+        [SerializeField] protected UnityEvent onMovebackDone;
+
 
         [SerializeField] private bool isEnableCollideWhenEnableThis;
         [SerializeField] private bool moveBack;
@@ -77,10 +79,55 @@ namespace sonnv
 
         public UnityEvent OnSnap => onSnap;
         public System.Action onMoveBackEnd;
+        public UnityEvent OnMovebackDone => onMovebackDone;
         public Collider2D Col => col;
 
         /* ================= LIFECYCLE ================= */
+        /* ================= Action Transition ================= */
+        [SerializeField] protected bool isTrans = false;
+        [SerializeField] protected float rotateTrans = 45f;
+        [SerializeField] protected Transform tfRotate;
+        [SerializeField] private SpriteRenderer sprIng;
+        [SerializeField] protected UnityEvent onTrans;
+        [SerializeField] private AudioData onTransAudio;
 
+        private void OnTransiton()
+        {
+            if (isTrans)
+            {
+                col.enabled = false;
+                Tf.DOMove(tfRotate.position, 0.15f)
+                    .OnComplete(() =>
+                    {
+                        Tf.DORotate(new Vector3(0, 0, rotateTrans), 0.3f).OnComplete(() =>
+                            {
+                                SoundManager.PlaySFX(onTransAudio.clip, onTransAudio.volume);
+                                FadeSprite(sprIng, 1, 0.3f, Ease.Linear, () =>
+                                {
+                                    onTrans?.Invoke();
+                                    FadeSprite(sprIng, 0, 0.3f, Ease.Linear, () =>
+                                    {
+                                        Tf.DORotate(new Vector3(0, 0, _initZRot), 0.3f).OnComplete(() =>
+                                            {
+                                                MoveBack();
+                                            });
+                                    });
+
+                                });
+                            });
+                    });
+            }
+        }
+        void FadeSprite(SpriteRenderer sprite, float alpha, float time, Ease ease = Ease.Linear, System.Action onDone = null)
+        {
+            sprite.DOFade(alpha, time)
+                .SetEase(ease)
+                .OnComplete(() =>
+                {
+                    onDone?.Invoke();
+                });
+
+        }
         private void Awake()
         {
             _mainCam = Camera.main;
@@ -236,12 +283,14 @@ namespace sonnv
                     SoundManager.PlaySFX(onSnapAudio.clip, onSnapAudio.volume);
 
                     OnSnapObject();
-
-                    Tf.DOMove(snapPoint.Tf.position, 0.2f)
-                      .OnComplete(() =>
-                      {
-                          onSnap.Invoke();
-                      });
+                    if (!isTrans)
+                    {
+                        Tf.DOMove(snapPoint.Tf.position, 0.2f)
+                          .OnComplete(() =>
+                          {
+                              onSnap.Invoke();
+                          });
+                    }
                     return;
                 }
             }
@@ -303,6 +352,7 @@ namespace sonnv
                 Tf.localScale = Vector3.one * scaleAffterSnap;
 
             StopFloating();
+            OnTransiton();
         }
 
         public void StartFloating()
@@ -347,6 +397,7 @@ namespace sonnv
             _moveBackTween = Tf.DOLocalMove(_initLocalPos, 0.3f)
                 .OnComplete(() =>
                 {
+                    onMovebackDone?.Invoke();
                     if (onMoveBackEnd != null)
                         onMoveBackEnd.Invoke();
 
