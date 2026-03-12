@@ -126,4 +126,46 @@ public class HandCtrl : GameUnit
     if (animator.gameObject.activeSelf)
       ShowHandLoop();
   }
+
+  private Coroutine circleRoutine;
+  private float angle;
+
+  public void ShowHandCircle(Vector3 center, float radius, float speed = 2f)
+  {
+    gameObject.SetActive(true);
+    animator.gameObject.SetActive(true);
+    Debug.Log("angle =============== " + angle);
+    if (circleRoutine != null)
+      StopCoroutine(circleRoutine);
+
+    circleRoutine = StartCoroutine(CircleMove(center, radius, speed));
+  }
+
+  IEnumerator CircleMove(Vector3 center, float radius, float speed)
+  {
+    angle = 0;
+
+    while (true)
+    {
+      angle += Time.deltaTime * speed;
+      Debug.Log("angle " + angle);
+      float x = Mathf.Cos(angle) * radius;
+      float y = Mathf.Sin(angle) * radius;
+
+      transform.position = center + new Vector3(x, y, 0);
+
+      yield return null;
+    }
+  }
+
+  public void StopHandCircle()
+  {
+    if (circleRoutine != null)
+    {
+      StopCoroutine(circleRoutine);
+      circleRoutine = null;
+    }
+
+    animator.gameObject.SetActive(false);
+  }
 }

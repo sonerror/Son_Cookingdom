@@ -17,7 +17,6 @@ namespace sonnv
 
         private void OnEnable()
         {
-            SoundManager.PlaySFXOneShot(soundClean);
             DOVirtual.DelayedCall(0.5f, () =>
             {
                 // Sprite.sprite = cleanSprite;
@@ -32,7 +31,6 @@ namespace sonnv
             gameObject.SetActive(true);
             if (sink.HasWater)
             {
-                SoundManager.PlaySFXOneShot(splashSound);
                 ManualEnable();
             }
             else

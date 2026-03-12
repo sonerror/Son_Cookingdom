@@ -4,26 +4,36 @@ using UnityEngine.EventSystems;
 
 namespace sonnv
 {
-    public class SpoonRotateDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
+    public class SpoonRotateDrag : MonoBehaviour, IPointerDownHandler, IDragHandler, IPointerUpHandler
     {
         [SerializeField] private Transform aroundPoint;
-        [SerializeField] private float rotateSpeed = 2f;
-        [SerializeField] private float smooth = 10f;
+        [SerializeField] private float rotateSpeed = 1f;
         [SerializeField] private bool isDone = false;
+
+        [SerializeField] private AudioClip sfxSplash;
+
         public void SetIsDone()
         {
             isDone = true;
         }
+
         public event Action<float> OnPositionChanged;
         public event Action OnPositionUnChanged;
 
         private Camera cam;
+
         private float currentAngle;
-        private float targetAngle;
+        private float lastMouseAngle;
+
         private float radius;
         private float initialZ;
 
-        private const float MIN_DELTA = 0.001f;
+        private bool isDragging;
+
+        private float rotateAccum;
+        private const float ROTATE_TO_SPLASH = Mathf.PI / 2f;
+
+        private float nextPlayTime;
 
         void Awake()
         {
@@ -34,53 +44,76 @@ namespace sonnv
 
             Vector2 dir = (transform.position - aroundPoint.position).normalized;
             currentAngle = Mathf.Atan2(dir.y, dir.x);
-            targetAngle = currentAngle;
         }
 
-        public void OnBeginDrag(PointerEventData eventData)
+        public void OnPointerDown(PointerEventData eventData)
         {
+            if (isDone) return;
+
+            isDragging = true;
+
+            Vector2 mouseWorld = cam.ScreenToWorldPoint(eventData.position);
+            Vector2 dir = mouseWorld - (Vector2)aroundPoint.position;
+
+            lastMouseAngle = Mathf.Atan2(dir.y, dir.x);
         }
 
         public void OnDrag(PointerEventData eventData)
         {
-            if (isDone) return;
-            Vector2 mouseWorldPos = cam.ScreenToWorldPoint(eventData.position);
+            if (isDone || !isDragging) return;
 
-            Vector2 direction = (mouseWorldPos - (Vector2)aroundPoint.position).normalized;
+            Vector2 mouseWorld = cam.ScreenToWorldPoint(eventData.position);
+            Vector2 dir = mouseWorld - (Vector2)aroundPoint.position;
 
-            float newAngle = Mathf.Atan2(direction.y, direction.x);
+            float mouseAngle = Mathf.Atan2(dir.y, dir.x);
 
-            float angleDelta =
-                Mathf.DeltaAngle(currentAngle * Mathf.Rad2Deg, newAngle * Mathf.Rad2Deg) * Mathf.Deg2Rad;
+            float delta = Mathf.DeltaAngle(
+                lastMouseAngle * Mathf.Rad2Deg,
+                mouseAngle * Mathf.Rad2Deg
+            ) * Mathf.Deg2Rad;
 
-            if (Mathf.Abs(angleDelta) < MIN_DELTA)
-                return;
+            lastMouseAngle = mouseAngle;
 
-            float rotateDir = Mathf.Sign(angleDelta);
+            currentAngle += delta * rotateSpeed;
 
-            float step = rotateDir * rotateSpeed * Time.deltaTime;
+            UpdatePosition();
 
-            targetAngle += step;
+            float movement = Mathf.Abs(delta);
+
+            OnPositionChanged?.Invoke(movement);
+
+            HandleSplashSound(movement);
         }
 
-        void Update()
+        void HandleSplashSound(float movement)
         {
-            if (isDone) return;
-            currentAngle = Mathf.Lerp(currentAngle, targetAngle, smooth * Time.deltaTime);
+            rotateAccum += movement;
 
-            Vector2 newPos =
+            if (rotateAccum < ROTATE_TO_SPLASH)
+                return;
+
+            rotateAccum = 0f;
+
+            if (Time.time < nextPlayTime)
+                return;
+
+            SoundManager.PlaySFXOneShot(sfxSplash);
+
+            nextPlayTime = Time.time + sfxSplash.length * 0.8f;
+        }
+
+        void UpdatePosition()
+        {
+            Vector2 pos =
                 (Vector2)aroundPoint.position +
                 new Vector2(Mathf.Cos(currentAngle), Mathf.Sin(currentAngle)) * radius;
 
-            transform.position = new Vector3(newPos.x, newPos.y, initialZ);
-
-            float movement = Mathf.Clamp(Mathf.Abs(targetAngle - currentAngle), 0f, 0.02f);
-
-            OnPositionChanged?.Invoke(movement);
+            transform.position = new Vector3(pos.x, pos.y, initialZ);
         }
 
-        public void OnEndDrag(PointerEventData eventData)
+        public void OnPointerUp(PointerEventData eventData)
         {
+            isDragging = false;
             OnPositionUnChanged?.Invoke();
         }
     }

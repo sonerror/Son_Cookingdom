@@ -45,6 +45,7 @@ namespace sonnv
         [SerializeField] private bool isEnableCollideWhenEnableThis;
         [SerializeField] private bool moveBack;
         [SerializeField] private bool isChangeScaleAffterSnap = false;
+        [SerializeField] private bool isChangeScaleMoveToSnap = false;
         [SerializeField] private float scaleAffterSnap = 1;
 
         [SerializeField] private bool rotateOnDrag;
@@ -89,6 +90,7 @@ namespace sonnv
         [SerializeField] protected Transform tfRotate;
         [SerializeField] private SpriteRenderer sprIng;
         [SerializeField] protected UnityEvent onTrans;
+        public UnityEvent OnTrans => onTrans;
         [SerializeField] private AudioData onTransAudio;
 
         private void OnTransiton()
@@ -288,6 +290,10 @@ namespace sonnv
                         Tf.DOMove(snapPoint.Tf.position, 0.2f)
                           .OnComplete(() =>
                           {
+                              if (isChangeScaleMoveToSnap)
+                              {
+                                  Tf.localScale = Vector3.one * scaleAffterSnap;
+                              }
                               onSnap.Invoke();
                           });
                     }

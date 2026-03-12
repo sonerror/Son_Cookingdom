@@ -211,5 +211,9 @@ namespace sonnv
         {
             DOVirtual.DelayedCall(delay, Show);
         }
+        public void Hide(float delay)
+        {
+            DOVirtual.DelayedCall(delay, Hide);
+        }
     }
 }

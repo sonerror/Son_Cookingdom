@@ -60,6 +60,7 @@ namespace sonnv
         void OnStartStir(float movement)
         {
             isStirring = movement > stirThreshold;
+
         }
 
         void OnStopStir()

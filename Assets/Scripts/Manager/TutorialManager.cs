@@ -45,6 +45,9 @@ public class TutorialManager : Singleton<TutorialManager>
 
   [SerializeField] private bool canCutItem = false;
   public bool CanCutItem => canCutItem;
+  [SerializeField] private List<Transform> tfSauce = new List<Transform>();
+  public List<Transform> TfSauce => tfSauce;
+  [SerializeField] private Transform tfBotlMeat;
 
   public void SetCanCutItem(bool value)
   {
@@ -83,8 +86,7 @@ public class TutorialManager : Singleton<TutorialManager>
   [SerializeField] private Transform lidInSink;
 
   //step5
-  [SerializeField] private Transform tfItem1;
-  [SerializeField] private Transform tfItem2;
+  [SerializeField] private Transform tfSpoon;
   // dataCanCut
   [SerializeField] private bool canItemInBroad = false;
   public void SetCanItemInBroad(bool value)
@@ -140,97 +142,89 @@ public class TutorialManager : Singleton<TutorialManager>
 
   void ShowHint()
   {
-    // if (disableHand) return;
-    // if (_level == null) return;
-    // if (handCtrl == null) return;
+    if (disableHand) return;
+    if (_level == null) return;
+    if (handCtrl == null) return;
 
-    // enableCountTime = false;
+    enableCountTime = false;
 
-    // int index = _level.CurrentStep;
+    int index = _level.CurrentStep;
+    handCtrl.StopHandCircle();
+    switch (index)
+    {
+      case 0:
 
-    // switch (index)
-    // {
-    //   case 0:
+        if (stepInPhase == 0)
+        {
+          handCtrl.ShowHandPosToPos(Step1Tf1Tut1.position, Step1Tf2Tut1.position);
+        }
+        if (stepInPhase == 1)
+        {
+          handCtrl.ShowHandLoop(Step1TfTut2.position, Step1TfTut2.position);
+        }
+        return;
+      case 1:
+        TutorialStep1(0);
+        return;
+      case 2:
+        if (cuttingBoard == null) return;
+        var cuttingObj = cuttingBoard.CurrentCuttingObject;
+        if (cuttingObj == null)
+        {
+          TutorialStep2(0);
+          return;
+        }
+        canCutItem = cuttingBoard.InforTFTarget.isSnap;
+        if (canCutItem)
+        {
+          if (isSnapKinfe)
+          {
+            handCtrl.ShowHandLoop(tfBroadCenter.position, tfBroadCenter.position);
+          }
+          else
+          {
+            if (cuttingObj.CutDone)
+              handCtrl.ShowHandLoop(tfBroadCenter.position, tfBroadCenter.position);
+            else
+              handCtrl.ShowHandLoop(tfKnife.position, tfBroadCenter.position);
+          }
+        }
+        else
+        {
+          TutorialStep2(0);
 
-    //     if (StepInPhase == 0)
-    //     {
-    //       handCtrl.ShowHandPosToPos(Step1Tf1Tut1.position, Step1Tf2Tut1.position);
-    //     }
-
-    //     if (StepInPhase == 1)
-    //     {
-    //       handCtrl.ShowHandLoop(Step1TfTut2.position, Step1TfTut2.position);
-    //     }
-
-    //     return;
-
-    //   case 1:
-
-    //     TutorialStep1(0);
-    //     return;
-
-    //   case 2:
-
-    //     if (cuttingBoard == null) return;
-
-    //     var cuttingObj = cuttingBoard.CurrentCuttingObject;
-
-    //     if (cuttingObj == null)
-    //     {
-    //       TutorialStep2(0);
-    //       return;
-    //     }
-    //     canCutItem = !cuttingBoard.InforTFTarget.IsSnap;
-    //     if (canCutItem)
-    //     {
-    //       if (cuttingObj.IsTapItem)
-    //       {
-    //         if (cuttingObj.TapItem != null && cuttingObj.TapItem.IsTap)
-    //         {
-    //           if (isSnapKinfe)
-    //           {
-    //             handCtrl.ShowHandLoop(tfBroadCenter.position, tfBroadCenter.position);
-    //           }
-    //           else
-    //           {
-    //             if (cuttingObj.CutDone)
-    //               handCtrl.ShowHandLoop(tfBroadCenter.position, tfBroadCenter.position);
-    //             else
-    //               handCtrl.ShowHandLoop(tfKnife.position, tfBroadCenter.position);
-    //           }
-    //         }
-    //         else
-    //         {
-    //           handCtrl.ShowHandLoop(tfBroadCenter.position, tfBroadCenter.position);
-    //         }
-    //       }
-    //       else
-    //       {
-    //         if (cuttingObj.CutDone)
-    //           handCtrl.ShowHandLoop(tfBroadCenter.position, tfBroadCenter.position);
-    //         else
-    //           handCtrl.ShowHandLoop(tfKnife.position, tfBroadCenter.position);
-    //       }
-    //     }
-    //     else
-    //     {
-    //       TutorialStep2(0);
-    //     }
-
-    //     return;
-
-    //   case 3:
-
-    //     handCtrl.ShowHandLoop(lidInSink.position, lidOutSink.position);
-    //     return;
-
-    //   case 4:
-
-    //     handCtrl.ShowHandLoop(tfItem1.position, tfItem2.position);
-    //     return;
-    // }
+        }
+        return;
+      case 3:
+        TutorialStep(tfSauce, tfBotlMeat, 0);
+        return;
+      case 4:
+        if (countStepHint4 == 0)
+        {
+          handCtrl.ShowHandLoop(tfSpoon.position, tfBotlMeat.position);
+        }
+        if (countStepHint4 == 1)
+        {
+          handCtrl.ShowHandCircle(tfBotlMeat.position, 0.75f, 2);
+        }
+        return;
+      case 5:
+        handCtrl.ShowHandLoop(Step1Tf2Tut1.position, Step1Tf1Tut1.position);
+        return;
+      case 6:
+        handCtrl.ShowHandLoop(lisTfIng[0].position, tfSkewers.position);
+        return;
+    }
   }
+  [SerializeField] private List<Transform> lisTfIng;
+  public List<Transform> LisTfIng => lisTfIng;
+  [SerializeField] private Transform tfSkewers;
 
+  [SerializeField] private int countStepHint4 = 0;
+  public void SetCountStep4()
+  {
+    countStepHint4++;
+  }
   [SerializeField] private int countHint3 = 0;
 
   public void CountHint3()
@@ -242,7 +236,7 @@ public class TutorialManager : Singleton<TutorialManager>
   {
     if (indexStep >= tfBroad.Count) return;
 
-    handCtrl.ShowHandLoop(tfBroad[indexStep].position, tfBroad[indexStep].position);
+    handCtrl.ShowHandLoop(tfBroad[indexStep].position, tfBroadCenter.position);
   }
 
   private void TutorialStep1(int indexStep)
@@ -257,7 +251,18 @@ public class TutorialManager : Singleton<TutorialManager>
     handCtrl.gameObject.SetActive(true);
     handCtrl.ShowHandPosToPos(obj.position, tfSink.position);
   }
+  private void TutorialStep(List<Transform> listTF, Transform tfTarget, int indexStep)
+  {
+    if (handCtrl == null) return;
+    if (indexStep >= listTF.Count) return;
 
+    var obj = listTF[indexStep];
+
+    if (obj == null || tfTarget == null) return;
+
+    handCtrl.gameObject.SetActive(true);
+    handCtrl.ShowHandPosToPos(obj.position, tfTarget.position);
+  }
   private void TutorialOneHit(List<Transform> listTF, int index)
   {
     if (index >= listTF.Count) return;
