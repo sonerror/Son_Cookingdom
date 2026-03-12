@@ -27,7 +27,7 @@ namespace sonnv
 
         public void AddAngle(float value)
         {
-            _angle += value; // Increment the angle
+            _angle += value;
             UpdatePosition();
         }
 
@@ -41,26 +41,5 @@ namespace sonnv
             transform.position = centerPoint.position + new Vector3(x, y, 0);
         }
 
-        // Draw the ellipse in the Scene View when selected
-        private void OnDrawGizmosSelected()
-        {
-            if (centerPoint == null) return;
-
-            Gizmos.color = Color.green;
-
-            int segments = 100;
-            Vector3 previousPoint = centerPoint.position + new Vector3(a, 0, 0);
-
-            for (int i = 1; i <= segments; i++)
-            {
-                float theta = i / (float)segments * Mathf.PI * 2;
-                float x = a * Mathf.Cos(theta);
-                float y = b * Mathf.Sin(theta);
-                Vector3 nextPoint = centerPoint.position + new Vector3(x, y, 0);
-
-                Gizmos.DrawLine(previousPoint, nextPoint);
-                previousPoint = nextPoint;
-            }
-        }
     }
 }

@@ -23,7 +23,7 @@ namespace sonnv
         [SerializeField, Range(0, 1)] float rate = 0.9f;
         [SerializeField] Vector2 mid, finish;
         [SerializeField] Direction direction;
-        [field: SerializeField] public State state { get; private set; }
+        [SerializeField] public State state { get; private set; }
 
         public override void OnActive()
         {

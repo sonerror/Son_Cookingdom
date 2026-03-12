@@ -80,6 +80,9 @@ public class LevelSkewers : LevelBase
             case 4:
                 OnStartStep5();
                 break;
+            case 5:
+                OnStartStep6();
+                break;
         }
     }
 

@@ -26,12 +26,12 @@ namespace sonnv
         private void OnValidate()
         {
             animation = GetComponent<Animation>();
-            if (animName != null && animation.GetClip(animName.name) != null)
+
+            if (animName != null)
             {
                 animation.AddClip(animName, animName.name);
             }
         }
-
         protected override void Setup()
         {
             base.Setup();
@@ -46,12 +46,20 @@ namespace sonnv
 
         public ActionMove.State GetState()
         {
-            return animName.name switch
+            if (animName == null)
+                return ActionMove.State.MoveIn;
+
+            switch (animName.name)
             {
-                "IdleItemAppear" => ActionMove.State.MoveIn,
-                "IdleItemHide" => ActionMove.State.MoveOut,
-                _ => ActionMove.State.MoveIn,
-            };
+                case "IdleItemAppear":
+                    return ActionMove.State.MoveIn;
+
+                case "IdleItemHide":
+                    return ActionMove.State.MoveOut;
+
+                default:
+                    return ActionMove.State.MoveIn;
+            }
         }
     }
 }
