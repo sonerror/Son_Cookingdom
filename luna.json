@@ -2,7 +2,7 @@
     "version": "7.1.0",
     "projectId": "f42e7ff96e4545544bb6cd68f51ab634",
     "applicationID": 27404,
-    "creativeName": "Cookingdom_v2GG",
+    "creativeName": "Cookingdom_v4",
     "pgServer": "EU",
     "window": {
         "‐⁙": true
@@ -133,11 +133,13 @@
             ]
         },
         "scenes": [
-            "Assets/_GAME/Levels/LevelSkewers/LevelSkewers.unity"
+            "Assets/_GAME/Levels/Mochi/LevelMochiTest.unity"
         ],
         "disabledScenes": [
             "Assets/Scenes/GamePlayScene.unity",
+            "Assets/_GAME/Levels/LevelSkewers/LevelSkewers.unity",
             "Assets/_GAME/Levels/Levelvalen/SonLevel167.unity",
+            "Assets/_GAME/Levels/Mochi/LevelMochi.unity",
             "Assets/_GAME/Levels/SonLevelDonut/Level628.unity"
         ],
         "startupScene": 0,
@@ -2143,10 +2145,6 @@
                 "excluded": true
             },
             {
-                "name": "System.OperationCanceledException",
-                "excluded": true
-            },
-            {
                 "name": "System.OverflowException",
                 "excluded": true
             },
@@ -2320,10 +2318,6 @@
             },
             {
                 "name": "System.Threading.Thread",
-                "excluded": true
-            },
-            {
-                "name": "System.Threading.Tasks.TaskCanceledException",
                 "excluded": true
             },
             {
@@ -10077,6 +10071,46 @@
             {
                 "name": "Spine.Pool$1.IPoolable",
                 "excluded": false
+            },
+            {
+                "name": "sonnv.OscillateObject",
+                "excluded": true
+            },
+            {
+                "name": "TrungKien.Clock",
+                "excluded": true
+            },
+            {
+                "name": "sonnv.HitState",
+                "excluded": true
+            },
+            {
+                "name": "sonnv.HurtState",
+                "excluded": true
+            },
+            {
+                "name": "sonnv.IdleState",
+                "excluded": true
+            },
+            {
+                "name": "sonnv.KneadState",
+                "excluded": true
+            },
+            {
+                "name": "sonnv.SorryState",
+                "excluded": true
+            },
+            {
+                "name": "sonnv.CheckPoint",
+                "excluded": false
+            },
+            {
+                "name": "sonnv.CheckPointDetail",
+                "excluded": false
+            },
+            {
+                "name": "sonnv.IState$1",
+                "excluded": false
             }
         ],
         "unusedMethods": [
@@ -14456,7 +14490,7 @@
                     },
                     {
                         "name": "Count#get",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "System$Collections$ICollection$IsSynchronized#get",
@@ -14484,11 +14518,11 @@
                     },
                     {
                         "name": "ctor",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "getItem",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "System$Collections$Generic$IList$1$getItem",
@@ -42013,15 +42047,19 @@
                         "excluded": false
                     },
                     {
-                        "name": "Update",
-                        "excluded": false
-                    },
-                    {
                         "name": "OnPointerDown",
                         "excluded": false
                     },
                     {
                         "name": "OnPointerUp",
+                        "excluded": true
+                    },
+                    {
+                        "name": "HandleSplashSound",
+                        "excluded": true
+                    },
+                    {
+                        "name": "UpdatePosition",
                         "excluded": true
                     }
                 ]
@@ -42229,6 +42267,600 @@
                         "excluded": true
                     }
                 ]
+            },
+            {
+                "className": "sonnv.CharacterUnit",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "TF#get",
+                        "excluded": true
+                    }
+                ]
+            },
+            {
+                "className": "sonnv.CharacterBase",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "Update",
+                        "excluded": false
+                    },
+                    {
+                        "name": "ChangeState",
+                        "excluded": false
+                    },
+                    {
+                        "name": "ChangeSkeletonAnimationState",
+                        "excluded": true
+                    },
+                    {
+                        "name": "GetDurationAnimation",
+                        "excluded": true
+                    },
+                    {
+                        "name": "PlayAnimation",
+                        "excluded": false
+                    },
+                    {
+                        "name": "CheckCurrentState",
+                        "excluded": true
+                    },
+                    {
+                        "name": "PauseCurrentAnimation",
+                        "excluded": true
+                    },
+                    {
+                        "name": "ResumeCurrentAnimation",
+                        "excluded": true
+                    },
+                    {
+                        "name": "OnIdleEnter",
+                        "excluded": true
+                    },
+                    {
+                        "name": "OnIdleExecute",
+                        "excluded": true
+                    },
+                    {
+                        "name": "OnIdleExit",
+                        "excluded": true
+                    },
+                    {
+                        "name": "OnWaitEnter",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnWaitExecute",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnWaitExit",
+                        "excluded": true
+                    },
+                    {
+                        "name": "OnPoundEnter",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnPoundExecute",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnPoundExit",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnKneadEnter",
+                        "excluded": true
+                    },
+                    {
+                        "name": "OnKneadExecute",
+                        "excluded": true
+                    },
+                    {
+                        "name": "OnKneadExit",
+                        "excluded": true
+                    },
+                    {
+                        "name": "OnHitEnter",
+                        "excluded": true
+                    },
+                    {
+                        "name": "OnHitExecute",
+                        "excluded": true
+                    },
+                    {
+                        "name": "OnHitExit",
+                        "excluded": true
+                    },
+                    {
+                        "name": "OnHurtEnter",
+                        "excluded": true
+                    },
+                    {
+                        "name": "OnHurtExecute",
+                        "excluded": true
+                    },
+                    {
+                        "name": "OnHurtExit",
+                        "excluded": true
+                    },
+                    {
+                        "name": "OnSorryEnter",
+                        "excluded": true
+                    },
+                    {
+                        "name": "OnSorryExecute",
+                        "excluded": true
+                    },
+                    {
+                        "name": "OnSorryExit",
+                        "excluded": true
+                    }
+                ]
+            },
+            {
+                "className": "LevelMochi",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "init",
+                        "excluded": false
+                    },
+                    {
+                        "name": "CurrentStep#get",
+                        "excluded": true
+                    },
+                    {
+                        "name": "IsDoneStep#get",
+                        "excluded": true
+                    },
+                    {
+                        "name": "Awake",
+                        "excluded": false
+                    },
+                    {
+                        "name": "Start$1",
+                        "excluded": false
+                    },
+                    {
+                        "name": "SetStateDoneStep",
+                        "excluded": true
+                    },
+                    {
+                        "name": "SetNewEmoji",
+                        "excluded": true
+                    },
+                    {
+                        "name": "ShowNegative",
+                        "excluded": true
+                    },
+                    {
+                        "name": "DoneStep",
+                        "excluded": true
+                    },
+                    {
+                        "name": "TryNextStep",
+                        "excluded": true
+                    },
+                    {
+                        "name": "StartStep",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnCompleteStage",
+                        "excluded": true
+                    },
+                    {
+                        "name": "IncreaseMaxLayer",
+                        "excluded": true
+                    },
+                    {
+                        "name": "ShowNegativeEmojiAtPos",
+                        "excluded": true
+                    },
+                    {
+                        "name": "ShowNegativeKnife",
+                        "excluded": true
+                    },
+                    {
+                        "name": "ShowPositiveEmojiAtPos",
+                        "excluded": true
+                    },
+                    {
+                        "name": "OnStartStep1",
+                        "excluded": false
+                    }
+                ]
+            },
+            {
+                "className": "sonnv.MinigameMochiOrderStage2Controller",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "GetCatMochiOrderStage2Controller",
+                        "excluded": true
+                    },
+                    {
+                        "name": "GetRabbitMochiOrderStage2Controller",
+                        "excluded": true
+                    },
+                    {
+                        "name": "GetFlourMochiOrderStage2Controller",
+                        "excluded": false
+                    },
+                    {
+                        "name": "EventRabbitKneadFlourCorrect",
+                        "excluded": true
+                    },
+                    {
+                        "name": "EventRabbitKneadFlourWrong",
+                        "excluded": false
+                    },
+                    {
+                        "name": "ResetAllCharacter",
+                        "excluded": false
+                    }
+                ]
+            },
+            {
+                "className": "sonnv.TapProgressBar",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "EventCompleteAll#get",
+                        "excluded": false
+                    },
+                    {
+                        "name": "init",
+                        "excluded": false
+                    },
+                    {
+                        "name": "InitProperties",
+                        "excluded": true
+                    },
+                    {
+                        "name": "Update",
+                        "excluded": false
+                    },
+                    {
+                        "name": "EventStart",
+                        "excluded": false
+                    },
+                    {
+                        "name": "EventTap",
+                        "excluded": false
+                    },
+                    {
+                        "name": "SetTimeToMove",
+                        "excluded": true
+                    },
+                    {
+                        "name": "InitFirstCheckPoint",
+                        "excluded": false
+                    },
+                    {
+                        "name": "CheckPointArrowIsInRange",
+                        "excluded": false
+                    },
+                    {
+                        "name": "ResetAll",
+                        "excluded": false
+                    },
+                    {
+                        "name": "InitNextCheckPoint",
+                        "excluded": true
+                    },
+                    {
+                        "name": "CloseAll",
+                        "excluded": true
+                    }
+                ]
+            },
+            {
+                "className": "TrungKien.GizmoPos",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "init",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnDrawGizmos",
+                        "excluded": true
+                    }
+                ]
+            },
+            {
+                "className": "sonnv.CatMochiOrderStage2Controller",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "init",
+                        "excluded": false
+                    },
+                    {
+                        "name": "Start",
+                        "excluded": false
+                    },
+                    {
+                        "name": "PlaySfxPound",
+                        "excluded": false
+                    },
+                    {
+                        "name": "ResetCharacter",
+                        "excluded": false
+                    },
+                    {
+                        "name": "EventRabbitKneadFlourCorrect",
+                        "excluded": true
+                    },
+                    {
+                        "name": "EventRabbitKneadFlourWrong",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnPoundEnter",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnPoundExecute",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnWaitEnter",
+                        "excluded": true
+                    },
+                    {
+                        "name": "OnWaitExecute",
+                        "excluded": true
+                    },
+                    {
+                        "name": "OnWaitExit",
+                        "excluded": true
+                    },
+                    {
+                        "name": "OnHitEnter",
+                        "excluded": true
+                    },
+                    {
+                        "name": "OnHitExecute",
+                        "excluded": true
+                    },
+                    {
+                        "name": "OnHitExit",
+                        "excluded": true
+                    },
+                    {
+                        "name": "OnSorryEnter",
+                        "excluded": true
+                    },
+                    {
+                        "name": "OnSorryExecute",
+                        "excluded": true
+                    },
+                    {
+                        "name": "OnSorryExit",
+                        "excluded": true
+                    },
+                    {
+                        "name": "OnPoundExit",
+                        "excluded": false
+                    }
+                ]
+            },
+            {
+                "className": "sonnv.FlourMochiOrderStage2Controller",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "init",
+                        "excluded": false
+                    },
+                    {
+                        "name": "ResetCharacter",
+                        "excluded": true
+                    },
+                    {
+                        "name": "OnPoundEnter",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnPoundExecute",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnPoundExit",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnKneadEnter",
+                        "excluded": true
+                    },
+                    {
+                        "name": "OnKneadExecute",
+                        "excluded": true
+                    },
+                    {
+                        "name": "OnKneadExit",
+                        "excluded": true
+                    }
+                ]
+            },
+            {
+                "className": "sonnv.PoundState",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "OnEnter",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnExecute",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnExit",
+                        "excluded": false
+                    }
+                ]
+            },
+            {
+                "className": "sonnv.RabbitMochiOrderStage2Controller",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "init",
+                        "excluded": false
+                    },
+                    {
+                        "name": "Start",
+                        "excluded": false
+                    },
+                    {
+                        "name": "Update",
+                        "excluded": false
+                    },
+                    {
+                        "name": "ResetCharacter",
+                        "excluded": true
+                    },
+                    {
+                        "name": "OnWaitEnter",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnWaitExecute",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnWaitExit",
+                        "excluded": true
+                    },
+                    {
+                        "name": "OnKneadEnter",
+                        "excluded": true
+                    },
+                    {
+                        "name": "OnKneadExecute",
+                        "excluded": true
+                    },
+                    {
+                        "name": "OnKneadExit",
+                        "excluded": true
+                    },
+                    {
+                        "name": "OnHitEnter",
+                        "excluded": true
+                    },
+                    {
+                        "name": "OnHitExecute",
+                        "excluded": true
+                    },
+                    {
+                        "name": "OnHitExit",
+                        "excluded": true
+                    },
+                    {
+                        "name": "OnHurtEnter",
+                        "excluded": true
+                    },
+                    {
+                        "name": "OnHurtExecute",
+                        "excluded": true
+                    },
+                    {
+                        "name": "OnHurtExit",
+                        "excluded": true
+                    }
+                ]
+            },
+            {
+                "className": "sonnv.WaitState",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "OnEnter",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnExecute",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnExit",
+                        "excluded": true
+                    }
+                ]
+            },
+            {
+                "className": "System.OperationCanceledException",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "CancellationToken#get",
+                        "excluded": true
+                    },
+                    {
+                        "name": "CancellationToken#set",
+                        "excluded": true
+                    },
+                    {
+                        "name": "init",
+                        "excluded": true
+                    },
+                    {
+                        "name": "ctor",
+                        "excluded": true
+                    },
+                    {
+                        "name": "$ctor1",
+                        "excluded": true
+                    },
+                    {
+                        "name": "$ctor2",
+                        "excluded": true
+                    },
+                    {
+                        "name": "$ctor5",
+                        "excluded": true
+                    },
+                    {
+                        "name": "$ctor4",
+                        "excluded": true
+                    },
+                    {
+                        "name": "$ctor3",
+                        "excluded": true
+                    }
+                ]
+            },
+            {
+                "className": "System.Threading.Tasks.TaskCanceledException",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "Task#get",
+                        "excluded": true
+                    },
+                    {
+                        "name": "ctor",
+                        "excluded": true
+                    },
+                    {
+                        "name": "$ctor1",
+                        "excluded": true
+                    },
+                    {
+                        "name": "$ctor2",
+                        "excluded": true
+                    },
+                    {
+                        "name": "$ctor3",
+                        "excluded": true
+                    }
+                ]
             }
         ],
         "stubberDataList": [],
@@ -42306,6 +42938,16 @@
                         "script": "",
                         "ext": "",
                         "name": "Assets/_GAME/Levels/LevelSkewers/thumb-cook-lv-1097.png"
+                    },
+                    {
+                        "maxWidth": 1024,
+                        "maxHeight": 1024,
+                        "format": "png32",
+                        "compression": "quantSize",
+                        "quality": 65,
+                        "script": "",
+                        "ext": "",
+                        "name": "Assets/_GAME/Levels/AnTQ_Cooking/CookMochiOrderMode/Art/gia_xoi_json/gia_xoi.png"
                     }
                 ]
             },

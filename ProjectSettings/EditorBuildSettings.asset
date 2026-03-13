@@ -26,4 +26,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_GAME/Levels/LevelSkewers/LevelSkewers.unity
     guid: 6f6f4d979efbc32498403a602a34c45c
+  - enabled: 1
+    path: Assets/_GAME/Levels/Mochi/LevelMochi.unity
+    guid: d8d4a04e6089abe438fe72eaaba632fe
+  - enabled: 1
+    path: Assets/_GAME/Levels/Mochi/LevelMochiTest.unity
+    guid: 1d706caf80827ec46b11f66f5bad87c0
   m_configObjects: {}
