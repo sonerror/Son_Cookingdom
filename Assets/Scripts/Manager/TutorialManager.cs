@@ -8,18 +8,43 @@ using System.Collections;
 
 public class TutorialManager : Singleton<TutorialManager>
 {
-  public bool disableHand = false;
-
   [SerializeField] float TimeHint = 5f;
-  public bool enableCountTime = false;
-
-  public float timeCountHint = 2f;
-
   [SerializeField] public HandCtrl handCtrl;
-
-  [SerializeField] private LevelSkewers _level;
-
+  [SerializeField] private LevelMochi _level;
   [SerializeField] private int countHintStep1 = 0;
+
+  //Step1
+  [SerializeField] private Transform tfHintStep1;
+  //Step2
+  [SerializeField] private bool isSnapFlour = false;
+  public bool IsSnapFlour => isSnapFlour;
+  public void ChangeStateIsSnapFlour(bool value)
+  {
+    isSnapFlour = value;
+  }
+  [SerializeField] private Transform tfSpoonFlour;
+  [SerializeField] private Transform tfFlourInBoard;
+
+  [SerializeField] private bool isSnapColor = false;
+  public void ChangeStateIsSnapColor(bool value)
+  {
+    isSnapColor = value;
+  }
+  [SerializeField] private List<Transform> listTFStepAddColor;
+  [SerializeField] private int countHintSnapColor = 0;
+  public void SetCountHintColor()
+  {
+    countHintSnapColor++;
+  }
+  [SerializeField] private Transform tfFRoll;
+  [SerializeField] private bool isSnapRoll = false;
+  public void ChangeStateIsSnapRoll(bool value)
+  {
+    isSnapRoll = value;
+  }
+  public bool enableCountTime = false;
+  public float timeCountHint = 2f;
+  public bool disableHand = false;
   public int CountHintStep1
   {
     get { return countHintStep1; }
@@ -27,89 +52,15 @@ public class TutorialManager : Singleton<TutorialManager>
   }
 
   private int CountStepDone = 0;
-
-  //Step1
-  [SerializeField] private Transform Step1Tf1Tut1;
-  [SerializeField] private Transform Step1Tf2Tut1;
-  [SerializeField] private Transform Step1TfTut2;
-
-  //Step2
-  [SerializeField] private List<Transform> tfItem = new List<Transform>();
-  public List<Transform> TfItem => tfItem;
-
-  [SerializeField] private Transform tfSink;
-
-  //step3
-  [SerializeField] private List<Transform> tfBroad = new List<Transform>();
-  public List<Transform> TfBroad => tfBroad;
-
-  [SerializeField] private bool canCutItem = false;
-  public bool CanCutItem => canCutItem;
-  [SerializeField] private List<Transform> tfSauce = new List<Transform>();
-  public List<Transform> TfSauce => tfSauce;
-  [SerializeField] private Transform tfBotlMeat;
-
-  public void SetCanCutItem(bool value)
-  {
-    canCutItem = value;
-  }
-
-  IEnumerator IEDlaySetCutItem(bool value)
-  {
-    yield return new WaitForSeconds(0.001f);
-    canCutItem = value;
-  }
-
-  public void SetDelayCanCutItem(bool value)
-  {
-    StartCoroutine(IEDlaySetCutItem(value));
-  }
-
   int countCollectFail = 0;
 
-  private bool isTap = false;
-
-  [SerializeField] private CuttingBoard cuttingBoard;
-
-  [SerializeField] private int stepInPhase = 0;
-  public int StepInPhase => stepInPhase;
-
-  //Step broad 
-  [SerializeField] private Transform tfBroadCenter;
-  [SerializeField] private Transform tfKnife;
-  [SerializeField] private Transform tfKnifeInBroad;
-
-  [SerializeField] private bool isSnapKinfe = false;
-
-  //step4 
-  [SerializeField] private Transform lidOutSink;
-  [SerializeField] private Transform lidInSink;
-
-  //step5
-  [SerializeField] private Transform tfSpoon;
-  // dataCanCut
-  [SerializeField] private bool canItemInBroad = false;
-  public void SetCanItemInBroad(bool value)
-  {
-    canItemInBroad = value;
-  }
   void Start()
   {
     if (_level == null)
-      _level = FindObjectOfType<LevelSkewers>();
+      _level = FindObjectOfType<LevelMochi>();
 
     if (handCtrl == null)
       Debug.LogError("HandCtrl missing in TutorialManager");
-  }
-
-  public void SetIsSnapKnife(bool value)
-  {
-    isSnapKinfe = value;
-  }
-
-  public void IncreaseCountHintStep1()
-  {
-    stepInPhase++;
   }
 
   private void Update()
@@ -153,103 +104,63 @@ public class TutorialManager : Singleton<TutorialManager>
     switch (index)
     {
       case 0:
-
-        if (stepInPhase == 0)
-        {
-          handCtrl.ShowHandPosToPos(Step1Tf1Tut1.position, Step1Tf2Tut1.position);
-        }
-        if (stepInPhase == 1)
-        {
-          handCtrl.ShowHandLoop(Step1TfTut2.position, Step1TfTut2.position);
-        }
+        TutorialStep2(tfHintStep1);
         return;
       case 1:
-        TutorialStep1(0);
-        return;
-      case 2:
-        if (cuttingBoard == null) return;
-        var cuttingObj = cuttingBoard.CurrentCuttingObject;
-        if (cuttingObj == null)
+        if (!isSnapFlour)
         {
-          TutorialStep2(0);
-          return;
-        }
-        canCutItem = cuttingBoard.InforTFTarget.isSnap;
-        if (canCutItem)
-        {
-          if (isSnapKinfe)
-          {
-            handCtrl.ShowHandLoop(tfBroadCenter.position, tfBroadCenter.position);
-          }
-          else
-          {
-            if (cuttingObj.CutDone)
-              handCtrl.ShowHandLoop(tfBroadCenter.position, tfBroadCenter.position);
-            else
-              handCtrl.ShowHandLoop(tfKnife.position, tfBroadCenter.position);
-          }
+          Debug.Log("Snap Flour");
+          handCtrl.gameObject.SetActive(true);
+          handCtrl.ShowHandPosToPos(tfSpoonFlour.position, tfFlourInBoard.position);
         }
         else
         {
-          TutorialStep2(0);
-
+          if (!isSnapColor)
+          {
+            Debug.Log("Color Step: " + (countHintSnapColor + 1));
+            handCtrl.gameObject.SetActive(true);
+            handCtrl.ShowHandPosToPos(listTFStepAddColor[countHintSnapColor].position, tfFlourInBoard.position);
+          }
+          else
+          {
+            if (!isSnapRoll)
+            {
+              Debug.Log("Roll");
+              handCtrl.gameObject.SetActive(true);
+              handCtrl.ShowHandPosToPos(tfFRoll.position, tfFlourInBoard.position);
+            }
+            else
+            {
+              TutorialStep2(tfFlourInBoard);
+            }
+          }
         }
-        return;
-      case 3:
-        TutorialStep(tfSauce, tfBotlMeat, 0);
-        return;
-      case 4:
-        if (countStepHint4 == 0)
-        {
-          handCtrl.ShowHandLoop(tfSpoon.position, tfBotlMeat.position);
-        }
-        if (countStepHint4 == 1)
-        {
-          handCtrl.ShowHandCircle(tfBotlMeat.position, 0.75f, 2);
-        }
-        return;
-      case 5:
-        handCtrl.ShowHandLoop(Step1Tf2Tut1.position, Step1Tf1Tut1.position);
-        return;
-      case 6:
-        handCtrl.ShowHandLoop(lisTfIng[0].position, tfSkewers.position);
         return;
     }
   }
-  [SerializeField] private List<Transform> lisTfIng;
-  public List<Transform> LisTfIng => lisTfIng;
-  [SerializeField] private Transform tfSkewers;
-
-  [SerializeField] private int countStepHint4 = 0;
-  public void SetCountStep4()
+  public void ResetStateStep2()
   {
-    countStepHint4++;
+    isSnapFlour = false;
+    isSnapColor = false;
+    isSnapRoll = false;
   }
-  [SerializeField] private int countHint3 = 0;
-
-  public void CountHint3()
+  private void TutorialStep2(Transform tf)
   {
-    countHint3++;
-  }
-
-  private void TutorialStep2(int indexStep)
-  {
-    if (indexStep >= tfBroad.Count) return;
-
-    handCtrl.ShowHandLoop(tfBroad[indexStep].position, tfBroadCenter.position);
+    if (tf == null) return;
+    handCtrl.ShowHandLoop(tf.position, tf.position);
   }
 
   private void TutorialStep1(int indexStep)
   {
-    if (handCtrl == null) return;
-    if (indexStep >= tfItem.Count) return;
+    // if (handCtrl == null) return;
+    // if (indexStep >= tfItem.Count) return;
 
-    var obj = tfItem[indexStep];
+    // var obj = tfItem[indexStep];
 
-    if (obj == null || tfSink == null) return;
+    // if (obj == null || tfSink == null) return;
 
-    handCtrl.gameObject.SetActive(true);
-    handCtrl.ShowHandPosToPos(obj.position, tfSink.position);
+    // handCtrl.gameObject.SetActive(true);
+    // handCtrl.ShowHandPosToPos(obj.position, tfSink.position);
   }
   private void TutorialStep(List<Transform> listTF, Transform tfTarget, int indexStep)
   {
@@ -269,12 +180,6 @@ public class TutorialManager : Singleton<TutorialManager>
 
     handCtrl.ShowHandAtPos(listTF[index].position);
   }
-
-  public void SetStateIsTap(bool value)
-  {
-    isTap = value;
-  }
-
   void HideHint()
   {
     if (handCtrl != null)

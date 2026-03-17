@@ -8,20 +8,17 @@ namespace sonnv
         [SerializeField] private ItemType spoonType;
         private TrayItem currentItem;
 
-        private void OnTriggerEnter2D(Collider2D other)
+        private void OnTriggerStay2D(Collider2D other)
         {
             if (!other.TryGetComponent(out TrayItem item)) return;
             if (item.ItemType != spoonType) return;
 
-            if (currentItem == null)
-            {
-                currentItem = item;
+            currentItem = item;
 
-                if (!currentItem.IsTrigger)
-                {
-                    item.OnSpoonTouch(this);
-                    Debug.Log("trigger 2D");
-                }
+            if (!item.IsTrigger)
+            {
+                item.OnSpoonTouch(this);
+                Debug.Log("trigger 2D");
             }
         }
 
@@ -30,7 +27,9 @@ namespace sonnv
             if (!other.TryGetComponent(out TrayItem item)) return;
 
             if (currentItem == item)
+            {
                 currentItem = null;
+            }
         }
 
         public TrayItem GetCurrentItem()

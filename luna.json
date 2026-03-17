@@ -1,8 +1,8 @@
 {
     "version": "7.1.0",
     "projectId": "f42e7ff96e4545544bb6cd68f51ab634",
-    "applicationID": 27599,
-    "creativeName": "Cookingdom_v4",
+    "applicationID": 27404,
+    "creativeName": "R1_Cookingdom_v4_SpringMochi",
     "pgServer": "EU",
     "window": {
         "‐⁙": true
@@ -3363,10 +3363,6 @@
                 "excluded": true
             },
             {
-                "name": "UnityEngine.RangeAttribute",
-                "excluded": true
-            },
-            {
                 "name": "UnityEngine.RangeInt",
                 "excluded": true
             },
@@ -3408,10 +3404,6 @@
             },
             {
                 "name": "UnityEngine.RenderTextureDescriptor",
-                "excluded": true
-            },
-            {
-                "name": "UnityEngine.RequireComponent",
                 "excluded": true
             },
             {
@@ -3632,10 +3624,6 @@
             },
             {
                 "name": "UnityEngine.GUILayout.VerticalScope",
-                "excluded": true
-            },
-            {
-                "name": "UnityEngine.HeaderAttribute",
                 "excluded": true
             },
             {
@@ -5484,7 +5472,7 @@
             },
             {
                 "name": "UnityEngine.PropertyAttribute",
-                "excluded": true
+                "excluded": false
             },
             {
                 "name": "UnityEngine.HideInInspector",
@@ -25146,7 +25134,7 @@
                     },
                     {
                         "name": "size#get",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "size#set",
@@ -27102,7 +27090,7 @@
                     },
                     {
                         "name": "velocity#get",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "velocity#set",
@@ -27118,7 +27106,7 @@
                     },
                     {
                         "name": "angularVelocity#get",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "angularVelocity#set",
@@ -27130,7 +27118,7 @@
                     },
                     {
                         "name": "mass#get",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "mass#set",
@@ -27138,7 +27126,7 @@
                     },
                     {
                         "name": "useAutoMass#get",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "useAutoMass#set",
@@ -27146,7 +27134,7 @@
                     },
                     {
                         "name": "inertia#get",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "inertia#set",
@@ -27154,7 +27142,7 @@
                     },
                     {
                         "name": "drag#get",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "drag#set",
@@ -27170,7 +27158,7 @@
                     },
                     {
                         "name": "angularDrag#get",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "angularDrag#set",
@@ -27186,7 +27174,7 @@
                     },
                     {
                         "name": "position#get",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "position#set",
@@ -27194,7 +27182,7 @@
                     },
                     {
                         "name": "gravityScale#get",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "gravityScale#set",
@@ -27202,7 +27190,7 @@
                     },
                     {
                         "name": "collisionDetectionMode#get",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "collisionDetectionMode#set",
@@ -27210,11 +27198,11 @@
                     },
                     {
                         "name": "simulated#get",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "bodyType#get",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "isKinematic#get",
@@ -27242,11 +27230,11 @@
                     },
                     {
                         "name": "constraints#get",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "centerOfMass#get",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "centerOfMass#set",
@@ -27254,7 +27242,7 @@
                     },
                     {
                         "name": "rotation#get",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "rotation#set",
@@ -29673,38 +29661,6 @@
                         "excluded": false
                     },
                     {
-                        "name": "TfItem#get",
-                        "excluded": false
-                    },
-                    {
-                        "name": "TfBroad#get",
-                        "excluded": false
-                    },
-                    {
-                        "name": "StepInPhase#get",
-                        "excluded": false
-                    },
-                    {
-                        "name": "SetCanCutItem",
-                        "excluded": false
-                    },
-                    {
-                        "name": "IEDlaySetCutItem",
-                        "excluded": false
-                    },
-                    {
-                        "name": "SetDelayCanCutItem",
-                        "excluded": false
-                    },
-                    {
-                        "name": "SetIsSnapKnife",
-                        "excluded": false
-                    },
-                    {
-                        "name": "IncreaseCountHintStep1",
-                        "excluded": false
-                    },
-                    {
                         "name": "ShowHint",
                         "excluded": false
                     },
@@ -29721,23 +29677,7 @@
                         "excluded": false
                     },
                     {
-                        "name": "SetCanItemInBroad",
-                        "excluded": false
-                    },
-                    {
                         "name": "Start",
-                        "excluded": false
-                    },
-                    {
-                        "name": "TfSauce#get",
-                        "excluded": false
-                    },
-                    {
-                        "name": "LisTfIng#get",
-                        "excluded": false
-                    },
-                    {
-                        "name": "SetCountStep4",
                         "excluded": false
                     },
                     {
@@ -29753,19 +29693,7 @@
                         "excluded": true
                     },
                     {
-                        "name": "CanCutItem#get",
-                        "excluded": true
-                    },
-                    {
-                        "name": "CountHint3",
-                        "excluded": true
-                    },
-                    {
                         "name": "TutorialOneHit",
-                        "excluded": true
-                    },
-                    {
-                        "name": "SetStateIsTap",
                         "excluded": true
                     },
                     {
@@ -29787,6 +29715,30 @@
                     {
                         "name": "OnCollectSuccess",
                         "excluded": true
+                    },
+                    {
+                        "name": "IsSnapFlour#get",
+                        "excluded": true
+                    },
+                    {
+                        "name": "ChangeStateIsSnapFlour",
+                        "excluded": false
+                    },
+                    {
+                        "name": "ChangeStateIsSnapColor",
+                        "excluded": false
+                    },
+                    {
+                        "name": "SetCountHintColor",
+                        "excluded": false
+                    },
+                    {
+                        "name": "ChangeStateIsSnapRoll",
+                        "excluded": false
+                    },
+                    {
+                        "name": "ResetStateStep2",
+                        "excluded": false
                     }
                 ]
             },
@@ -41446,7 +41398,7 @@
                     },
                     {
                         "name": "CurrentStep#get",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "IsDoneStep#get",
@@ -43817,16 +43769,16 @@
                 "staticMethods": [],
                 "instanceMethods": [
                     {
-                        "name": "OnTriggerEnter2D",
-                        "excluded": false
-                    },
-                    {
                         "name": "OnTriggerExit2D",
                         "excluded": false
                     },
                     {
                         "name": "GetCurrentItem",
                         "excluded": true
+                    },
+                    {
+                        "name": "OnTriggerStay2D",
+                        "excluded": false
                     }
                 ]
             },
@@ -43903,6 +43855,112 @@
                     {
                         "name": "SetAlpha",
                         "excluded": false
+                    }
+                ]
+            },
+            {
+                "className": "UnityEngine.RangeAttribute",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "ctor",
+                        "excluded": false
+                    }
+                ]
+            },
+            {
+                "className": "UnityEngine.RequireComponent",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "ctor",
+                        "excluded": false
+                    },
+                    {
+                        "name": "$ctor1",
+                        "excluded": true
+                    },
+                    {
+                        "name": "$ctor2",
+                        "excluded": true
+                    }
+                ]
+            },
+            {
+                "className": "UnityEngine.HeaderAttribute",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "ctor",
+                        "excluded": false
+                    }
+                ]
+            },
+            {
+                "className": "sonnv.OscillateObject",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "init",
+                        "excluded": false
+                    },
+                    {
+                        "name": "Start",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnDisable",
+                        "excluded": true
+                    },
+                    {
+                        "name": "StartSwingAnimation",
+                        "excluded": false
+                    },
+                    {
+                        "name": "EventPickUp",
+                        "excluded": true
+                    },
+                    {
+                        "name": "EventDrop",
+                        "excluded": true
+                    },
+                    {
+                        "name": "OnDestroy",
+                        "excluded": true
+                    }
+                ]
+            },
+            {
+                "className": "sonnv.PulseObject",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "init",
+                        "excluded": false
+                    },
+                    {
+                        "name": "Start",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnDisable",
+                        "excluded": true
+                    },
+                    {
+                        "name": "StartPulse",
+                        "excluded": false
+                    },
+                    {
+                        "name": "EventPickUp",
+                        "excluded": true
+                    },
+                    {
+                        "name": "EventDrop",
+                        "excluded": true
+                    },
+                    {
+                        "name": "OnDestroy",
+                        "excluded": true
                     }
                 ]
             }
@@ -44002,6 +44060,56 @@
                         "script": "",
                         "ext": "",
                         "name": "Assets/_GAME/Levels/AnTQ_Cooking/CookMochiOrderMode/Art/NewSpine/gia_xoi.png"
+                    },
+                    {
+                        "maxWidth": 256,
+                        "maxHeight": 256,
+                        "format": "png32",
+                        "compression": "quantSize",
+                        "quality": 65,
+                        "script": "",
+                        "ext": "",
+                        "name": "Assets/_GAME/Levels/AnTQ_Cooking/CookMochiOrderMode/Art/GamePlay/6. Lam vo banh/Cher1.png"
+                    },
+                    {
+                        "maxWidth": 256,
+                        "maxHeight": 256,
+                        "format": "png32",
+                        "compression": "quantSize",
+                        "quality": 65,
+                        "script": "",
+                        "ext": "",
+                        "name": "Assets/_GAME/Levels/AnTQ_Cooking/CookMochiOrderMode/Art/GamePlay/6. Lam vo banh/Soco1.png"
+                    },
+                    {
+                        "maxWidth": 256,
+                        "maxHeight": 256,
+                        "format": "png32",
+                        "compression": "quantSize",
+                        "quality": 65,
+                        "script": "",
+                        "ext": "",
+                        "name": "Assets/_GAME/Levels/Mochi/Texture/thumb-cook-lv-939.png"
+                    },
+                    {
+                        "maxWidth": 256,
+                        "maxHeight": 256,
+                        "format": "png32",
+                        "compression": "quantSize",
+                        "quality": 65,
+                        "script": "",
+                        "ext": "",
+                        "name": "Assets/_GAME/Levels/AnTQ_Cooking/CookMochiOrderMode/Art/GamePlay/6. Lam vo banh/mango1.png"
+                    },
+                    {
+                        "maxWidth": 256,
+                        "maxHeight": 256,
+                        "format": "png32",
+                        "compression": "quantSize",
+                        "quality": 65,
+                        "script": "",
+                        "ext": "",
+                        "name": "Assets/_GAME/Levels/AnTQ_Cooking/CookMochiOrderMode/Art/GamePlay/6. Lam vo banh/Cher2.png"
                     }
                 ]
             },
@@ -44075,6 +44183,16 @@
                         "script": "",
                         "ext": "",
                         "name": "Assets/_GAME/Levels/TidyHlvCleanVegetable/_AudioLvCleanVegetable/clean.ogg"
+                    },
+                    {
+                        "channels": 1,
+                        "startTime": "00:00.000",
+                        "endTime": "00:20.581",
+                        "lengthInSeconds": 20.58099937438965,
+                        "bitrate": 32,
+                        "script": "",
+                        "ext": "",
+                        "name": "Assets/_GAME/Levels/Mochi/sfx_bgm_japan_2.ogg"
                     }
                 ]
             },

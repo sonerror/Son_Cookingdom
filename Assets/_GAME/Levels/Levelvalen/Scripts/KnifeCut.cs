@@ -95,7 +95,7 @@ namespace sonnv
                     SetScale(0);
                     if (knifeOut != null)
                     {
-                        TutorialManager.Ins.SetIsSnapKnife(false);
+                        //TutorialManager.Ins.SetIsSnapKnife(false);
 
                         knifeOut.MoveBack();
                     }
@@ -160,7 +160,7 @@ namespace sonnv
 
                     if (knifeOut != null)
                     {
-                        TutorialManager.Ins.SetIsSnapKnife(false);
+                        // TutorialManager.Ins.SetIsSnapKnife(false);
                         knifeOut.MoveBack();
                     }
                 }

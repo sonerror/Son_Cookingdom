@@ -110,9 +110,12 @@ public class LevelMochi : LevelBase
     [SerializeField] private TapProgressBar tapProgressBar;
     private void OnStartStep1()
     {
+        TutorialManager.Ins.enableCountTime = true;
         tapProgressBar.EventStart();
         tapProgressBar.EventCompleteAll.AddListener(() =>
         {
+            TutorialManager.Ins.enableCountTime = false;
+
             DoneStep();
             TryNextStep();
         });
@@ -156,7 +159,10 @@ public class LevelMochi : LevelBase
     {
         yield return new WaitForSeconds(1f);
         step1.Hide(0.5f);
-        MoveCamera(cam, tfStep2.position.x, 1);
+        MoveCamera(cam, tfStep2.position.x, 1, () =>
+        {
+            TutorialManager.Ins.enableCountTime = true;
+        });
     }
 
 }

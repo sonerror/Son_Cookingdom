@@ -209,8 +209,8 @@ public class LevelSkewers : LevelBase
 
         listSnapObject.RemoveAt(removedIndex);
 
-        if (removedIndex < TutorialManager.Ins.TfItem.Count)
-            TutorialManager.Ins.TfItem.RemoveAt(removedIndex);
+        //if (removedIndex < TutorialManager.Ins.TfItem.Count)
+        //  TutorialManager.Ins.TfItem.RemoveAt(removedIndex);
 
         if (listSnapObject.Count <= 0)
         {
@@ -247,8 +247,8 @@ public class LevelSkewers : LevelBase
                 if (removedIndex < 0) return;
 
                 listSnapObjectInSink.RemoveAt(removedIndex);
-                if (removedIndex < TutorialManager.Ins.TfBroad.Count)
-                    TutorialManager.Ins.TfBroad.RemoveAt(removedIndex);
+                // if (removedIndex < TutorialManager.Ins.TfBroad.Count)
+                // TutorialManager.Ins.TfBroad.RemoveAt(removedIndex);
             };
 
             cache.OnSnap.AddListener(action);
@@ -330,7 +330,7 @@ public class LevelSkewers : LevelBase
 
         listSnapObjSauce.Remove(obj);
 
-        TutorialManager.Ins.TfSauce.Remove(obj.transform);
+        //TutorialManager.Ins.TfSauce.Remove(obj.transform);
 
         if (listSnapObjSauce.Count == 0)
         {
@@ -397,8 +397,8 @@ public class LevelSkewers : LevelBase
                 if (removedIndex < 0) return;
 
                 listSnapObjIng.RemoveAt(removedIndex);
-                if (removedIndex < TutorialManager.Ins.LisTfIng.Count)
-                    TutorialManager.Ins.LisTfIng.RemoveAt(removedIndex);
+                //  if (removedIndex < TutorialManager.Ins.LisTfIng.Count)
+                // TutorialManager.Ins.LisTfIng.RemoveAt(removedIndex);
                 GameManager.Ins.showEndGame();
             };
 
