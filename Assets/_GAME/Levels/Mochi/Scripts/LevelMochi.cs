@@ -61,7 +61,17 @@ public class LevelMochi : LevelBase
         currentStep++;
         StartStep();
     }
-
+    private bool istap = false;
+    private bool isTapStep1 = false;
+    void Update()
+    {
+        // if (Input.GetMouseButtonDown(0) && istap == false && isTapStep1)
+        // {
+        //     //TutorialManager.Ins.ChangeStateShowHintAfterTap(true);
+        //     tapProgressBar.EventStart();
+        //     istap = true;
+        // }
+    }
     private void StartStep()
     {
         isDoneStep = false;
@@ -110,8 +120,11 @@ public class LevelMochi : LevelBase
     [SerializeField] private TapProgressBar tapProgressBar;
     private void OnStartStep1()
     {
-        TutorialManager.Ins.enableCountTime = true;
+        //TutorialManager.Ins.enableCountTime = true;
         tapProgressBar.EventStart();
+        TutorialManager.Ins.OnShowHint();
+        TutorialManager.Ins.ChangeStateShowHintAfterTap(true);
+        isTapStep1 = true;
         tapProgressBar.EventCompleteAll.AddListener(() =>
         {
             TutorialManager.Ins.enableCountTime = false;
@@ -133,7 +146,7 @@ public class LevelMochi : LevelBase
             obj.OnShow.AddListener(() =>
             {
                 count++;
-                if (count >= 2)
+                if (count >= (listItemColor.Count - 1))
                 {
                     GameManager.Ins.showEndGame();
                 }
@@ -161,6 +174,7 @@ public class LevelMochi : LevelBase
         step1.Hide(0.5f);
         MoveCamera(cam, tfStep2.position.x, 1, () =>
         {
+            TutorialManager.Ins.ChangeStateShowHintAfterTap(true);
             TutorialManager.Ins.enableCountTime = true;
         });
     }

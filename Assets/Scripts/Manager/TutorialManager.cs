@@ -12,7 +12,11 @@ public class TutorialManager : Singleton<TutorialManager>
   [SerializeField] public HandCtrl handCtrl;
   [SerializeField] private LevelMochi _level;
   [SerializeField] private int countHintStep1 = 0;
-
+  [SerializeField] private bool isShowHintAfterTap = false;
+  public void ChangeStateShowHintAfterTap(bool value)
+  {
+    isShowHintAfterTap = value;
+  }
   //Step1
   [SerializeField] private Transform tfHintStep1;
   //Step2
@@ -65,9 +69,14 @@ public class TutorialManager : Singleton<TutorialManager>
 
   private void Update()
   {
+    if (isShowHintAfterTap == false) return;
     if (Input.GetMouseButtonDown(0) || Input.touchCount > 0)
     {
-      HideHint();
+      if (_level.CurrentStep != 0)
+      {
+        HideHint();
+      }
+      StopHandTapLoop();
       timeCountHint = countCollectFail >= 3 ? 1.5f : TimeHint;
       enableCountTime = true;
       return;
@@ -80,7 +89,12 @@ public class TutorialManager : Singleton<TutorialManager>
 
     CalculateTimeHint();
   }
-
+  public void OnShowHint()
+  {
+    Debug.Log("OnShowHint");
+    disableHand = false;
+    ShowHint();
+  }
   private void CalculateTimeHint()
   {
     timeCountHint -= Time.deltaTime;
@@ -90,34 +104,65 @@ public class TutorialManager : Singleton<TutorialManager>
       ShowHint();
     }
   }
+  [SerializeField] private Transform tfHand;
+  private Tween handTween;
 
+  public void ShowHandTapLoop(Vector3 pos)
+  {
+    tfHand.gameObject.SetActive(true);
+    tfHand.position = pos;
+
+    StopHandTapLoop();
+
+    float duration = 0.75f;
+
+    tfHand.gameObject.SetActive(true);
+
+    tfHand.rotation = Quaternion.Euler(0, 0, 30f);
+
+    handTween = tfHand
+        .DORotate(new Vector3(0, 0, 80f), duration)
+        .SetEase(Ease.InOutSine)
+        .SetLoops(-1, LoopType.Yoyo);
+  }
+  public void StopHandTapLoop()
+  {
+    if (handTween != null && handTween.IsActive())
+    {
+      handTween.Kill();
+      handTween = null;
+    }
+
+    tfHand.gameObject.SetActive(false);
+  }
   void ShowHint()
   {
     if (disableHand) return;
+
     if (_level == null) return;
+
     if (handCtrl == null) return;
 
     enableCountTime = false;
 
     int index = _level.CurrentStep;
+
     handCtrl.StopHandCircle();
+
     switch (index)
     {
       case 0:
-        TutorialStep2(tfHintStep1);
+        ShowHandTapLoop(tfHintStep1.position);
         return;
       case 1:
         if (!isSnapFlour)
         {
-          Debug.Log("Snap Flour");
-          handCtrl.gameObject.SetActive(true);
           handCtrl.ShowHandPosToPos(tfSpoonFlour.position, tfFlourInBoard.position);
         }
         else
         {
           if (!isSnapColor)
           {
-            Debug.Log("Color Step: " + (countHintSnapColor + 1));
             handCtrl.gameObject.SetActive(true);
             handCtrl.ShowHandPosToPos(listTFStepAddColor[countHintSnapColor].position, tfFlourInBoard.position);
           }
@@ -125,7 +170,6 @@ public class TutorialManager : Singleton<TutorialManager>
           {
             if (!isSnapRoll)
             {
-              Debug.Log("Roll");
               handCtrl.gameObject.SetActive(true);
               handCtrl.ShowHandPosToPos(tfFRoll.position, tfFlourInBoard.position);
             }

@@ -168,4 +168,7 @@ public class HandCtrl : GameUnit
 
     animator.gameObject.SetActive(false);
   }
+
+
+
 }

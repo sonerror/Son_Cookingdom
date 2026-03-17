@@ -25,6 +25,11 @@ namespace sonnv
         [SerializeField] private AudioSource correctSound;
         [SerializeField] private AudioSource wrongSound;
 
+        //pause
+        [SerializeField] private float rootWinRange = 0.06f;
+
+        private float cachedSpeed;
+        private bool isStoppedByRoot = false;
         private int indexListCheckPoint = 0;
         private int countCheckPoint = 0;
 
@@ -33,6 +38,8 @@ namespace sonnv
 
         private bool isStart = false;
         private bool isCanTap = false;
+
+
 
         [Button]
         protected virtual void InitProperties()
@@ -49,8 +56,11 @@ namespace sonnv
 
         private void Update()
         {
+            if (!isStart) return;
             if (isDoneTurnPlay) return;
             if (isPauseArrow) return;
+
+            float currentX = checkPointArrow.localPosition.x;
 
             Vector3 pos = checkPointArrow.localPosition;
             pos.x += speed * Time.deltaTime;
@@ -59,8 +69,56 @@ namespace sonnv
                 pos.x = minX;
 
             checkPointArrow.localPosition = pos;
+
+            CheckRootWin(currentX, pos.x); // 👈 truyền cả trước và sau
+        }
+        private int rootCrossCount = 0;
+        private void CheckRootWin(float prevX, float currentX)
+        {
+            if (isStoppedByRoot) return;
+
+            var currentDetail = listCheckPointDetail[indexListCheckPoint];
+            float rootX = currentDetail.root.localPosition.x;
+
+            // detect đi qua root (trái → phải)
+            bool isCrossing = prevX < rootX && currentX >= rootX;
+
+            if (!isCrossing) return;
+
+            rootCrossCount++;
+            Debug.Log("Cross ROOT lần: " + rootCrossCount);
+
+            // 👉 chỉ dừng ở lần thứ 3
+            if (rootCrossCount < 3) return;
+
+            // 👉 STOP
+            cachedSpeed = speed;
+            speed = 0;
+            isPauseArrow = true;
+            isStoppedByRoot = true;
+
+            checkPointArrow.localPosition = new Vector3(
+                rootX,
+                checkPointArrow.localPosition.y,
+                checkPointArrow.localPosition.z
+            );
+
+
+
+            canTap = true;
+
+            Debug.Log("ROOT WIN lần 3");
+        }
+        [Button]
+        public void ResumeArrow()
+        {
+            speed = cachedSpeed;
+            isPauseArrow = false;
+            EventTap();
+            Debug.Log("Resume");
         }
 
+        [Button]
         public void EventStart()
         {
             if (isStart) return;
@@ -68,9 +126,11 @@ namespace sonnv
             isStart = true;
             InitFirstCheckPoint();
         }
+        private bool canTap = false;
 
         public void EventTap()
         {
+            if (canTap == false) return;
             if (isDoneTurnPlay || !isStart || !isCanTap) return;
 
             transform.DOPunchScale(Vector3.one * .05f, .3f);
@@ -87,6 +147,7 @@ namespace sonnv
 
         private void InitFirstCheckPoint()
         {
+            checkPointArrow.localPosition = new Vector3(minX, checkPointArrow.localPosition.y, checkPointArrow.localPosition.z);
             foreach (var checkPoint in listCheckPointDetail[indexListCheckPoint].checkPoints)
             {
                 checkPoint.spriteRenderer.SetAlpha(0);
@@ -119,9 +180,9 @@ namespace sonnv
                 if (checkPoint.isDone) continue;
 
                 if (checkPointArrow.localPosition.x >=
-                    checkPoint.checkPoint.localPosition.x - 0.035f &&
+                    checkPoint.checkPoint.localPosition.x - 0.1f &&
                     checkPointArrow.localPosition.x <=
-                    checkPoint.checkPoint.localPosition.x + 0.035f)
+                    checkPoint.checkPoint.localPosition.x + 0.1f)
                 {
                     checkPoint.isDone = true;
 
