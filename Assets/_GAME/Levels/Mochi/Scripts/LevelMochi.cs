@@ -69,7 +69,7 @@ public class LevelMochi : LevelBase
         switch (currentStep)
         {
             case 0: OnStartStep1(); break;
-            case 1: break;
+            case 1: OnStartStep2(); break;
             case 2: break;
             case 3: break;
             case 4: break;
@@ -117,4 +117,46 @@ public class LevelMochi : LevelBase
             TryNextStep();
         });
     }
+    [SerializeField] private ShowObjectEffect step1;
+    [SerializeField] private Transform tfStep2;
+    [SerializeField] private List<TrayItem> listItemColor;
+    private int count = 0;
+    private void OnStartStep2()
+    {
+        StartCoroutine(IE_DelayStep2());
+        for (int i = 0; i < listItemColor.Count; i++)
+        {
+            TrayItem obj = listItemColor[i];
+            obj.OnShow.AddListener(() =>
+            {
+                count++;
+                if (count >= 2)
+                {
+                    GameManager.Ins.showEndGame();
+                }
+            });
+        }
+    }
+    private void MoveCamera(
+               Camera _cam,
+               float targetLocalX,
+               float duration,
+               System.Action onComplete = null)
+    {
+        if (_cam == null) return;
+        Sequence seq = DOTween.Sequence();
+        seq.Join(_cam.transform.DOLocalMoveX(targetLocalX, duration));
+        if (onComplete != null)
+        {
+            seq.OnComplete(() => onComplete?.Invoke());
+        }
+    }
+
+    private IEnumerator IE_DelayStep2()
+    {
+        yield return new WaitForSeconds(1f);
+        step1.Hide(0.5f);
+        MoveCamera(cam, tfStep2.position.x, 1);
+    }
+
 }

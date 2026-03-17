@@ -22,6 +22,11 @@ namespace sonnv
         {
             audioSourcePound.Play();
         }
+        public void StopSfxPound()
+        {
+            audioSourcePound.Stop();
+        }
+
 
         public void ResetCharacter()
         {

@@ -36,6 +36,7 @@ namespace sonnv
         public UnityEvent eventOnPointDown;
         protected Vector3 _originalScale;
         protected int _originnalLayer;
+        protected bool isMoving = false;
         private bool blockTap = false;
 
         protected virtual void Awake()
@@ -71,7 +72,10 @@ namespace sonnv
         public virtual void OnPointerUp(PointerEventData eventData)
         {
             Tf.localScale = _originalScale;
-            spriteRenderer.sortingOrder = _originnalLayer;
+            if (isMoving == false)
+            {
+                spriteRenderer.sortingOrder = _originnalLayer;
+            }
         }
 
     }

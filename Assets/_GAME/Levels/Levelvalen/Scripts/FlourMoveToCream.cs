@@ -12,10 +12,6 @@ namespace sonnv
         public void SetData(InforTFTarget _tfTarget)
         {
             tfTarget = _tfTarget;
-            if (tfTarget != null)
-            {
-                tfTarget.Effect.Show();
-            }
         }
         [Header("move")]
         [SerializeField] private int sortOrderMax = 10;
@@ -50,6 +46,7 @@ namespace sonnv
         {
             if (tfTarget != null && tfTarget.IsSnap)
             {
+                isMoving = true;
                 tfTarget.ChangeIsSnap(false);
                 onStartMoveComplete?.Invoke();
                 JumpFlour(tfTarget.Tf, () =>

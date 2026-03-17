@@ -1,7 +1,7 @@
 {
     "version": "7.1.0",
     "projectId": "f42e7ff96e4545544bb6cd68f51ab634",
-    "applicationID": 27404,
+    "applicationID": 27599,
     "creativeName": "Cookingdom_v4",
     "pgServer": "EU",
     "window": {
@@ -9504,6 +9504,18 @@
             },
             {
                 "name": "Luna.Unity.DTO.UnityEngine.Assets.Shader",
+                "excluded": false
+            },
+            {
+                "name": "sonnv.ItemInTray",
+                "excluded": false
+            },
+            {
+                "name": "sonnv.ItemType",
+                "excluded": false
+            },
+            {
+                "name": "sonnv.MochiRecipe",
                 "excluded": false
             }
         ],
@@ -40614,7 +40626,7 @@
                     },
                     {
                         "name": "ShowEffect",
-                        "excluded": true
+                        "excluded": false
                     }
                 ]
             },
@@ -40636,10 +40648,6 @@
                     },
                     {
                         "name": "Effect#get",
-                        "excluded": false
-                    },
-                    {
-                        "name": "DelayAutoMove",
                         "excluded": false
                     }
                 ]
@@ -41483,6 +41491,18 @@
                     {
                         "name": "ShowPositiveEmojiAtPos",
                         "excluded": true
+                    },
+                    {
+                        "name": "OnStartStep2",
+                        "excluded": false
+                    },
+                    {
+                        "name": "MoveCamera",
+                        "excluded": false
+                    },
+                    {
+                        "name": "IE_DelayStep2",
+                        "excluded": false
                     }
                 ]
             },
@@ -41659,6 +41679,10 @@
                     {
                         "name": "OnSorryExit",
                         "excluded": false
+                    },
+                    {
+                        "name": "StopSfxPound",
+                        "excluded": true
                     }
                 ]
             },
@@ -43216,7 +43240,7 @@
                     },
                     {
                         "name": "OnDisable",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "OnDestroy",
@@ -43680,6 +43704,204 @@
                     },
                     {
                         "name": "OnExit",
+                        "excluded": false
+                    }
+                ]
+            },
+            {
+                "className": "sonnv.MixFlourManager",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "inherits",
+                        "excluded": false
+                    },
+                    {
+                        "name": "init",
+                        "excluded": false
+                    },
+                    {
+                        "name": "GetSnapItem",
+                        "excluded": false
+                    },
+                    {
+                        "name": "Awake$1",
+                        "excluded": false
+                    },
+                    {
+                        "name": "CreateRandomOrder",
+                        "excluded": false
+                    },
+                    {
+                        "name": "HideAll",
+                        "excluded": false
+                    },
+                    {
+                        "name": "Mix",
+                        "excluded": true
+                    },
+                    {
+                        "name": "SetItemColorOrder",
+                        "excluded": false
+                    },
+                    {
+                        "name": "ResetTrayItemByType",
+                        "excluded": false
+                    },
+                    {
+                        "name": "CheckOrder",
+                        "excluded": true
+                    },
+                    {
+                        "name": "ResetAllState",
+                        "excluded": false
+                    }
+                ]
+            },
+            {
+                "className": "sonnv.ItemOrder",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "ItemType#get",
+                        "excluded": false
+                    }
+                ]
+            },
+            {
+                "className": "sonnv.RollController",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "init",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnTriggerStay2D",
+                        "excluded": false
+                    }
+                ]
+            },
+            {
+                "className": "sonnv.SonTransitionPhase",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "init",
+                        "excluded": false
+                    },
+                    {
+                        "name": "Awake",
+                        "excluded": false
+                    },
+                    {
+                        "name": "ChangeZoomOutDuration",
+                        "excluded": true
+                    },
+                    {
+                        "name": "TransitionToPhase",
+                        "excluded": true
+                    },
+                    {
+                        "name": "DisablePhaseEndOfFrame",
+                        "excluded": true
+                    },
+                    {
+                        "name": "OnDisable",
+                        "excluded": true
+                    }
+                ]
+            },
+            {
+                "className": "sonnv.SpoonTrigger",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "OnTriggerEnter2D",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnTriggerExit2D",
+                        "excluded": false
+                    },
+                    {
+                        "name": "GetCurrentItem",
+                        "excluded": true
+                    }
+                ]
+            },
+            {
+                "className": "sonnv.TrayItem",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "IsTrigger#get",
+                        "excluded": false
+                    },
+                    {
+                        "name": "ItemType#get",
+                        "excluded": false
+                    },
+                    {
+                        "name": "Col#get",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnShow#get",
+                        "excluded": false
+                    },
+                    {
+                        "name": "init",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnSpoonTouch",
+                        "excluded": false
+                    },
+                    {
+                        "name": "ResetTrigger",
+                        "excluded": false
+                    }
+                ]
+            },
+            {
+                "className": "sonnv.MochiInTray",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "IsColor#get",
+                        "excluded": true
+                    },
+                    {
+                        "name": "init",
+                        "excluded": false
+                    },
+                    {
+                        "name": "ChangeStateIsColor",
+                        "excluded": false
+                    },
+                    {
+                        "name": "Awake",
+                        "excluded": false
+                    },
+                    {
+                        "name": "Init",
+                        "excluded": false
+                    },
+                    {
+                        "name": "Hit",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnDoneRoll",
+                        "excluded": false
+                    },
+                    {
+                        "name": "IsDone",
+                        "excluded": false
+                    },
+                    {
+                        "name": "SetAlpha",
                         "excluded": false
                     }
                 ]

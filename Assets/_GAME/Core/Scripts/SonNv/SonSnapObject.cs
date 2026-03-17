@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 using Satisgame;
 namespace sonnv
 {
-    [RequireComponent(typeof(SpriteRenderer), typeof(Collider2D))]
+    [RequireComponent(typeof(Collider2D))]
     public class SonSnapObject : SonMonoBehaviour, SonISnapObject,
         IPointerDownHandler, IDragHandler, IPointerUpHandler
     {

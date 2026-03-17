@@ -12,12 +12,11 @@ namespace sonnv
         public void ChangeIsSnap(bool value)
         {
             isSnap = value;
-            StartCoroutine(DelayAutoMove());
         }
-        private IEnumerator DelayAutoMove()
-        {
-            yield return new WaitForSeconds(0.5f);
-            effect.Hide();
-        }
+        // private IEnumerator DelayAutoMove()
+        // {
+        //     yield return new WaitForSeconds(0.5f);
+        //     effect.Hide();
+        // }
     }
 }
