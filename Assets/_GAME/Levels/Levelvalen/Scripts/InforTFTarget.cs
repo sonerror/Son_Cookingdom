@@ -12,7 +12,7 @@ namespace sonnv
         public void ChangeIsSnap(bool value)
         {
             isSnap = value;
-            StartCoroutine(DelayAutoMove());
+            // StartCoroutine(DelayAutoMove());
         }
         private IEnumerator DelayAutoMove()
         {

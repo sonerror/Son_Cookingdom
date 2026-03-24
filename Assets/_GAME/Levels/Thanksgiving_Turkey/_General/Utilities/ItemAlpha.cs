@@ -14,6 +14,7 @@ namespace sonnv
 
         private float a = -1;
 
+        [OnValueChanged("LateUpdate")]
         public float alpha = 1;
 
         private void Awake()
