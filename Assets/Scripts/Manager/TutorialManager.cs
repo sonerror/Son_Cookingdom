@@ -90,12 +90,12 @@ public class TutorialManager : Singleton<TutorialManager>
     switch (index)
     {
       case 0:
+        // if (countHintStep1 == 0)
+        // {
+        //   handCtrl.gameObject.SetActive(true);
+        //   handCtrl.ShowHandPosToPos(tfStraw.position, tfStraw.position);
+        // }
         if (countHintStep1 == 0)
-        {
-          handCtrl.gameObject.SetActive(true);
-          handCtrl.ShowHandPosToPos(tfStraw.position, tfStraw.position);
-        }
-        if (countHintStep1 == 1)
         {
           handCtrl.gameObject.SetActive(true);
           handCtrl.ShowHandPosToPos(tfStraw.position, tfBoard.position);

@@ -39,9 +39,9 @@ public class LevelControl : LevelBase
         {
             TutorialManager.Ins.SetNewTime(0.5f);
 
-            TutorialManager.Ins.IncreaseCountHintStep1();
-            objSpriteRBlack.SetActive(false);
-            objMaskMorter.SetActive(true);
+            //TutorialManager.Ins.IncreaseCountHintStep1();
+            //objSpriteRBlack.SetActive(false);
+            // objMaskMorter.SetActive(true);
             ///snapObjStraw.enabled = true;
             //snapObjStraw.Col.enabled = true;
             istap = true;
