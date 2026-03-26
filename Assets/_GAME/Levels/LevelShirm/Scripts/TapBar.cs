@@ -9,6 +9,7 @@ namespace sonnv
 {
     public class TapBar : MonoBehaviour
     {
+        [SerializeField] private float winTolerance = 0.12f;
         [SerializeField] private Animator anim;
         [SerializeField] private ParticleSystem slashVFX, slashMissVFX;
         [SerializeField] private Transform targetTF, pointTF;
@@ -115,7 +116,7 @@ namespace sonnv
 
         private bool IsContact()
         {
-            return Vector2.Distance(pointTF.localPosition, targetTF.localPosition) <= 0.12f;
+            return Vector2.Distance(pointTF.localPosition, targetTF.localPosition) <= winTolerance;
         }
 
     }

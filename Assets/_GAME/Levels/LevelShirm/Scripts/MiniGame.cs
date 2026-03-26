@@ -97,6 +97,5 @@ namespace sonnv
             blinkTween?.Kill();
             handSp.DOColor(Color.white, 0.3f);
         }
-
     }
 }

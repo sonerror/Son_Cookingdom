@@ -32,6 +32,7 @@ namespace sonnv
     public class CuttingBoard : Singleton<CuttingBoard>
     {
         [SerializeField] private SonSnapPoint snapPointKnife;
+        public SonSnapPoint SnapPointKnife => snapPointKnife;
         [SerializeField] private SonSnapPoint inforTFTarget;
         public SonSnapPoint InforTFTarget => inforTFTarget;
         [SerializeField] private KnifeCut knifeCut;

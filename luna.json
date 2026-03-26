@@ -1,8 +1,8 @@
 {
     "version": "7.1.0",
     "projectId": "f42e7ff96e4545544bb6cd68f51ab634",
-    "applicationID": 27404,
-    "creativeName": "Cookingdom_v2GG",
+    "applicationID": 0,
+    "creativeName": "R1_Cookingdom_v3_Shrimp_pasta_mousse",
     "pgServer": "EU",
     "window": {
         "‐⁙": true
@@ -133,10 +133,11 @@
             ]
         },
         "scenes": [
-            "Assets/_GAME/Levels/LevelSkewers/LevelSkewers.unity"
+            "Assets/_GAME/Levels/LevelShirm/LevelShirm.unity"
         ],
         "disabledScenes": [
             "Assets/Scenes/GamePlayScene.unity",
+            "Assets/_GAME/Levels/LevelSkewers/LevelSkewers.unity",
             "Assets/_GAME/Levels/Levelvalen/SonLevel167.unity",
             "Assets/_GAME/Levels/SonLevelDonut/Level628.unity"
         ],
@@ -9611,10 +9612,6 @@
                 "excluded": false
             },
             {
-                "name": "sonnv.ItemAlpha",
-                "excluded": true
-            },
-            {
                 "name": "sonnv.MoveAroundObjectOneDirection",
                 "excluded": true
             },
@@ -10077,6 +10074,34 @@
             {
                 "name": "Spine.Pool$1.IPoolable",
                 "excluded": false
+            },
+            {
+                "name": "sonnv.ItemMovingBase",
+                "excluded": true
+            },
+            {
+                "name": "sonnv.IItemBase",
+                "excluded": true
+            },
+            {
+                "name": "sonnv.IItemCooking",
+                "excluded": false
+            },
+            {
+                "name": "sonnv.IItemIdle",
+                "excluded": true
+            },
+            {
+                "name": "sonnv.IItemMoving",
+                "excluded": true
+            },
+            {
+                "name": "pc.Debugger.Components.EditorCamera",
+                "excluded": true
+            },
+            {
+                "name": "pc.Debugger.Components.EditorGUI",
+                "excluded": true
             }
         ],
         "unusedMethods": [
@@ -28594,7 +28619,7 @@
                     },
                     {
                         "name": "To$8",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "To$10",
@@ -29786,7 +29811,7 @@
                     },
                     {
                         "name": "DOColor",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "DOGradientColor",
@@ -30315,51 +30340,7 @@
                         "excluded": false
                     },
                     {
-                        "name": "Awake",
-                        "excluded": false
-                    },
-                    {
-                        "name": "ShowHandArrow",
-                        "excluded": false
-                    },
-                    {
-                        "name": "ShowHandArrowLoop",
-                        "excluded": false
-                    },
-                    {
-                        "name": "IEShowHandRotate",
-                        "excluded": false
-                    },
-                    {
                         "name": "ShowHandAtPos",
-                        "excluded": false
-                    },
-                    {
-                        "name": "setHandPlayBox",
-                        "excluded": true
-                    },
-                    {
-                        "name": "ShowHandLoop",
-                        "excluded": false
-                    },
-                    {
-                        "name": "ShowHandLoop$1",
-                        "excluded": true
-                    },
-                    {
-                        "name": "IEShowHandLoop",
-                        "excluded": true
-                    },
-                    {
-                        "name": "ShowHandCircle",
-                        "excluded": false
-                    },
-                    {
-                        "name": "CircleMove",
-                        "excluded": false
-                    },
-                    {
-                        "name": "StopHandCircle",
                         "excluded": false
                     }
                 ]
@@ -30397,34 +30378,6 @@
                         "excluded": false
                     },
                     {
-                        "name": "TfBroad#get",
-                        "excluded": false
-                    },
-                    {
-                        "name": "CanCutItem#get",
-                        "excluded": true
-                    },
-                    {
-                        "name": "StepInPhase#get",
-                        "excluded": false
-                    },
-                    {
-                        "name": "SetCanCutItem",
-                        "excluded": false
-                    },
-                    {
-                        "name": "IEDlaySetCutItem",
-                        "excluded": false
-                    },
-                    {
-                        "name": "SetDelayCanCutItem",
-                        "excluded": false
-                    },
-                    {
-                        "name": "SetIsSnapKnife",
-                        "excluded": false
-                    },
-                    {
                         "name": "IncreaseCountHintStep1",
                         "excluded": false
                     },
@@ -30433,20 +30386,8 @@
                         "excluded": false
                     },
                     {
-                        "name": "CountHint3",
-                        "excluded": true
-                    },
-                    {
-                        "name": "TutorialStep2",
-                        "excluded": false
-                    },
-                    {
                         "name": "TutorialStep1",
                         "excluded": false
-                    },
-                    {
-                        "name": "TutorialOneHit",
-                        "excluded": true
                     },
                     {
                         "name": "SetStateIsTap",
@@ -30477,27 +30418,19 @@
                         "excluded": true
                     },
                     {
-                        "name": "SetCanItemInBroad",
-                        "excluded": false
+                        "name": "TutorialNode#get",
+                        "excluded": true
                     },
                     {
-                        "name": "Start",
-                        "excluded": false
+                        "name": "Tutorial",
+                        "excluded": true
                     },
                     {
-                        "name": "TfSauce#get",
-                        "excluded": false
+                        "name": "TutorialStepMakeUp",
+                        "excluded": true
                     },
                     {
-                        "name": "LisTfIng#get",
-                        "excluded": false
-                    },
-                    {
-                        "name": "SetCountStep4",
-                        "excluded": false
-                    },
-                    {
-                        "name": "TutorialStep",
+                        "name": "SetNewTime",
                         "excluded": false
                     }
                 ]
@@ -31022,11 +30955,11 @@
                     },
                     {
                         "name": "FromAlpha#get",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "ToAlpha#get",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "IsName",
@@ -39834,7 +39767,7 @@
                     },
                     {
                         "name": "sortingLayerIndex#get",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "sortingLayerIndex#set",
@@ -39850,11 +39783,11 @@
                     },
                     {
                         "name": "sortingOrder#get",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "sortingLayerName#get",
-                        "excluded": true
+                        "excluded": false
                     }
                 ]
             },
@@ -41381,6 +41314,10 @@
                     {
                         "name": "RegisterSnapDone",
                         "excluded": false
+                    },
+                    {
+                        "name": "SnapPointKnife#get",
+                        "excluded": false
                     }
                 ]
             },
@@ -41679,148 +41616,6 @@
                 ]
             },
             {
-                "className": "LevelSkewers",
-                "staticMethods": [],
-                "instanceMethods": [
-                    {
-                        "name": "init",
-                        "excluded": false
-                    },
-                    {
-                        "name": "CurrentStep#get",
-                        "excluded": false
-                    },
-                    {
-                        "name": "IsDoneStep#get",
-                        "excluded": true
-                    },
-                    {
-                        "name": "Awake",
-                        "excluded": false
-                    },
-                    {
-                        "name": "Start$1",
-                        "excluded": false
-                    },
-                    {
-                        "name": "SetStateDoneStep",
-                        "excluded": true
-                    },
-                    {
-                        "name": "ShowNegative",
-                        "excluded": true
-                    },
-                    {
-                        "name": "DoneStep",
-                        "excluded": false
-                    },
-                    {
-                        "name": "TryNextStep",
-                        "excluded": false
-                    },
-                    {
-                        "name": "StartStep",
-                        "excluded": false
-                    },
-                    {
-                        "name": "OnCompleteStage",
-                        "excluded": true
-                    },
-                    {
-                        "name": "IncreaseMaxLayer",
-                        "excluded": true
-                    },
-                    {
-                        "name": "ShowNegativeEmojiAtPos",
-                        "excluded": true
-                    },
-                    {
-                        "name": "ShowNegativeKnife",
-                        "excluded": true
-                    },
-                    {
-                        "name": "ShowPositiveEmojiAtPos",
-                        "excluded": true
-                    },
-                    {
-                        "name": "OnDisable",
-                        "excluded": true
-                    },
-                    {
-                        "name": "OnPipeInHoleHandler",
-                        "excluded": false
-                    },
-                    {
-                        "name": "OnFillWaterHandler",
-                        "excluded": false
-                    },
-                    {
-                        "name": "OnStartStep1",
-                        "excluded": false
-                    },
-                    {
-                        "name": "OnStartStep2",
-                        "excluded": false
-                    },
-                    {
-                        "name": "SetSnapObject",
-                        "excluded": false
-                    },
-                    {
-                        "name": "OnSnapHandler",
-                        "excluded": false
-                    },
-                    {
-                        "name": "OnStartStep3",
-                        "excluded": false
-                    },
-                    {
-                        "name": "SetNewEmoji",
-                        "excluded": false
-                    },
-                    {
-                        "name": "OnStartStep4",
-                        "excluded": false
-                    },
-                    {
-                        "name": "OnStartStep5",
-                        "excluded": false
-                    },
-                    {
-                        "name": "OnStartStep6",
-                        "excluded": false
-                    },
-                    {
-                        "name": "OnMoveBackHandler",
-                        "excluded": false
-                    },
-                    {
-                        "name": "OnStartStep7",
-                        "excluded": false
-                    },
-                    {
-                        "name": "OnPlaySFXPlateMove",
-                        "excluded": false
-                    },
-                    {
-                        "name": "OnBowlDone",
-                        "excluded": false
-                    },
-                    {
-                        "name": "OnPlaySFXPTransSauce",
-                        "excluded": false
-                    },
-                    {
-                        "name": "OnShowEffectComplete",
-                        "excluded": false
-                    },
-                    {
-                        "name": "OnSnapSauce",
-                        "excluded": false
-                    }
-                ]
-            },
-            {
                 "className": "sonnv.ActionBase",
                 "staticMethods": [],
                 "instanceMethods": [
@@ -42013,15 +41808,19 @@
                         "excluded": false
                     },
                     {
-                        "name": "Update",
-                        "excluded": false
-                    },
-                    {
                         "name": "OnPointerDown",
                         "excluded": false
                     },
                     {
                         "name": "OnPointerUp",
+                        "excluded": true
+                    },
+                    {
+                        "name": "HandleSplashSound",
+                        "excluded": true
+                    },
+                    {
+                        "name": "UpdatePosition",
                         "excluded": true
                     }
                 ]
@@ -42229,6 +42028,538 @@
                         "excluded": true
                     }
                 ]
+            },
+            {
+                "className": "Link.PlayVFX",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "IsPlaying#get",
+                        "excluded": true
+                    },
+                    {
+                        "name": "Play",
+                        "excluded": true
+                    },
+                    {
+                        "name": "PlayLoop",
+                        "excluded": true
+                    },
+                    {
+                        "name": "Stop",
+                        "excluded": true
+                    }
+                ]
+            },
+            {
+                "className": "sonnv.ItemAlpha",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "init",
+                        "excluded": false
+                    },
+                    {
+                        "name": "Awake",
+                        "excluded": false
+                    },
+                    {
+                        "name": "SetAlpha",
+                        "excluded": true
+                    },
+                    {
+                        "name": "LateUpdate",
+                        "excluded": false
+                    },
+                    {
+                        "name": "Setup",
+                        "excluded": true
+                    },
+                    {
+                        "name": "DoAlpha",
+                        "excluded": false
+                    }
+                ]
+            },
+            {
+                "className": "sonnv.ItemInBoard",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "OnDone#get",
+                        "excluded": true
+                    },
+                    {
+                        "name": "IsDone#get",
+                        "excluded": false
+                    },
+                    {
+                        "name": "init",
+                        "excluded": false
+                    },
+                    {
+                        "name": "PlayCrack",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnInBoard",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnDonePeel",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnHitMissPeel",
+                        "excluded": false
+                    }
+                ]
+            },
+            {
+                "className": "sonnv.ItemMixJump",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "TF#get",
+                        "excluded": true
+                    },
+                    {
+                        "name": "IsDone#get",
+                        "excluded": true
+                    },
+                    {
+                        "name": "init",
+                        "excluded": false
+                    },
+                    {
+                        "name": "Awake",
+                        "excluded": true
+                    },
+                    {
+                        "name": "OnSavePoint",
+                        "excluded": true
+                    },
+                    {
+                        "name": "OnMix",
+                        "excluded": true
+                    },
+                    {
+                        "name": "SetAlPha",
+                        "excluded": true
+                    },
+                    {
+                        "name": "SetRadius",
+                        "excluded": true
+                    },
+                    {
+                        "name": "SetControl",
+                        "excluded": true
+                    },
+                    {
+                        "name": "OnDone",
+                        "excluded": true
+                    },
+                    {
+                        "name": "OnDrawGizmos",
+                        "excluded": true
+                    },
+                    {
+                        "name": "MixCoroutine",
+                        "excluded": true
+                    }
+                ]
+            },
+            {
+                "className": "sonnv.ItemMortar",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "init",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnPlayEffect",
+                        "excluded": true
+                    },
+                    {
+                        "name": "OnPlayMove",
+                        "excluded": true
+                    }
+                ]
+            },
+            {
+                "className": "sonnv.ItemNutInBoard",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "init",
+                        "excluded": false
+                    },
+                    {
+                        "name": "Awake",
+                        "excluded": true
+                    },
+                    {
+                        "name": "OnPointerDown",
+                        "excluded": true
+                    },
+                    {
+                        "name": "PlayCrackPeel",
+                        "excluded": true
+                    }
+                ]
+            },
+            {
+                "className": "sonnv.MiniGame",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "PlayAnim",
+                        "excluded": true
+                    },
+                    {
+                        "name": "OnStartMiniGame",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnStopMiniGame",
+                        "excluded": false
+                    },
+                    {
+                        "name": "CrackHand",
+                        "excluded": true
+                    },
+                    {
+                        "name": "FailHand",
+                        "excluded": true
+                    },
+                    {
+                        "name": "OnEvent",
+                        "excluded": true
+                    },
+                    {
+                        "name": "WaitForAnimation",
+                        "excluded": true
+                    },
+                    {
+                        "name": "StartBlink",
+                        "excluded": true
+                    },
+                    {
+                        "name": "StopBlink",
+                        "excluded": true
+                    }
+                ]
+            },
+            {
+                "className": "sonnv.SpriteButtonOnOff",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "Col#get",
+                        "excluded": true
+                    },
+                    {
+                        "name": "init",
+                        "excluded": false
+                    },
+                    {
+                        "name": "Start",
+                        "excluded": true
+                    },
+                    {
+                        "name": "SetBlockManually",
+                        "excluded": true
+                    },
+                    {
+                        "name": "OnBlockInteract",
+                        "excluded": true
+                    },
+                    {
+                        "name": "OnPointerDown",
+                        "excluded": true
+                    },
+                    {
+                        "name": "OnMouseUp",
+                        "excluded": true
+                    },
+                    {
+                        "name": "OnMouseUpAsButton",
+                        "excluded": true
+                    },
+                    {
+                        "name": "IsMatchCondition",
+                        "excluded": true
+                    },
+                    {
+                        "name": "ClickButton",
+                        "excluded": true
+                    }
+                ]
+            },
+            {
+                "className": "sonnv.SpriteRenderen",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "ChangeLayerSprite",
+                        "excluded": false
+                    },
+                    {
+                        "name": "ShowEffect",
+                        "excluded": false
+                    },
+                    {
+                        "name": "IE_DelayEffect",
+                        "excluded": false
+                    }
+                ]
+            },
+            {
+                "className": "sonnv.TapBar",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "init",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnInit",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnDone",
+                        "excluded": true
+                    },
+                    {
+                        "name": "OnDespawn",
+                        "excluded": true
+                    },
+                    {
+                        "name": "OnStart",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnTap",
+                        "excluded": true
+                    },
+                    {
+                        "name": "Update",
+                        "excluded": false
+                    },
+                    {
+                        "name": "IsContact",
+                        "excluded": true
+                    }
+                ]
+            },
+            {
+                "className": "sonnv.BounceObjectEffect",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "init",
+                        "excluded": false
+                    },
+                    {
+                        "name": "Awake",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnDisable",
+                        "excluded": true
+                    },
+                    {
+                        "name": "Bounce",
+                        "excluded": true
+                    },
+                    {
+                        "name": "OnBounceUpdate",
+                        "excluded": true
+                    }
+                ]
+            },
+            {
+                "className": "sonnv.ChopSticks",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "init",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnTriggerEnter2D",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnTriggerExit2D",
+                        "excluded": true
+                    },
+                    {
+                        "name": "CheckWinCondition",
+                        "excluded": true
+                    },
+                    {
+                        "name": "IE_DelayMove",
+                        "excluded": true
+                    }
+                ]
+            },
+            {
+                "className": "sonnv.TapHand",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "SnapPoint#get",
+                        "excluded": true
+                    },
+                    {
+                        "name": "init",
+                        "excluded": false
+                    },
+                    {
+                        "name": "Awake",
+                        "excluded": false
+                    },
+                    {
+                        "name": "SetItemInMortar",
+                        "excluded": true
+                    },
+                    {
+                        "name": "OnPointerDown",
+                        "excluded": true
+                    },
+                    {
+                        "name": "ResetTap",
+                        "excluded": true
+                    },
+                    {
+                        "name": "PlayTap",
+                        "excluded": true
+                    },
+                    {
+                        "name": "IE_DelayMove",
+                        "excluded": true
+                    },
+                    {
+                        "name": "StopTap",
+                        "excluded": true
+                    },
+                    {
+                        "name": "OnDestroy",
+                        "excluded": true
+                    }
+                ]
+            },
+            {
+                "className": "LevelControl",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "init",
+                        "excluded": false
+                    },
+                    {
+                        "name": "CurrentStep#get",
+                        "excluded": false
+                    },
+                    {
+                        "name": "IsDoneStep#get",
+                        "excluded": true
+                    },
+                    {
+                        "name": "Awake",
+                        "excluded": false
+                    },
+                    {
+                        "name": "Start$1",
+                        "excluded": false
+                    },
+                    {
+                        "name": "Update",
+                        "excluded": false
+                    },
+                    {
+                        "name": "SetStateDoneStep",
+                        "excluded": true
+                    },
+                    {
+                        "name": "SetNewEmoji",
+                        "excluded": true
+                    },
+                    {
+                        "name": "ShowNegative",
+                        "excluded": true
+                    },
+                    {
+                        "name": "DoneStep",
+                        "excluded": false
+                    },
+                    {
+                        "name": "TryNextStep",
+                        "excluded": false
+                    },
+                    {
+                        "name": "StartStep",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnCompleteStage",
+                        "excluded": true
+                    },
+                    {
+                        "name": "IncreaseMaxLayer",
+                        "excluded": true
+                    },
+                    {
+                        "name": "ShowPositiveEmojiAtPos",
+                        "excluded": true
+                    },
+                    {
+                        "name": "OnDisable",
+                        "excluded": true
+                    },
+                    {
+                        "name": "OnStartStep1",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnStartStep2",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnStartStep3",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnStartStep4",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnStartStep5",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnStartStep6",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnStartStep7",
+                        "excluded": true
+                    },
+                    {
+                        "name": "OnStartStep8",
+                        "excluded": true
+                    },
+                    {
+                        "name": "OnStartStep9",
+                        "excluded": true
+                    },
+                    {
+                        "name": "OnStartStep10",
+                        "excluded": true
+                    }
+                ]
             }
         ],
         "stubberDataList": [],
@@ -42379,6 +42710,26 @@
                         "script": "",
                         "ext": "",
                         "name": "Assets/_GAME/Levels/TidyHlvCleanVegetable/_AudioLvCleanVegetable/clean.ogg"
+                    },
+                    {
+                        "channels": 1,
+                        "startTime": "00:00.000",
+                        "endTime": "00:20.764",
+                        "lengthInSeconds": 20.763999938964845,
+                        "bitrate": 32,
+                        "script": "",
+                        "ext": "",
+                        "name": "Assets/_GAME/Levels/Levelvalen/sfx_bgm_home_2.ogg"
+                    },
+                    {
+                        "channels": 1,
+                        "startTime": "00:00.000",
+                        "endTime": "00:20.764",
+                        "lengthInSeconds": 20.763999938964845,
+                        "bitrate": 32,
+                        "script": "",
+                        "ext": "",
+                        "name": "Assets/_GAME/Levels/20/Sounds/sfx_level19_correct.mp3"
                     }
                 ]
             },

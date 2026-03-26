@@ -1,306 +1,246 @@
-using System.Collections.Generic;
-using System.Linq;
-using AnhPD;
-using DG.Tweening;
-using sonnv;
-using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
+using HoangHH;
+using UnityEngine;
+using sonnv;
 
 public class TutorialManager : Singleton<TutorialManager>
 {
   public bool disableHand = false;
-
   [SerializeField] float TimeHint = 5f;
   public bool enableCountTime = false;
-
   public float timeCountHint = 2f;
-
   [SerializeField] public HandCtrl handCtrl;
-
-  [SerializeField] private LevelSkewers _level;
+  [SerializeField] public HandCtrl handCtrlMakeup;
+  [SerializeField] private LevelControl _level;
 
   [SerializeField] private int countHintStep1 = 0;
+  [SerializeField] private Transform tfStraw;
+  [SerializeField] private Transform tfBoard;
+  [SerializeField] private Transform tfMortar;
+  [SerializeField] private Transform tfKnife;
+  [SerializeField] private CuttingBoard snapPointKnife;
   public int CountHintStep1
   {
     get { return countHintStep1; }
     set { countHintStep1 = value; }
   }
+  public void IncreaseCountHintStep1()
+  {
+    countHintStep1++;
+  }
+  [SerializeField] private Transform tfMango;
+  [SerializeField] private Transform tfMacca;
+  [SerializeField] private ItemInBoard itemMaccaInBoard;
+  [SerializeField] private Transform tfHandTapMiniGame;
+  [SerializeField] private TapHand tapHand;
+
+  [SerializeField] private Transform tfWalnut;
+  [SerializeField] private ItemInBoard itemWalnutInBoard;
+
+
+  [SerializeField] private Transform tfBtnOven;
+  [SerializeField] private Transform tfPistachio;
+  [SerializeField] private Transform tfPan;
+  [SerializeField] private Transform tfChopsticks;
 
   private int CountStepDone = 0;
 
-  //Step1
-  [SerializeField] private Transform Step1Tf1Tut1;
-  [SerializeField] private Transform Step1Tf2Tut1;
-  [SerializeField] private Transform Step1TfTut2;
-
-  //Step2
+  [SerializeField] private List<Transform> tutorialNode = new List<Transform>();
   [SerializeField] private List<Transform> tfItem = new List<Transform>();
+  public List<Transform> TutorialNode => tutorialNode;
   public List<Transform> TfItem => tfItem;
-
-  [SerializeField] private Transform tfSink;
-
-  //step3
-  [SerializeField] private List<Transform> tfBroad = new List<Transform>();
-  public List<Transform> TfBroad => tfBroad;
-
-  [SerializeField] private bool canCutItem = false;
-  public bool CanCutItem => canCutItem;
-  [SerializeField] private List<Transform> tfSauce = new List<Transform>();
-  public List<Transform> TfSauce => tfSauce;
-  [SerializeField] private Transform tfBotlMeat;
-
-  public void SetCanCutItem(bool value)
-  {
-    canCutItem = value;
-  }
-
-  IEnumerator IEDlaySetCutItem(bool value)
-  {
-    yield return new WaitForSeconds(0.001f);
-    canCutItem = value;
-  }
-
-  public void SetDelayCanCutItem(bool value)
-  {
-    StartCoroutine(IEDlaySetCutItem(value));
-  }
-
+  [SerializeField] private List<Transform> tfItemMakeup = new List<Transform>();
+  [SerializeField] private Transform tfFace;
+  [SerializeField] private Transform tfHair;
   int countCollectFail = 0;
-
   private bool isTap = false;
-
-  [SerializeField] private CuttingBoard cuttingBoard;
-
-  [SerializeField] private int stepInPhase = 0;
-  public int StepInPhase => stepInPhase;
-
-  //Step broad 
-  [SerializeField] private Transform tfBroadCenter;
-  [SerializeField] private Transform tfKnife;
-  [SerializeField] private Transform tfKnifeInBroad;
-
-  [SerializeField] private bool isSnapKinfe = false;
-
-  //step4 
-  [SerializeField] private Transform lidOutSink;
-  [SerializeField] private Transform lidInSink;
-
-  //step5
-  [SerializeField] private Transform tfSpoon;
-  // dataCanCut
-  [SerializeField] private bool canItemInBroad = false;
-  public void SetCanItemInBroad(bool value)
-  {
-    canItemInBroad = value;
-  }
-  void Start()
-  {
-    if (_level == null)
-      _level = FindObjectOfType<LevelSkewers>();
-
-    if (handCtrl == null)
-      Debug.LogError("HandCtrl missing in TutorialManager");
-  }
-
-  public void SetIsSnapKnife(bool value)
-  {
-    isSnapKinfe = value;
-  }
-
-  public void IncreaseCountHintStep1()
-  {
-    stepInPhase++;
-  }
 
   private void Update()
   {
-    if (Input.GetMouseButtonDown(0) || Input.touchCount > 0)
+    if (Input.GetMouseButtonDown(0))
     {
       HideHint();
       timeCountHint = countCollectFail >= 3 ? 1.5f : TimeHint;
       enableCountTime = true;
       return;
     }
-
-    if (!enableCountTime) return;
-
-    if (handCtrl != null && handCtrl.gameObject.activeInHierarchy)
+    if (Input.GetMouseButton(0))
+    {
       return;
-
+    }
+    if (!enableCountTime) return;
+    if (handCtrl.gameObject.activeSelf) return;
+    if (handCtrlMakeup.gameObject.activeSelf) return;
     CalculateTimeHint();
   }
-
   private void CalculateTimeHint()
   {
     timeCountHint -= Time.deltaTime;
-
     if (timeCountHint <= 0)
     {
       ShowHint();
     }
   }
-
   void ShowHint()
   {
     if (disableHand) return;
-    if (_level == null) return;
-    if (handCtrl == null) return;
-
     enableCountTime = false;
-
     int index = _level.CurrentStep;
-    handCtrl.StopHandCircle();
     switch (index)
     {
       case 0:
-
-        if (stepInPhase == 0)
+        if (countHintStep1 == 0)
         {
-          handCtrl.ShowHandPosToPos(Step1Tf1Tut1.position, Step1Tf2Tut1.position);
+          handCtrl.gameObject.SetActive(true);
+          handCtrl.ShowHandPosToPos(tfStraw.position, tfStraw.position);
         }
-        if (stepInPhase == 1)
+        if (countHintStep1 == 1)
         {
-          handCtrl.ShowHandLoop(Step1TfTut2.position, Step1TfTut2.position);
+          handCtrl.gameObject.SetActive(true);
+          handCtrl.ShowHandPosToPos(tfStraw.position, tfBoard.position);
+
         }
         return;
       case 1:
-        TutorialStep1(0);
+        if (snapPointKnife.SnapPointKnife.canSnap == true && snapPointKnife.SnapPointKnife.isSnap == true)
+        {
+          handCtrl.gameObject.SetActive(true);
+          handCtrl.ShowHandPosToPos(tfBoard.position, tfBoard.position);
+        }
+        else
+        {
+          handCtrl.gameObject.SetActive(true);
+          handCtrl.ShowHandPosToPos(tfKnife.position, tfBoard.position);
+        }
         return;
       case 2:
-        if (cuttingBoard == null) return;
-        var cuttingObj = cuttingBoard.CurrentCuttingObject;
-        if (cuttingObj == null)
+        handCtrl.gameObject.SetActive(true);
+        handCtrl.ShowHandPosToPos(tfMango.position, tfBoard.position);
+        return;
+      case 3:
+        if (snapPointKnife.SnapPointKnife.canSnap == true && snapPointKnife.SnapPointKnife.isSnap == true)
         {
-          TutorialStep2(0);
-          return;
+          handCtrl.gameObject.SetActive(true);
+          handCtrl.ShowHandPosToPos(tfBoard.position, tfBoard.position);
         }
-        canCutItem = cuttingBoard.InforTFTarget.isSnap;
-        if (canCutItem)
+        else
         {
-          if (isSnapKinfe)
+          handCtrl.gameObject.SetActive(true);
+          handCtrl.ShowHandPosToPos(tfKnife.position, tfBoard.position);
+        }
+        return;
+      case 4:
+        handCtrl.gameObject.SetActive(true);
+        handCtrl.ShowHandPosToPos(tfMacca.position, tfBoard.position);
+        return;
+      case 5:
+        if (itemMaccaInBoard.IsDone == true)
+        {
+          if (tapHand.SnapPoint.canSnap == true && tapHand.SnapPoint.isSnap == true)
           {
-            handCtrl.ShowHandLoop(tfBroadCenter.position, tfBroadCenter.position);
+            handCtrl.gameObject.SetActive(true);
+            handCtrl.ShowHandPosToPos(tfMortar.position, tfMortar.position);
           }
           else
           {
-            if (cuttingObj.CutDone)
-              handCtrl.ShowHandLoop(tfBroadCenter.position, tfBroadCenter.position);
-            else
-              handCtrl.ShowHandLoop(tfKnife.position, tfBroadCenter.position);
+            handCtrl.gameObject.SetActive(true);
+            handCtrl.ShowHandPosToPos(tfBoard.position, tfMortar.position);
           }
         }
         else
         {
-          TutorialStep2(0);
-
+          handCtrl.gameObject.SetActive(true);
+          handCtrl.ShowHandPosToPos(tfHandTapMiniGame.position, tfHandTapMiniGame.position);
         }
-        return;
-      case 3:
-        TutorialStep(tfSauce, tfBotlMeat, 0);
-        return;
-      case 4:
-        if (countStepHint4 == 0)
-        {
-          handCtrl.ShowHandLoop(tfSpoon.position, tfBotlMeat.position);
-        }
-        if (countStepHint4 == 1)
-        {
-          handCtrl.ShowHandCircle(tfBotlMeat.position, 0.75f, 2);
-        }
-        return;
-      case 5:
-        handCtrl.ShowHandLoop(Step1Tf2Tut1.position, Step1Tf1Tut1.position);
         return;
       case 6:
-        handCtrl.ShowHandLoop(lisTfIng[0].position, tfSkewers.position);
+        handCtrl.gameObject.SetActive(true);
+        handCtrl.ShowHandPosToPos(tfWalnut.position, tfBoard.position);
+        return;
+      case 7:
+        if (itemWalnutInBoard.IsDone == true)
+        {
+          if (tapHand.SnapPoint.canSnap == true && tapHand.SnapPoint.isSnap == true)
+          {
+            handCtrl.gameObject.SetActive(true);
+            handCtrl.ShowHandPosToPos(tfMortar.position, tfMortar.position);
+          }
+          else
+          {
+            handCtrl.gameObject.SetActive(true);
+            handCtrl.ShowHandPosToPos(tfBoard.position, tfMortar.position);
+          }
+        }
+        else
+        {
+          handCtrl.gameObject.SetActive(true);
+          handCtrl.ShowHandPosToPos(tfHandTapMiniGame.position, tfHandTapMiniGame.position);
+        }
+
+        return;
+      case 8:
+        handCtrl.gameObject.SetActive(true);
+        handCtrl.ShowHandPosToPos(tfBtnOven.position, tfBtnOven.position);
+        return;
+      case 9:
+        handCtrl.gameObject.SetActive(true);
+        handCtrl.ShowHandPosToPos(tfPistachio.position, tfPan.position);
+        return;
+      case 10:
+        handCtrl.gameObject.SetActive(true);
+        handCtrl.ShowHandPosToPos(tfChopsticks.position, tfPan.position);
+        return;
+      default:
+        resetTimeHint();
         return;
     }
   }
-  [SerializeField] private List<Transform> lisTfIng;
-  public List<Transform> LisTfIng => lisTfIng;
-  [SerializeField] private Transform tfSkewers;
-
-  [SerializeField] private int countStepHint4 = 0;
-  public void SetCountStep4()
+  private void Tutorial(int indexStep)
   {
-    countStepHint4++;
+
   }
-  [SerializeField] private int countHint3 = 0;
-
-  public void CountHint3()
-  {
-    countHint3++;
-  }
-
-  private void TutorialStep2(int indexStep)
-  {
-    if (indexStep >= tfBroad.Count) return;
-
-    handCtrl.ShowHandLoop(tfBroad[indexStep].position, tfBroadCenter.position);
-  }
-
   private void TutorialStep1(int indexStep)
   {
     if (handCtrl == null) return;
-    if (indexStep >= tfItem.Count) return;
-
+    if (indexStep >= tfItem.Count || indexStep >= tutorialNode.Count) return;
+    handCtrl.gameObject.SetActive(true);
     var obj = tfItem[indexStep];
-
-    if (obj == null || tfSink == null) return;
-
-    handCtrl.gameObject.SetActive(true);
-    handCtrl.ShowHandPosToPos(obj.position, tfSink.position);
+    var node = tutorialNode[indexStep];
+    handCtrl.ShowHandPosToPos(obj.position, node.position);
   }
-  private void TutorialStep(List<Transform> listTF, Transform tfTarget, int indexStep)
+  private void TutorialStepMakeUp(int indexStep, Transform tf)
   {
-    if (handCtrl == null) return;
-    if (indexStep >= listTF.Count) return;
-
-    var obj = listTF[indexStep];
-
-    if (obj == null || tfTarget == null) return;
-
-    handCtrl.gameObject.SetActive(true);
-    handCtrl.ShowHandPosToPos(obj.position, tfTarget.position);
+    if (handCtrlMakeup == null) return;
+    if (indexStep >= tfItemMakeup.Count || tf == null) return;
+    handCtrlMakeup.gameObject.SetActive(true);
+    var obj = tfItemMakeup[indexStep];
+    handCtrlMakeup.ShowHandPosToPos(obj.position, tf.position);
   }
-  private void TutorialOneHit(List<Transform> listTF, int index)
-  {
-    if (index >= listTF.Count) return;
-
-    handCtrl.ShowHandAtPos(listTF[index].position);
-  }
-
   public void SetStateIsTap(bool value)
   {
     isTap = value;
   }
-
   void HideHint()
   {
-    if (handCtrl != null)
-      handCtrl.gameObject.SetActive(false);
+    handCtrl.gameObject.SetActive(false);
+    handCtrlMakeup.gameObject.SetActive(false);
   }
-
   public void resetTimeHint()
   {
     HideHint();
-
     timeCountHint = countCollectFail >= 3 ? 1.5f : TimeHint;
-
     enableCountTime = true;
   }
-
   public void OnStepDone()
   {
     CountStepDone++;
   }
-
   public void IncreaseTimeHide()
   {
     TimeHint = 5f;
     resetTimeHint();
   }
-
   public void OnCollectFail()
   {
     countCollectFail++;
@@ -310,10 +250,15 @@ public class TutorialManager : Singleton<TutorialManager>
       timeCountHint = 1.5f;
     }
   }
-
   public void OnCollectSuccess()
   {
     countCollectFail = 0;
     resetTimeHint();
   }
+  public void SetNewTime(float timer)
+  {
+    TimeHint = timer;
+    timeCountHint = timer;
+  }
+
 }

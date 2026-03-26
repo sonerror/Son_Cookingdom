@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 namespace sonnv
 {
     public class SpriteRenderen : MonoBehaviour
@@ -9,6 +10,8 @@ namespace sonnv
         [SerializeField] private List<ShowObjectEffect> listEffectShow;
 
         [SerializeField] private List<SpriteRenderer> listSpriteRenderer;
+
+        [SerializeField] private UnityEvent onDone;
         public void ChangeLayerSprite(int _newLayer)
         {
             foreach (SpriteRenderer sprite in listSpriteRenderer)
@@ -27,6 +30,7 @@ namespace sonnv
                 effrct.Show();
                 yield return new WaitForSeconds(time);
             }
+            onDone?.Invoke();
         }
 
     }

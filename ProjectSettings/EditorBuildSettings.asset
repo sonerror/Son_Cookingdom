@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_GAME/Levels/LevelSkewers/LevelSkewers.unity
     guid: 6f6f4d979efbc32498403a602a34c45c
+  - enabled: 1
+    path: Assets/_GAME/Levels/LevelShirm/LevelShirm.unity
+    guid: 35fd482e0b58d2440b5a3ba7b8e642fe
   m_configObjects: {}
