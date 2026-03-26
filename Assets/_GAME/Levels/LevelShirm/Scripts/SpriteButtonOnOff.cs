@@ -5,9 +5,10 @@ using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using System;
 using System.Collections;
+
 namespace sonnv
 {
-    public class SpriteButtonOnOff : MonoBehaviour, IPointerDownHandler
+    public class SpriteButtonOnOff : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IPointerClickHandler
     {
         [SerializeField] private Collider2D col;
         [SerializeField] private SpriteRenderer sr;
@@ -51,14 +52,15 @@ namespace sonnv
         {
             if (!_canInteract) return;
             if (blockInteractManually) return;
+
         }
 
-        private void OnMouseUp()
+        public void OnPointerUp(PointerEventData eventData)
         {
             sr.color = Color.white;
         }
 
-        private void OnMouseUpAsButton()
+        public void OnPointerClick(PointerEventData eventData)
         {
             if (!_canInteract) return;
             if (blockInteractManually || !IsMatchCondition())
@@ -77,20 +79,25 @@ namespace sonnv
         public void ClickButton()
         {
             IsOn = !IsOn;
-            SoundManager.PlaySFX(IsOn ? turnOnSound : turnOffSound);
+
+            if (SoundManager.Instance != null)
+            {
+                SoundManager.PlaySFX(IsOn ? turnOnSound : turnOffSound);
+            }
+
             sr.sprite = IsOn ? clickButtonSprite : unClickButtonSprite;
-            animScaleLoop.enabled = IsOn;
-            spriteHot.enabled = IsOn;
+
+            if (animScaleLoop != null) animScaleLoop.enabled = IsOn;
+            if (spriteHot != null) spriteHot.enabled = IsOn;
+
             if (IsOn)
             {
-                onClickOn.Invoke();
+                onClickOn?.Invoke();
             }
             else
             {
-                onClickOff.Invoke();
+                onClickOff?.Invoke();
             }
         }
     }
-
 }
-
