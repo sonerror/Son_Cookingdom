@@ -19,8 +19,6 @@ public class LevelControl : LevelBase
     }
     protected virtual void Start()
     {
-        TutorialManager.Ins.SetNewTime(0.1f);
-        TutorialManager.Ins.enableCountTime = true;
         StartStep();
     }
     [SerializeField] private int currentStep = 0;
@@ -37,8 +35,6 @@ public class LevelControl : LevelBase
     {
         if (Input.GetMouseButtonDown(0) && istap == false)
         {
-            TutorialManager.Ins.SetNewTime(0.5f);
-
             //TutorialManager.Ins.IncreaseCountHintStep1();
             //objSpriteRBlack.SetActive(false);
             // objMaskMorter.SetActive(true);
@@ -79,35 +75,34 @@ public class LevelControl : LevelBase
         switch (currentStep)
         {
             case 0:
-                OnStartStep1();
+                //OnStartStep1();
                 break;
             case 1:
-                TutorialManager.Ins.SetNewTime(3);
-                OnStartStep2();
+                //OnStartStep2();
                 break;
             case 2:
-                OnStartStep3();
+                // OnStartStep3();
                 break;
             case 3:
-                OnStartStep4();
+                // OnStartStep4();
                 break;
             case 4:
-                OnStartStep5();
+                // OnStartStep5();
                 break;
             case 5:
-                OnStartStep6();
+                // OnStartStep6();
                 break;
             case 6:
-                OnStartStep7();
+                //OnStartStep7();
                 break;
             case 7:
-                OnStartStep8();
+                //OnStartStep8();
                 break;
             case 8:
-                OnStartStep9();
+                // OnStartStep9();
                 break;
             case 9:
-                OnStartStep10();
+                //OnStartStep10();
                 break;
 
         }
@@ -143,139 +138,211 @@ public class LevelControl : LevelBase
         //   plateActions.Clear();
         //  broadActions.Clear();
     }
-    [SerializeField] private List<SonSnapObject> listSnapObject;
-    [SerializeField] private CuttingBoard cuttingBoard;
-    private void OnStartStep1()
-    {
-        foreach (SonSnapObject obj in listSnapObject)
-        {
-            SonSnapObject cache = obj;
-
-            UnityAction action = delegate
-            {
-                cuttingBoard.RegisterSnapDone(cache);
-                int removedIndex = listSnapObject.IndexOf(cache);
-                if (removedIndex < 0) return;
-
-                listSnapObject.RemoveAt(removedIndex);
-                //if (removedIndex < TutorialManager.Ins.TfBroad.Count)
-                // TutorialManager.Ins.TfBroad.RemoveAt(removedIndex);
-            };
-
-            cache.OnSnap.AddListener(action);
-            snapActions[cache] = action;
-        }
-
-        snapObjStraw.OnSnap.AddListener(() =>
-        {
-            DoneStep();
-            TryNextStep();
-        });
-    }
-    [SerializeField] private FlourMoveToCream strawMove;
-
-    private void OnStartStep2()
-    {
-        strawMove.onComplete.AddListener(() =>
-        {
-            DoneStep();
-            TryNextStep();
-        });
-    }
-
-    [SerializeField] private SonSnapObject snapObjMango;
-
-    private void OnStartStep3()
-    {
-        snapObjMango.enabled = true;
-        snapObjMango.Col.enabled = true;
-        snapObjMango.OnSnap.AddListener(() =>
-        {
-            DoneStep();
-            TryNextStep();
-        });
-    }
-    [SerializeField] private FlourMoveToCream mangoMove;
-
-    private void OnStartStep4()
-    {
-        mangoMove.onComplete.AddListener(() =>
-        {
-            DoneStep();
-            TryNextStep();
-        });
-    }
 
 
-    [SerializeField] private SonSnapObject snapObjMacca;
 
-    private void OnStartStep5()
-    {
-        snapObjMacca.enabled = true;
-        snapObjMacca.Col.enabled = true;
-        snapObjMacca.OnSnap.AddListener(() =>
-        {
-            DoneStep();
-            TryNextStep();
-        });
-    }
 
-    [SerializeField] private FlourMoveToCream maccaMove;
-    private void OnStartStep6()
-    {
-        maccaMove.onComplete.AddListener(() =>
-        {
-            DoneStep();
-            TryNextStep();
-        });
-    }
 
-    [SerializeField] private SonSnapObject snapObjWalnut;
 
-    private void OnStartStep7()
-    {
-        snapObjWalnut.enabled = true;
-        snapObjWalnut.Col.enabled = true;
-        snapObjWalnut.OnSnap.AddListener(() =>
-        {
-            DoneStep();
-            TryNextStep();
-        });
-    }
-    [SerializeField] private FlourMoveToCream walnutMove;
-    private void OnStartStep8()
-    {
-        walnutMove.onComplete.AddListener(() =>
-        {
-            DoneStep();
-            TryNextStep();
-        });
-    }
-    [SerializeField] private SonSnapObject snapObjPistachio;
-    [SerializeField] private SpriteButtonOnOff btnOnOffOven;
-    [SerializeField] private EmojiControl newEmoji;
 
-    private void OnStartStep9()
-    {
-        SetNewEmoji(newEmoji);
-        snapObjPistachio.enabled = true;
-        snapObjPistachio.Col.enabled = true;
-        btnOnOffOven.enabled = true;
-        btnOnOffOven.Col.enabled = true;
-        btnOnOffOven.onClickOn.AddListener(() =>
-        {
-            DoneStep();
-            TryNextStep();
-        });
 
-    }
-    private void OnStartStep10()
-    {
-        snapObjPistachio.OnSnap.AddListener(() =>
-                {
-                    GameManager.Ins.showEndGame();
-                    DoneStep();
-                    TryNextStep();
-                });
-    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // [SerializeField] private List<SonSnapObject> listSnapObject;
+    // [SerializeField] private CuttingBoard cuttingBoard;
+    // private void OnStartStep1()
+    // {
+    //     foreach (SonSnapObject obj in listSnapObject)
+    //     {
+    //         SonSnapObject cache = obj;
+
+    //         UnityAction action = delegate
+    //         {
+    //             cuttingBoard.RegisterSnapDone(cache);
+    //             int removedIndex = listSnapObject.IndexOf(cache);
+    //             if (removedIndex < 0) return;
+
+    //             listSnapObject.RemoveAt(removedIndex);
+    //             //if (removedIndex < TutorialManager.Ins.TfBroad.Count)
+    //             // TutorialManager.Ins.TfBroad.RemoveAt(removedIndex);
+    //         };
+
+    //         cache.OnSnap.AddListener(action);
+    //         snapActions[cache] = action;
+    //     }
+
+    //     snapObjStraw.OnSnap.AddListener(() =>
+    //     {
+    //         DoneStep();
+    //         TryNextStep();
+    //     });
+    // }
+    // [SerializeField] private FlourMoveToCream strawMove;
+
+    // private void OnStartStep2()
+    // {
+    //     strawMove.onComplete.AddListener(() =>
+    //     {
+    //         DoneStep();
+    //         TryNextStep();
+    //     });
+    // }
+
+    // [SerializeField] private SonSnapObject snapObjMango;
+
+    // private void OnStartStep3()
+    // {
+    //     snapObjMango.enabled = true;
+    //     snapObjMango.Col.enabled = true;
+    //     snapObjMango.OnSnap.AddListener(() =>
+    //     {
+    //         DoneStep();
+    //         TryNextStep();
+    //     });
+    // }
+    // [SerializeField] private FlourMoveToCream mangoMove;
+
+    // private void OnStartStep4()
+    // {
+    //     mangoMove.onComplete.AddListener(() =>
+    //     {
+    //         DoneStep();
+    //         TryNextStep();
+    //     });
+    // }
+
+
+    // [SerializeField] private SonSnapObject snapObjMacca;
+
+    // private void OnStartStep5()
+    // {
+    //     snapObjMacca.enabled = true;
+    //     snapObjMacca.Col.enabled = true;
+    //     snapObjMacca.OnSnap.AddListener(() =>
+    //     {
+    //         DoneStep();
+    //         TryNextStep();
+    //     });
+    // }
+
+    // [SerializeField] private FlourMoveToCream maccaMove;
+    // private void OnStartStep6()
+    // {
+    //     maccaMove.onComplete.AddListener(() =>
+    //     {
+    //         DoneStep();
+    //         TryNextStep();
+    //     });
+    // }
+
+    // [SerializeField] private SonSnapObject snapObjWalnut;
+
+    // private void OnStartStep7()
+    // {
+    //     snapObjWalnut.enabled = true;
+    //     snapObjWalnut.Col.enabled = true;
+    //     snapObjWalnut.OnSnap.AddListener(() =>
+    //     {
+    //         DoneStep();
+    //         TryNextStep();
+    //     });
+    // }
+    // [SerializeField] private FlourMoveToCream walnutMove;
+    // private void OnStartStep8()
+    // {
+    //     walnutMove.onComplete.AddListener(() =>
+    //     {
+    //         DoneStep();
+    //         TryNextStep();
+    //     });
+    // }
+    // [SerializeField] private SonSnapObject snapObjPistachio;
+    // [SerializeField] private SpriteButtonOnOff btnOnOffOven;
+    // [SerializeField] private EmojiControl newEmoji;
+
+    // private void OnStartStep9()
+    // {
+    //     SetNewEmoji(newEmoji);
+    //     snapObjPistachio.enabled = true;
+    //     snapObjPistachio.Col.enabled = true;
+    //     btnOnOffOven.enabled = true;
+    //     btnOnOffOven.Col.enabled = true;
+    //     btnOnOffOven.onClickOn.AddListener(() =>
+    //     {
+    //         DoneStep();
+    //         TryNextStep();
+    //     });
+
+    // }
+    // private void OnStartStep10()
+    // {
+    //     snapObjPistachio.OnSnap.AddListener(() =>
+    //             {
+    //                 GameManager.Ins.showEndGame();
+    //                 DoneStep();
+    //                 TryNextStep();
+    //             });
+    // }
 }
