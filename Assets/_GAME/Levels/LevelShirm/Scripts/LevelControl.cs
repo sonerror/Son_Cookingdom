@@ -28,9 +28,6 @@ public class LevelControl : LevelBase
 
 
     private bool istap = false;
-    [SerializeField] private GameObject objSpriteRBlack;
-    [SerializeField] private GameObject objMaskMorter;
-    [SerializeField] private SonSnapObject snapObjStraw;
     void Update()
     {
         if (Input.GetMouseButtonDown(0) && istap == false)
@@ -75,13 +72,13 @@ public class LevelControl : LevelBase
         switch (currentStep)
         {
             case 0:
-                //OnStartStep1();
+                OnStartStep1();
                 break;
             case 1:
-                //OnStartStep2();
+                OnStartStep2();
                 break;
             case 2:
-                // OnStartStep3();
+                OnStartStep3();
                 break;
             case 3:
                 // OnStartStep4();
@@ -138,8 +135,105 @@ public class LevelControl : LevelBase
         //   plateActions.Clear();
         //  broadActions.Clear();
     }
+    [SerializeField] private TapPaper tapPaper;
 
+    [SerializeField] private List<SonSnapObject> listSnapObjItem;
+    [SerializeField] private List<SonSnapObject> listSnapObjItemInList;
+    [SerializeField] private bool isSetCanSnap = false;
+    private int countSnapItemSnap = 0;
+    private void OnStartStep1()
+    {
+        for (int i = 0; i < listSnapObjItemInList.Count; i++)
+        {
+            SonSnapObject obj = listSnapObjItemInList[i];
+            obj.OnSnap.AddListener(() =>
+            {
+                countSnapItemSnap++;
+                if (countSnapItemSnap >= listSnapObjItemInList.Count)
+                {
 
+                    DoneStep();
+                    TryNextStep();
+                }
+            });
+        }
+    }
+    public void SetCanSnapObject()
+    {
+        if (isSetCanSnap == false)
+        {
+            foreach (SonSnapObject obj in listSnapObjItem)
+            {
+                obj.enabled = true;
+                obj.Col.enabled = true;
+            }
+            isSetCanSnap = true;
+        }
+    }
+    [SerializeField] private EmojiControl newEmoji;
+    [SerializeField] private Transform tfStep2;
+    [SerializeField] private float timeMove = 1.75f;
+    [SerializeField] private List<TriggerWithCertainCollider> listTriggerWithCertainCollider1;
+    [SerializeField] private List<TriggerWithCertainCollider> listTriggerWithCertainCollider2;
+    private int countTrigger1 = 0;
+    private int countTrigger2 = 0;
+
+    private void OnStartStep2()
+    {
+        SetNewEmoji(newEmoji);
+        tapPaper.EventCloseShoppingList();
+        StartCoroutine(IE_DelayStartStep2());
+        for (int i = 0; i < listTriggerWithCertainCollider1.Count; i++)
+        {
+            TriggerWithCertainCollider trigger = listTriggerWithCertainCollider1[i];
+            trigger.AddTriggerEvent(() =>
+            {
+                countTrigger1++;
+                if (countTrigger1 >= listTriggerWithCertainCollider1.Count)
+                {
+                    isDone1 = true;
+                    CheckDoneStep2();
+                }
+            });
+        }
+        for (int i = 0; i < listTriggerWithCertainCollider2.Count; i++)
+        {
+            TriggerWithCertainCollider trigger = listTriggerWithCertainCollider2[i];
+            trigger.AddTriggerEvent(() =>
+            {
+                countTrigger2++;
+                if (countTrigger2 >= listTriggerWithCertainCollider2.Count)
+                {
+                    isDone2 = true;
+                    CheckDoneStep2();
+                }
+            });
+        }
+    }
+    private bool isDone1 = false;
+    private bool isDone2 = false;
+
+    private void CheckDoneStep2()
+    {
+        if (isDone1 && isDone2)
+        {
+            DoneStep();
+            TryNextStep();
+        }
+    }
+    IEnumerator IE_DelayStartStep2()
+    {
+        yield return new WaitForSeconds(0.75f);
+        cam.transform.DOMoveX(tfStep2.position.x, timeMove);
+
+    }
+    [SerializeField] private SonSnapObject snapObjectTray;
+
+    private void OnStartStep3()
+    {
+        snapObjectTray.enabled = true;
+        snapObjectTray.Col.enabled = true;
+    }
 
 
 

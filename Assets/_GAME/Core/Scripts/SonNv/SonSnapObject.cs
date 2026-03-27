@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 using Satisgame;
 namespace sonnv
 {
-    [RequireComponent(typeof(SpriteRenderer), typeof(Collider2D))]
+    [RequireComponent(typeof(Collider2D))]
     public class SonSnapObject : SonMonoBehaviour, SonISnapObject,
         IPointerDownHandler, IDragHandler, IPointerUpHandler
     {
@@ -40,6 +40,7 @@ namespace sonnv
         [SerializeField] protected UnityEvent onMouseUp;
         [SerializeField] protected UnityEvent notSnapWhenNearSnapPoint;
         [SerializeField] protected UnityEvent onMovebackDone;
+        [SerializeField] protected UnityEvent onSnapFail;
 
 
         [SerializeField] private bool isEnableCollideWhenEnableThis;
@@ -250,6 +251,7 @@ namespace sonnv
                         if (!snapPoint.isSnap && !snapPoint.canSnap)
                         {
                             emoji.ShowNegative();
+                            onSnapFail?.Invoke();
                         }
                         if (isKnife)
                         {

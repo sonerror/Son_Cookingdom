@@ -66,6 +66,10 @@ namespace sonnv
                 onComplete?.Invoke();
             });
         }
+        public void BounceDelay(float delay)
+        {
+            DOVirtual.DelayedCall(delay, Bounce);
+        }
 
         private void OnBounceUpdate(float value)
         {

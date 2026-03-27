@@ -1,0 +1,99 @@
+using UnityEngine;
+using UnityEngine.Events;
+using DG.Tweening;
+using Sirenix.OdinInspector;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using Utilities;
+public class TriggerWithCertainCollider : GameUnit
+{
+    [SerializeField] private Collider2D triggerWith;
+    [SerializeField] private Collider2D col;
+    public Collider2D Col => col;
+    [SerializeField] private Rigidbody2D rb;
+    [SerializeField] private UnityEvent onTriggerEvent;
+    [SerializeField] private bool disableTriggerWith;
+    private bool _isDone;
+
+    [SerializeField] FxType soundPlay = FxType.None;
+
+    public UnityEvent OnTriggerEvent => onTriggerEvent;
+    public Rigidbody2D Rigidbody => rb;
+    public bool IsDone => _isDone;
+
+    public void EnableCol(bool value)
+    {
+        col.enabled = value;
+    }
+
+    public void ReEnable(Collider2D newTriggerWith)
+    {
+
+        triggerWith = newTriggerWith;
+        ReEnable();
+    }
+
+    public void ReEnable()
+    {
+        _isDone = false;
+        col.enabled = true;
+        rb.simulated = true;
+    }
+
+    public void Disable(bool removePersistentEvent = true)
+    {
+        _isDone = true;
+        col.enabled = false;
+        rb.simulated = false;
+        if (removePersistentEvent) onTriggerEvent.RemoveAllListeners();
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (_isDone) return;
+        if (other == triggerWith)
+        {
+            _isDone = true;
+            col.enabled = false;
+            rb.simulated = false;
+            SoundManager.Ins.PlayFx(soundPlay);
+            if (disableTriggerWith) triggerWith.enabled = false;
+            OnScale();
+            onTriggerEvent?.Invoke();
+        }
+    }
+    public void AddTriggerEvent(UnityAction action)
+    {
+        onTriggerEvent.AddListener(action);
+    }
+
+    public void RemoveTriggerEvent(UnityAction action)
+    {
+        onTriggerEvent.RemoveListener(action);
+    }
+    [SerializeField] private Transform tfScale;
+    [SerializeField] private float durationScale = 0.3f;
+    public void OnScale()
+    {
+
+        StartCoroutine(IE_DelayScale());
+    }
+
+    IEnumerator IE_DelayScale()
+    {
+        yield return new WaitForSeconds(0.01f);
+        tfScale.DOScale(Vector3.one, durationScale).SetEase(Ease.OutBack);
+    }
+
+#if UNITY_EDITOR
+
+  [Sirenix.OdinInspector.Button]
+  private void GetRef()
+  {
+    col = GetComponent<Collider2D>();
+    rb = GetComponent<Rigidbody2D>();
+  }
+
+#endif
+}
