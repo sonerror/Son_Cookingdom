@@ -229,13 +229,72 @@ public class LevelControl : LevelBase
     }
     [SerializeField] private SonSnapObject snapObjectTray;
 
+    [SerializeField] private SonTurnOnOff lidOnOff;
+    [SerializeField] private SpriteButtonOnOff btnOnOffOven;
+
     private void OnStartStep3()
     {
         snapObjectTray.enabled = true;
         snapObjectTray.Col.enabled = true;
+        StartCoroutine(IE_DelayOpenOven());
+        snapObjectTray.OnSnap.AddListener(() =>
+        {
+            StartCoroutine(IE_DelayCloseOven());
+        });
+
     }
 
+    [SerializeField] private SonSnapPoint snapPointTray;
+    IEnumerator IE_DelayOpenOven()
+    {
+        yield return new WaitForSeconds(0.5f);
+        snapPointTray.ChangeCanSnap(true);
+        lidOnOff.ClickButton();
+    }
+    [SerializeField] private float timeOven = 3;
+    [SerializeField] private ClockTimer timerLoNuong;
+    [SerializeField] private OvenVibratorDOTween effectOven;
+    [SerializeField] private ParticleSystem fvxFlour;
+    [SerializeField] private ShowObjectEffect hideStep1;
+    [SerializeField] private ShowObjectEffect showStep2;
+    [SerializeField] private List<SpriteRenderer> listSpriteCakePink;
+    [SerializeField] private List<SpriteRenderer> listSpriteCakeGreen;
+    [SerializeField] private Sprite spriteCakePinkNew;
+    [SerializeField] private Sprite spriteCakeGreenNew;
+    [SerializeField] private SonSnapObject snapObjectTrayInOven;
 
+
+    IEnumerator IE_DelayCloseOven()
+    {
+        yield return new WaitForSeconds(0.5f);
+        lidOnOff.ClickButton();
+        yield return new WaitForSeconds(0.5f);
+        effectOven.StartVibration();
+        btnOnOffOven.ClickButton();
+        hideStep1.Hide();
+        showStep2.Show(0.5f);
+        timerLoNuong.OnTimeOut = () =>
+            {
+                foreach (SpriteRenderer sprite in listSpriteCakePink)
+                {
+                    sprite.sprite = spriteCakePinkNew;
+                }
+                foreach (SpriteRenderer sprite in listSpriteCakeGreen)
+                {
+                    sprite.sprite = spriteCakeGreenNew;
+                }
+                btnOnOffOven.ClickButton();
+                fvxFlour.gameObject.SetActive(true);
+                fvxFlour.Play();
+                lidOnOff.ClickButton();
+                effectOven.StopVibration();
+                snapObjectTrayInOven.enabled = true;
+                snapObjectTrayInOven.Col.enabled = true;
+
+
+            };
+        timerLoNuong.Show(timeOven);
+    }
 
 
 

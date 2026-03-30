@@ -5,6 +5,8 @@ namespace sonnv
 {
     public class ClockTimer : SonMonoBehaviour
     {
+        [SerializeField] private float scaleShow = 0.6f;
+
         [SerializeField] private Image timerImage;
         [SerializeField] private float showTime = 0.3f;
         [SerializeField] private float timeOut = 3f;
@@ -31,7 +33,7 @@ namespace sonnv
             Show();
         }
 
-
+        [Sirenix.OdinInspector.Button]
         private void Show()
         {
             if (_isStartTimer) return;
@@ -39,7 +41,7 @@ namespace sonnv
             Tf.localScale = Vector3.zero;
             timerImage.fillAmount = 1;
             _showTween?.Kill();
-            _showTween = Tf.DOScale(Vector3.one, showTime);
+            _showTween = Tf.DOScale(Vector3.one * scaleShow, showTime);
             _isStartTimer = true;
             sound?.Play();
         }
@@ -51,6 +53,11 @@ namespace sonnv
                 .OnComplete(() => gameObject.SetActive(false));
             _isStartTimer = false;
             sound?.Stop();
+        }
+        public void Hide(float time = 0)
+        {
+            timeOut = time;
+            Hide();
         }
     }
 
