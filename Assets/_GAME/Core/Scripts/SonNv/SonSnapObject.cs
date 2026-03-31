@@ -58,6 +58,15 @@ namespace sonnv
         [SerializeField] protected float speedFloatingIdle = 0.1f;
         [SerializeField] protected bool isFloatingStart;
         [SerializeField] protected bool isKnife = false;
+        [SerializeField] protected bool isTrueStep = false;
+        public bool IsTrueStep => isTrueStep;
+        public void ChangeCheckActionStepMix(bool value)
+        {
+            isTrueStep = value;
+        }
+        [SerializeField] protected bool isCheckCheckFail = false;
+        [SerializeField] protected float timeCount = 1.5f;
+
 
         protected Vector3 floatingAnchor;
         protected float timeOffsetFloating;
@@ -74,7 +83,7 @@ namespace sonnv
 
         private Tween _moveBackTween;
         private Tween _rotateTween;
-
+        private Tween _dragTimeoutTween;
         public bool IsSnap { get; private set; }
         public bool CanMoveBack => moveBack;
         public bool IsDragging => _isDragging;
@@ -93,6 +102,7 @@ namespace sonnv
         [SerializeField] protected UnityEvent onTrans;
         public UnityEvent OnTrans => onTrans;
         [SerializeField] private AudioData onTransAudio;
+        [SerializeField] FxType soundPlay = FxType.None;
 
         private void OnTransiton()
         {
@@ -102,6 +112,10 @@ namespace sonnv
                 Tf.DOMove(tfRotate.position, 0.15f)
                     .OnComplete(() =>
                     {
+                        if (soundPlay != FxType.None)
+                        {
+                            SoundManager.Ins.PlayFx(soundPlay);
+                        }
                         Tf.DORotate(new Vector3(0, 0, rotateTrans), 0.3f).OnComplete(() =>
                             {
                                 SoundManager.PlaySFX(onTransAudio.clip, onTransAudio.volume);
@@ -178,7 +192,20 @@ namespace sonnv
         public void OnPointerDown(PointerEventData eventData)
         {
             if (!_canInteract || _isDragging || IsSnap) return;
+            if (isCheckCheckFail)
+            {
+                _dragTimeoutTween?.Kill();
+                _dragTimeoutTween = DOVirtual.DelayedCall(timeCount, () =>
+                {
+                    if (_isDragging && !isTrueStep)
+                    {
+                        emoji.ShowNegative();
+                        onSnapFail?.Invoke();
+                        MoveBack();
+                    }
+                });
 
+            }
             _isDragging = true;
             StopFloating();
 
@@ -229,7 +256,10 @@ namespace sonnv
         public void OnPointerUp(PointerEventData eventData)
         {
             if (!_isDragging || IsSnap) return;
-
+            if (isCheckCheckFail)
+            {
+                _dragTimeoutTween?.Kill();
+            }
             _isDragging = false;
             StartFloating();
 
@@ -258,6 +288,14 @@ namespace sonnv
                             if (snapPoint.isSnap && snapPoint.canSnap)
                             {
                                 emoji.ShowNegative();
+                            }
+                        }
+                        if (isCheckCheckFail)
+                        {
+                            if (isTrueStep == false)
+                            {
+                                emoji.ShowNegative();
+                                onSnapFail?.Invoke();
                             }
                         }
                     }

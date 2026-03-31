@@ -45,7 +45,10 @@ namespace sonnv
             base.OnPointerDown(eventData);
             OnMove();
         }
-
+        public void OnMoveDelay(float delay)
+        {
+            DOVirtual.DelayedCall(delay, OnMove);
+        }
         public void OnMove()
         {
             if (tfTarget != null && tfTarget.IsSnap)
@@ -70,8 +73,10 @@ namespace sonnv
         private void JumpFlour(Transform plateTransform, UnityAction action = null)
         {
             Tf.DOKill(true);
-
-            col.enabled = false;
+            if (col != null)
+            {
+                col.enabled = false;
+            }
             spriteRenderer.sortingOrder = sortOrderMax;
 
             Vector3 target = new Vector3(

@@ -16,6 +16,12 @@ namespace sonnv
         [SerializeField] private Transform shoppingCart;
         [SerializeField] private AudioClip sfxOpenShoppingList;
         [SerializeField] private AudioClip sfxCloseShoppingList;
+        [SerializeField] private bool blockClickOpen = false;
+        [SerializeField] private bool isTapClose = false;
+        public void OnBlockClickOpen(bool value)
+        {
+            blockClickOpen = value;
+        }
         public UnityEvent onClickOn;
         public UnityEvent onClickOff;
         public bool IsOn { get; private set; }
@@ -45,6 +51,7 @@ namespace sonnv
         }
         public void EventOpenShoppingList()
         {
+            if (blockClickOpen) return;
             if (isOpenShoppingList || !isCanInteract) return;
             isCanInteract = false;
             isOpenShoppingList = true;
@@ -71,6 +78,11 @@ namespace sonnv
                 rootShoppingList.gameObject.SetActive(false);
                 isCanInteract = true;
             });
+            if (isTapClose == false)
+            {
+                TutorialManager.Ins.ChangeTapClose(true);
+                isTapClose = true;
+            }
         }
     }
 

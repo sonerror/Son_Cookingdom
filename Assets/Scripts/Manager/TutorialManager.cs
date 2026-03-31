@@ -13,46 +13,13 @@ public class TutorialManager : Singleton<TutorialManager>
   [SerializeField] public HandCtrl handCtrl;
   [SerializeField] public HandCtrl handCtrlMakeup;
   [SerializeField] private LevelControl _level;
-
   [SerializeField] private int countHintStep1 = 0;
-  [SerializeField] private Transform tfStraw;
-  [SerializeField] private Transform tfBoard;
-  [SerializeField] private Transform tfMortar;
-  [SerializeField] private Transform tfKnife;
-  [SerializeField] private CuttingBoard snapPointKnife;
-  public int CountHintStep1
-  {
-    get { return countHintStep1; }
-    set { countHintStep1 = value; }
-  }
-  public void IncreaseCountHintStep1()
-  {
-    countHintStep1++;
-  }
-  [SerializeField] private Transform tfMango;
-  [SerializeField] private Transform tfMacca;
-  [SerializeField] private ItemInBoard itemMaccaInBoard;
-  [SerializeField] private Transform tfHandTapMiniGame;
-  [SerializeField] private TapHand tapHand;
-
-  [SerializeField] private Transform tfWalnut;
-  [SerializeField] private ItemInBoard itemWalnutInBoard;
-
-
-  [SerializeField] private Transform tfBtnOven;
-  [SerializeField] private Transform tfPistachio;
-  [SerializeField] private Transform tfPan;
-  [SerializeField] private Transform tfChopsticks;
-
   private int CountStepDone = 0;
-
   [SerializeField] private List<Transform> tutorialNode = new List<Transform>();
   [SerializeField] private List<Transform> tfItem = new List<Transform>();
   public List<Transform> TutorialNode => tutorialNode;
   public List<Transform> TfItem => tfItem;
   [SerializeField] private List<Transform> tfItemMakeup = new List<Transform>();
-  [SerializeField] private Transform tfFace;
-  [SerializeField] private Transform tfHair;
   int countCollectFail = 0;
   private bool isTap = false;
 
@@ -79,8 +46,79 @@ public class TutorialManager : Singleton<TutorialManager>
     timeCountHint -= Time.deltaTime;
     if (timeCountHint <= 0)
     {
-      //ShowHint();
+      ShowHint();
     }
+  }
+  [SerializeField] private bool isTapPaper = false;
+  public bool IsTapPaper => isTapPaper;
+  public void ChangeTapPapper(bool value)
+  {
+    isTapPaper = value;
+  }
+  [SerializeField] private Transform tfPapper;
+  [SerializeField] private Transform tfBtnBack;
+  [SerializeField] private bool isTapClose = false;
+  public void ChangeTapClose(bool value)
+  {
+    isTapClose = value;
+  }
+  [SerializeField] private List<Transform> listTfListShopping = new List<Transform>();
+  public List<Transform> ListTfListShopping => listTfListShopping;
+  [SerializeField] private Transform tfCart;
+  private void TutorialStepShopping(int indexStep)
+  {
+    if (handCtrl == null) return;
+    if (indexStep >= listTfListShopping.Count) return;
+    handCtrl.gameObject.SetActive(true);
+    var obj = listTfListShopping[indexStep];
+    handCtrl.ShowHandPosToPos(obj.position, tfCart.position);
+  }
+  //Step2
+  [SerializeField] private Transform tfToolPink;
+  [SerializeField] private Transform tfCakePink;
+  [SerializeField] private Transform tfToolGreen;
+  [SerializeField] private Transform tfCakeGreen;
+  [SerializeField] private bool isDoneCakePink = false;
+  public void ChangeIsDoneCake(bool value)
+  {
+    isDoneCakePink = value;
+  }
+
+
+  //Step3 
+  [SerializeField] private Transform tfTray;
+  [SerializeField] private Transform tfOven;
+  [SerializeField] private bool isDoneCake = false;
+  [SerializeField] private Transform tfTrayDone;
+  //step4
+  [SerializeField] private Transform tfCakeFisrt;
+  //step5
+  [SerializeField] private List<Transform> listTfListCream = new List<Transform>();
+  public List<Transform> ListTfListCream => listTfListCream;
+  [SerializeField] private Transform tfBowl;
+  [SerializeField] private LevelControl levelControl;
+
+  [SerializeField] private Transform tfMix;
+  [SerializeField] private Transform tfToolCream;
+
+  [SerializeField] private Transform trTrayDone;
+
+
+  [SerializeField] private Transform tf1;
+  [SerializeField] private Transform tf2;
+
+
+  private void TutorialStepMixCream(int indexStep)
+  {
+    if (handCtrl == null) return;
+    if (indexStep >= listTfListCream.Count) return;
+    handCtrl.gameObject.SetActive(true);
+    var obj = listTfListCream[indexStep];
+    handCtrl.ShowHandPosToPos(obj.position, tfBowl.position);
+  }
+  public void ChangeIsDoneCakeInOven(bool value)
+  {
+    isDoneCake = value;
   }
   void ShowHint()
   {
@@ -90,106 +128,87 @@ public class TutorialManager : Singleton<TutorialManager>
     switch (index)
     {
       case 0:
-        // if (countHintStep1 == 0)
-        // {
-        //   handCtrl.gameObject.SetActive(true);
-        //   handCtrl.ShowHandPosToPos(tfStraw.position, tfStraw.position);
-        // }
-        if (countHintStep1 == 0)
+
+        if (!isTapPaper)
         {
           handCtrl.gameObject.SetActive(true);
-          handCtrl.ShowHandPosToPos(tfStraw.position, tfBoard.position);
-
+          handCtrl.ShowHandPosToPos(tfPapper.position, tfPapper.position);
+        }
+        else
+        {
+          if (!isTapClose)
+          {
+            handCtrl.gameObject.SetActive(true);
+            handCtrl.ShowHandPosToPos(tfBtnBack.position, tfBtnBack.position);
+          }
+          else
+          {
+            TutorialStepShopping(0);
+          }
         }
         return;
       case 1:
-        if (snapPointKnife.SnapPointKnife.canSnap == true && snapPointKnife.SnapPointKnife.isSnap == true)
+        if (isDoneCakePink == false)
         {
           handCtrl.gameObject.SetActive(true);
-          handCtrl.ShowHandPosToPos(tfBoard.position, tfBoard.position);
+          handCtrl.ShowHandPosToPos(tfToolPink.position, tfCakePink.position);
         }
         else
         {
           handCtrl.gameObject.SetActive(true);
-          handCtrl.ShowHandPosToPos(tfKnife.position, tfBoard.position);
+          handCtrl.ShowHandPosToPos(tfToolGreen.position, tfCakeGreen.position);
         }
         return;
       case 2:
-        handCtrl.gameObject.SetActive(true);
-        handCtrl.ShowHandPosToPos(tfMango.position, tfBoard.position);
+        if (isDoneCake == false)
+        {
+          handCtrl.gameObject.SetActive(true);
+          handCtrl.ShowHandPosToPos(tfTray.position, tfOven.position);
+        }
+        else
+        {
+          handCtrl.gameObject.SetActive(true);
+          handCtrl.ShowHandPosToPos(tfOven.position, tfTrayDone.position);
+        }
         return;
       case 3:
-        if (snapPointKnife.SnapPointKnife.canSnap == true && snapPointKnife.SnapPointKnife.isSnap == true)
-        {
-          handCtrl.gameObject.SetActive(true);
-          handCtrl.ShowHandPosToPos(tfBoard.position, tfBoard.position);
-        }
-        else
-        {
-          handCtrl.gameObject.SetActive(true);
-          handCtrl.ShowHandPosToPos(tfKnife.position, tfBoard.position);
-        }
+        handCtrl.gameObject.SetActive(true);
+        handCtrl.ShowHandPosToPos(tfCakeFisrt.position, tfCakeFisrt.position);
         return;
       case 4:
-        handCtrl.gameObject.SetActive(true);
-        handCtrl.ShowHandPosToPos(tfMacca.position, tfBoard.position);
+        if (levelControl.IsSnapSugar == false)
+        {
+          TutorialStepMixCream(0);
+        }
+        if (levelControl.IsSnapVani == false)
+        {
+          TutorialStepMixCream(1);
+        }
+        if (levelControl.IsSnapButter == false)
+        {
+          TutorialStepMixCream(2);
+        }
         return;
       case 5:
-        if (itemMaccaInBoard.IsDone == true)
-        {
-          if (tapHand.SnapPoint.canSnap == true && tapHand.SnapPoint.isSnap == true)
-          {
-            handCtrl.gameObject.SetActive(true);
-            handCtrl.ShowHandPosToPos(tfMortar.position, tfMortar.position);
-          }
-          else
-          {
-            handCtrl.gameObject.SetActive(true);
-            handCtrl.ShowHandPosToPos(tfBoard.position, tfMortar.position);
-          }
-        }
-        else
-        {
-          handCtrl.gameObject.SetActive(true);
-          handCtrl.ShowHandPosToPos(tfHandTapMiniGame.position, tfHandTapMiniGame.position);
-        }
+        handCtrl.gameObject.SetActive(true);
+        handCtrl.ShowHandPosToPos(tfMix.position, tfBowl.position);
         return;
       case 6:
+
         handCtrl.gameObject.SetActive(true);
-        handCtrl.ShowHandPosToPos(tfWalnut.position, tfBoard.position);
+        handCtrl.ShowHandPosToPos(tfToolCream.position, trTrayDone.position);
         return;
       case 7:
-        if (itemWalnutInBoard.IsDone == true)
-        {
-          if (tapHand.SnapPoint.canSnap == true && tapHand.SnapPoint.isSnap == true)
-          {
-            handCtrl.gameObject.SetActive(true);
-            handCtrl.ShowHandPosToPos(tfMortar.position, tfMortar.position);
-          }
-          else
-          {
-            handCtrl.gameObject.SetActive(true);
-            handCtrl.ShowHandPosToPos(tfBoard.position, tfMortar.position);
-          }
-        }
-        else
-        {
-          handCtrl.gameObject.SetActive(true);
-          handCtrl.ShowHandPosToPos(tfHandTapMiniGame.position, tfHandTapMiniGame.position);
-        }
-
+        handCtrl.gameObject.SetActive(true);
+        handCtrl.ShowHandPosToPos(tf1.position, tf2.position);
         return;
       case 8:
-        handCtrl.gameObject.SetActive(true);
-        handCtrl.ShowHandPosToPos(tfBtnOven.position, tfBtnOven.position);
         return;
       case 9:
-        handCtrl.gameObject.SetActive(true);
-        handCtrl.ShowHandPosToPos(tfPistachio.position, tfPan.position);
+
         return;
       case 10:
-        handCtrl.gameObject.SetActive(true);
-        handCtrl.ShowHandPosToPos(tfChopsticks.position, tfPan.position);
+
         return;
       default:
         resetTimeHint();

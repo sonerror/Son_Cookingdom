@@ -74,6 +74,9 @@ public class TriggerWithCertainCollider : GameUnit
     }
     [SerializeField] private Transform tfScale;
     [SerializeField] private float durationScale = 0.3f;
+    [SerializeField] private float detalScale = 1;
+
+
     public void OnScale()
     {
 
@@ -83,7 +86,7 @@ public class TriggerWithCertainCollider : GameUnit
     IEnumerator IE_DelayScale()
     {
         yield return new WaitForSeconds(0.01f);
-        tfScale.DOScale(Vector3.one, durationScale).SetEase(Ease.OutBack);
+        tfScale.DOScale(Vector3.one * detalScale, durationScale).SetEase(Ease.OutBack);
     }
 
 #if UNITY_EDITOR

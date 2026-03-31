@@ -40,8 +40,8 @@ namespace sonnv
 
         protected virtual void Awake()
         {
-            if (col == null)
-                col = GetComponent<Collider2D>();
+            // if (col == null)
+            //     col = GetComponent<Collider2D>();
 
             if (spriteRenderer == null)
                 spriteRenderer = GetComponent<SpriteRenderer>();
@@ -63,7 +63,11 @@ namespace sonnv
             if (canBlock)
             {
                 blockTap = true;
-                col.enabled = false;
+                if (col != null)
+                {
+                    col.enabled = false;
+
+                }
             }
 
         }
