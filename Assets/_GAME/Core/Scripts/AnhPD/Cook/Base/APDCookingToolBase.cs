@@ -1,6 +1,6 @@
 using DG.Tweening;
 
-using Satisgame;
+using sonnv;
 using Sirenix.OdinInspector;
 using System;
 using System.Collections;

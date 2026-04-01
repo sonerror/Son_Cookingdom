@@ -2,7 +2,7 @@ using DG.Tweening;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
-using Satisgame;
+using sonnv;
 namespace sonnv
 {
     [RequireComponent(typeof(Collider2D))]
@@ -66,6 +66,8 @@ namespace sonnv
         }
         [SerializeField] protected bool isCheckCheckFail = false;
         [SerializeField] protected float timeCount = 1.5f;
+        [SerializeField] protected bool isInZoneSnap = false;
+        [SerializeField] protected bool isBlockShowEmoji = false;
 
 
         protected Vector3 floatingAnchor;
@@ -171,12 +173,32 @@ namespace sonnv
             if (isFloatingStart)
                 StartFloating();
         }
+        // private float _timer = 0f;
+        // private bool _isCheckingZone = false;
 
         private void Update()
         {
+            // if (isInZoneSnap && _isDragging)
+            // {
+            //     _timer += Time.deltaTime;
+            //     if (_timer >= timeCount)
+            //     {
+            //         _timer = 0f;
+            //         if (!CheckInZoneSnap())
+            //         {
+            //             emoji.ShowNegative();
+            //             onSnapFail?.Invoke();
+            //             MoveBack();
+            //         }
+            //     }
+            // }
+            // else
+            // {
+            //     _timer = 0f;
+            // }
+
             if (!useUpdateToDragLerp) return;
             if (!_isDragging || IsSnap) return;
-
             Tf.position = Vector3.Lerp(Tf.position, _mousePos, interpolateSpeed);
 
             if (!isRotate)
@@ -186,7 +208,15 @@ namespace sonnv
                     interpolateSpeed
                 );
         }
-
+        private void CheckAndHandleSnapZone()
+        {
+            if (!CheckInZoneSnap())
+            {
+                emoji.ShowNegative();
+                onSnapFail?.Invoke();
+                MoveBack();
+            }
+        }
         /* ================= POINTER EVENTS (LUNA) ================= */
 
         public void OnPointerDown(PointerEventData eventData)
@@ -206,6 +236,24 @@ namespace sonnv
                 });
 
             }
+            // if (isInZoneSnap)
+            // {
+            //     _dragTimeoutTween?.Kill();
+            //     _dragTimeoutTween = DOVirtual.DelayedCall(timeCount, () =>
+            //     {
+            //         if (CheckInZoneSnap() != true)
+            //         {
+            //             if (_isDragging)
+            //             {
+            //                 emoji.ShowNegative();
+            //                 onSnapFail?.Invoke();
+            //                 MoveBack();
+            //             }
+
+            //         }
+            //     });
+
+            // }
             _isDragging = true;
             StopFloating();
 
@@ -252,15 +300,33 @@ namespace sonnv
             if (!useUpdateToDragLerp)
                 Tf.position = _mousePos;
         }
-
+        private bool CheckInZoneSnap()
+        {
+            for (int i = 0; i < snapToPosition.Length; i++)
+            {
+                SonSnapPoint snapPoint = snapToPosition[i];
+                if (DistanceToInSqrVec2(snapPoint.Tf) < snapDistance)
+                {
+                    if (!snapPoint.isSnap && !snapPoint.canSnap)
+                    {
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
         public void OnPointerUp(PointerEventData eventData)
         {
             if (!_isDragging || IsSnap) return;
+            _isDragging = false;
             if (isCheckCheckFail)
             {
                 _dragTimeoutTween?.Kill();
             }
-            _isDragging = false;
+            if (isInZoneSnap)
+            {
+                _dragTimeoutTween?.Kill();
+            }
             StartFloating();
 
 
@@ -278,7 +344,7 @@ namespace sonnv
                     SonSnapPoint snapPoint = snapToPosition[i];
                     if ((DistanceToInSqrVec2(snapPoint.Tf) < snapDistance))
                     {
-                        if (!snapPoint.isSnap && !snapPoint.canSnap)
+                        if (!snapPoint.isSnap && !snapPoint.canSnap && !isBlockShowEmoji)
                         {
                             emoji.ShowNegative();
                             onSnapFail?.Invoke();
@@ -417,6 +483,10 @@ namespace sonnv
         {
             isFloating = false;
         }
+        public void DelayMoveBack(float delay)
+        {
+            DOVirtual.DelayedCall(delay, MoveBack);
+        }
 
         public void MoveBack()
         {
@@ -426,6 +496,7 @@ namespace sonnv
                 _moveBackTween.Kill();
 
             // reset trạng thái
+            onMouseUp?.Invoke();
             _isDragging = false;
             IsSnap = false;
             _snapPoint = null;
@@ -436,13 +507,14 @@ namespace sonnv
             if (!ignoreRigidBody && rb)
                 rb.bodyType = RigidbodyType2D.Dynamic;
 
-            sprite.sortingOrder = onDropOrderLayer;
+            //sprite.sortingOrder = onDropOrderLayer;
 
             Tf.localScale = _initScale;
 
             _moveBackTween = Tf.DOLocalMove(_initLocalPos, 0.3f)
                 .OnComplete(() =>
                 {
+                    sprite.sortingOrder = onDropOrderLayer;
                     onMovebackDone?.Invoke();
                     if (onMoveBackEnd != null)
                         onMoveBackEnd.Invoke();

@@ -1,7 +1,7 @@
 ﻿using DG.Tweening;
 using UnityEngine;
 
-namespace Satisgame
+namespace sonnv
 {
     public class EmojiControl : MonoBehaviour
     {
@@ -67,8 +67,9 @@ namespace Satisgame
 
             seq.Append(scaleTransform.DOScale(originScale, durationShow).SetEase(Ease.OutBack));
 
-            if (clip && audioSource)
-                seq.AppendCallback(() => audioSource.PlayOneShot(clip));
+
+            if (clip != null)
+                seq.AppendCallback(() => SoundManager.PlaySFXOneShot(clip));
 
             seq.AppendInterval(durationHold);
 

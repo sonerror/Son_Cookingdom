@@ -1,6 +1,6 @@
 using UnityEngine;
 using DG.Tweening;
-using Satisgame;
+using sonnv;
 public class SmoothMoveWithDOTween : MonoBehaviour
 {
     [SerializeField] private EmojiControl emoji;

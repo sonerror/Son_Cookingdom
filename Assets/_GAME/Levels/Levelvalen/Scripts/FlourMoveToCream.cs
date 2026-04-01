@@ -1,5 +1,4 @@
 using DG.Tweening;
-using sonnv;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
@@ -8,6 +7,10 @@ namespace sonnv
 {
     public class FlourMoveToCream : SonTapItem
     {
+        [SerializeField] private bool isCheckShowEmoji = false;
+        [SerializeField] private EmojiControl emojiControl;
+        [SerializeField] private UnityEvent onEventFail;
+
         [SerializeField] private InforTFTarget tfTarget;
         public void SetData(InforTFTarget _tfTarget)
         {
@@ -32,17 +35,23 @@ namespace sonnv
         [SerializeField] private float detalSacle = 1;
 
         [SerializeField] private int forceScaleFrame = 0;
+        [SerializeField] private bool isChangeNewLayer = false;
+        [SerializeField] private int newLayerAfterMove = 39;
 
         public UnityEvent onComplete;
         public UnityEvent onStartMoveComplete;
 
         private Vector3 forceScaleValue;
-
+        private bool isMoving = false;
         public override void OnPointerDown(PointerEventData eventData)
         {
+            Debug.Log("1");
             if (canClockTap) return;
+            Debug.Log("2");
 
             base.OnPointerDown(eventData);
+            Debug.Log("3");
+
             OnMove();
         }
         public void OnMoveDelay(float delay)
@@ -51,12 +60,42 @@ namespace sonnv
         }
         public void OnMove()
         {
+            if (isCheckShowEmoji == true)
+            {
+                Debug.Log("4");
+
+                if (!tfTarget.IsSnap)
+                {
+                    if (emojiControl != null)
+                    {
+                        Debug.Log("0000000000000000");
+                        onEventFail?.Invoke();
+                        Debug.Log("1111111111111");
+
+                        emojiControl.ShowNegative();
+                        Debug.Log("222222222222");
+
+                    }
+                }
+            }
             if (tfTarget != null && tfTarget.IsSnap)
             {
+                Debug.Log("5");
+
+                isMoving = true;
+                Debug.Log("6");
+
                 tfTarget.ChangeIsSnap(false);
+                Debug.Log("7");
+
                 onStartMoveComplete?.Invoke();
+                Debug.Log("8");
+
                 JumpFlour(tfTarget.Tf, () =>
                 {
+                    Debug.Log("9");
+
+                    isMoving = false;
                     ChangeScale();
                 });
             }
@@ -93,8 +132,15 @@ namespace sonnv
                 {
                     if (sfxSnap != null)
                         SoundManager.PlaySFXOneShot(sfxSnap);
+                    if (isChangeNewLayer == false)
+                    {
+                        spriteRenderer.sortingOrder = _originnalLayer;
 
-                    spriteRenderer.sortingOrder = _originnalLayer;
+                    }
+                    else
+                    {
+                        spriteRenderer.sortingOrder = newLayerAfterMove;
+                    }
 
                     Tf.SetParent(plateTransform, true);
                     Tf.localPosition = Vector3.zero;
@@ -114,7 +160,7 @@ namespace sonnv
         {
             if (canClockTap) return;
 
-            if (!tfTarget.IsSnap)
+            if (!tfTarget.IsSnap && !isMoving)
                 base.OnPointerUp(eventData);
         }
 

@@ -1,5 +1,4 @@
 using DG.Tweening;
-using Satisgame;
 using Sirenix.OdinInspector;
 using System.Collections;
 using System.Collections.Generic;
@@ -20,6 +19,7 @@ public class LevelControl : LevelBase
     protected virtual void Start()
     {
         StartStep();
+        tapPaper.OnOpenShoppingList();
     }
     [SerializeField] private int currentStep = 0;
     public int CurrentStep => currentStep;
@@ -72,7 +72,7 @@ public class LevelControl : LevelBase
         switch (currentStep)
         {
             case 0:
-                TutorialManager.Ins.SetNewTime(0.1f);
+                TutorialManager.Ins.SetNewTime(0.5f);
                 OnStartStep1();
                 break;
             case 1:
@@ -120,7 +120,7 @@ public class LevelControl : LevelBase
         emoji.transform.position = position + Vector3.up * 0.5f + Vector3.left * 0.5f;
         emoji.ShowPositive();
     }
-    private Dictionary<SonSnapObject, UnityAction> snapActions = new Dictionary<SonSnapObject, UnityAction>();
+    private Dictionary<FlourMoveToCream, UnityAction> snapActions = new Dictionary<FlourMoveToCream, UnityAction>();
     // private Dictionary<FlourMoveToCream, UnityAction> plateActions = new Dictionary<FlourMoveToCream, UnityAction>();
     //  private Dictionary<FlourMoveToCream, UnityAction> broadActions = new Dictionary<FlourMoveToCream, UnityAction>();
     void OnDisable()
@@ -129,7 +129,7 @@ public class LevelControl : LevelBase
         {
             if (kvp.Key != null)
             {
-                kvp.Key.OnSnap.RemoveListener(kvp.Value);
+                kvp.Key.onComplete.RemoveListener(kvp.Value);
             }
         }
         snapActions.Clear();
@@ -137,9 +137,9 @@ public class LevelControl : LevelBase
         //  broadActions.Clear();
     }
     [SerializeField] private TapPaper tapPaper;
-
-    [SerializeField] private List<SonSnapObject> listSnapObjItem;
-    [SerializeField] private List<SonSnapObject> listSnapObjItemInList;
+    public TapPaper TapPaper => tapPaper;
+    [SerializeField] private List<FlourMoveToCream> listMoveObjItem;
+    [SerializeField] private List<FlourMoveToCream> listObjInShoppingList;
     [SerializeField] private bool isSetCanSnap = false;
     private int countSnapItemSnap = 0;
     private void OnStartStep1()
@@ -152,9 +152,9 @@ public class LevelControl : LevelBase
     private void SetSnapObject()
     {
 
-        foreach (SonSnapObject obj in listSnapObjItemInList)
+        foreach (FlourMoveToCream obj in listObjInShoppingList)
         {
-            SonSnapObject cache = obj;
+            FlourMoveToCream cache = obj;
 
             UnityAction action = delegate
             {
@@ -162,44 +162,38 @@ public class LevelControl : LevelBase
             };
 
             snapActions[cache] = action;
-            cache.OnSnap.AddListener(action);
+            cache.onComplete.AddListener(action);
         }
     }
 
-    private void OnSnapHandler(SonSnapObject obj)
+    private void OnSnapHandler(FlourMoveToCream obj)
     {
         if (snapActions.ContainsKey(obj))
         {
-            obj.OnSnap.RemoveListener(snapActions[obj]);
+            obj.onComplete.RemoveListener(snapActions[obj]);
             snapActions.Remove(obj);
         }
 
-        int removedIndex = listSnapObjItemInList.IndexOf(obj);
+        int removedIndex = listObjInShoppingList.IndexOf(obj);
         if (removedIndex < 0) return;
 
-        listSnapObjItemInList.RemoveAt(removedIndex);
+        listObjInShoppingList.RemoveAt(removedIndex);
 
         if (removedIndex < TutorialManager.Ins.ListTfListShopping.Count)
             TutorialManager.Ins.ListTfListShopping.RemoveAt(removedIndex);
 
-        if (listSnapObjItemInList.Count <= 0)
+        if (listObjInShoppingList.Count <= 0)
         {
             DoneStep();
             TryNextStep();
         }
     }
-    public void SetCanSnapObject()
+    public void SetCanSnapObject(bool value = false)
     {
-        if (isSetCanSnap == false)
+        foreach (FlourMoveToCream obj in listMoveObjItem)
         {
-            TutorialManager.Ins.ChangeTapPapper(true);
-            TutorialManager.Ins.SetNewTime(3);
-            foreach (SonSnapObject obj in listSnapObjItem)
-            {
-                obj.enabled = true;
-                obj.Col.enabled = true;
-            }
-            isSetCanSnap = true;
+            obj.enabled = value;
+            obj.ColD.enabled = value;
         }
     }
     [SerializeField] private EmojiControl newEmoji;
@@ -424,10 +418,17 @@ public class LevelControl : LevelBase
     [SerializeField] private AnimSnapCream animAddCream;
     [SerializeField] private List<FlourMoveToCream> listMove;
     private int countMove = 0;
+    [SerializeField] private TriggerWithCertainCollider cakePinkTrigger;
+
     private void OnStartStep7()
     {
         SetNewEmoji(newEmojiInTrayDone);
         StartCoroutine(IE_DelayAnim());
+        cakePinkTrigger.AddTriggerEvent(() =>
+        {
+            TutorialManager.Ins.ChangeIsDoneCakeDone(true);
+        });
+
     }
     IEnumerator IE_DelayAnim()
     {
@@ -465,6 +466,7 @@ public class LevelControl : LevelBase
         cam.transform.DOMoveX(tfStep3.position.x, timeMove).OnComplete(() =>
         {
             TutorialManager.Ins.enableCountTime = true;
+            TutorialManager.Ins.SetNewTime(0.1f);
             GameManager.Ins.showEndGame();
         });
 

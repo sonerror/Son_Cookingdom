@@ -50,11 +50,7 @@ public class TutorialManager : Singleton<TutorialManager>
     }
   }
   [SerializeField] private bool isTapPaper = false;
-  public bool IsTapPaper => isTapPaper;
-  public void ChangeTapPapper(bool value)
-  {
-    isTapPaper = value;
-  }
+
   [SerializeField] private Transform tfPapper;
   [SerializeField] private Transform tfBtnBack;
   [SerializeField] private bool isTapClose = false;
@@ -71,7 +67,7 @@ public class TutorialManager : Singleton<TutorialManager>
     if (indexStep >= listTfListShopping.Count) return;
     handCtrl.gameObject.SetActive(true);
     var obj = listTfListShopping[indexStep];
-    handCtrl.ShowHandPosToPos(obj.position, tfCart.position);
+    handCtrl.ShowHandPosToPos(obj.position, obj.position);
   }
   //Step2
   [SerializeField] private Transform tfToolPink;
@@ -101,12 +97,18 @@ public class TutorialManager : Singleton<TutorialManager>
   [SerializeField] private Transform tfMix;
   [SerializeField] private Transform tfToolCream;
 
-  [SerializeField] private Transform trTrayDone;
+  [SerializeField] private Transform trTrayDoneLeft;
+  [SerializeField] private Transform trTrayDoneRight;
 
 
   [SerializeField] private Transform tf1;
   [SerializeField] private Transform tf2;
 
+  [SerializeField] private bool isDoneCakePinkDone = false;
+  public void ChangeIsDoneCakeDone(bool value)
+  {
+    isDoneCakePinkDone = value;
+  }
 
   private void TutorialStepMixCream(int indexStep)
   {
@@ -129,23 +131,16 @@ public class TutorialManager : Singleton<TutorialManager>
     {
       case 0:
 
-        if (!isTapPaper)
+        if (levelControl.TapPaper.IsOn)
         {
           handCtrl.gameObject.SetActive(true);
           handCtrl.ShowHandPosToPos(tfPapper.position, tfPapper.position);
         }
         else
         {
-          if (!isTapClose)
-          {
-            handCtrl.gameObject.SetActive(true);
-            handCtrl.ShowHandPosToPos(tfBtnBack.position, tfBtnBack.position);
-          }
-          else
-          {
-            TutorialStepShopping(0);
-          }
+          TutorialStepShopping(0);
         }
+        TutorialManager.Ins.SetNewTime(3f);
         return;
       case 1:
         if (isDoneCakePink == false)
@@ -194,9 +189,16 @@ public class TutorialManager : Singleton<TutorialManager>
         handCtrl.ShowHandPosToPos(tfMix.position, tfBowl.position);
         return;
       case 6:
-
-        handCtrl.gameObject.SetActive(true);
-        handCtrl.ShowHandPosToPos(tfToolCream.position, trTrayDone.position);
+        if (isDoneCakePinkDone == false)
+        {
+          handCtrl.gameObject.SetActive(true);
+          handCtrl.ShowHandPosToPos(tfToolCream.position, trTrayDoneLeft.position);
+        }
+        else
+        {
+          handCtrl.gameObject.SetActive(true);
+          handCtrl.ShowHandPosToPos(tfToolCream.position, trTrayDoneRight.position);
+        }
         return;
       case 7:
         handCtrl.gameObject.SetActive(true);

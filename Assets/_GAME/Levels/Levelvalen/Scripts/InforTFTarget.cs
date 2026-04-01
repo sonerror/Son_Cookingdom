@@ -12,7 +12,6 @@ namespace sonnv
         public void ChangeIsSnap(bool value)
         {
             isSnap = value;
-
         }
         private IEnumerator DelayAutoMove()
         {

@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using DG.Tweening;
 
-using Satisgame;
+using sonnv;
 using UnityEngine;
 using UnityEngine.Events;
 namespace sonnv

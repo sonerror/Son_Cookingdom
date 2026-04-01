@@ -1,3 +1,4 @@
+
 using UnityEngine;
 using UnityEngine.Events;
 using DG.Tweening;
@@ -6,7 +7,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Utilities;
-public class TriggerWithCertainCollider : GameUnit
+public class ZoneTrigger : GameUnit
 {
     [SerializeField] private bool canBlockTrigger = false;
 
@@ -20,9 +21,6 @@ public class TriggerWithCertainCollider : GameUnit
     public UnityEvent OnTriggerEventFail => onTriggerEventFail;
     [SerializeField] private bool disableTriggerWith;
     private bool _isDone;
-
-    [SerializeField] FxType soundPlay = FxType.None;
-
     public UnityEvent OnTriggerEvent => onTriggerEvent;
     public Rigidbody2D Rigidbody => rb;
     public bool IsDone => _isDone;
@@ -57,15 +55,8 @@ public class TriggerWithCertainCollider : GameUnit
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (canBlockTrigger) return;
-        if (_isDone) return;
         if (other == triggerWith)
         {
-            _isDone = true;
-            col.enabled = false;
-            rb.simulated = false;
-            SoundManager.Ins.PlayFx(soundPlay);
-            if (disableTriggerWith) triggerWith.enabled = false;
-            OnScale();
             onTriggerEvent?.Invoke();
         }
 
@@ -76,9 +67,7 @@ public class TriggerWithCertainCollider : GameUnit
         _isDone = true;
         col.enabled = false;
         rb.simulated = false;
-        //  SoundManager.Ins.PlayFx(soundPlay);
         if (disableTriggerWith) triggerWith.enabled = false;
-        OnScale();
         onTriggerEvent?.Invoke();
     }
     public void AddTriggerEvent(UnityAction action)
@@ -90,23 +79,6 @@ public class TriggerWithCertainCollider : GameUnit
     {
         onTriggerEvent.RemoveListener(action);
     }
-    [SerializeField] private Transform tfScale;
-    [SerializeField] private float durationScale = 0.3f;
-    [SerializeField] private float detalScale = 1;
-
-
-    public void OnScale()
-    {
-
-        StartCoroutine(IE_DelayScale());
-    }
-
-    IEnumerator IE_DelayScale()
-    {
-        yield return new WaitForSeconds(0.01f);
-        tfScale.DOScale(Vector3.one * detalScale, durationScale).SetEase(Ease.OutBack);
-    }
-
 #if UNITY_EDITOR
 
   [Sirenix.OdinInspector.Button]
