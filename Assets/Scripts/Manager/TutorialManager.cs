@@ -6,6 +6,8 @@ using sonnv;
 
 public class TutorialManager : Singleton<TutorialManager>
 {
+  [SerializeField] private bool blockShowHint = false;
+
   public bool disableHand = false;
   [SerializeField] float TimeHint = 5f;
   public bool enableCountTime = false;
@@ -22,9 +24,9 @@ public class TutorialManager : Singleton<TutorialManager>
   [SerializeField] private List<Transform> tfItemMakeup = new List<Transform>();
   int countCollectFail = 0;
   private bool isTap = false;
-
   private void Update()
   {
+    if (blockShowHint) return;
     if (Input.GetMouseButtonDown(0))
     {
       HideHint();
@@ -46,6 +48,7 @@ public class TutorialManager : Singleton<TutorialManager>
     timeCountHint -= Time.deltaTime;
     if (timeCountHint <= 0)
     {
+
       ShowHint();
     }
   }
@@ -130,87 +133,8 @@ public class TutorialManager : Singleton<TutorialManager>
     switch (index)
     {
       case 0:
-
-        if (levelControl.TapPaper.IsOn)
-        {
-          handCtrl.gameObject.SetActive(true);
-          handCtrl.ShowHandPosToPos(tfPapper.position, tfPapper.position);
-        }
-        else
-        {
-          TutorialStepShopping(0);
-        }
-        TutorialManager.Ins.SetNewTime(3f);
         return;
       case 1:
-        if (isDoneCakePink == false)
-        {
-          handCtrl.gameObject.SetActive(true);
-          handCtrl.ShowHandPosToPos(tfToolPink.position, tfCakePink.position);
-        }
-        else
-        {
-          handCtrl.gameObject.SetActive(true);
-          handCtrl.ShowHandPosToPos(tfToolGreen.position, tfCakeGreen.position);
-        }
-        return;
-      case 2:
-        if (isDoneCake == false)
-        {
-          handCtrl.gameObject.SetActive(true);
-          handCtrl.ShowHandPosToPos(tfTray.position, tfOven.position);
-        }
-        else
-        {
-          handCtrl.gameObject.SetActive(true);
-          handCtrl.ShowHandPosToPos(tfOven.position, tfTrayDone.position);
-        }
-        return;
-      case 3:
-        handCtrl.gameObject.SetActive(true);
-        handCtrl.ShowHandPosToPos(tfCakeFisrt.position, tfCakeFisrt.position);
-        return;
-      case 4:
-        if (levelControl.IsSnapSugar == false)
-        {
-          TutorialStepMixCream(0);
-        }
-        if (levelControl.IsSnapVani == false)
-        {
-          TutorialStepMixCream(1);
-        }
-        if (levelControl.IsSnapButter == false)
-        {
-          TutorialStepMixCream(2);
-        }
-        return;
-      case 5:
-        handCtrl.gameObject.SetActive(true);
-        handCtrl.ShowHandPosToPos(tfMix.position, tfBowl.position);
-        return;
-      case 6:
-        if (isDoneCakePinkDone == false)
-        {
-          handCtrl.gameObject.SetActive(true);
-          handCtrl.ShowHandPosToPos(tfToolCream.position, trTrayDoneLeft.position);
-        }
-        else
-        {
-          handCtrl.gameObject.SetActive(true);
-          handCtrl.ShowHandPosToPos(tfToolCream.position, trTrayDoneRight.position);
-        }
-        return;
-      case 7:
-        handCtrl.gameObject.SetActive(true);
-        handCtrl.ShowHandPosToPos(tf1.position, tf2.position);
-        return;
-      case 8:
-        return;
-      case 9:
-
-        return;
-      case 10:
-
         return;
       default:
         resetTimeHint();

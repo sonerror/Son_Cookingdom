@@ -68,8 +68,12 @@ namespace sonnv
         [SerializeField] protected float timeCount = 1.5f;
         [SerializeField] protected bool isInZoneSnap = false;
         [SerializeField] protected bool isBlockShowEmoji = false;
-
-
+        [SerializeField] protected bool isSetScaleAffterMoveBack = false;
+        [SerializeField] private UnityEvent onEndMoveBack;
+        public void ChangeSetScale()
+        {
+            isSetScaleAffterMoveBack = true;
+        }
         protected Vector3 floatingAnchor;
         protected float timeOffsetFloating;
         protected bool isFloating;
@@ -515,11 +519,17 @@ namespace sonnv
                 .OnComplete(() =>
                 {
                     sprite.sortingOrder = onDropOrderLayer;
+                    if (isSetScaleAffterMoveBack == true)
+                    {
+                        Tf.localScale = Vector3.zero;
+                        onEndMoveBack?.Invoke();
+                    }
                     onMovebackDone?.Invoke();
                     if (onMoveBackEnd != null)
                         onMoveBackEnd.Invoke();
 
                     onDrop.Invoke();
+
                 });
 
             if (rotateOnDrag)

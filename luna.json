@@ -2,7 +2,7 @@
     "version": "7.1.0",
     "projectId": "f42e7ff96e4545544bb6cd68f51ab634",
     "applicationID": 27404,
-    "creativeName": "R1_Cookingdom_v5_Macaron_GG",
+    "creativeName": "R1_Cookingdom_v6_Rolled_Ice_Cream",
     "pgServer": "EU",
     "window": {
         "‐⁙": true
@@ -133,10 +133,11 @@
             ]
         },
         "scenes": [
-            "Assets/_GAME/Levels/LevelMacaron/LevelMacaron.unity"
+            "Assets/_GAME/Levels/LevelCream/LevelCream.unity"
         ],
         "disabledScenes": [
             "Assets/Scenes/GamePlayScene.unity",
+            "Assets/_GAME/Levels/LevelMacaron/LevelMacaron.unity",
             "Assets/_GAME/Levels/LevelShirm/LevelShirm.unity",
             "Assets/_GAME/Levels/LevelSkewers/LevelSkewers.unity",
             "Assets/_GAME/Levels/Levelvalen/SonLevel167.unity",
@@ -9613,14 +9614,6 @@
                 "excluded": true
             },
             {
-                "name": "Spine.DrawOrderTimeline",
-                "excluded": true
-            },
-            {
-                "name": "Spine.EventTimeline",
-                "excluded": true
-            },
-            {
                 "name": "Spine.Unity.WaitForSpineAnimationComplete",
                 "excluded": true
             },
@@ -9630,14 +9623,6 @@
             },
             {
                 "name": "Spine.BoundingBoxAttachment",
-                "excluded": true
-            },
-            {
-                "name": "Spine.DeformTimeline",
-                "excluded": true
-            },
-            {
-                "name": "Spine.IkConstraintTimeline",
                 "excluded": true
             },
             {
@@ -9657,15 +9642,7 @@
                 "excluded": true
             },
             {
-                "name": "Spine.RGBATimeline",
-                "excluded": true
-            },
-            {
                 "name": "Spine.RGBTimeline",
-                "excluded": true
-            },
-            {
-                "name": "Spine.TransformConstraintTimeline",
                 "excluded": true
             },
             {
@@ -9681,10 +9658,6 @@
                 "excluded": true
             },
             {
-                "name": "Spine.ScaleTimeline",
-                "excluded": true
-            },
-            {
                 "name": "Spine.ScaleXTimeline",
                 "excluded": true
             },
@@ -9693,23 +9666,11 @@
                 "excluded": true
             },
             {
-                "name": "Spine.ShearTimeline",
-                "excluded": true
-            },
-            {
                 "name": "Spine.ShearXTimeline",
                 "excluded": true
             },
             {
                 "name": "Spine.ShearYTimeline",
-                "excluded": true
-            },
-            {
-                "name": "Spine.TranslateXTimeline",
-                "excluded": true
-            },
-            {
-                "name": "Spine.TranslateYTimeline",
                 "excluded": true
             },
             {
@@ -9813,12 +9774,16 @@
                 "excluded": true
             },
             {
-                "name": "pc.Debugger.Components.EditorCamera",
+                "name": "CreamBoard",
                 "excluded": true
             },
             {
-                "name": "pc.Debugger.Components.EditorGUI",
+                "name": "sonnv.LunaTweenExtensions",
                 "excluded": true
+            },
+            {
+                "name": "sonnv.ItemFruit",
+                "excluded": false
             }
         ],
         "unusedMethods": [
@@ -10378,7 +10343,7 @@
                     },
                     {
                         "name": "sign",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "umul",
@@ -18122,7 +18087,7 @@
                     },
                     {
                         "name": "up#get",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "up#set",
@@ -18198,7 +18163,7 @@
                     },
                     {
                         "name": "InverseTransformPoint",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "TransformPoint$1",
@@ -21732,7 +21697,7 @@
                     },
                     {
                         "name": "IndexOf",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "IndexOf$1",
@@ -22568,15 +22533,15 @@
                     },
                     {
                         "name": "OnInterrupt",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "OnEnd",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "OnDispose",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "OnComplete",
@@ -22588,7 +22553,7 @@
                     },
                     {
                         "name": "Reset",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "ResetRotationDirections",
@@ -28798,7 +28763,7 @@
                     },
                     {
                         "name": "DOPunchPosition",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "DOPunchRotation",
@@ -30135,6 +30100,10 @@
                     {
                         "name": "ChangeIsDoneCakeInOven",
                         "excluded": false
+                    },
+                    {
+                        "name": "ChangeIsDoneCakeDone",
+                        "excluded": true
                     }
                 ]
             },
@@ -40775,6 +40744,14 @@
                     {
                         "name": "CheckInZoneSnap",
                         "excluded": false
+                    },
+                    {
+                        "name": "ChangeSetScale",
+                        "excluded": false
+                    },
+                    {
+                        "name": "DelayMoveBack",
+                        "excluded": true
                     }
                 ]
             },
@@ -41654,7 +41631,7 @@
                     },
                     {
                         "name": "$ctor1",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "ctor",
@@ -42035,6 +42012,18 @@
                     {
                         "name": "IE_DelayEffect",
                         "excluded": false
+                    },
+                    {
+                        "name": "init",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnInit",
+                        "excluded": false
+                    },
+                    {
+                        "name": "ResetLayerSprite",
+                        "excluded": true
                     }
                 ]
             },
@@ -42279,18 +42268,6 @@
                         "excluded": false
                     },
                     {
-                        "name": "IsSnapSugar#get",
-                        "excluded": false
-                    },
-                    {
-                        "name": "IsSnapVani#get",
-                        "excluded": false
-                    },
-                    {
-                        "name": "IsSnapButter#get",
-                        "excluded": false
-                    },
-                    {
                         "name": "SetSnapObject",
                         "excluded": false
                     },
@@ -42299,43 +42276,35 @@
                         "excluded": false
                     },
                     {
-                        "name": "SetCanSnapObject",
+                        "name": "SetStart",
+                        "excluded": true
+                    },
+                    {
+                        "name": "StartDelayStep",
                         "excluded": false
                     },
                     {
-                        "name": "CheckDoneStep2",
+                        "name": "IE_DelayStart",
+                        "excluded": true
+                    },
+                    {
+                        "name": "CheckDoneStep8",
                         "excluded": false
                     },
                     {
-                        "name": "IE_DelayStartStep2",
+                        "name": "OnStartStep9",
                         "excluded": false
                     },
                     {
-                        "name": "IE_DelayOpenOven",
+                        "name": "HidePet",
                         "excluded": false
                     },
                     {
-                        "name": "IE_DelayCloseOven",
+                        "name": "OnStartStep10",
                         "excluded": false
                     },
                     {
-                        "name": "IE_DelayStartStep5",
-                        "excluded": false
-                    },
-                    {
-                        "name": "CheckDone",
-                        "excluded": false
-                    },
-                    {
-                        "name": "IE_DelayAnim",
-                        "excluded": false
-                    },
-                    {
-                        "name": "IE_DelayStartStep8",
-                        "excluded": false
-                    },
-                    {
-                        "name": "TapPaper#get",
+                        "name": "IEShowParticle",
                         "excluded": false
                     }
                 ]
@@ -42948,7 +42917,7 @@
                     },
                     {
                         "name": "HasTimeline",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "Apply",
@@ -42970,7 +42939,7 @@
                     },
                     {
                         "name": "ApplyRotateTimeline",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "TimeScale#get",
@@ -43002,15 +42971,15 @@
                     },
                     {
                         "name": "OnInterrupt",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "OnEnd",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "OnDispose",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "OnComplete",
@@ -43034,7 +43003,7 @@
                     },
                     {
                         "name": "UpdateMixingFrom",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "Apply",
@@ -43046,7 +43015,7 @@
                     },
                     {
                         "name": "ApplyMixingFrom",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "ApplyMixingFromEventTimelinesOnly",
@@ -43078,7 +43047,7 @@
                     },
                     {
                         "name": "SetAnimation$1",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "SetAnimation",
@@ -43114,7 +43083,7 @@
                     },
                     {
                         "name": "ClearNext",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "AnimationsChanged",
@@ -43172,7 +43141,7 @@
                     },
                     {
                         "name": "GetMix",
-                        "excluded": true
+                        "excluded": false
                     }
                 ]
             },
@@ -43326,7 +43295,7 @@
                     },
                     {
                         "name": "ctor",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "toString",
@@ -43432,11 +43401,11 @@
                     },
                     {
                         "name": "Interrupt",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "End",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "Dispose",
@@ -43536,11 +43505,11 @@
                     },
                     {
                         "name": "Atan2",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "Clamp",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "RandomTriangle",
@@ -43558,7 +43527,7 @@
                 "instanceMethods": [
                     {
                         "name": "SortReset",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "Data#get",
@@ -43706,7 +43675,7 @@
                     },
                     {
                         "name": "SortIkConstraint",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "SortPathConstraint",
@@ -43714,7 +43683,7 @@
                     },
                     {
                         "name": "SortTransformConstraint",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "SortPathConstraintAttachment$1",
@@ -43750,7 +43719,7 @@
                     },
                     {
                         "name": "FindBone",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "FindSlot",
@@ -43928,7 +43897,7 @@
                     },
                     {
                         "name": "IkConstraints#get",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "IkConstraints#set",
@@ -43936,7 +43905,7 @@
                     },
                     {
                         "name": "TransformConstraints#get",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "TransformConstraints#set",
@@ -44036,7 +44005,7 @@
                     },
                     {
                         "name": "FindSkin",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "FindEvent",
@@ -44048,11 +44017,11 @@
                     },
                     {
                         "name": "FindIkConstraint",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "FindTransformConstraint",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "FindPathConstraint",
@@ -44300,7 +44269,7 @@
                     },
                     {
                         "name": "ClampColor",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "ClampSecondColor",
@@ -44560,7 +44529,7 @@
                     },
                     {
                         "name": "BuildMeshWithArrays",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "ScaleVertexData",
@@ -44964,7 +44933,7 @@
                     },
                     {
                         "name": "SetStepped",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "GetCurveType",
@@ -45354,7 +45323,7 @@
                     },
                     {
                         "name": "UpdateAppliedTransform",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "WorldToLocal",
@@ -45362,7 +45331,7 @@
                     },
                     {
                         "name": "LocalToWorld",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "WorldToLocalRotation",
@@ -45392,7 +45361,7 @@
                     },
                     {
                         "name": "Id#get",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "Bones#get",
@@ -45432,7 +45401,7 @@
                     },
                     {
                         "name": "ComputeWorldVertices$1",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "ComputeWorldVertices",
@@ -45454,7 +45423,7 @@
                     },
                     {
                         "name": "Apply",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "Bones#get",
@@ -45518,11 +45487,11 @@
                     },
                     {
                         "name": "init",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "$ctor1",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "ctor",
@@ -45530,7 +45499,7 @@
                     },
                     {
                         "name": "Update",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "toString",
@@ -45604,11 +45573,11 @@
                     },
                     {
                         "name": "init",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "ctor",
-                        "excluded": true
+                        "excluded": false
                     }
                 ]
             },
@@ -46032,7 +46001,7 @@
                     },
                     {
                         "name": "ToColor",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "$ctor1",
@@ -46160,7 +46129,7 @@
                     },
                     {
                         "name": "$ctor1",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "ctor",
@@ -46168,11 +46137,11 @@
                     },
                     {
                         "name": "Update",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "ApplyAbsoluteWorld",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "ApplyRelativeWorld",
@@ -46322,11 +46291,11 @@
                     },
                     {
                         "name": "init",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "ctor",
-                        "excluded": true
+                        "excluded": false
                     }
                 ]
             },
@@ -46457,6 +46426,14 @@
                     {
                         "name": "IE_DelayScale",
                         "excluded": false
+                    },
+                    {
+                        "name": "OnTriggerEventFail#get",
+                        "excluded": true
+                    },
+                    {
+                        "name": "OnTigger",
+                        "excluded": true
                     }
                 ]
             },
@@ -46616,7 +46593,7 @@
                     },
                     {
                         "name": "RegionWidth#get",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "RegionWidth#set",
@@ -46734,7 +46711,7 @@
                     },
                     {
                         "name": "OnDisable",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "OnDestroy",
@@ -46808,7 +46785,7 @@
                 "instanceMethods": [
                     {
                         "name": "BoneIndex#get",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "ctor",
@@ -46856,7 +46833,7 @@
                     },
                     {
                         "name": "AnimationState#get",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "AnimationName#get",
@@ -46962,6 +46939,714 @@
                     },
                     {
                         "name": "PlayEmoji",
+                        "excluded": false
+                    }
+                ]
+            },
+            {
+                "className": "sonnv.CookManager",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "inherits",
+                        "excluded": false
+                    },
+                    {
+                        "name": "init",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnStartStep",
+                        "excluded": false
+                    },
+                    {
+                        "name": "StepAddCream",
+                        "excluded": false
+                    },
+                    {
+                        "name": "PlayAnimCream",
+                        "excluded": true
+                    },
+                    {
+                        "name": "IEShowParticle",
+                        "excluded": false
+                    }
+                ]
+            },
+            {
+                "className": "sonnv.PetOrderManager",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "inherits",
+                        "excluded": false
+                    },
+                    {
+                        "name": "ListPetOrder#get",
+                        "excluded": true
+                    },
+                    {
+                        "name": "init",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnShowOrder",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnHideOrder",
+                        "excluded": true
+                    },
+                    {
+                        "name": "ResetAll",
+                        "excluded": true
+                    },
+                    {
+                        "name": "OnDoneOrder",
+                        "excluded": true
+                    }
+                ]
+            },
+            {
+                "className": "sonnv.CreamRollController",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "init",
+                        "excluded": false
+                    },
+                    {
+                        "name": "Init",
+                        "excluded": true
+                    },
+                    {
+                        "name": "StartRoll",
+                        "excluded": false
+                    },
+                    {
+                        "name": "NextRoll",
+                        "excluded": false
+                    },
+                    {
+                        "name": "ShowCurrentRoll",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnRolling",
+                        "excluded": false
+                    }
+                ]
+            },
+            {
+                "className": "sonnv.ItemBySpatula",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "ListItemFruit#get",
+                        "excluded": true
+                    },
+                    {
+                        "name": "OnPlayEffect",
+                        "excluded": false
+                    },
+                    {
+                        "name": "PlayEffect",
+                        "excluded": false
+                    }
+                ]
+            },
+            {
+                "className": "sonnv.OrderOfPet",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "OnShow",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnHide",
+                        "excluded": false
+                    },
+                    {
+                        "name": "StartLoopScale",
+                        "excluded": false
+                    },
+                    {
+                        "name": "StopLoopScale",
+                        "excluded": true
+                    },
+                    {
+                        "name": "StartDelayStep",
+                        "excluded": true
+                    },
+                    {
+                        "name": "KillAll",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnDestroy",
+                        "excluded": true
+                    }
+                ]
+            },
+            {
+                "className": "sonnv.PetOrder",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "IsShowPet#get",
+                        "excluded": false
+                    },
+                    {
+                        "name": "init",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnShow",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnShow$1",
+                        "excluded": false
+                    },
+                    {
+                        "name": "PlayDropThenIdle",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnDelayShow",
+                        "excluded": false
+                    },
+                    {
+                        "name": "DelayShowListOrder",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnHide",
+                        "excluded": false
+                    }
+                ]
+            },
+            {
+                "className": "sonnv.Roller",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "init",
+                        "excluded": false
+                    },
+                    {
+                        "name": "MoveToNextRoll",
+                        "excluded": false
+                    },
+                    {
+                        "name": "SetPosition",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnPointerDown",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnDrag",
+                        "excluded": false
+                    }
+                ]
+            },
+            {
+                "className": "sonnv.SingleRoll",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "Rate#get",
+                        "excluded": false
+                    },
+                    {
+                        "name": "init",
+                        "excluded": false
+                    },
+                    {
+                        "name": "GetMaskPos",
+                        "excluded": true
+                    },
+                    {
+                        "name": "Init",
+                        "excluded": true
+                    },
+                    {
+                        "name": "StartRolling",
+                        "excluded": false
+                    },
+                    {
+                        "name": "CompleteRolling",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnRolling",
+                        "excluded": false
+                    },
+                    {
+                        "name": "GetSpatulaPosition",
+                        "excluded": false
+                    }
+                ]
+            },
+            {
+                "className": "sonnv.AnimScale",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "OnPlayAnimScale",
+                        "excluded": false
+                    }
+                ]
+            },
+            {
+                "className": "sonnv.CreamCut",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "ScreenToWorld",
+                        "excluded": false
+                    },
+                    {
+                        "name": "init",
+                        "excluded": false
+                    },
+                    {
+                        "name": "Show",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnPointerDown",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnDrag",
+                        "excluded": false
+                    },
+                    {
+                        "name": "Slice",
+                        "excluded": false
+                    }
+                ]
+            },
+            {
+                "className": "sonnv.FoodItem",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "Col#get",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnDone#get",
+                        "excluded": false
+                    },
+                    {
+                        "name": "init",
+                        "excluded": false
+                    },
+                    {
+                        "name": "Awake",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnSpatulaHold",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnSpatulaExit",
+                        "excluded": false
+                    },
+                    {
+                        "name": "CompleteAction",
+                        "excluded": false
+                    }
+                ]
+            },
+            {
+                "className": "sonnv.Spatula",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "init",
+                        "excluded": false
+                    },
+                    {
+                        "name": "ChangeCanColor",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnTriggerStay2D",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnTriggerExit2D",
+                        "excluded": false
+                    },
+                    {
+                        "name": "PlayTouchSound",
+                        "excluded": false
+                    }
+                ]
+            },
+            {
+                "className": "sonnv.TapSpatula",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "SnapPoint#get",
+                        "excluded": true
+                    },
+                    {
+                        "name": "OnWin#get",
+                        "excluded": false
+                    },
+                    {
+                        "name": "init",
+                        "excluded": false
+                    },
+                    {
+                        "name": "Awake",
+                        "excluded": false
+                    },
+                    {
+                        "name": "SetItemInMortar",
+                        "excluded": true
+                    },
+                    {
+                        "name": "OnPointerDown",
+                        "excluded": false
+                    },
+                    {
+                        "name": "PlayTap",
+                        "excluded": false
+                    },
+                    {
+                        "name": "ResetTap",
+                        "excluded": true
+                    },
+                    {
+                        "name": "StopTap",
+                        "excluded": true
+                    },
+                    {
+                        "name": "OnDestroy",
+                        "excluded": true
+                    }
+                ]
+            },
+            {
+                "className": "ZoneTrigger",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "Col#get",
+                        "excluded": true
+                    },
+                    {
+                        "name": "OnTriggerEventFail#get",
+                        "excluded": true
+                    },
+                    {
+                        "name": "OnTriggerEvent#get",
+                        "excluded": true
+                    },
+                    {
+                        "name": "Rigidbody#get",
+                        "excluded": true
+                    },
+                    {
+                        "name": "IsDone#get",
+                        "excluded": true
+                    },
+                    {
+                        "name": "init",
+                        "excluded": false
+                    },
+                    {
+                        "name": "EnableCol",
+                        "excluded": true
+                    },
+                    {
+                        "name": "ReEnable$1",
+                        "excluded": true
+                    },
+                    {
+                        "name": "ReEnable",
+                        "excluded": true
+                    },
+                    {
+                        "name": "Disable",
+                        "excluded": true
+                    },
+                    {
+                        "name": "OnTriggerEnter2D",
+                        "excluded": true
+                    },
+                    {
+                        "name": "OnTigger",
+                        "excluded": true
+                    },
+                    {
+                        "name": "AddTriggerEvent",
+                        "excluded": true
+                    },
+                    {
+                        "name": "RemoveTriggerEvent",
+                        "excluded": true
+                    }
+                ]
+            },
+            {
+                "className": "Spine.IkConstraintTimeline",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "init",
+                        "excluded": false
+                    },
+                    {
+                        "name": "FrameEntries#get",
+                        "excluded": false
+                    },
+                    {
+                        "name": "IkConstraintIndex#get",
+                        "excluded": true
+                    },
+                    {
+                        "name": "ctor",
+                        "excluded": false
+                    },
+                    {
+                        "name": "SetFrame",
+                        "excluded": false
+                    },
+                    {
+                        "name": "Apply",
+                        "excluded": false
+                    }
+                ]
+            },
+            {
+                "className": "Spine.ScaleTimeline",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "BoneIndex#get",
+                        "excluded": true
+                    },
+                    {
+                        "name": "ctor",
+                        "excluded": false
+                    },
+                    {
+                        "name": "Apply",
+                        "excluded": false
+                    }
+                ]
+            },
+            {
+                "className": "Spine.DrawOrderTimeline",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "init",
+                        "excluded": false
+                    },
+                    {
+                        "name": "DrawOrders#get",
+                        "excluded": true
+                    },
+                    {
+                        "name": "ctor",
+                        "excluded": false
+                    },
+                    {
+                        "name": "SetFrame",
+                        "excluded": false
+                    },
+                    {
+                        "name": "Apply",
+                        "excluded": true
+                    }
+                ]
+            },
+            {
+                "className": "Spine.DeformTimeline",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "SlotIndex#get",
+                        "excluded": true
+                    },
+                    {
+                        "name": "Attachment#get",
+                        "excluded": true
+                    },
+                    {
+                        "name": "Vertices#get",
+                        "excluded": true
+                    },
+                    {
+                        "name": "ctor",
+                        "excluded": false
+                    },
+                    {
+                        "name": "SetFrame",
+                        "excluded": false
+                    },
+                    {
+                        "name": "setBezier",
+                        "excluded": true
+                    },
+                    {
+                        "name": "GetCurvePercent",
+                        "excluded": true
+                    },
+                    {
+                        "name": "Apply",
+                        "excluded": true
+                    }
+                ]
+            },
+            {
+                "className": "Spine.RGBATimeline",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "init",
+                        "excluded": false
+                    },
+                    {
+                        "name": "FrameEntries#get",
+                        "excluded": false
+                    },
+                    {
+                        "name": "SlotIndex#get",
+                        "excluded": true
+                    },
+                    {
+                        "name": "ctor",
+                        "excluded": false
+                    },
+                    {
+                        "name": "SetFrame",
+                        "excluded": false
+                    },
+                    {
+                        "name": "Apply",
+                        "excluded": false
+                    }
+                ]
+            },
+            {
+                "className": "Spine.TransformConstraintTimeline",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "init",
+                        "excluded": false
+                    },
+                    {
+                        "name": "FrameEntries#get",
+                        "excluded": false
+                    },
+                    {
+                        "name": "TransformConstraintIndex#get",
+                        "excluded": true
+                    },
+                    {
+                        "name": "ctor",
+                        "excluded": false
+                    },
+                    {
+                        "name": "SetFrame",
+                        "excluded": false
+                    },
+                    {
+                        "name": "Apply",
+                        "excluded": false
+                    }
+                ]
+            },
+            {
+                "className": "Spine.TranslateXTimeline",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "BoneIndex#get",
+                        "excluded": true
+                    },
+                    {
+                        "name": "ctor",
+                        "excluded": false
+                    },
+                    {
+                        "name": "Apply",
+                        "excluded": true
+                    }
+                ]
+            },
+            {
+                "className": "Spine.TranslateYTimeline",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "BoneIndex#get",
+                        "excluded": true
+                    },
+                    {
+                        "name": "ctor",
+                        "excluded": false
+                    },
+                    {
+                        "name": "Apply",
+                        "excluded": true
+                    }
+                ]
+            },
+            {
+                "className": "Spine.EventTimeline",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "init",
+                        "excluded": false
+                    },
+                    {
+                        "name": "Events#get",
+                        "excluded": true
+                    },
+                    {
+                        "name": "ctor",
+                        "excluded": true
+                    },
+                    {
+                        "name": "SetFrame",
+                        "excluded": true
+                    },
+                    {
+                        "name": "Apply",
+                        "excluded": true
+                    }
+                ]
+            },
+            {
+                "className": "Spine.ShearTimeline",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "BoneIndex#get",
+                        "excluded": true
+                    },
+                    {
+                        "name": "ctor",
+                        "excluded": false
+                    },
+                    {
+                        "name": "Apply",
                         "excluded": false
                     }
                 ]
@@ -47142,6 +47827,16 @@
                         "script": "",
                         "ext": "",
                         "name": "Assets/_GAME/Levels/AnTQ_Cooking/CookMacaron/Art/game play/png/so che 3/candy 1.png"
+                    },
+                    {
+                        "maxWidth": 512,
+                        "maxHeight": 512,
+                        "format": "png32",
+                        "compression": "none",
+                        "quality": 65,
+                        "script": "",
+                        "ext": "",
+                        "name": "Assets/_GAME/Levels/110/BRLNSDB SDF.asset"
                     }
                 ]
             },
