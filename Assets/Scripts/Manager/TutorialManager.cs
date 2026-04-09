@@ -18,10 +18,9 @@ public class TutorialManager : Singleton<TutorialManager>
   [SerializeField] private int countHintStep1 = 0;
   private int CountStepDone = 0;
   [SerializeField] private List<Transform> tutorialNode = new List<Transform>();
-  [SerializeField] private List<Transform> tfItem = new List<Transform>();
+  [SerializeField] private List<SonSnapObject> tfItem = new List<SonSnapObject>();
   public List<Transform> TutorialNode => tutorialNode;
-  public List<Transform> TfItem => tfItem;
-  [SerializeField] private List<Transform> tfItemMakeup = new List<Transform>();
+  public List<SonSnapObject> TfItem => tfItem;
   int countCollectFail = 0;
   private bool isTap = false;
   private void Update()
@@ -52,79 +51,75 @@ public class TutorialManager : Singleton<TutorialManager>
       ShowHint();
     }
   }
-  [SerializeField] private bool isTapPaper = false;
 
-  [SerializeField] private Transform tfPapper;
-  [SerializeField] private Transform tfBtnBack;
-  [SerializeField] private bool isTapClose = false;
-  public void ChangeTapClose(bool value)
+  //Step1 
+  [SerializeField] private Transform tfBoard;
+  [SerializeField] private Transform tfKiwi;
+  //step2
+  [SerializeField] private Transform tfSpatula0;
+  [SerializeField] private Transform tfSpatula1;
+  [SerializeField] private Transform tfSpatula2;
+  [SerializeField] private int countStep2 = 0;
+  public void CountStep2()
   {
-    isTapClose = value;
+    countStep2++;
+    Debug.Log("countStep2 : " + countStep2);
   }
-  [SerializeField] private List<Transform> listTfListShopping = new List<Transform>();
-  public List<Transform> ListTfListShopping => listTfListShopping;
-  [SerializeField] private Transform tfCart;
-  private void TutorialStepShopping(int indexStep)
-  {
-    if (handCtrl == null) return;
-    if (indexStep >= listTfListShopping.Count) return;
-    handCtrl.gameObject.SetActive(true);
-    var obj = listTfListShopping[indexStep];
-    handCtrl.ShowHandPosToPos(obj.position, obj.position);
-  }
-  //Step2
-  [SerializeField] private Transform tfToolPink;
-  [SerializeField] private Transform tfCakePink;
-  [SerializeField] private Transform tfToolGreen;
-  [SerializeField] private Transform tfCakeGreen;
-  [SerializeField] private bool isDoneCakePink = false;
-  public void ChangeIsDoneCake(bool value)
-  {
-    isDoneCakePink = value;
-  }
-
-
-  //Step3 
-  [SerializeField] private Transform tfTray;
-  [SerializeField] private Transform tfOven;
-  [SerializeField] private bool isDoneCake = false;
-  [SerializeField] private Transform tfTrayDone;
-  //step4
-  [SerializeField] private Transform tfCakeFisrt;
+  //step2
+  [SerializeField] private Transform tfMilk;
   //step5
-  [SerializeField] private List<Transform> listTfListCream = new List<Transform>();
-  public List<Transform> ListTfListCream => listTfListCream;
-  [SerializeField] private Transform tfBowl;
-  [SerializeField] private LevelControl levelControl;
-
-  [SerializeField] private Transform tfMix;
-  [SerializeField] private Transform tfToolCream;
-
-  [SerializeField] private Transform trTrayDoneLeft;
-  [SerializeField] private Transform trTrayDoneRight;
-
-
-  [SerializeField] private Transform tf1;
-  [SerializeField] private Transform tf2;
-
-  [SerializeField] private bool isDoneCakePinkDone = false;
-  public void ChangeIsDoneCakeDone(bool value)
+  [SerializeField] private bool isSnapSpatula = false;
+  public void SetIsSnapSpatula()
   {
-    isDoneCakePinkDone = value;
+    isSnapSpatula = true;
   }
-
-  private void TutorialStepMixCream(int indexStep)
+  [SerializeField] private List<Transform> listTfSpatula = new List<Transform>();
+  [SerializeField] private List<Transform> listTfTargetSpatula = new List<Transform>();
+  public List<Transform> ListTfSpatula => listTfSpatula;
+  public List<Transform> ListTfTargetSpatula => listTfTargetSpatula;
+  private void TutorialStep5(int indexStep)
   {
     if (handCtrl == null) return;
-    if (indexStep >= listTfListCream.Count) return;
+    if (indexStep >= listTfSpatula.Count || indexStep >= listTfTargetSpatula.Count) return;
     handCtrl.gameObject.SetActive(true);
-    var obj = listTfListCream[indexStep];
-    handCtrl.ShowHandPosToPos(obj.position, tfBowl.position);
+    var obj = listTfSpatula[indexStep];
+    var node = listTfTargetSpatula[indexStep];
+    handCtrl.ShowHandPosToPos(obj.position, node.position);
   }
-  public void ChangeIsDoneCakeInOven(bool value)
+  [SerializeField] private int countStep5 = 0;
+  public void CountStep5()
   {
-    isDoneCake = value;
+    countStep5++;
   }
+
+
+  //step6
+
+  [SerializeField] private bool isSnapSpatulaStep6 = false;
+  public void SetIsSnapSpatulaStep6()
+  {
+    isSnapSpatulaStep6 = true;
+  }
+  [SerializeField] private CreamRollController creamRollController;
+
+
+
+  //step7 
+  [SerializeField] private Transform tfBowl;
+  [SerializeField] private Transform tfCreamDone;
+
+  //step8
+  [SerializeField] private bool isSnapBowlChoco = false;
+  public void SetIsSnapBowlChoco()
+  {
+    isSnapBowlChoco = true;
+  }
+  [SerializeField] private Transform tfBowlChoco;
+  //step9
+  [SerializeField] private Transform tfPet;
+  //step10
+  [SerializeField] private Transform tfWaterLemnon;
+
   void ShowHint()
   {
     if (disableHand) return;
@@ -133,34 +128,94 @@ public class TutorialManager : Singleton<TutorialManager>
     switch (index)
     {
       case 0:
+        ShowHintPosToPos(tfKiwi, tfBoard);
         return;
       case 1:
+        if (countStep2 == 0)
+        {
+          ShowHintPosToPos(tfSpatula0, tfBoard);
+        }
+        if (countStep2 == 1)
+        {
+          handCtrl.gameObject.SetActive(true);
+          handCtrl.ShowHandPosToPos(tfSpatula1.position + (Vector3.up * 0.5f), tfSpatula1.position + (Vector3.up * 0.5f));
+        }
+        if (countStep2 == 2)
+        {
+          handCtrl.gameObject.SetActive(true);
+          handCtrl.ShowHandPosToPos(tfSpatula2.position + (Vector3.up * 0.5f), tfSpatula2.position + (Vector3.up * 0.5f));
+        }
+        return;
+      case 2:
+        ShowHintPosToPos(tfMilk, tfBoard);
+        return;
+      case 3:
+        ShowHintPosToPos(tfSpatula0, tfBoard);
+        return;
+      case 4:
+        if (isSnapSpatula == false)
+        {
+          ShowHintPosToPos(tfSpatula0, tfBoard);
+        }
+        else
+        {
+          TutorialStep5(countStep5);
+        }
+        return;
+      case 5:
+        if (isSnapSpatulaStep6 == false)
+        {
+          ShowHintPosToPos(tfSpatula0, tfBoard);
+        }
+        else
+        {
+          handCtrl.gameObject.SetActive(true);
+          handCtrl.ShowHandPosToPos(creamRollController.StartPos, creamRollController.EndPos);
+        }
+        return;
+      case 6:
+        ShowHintPosToPos(tfCreamDone, tfBowl);
+        return;
+      case 7:
+        if (isSnapBowlChoco == false)
+        {
+          ShowHintPosToPos(tfBowlChoco, tfBowl);
+        }
+        else
+        {
+          TutorialStep7(0);
+        }
+        return;
+      case 8:
+        ShowHintPosToPos(tfBowl, tfPet);
+
+        return;
+      case 9:
+        ShowHintPosToPos(tfWaterLemnon, tfBoard);
+
         return;
       default:
         resetTimeHint();
         return;
     }
   }
+
   private void Tutorial(int indexStep)
   {
 
   }
-  private void TutorialStep1(int indexStep)
+  private void ShowHintPosToPos(Transform _pos1, Transform _pos2)
+  {
+    handCtrl.gameObject.SetActive(true);
+    handCtrl.ShowHandPosToPos(_pos1.position, _pos2.position);
+  }
+  private void TutorialStep7(int indexStep)
   {
     if (handCtrl == null) return;
-    if (indexStep >= tfItem.Count || indexStep >= tutorialNode.Count) return;
+    if (indexStep >= tfItem.Count) return;
     handCtrl.gameObject.SetActive(true);
     var obj = tfItem[indexStep];
-    var node = tutorialNode[indexStep];
-    handCtrl.ShowHandPosToPos(obj.position, node.position);
-  }
-  private void TutorialStepMakeUp(int indexStep, Transform tf)
-  {
-    if (handCtrlMakeup == null) return;
-    if (indexStep >= tfItemMakeup.Count || tf == null) return;
-    handCtrlMakeup.gameObject.SetActive(true);
-    var obj = tfItemMakeup[indexStep];
-    handCtrlMakeup.ShowHandPosToPos(obj.position, tf.position);
+    handCtrl.ShowHandPosToPos(obj.gameObject.transform.position, tfBowl.position);
   }
   public void SetStateIsTap(bool value)
   {

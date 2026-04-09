@@ -7,7 +7,8 @@ namespace sonnv
         [SerializeField] private bool isChange = false;
         [SerializeField] private AudioClip sfxTouch;
 
-        private float _touchTimer = 0f;
+        private const float SOUND_COOLDOWN = 0.5f;
+        private float _lastSoundTime = -999f; // realtimeSinceStartup của lần play gần nhất
 
         public void ChangeCanColor()
         {
@@ -16,40 +17,35 @@ namespace sonnv
 
         private void OnTriggerStay2D(Collider2D collision)
         {
-            if (isChange == false) return;
+            if (!isChange) return;
 
             FoodItem item = collision.GetComponent<FoodItem>();
-            if (item != null)
-            {
-                item.OnSpatulaHold();
+            if (item == null) return;
 
-                _touchTimer += Time.deltaTime;
+            item.OnSpatulaHold();
 
-                if (_touchTimer >= 0.5f)
-                {
-                    PlayTouchSound();
-                    _touchTimer = 0f;
-                }
-            }
+            TryPlayTouchSound();
         }
 
         private void OnTriggerExit2D(Collider2D collision)
         {
-            if (isChange == false) return;
+            if (!isChange) return;
 
             FoodItem item = collision.GetComponent<FoodItem>();
-            if (item != null)
-            {
-                item.OnSpatulaExit();
+            if (item == null) return;
 
-                _touchTimer = 0f;
-            }
+            item.OnSpatulaExit();
         }
 
-        private void PlayTouchSound()
+        private void TryPlayTouchSound()
         {
-            if (sfxTouch != null)
+            if (sfxTouch == null) return;
+
+            float now = Time.realtimeSinceStartup;
+
+            if (now - _lastSoundTime >= SOUND_COOLDOWN)
             {
+                _lastSoundTime = now;
                 SoundManager.PlaySFX(sfxTouch);
             }
         }

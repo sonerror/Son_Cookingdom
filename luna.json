@@ -2,7 +2,7 @@
     "version": "7.1.0",
     "projectId": "f42e7ff96e4545544bb6cd68f51ab634",
     "applicationID": 27404,
-    "creativeName": "R1_Cookingdom_v6_Rolled_Ice_Cream",
+    "creativeName": "R1_Cookingdom_v6_Rolled_Ice_Cream_GG",
     "pgServer": "EU",
     "window": {
         "‐⁙": true
@@ -9784,6 +9784,10 @@
             {
                 "name": "sonnv.ItemFruit",
                 "excluded": false
+            },
+            {
+                "name": "ArrowTutorialAnim",
+                "excluded": true
             }
         ],
         "unusedMethods": [
@@ -30026,10 +30030,6 @@
                         "excluded": false
                     },
                     {
-                        "name": "TutorialStep1",
-                        "excluded": false
-                    },
-                    {
                         "name": "SetStateIsTap",
                         "excluded": true
                     },
@@ -30066,44 +30066,48 @@
                         "excluded": true
                     },
                     {
-                        "name": "TutorialStepMakeUp",
-                        "excluded": true
-                    },
-                    {
                         "name": "SetNewTime",
                         "excluded": false
                     },
                     {
-                        "name": "ListTfListShopping#get",
-                        "excluded": false
-                    },
-                    {
-                        "name": "ListTfListCream#get",
+                        "name": "ListTfSpatula#get",
                         "excluded": true
                     },
                     {
-                        "name": "ChangeTapClose",
-                        "excluded": false
-                    },
-                    {
-                        "name": "TutorialStepShopping",
-                        "excluded": false
-                    },
-                    {
-                        "name": "ChangeIsDoneCake",
-                        "excluded": false
-                    },
-                    {
-                        "name": "TutorialStepMixCream",
-                        "excluded": false
-                    },
-                    {
-                        "name": "ChangeIsDoneCakeInOven",
-                        "excluded": false
-                    },
-                    {
-                        "name": "ChangeIsDoneCakeDone",
+                        "name": "ListTfTargetSpatula#get",
                         "excluded": true
+                    },
+                    {
+                        "name": "CountStep2",
+                        "excluded": false
+                    },
+                    {
+                        "name": "SetIsSnapSpatula",
+                        "excluded": false
+                    },
+                    {
+                        "name": "TutorialStep5",
+                        "excluded": false
+                    },
+                    {
+                        "name": "CountStep5",
+                        "excluded": false
+                    },
+                    {
+                        "name": "SetIsSnapSpatulaStep6",
+                        "excluded": false
+                    },
+                    {
+                        "name": "SetIsSnapBowlChoco",
+                        "excluded": false
+                    },
+                    {
+                        "name": "ShowHintPosToPos",
+                        "excluded": false
+                    },
+                    {
+                        "name": "TutorialStep7",
+                        "excluded": false
                     }
                 ]
             },
@@ -47034,6 +47038,14 @@
                     {
                         "name": "OnRolling",
                         "excluded": false
+                    },
+                    {
+                        "name": "StartPos#get",
+                        "excluded": false
+                    },
+                    {
+                        "name": "EndPos#get",
+                        "excluded": false
                     }
                 ]
             },
@@ -47206,10 +47218,6 @@
                 "staticMethods": [],
                 "instanceMethods": [
                     {
-                        "name": "ScreenToWorld",
-                        "excluded": false
-                    },
-                    {
                         "name": "init",
                         "excluded": false
                     },
@@ -47248,10 +47256,6 @@
                         "excluded": false
                     },
                     {
-                        "name": "Awake",
-                        "excluded": false
-                    },
-                    {
                         "name": "OnSpatulaHold",
                         "excluded": false
                     },
@@ -47286,7 +47290,7 @@
                         "excluded": false
                     },
                     {
-                        "name": "PlayTouchSound",
+                        "name": "TryPlayTouchSound",
                         "excluded": false
                     }
                 ]

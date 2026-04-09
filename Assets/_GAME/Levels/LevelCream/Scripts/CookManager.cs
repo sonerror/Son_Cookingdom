@@ -37,6 +37,7 @@ namespace sonnv
             }
             yield return new WaitForSeconds(1);
             snapPointFruit.ChangeCanSnap(true);
+            TutorialManager.Ins.enableCountTime = true;
         }
 
 

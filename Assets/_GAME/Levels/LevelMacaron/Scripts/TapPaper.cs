@@ -122,7 +122,6 @@ namespace sonnv
 
             if (isTapClose == false)
             {
-                TutorialManager.Ins.ChangeTapClose(true);
                 isTapClose = true;
             }
         }

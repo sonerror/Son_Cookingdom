@@ -7,6 +7,10 @@ namespace sonnv
 {
     public class CreamRollController : MonoBehaviour
     {
+        [SerializeField] private Vector3 startPos;
+        public Vector3 StartPos => startPos;
+        [SerializeField] private Vector3 endPos;
+        public Vector3 EndPos => endPos;
         [SerializeField] private SpriteRenderer[] renderers;
         [SerializeField] private SpriteRenderer[] renderersDone;
         [SerializeField] private SingleRoll[] rolls;
@@ -44,6 +48,13 @@ namespace sonnv
 
             // Gọi hàm di chuyển với tọa độ đã tính
             roller.MoveToNextRoll(targetPos, targetRot);
+            startPos = targetPos;
+            if (_rollStep > 1 && _index + 1 < rolls.Length)
+            {
+                Vector3 pos1 = rolls[_index].endPos.position;
+                Vector3 pos2 = rolls[_index + 1].endPos.position;
+                endPos = (pos1 + pos2) / 2f;
+            }
         }
 
         private void NextRoll()
@@ -68,6 +79,8 @@ namespace sonnv
                 }
 
                 roller.MoveToNextRoll(nextTargetPos, nextTargetRot);
+                startPos = nextTargetPos;
+                endPos = (rolls[_index].endPos.position + rolls[_index + 1].endPos.position) / 2f; ;
             }
             else
             {

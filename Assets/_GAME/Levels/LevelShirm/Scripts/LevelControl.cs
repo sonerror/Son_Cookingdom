@@ -58,6 +58,7 @@ public class LevelControl : LevelBase
         _delayTween = DOVirtual.DelayedCall(delay, () =>
         {
             CookManager.Ins.OnStartStep();
+
         });
     }
     IEnumerator IE_DelayStart()
@@ -102,6 +103,8 @@ public class LevelControl : LevelBase
 
                 break;
             case 1:
+                TutorialManager.Ins.SetNewTime(3f);
+
                 OnStartStep2();
                 break;
             case 2:
@@ -167,6 +170,7 @@ public class LevelControl : LevelBase
 
     private void OnStartStep1()
     {
+        //TutorialManager.Ins.enableCountTime = true;
         petOrderManager.OnShowOrder();
         StartDelayStep(0.5f);
         snapObjectKiwi.OnSnap.AddListener(() =>
@@ -290,10 +294,8 @@ public class LevelControl : LevelBase
         if (removedIndex < 0) return;
 
         listSnapObjectRollDone.RemoveAt(removedIndex);
-
-        // if (removedIndex < TutorialManager.Ins.ListTfListShopping.Count)
-        //  TutorialManager.Ins.ListTfListShopping.RemoveAt(removedIndex);
-
+        if (removedIndex < TutorialManager.Ins.TfItem.Count)
+            TutorialManager.Ins.TfItem.RemoveAt(removedIndex);
         if (listSnapObjectRollDone.Count <= 0)
         {
             isDone1 = true;
@@ -324,6 +326,7 @@ public class LevelControl : LevelBase
         snapPointPet.ChangeCanSnap(true);
         snapDone.OnSnap.AddListener(() =>
         {
+            TutorialManager.Ins.enableCountTime = false;
             petStep1.PlayDropThenIdle();
             SoundManager.PlaySFX(sfxHappy);
             HidePet();
@@ -351,6 +354,9 @@ public class LevelControl : LevelBase
         {
             obj.SetActive(true);
         }
+        TutorialManager.Ins.enableCountTime = true;
+        GameManager.Ins.showEndGame();
+
     }
 
 
