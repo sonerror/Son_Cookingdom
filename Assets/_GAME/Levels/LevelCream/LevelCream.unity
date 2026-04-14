@@ -39205,34 +39205,58 @@ MonoBehaviour:
   m_GameObject: {fileID: 1178789171008867808}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0690dee870d395c469fa9f36bbfcb934, type: 3}
+  m_Script: {fileID: 11500000, guid: 864b30a22d124084596251f29acb3129, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  emoji: {fileID: 1970918343}
-  snapToPosition:
-  - {fileID: 1720338823}
-  - {fileID: 412481032}
-  sprite: {fileID: 6033168481693063805}
+  emoji: {fileID: 0}
   rb: {fileID: 0}
   col: {fileID: 6033168481693063806}
-  moveBackOnDrop: 1
+  tfRotate: {fileID: 0}
+  sprites:
+  - {fileID: 6033168481693063805}
+  sprIng: {fileID: 0}
+  snapToPosition: []
+  snapDistance: 0
+  attachToSnapPoint: 0
+  isKnife: 0
   useUpdateToDragLerp: 0
   interpolateSpeed: 0.8
   ignoreRigidBody: 0
-  attachToSnapPoint: 0
   offset: {x: 0, y: 0, z: 0}
-  snapDistance: 3
   scaleOnDrag: 1
-  onDropOrderLayer: -160
-  onDragOrderLayer: 0
-  onSnapOrderLayer: 1
+  rotateOnDrag: 0
+  onDragRotateZ: 10
   isRotate: 0
+  onDropOrderLayer: 0
+  onDragOrderLayer: 100
+  onSnapOrderLayer: 0
+  moveBack: 1
+  isSetScaleAfterMoveBack: 0
+  isChangeScaleAfterSnap: 0
+  isChangeScaleMoveToSnap: 0
+  scaleAfterSnap: 1
+  isTrueStep: 0
+  isCheckCheckFail: 0
+  timeCount: 1.5
+  isInZoneSnap: 0
+  isBlockShowEmoji: 0
+  isBounceLoop: 0
+  durationFloatingIdle: 2.41
+  curveTimeOffset: 0.25
+  speedFloatingIdle: 0.1
+  isFloatingStart: 0
+  isTrans: 0
+  rotateTrans: 45
+  soundPlay: 20
   onDragAudio:
     clip: {fileID: 8300000, guid: c3b6bbecd14554c438d275704fe43853, type: 3}
     volume: 1
   onSnapAudio:
     clip: {fileID: 8300000, guid: a92652c69245d4e44863c7f2cf0ed639, type: 3}
     volume: 1
+  onTransAudio:
+    clip: {fileID: 0}
+    volume: 0
   onSnap:
     m_PersistentCalls:
       m_Calls: []
@@ -39245,48 +39269,21 @@ MonoBehaviour:
   onMouseUp:
     m_PersistentCalls:
       m_Calls: []
-  notSnapWhenNearSnapPoint:
+  onMovebackDone:
     m_PersistentCalls:
       m_Calls: []
-  onMovebackDone:
+  notSnapWhenNearSnapPoint:
     m_PersistentCalls:
       m_Calls: []
   onSnapFail:
     m_PersistentCalls:
       m_Calls: []
-  isEnableCollideWhenEnableThis: 0
-  moveBack: 1
-  isChangeScaleAffterSnap: 1
-  isChangeScaleMoveToSnap: 0
-  scaleAffterSnap: 0
-  rotateOnDrag: 0
-  onDragRotateZ: 10
-  isBounceLoop: 0
-  durationFloatingIdle: 2.41
-  curveTimeOffSet: 0.25
-  speedFloatingIdle: 0.1
-  isFloatingStart: 0
-  isKnife: 0
-  isTrueStep: 0
-  isCheckCheckFail: 0
-  timeCount: 1.5
-  isInZoneSnap: 0
-  isBlockShowEmoji: 0
-  isSetScaleAffterMoveBack: 0
   onEndMoveBack:
     m_PersistentCalls:
       m_Calls: []
-  isTrans: 0
-  rotateTrans: 45
-  tfRotate: {fileID: 0}
-  sprIng: {fileID: 0}
   onTrans:
     m_PersistentCalls:
       m_Calls: []
-  onTransAudio:
-    clip: {fileID: 0}
-    volume: 0
-  soundPlay: 20
 --- !u!1 &6033930857861531833
 GameObject:
   m_ObjectHideFlags: 0

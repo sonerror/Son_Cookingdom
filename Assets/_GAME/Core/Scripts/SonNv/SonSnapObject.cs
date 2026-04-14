@@ -98,9 +98,6 @@ namespace sonnv
         public System.Action onMoveBackEnd;
         public UnityEvent OnMovebackDone => onMovebackDone;
         public Collider2D Col => col;
-
-        /* ================= LIFECYCLE ================= */
-        /* ================= Action Transition ================= */
         [SerializeField] protected bool isTrans = false;
         [SerializeField] protected float rotateTrans = 45f;
         [SerializeField] protected Transform tfRotate;
@@ -177,30 +174,9 @@ namespace sonnv
             if (isFloatingStart)
                 StartFloating();
         }
-        // private float _timer = 0f;
-        // private bool _isCheckingZone = false;
 
         private void Update()
         {
-            // if (isInZoneSnap && _isDragging)
-            // {
-            //     _timer += Time.deltaTime;
-            //     if (_timer >= timeCount)
-            //     {
-            //         _timer = 0f;
-            //         if (!CheckInZoneSnap())
-            //         {
-            //             emoji.ShowNegative();
-            //             onSnapFail?.Invoke();
-            //             MoveBack();
-            //         }
-            //     }
-            // }
-            // else
-            // {
-            //     _timer = 0f;
-            // }
-
             if (!useUpdateToDragLerp) return;
             if (!_isDragging || IsSnap) return;
             Tf.position = Vector3.Lerp(Tf.position, _mousePos, interpolateSpeed);
@@ -221,8 +197,6 @@ namespace sonnv
                 MoveBack();
             }
         }
-        /* ================= POINTER EVENTS (LUNA) ================= */
-
         public void OnPointerDown(PointerEventData eventData)
         {
             if (!_canInteract || _isDragging || IsSnap) return;
@@ -240,46 +214,20 @@ namespace sonnv
                 });
 
             }
-            // if (isInZoneSnap)
-            // {
-            //     _dragTimeoutTween?.Kill();
-            //     _dragTimeoutTween = DOVirtual.DelayedCall(timeCount, () =>
-            //     {
-            //         if (CheckInZoneSnap() != true)
-            //         {
-            //             if (_isDragging)
-            //             {
-            //                 emoji.ShowNegative();
-            //                 onSnapFail?.Invoke();
-            //                 MoveBack();
-            //             }
-
-            //         }
-            //     });
-
-            // }
             _isDragging = true;
             StopFloating();
-
             sprite.sortingOrder = onDragOrderLayer;
-
             if (!ignoreRigidBody && rb)
                 rb.bodyType = RigidbodyType2D.Static;
-
             col.isTrigger = true;
-
             UpdateMousePos(eventData);
-
             if (!useUpdateToDragLerp)
             {
                 Tf.position = _mousePos;
                 Tf.localRotation = Quaternion.identity;
             }
-
             Tf.localScale = _initScale * scaleOnDrag;
-
             SoundManager.PlaySFX(onDragAudio.clip, onDragAudio.volume);
-
             if (rotateOnDrag)
             {
                 if (_rotateTween != null) _rotateTween.Kill();
@@ -288,19 +236,14 @@ namespace sonnv
                     0.3f
                 );
             }
-
             if (_moveBackTween != null) _moveBackTween.Kill();
-
             OnStartDrag();
             onStartDrag.Invoke();
         }
-
         public void OnDrag(PointerEventData eventData)
         {
             if (!_canInteract || !_isDragging || IsSnap) return;
-
             UpdateMousePos(eventData);
-
             if (!useUpdateToDragLerp)
                 Tf.position = _mousePos;
         }
@@ -332,15 +275,10 @@ namespace sonnv
                 _dragTimeoutTween?.Kill();
             }
             StartFloating();
-
-
-
             if (!ignoreRigidBody && rb)
                 rb.bodyType = RigidbodyType2D.Dynamic;
-
             col.isTrigger = false;
             Tf.localScale = _initScale;
-
             if (_canInteract)
             {
                 for (int i = 0; i < snapToPosition.Length; i++)
@@ -378,22 +316,17 @@ namespace sonnv
                         notSnapWhenNearSnapPoint.Invoke();
                         break;
                     }
-
                     if (!ignoreRigidBody && rb)
                         rb.bodyType = RigidbodyType2D.Static;
 
                     if (attachToSnapPoint)
                         Tf.SetParent(snapPoint.Tf);
-
                     IsSnap = true;
                     snapPoint.isSnap = true;
                     snapPoint.OnSnap();
-
                     sprite.sortingOrder = onSnapOrderLayer;
                     col.enabled = false;
-
                     SoundManager.PlaySFX(onSnapAudio.clip, onSnapAudio.volume);
-
                     OnSnapObject();
                     if (!isTrans)
                     {
@@ -410,12 +343,8 @@ namespace sonnv
                     return;
                 }
             }
-
-            // 👇 GIỮ HÀNH VI onMouseUp
             onMouseUp.Invoke();
-
             OnDrop();
-
             if (rotateOnDrag)
             {
                 if (_rotateTween != null) _rotateTween.Kill();
@@ -424,7 +353,6 @@ namespace sonnv
                     0.3f
                 );
             }
-
             if (moveBack)
             {
                 _moveBackTween = Tf.DOLocalMove(_initLocalPos, 0.3f)
@@ -433,21 +361,15 @@ namespace sonnv
                         sprite.sortingOrder = onDropOrderLayer;
                         if (onMoveBackEnd != null)
                             onMoveBackEnd.Invoke();
-
                         onDrop.Invoke();
                     });
             }
             else
             {
                 sprite.sortingOrder = onDropOrderLayer;
-
                 onDrop.Invoke();
             }
-
         }
-
-        /* ================= HELPERS ================= */
-
         private void UpdateMousePos(PointerEventData eventData)
         {
             Vector3 worldPos = _mainCam.ScreenToWorldPoint(eventData.position);
@@ -455,7 +377,6 @@ namespace sonnv
             worldPos.z = offset.z;
             _mousePos = worldPos;
         }
-
         protected virtual void OnAwake() { }
         protected virtual void OnStart() { }
         protected virtual bool CanSnap() { return true; }
@@ -470,19 +391,15 @@ namespace sonnv
             StopFloating();
             OnTransiton();
         }
-
         public void StartFloating()
         {
             if (!isBounceLoop) return;
-
             isFloating = true;
             floatingAnchor = Tf.position;
-
             timeOffsetFloating =
                 (Mathf.Round(Time.time / durationFloatingIdle) + curveTimeOffSet)
                 * durationFloatingIdle - Time.time;
         }
-
         public void StopFloating()
         {
             isFloating = false;
@@ -491,15 +408,11 @@ namespace sonnv
         {
             DOVirtual.DelayedCall(delay, MoveBack);
         }
-
         public void MoveBack()
         {
             if (!moveBack) return;
-
             if (_moveBackTween != null)
                 _moveBackTween.Kill();
-
-            // reset trạng thái
             onMouseUp?.Invoke();
             _isDragging = false;
             IsSnap = false;
@@ -507,14 +420,9 @@ namespace sonnv
             Tf.localScale = Vector3.one * 1;
             col.enabled = true;
             col.isTrigger = false;
-
             if (!ignoreRigidBody && rb)
                 rb.bodyType = RigidbodyType2D.Dynamic;
-
-            //sprite.sortingOrder = onDropOrderLayer;
-
             Tf.localScale = _initScale;
-
             _moveBackTween = Tf.DOLocalMove(_initLocalPos, 0.3f)
                 .OnComplete(() =>
                 {
@@ -527,16 +435,12 @@ namespace sonnv
                     onMovebackDone?.Invoke();
                     if (onMoveBackEnd != null)
                         onMoveBackEnd.Invoke();
-
                     onDrop.Invoke();
-
                 });
-
             if (rotateOnDrag)
             {
                 if (_rotateTween != null)
                     _rotateTween.Kill();
-
                 _rotateTween = Tf.DORotate(
                     new Vector3(0, 0, _initZRot),
                     0.3f
