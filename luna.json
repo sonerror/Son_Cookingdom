@@ -2,7 +2,7 @@
     "version": "7.1.0",
     "projectId": "f42e7ff96e4545544bb6cd68f51ab634",
     "applicationID": 27404,
-    "creativeName": "R1_Cookingdom_v6_Rolled_Ice_Cream_GG",
+    "creativeName": "R1_Cookingdom_v7_Lunch_Box",
     "pgServer": "EU",
     "window": {
         "‐⁙": true
@@ -133,10 +133,11 @@
             ]
         },
         "scenes": [
-            "Assets/_GAME/Levels/LevelCream/LevelCream.unity"
+            "Assets/_GAME/Levels/LevelLunchBox/LevelLunchBox.unity"
         ],
         "disabledScenes": [
             "Assets/Scenes/GamePlayScene.unity",
+            "Assets/_GAME/Levels/LevelCream/LevelCream.unity",
             "Assets/_GAME/Levels/LevelMacaron/LevelMacaron.unity",
             "Assets/_GAME/Levels/LevelShirm/LevelShirm.unity",
             "Assets/_GAME/Levels/LevelSkewers/LevelSkewers.unity",
@@ -9788,6 +9789,14 @@
             {
                 "name": "ArrowTutorialAnim",
                 "excluded": true
+            },
+            {
+                "name": "sonnv.SonDragBase",
+                "excluded": true
+            },
+            {
+                "name": "sonnv.SpoonIngredient.SpriteToSpoon",
+                "excluded": false
             }
         ],
         "unusedMethods": [
@@ -47652,6 +47661,280 @@
                     {
                         "name": "Apply",
                         "excluded": false
+                    }
+                ]
+            },
+            {
+                "className": "sonnv.SpoonIngredient",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "Sprite#get",
+                        "excluded": false
+                    },
+                    {
+                        "name": "IgnoreThis#get",
+                        "excluded": false
+                    },
+                    {
+                        "name": "SpriteObj#get",
+                        "excluded": true
+                    },
+                    {
+                        "name": "Col#get",
+                        "excluded": true
+                    },
+                    {
+                        "name": "SnapPosition#get",
+                        "excluded": false
+                    },
+                    {
+                        "name": "TfPositionTarget#get",
+                        "excluded": false
+                    },
+                    {
+                        "name": "init",
+                        "excluded": false
+                    },
+                    {
+                        "name": "Start",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnEnable",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnDestroy",
+                        "excluded": true
+                    },
+                    {
+                        "name": "Oninit",
+                        "excluded": false
+                    },
+                    {
+                        "name": "GetIsSnap",
+                        "excluded": false
+                    },
+                    {
+                        "name": "ResetToInitialState",
+                        "excluded": true
+                    },
+                    {
+                        "name": "CheckBlockPlayerInteract",
+                        "excluded": true
+                    },
+                    {
+                        "name": "TrySnap",
+                        "excluded": false
+                    },
+                    {
+                        "name": "ResetAll",
+                        "excluded": true
+                    },
+                    {
+                        "name": "ResetAllInSpoon",
+                        "excluded": true
+                    },
+                    {
+                        "name": "HideObjSmoke",
+                        "excluded": true
+                    },
+                    {
+                        "name": "CanSnap",
+                        "excluded": false
+                    },
+                    {
+                        "name": "ShareIngredientFeedback",
+                        "excluded": false
+                    }
+                ]
+            },
+            {
+                "className": "sonnv.AnimControl",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "init",
+                        "excluded": false
+                    },
+                    {
+                        "name": "PlayAnim",
+                        "excluded": false
+                    },
+                    {
+                        "name": "IE_DelayPlay",
+                        "excluded": false
+                    },
+                    {
+                        "name": "StopAnim",
+                        "excluded": true
+                    },
+                    {
+                        "name": "AddListenerOnDoneAnim",
+                        "excluded": true
+                    },
+                    {
+                        "name": "RemoveListenerOnDoneAnim",
+                        "excluded": true
+                    }
+                ]
+            },
+            {
+                "className": "sonnv.FlatSpoonInPan",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "init",
+                        "excluded": false
+                    },
+                    {
+                        "name": "Update",
+                        "excluded": false
+                    },
+                    {
+                        "name": "SetBlockRotate",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnDrag",
+                        "excluded": false
+                    },
+                    {
+                        "name": "GetAngleABC",
+                        "excluded": false
+                    },
+                    {
+                        "name": "StartParticles",
+                        "excluded": false
+                    },
+                    {
+                        "name": "StopParticles",
+                        "excluded": false
+                    }
+                ]
+            },
+            {
+                "className": "sonnv.SnapPoint",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "init",
+                        "excluded": false
+                    },
+                    {
+                        "name": "Show",
+                        "excluded": true
+                    },
+                    {
+                        "name": "OnSnap",
+                        "excluded": true
+                    },
+                    {
+                        "name": "ForceChangeSnap",
+                        "excluded": true
+                    },
+                    {
+                        "name": "ChangeCanSnap",
+                        "excluded": true
+                    },
+                    {
+                        "name": "ResetSnap",
+                        "excluded": true
+                    }
+                ]
+            },
+            {
+                "className": "sonnv.Spoon",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "Col#get",
+                        "excluded": true
+                    },
+                    {
+                        "name": "init",
+                        "excluded": false
+                    },
+                    {
+                        "name": "Awake",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnDestroy",
+                        "excluded": true
+                    },
+                    {
+                        "name": "CheckBlockPlayerInteract",
+                        "excluded": true
+                    },
+                    {
+                        "name": "SetManualBlock",
+                        "excluded": true
+                    },
+                    {
+                        "name": "OnPointerDown",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnDrag",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnPointerUp",
+                        "excluded": false
+                    },
+                    {
+                        "name": "CancelDragging",
+                        "excluded": false
+                    },
+                    {
+                        "name": "ChangeIngredientStatus",
+                        "excluded": false
+                    },
+                    {
+                        "name": "PlayGiveIngredientAnim",
+                        "excluded": false
+                    },
+                    {
+                        "name": "IE_DelayReset",
+                        "excluded": true
+                    },
+                    {
+                        "name": "ReSetIngredientCook",
+                        "excluded": false
+                    },
+                    {
+                        "name": "ReleaseIngredient",
+                        "excluded": false
+                    },
+                    {
+                        "name": "MoveBack",
+                        "excluded": false
+                    },
+                    {
+                        "name": "Rotate",
+                        "excluded": false
+                    },
+                    {
+                        "name": "SetSortingOrder",
+                        "excluded": false
+                    },
+                    {
+                        "name": "CheckTriggerOnPick",
+                        "excluded": true
+                    },
+                    {
+                        "name": "OnTriggerEnter2D",
+                        "excluded": false
+                    },
+                    {
+                        "name": "TryGetIngredient",
+                        "excluded": false
+                    },
+                    {
+                        "name": "SetScaleObj",
+                        "excluded": true
                     }
                 ]
             }

@@ -47,6 +47,8 @@ namespace sonnv
         [SerializeField] private bool moveBack;
         [SerializeField] private bool isChangeScaleAffterSnap = false;
         [SerializeField] private bool isChangeScaleMoveToSnap = false;
+        [SerializeField] private bool isMoveToTargetAfterSnap = true;
+
         [SerializeField] private float scaleAffterSnap = 1;
 
         [SerializeField] private bool rotateOnDrag;
@@ -330,7 +332,9 @@ namespace sonnv
                     OnSnapObject();
                     if (!isTrans)
                     {
-                        Tf.DOMove(snapPoint.Tf.position, 0.2f)
+                        if (isMoveToTargetAfterSnap)
+                        {
+                            Tf.DOMove(snapPoint.Tf.position, 0.2f)
                           .OnComplete(() =>
                           {
                               if (isChangeScaleMoveToSnap)
@@ -339,6 +343,15 @@ namespace sonnv
                               }
                               onSnap.Invoke();
                           });
+                        }
+                        else
+                        {
+                            onSnap.Invoke();
+                            if (isChangeScaleMoveToSnap)
+                            {
+                                Tf.localScale = Vector3.one * scaleAffterSnap;
+                            }
+                        }
                     }
                     return;
                 }

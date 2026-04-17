@@ -7,6 +7,7 @@ public class HandCtrl : MonoBehaviour
   public Animator animator;
   private Vector3 pos1;
   private Vector3 pos2;
+  private Vector3 _pos3;
 
 
   public void ShowHandAtPos(Vector3 pos)
@@ -53,4 +54,42 @@ public class HandCtrl : MonoBehaviour
     if (gameObject.activeSelf)
       ShowHand();
   }
+  public void ShowHandPosToPosToPos(Vector3 pos1, Vector3 pos2, Vector3 pos3)
+  {
+    StopAllCoroutines();
+    transform.DOKill();
+    gameObject.SetActive(true);
+
+    this.pos1 = pos1;
+    this.pos2 = pos2;
+    _pos3 = pos3;
+
+    ShowHandThree();
+  }
+
+  private void ShowHandThree()
+  {
+    transform.position = pos1;
+    animator.SetTrigger("HandDown");
+
+    transform.DOMove(pos2, 1f)
+        .SetDelay(0.75f)
+        .OnComplete(() =>
+        {
+          transform.DOMove(_pos3, 1f).OnComplete(() =>
+              {
+                animator.SetTrigger("HandUp");
+              });
+        });
+
+    StartCoroutine(IEShowHandThree());
+  }
+
+  private IEnumerator IEShowHandThree()
+  {
+    yield return new WaitForSeconds(4);
+    if (gameObject.activeSelf)
+      ShowHandThree();
+  }
+
 }
