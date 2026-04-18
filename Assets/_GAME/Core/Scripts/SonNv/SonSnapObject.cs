@@ -101,10 +101,13 @@ namespace sonnv
         public UnityEvent OnMovebackDone => onMovebackDone;
         public Collider2D Col => col;
         [SerializeField] protected bool isTrans = false;
+        [SerializeField] protected bool isTransStepToStep = false;
         [SerializeField] protected float rotateTrans = 45f;
         [SerializeField] protected Transform tfRotate;
+        [SerializeField] protected Transform tfRotateStep2;
         [SerializeField] private SpriteRenderer sprIng;
         [SerializeField] protected UnityEvent onTrans;
+        [SerializeField] protected UnityEvent onStartTrans;
         public UnityEvent OnTrans => onTrans;
         [SerializeField] private AudioData onTransAudio;
         [SerializeField] FxType soundPlay = FxType.None;
@@ -121,6 +124,7 @@ namespace sonnv
                         {
                             SoundManager.Ins.PlayFx(soundPlay);
                         }
+                        onStartTrans?.Invoke();
                         Tf.DORotate(new Vector3(0, 0, rotateTrans), 0.3f).OnComplete(() =>
                             {
                                 SoundManager.PlaySFX(onTransAudio.clip, onTransAudio.volume);
@@ -139,6 +143,50 @@ namespace sonnv
                             });
                     });
             }
+
+        }
+        private void OnTransitonStepToStep()
+        {
+            if (!isTransStepToStep) return;
+            col.enabled = false;
+            Sequence transSeq = DOTween.Sequence();
+            transSeq.Append(Tf.DOMove(tfRotate.position, 0.15f));
+            transSeq.AppendCallback(() =>
+            {
+                if (soundPlay != FxType.None)
+                {
+                    SoundManager.Ins.PlayFx(soundPlay);
+                }
+                onStartTrans?.Invoke();
+            });
+            transSeq.Append(Tf.DORotate(new Vector3(0, 0, rotateTrans), 0.3f));
+
+            transSeq.Append(Tf.DORotate(new Vector3(0, 0, _initZRot), 0.3f));
+            transSeq.Append(Tf.DOMove(tfRotateStep2.position, 0.15f));
+            transSeq.AppendCallback(() =>
+            {
+                if (soundPlay != FxType.None)
+                {
+                    SoundManager.Ins.PlayFx(soundPlay);
+                }
+                onStartTrans?.Invoke();
+            });
+            transSeq.Append(Tf.DORotate(new Vector3(0, 0, rotateTrans), 0.3f));
+
+            transSeq.AppendCallback(() =>
+            {
+                SoundManager.PlaySFX(onTransAudio.clip, onTransAudio.volume);
+
+                FadeSprite(sprIng, 1, 0.3f, Ease.Linear, () =>
+                {
+                    onTrans?.Invoke();
+                    FadeSprite(sprIng, 0, 0.3f, Ease.Linear, () =>
+                    {
+                        Tf.DORotate(new Vector3(0, 0, _initZRot), 0.3f)
+                          .OnComplete(MoveBack);
+                    });
+                });
+            });
         }
         void FadeSprite(SpriteRenderer sprite, float alpha, float time, Ease ease = Ease.Linear, System.Action onDone = null)
         {
@@ -403,6 +451,7 @@ namespace sonnv
 
             StopFloating();
             OnTransiton();
+            OnTransitonStepToStep();
         }
         public void StartFloating()
         {

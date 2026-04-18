@@ -20,6 +20,7 @@ namespace sonnv
         [SerializeField] private SpriteRenderer ingredientSprite;
         [SerializeField] private int sortingOrderWhenDrag = 10;
         [SerializeField] private float zRotate = 10f;
+        [SerializeField] private float zRotateAnim = 10f;
         [SerializeField] private bool jumpMoveBack;
         [SerializeField] private float yAddedFromLocalPos = 3f;
         [SerializeField] private AudioClip pickSound;
@@ -176,21 +177,26 @@ namespace sonnv
             }
             _actionTween = Tf.DOMove(tf, 0.3f).OnComplete(() =>
             {
-                SoundManager.PlaySFX(giveIngredientSound);
-                spoonSprite.sprite = spoonSpriteOnReleaseIngredient;
-                ingredientSprite.sprite = _ingredient.Sprite.spriteWhenSpoonRelease;
-                if (isDelayResetAfterSnap)
+                _rotateTween?.Kill();
+                _rotateTween = Tf.DOLocalRotate(new Vector3(0, 0, zRotateAnim), 0.3f).OnComplete(() =>
                 {
-                    _actionTween = ingredientSprite.DOFade(0, 0.3f);
-                    StartCoroutine(IE_DelayReset());
-                }
-                else
-                {
-                    _actionTween = ingredientSprite.DOFade(0, 0.3f).OnComplete(() =>
+                    SoundManager.PlaySFX(giveIngredientSound);
+                    spoonSprite.sprite = spoonSpriteOnReleaseIngredient;
+                    ingredientSprite.sprite = _ingredient.Sprite.spriteWhenSpoonRelease;
+                    if (isDelayResetAfterSnap)
                     {
-                        ReSetIngredientCook();
-                    });
-                }
+                        _actionTween = ingredientSprite.DOFade(0, 0.3f);
+                        StartCoroutine(IE_DelayReset());
+                    }
+                    else
+                    {
+                        _actionTween = ingredientSprite.DOFade(0, 0.3f).OnComplete(() =>
+                        {
+                            ReSetIngredientCook();
+                        });
+                    }
+
+                });
             });
         }
         IEnumerator IE_DelayReset()
