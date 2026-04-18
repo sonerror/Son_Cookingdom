@@ -9797,6 +9797,14 @@
             {
                 "name": "sonnv.SpoonIngredient.SpriteToSpoon",
                 "excluded": false
+            },
+            {
+                "name": "pc.Debugger.Components.EditorCamera",
+                "excluded": true
+            },
+            {
+                "name": "pc.Debugger.Components.EditorGUI",
+                "excluded": true
             }
         ],
         "unusedMethods": [
@@ -29122,7 +29130,7 @@
                     },
                     {
                         "name": "Insert",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "PrependInterval",
@@ -30007,6 +30015,26 @@
                     {
                         "name": "ShowHandAtPos",
                         "excluded": false
+                    },
+                    {
+                        "name": "ShowHandPosToPosToPos",
+                        "excluded": true
+                    },
+                    {
+                        "name": "ShowHandThree",
+                        "excluded": true
+                    },
+                    {
+                        "name": "IEShowHandThree",
+                        "excluded": true
+                    },
+                    {
+                        "name": "ShowHandSpinContinuous",
+                        "excluded": true
+                    },
+                    {
+                        "name": "StopSpinOnly",
+                        "excluded": true
                     }
                 ]
             },
@@ -30079,44 +30107,40 @@
                         "excluded": false
                     },
                     {
-                        "name": "ListTfSpatula#get",
-                        "excluded": true
-                    },
-                    {
-                        "name": "ListTfTargetSpatula#get",
-                        "excluded": true
-                    },
-                    {
-                        "name": "CountStep2",
-                        "excluded": false
-                    },
-                    {
-                        "name": "SetIsSnapSpatula",
-                        "excluded": false
-                    },
-                    {
-                        "name": "TutorialStep5",
-                        "excluded": false
-                    },
-                    {
-                        "name": "CountStep5",
-                        "excluded": false
-                    },
-                    {
-                        "name": "SetIsSnapSpatulaStep6",
-                        "excluded": false
-                    },
-                    {
-                        "name": "SetIsSnapBowlChoco",
-                        "excluded": false
-                    },
-                    {
                         "name": "ShowHintPosToPos",
                         "excluded": false
                     },
                     {
                         "name": "TutorialStep7",
                         "excluded": false
+                    },
+                    {
+                        "name": "ListEgg#get",
+                        "excluded": false
+                    },
+                    {
+                        "name": "ListBoltSaltSugar#get",
+                        "excluded": true
+                    },
+                    {
+                        "name": "ListBolt#get",
+                        "excluded": true
+                    },
+                    {
+                        "name": "ListItemInPan#get",
+                        "excluded": true
+                    },
+                    {
+                        "name": "TutorialStepList",
+                        "excluded": false
+                    },
+                    {
+                        "name": "TutorialStep2List",
+                        "excluded": true
+                    },
+                    {
+                        "name": "TutorialStepListThree",
+                        "excluded": true
                     }
                 ]
             },
@@ -40765,6 +40789,10 @@
                     {
                         "name": "DelayMoveBack",
                         "excluded": true
+                    },
+                    {
+                        "name": "OnTransitonStepToStep",
+                        "excluded": false
                     }
                 ]
             },
@@ -42245,10 +42273,6 @@
                         "excluded": true
                     },
                     {
-                        "name": "OnDisable",
-                        "excluded": true
-                    },
-                    {
                         "name": "OnStartStep1",
                         "excluded": false
                     },
@@ -42281,14 +42305,6 @@
                         "excluded": false
                     },
                     {
-                        "name": "SetSnapObject",
-                        "excluded": false
-                    },
-                    {
-                        "name": "OnSnapHandler",
-                        "excluded": false
-                    },
-                    {
                         "name": "SetStart",
                         "excluded": true
                     },
@@ -42301,15 +42317,7 @@
                         "excluded": true
                     },
                     {
-                        "name": "CheckDoneStep8",
-                        "excluded": false
-                    },
-                    {
                         "name": "OnStartStep9",
-                        "excluded": false
-                    },
-                    {
-                        "name": "HidePet",
                         "excluded": false
                     },
                     {
@@ -42317,7 +42325,19 @@
                         "excluded": false
                     },
                     {
-                        "name": "IEShowParticle",
+                        "name": "IE_MoveCamToStage2",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnStartStep11",
+                        "excluded": false
+                    },
+                    {
+                        "name": "IE_DelayStep11",
+                        "excluded": false
+                    },
+                    {
+                        "name": "CrossfadeSprites",
                         "excluded": false
                     }
                 ]
@@ -47836,7 +47856,7 @@
                     },
                     {
                         "name": "ChangeCanSnap",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "ResetSnap",

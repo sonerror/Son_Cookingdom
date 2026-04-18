@@ -91,5 +91,34 @@ public class HandCtrl : MonoBehaviour
     if (gameObject.activeSelf)
       ShowHandThree();
   }
+  private Vector3 _centerPos;
+  private float _radius;
+  private Tween _spinTween;
 
+  public void ShowHandSpinContinuous(Vector3 center, float radius)
+  {
+    gameObject.SetActive(true);
+    _centerPos = center;
+    _radius = radius;
+
+    animator.Play("Hand");
+    animator.SetTrigger("HandDown");
+
+    _spinTween?.Kill();
+
+    _spinTween = DOVirtual.Float(0f, 360f, 1.5f, (angle) =>
+    {
+      float rad = angle * Mathf.Deg2Rad;
+
+      transform.position = _centerPos + new Vector3(Mathf.Cos(rad) * _radius, Mathf.Sin(rad) * _radius, 0);
+
+    })
+    .SetLoops(-1, LoopType.Restart)
+    .SetEase(Ease.Linear);
+  }
+
+  public void StopSpinOnly()
+  {
+    _spinTween?.Kill();
+  }
 }

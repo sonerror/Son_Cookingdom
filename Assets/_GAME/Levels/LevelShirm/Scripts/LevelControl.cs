@@ -94,7 +94,7 @@ public class LevelControl : LevelBase
                 OnStartStep1();
                 break;
             case 1:
-                //TutorialManager.Ins.SetNewTime(3f);
+                TutorialManager.Ins.SetNewTime(3f);
                 OnStartStep2();
                 break;
             case 2:
@@ -121,6 +121,9 @@ public class LevelControl : LevelBase
             case 9:
                 OnStartStep10();
                 break;
+            case 10:
+                OnStartStep11();
+                break;
         }
     }
     public void OnCompleteStage(int currentStageIndex, float x)
@@ -142,6 +145,7 @@ public class LevelControl : LevelBase
     [SerializeField] private List<SonSnapPoint> listSnapPointEgg;
     private void OnStartStep1()
     {
+        TutorialManager.Ins.enableCountTime = true;
         foreach (SonSnapPoint point in listSnapPointEgg)
         {
             point.ChangeCanSnap(true);
@@ -154,8 +158,7 @@ public class LevelControl : LevelBase
                 int removedIndex = listSnapObjectEgg.IndexOf(obj);
                 if (removedIndex < 0) return;
                 listSnapObjectEgg.RemoveAt(removedIndex);
-                // TutorialManager.Ins.TutorialNode.RemoveAt(removedIndex);
-                // TutorialManager.Ins.TfItem.RemoveAt(removedIndex);
+                TutorialManager.Ins.ListEgg.RemoveAt(removedIndex);
                 if (listSnapObjectEgg.Count == 0)
                 {
                     DoneStep();
@@ -180,6 +183,7 @@ public class LevelControl : LevelBase
                 int removedIndex = listItemSaltSugar.IndexOf(obj);
                 if (removedIndex < 0) return;
                 listItemSaltSugar.RemoveAt(removedIndex);
+                TutorialManager.Ins.ListBoltSaltSugar.RemoveAt(removedIndex);
                 if (listItemSaltSugar.Count == 0)
                 {
                     DoneStep();
@@ -204,8 +208,7 @@ public class LevelControl : LevelBase
                 int removedIndex = listSnapObjectBolt.IndexOf(obj);
                 if (removedIndex < 0) return;
                 listSnapObjectBolt.RemoveAt(removedIndex);
-                // TutorialManager.Ins.TutorialNode.RemoveAt(removedIndex);
-                // TutorialManager.Ins.TfItem.RemoveAt(removedIndex);
+                TutorialManager.Ins.ListBolt.RemoveAt(removedIndex);
                 if (listSnapObjectBolt.Count == 0)
                 {
                     DoneStep();
@@ -299,8 +302,7 @@ public class LevelControl : LevelBase
                 int removedIndex = listSnapObjInPan.IndexOf(obj);
                 if (removedIndex < 0) return;
                 listSnapObjInPan.RemoveAt(removedIndex);
-                // TutorialManager.Ins.TutorialNode.RemoveAt(removedIndex);
-                // TutorialManager.Ins.TfItem.RemoveAt(removedIndex);
+                TutorialManager.Ins.ListItemInPan.RemoveAt(removedIndex);
                 if (listSnapObjInPan.Count == 0)
                 {
                     DoneStep();
@@ -318,24 +320,52 @@ public class LevelControl : LevelBase
             {
                 DoneStep();
                 TryNextStep();
+                TutorialManager.Ins.enableCountTime = false;
             });
     }
     [SerializeField] private ClockTimer time;
+    [SerializeField] private List<SpriteRenderer> spriteRendererOut;
+    [SerializeField] private List<SpriteRenderer> spriteRendererIn;
+    private Sequence _crossfadeSeq;
 
-    private void OnStartStep7Phase2()
+    private void OnStartStep11()
     {
-        StartCoroutine(IE_DelayChangeSprite());
+        TutorialManager.Ins.SetNewTime(0.5f);
+
+        StartCoroutine(IE_DelayStep11());
+    }
+    IEnumerator IE_DelayStep11()
+    {
+        yield return new WaitForSeconds(1f);
+        float duration = 3f;
         time.OnTimeOut = () =>
         {
             DoneStep();
             TryNextStep();
+            buttonOnOff.ClickButton();
             GameManager.Ins.showEndGame();
-            TutorialManager.Ins.SetNewTime(0.5f);
+            TutorialManager.Ins.enableCountTime = true;
         };
-        time.Show(3f);
+        time.Show(duration);
+        CrossfadeSprites(duration);
     }
-    IEnumerator IE_DelayChangeSprite()
+    private void CrossfadeSprites(float duration)
     {
-        yield return new WaitForSeconds(1f);
+        _crossfadeSeq?.Kill();
+        _crossfadeSeq = DOTween.Sequence();
+        float timeFadeIn = duration * 0.6f;
+        float timeFadeOut = duration * 0.4f;
+        foreach (var spr in spriteRendererIn)
+        {
+            spr.color = new Color(spr.color.r, spr.color.g, spr.color.b, 0f);
+            spr.gameObject.SetActive(true);
+            _crossfadeSeq.Insert(0, spr.DOFade(1f, timeFadeIn).SetEase(Ease.OutQuad));
+        }
+
+        foreach (var spr in spriteRendererOut)
+        {
+            _crossfadeSeq.Insert(timeFadeIn, spr.DOFade(0f, timeFadeOut).SetEase(Ease.Linear));
+            _crossfadeSeq.InsertCallback(duration, () => spr.gameObject.SetActive(false));
+        }
     }
 }
