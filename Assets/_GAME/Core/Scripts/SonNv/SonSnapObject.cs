@@ -108,6 +108,8 @@ namespace sonnv
         [SerializeField] private SpriteRenderer sprIng;
         [SerializeField] protected UnityEvent onTrans;
         [SerializeField] protected UnityEvent onStartTrans;
+        public UnityEvent OnStartTrans => onStartTrans;
+
         public UnityEvent OnTrans => onTrans;
         [SerializeField] private AudioData onTransAudio;
         [SerializeField] FxType soundPlay = FxType.None;

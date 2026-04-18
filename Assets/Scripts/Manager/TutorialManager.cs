@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using HoangHH;
 using UnityEngine;
 using sonnv;
+using DG.Tweening;
+
 
 public class TutorialManager : Singleton<TutorialManager>
 {
@@ -28,7 +30,6 @@ public class TutorialManager : Singleton<TutorialManager>
     if (blockShowHint) return;
     if (Input.GetMouseButtonDown(0) && isTap == false)
     {
-      SetNewTime(4f);
       isTap = true;
     }
     if (Input.GetMouseButtonDown(0))
@@ -111,11 +112,10 @@ public class TutorialManager : Singleton<TutorialManager>
         ShowHintPosToPos(tfWhisk, tfBolt);
         return;
       case 4:
-        handCtrl.gameObject.SetActive(true);
-        handCtrl.ShowHandSpinContinuous(tfBolt.position, 0.75f);
+        ShowHandSpinContinuous(tfBolt.position, 0.75f);
         return;
       case 5:
-        handCtrl.StopSpinOnly();
+        StopSpinOnly();
         ShowHintPosToPos(tfOil, tfBoltStep2);
         return;
       case 6:
@@ -140,7 +140,41 @@ public class TutorialManager : Singleton<TutorialManager>
         return;
     }
   }
+  private Vector3 _centerPos;
+  private float _radius;
+  private Tween _spinTween;
+  public void ShowHandSpinContinuous(Vector3 center, float radius)
+  {
+    if (handCtrl == null) return;
 
+    handCtrl.transform.DOKill();
+    _spinTween?.Kill();
+
+    handCtrl.gameObject.SetActive(true);
+
+    if (handCtrl.animator != null)
+    {
+      handCtrl.animator.Play("Hand");
+      handCtrl.animator.SetTrigger("HandDown");
+    }
+
+    _spinTween = DOVirtual.Float(0f, 360f, 1.5f, (angle) =>
+    {
+      float rad = angle * Mathf.Deg2Rad;
+
+      handCtrl.transform.position = center + new Vector3(
+          Mathf.Cos(rad) * radius,
+          Mathf.Sin(rad) * radius,
+          0
+      );
+    })
+    .SetLoops(-1, LoopType.Restart)
+    .SetEase(Ease.Linear);
+  }
+  public void StopSpinOnly()
+  {
+    _spinTween?.Kill();
+  }
   private void Tutorial(int indexStep)
   {
 

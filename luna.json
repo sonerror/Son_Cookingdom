@@ -2,7 +2,7 @@
     "version": "7.1.0",
     "projectId": "f42e7ff96e4545544bb6cd68f51ab634",
     "applicationID": 27404,
-    "creativeName": "R1_Cookingdom_v7_Lunch_Box",
+    "creativeName": "R1_Cookingdom_v7_Lunch_Box_GG",
     "pgServer": "EU",
     "window": {
         "‐⁙": true
@@ -9797,14 +9797,6 @@
             {
                 "name": "sonnv.SpoonIngredient.SpriteToSpoon",
                 "excluded": false
-            },
-            {
-                "name": "pc.Debugger.Components.EditorCamera",
-                "excluded": true
-            },
-            {
-                "name": "pc.Debugger.Components.EditorGUI",
-                "excluded": true
             }
         ],
         "unusedMethods": [
@@ -30018,15 +30010,15 @@
                     },
                     {
                         "name": "ShowHandPosToPosToPos",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "ShowHandThree",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "IEShowHandThree",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "ShowHandSpinContinuous",
@@ -30034,7 +30026,7 @@
                     },
                     {
                         "name": "StopSpinOnly",
-                        "excluded": true
+                        "excluded": false
                     }
                 ]
             },
@@ -30120,15 +30112,15 @@
                     },
                     {
                         "name": "ListBoltSaltSugar#get",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "ListBolt#get",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "ListItemInPan#get",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "TutorialStepList",
@@ -30136,11 +30128,11 @@
                     },
                     {
                         "name": "TutorialStep2List",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "TutorialStepListThree",
-                        "excluded": true
+                        "excluded": false
                     }
                 ]
             },
@@ -32434,24 +32426,6 @@
                     },
                     {
                         "name": "GetAngleABC",
-                        "excluded": false
-                    }
-                ]
-            },
-            {
-                "className": "sonnv.AnimEgg",
-                "staticMethods": [],
-                "instanceMethods": [
-                    {
-                        "name": "SfxCrack",
-                        "excluded": false
-                    },
-                    {
-                        "name": "SfxKeng",
-                        "excluded": false
-                    },
-                    {
-                        "name": "ShakeBowl",
                         "excluded": false
                     }
                 ]
@@ -47797,6 +47771,10 @@
                     {
                         "name": "RemoveListenerOnDoneAnim",
                         "excluded": true
+                    },
+                    {
+                        "name": "IE_DelayEffect",
+                        "excluded": false
                     }
                 ]
             },
@@ -47955,6 +47933,24 @@
                     {
                         "name": "SetScaleObj",
                         "excluded": true
+                    }
+                ]
+            },
+            {
+                "className": "AnimEgg",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "SfxCrack",
+                        "excluded": false
+                    },
+                    {
+                        "name": "SfxKeng",
+                        "excluded": false
+                    },
+                    {
+                        "name": "ShakeBowl",
+                        "excluded": false
                     }
                 ]
             }

@@ -8,6 +8,8 @@ namespace sonnv
     {
         [SerializeField] private Animation eggAnim;
         [SerializeField] private bool activeObj = false;
+        [SerializeField] private AnimEgg animEffect;
+
         public UnityEvent onDoneAnim;
         public UnityEvent onStartAnim;
 
@@ -17,7 +19,6 @@ namespace sonnv
         {
             if (eggAnim != null)
             {
-                // Stop current coroutine if playing
                 if (playAnimCoroutine != null)
                 {
                     StopCoroutine(playAnimCoroutine);
@@ -33,7 +34,9 @@ namespace sonnv
             }
             onStartAnim?.Invoke();
             eggAnim.gameObject.SetActive(true);
+            yield return null;
             eggAnim.Play();
+            StartCoroutine(IE_DelayEffect());
             while (eggAnim.isPlaying)
             {
                 yield return null;
@@ -42,6 +45,15 @@ namespace sonnv
             onDoneAnim?.Invoke();
             Debug.Log("Done anim egg");
             playAnimCoroutine = null;
+        }
+
+        IEnumerator IE_DelayEffect()
+        {
+            yield return new WaitForSeconds(0.25f);
+            animEffect.SfxKeng();
+            animEffect.ShakeBowl();
+            yield return new WaitForSeconds(0.25f);
+            animEffect.SfxCrack();
         }
 
         public void StopAnim()

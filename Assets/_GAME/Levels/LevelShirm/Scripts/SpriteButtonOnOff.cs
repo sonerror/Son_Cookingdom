@@ -18,7 +18,6 @@ namespace sonnv
         [SerializeField] private AudioClip turnOffSound;
         [SerializeField] private bool blockInteractManually;
         [SerializeField] private bool isBolckTap = false;
-        [SerializeField] private Animator animScaleLoop;
         [SerializeField] private SpriteRenderer spriteHot;
 
         public UnityEvent onClickOn;
@@ -87,7 +86,6 @@ namespace sonnv
 
             sr.sprite = IsOn ? clickButtonSprite : unClickButtonSprite;
 
-            if (animScaleLoop != null) animScaleLoop.enabled = IsOn;
             if (spriteHot != null) spriteHot.enabled = IsOn;
 
             if (IsOn)

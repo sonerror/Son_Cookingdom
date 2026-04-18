@@ -94,10 +94,11 @@ public class LevelControl : LevelBase
                 OnStartStep1();
                 break;
             case 1:
-                TutorialManager.Ins.SetNewTime(3f);
+                TutorialManager.Ins.SetNewTime(0.5f);
                 OnStartStep2();
                 break;
             case 2:
+                TutorialManager.Ins.SetNewTime(0.5f);
                 OnStartStep3();
                 break;
             case 3:
@@ -143,6 +144,7 @@ public class LevelControl : LevelBase
     }
     [SerializeField] private List<SonSnapObject> listSnapObjectEgg;
     [SerializeField] private List<SonSnapPoint> listSnapPointEgg;
+    private int countSnapEgg = 0;
     private void OnStartStep1()
     {
         TutorialManager.Ins.enableCountTime = true;
@@ -159,6 +161,11 @@ public class LevelControl : LevelBase
                 if (removedIndex < 0) return;
                 listSnapObjectEgg.RemoveAt(removedIndex);
                 TutorialManager.Ins.ListEgg.RemoveAt(removedIndex);
+                countSnapEgg++;
+                if (countSnapEgg == 1)
+                {
+                    TutorialManager.Ins.SetNewTime(3);
+                }
                 if (listSnapObjectEgg.Count == 0)
                 {
                     DoneStep();
@@ -169,6 +176,7 @@ public class LevelControl : LevelBase
     }
     [SerializeField] private List<SpoonIngredient> listItemSaltSugar;
     [SerializeField] private List<SnapPoint> listSnapPointItem;
+    private int countSnapSpoon = 0;
     private void OnStartStep2()
     {
         foreach (SnapPoint point in listSnapPointItem)
@@ -184,6 +192,11 @@ public class LevelControl : LevelBase
                 if (removedIndex < 0) return;
                 listItemSaltSugar.RemoveAt(removedIndex);
                 TutorialManager.Ins.ListBoltSaltSugar.RemoveAt(removedIndex);
+                countSnapSpoon++;
+                if (countSnapSpoon == 1)
+                {
+                    TutorialManager.Ins.SetNewTime(3);
+                }
                 if (listItemSaltSugar.Count == 0)
                 {
                     DoneStep();
@@ -194,6 +207,8 @@ public class LevelControl : LevelBase
     }
     [SerializeField] private List<SonSnapObject> listSnapObjectBolt;
     [SerializeField] private List<SonSnapPoint> listSnapPointBolt;
+    private int countTrans = 0;
+
     private void OnStartStep3()
     {
         foreach (SonSnapPoint point in listSnapPointBolt)
@@ -203,12 +218,21 @@ public class LevelControl : LevelBase
         for (int i = 0; i < listSnapObjectBolt.Count; i++)
         {
             SonSnapObject obj = listSnapObjectBolt[i];
+            obj.OnStartTrans.AddListener(() =>
+            {
+                countTrans++;
+                if (countTrans == 1)
+                {
+                    TutorialManager.Ins.SetNewTime(4.5f);
+                }
+            });
             obj.OnTrans.AddListener(() =>
             {
                 int removedIndex = listSnapObjectBolt.IndexOf(obj);
                 if (removedIndex < 0) return;
                 listSnapObjectBolt.RemoveAt(removedIndex);
                 TutorialManager.Ins.ListBolt.RemoveAt(removedIndex);
+
                 if (listSnapObjectBolt.Count == 0)
                 {
                     DoneStep();
@@ -254,8 +278,13 @@ public class LevelControl : LevelBase
         yield return new WaitForSeconds(1.25f);
         cam.transform.DOMoveX(tfStage2.position.x, timeMoveToTargetStage2).OnComplete(() =>
        {
+           TutorialManager.Ins.SetNewTime(0.5f);
            TutorialManager.Ins.enableCountTime = true;
            snapPointOil.ChangeCanSnap(true);
+           snapObjOil.OnStartTrans.AddListener(() =>
+           {
+               TutorialManager.Ins.SetNewTime(4.5f);
+           });
            snapObjOil.OnTrans.AddListener(() =>
            {
                DoneStep();

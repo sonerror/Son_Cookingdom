@@ -21,7 +21,7 @@ public class GamePlayScreen : UIScreen
       TextTutorial.SetActive(false);
       objProcess.SetActive(true);
       objImgCook.SetActive(true);
-      SoundManager.Ins.PlayBgm();
+      //SoundManager.Ins.PlayBgm();
       istap = true;
     }
   }
