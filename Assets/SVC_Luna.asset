@@ -812,7 +812,7 @@ MonoBehaviour:
     - _COLORADDSUBDIFF_ON
   _includedShaderVariants: []
   _excludedShaderVariants: []
-  version: 2322
+  version: 2325
   _shaderParsedShaders:
   - ParsedSubShaders:
     - Index: 0
