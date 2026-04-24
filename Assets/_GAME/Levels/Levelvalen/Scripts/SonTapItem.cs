@@ -10,18 +10,20 @@ namespace sonnv
         [SerializeField] private bool isShowEffect = false;
         [SerializeField] private List<ShowObjectEffect> listEffect;
         [SerializeField] private Sprite spriteNew;
+        [SerializeField] private ParticleSystem particleSystem;
         private void ShowEffect()
         {
             if (isShowEffect)
             {
-                spriteRenderer.sprite = spriteNew;
                 if (listEffect.Count > 0)
                 {
                     foreach (ShowObjectEffect effect in listEffect)
                     {
-                        effect.Hide();
+                        effect.gameObject.SetActive(false);
                     }
                 }
+                spriteRenderer.sprite = spriteNew;
+                particleSystem.Play();
             }
         }
         [SerializeField] protected int maxLayer = 10;

@@ -38,4 +38,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_GAME/Levels/LevelLunchBox/LevelLunchBox.unity
     guid: c4c040b50b478264099e7982ab9ba6e1
+  - enabled: 1
+    path: Assets/_GAME/Levels/LevelTteokguk/LevelTteokguk.unity
+    guid: 28956baf8502ee845898dd50d9db0310
   m_configObjects: {}

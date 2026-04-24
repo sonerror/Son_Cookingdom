@@ -59,37 +59,27 @@ public class TutorialManager : Singleton<TutorialManager>
   }
   [SerializeField] private Transform tfBolt;
   //Step1 
-  [SerializeField] private List<Transform> listEgg = new List<Transform>();
-  public List<Transform> ListEgg => listEgg;
+  [SerializeField] private Transform tfMeat;
+  //Step2
 
-  //step22
-  [SerializeField] private List<Transform> listBoltSaltSugar = new List<Transform>();
-  public List<Transform> ListBoltSaltSugar => listBoltSaltSugar;
+  [SerializeField] private Transform tfVermicelli;
+  //Step3
+  [SerializeField] private List<Transform> listItem = new List<Transform>();
+  public List<Transform> ListItem => listItem;
+  //Step4
+  [SerializeField] private List<Transform> listItemBotl = new List<Transform>();
+  public List<Transform> ListItemBotl => listItemBotl;
+  //Step5
   [SerializeField] private Transform tfSpoon;
+  //Step6
+  [SerializeField] private Transform tfCuttingBoard;
+  //step7
+  [SerializeField] private List<Transform> listMando = new List<Transform>();
+  public List<Transform> ListMando => listMando;
 
-  //step3
-  [SerializeField] private List<Transform> listBolt = new List<Transform>();
-  public List<Transform> ListBolt => listBolt;
-  //step4
 
-  [SerializeField] private Transform tfWhisk;
-  //sep6 
-  [SerializeField] private Transform tfBoltStep2;
   [SerializeField] private Transform tfOil;
-  //step7
-  [SerializeField] private Transform tfBtnOn;
-  //step7
-  [SerializeField] private Transform tfBoltEGgg;
-  //step8
-
-  [SerializeField] private List<Transform> listItemInPan = new List<Transform>();
-  public List<Transform> ListItemInPan => listItemInPan;
-
-  //step9 
-  [SerializeField] private Transform tfSpoonStep2;
-  [SerializeField] private Transform tfBoltSugarStep2;
-  //step10
-  [SerializeField] private Transform tfSpoonStep3;
+  [SerializeField] private Transform tfPan;
 
   void ShowHint()
   {
@@ -100,40 +90,29 @@ public class TutorialManager : Singleton<TutorialManager>
     switch (index)
     {
       case 0:
-        TutorialStepList(0, listEgg);
+        ShowHintPosToPos(tfMeat, tfBolt);
         return;
       case 1:
-        TutorialStepListThree(0, listBoltSaltSugar);
+        ShowHintPosToPos(tfVermicelli, tfBolt);
         return;
       case 2:
-        TutorialStepList(0, listBolt);
+        TutorialStepList(0, listItem);
         return;
       case 3:
-        ShowHintPosToPos(tfWhisk, tfBolt);
+        TutorialStepList(0, listItemBotl);
         return;
       case 4:
-        ShowHandSpinContinuous(tfBolt.position, 0.75f);
+        ShowHintPosToPos(tfSpoon, tfBolt);
         return;
       case 5:
-        StopSpinOnly();
-        ShowHintPosToPos(tfOil, tfBoltStep2);
+        handCtrl.gameObject.SetActive(true);
+        handCtrl.ShowHandPosToPosToPos(tfSpoon.position, tfBolt.position, tfCuttingBoard.position);
         return;
       case 6:
-        ShowHintPosToPos(tfBtnOn, tfBtnOn);
-
+        TutorialStep6(0, listMando);
         return;
       case 7:
-        ShowHintPosToPos(tfBoltEGgg, tfBoltStep2);
-        return;
-      case 8:
-        TutorialStep2List(0, listItemInPan);
-        return;
-      case 9:
-        handCtrl.gameObject.SetActive(true);
-        handCtrl.ShowHandPosToPosToPos(tfSpoonStep2.position, tfBoltSugarStep2.position, tfBoltStep2.position);
-        return;
-      case 11:
-        ShowHintPosToPos(tfSpoonStep3, tfBoltStep2);
+        ShowHintPosToPos(tfOil, tfPan);
         return;
       default:
         resetTimeHint();
@@ -200,13 +179,13 @@ public class TutorialManager : Singleton<TutorialManager>
     var obj = _tfItem[indexStep];
     handCtrl.ShowHandPosToPos(obj.gameObject.transform.position, tfBolt.position);
   }
-  private void TutorialStep2List(int indexStep, List<Transform> _tfItem)
+  private void TutorialStep6(int indexStep, List<Transform> _tfItem)
   {
     if (handCtrl == null) return;
     if (indexStep >= _tfItem.Count) return;
     handCtrl.gameObject.SetActive(true);
     var obj = _tfItem[indexStep];
-    handCtrl.ShowHandPosToPos(obj.gameObject.transform.position, tfBoltStep2.position);
+    handCtrl.ShowHandPosToPos(obj.gameObject.transform.position, obj.position);
   }
   private void TutorialStepListThree(int indexStep, List<Transform> _tfItem)
   {

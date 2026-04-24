@@ -97,6 +97,8 @@ namespace sonnv
         public bool IsDragging => _isDragging;
 
         public UnityEvent OnSnap => onSnap;
+        public UnityEvent OnStartDragObj => onStartDrag;
+        public UnityEvent OnDropObj => onDrop;
         public System.Action onMoveBackEnd;
         public UnityEvent OnMovebackDone => onMovebackDone;
         public Collider2D Col => col;
@@ -133,6 +135,7 @@ namespace sonnv
                                 FadeSprite(sprIng, 1, 0.3f, Ease.Linear, () =>
                                 {
                                     onTrans?.Invoke();
+                                    onSnap?.Invoke();
                                     FadeSprite(sprIng, 0, 0.3f, Ease.Linear, () =>
                                     {
                                         Tf.DORotate(new Vector3(0, 0, _initZRot), 0.3f).OnComplete(() =>

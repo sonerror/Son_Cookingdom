@@ -15,7 +15,7 @@ namespace sonnv
         [SerializeField] private Transform targetTF, pointTF;
         [SerializeField] private Vector2 targetLimit, pointLimit;
         [SerializeField] private Vector2 pointSpeed;
-        [SerializeField] private ItemAlpha itemAlpha, boderAlpha;
+        // [SerializeField] private ItemAlpha itemAlpha, boderAlpha;
         [SerializeField] private AudioClip perfectClip, missClip;
         [SerializeField] private int step;
         [SerializeField] GameObject vfxObj;
@@ -31,8 +31,8 @@ namespace sonnv
             gameObject.SetActive(true);
             anim.SetTrigger("start");
             this.step = step;
-            boderAlpha.enabled = false;
-            boderAlpha.DoAlpha(1, 0.15f);
+            //  boderAlpha.enabled = false;
+            //  boderAlpha.DoAlpha(1, 0.15f);
         }
 
         public void OnDone()
@@ -56,7 +56,7 @@ namespace sonnv
             targetTF.localPosition = Vector3.up * Random.Range(targetLimit.x, targetLimit.y);
             speed = Random.Range(pointSpeed.x, pointSpeed.y);
             pointTF.gameObject.SetActive(true);
-            itemAlpha.DoAlpha(1, 0.15f);
+            //itemAlpha.DoAlpha(1, 0.15f);
         }
 
         public void OnTap()
@@ -78,7 +78,7 @@ namespace sonnv
                 }
                 else
                 {
-                    itemAlpha.DoAlpha(0, 0.15f, 0.75f);
+                    //itemAlpha.DoAlpha(0, 0.15f, 0.75f);
                     Invoke(nameof(OnStart), 1f);
                     OnTapEvent?.Invoke();
                 }
@@ -88,7 +88,7 @@ namespace sonnv
             {
                 slashMissVFX.transform.position = pointTF.position;
                 slashMissVFX.Play();
-                itemAlpha.DoAlpha(0, 0.15f, 0.75f);
+                // itemAlpha.DoAlpha(0, 0.15f, 0.75f);
                 Invoke(nameof(OnStart), 1f);
                 OnFailEvent?.Invoke();
             }

@@ -11,6 +11,7 @@ namespace sonnv
         IPointerDownHandler, IDragHandler, IPointerUpHandler
     {
         [SerializeField] private EmojiControl emoji;
+        [SerializeField] private EmojiControl emoji2;
         [SerializeField] private List<SpoonIngredient> acceptIngredients;
         [SerializeField] private float distanceToGiveIngredient = 1f;
         [SerializeField] private BoxCollider2D col;
@@ -30,6 +31,12 @@ namespace sonnv
         [SerializeField] private bool isSpriteFont;
         [SerializeField] private bool isDelayResetAfterSnap = false;
         [SerializeField] private bool isMoveTargetToSnap = false;
+        [SerializeField] private bool isBlockTrySnap = false;
+        public void SetIsBlockTrySnap(bool value)
+        {
+            isBlockTrySnap = value;
+        }
+        [SerializeField] private TriggerToRotate triggerToRotate;
         [SerializeField] private SpriteRenderer spriteFont;
 
         public UnityEvent onStartDrag;
@@ -124,29 +131,47 @@ namespace sonnv
         protected virtual void CancelDragging(bool forceCancel)
         {
             _isDragging = false;
-
-            if (forceCancel)
-            {
-                _actionTween?.Kill();
-                _rotateTween?.Kill();
-                ReleaseIngredient();
-                Tf.localPosition = _initLocalPos;
-                Tf.localEulerAngles = new Vector3(0, 0, _initZRotate);
-                SetSortingOrder(_sortingOrder);
-                _isPerformingAction = false;
-                onEndMoveBack?.Invoke();
-                col.enabled = !isManualBlock;
-                return;
-            }
-
-            if (_ingredient)
-            {
-                ChangeIngredientStatus();
-            }
-            else
+            if (triggerToRotate.IsBlockRotate == false)
             {
                 MoveBack();
                 Rotate(_initZRotate);
+                return;
+            }
+            else
+            {
+                if (isBlockTrySnap)
+                {
+                    // emoji.ShowNegative();
+                    ReleaseIngredient();
+                    MoveBack();
+                    Rotate(_initZRotate);
+                }
+                else
+                {
+                    if (forceCancel)
+                    {
+                        _actionTween?.Kill();
+                        _rotateTween?.Kill();
+                        ReleaseIngredient();
+                        Tf.localPosition = _initLocalPos;
+                        Tf.localEulerAngles = new Vector3(0, 0, _initZRotate);
+                        SetSortingOrder(_sortingOrder);
+                        _isPerformingAction = false;
+                        onEndMoveBack?.Invoke();
+                        col.enabled = !isManualBlock;
+                        return;
+                    }
+
+                    if (_ingredient)
+                    {
+                        ChangeIngredientStatus();
+                    }
+                    else
+                    {
+                        MoveBack();
+                        Rotate(_initZRotate);
+                    }
+                }
             }
         }
 
@@ -308,14 +333,29 @@ namespace sonnv
         {
             if (!_isDragging) return;
             if (_ingredient) return;
-            SpoonIngredient ingredient = TryGetIngredient(other);
-            if (!ingredient) return;
-            if (!acceptIngredients.Contains(ingredient)) return;
-            if (ingredient.IgnoreThis) return;
-            _ingredient = ingredient;
-            ingredient.ShareIngredientFeedback();
-            ingredientSprite.sprite = ingredient.Sprite.spriteWhenSpoonHold;
-            SoundManager.PlaySFX(takeIngredientSound);
+            if (triggerToRotate.IsBlockRotate == false)
+            {
+                return;
+            }
+            else
+            {
+                if (isBlockTrySnap)
+                {
+                    emoji.ShowNegative();
+                }
+                else
+                {
+                    SpoonIngredient ingredient = TryGetIngredient(other);
+                    if (!ingredient) return;
+                    if (!acceptIngredients.Contains(ingredient)) return;
+                    if (ingredient.IgnoreThis) return;
+                    _ingredient = ingredient;
+                    ingredient.ShareIngredientFeedback();
+                    ingredientSprite.sprite = ingredient.Sprite.spriteWhenSpoonHold;
+                    SoundManager.PlaySFX(takeIngredientSound);
+                }
+
+            }
         }
 
         private SpoonIngredient TryGetIngredient(Collider2D colCache)

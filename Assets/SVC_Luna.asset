@@ -792,9 +792,27 @@ MonoBehaviour:
     upToDate: 0
     keywords:
     - UNDERLAY_ON
+  - shaderCompilerPlatform: 5
+    shader: {fileID: 211, guid: 0000000000000000f000000000000000, type: 0}
+    passType: 0
+    passId: 4
+    subShaderIndex: 0
+    upToDate: 0
+    keywords:
+    - _ALPHABLEND_ON
+    - _COLORADDSUBDIFF_ON
+  - shaderCompilerPlatform: 9
+    shader: {fileID: 211, guid: 0000000000000000f000000000000000, type: 0}
+    passType: 0
+    passId: 4
+    subShaderIndex: 0
+    upToDate: 0
+    keywords:
+    - _ALPHABLEND_ON
+    - _COLORADDSUBDIFF_ON
   _includedShaderVariants: []
   _excludedShaderVariants: []
-  version: 2074
+  version: 2322
   _shaderParsedShaders:
   - ParsedSubShaders:
     - Index: 0

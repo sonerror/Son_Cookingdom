@@ -36,10 +36,10 @@ namespace sonnv
         {
             base.Setup();
             OnValidate();
-            if (GetComponent<ItemAlpha>() == null)
-            {
-                gameObject.AddComponent<ItemAlpha>();
-            }
+            // if (GetComponent<ItemAlpha>() == null)
+            // {
+            //     gameObject.AddComponent<ItemAlpha>();
+            // }
 
             animation.playAutomatically = false;
         }

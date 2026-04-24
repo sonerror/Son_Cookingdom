@@ -10,6 +10,7 @@ namespace sonnv
         [SerializeField] private List<ShowObjectEffect> listEffectShow;
         [SerializeField] private List<SpriteRenderer> listSpriteRenderer;
         [SerializeField] private UnityEvent onDone;
+        public UnityEvent OnDone => onDone;
 
         private List<int> _originalLayers = new List<int>();
 
@@ -44,7 +45,10 @@ namespace sonnv
         {
             StartCoroutine(IE_DelayEffect(0.1f));
         }
-
+        public void ShowEffectDelay(float time = 0.3f)
+        {
+            StartCoroutine(IE_DelayShowEffect(time));
+        }
         private IEnumerator IE_DelayEffect(float time)
         {
             foreach (ShowObjectEffect effrct in listEffectShow)
@@ -53,6 +57,11 @@ namespace sonnv
                 yield return new WaitForSeconds(time);
             }
             onDone?.Invoke();
+        }
+        private IEnumerator IE_DelayShowEffect(float time)
+        {
+            yield return new WaitForSeconds(time);
+            StartCoroutine(IE_DelayEffect(0.1f));
         }
     }
 }

@@ -2,7 +2,7 @@
     "version": "7.1.0",
     "projectId": "f42e7ff96e4545544bb6cd68f51ab634",
     "applicationID": 27404,
-    "creativeName": "R1_Cookingdom_v7_Lunch_Box_GG",
+    "creativeName": "R1_Cookingdom_v8_Tteokguk_GG",
     "pgServer": "EU",
     "window": {
         "‐⁙": true
@@ -133,11 +133,12 @@
             ]
         },
         "scenes": [
-            "Assets/_GAME/Levels/LevelLunchBox/LevelLunchBox.unity"
+            "Assets/_GAME/Levels/LevelTteokguk/LevelTteokguk.unity"
         ],
         "disabledScenes": [
             "Assets/Scenes/GamePlayScene.unity",
             "Assets/_GAME/Levels/LevelCream/LevelCream.unity",
+            "Assets/_GAME/Levels/LevelLunchBox/LevelLunchBox.unity",
             "Assets/_GAME/Levels/LevelMacaron/LevelMacaron.unity",
             "Assets/_GAME/Levels/LevelShirm/LevelShirm.unity",
             "Assets/_GAME/Levels/LevelSkewers/LevelSkewers.unity",
@@ -6420,7 +6421,7 @@
             },
             {
                 "name": "UnityEngine.Space",
-                "excluded": true
+                "excluded": false
             },
             {
                 "name": "UnityEngine.SpriteAlignment",
@@ -9797,6 +9798,10 @@
             {
                 "name": "sonnv.SpoonIngredient.SpriteToSpoon",
                 "excluded": false
+            },
+            {
+                "name": "LoopScale",
+                "excluded": true
             }
         ],
         "unusedMethods": [
@@ -18108,7 +18113,7 @@
                     },
                     {
                         "name": "childCount#get",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "name#set",
@@ -18168,7 +18173,7 @@
                     },
                     {
                         "name": "GetChild",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "IsChildOf",
@@ -18208,7 +18213,7 @@
                     },
                     {
                         "name": "Rotate",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "Rotate$1",
@@ -18216,7 +18221,7 @@
                     },
                     {
                         "name": "Rotate$2",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "RotateAround",
@@ -18272,7 +18277,7 @@
                     },
                     {
                         "name": "GetEnumerator",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "Find",
@@ -30107,31 +30112,35 @@
                         "excluded": false
                     },
                     {
-                        "name": "ListEgg#get",
-                        "excluded": false
-                    },
-                    {
-                        "name": "ListBoltSaltSugar#get",
-                        "excluded": false
-                    },
-                    {
-                        "name": "ListBolt#get",
-                        "excluded": false
-                    },
-                    {
-                        "name": "ListItemInPan#get",
-                        "excluded": false
-                    },
-                    {
                         "name": "TutorialStepList",
                         "excluded": false
                     },
                     {
-                        "name": "TutorialStep2List",
+                        "name": "TutorialStepListThree",
                         "excluded": false
                     },
                     {
-                        "name": "TutorialStepListThree",
+                        "name": "ListItem#get",
+                        "excluded": false
+                    },
+                    {
+                        "name": "ListItemBotl#get",
+                        "excluded": false
+                    },
+                    {
+                        "name": "ListMando#get",
+                        "excluded": false
+                    },
+                    {
+                        "name": "ShowHandSpinContinuous",
+                        "excluded": true
+                    },
+                    {
+                        "name": "StopSpinOnly",
+                        "excluded": true
+                    },
+                    {
+                        "name": "TutorialStep6",
                         "excluded": false
                     }
                 ]
@@ -40767,6 +40776,18 @@
                     {
                         "name": "OnTransitonStepToStep",
                         "excluded": false
+                    },
+                    {
+                        "name": "OnStartDragObj#get",
+                        "excluded": true
+                    },
+                    {
+                        "name": "OnDropObj#get",
+                        "excluded": true
+                    },
+                    {
+                        "name": "OnStartTrans#get",
+                        "excluded": false
                     }
                 ]
             },
@@ -41767,36 +41788,6 @@
                 ]
             },
             {
-                "className": "sonnv.ItemAlpha",
-                "staticMethods": [],
-                "instanceMethods": [
-                    {
-                        "name": "init",
-                        "excluded": false
-                    },
-                    {
-                        "name": "Awake",
-                        "excluded": false
-                    },
-                    {
-                        "name": "SetAlpha",
-                        "excluded": true
-                    },
-                    {
-                        "name": "LateUpdate",
-                        "excluded": false
-                    },
-                    {
-                        "name": "Setup",
-                        "excluded": true
-                    },
-                    {
-                        "name": "DoAlpha",
-                        "excluded": false
-                    }
-                ]
-            },
-            {
                 "className": "sonnv.ItemInBoard",
                 "staticMethods": [],
                 "instanceMethods": [
@@ -42039,6 +42030,18 @@
                     {
                         "name": "ResetLayerSprite",
                         "excluded": true
+                    },
+                    {
+                        "name": "OnDone#get",
+                        "excluded": false
+                    },
+                    {
+                        "name": "ShowEffectDelay",
+                        "excluded": false
+                    },
+                    {
+                        "name": "IE_DelayShowEffect",
+                        "excluded": false
                     }
                 ]
             },
@@ -42291,27 +42294,15 @@
                         "excluded": true
                     },
                     {
-                        "name": "OnStartStep9",
+                        "name": "EndGame$1",
                         "excluded": false
                     },
                     {
-                        "name": "OnStartStep10",
+                        "name": "CheckDoneStep3",
                         "excluded": false
                     },
                     {
-                        "name": "IE_MoveCamToStage2",
-                        "excluded": false
-                    },
-                    {
-                        "name": "OnStartStep11",
-                        "excluded": false
-                    },
-                    {
-                        "name": "IE_DelayStep11",
-                        "excluded": false
-                    },
-                    {
-                        "name": "CrossfadeSprites",
+                        "name": "CheckSnapItem",
                         "excluded": false
                     }
                 ]
@@ -47933,6 +47924,10 @@
                     {
                         "name": "SetScaleObj",
                         "excluded": true
+                    },
+                    {
+                        "name": "SetIsBlockTrySnap",
+                        "excluded": false
                     }
                 ]
             },
@@ -47950,6 +47945,112 @@
                     },
                     {
                         "name": "ShakeBowl",
+                        "excluded": false
+                    }
+                ]
+            },
+            {
+                "className": "HoangLinh.Cooking.Level159.LanternFloating",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "init",
+                        "excluded": false
+                    },
+                    {
+                        "name": "Start",
+                        "excluded": false
+                    },
+                    {
+                        "name": "Update",
+                        "excluded": false
+                    }
+                ]
+            },
+            {
+                "className": "HoangLinh.Cooking.Level159.LanternFloating.LanternData",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "init",
+                        "excluded": false
+                    }
+                ]
+            },
+            {
+                "className": "sonnv.SpoonTrigger",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "OnTriggerEnter2D",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnTriggerExit2D",
+                        "excluded": false
+                    }
+                ]
+            },
+            {
+                "className": "Utilities.LoopAnimSpriteRendererFade",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "init",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnEnable",
+                        "excluded": false
+                    },
+                    {
+                        "name": "Update",
+                        "excluded": false
+                    }
+                ]
+            },
+            {
+                "className": "sonnv.TriggerToRotate",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "IsBlockRotate#get",
+                        "excluded": false
+                    },
+                    {
+                        "name": "init",
+                        "excluded": false
+                    },
+                    {
+                        "name": "Update",
+                        "excluded": false
+                    },
+                    {
+                        "name": "SetBlockRotate",
+                        "excluded": false
+                    },
+                    {
+                        "name": "StartAutoRotate",
+                        "excluded": false
+                    },
+                    {
+                        "name": "StopAutoRotate",
+                        "excluded": false
+                    },
+                    {
+                        "name": "AutoRotateCoroutine",
+                        "excluded": false
+                    },
+                    {
+                        "name": "UpdateVisuals",
+                        "excluded": false
+                    },
+                    {
+                        "name": "StartParticles",
+                        "excluded": false
+                    },
+                    {
+                        "name": "StopParticles",
                         "excluded": false
                     }
                 ]
