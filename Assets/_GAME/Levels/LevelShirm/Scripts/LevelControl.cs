@@ -32,6 +32,7 @@ public class LevelControl : LevelBase
     private void EndGame()
     {
         GameManager.Ins.showEndGame();
+        TutorialManager.Ins.SetNewTime(0.5f);
         TutorialManager.Ins.enableCountTime = true;
     }
     void Update()
@@ -111,10 +112,31 @@ public class LevelControl : LevelBase
                 OnStartStep6();
                 break;
             case 6:
-                // OnStartStep7();
+                OnStartStep7();
                 break;
             case 7:
-                // OnStartStep8();
+                OnStartStep8();
+                break;
+            case 8:
+                OnStartStep9();
+                break;
+            case 9:
+                OnStartStep10();
+                break;
+            case 10:
+                OnStartStep11();
+                break;
+            case 11:
+                OnStartStep12();
+                break;
+            case 12:
+                OnStartStep13();
+                break;
+            case 13:
+                OnStartStep14();
+                break;
+            case 14:
+                OnStartStep15();
                 break;
         }
     }
@@ -246,8 +268,160 @@ public class LevelControl : LevelBase
         snapPointFried.ChangeCanSnap(true);
         snapObjectFried.OnSnap.AddListener(() =>
         {
+
             DoneStep();
             TryNextStep();
+        });
+
+    }
+    #endregion
+
+    #region Step 7
+    [SerializeField] private SpriteRenderer friedSprites;
+    [SerializeField] private SpriteRenderer friedSpritesNew;
+    [SerializeField] private ShowObjectEffect lid;
+    private void OnStartStep7()
+    {
+        TutorialManager.Ins.enableCountTime = false;
+
+        StartCoroutine(IE_DelayStartStep7());
+    }
+
+    IEnumerator IE_DelayStartStep7()
+    {
+        yield return new WaitForSeconds(0.5f);
+        lid.Show();
+        yield return new WaitForSeconds(0.5f);
+        clockTimer.OnTimeOut = OnStep7TimeOut;
+        clockTimer.Show(fadeDuration);
+        friedSpritesNew.DOFade(1f, fadeDuration).SetEase(Ease.InOutSine);
+        friedSprites.DOFade(0, fadeDuration).SetEase(Ease.InOutSine);
+    }
+
+    private void OnStep7TimeOut()
+    {
+        lid.Hide(0.5f);
+        lid.onHide.AddListener(() =>
+        {
+            DoneStep();
+            TryNextStep();
+        });
+    }
+    #endregion
+    #region Step 8
+    [SerializeField] private SonSnapObject snapObjectFriedDone;
+    [SerializeField] private SonSnapPoint snapPointFriedDone;
+    [SerializeField] private EmojiControl newEmoji;
+    private void OnStartStep8()
+    {
+        SetNewEmoji(newEmoji);
+        TutorialManager.Ins.enableCountTime = true;
+        snapObjectFriedDone.enabled = true;
+        snapObjectFriedDone.Col.enabled = true;
+        snapPointFriedDone.ChangeCanSnap(true);
+        snapObjectFriedDone.OnSnap.AddListener(() =>
+        {
+            spriteButtonOnOff.ClickButton();
+            DoneStep();
+            TryNextStep();
+        });
+    }
+    #endregion
+    #region Step 9
+    [SerializeField] private SonSnapObject snapObjectSeaweedDone;
+    [SerializeField] private SonSnapPoint snapPointSeaweedDone;
+    private void OnStartStep9()
+    {
+        snapPointSeaweedDone.ChangeCanSnap(true);
+        snapObjectSeaweedDone.OnSnap.AddListener(() =>
+        {
+            DoneStep();
+            TryNextStep();
+        });
+    }
+    #endregion
+    #region Step 10
+    [SerializeField] private SonSnapObject snapObjectBowlFood;
+    [SerializeField] private SonSnapPoint snapPointBowlFood;
+    private void OnStartStep10()
+    {
+        snapPointBowlFood.ChangeCanSnap(true);
+        snapObjectBowlFood.OnSnap.AddListener(() =>
+        {
+            DoneStep();
+            TryNextStep();
+        });
+        snapObjectBowlFood.OnStartTrans.AddListener(() =>
+      {
+          TutorialManager.Ins.enableCountTime = false;
+      });
+    }
+    #endregion
+    #region Step 11
+    [SerializeField] private RollObject rollObject;
+    private void OnStartStep11()
+    {
+        TutorialManager.Ins.enableCountTime = true;
+        rollObject.enabled = true;
+        rollObject.Col.enabled = true;
+        rollObject.OnRollComplete.AddListener(() =>
+        {
+            DoneStep();
+            TryNextStep();
+        });
+    }
+    #endregion
+    #region Step 12
+    [SerializeField] private SonSnapObject snapObjectKnife;
+    [SerializeField] private SonSnapPoint snapPointKnife;
+    private void OnStartStep12()
+    {
+        snapPointKnife.ChangeCanSnap(true);
+        snapObjectKnife.OnSnap.AddListener(() =>
+        {
+            DoneStep();
+            TryNextStep();
+        });
+
+    }
+    #endregion
+    #region Step 13
+    [SerializeField] private KnifeCutObject knifeCutObject;
+    private void OnStartStep13()
+    {
+        knifeCutObject.eventDoneActionDance.AddListener(() =>
+        {
+            DoneStep();
+            TryNextStep();
+        });
+
+    }
+    #endregion
+    #region Step 14
+    [SerializeField] private SonSnapObject snapObjectUnamiDone;
+    [SerializeField] private SonSnapPoint snapPointUnamiDone;
+    private void OnStartStep14()
+    {
+        snapPointUnamiDone.ChangeCanSnap(true);
+        snapObjectUnamiDone.OnSnap.AddListener(() =>
+        {
+            DoneStep();
+            TryNextStep();
+            TutorialManager.Ins.enableCountTime = false;
+        });
+
+    }
+    #endregion
+    #region Step 15
+    [SerializeField] private ShowObjectEffect step1;
+    [SerializeField] private ShowObjectEffect step2;
+    private void OnStartStep15()
+    {
+        step1.Hide(0.5f);
+        step2.Show(1.25f);
+        step2.onShowComplete.AddListener(() =>
+        {
+            EndGame();
         });
 
     }

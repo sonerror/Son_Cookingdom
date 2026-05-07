@@ -69,29 +69,27 @@ public class TutorialManager : Singleton<TutorialManager>
   [SerializeField] private Transform tfBotlSiro;
   //step5
   [SerializeField] private Transform tfBotlFried;
-  [SerializeField] private Transform tfBolt;
-  //Step1 
-  [SerializeField] private Transform tfMeat;
-  //Step2
 
-  [SerializeField] private Transform tfVermicelli;
-  //Step3
-  [SerializeField] private List<Transform> listItem = new List<Transform>();
-  public List<Transform> ListItem => listItem;
-  //Step4
-  [SerializeField] private List<Transform> listItemBotl = new List<Transform>();
-  public List<Transform> ListItemBotl => listItemBotl;
-  //Step5
-  [SerializeField] private Transform tfSpoon;
-  //Step6
   [SerializeField] private Transform tfCuttingBoard;
-  //step7
-  [SerializeField] private List<Transform> listMando = new List<Transform>();
-  public List<Transform> ListMando => listMando;
 
+  //step9
+  [SerializeField] private Transform tfSeaweed;
+  //step10
+  [SerializeField] private Transform tfBowlFood;
+  //step11
+  [SerializeField] private Transform tfRoll;
+  [SerializeField] private Transform tfRollTarget;
+  //step12
+  [SerializeField] private Transform tfKnife;
+  [SerializeField] private Transform tfKnifeInBoard;
+  //step13
+  [SerializeField] private Transform tfBotlDone;
 
-  [SerializeField] private Transform tfOil;
-  [SerializeField] private Transform tfPan;
+  [SerializeField] private Transform tfUnamilDone;
+
+  //step15
+  [SerializeField] private Transform tfObj1;
+  [SerializeField] private Transform tfObj2;
 
   void ShowHint()
   {
@@ -114,16 +112,35 @@ public class TutorialManager : Singleton<TutorialManager>
         ShowHintPosToPos(tfBotlSiro, tfPot);
         return;
       case 4:
-        ShowHintPosToPos(tfSpoon, tfPot);
         return;
       case 5:
         ShowHintPosToPos(tfBotlFried, tfPot);
         return;
       case 6:
-        // TutorialStep6(0, listMando);
         return;
       case 7:
-        // ShowHintPosToPos(tfOil, tfPan);
+        ShowHintPosToPos(tfPot, tfCuttingBoard);
+        return;
+      case 8:
+        ShowHintPosToPos(tfSeaweed, tfCuttingBoard);
+        return;
+      case 9:
+        ShowHintPosToPos(tfBowlFood, tfCuttingBoard);
+        return;
+      case 10:
+        ShowHintPosToPos(tfRoll, tfRollTarget);
+        return;
+      case 11:
+        ShowHintPosToPos(tfKnife, tfCuttingBoard);
+        return;
+      case 12:
+        ShowHintPosToPos(tfKnifeInBoard, tfKnifeInBoard);
+        return;
+      case 13:
+        ShowHintPosToPos(tfUnamilDone, tfBotlDone);
+        return;
+      case 14:
+        ShowHintPosToPos(tfObj1, tfObj2);
         return;
       default:
         resetTimeHint();
@@ -182,14 +199,7 @@ public class TutorialManager : Singleton<TutorialManager>
     var obj = tfItem[indexStep];
     //handCtrl.ShowHandPosToPos(obj.gameObject.transform.position, tfBowl.position);
   }
-  private void TutorialStepList(int indexStep, List<Transform> _tfItem)
-  {
-    if (handCtrl == null) return;
-    if (indexStep >= _tfItem.Count) return;
-    handCtrl.gameObject.SetActive(true);
-    var obj = _tfItem[indexStep];
-    handCtrl.ShowHandPosToPos(obj.gameObject.transform.position, tfBolt.position);
-  }
+
   private void TutorialStep6(int indexStep, List<Transform> _tfItem)
   {
     if (handCtrl == null) return;
@@ -198,14 +208,7 @@ public class TutorialManager : Singleton<TutorialManager>
     var obj = _tfItem[indexStep];
     handCtrl.ShowHandPosToPos(obj.gameObject.transform.position, obj.position);
   }
-  private void TutorialStepListThree(int indexStep, List<Transform> _tfItem)
-  {
-    if (handCtrl == null) return;
-    if (indexStep >= _tfItem.Count) return;
-    handCtrl.gameObject.SetActive(true);
-    var obj = _tfItem[indexStep];
-    handCtrl.ShowHandPosToPosToPos(tfSpoon.position, _tfItem[indexStep].position, tfBolt.position);
-  }
+
   public void SetStateIsTap(bool value)
   {
     isTap = value;
