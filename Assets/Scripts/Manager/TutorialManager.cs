@@ -57,6 +57,18 @@ public class TutorialManager : Singleton<TutorialManager>
       ShowHint();
     }
   }
+
+  //step1
+  [SerializeField] private Transform tfBtnOn;
+  //step2
+  [SerializeField] private Transform tfPot;
+  [SerializeField] private Transform tfBotlWater;
+  //step3
+  [SerializeField] private Transform tfBotlSauce;
+  //step4
+  [SerializeField] private Transform tfBotlSiro;
+  //step5
+  [SerializeField] private Transform tfBotlFried;
   [SerializeField] private Transform tfBolt;
   //Step1 
   [SerializeField] private Transform tfMeat;
@@ -90,29 +102,28 @@ public class TutorialManager : Singleton<TutorialManager>
     switch (index)
     {
       case 0:
-        ShowHintPosToPos(tfMeat, tfBolt);
+        ShowHintPosToPos(tfBtnOn, tfBtnOn);
         return;
       case 1:
-        ShowHintPosToPos(tfVermicelli, tfBolt);
+        ShowHintPosToPos(tfBotlWater, tfPot);
         return;
       case 2:
-        TutorialStepList(0, listItem);
+        ShowHintPosToPos(tfBotlSauce, tfPot);
         return;
       case 3:
-        TutorialStepList(0, listItemBotl);
+        ShowHintPosToPos(tfBotlSiro, tfPot);
         return;
       case 4:
-        ShowHintPosToPos(tfSpoon, tfBolt);
+        ShowHintPosToPos(tfSpoon, tfPot);
         return;
       case 5:
-        handCtrl.gameObject.SetActive(true);
-        handCtrl.ShowHandPosToPosToPos(tfSpoon.position, tfBolt.position, tfCuttingBoard.position);
+        ShowHintPosToPos(tfBotlFried, tfPot);
         return;
       case 6:
-        TutorialStep6(0, listMando);
+        // TutorialStep6(0, listMando);
         return;
       case 7:
-        ShowHintPosToPos(tfOil, tfPan);
+        // ShowHintPosToPos(tfOil, tfPan);
         return;
       default:
         resetTimeHint();
