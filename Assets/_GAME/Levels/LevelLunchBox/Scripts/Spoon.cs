@@ -57,7 +57,7 @@ namespace sonnv
         private Tween _actionTween;
         private bool _isPerformingAction = false;
 
-        private readonly Dictionary<Collider2D, SpoonIngredient> _cachedIngredients = new();
+        private readonly Dictionary<Collider2D, SpoonIngredient> _cachedIngredients = new Dictionary<Collider2D, SpoonIngredient>();
         public Collider2D Col => col;
 
         protected virtual void Awake()

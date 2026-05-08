@@ -136,12 +136,6 @@
       "dependencies": {},
       "url": "https://packages.unity.com"
     },
-    "com.unity.playworks.upp": {
-      "version": "file:D:/Playabale/Pack/fix/scripts",
-      "depth": 0,
-      "source": "local",
-      "dependencies": {}
-    },
     "com.unity.scriptablebuildpipeline": {
       "version": "1.22.4",
       "depth": 2,
@@ -219,6 +213,12 @@
         "com.unity.modules.jsonserialize": "1.0.0"
       },
       "url": "https://packages.unity.com"
+    },
+    "uk.lunalabs.luna": {
+      "version": "file:C:/Users/admin/Downloads/Telegram Desktop/6.2.1/scripts",
+      "depth": 0,
+      "source": "local",
+      "dependencies": {}
     },
     "com.unity.modules.ai": {
       "version": "1.0.0",

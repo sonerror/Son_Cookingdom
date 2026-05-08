@@ -5,9 +5,9 @@ namespace sonnv
 {
     public interface IItemCooking
     {
-        public bool IsCanCooking { get; }
+        bool IsCanCooking { get; }
 
-        public void Cooking(float time, Action action = null);
+        void Cooking(float time, Action action = null);
     }
 }
 

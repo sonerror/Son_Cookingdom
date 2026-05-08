@@ -91,6 +91,12 @@ public class TutorialManager : Singleton<TutorialManager>
   [SerializeField] private Transform tfObj1;
   [SerializeField] private Transform tfObj2;
 
+  //step15
+  [SerializeField] private Transform tfLotus;
+  [SerializeField] private Transform tfBlend;
+  [SerializeField] private Transform tfBtnStep2;
+  [SerializeField] private Transform tfSpoon;
+
   void ShowHint()
   {
     if (disableHand) return;
@@ -139,8 +145,17 @@ public class TutorialManager : Singleton<TutorialManager>
       case 13:
         ShowHintPosToPos(tfUnamilDone, tfBotlDone);
         return;
-      case 14:
+      case 15:
         ShowHintPosToPos(tfObj1, tfObj2);
+        return;
+      case 16:
+        ShowHintPosToPos(tfLotus, tfBlend);
+        return;
+      case 17:
+        ShowHintPosToPos(tfBtnStep2, tfBtnStep2);
+        return;
+      case 18:
+        ShowHintPosToPos(tfSpoon, tfBlend);
         return;
       default:
         resetTimeHint();

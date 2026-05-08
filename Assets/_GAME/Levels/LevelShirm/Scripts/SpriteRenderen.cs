@@ -13,7 +13,10 @@ namespace sonnv
         public UnityEvent OnDone => onDone;
 
         private List<int> _originalLayers = new List<int>();
-
+        private void Awake()
+        {
+            OnInit();
+        }
         public void OnInit()
         {
             foreach (SpriteRenderer sprite in listSpriteRenderer)

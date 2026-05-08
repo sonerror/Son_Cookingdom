@@ -138,6 +138,18 @@ public class LevelControl : LevelBase
             case 14:
                 OnStartStep15();
                 break;
+            case 15:
+                OnStartStep16();
+                break;
+            case 16:
+                OnStartStep17();
+                break;
+            case 17:
+                OnStartStep18();
+                break;
+            case 18:
+                OnStartStep19();
+                break;
         }
     }
     public void OnCompleteStage(int currentStageIndex, float x)
@@ -421,199 +433,110 @@ public class LevelControl : LevelBase
         step2.Show(1.25f);
         step2.onShowComplete.AddListener(() =>
         {
-            EndGame();
-        });
+            DoneStep();
+            TryNextStep();
+            TutorialManager.Ins.SetNewTime(0.5f);
 
+            TutorialManager.Ins.enableCountTime = true;
+        });
     }
     #endregion
-    // #region Step 2
-    // [SerializeField] private SonSnapObject snapObjectVermicelli;
-    // [SerializeField] private SonSnapPoint snapPointVermicelli;
-    // private void OnStartStep2()
-    // {
-    //     snapPointVermicelli.ChangeCanSnap(true);
-    //     snapObjectVermicelli.OnSnap.AddListener(() =>
-    //     {
-    //         DoneStep();
-    //         TryNextStep();
-    //     });
-    // }
-    // #endregion
-    // #region Step3
-    // [SerializeField] private List<SonSnapObject> listSnapObjectAllItem;
-    // [SerializeField] private List<SonSnapPoint> listSnapPointItem;
-    // private int countSnap = 0;
-    // private void OnStartStep3()
-    // {
-    //     foreach (SonSnapPoint point in listSnapPointItem)
-    //     {
-    //         point.ChangeCanSnap(true);
-    //     }
-    //     for (int i = 0; i < listSnapObjectAllItem.Count; i++)
-    //     {
-    //         SonSnapObject obj = listSnapObjectAllItem[i];
-    //         obj.OnStartTrans.AddListener(() =>
-    //         {
-    //             TutorialManager.Ins.enableCountTime = false;
-    //         });
-    //         obj.OnSnap.AddListener(() =>
-    //         {
-    //             int removedIndex = listSnapObjectAllItem.IndexOf(obj);
-    //             if (removedIndex < 0) return;
-    //             CheckSnapItem();
-    //             TutorialManager.Ins.enableCountTime = true;
-    //             TutorialManager.Ins.ListItem.RemoveAt(removedIndex);
-    //             listSnapObjectAllItem.RemoveAt(removedIndex);
-    //             if (listSnapObjectAllItem.Count == 0)
-    //             {
-    //                 DoneStep();
-    //                 TryNextStep();
-    //             }
-    //         });
-    //     }
-    // }
-    // private void CheckSnapItem()
-    // {
-    //     Debug.Log("Snap");
-    //     countSnap++;
-    //     if (countSnap == 1)
-    //     {
-    //         TutorialManager.Ins.SetNewTime(4f);
-    //         Debug.Log("Snap Done");
+    #region Step 16
+    [SerializeField] private SonTapMove sonTapMove;
+    [SerializeField] private EmojiControl emojiControlStep2;
+    private void OnStartStep16()
+    {
+        SetNewEmoji(emojiControlStep2);
+        sonTapMove.OnStartMouseDown.AddListener(() =>
+        {
+            DoneStep();
+            TryNextStep();
+        });
+    }
+    #endregion
 
-    //     }
-    // }
-    // private bool isDoneSnapItem = false;
-    // private bool isDoneSnapEgg = false;
-    // private void CheckDoneStep3()
-    // {
-    //     if (isDoneSnapItem && isDoneSnapEgg)
-    //     {
+    #region Step 17
+    [SerializeField] private SonSnapObject snapObjectLotus;
+    [SerializeField] private SonSnapPoint snapPointLotus;
+    private void OnStartStep17()
+    {
+        snapPointLotus.ChangeCanSnap(true);
+        snapObjectLotus.OnSnap.AddListener(() =>
+        {
+            TutorialManager.Ins.enableCountTime = false;
 
-    //     }
-    // }
-    // #endregion
-    // #region Step4
-    // [SerializeField] private List<SonSnapObject> listSnapObjectIng;
-    // [SerializeField] private List<SonSnapPoint> listSnapPointIng;
-    // private void OnStartStep4()
-    // {
-    //     foreach (SonSnapPoint point in listSnapPointIng)
-    //     {
-    //         point.ChangeCanSnap(true);
-    //     }
-    //     for (int i = 0; i < listSnapObjectIng.Count; i++)
-    //     {
-    //         SonSnapObject obj = listSnapObjectIng[i];
-    //         obj.OnTrans.AddListener(() =>
-    //         {
-    //             int removedIndex = listSnapObjectIng.IndexOf(obj);
-    //             if (removedIndex < 0) return;
-    //             listSnapObjectIng.RemoveAt(removedIndex);
-    //             TutorialManager.Ins.ListItemBotl.RemoveAt(removedIndex);
-    //             if (listSnapObjectIng.Count == 0)
-    //             {
-    //                 DoneStep();
-    //                 TryNextStep();
-    //             }
-    //         });
-    //     }
-    // }
-    // #endregion
-    // #region Step 5
-    // [SerializeField] private TriggerToRotate triggerToRotate;
-    // [SerializeField] private Collider2D col;
-    // [SerializeField] private Spoon spoonRotate;
-    // [SerializeField] private GameObject objTrigger;
+            StartCoroutine(IE_DelayMoveBack());
 
-    // private void OnStartStep5()
-    // {
-    //     triggerToRotate.SetBlockRotate(false);
-    //     triggerToRotate.enabled = true;
-    //     col.enabled = true;
+        });
+    }
+    IEnumerator IE_DelayMoveBack()
+    {
+        yield return new WaitForSeconds(0.5f);
+        sonTapMove.MoveBack();
+        sonTapMove.OnMoveBackComplete.AddListener(() =>
+        {
+            DoneStep();
+            TryNextStep();
+        });
+    }
+    #endregion
 
-    //     UnityAction onStartDragAction = null;
-    //     UnityAction onEndMoveBackAction = null;
-    //     UnityAction onEndRotateAction = null;
+    #region Step 18
 
-    //     onStartDragAction = () =>
-    //     {
-    //         objTrigger.SetActive(true);
-    //     };
+    [SerializeField] private SpriteButtonOnOff spriteButtonOnOffStep2;
+    [SerializeField] private ClockTimer clockTimerStep2;
 
-    //     onEndMoveBackAction = () =>
-    //     {
-    //         objTrigger.SetActive(false);
-    //     };
+    [SerializeField] private List<SpriteRenderer> dimSpritesStep2;
+    [SerializeField] private List<SpriteRenderer> brightSpritesStep2;
+    [SerializeField] private float fadeDurationStep2 = 3f;
 
-    //     onEndRotateAction = () =>
-    //     {
-    //         spoonRotate.onStartDrag.RemoveListener(onStartDragAction);
-    //         spoonRotate.onEndMoveBack.RemoveListener(onEndMoveBackAction);
-    //         triggerToRotate.onEndRotate.RemoveListener(onEndRotateAction);
-    //         DoneStep();
-    //         TryNextStep();
-    //         objTrigger.SetActive(false);
-    //     };
 
-    //     spoonRotate.onStartDrag.AddListener(onStartDragAction);
-    //     spoonRotate.onEndMoveBack.AddListener(onEndMoveBackAction);
-    //     triggerToRotate.onEndRotate.AddListener(onEndRotateAction);
-    // }
-    // #endregion
-    // #region Step 6
-    // [SerializeField] private EmojiControl newEmoji;
-    // [SerializeField] private SpriteRenderen spriteRenderen;
-    // private void OnStartStep6()
-    // {
-    //     triggerToRotate.SetBlockRotate(true);
+    IEnumerator IE_DelayStartStep18()
+    {
+        TutorialManager.Ins.enableCountTime = false;
 
-    //     spoonRotate.SetIsBlockTrySnap(false);
-    //     SetNewEmoji(newEmoji);
-    //     spriteRenderen.OnDone.AddListener(() =>
-    //     {
-    //         DoneStep();
-    //         TryNextStep();
-    //     });
-    // }
-    // #endregion
-    // #region Step 7
-    // [SerializeField] private List<SonTapItem> listTapMando;
-    // private void OnStartStep7()
-    // {
-    //     for (int i = 0; i < listTapMando.Count; i++)
-    //     {
-    //         SonTapItem obj = listTapMando[i];
-    //         obj.enabled = true;
-    //         obj.ColD.enabled = true;
-    //         obj.eventOnPointDown.AddListener(() =>
-    //         {
-    //             int removedIndex = listTapMando.IndexOf(obj);
-    //             if (removedIndex < 0) return;
-    //             listTapMando.RemoveAt(removedIndex);
-    //             TutorialManager.Ins.ListMando.RemoveAt(removedIndex);
-    //             if (listTapMando.Count == 0)
-    //             {
-    //                 DoneStep();
-    //                 TryNextStep();
-    //             }
-    //         });
-    //     }
-    // }
-    // #endregion
-    // #region Step 8
-    // [SerializeField] private ShowObjectEffect effectStep1;
-    // [SerializeField] private ShowObjectEffect effectStep2;
-    // private void OnStartStep8()
-    // {
+        yield return new WaitForSeconds(0.001f);
 
-    //     effectStep1.Hide(0.5f);
-    //     effectStep2.Show(1.5f);
-    //     effectStep2.onShowComplete.AddListener(() =>
-    //     {
-    //         EndGame();
-    //     });
-    // }
-    // #endregion
+        clockTimerStep2.OnTimeOut = OnStep18TimeOut;
+        clockTimerStep2.Show(fadeDurationStep2);
 
+        foreach (var sr in dimSpritesStep2)
+            sr.DOFade(0f, fadeDurationStep2).SetEase(Ease.InOutSine);
+
+        foreach (var sr in brightSpritesStep2)
+            sr.DOFade(1f, fadeDurationStep2).SetEase(Ease.InOutSine);
+    }
+    private void OnStartStep18()
+    {
+        TutorialManager.Ins.enableCountTime = true;
+
+        spriteButtonOnOffStep2.enabled = true;
+        spriteButtonOnOffStep2.Col.enabled = true;
+        spriteButtonOnOffStep2.onClickOn.AddListener(() =>
+       {
+           TutorialManager.Ins.enableCountTime = false;
+           StartCoroutine(IE_DelayStartStep18());
+       });
+    }
+
+
+    private void OnStep18TimeOut()
+    {
+        spriteButtonOnOffStep2.ClickButton();
+        DoneStep();
+        TryNextStep();
+    }
+    #endregion
+    #region Step 19
+    [SerializeField] private ShowObjectEffect hideHide;
+
+    private void OnStartStep19()
+    {
+        hideHide.Hide(0.25f);
+        hideHide.onHide.AddListener(() =>
+        {
+            EndGame();
+        });
+    }
+    #endregion
 }
