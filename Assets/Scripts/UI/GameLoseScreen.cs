@@ -21,14 +21,10 @@ public class GameLoseScreen : UIScreen
     private float[] _originalBtnPosX;
     private float _lastTimeClick;
     private const float CooldownClick = 0.5f;
-
-    // ── Lifecycle ──────────────────────────────────────────
-
     public override void OnCreate()
     {
         base.OnCreate();
 
-        // Cache vị trí gốc button rồi đẩy về x=0
         if (animatedBtns != null)
         {
             _originalBtnPosX = new float[animatedBtns.Length];
@@ -71,23 +67,14 @@ public class GameLoseScreen : UIScreen
         if (RectTf == null) return;
         RectTf.sizeDelta = gameSize;
     }
-
-    // ── Screenshot ─────────────────────────────────────────
-
     private void CaptureScreen()
     {
         if (imgCapture == null || Camera.main == null || captureRT == null) return;
-
         Camera.main.targetTexture = captureRT;
         Camera.main.Render();
         Camera.main.targetTexture = null;
-
-        // Gán thẳng RenderTexture, không dùng ReadPixels (không hoạt động trên WebGL/Luna)
         imgCapture.texture = captureRT;
     }
-
-    // ── Anim ───────────────────────────────────────────────
-
     private void AnimateButtonsIn()
     {
         if (animatedBtns == null || _originalBtnPosX == null) return;
@@ -101,43 +88,29 @@ public class GameLoseScreen : UIScreen
                 .Play();
         }
     }
-
-    // ── Audio ──────────────────────────────────────────────
-
     private void PlayLoseSound()
     {
         SoundManager.PlaySFXOneShot(sfxLose);
     }
-
-    // ── Buttons ────────────────────────────────────────────
-
     public void OnClickRetry()
     {
         if (!CanClick()) return;
-        // UIManager.Instance.CloseUI(UIID.GameLoseScreen);
-        // GameManager.Instance.ResetGame();
     }
-
     public void OnClickHome()
     {
         if (!CanClick()) return;
     }
-
     public void OnClickStore()
     {
         if (!CanClick()) return;
         GameManager.Instance.gotoStore();
     }
-
-    // ── Helpers ────────────────────────────────────────────
-
     private bool CanClick()
     {
         if (Time.unscaledTime < _lastTimeClick + CooldownClick) return false;
         _lastTimeClick = Time.unscaledTime;
         return true;
     }
-
     private void OnDestroy()
     {
         StopAllCoroutines();

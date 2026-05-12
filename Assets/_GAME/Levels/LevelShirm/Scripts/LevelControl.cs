@@ -314,6 +314,7 @@ public class LevelControl : LevelBase
 
     IEnumerator IE_OnStartStep3()
     {
+        SoundManager.Ins.Mute();
         yield return new WaitForSeconds(0.5f);
         UIManager.Instance.CloseUIGamePlay();
         UIManager.Instance.LoadUIWin();
