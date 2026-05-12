@@ -9,6 +9,8 @@ namespace sonnv
     public class SonSnapObject : SonMonoBehaviour, SonISnapObject,
         IPointerDownHandler, IDragHandler, IPointerUpHandler
     {
+        [SerializeField] private bool isSnaps = false;
+        public bool IsSnaps => isSnaps;
         [SerializeField] private EmojiControl emoji;
         [SerializeField] protected SonSnapPoint[] snapToPosition;
         private SonSnapPoint _snapPoint;

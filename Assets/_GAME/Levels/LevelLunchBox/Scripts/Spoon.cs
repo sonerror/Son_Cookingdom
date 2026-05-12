@@ -131,48 +131,48 @@ namespace sonnv
         protected virtual void CancelDragging(bool forceCancel)
         {
             _isDragging = false;
-            if (triggerToRotate.IsBlockRotate == false)
+            // if (triggerToRotate.IsBlockRotate == false && triggerToRotate != null)
+            // {
+            //     MoveBack();
+            //     Rotate(_initZRotate);
+            //     return;
+            // }
+            //else
+            // {
+            if (isBlockTrySnap)
             {
+                // emoji.ShowNegative();
+                ReleaseIngredient();
                 MoveBack();
                 Rotate(_initZRotate);
-                return;
             }
             else
             {
-                if (isBlockTrySnap)
+                if (forceCancel)
                 {
-                    // emoji.ShowNegative();
+                    _actionTween?.Kill();
+                    _rotateTween?.Kill();
                     ReleaseIngredient();
-                    MoveBack();
-                    Rotate(_initZRotate);
+                    Tf.localPosition = _initLocalPos;
+                    Tf.localEulerAngles = new Vector3(0, 0, _initZRotate);
+                    SetSortingOrder(_sortingOrder);
+                    _isPerformingAction = false;
+                    onEndMoveBack?.Invoke();
+                    col.enabled = !isManualBlock;
+                    return;
+                }
+
+                if (_ingredient)
+                {
+                    ChangeIngredientStatus();
                 }
                 else
                 {
-                    if (forceCancel)
-                    {
-                        _actionTween?.Kill();
-                        _rotateTween?.Kill();
-                        ReleaseIngredient();
-                        Tf.localPosition = _initLocalPos;
-                        Tf.localEulerAngles = new Vector3(0, 0, _initZRotate);
-                        SetSortingOrder(_sortingOrder);
-                        _isPerformingAction = false;
-                        onEndMoveBack?.Invoke();
-                        col.enabled = !isManualBlock;
-                        return;
-                    }
-
-                    if (_ingredient)
-                    {
-                        ChangeIngredientStatus();
-                    }
-                    else
-                    {
-                        MoveBack();
-                        Rotate(_initZRotate);
-                    }
+                    MoveBack();
+                    Rotate(_initZRotate);
                 }
             }
+            //}
         }
 
         private void ChangeIngredientStatus()
@@ -333,29 +333,29 @@ namespace sonnv
         {
             if (!_isDragging) return;
             if (_ingredient) return;
-            if (triggerToRotate.IsBlockRotate == false)
+            // if (triggerToRotate != null && triggerToRotate.IsBlockRotate == false)
+            // {
+            //     return;
+            // }
+            //else
+            // {
+            if (isBlockTrySnap)
             {
-                return;
+                emoji.ShowNegative();
             }
             else
             {
-                if (isBlockTrySnap)
-                {
-                    emoji.ShowNegative();
-                }
-                else
-                {
-                    SpoonIngredient ingredient = TryGetIngredient(other);
-                    if (!ingredient) return;
-                    if (!acceptIngredients.Contains(ingredient)) return;
-                    if (ingredient.IgnoreThis) return;
-                    _ingredient = ingredient;
-                    ingredient.ShareIngredientFeedback();
-                    ingredientSprite.sprite = ingredient.Sprite.spriteWhenSpoonHold;
-                    SoundManager.PlaySFX(takeIngredientSound);
-                }
-
+                SpoonIngredient ingredient = TryGetIngredient(other);
+                if (!ingredient) return;
+                if (!acceptIngredients.Contains(ingredient)) return;
+                if (ingredient.IgnoreThis) return;
+                _ingredient = ingredient;
+                ingredient.ShareIngredientFeedback();
+                ingredientSprite.sprite = ingredient.Sprite.spriteWhenSpoonHold;
+                SoundManager.PlaySFX(takeIngredientSound);
             }
+
+            //  }
         }
 
         private SpoonIngredient TryGetIngredient(Collider2D colCache)

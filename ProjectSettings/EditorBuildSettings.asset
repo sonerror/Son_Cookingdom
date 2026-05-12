@@ -44,4 +44,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_GAME/SonGame/Level/LevelOsechiRyori/LevelOsechiRyori.unity
     guid: 70472542e9761aa4ab1787cd63333a27
+  - enabled: 1
+    path: Assets/_GAME/SonGame/Level/LevelTacos/LevelTacos.unity
+    guid: 8daa616f2e6afdc4da3bd9421868568b
   m_configObjects: {}

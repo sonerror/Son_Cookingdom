@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GamePlayScreen : UIScreen
 {
+  [SerializeField] private TimerUI timerUI;
   public GameObject btnPlay;
   public GameObject TextTutorial;
   public GameObject objProcess, objImgCook;
@@ -21,7 +22,8 @@ public class GamePlayScreen : UIScreen
       TextTutorial.SetActive(false);
       objProcess.SetActive(true);
       objImgCook.SetActive(true);
-      //SoundManager.Ins.PlayBgm();
+      timerUI.StartCountdown();
+      SoundManager.Ins.PlayBgm();
       istap = true;
     }
   }

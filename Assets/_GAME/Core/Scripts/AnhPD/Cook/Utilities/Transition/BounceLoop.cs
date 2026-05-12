@@ -9,6 +9,10 @@ namespace AnhPD.Cook
 {
     public class BounceLoop : MonoBehaviour
     {
+        private void Start()
+        {
+            Loop();
+        }
         private void OnEnable()
         {
             Loop();
@@ -27,7 +31,7 @@ namespace AnhPD.Cook
         private Tween _tween;
         private void Loop()
         {
-            _tween = transform.DOPunchScale(Vector3.up  * Random.Range(.01f, .05f), Random.Range(1f, 2f), Random.Range(1, 3)).SetLoops(-1, LoopType.Yoyo);
+            _tween = transform.DOPunchScale(Vector3.up * Random.Range(.01f, .05f), Random.Range(1f, 2f), Random.Range(1, 3)).SetLoops(-1, LoopType.Yoyo);
         }
 
         private void CancelLoop()

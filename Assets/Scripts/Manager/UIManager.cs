@@ -5,8 +5,9 @@ using UnityEngine;
 public enum UIID // id of UI
 {
   GamePlayScreen = 0,
-  ChangeLevelScreen = 1,
+  GameWinScreen = 1,
   GameLoseScreen = 2,
+  ChangeLevelScreen = 3
 }
 
 public class UIManager : Singleton<UIManager>
@@ -20,12 +21,24 @@ public class UIManager : Singleton<UIManager>
 
   private Vector2 gameSize = new Vector2(1080, 1920);
   public Vector2 GameSize => gameSize;
+  [SerializeField] private LevelControl levelControl;
+
 
   private void Start()
   {
     OpenUI(UIID.GamePlayScreen);
   }
+  public void LoadUIWin()
+  {
+    levelControl.BlockObject();
 
+    OpenUI(UIID.GameWinScreen);
+  }
+  public void LoadUILose()
+  {
+    levelControl.BlockObject();
+    OpenUI(UIID.GameLoseScreen);
+  }
   public bool IsOpenedUI(UIID ID)
   {
     return IsLoaded(ID) && uiActive[(int)ID].gameObject.activeInHierarchy;
@@ -71,7 +84,10 @@ public class UIManager : Singleton<UIManager>
       GetUI(ID).gameObject.SetActive(false);
     }
   }
-
+  public void CloseUIGamePlay()
+  {
+    CloseUI(UIID.GamePlayScreen);
+  }
   private void FixedUpdate()
   {
     float ratio = (float)Screen.width / (float)Screen.height;

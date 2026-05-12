@@ -57,46 +57,29 @@ public class TutorialManager : Singleton<TutorialManager>
       ShowHint();
     }
   }
-
   //step1
-  [SerializeField] private Transform tfBtnOn;
-  //step2
-  [SerializeField] private Transform tfPot;
-  [SerializeField] private Transform tfBotlWater;
-  //step3
-  [SerializeField] private Transform tfBotlSauce;
-  //step4
-  [SerializeField] private Transform tfBotlSiro;
-  //step5
-  [SerializeField] private Transform tfBotlFried;
-
-  [SerializeField] private Transform tfCuttingBoard;
-
-  //step9
-  [SerializeField] private Transform tfSeaweed;
-  //step10
-  [SerializeField] private Transform tfBowlFood;
-  //step11
-  [SerializeField] private Transform tfRoll;
-  [SerializeField] private Transform tfRollTarget;
-  //step12
-  [SerializeField] private Transform tfKnife;
-  [SerializeField] private Transform tfKnifeInBoard;
-  //step13
-  [SerializeField] private Transform tfBotlDone;
-
-  [SerializeField] private Transform tfUnamilDone;
-
-  //step15
-  [SerializeField] private Transform tfObj1;
-  [SerializeField] private Transform tfObj2;
-
-  //step15
-  [SerializeField] private Transform tfLotus;
-  [SerializeField] private Transform tfBlend;
-  [SerializeField] private Transform tfBtnStep2;
+  [SerializeField] private Transform tfFlour;
+  [SerializeField] private List<SonSnapObject> listSnapObjHint;
+  public List<SonSnapObject> ListSnapObjHint => listSnapObjHint;
+  [SerializeField] private List<Transform> listTargetStep1;
+  public List<Transform> ListTargetStep1 => listTargetStep1;
+  [SerializeField] private bool isSnapSpoon = false;
+  [SerializeField] private bool isSnapSpoonDone = false;
   [SerializeField] private Transform tfSpoon;
+  [SerializeField] private Transform tfBowl;
+  [SerializeField] private Transform tfPlate;
+  [SerializeField] private Transform tfPlate1;
+  [SerializeField] private Transform tfPlate2;
 
+
+  public void SetIsSnapSpoon()
+  {
+    isSnapSpoon = true;
+  }
+  public void SetIsSnapSpoonDone()
+  {
+    isSnapSpoonDone = true;
+  }
   void ShowHint()
   {
     if (disableHand) return;
@@ -106,56 +89,25 @@ public class TutorialManager : Singleton<TutorialManager>
     switch (index)
     {
       case 0:
-        ShowHintPosToPos(tfBtnOn, tfBtnOn);
+        ShowHintPosToPos(tfFlour, tfFlour);
         return;
       case 1:
-        ShowHintPosToPos(tfBotlWater, tfPot);
-        return;
-      case 2:
-        ShowHintPosToPos(tfBotlSauce, tfPot);
-        return;
-      case 3:
-        ShowHintPosToPos(tfBotlSiro, tfPot);
-        return;
-      case 4:
-        return;
-      case 5:
-        ShowHintPosToPos(tfBotlFried, tfPot);
-        return;
-      case 6:
-        return;
-      case 7:
-        ShowHintPosToPos(tfPot, tfCuttingBoard);
-        return;
-      case 8:
-        ShowHintPosToPos(tfSeaweed, tfCuttingBoard);
-        return;
-      case 9:
-        ShowHintPosToPos(tfBowlFood, tfCuttingBoard);
-        return;
-      case 10:
-        ShowHintPosToPos(tfRoll, tfRollTarget);
-        return;
-      case 11:
-        ShowHintPosToPos(tfKnife, tfCuttingBoard);
-        return;
-      case 12:
-        ShowHintPosToPos(tfKnifeInBoard, tfKnifeInBoard);
-        return;
-      case 13:
-        ShowHintPosToPos(tfUnamilDone, tfBotlDone);
-        return;
-      case 15:
-        ShowHintPosToPos(tfObj1, tfObj2);
-        return;
-      case 16:
-        ShowHintPosToPos(tfLotus, tfBlend);
-        return;
-      case 17:
-        ShowHintPosToPos(tfBtnStep2, tfBtnStep2);
-        return;
-      case 18:
-        ShowHintPosToPos(tfSpoon, tfBlend);
+        if (isSnapSpoon)
+        {
+          if (isSnapSpoonDone)
+          {
+            TutorialStep2(0, listSnapObjHint, listTargetStep1);
+          }
+          else
+          {
+            handCtrl.gameObject.SetActive(true);
+            handCtrl.ShowHandPosToPosToPos(tfSpoon.position, tfBowl.position, tfPlate.position);
+          }
+        }
+        else
+        {
+          TutorialStep2(0, listSnapObjHint, listTargetStep1);
+        }
         return;
       default:
         resetTimeHint();
@@ -222,6 +174,22 @@ public class TutorialManager : Singleton<TutorialManager>
     handCtrl.gameObject.SetActive(true);
     var obj = _tfItem[indexStep];
     handCtrl.ShowHandPosToPos(obj.gameObject.transform.position, obj.position);
+  }
+  private void TutorialStep2(int indexStep, List<SonSnapObject> _tfItem, List<Transform> _tfItemTarget)
+  {
+    if (handCtrl == null) return;
+    if (indexStep >= _tfItem.Count && indexStep >= _tfItemTarget.Count) return;
+    handCtrl.gameObject.SetActive(true);
+    var obj = _tfItem[indexStep];
+    var objTarget = _tfItemTarget[indexStep];
+    if (_tfItem[indexStep].IsSnaps == false)
+    {
+      handCtrl.ShowHandPosToPos(obj.gameObject.transform.position, objTarget.gameObject.transform.position);
+    }
+    else
+    {
+      handCtrl.ShowHandPosToPosToPos(obj.gameObject.transform.position, tfPlate1.position, tfPlate2.position);
+    }
   }
 
   public void SetStateIsTap(bool value)
