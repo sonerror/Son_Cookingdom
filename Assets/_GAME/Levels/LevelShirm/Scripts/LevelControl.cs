@@ -45,8 +45,7 @@ public class LevelControl : LevelBase
     private void EndGame()
     {
         GameManager.Ins.showEndGame();
-        TutorialManager.Ins.SetNewTime(0.5f);
-        TutorialManager.Ins.enableCountTime = true;
+        TutorialManager.Ins.SetNewTime(0);
     }
     void Update()
     {
@@ -107,6 +106,7 @@ public class LevelControl : LevelBase
         {
             case 0:
                 TutorialManager.Ins.SetNewTime(0.5f);
+                TutorialManager.Ins.SetFailCount();
                 OnStartStep0();
                 break;
             case 1:
@@ -142,11 +142,9 @@ public class LevelControl : LevelBase
     private int countStep1 = 0;
     private void OnStartStep0()
     {
-        TutorialManager.Ins.enableCountTime = true;
         sonTapItem.eventOnPointDown.AddListener(() =>
         {
             TutorialManager.Ins.SetNewTime(100f);
-            TutorialManager.Ins.enableCountTime = false;
         });
         for (int i = 0; i < listSonAutoMoveToTarget.Count; i++)
         {
@@ -156,6 +154,8 @@ public class LevelControl : LevelBase
                 countStep1++;
                 if (countStep1 >= listSonAutoMoveToTarget.Count)
                 {
+                    TutorialManager.Ins.SetNewTime(10f);
+                    TutorialManager.Ins.ReSetFailCount();
                     DoneStep();
                     TryNextStep();
                 }
@@ -171,7 +171,6 @@ public class LevelControl : LevelBase
     [SerializeField] private SonSnapPoint snapPointMayonaise;
     [SerializeField] private List<SonSnapObject> listSnapObjStep1FlourLeft;
 
-
     [SerializeField] private List<SonSnapPoint> listSnapPointStep1FlourR;
     [SerializeField] private SnapPoint snapPointAvocado;
     [SerializeField] private List<SonSnapObject> listSnapObjStep1FlourR;
@@ -180,7 +179,6 @@ public class LevelControl : LevelBase
     [SerializeField] private SpoonIngredient snapObjAvocado;
     [SerializeField] private SonSnapObject snapObjMayonaise;
 
-
     private int countSnapLeft = 0;
     private int countSnapRight = 0;
 
@@ -188,6 +186,9 @@ public class LevelControl : LevelBase
     private bool isSnapWasabi = false;
     private bool isSnapLeft = false;
     private bool isSnapRight = false;
+    private int coutSnapHintFirst = 0;
+    // Thêm [UnityEngine.Scripting.Preserve] để tránh bị strip
+    [UnityEngine.Scripting.Preserve]
     private void OnCheckDoneStep1()
     {
         if (isSnapMayonaise && isSnapWasabi && isSnapLeft && isSnapRight)
@@ -196,69 +197,125 @@ public class LevelControl : LevelBase
             TryNextStep();
         }
     }
+
     private void OnStartStep1()
     {
-        TutorialManager.Ins.SetNewTime(3f);
-        TutorialManager.Ins.enableCountTime = true;
+        TutorialManager.Ins.SetNewTime(0.75f);
+        TutorialManager.Ins.SetFailCount();
+
+        // Cache 'this' reference để tránh lỗi closure trong WebGL/IL2CPP
+        LevelControl self = this;
 
         snapObjAvocado.onSnap.AddListener(() =>
         {
-            isSnapWasabi = true;
-            OnCheckDoneStep1();
+            TutorialManager.Ins.OnCollectSuccess();
+            self.isSnapWasabi = true;
+            self.OnCheckDoneStep1();
         });
+
         snapObjMayonaise.OnSnap.AddListener(() =>
         {
-            isSnapMayonaise = true;
-            OnCheckDoneStep1();
+            TutorialManager.Ins.OnCollectSuccess();
+            self.isSnapMayonaise = true;
+            self.OnCheckDoneStep1();
+            ShowHintSpoon();
+            //StartCoroutine(IE_DelayShowHint());
         });
+        snapObjMayonaise.OnStartTrans.AddListener(() =>
+       {
+           TutorialManager.Ins.SetNewTime(100f);
+           TutorialManager.Ins.ReSetFailCount();
+       });
+
         foreach (SonSnapPoint snapPoint in listSnapPointStep1FlourLeft)
         {
             snapPoint.ChangeCanSnap(true);
         }
+
         for (int i = 0; i < listSnapObjStep1FlourLeft.Count; i++)
         {
             SonSnapObject obj = listSnapObjStep1FlourLeft[i];
             obj.OnSnap.AddListener(() =>
             {
-                countSnapLeft++;
-                if (countSnapLeft >= listSnapObjStep1FlourLeft.Count)
+                coutSnapHintFirst++;
+                if (coutSnapHintFirst >= 2)
                 {
-                    snapPointMayonaise.ChangeCanSnap(true);
-                    isSnapLeft = true;
-                    OnCheckDoneStep1();
+                    TutorialManager.Ins.OnCollectSuccess();
+                }
+                self.countSnapLeft++;
+                if (self.countSnapLeft >= self.listSnapObjStep1FlourLeft.Count)
+                {
+                    self.snapPointMayonaise.ChangeCanSnap(true);
+                    self.isSnapLeft = true;
+                    self.OnCheckDoneStep1();
                 }
             });
         }
+
         foreach (SonSnapPoint snapPoint in listSnapPointStep1FlourR)
         {
             snapPoint.ChangeCanSnap(true);
         }
+
         for (int i = 0; i < listSnapObjStep1FlourR.Count; i++)
         {
             SonSnapObject obj = listSnapObjStep1FlourR[i];
             obj.OnSnap.AddListener(() =>
             {
-                countSnapRight++;
-                if (countSnapRight >= listSnapObjStep1FlourR.Count)
+                TutorialManager.Ins.OnCollectSuccess();
+                self.countSnapRight++;
+                if (self.countSnapRight >= self.listSnapObjStep1FlourR.Count)
                 {
-                    TutorialManager.Ins.SetIsSnapSpoon();
-                    snapPointAvocado.ChangeCanSnap(true);
-                    isSnapRight = true;
-                    OnCheckDoneStep1();
+                    TrySetIsSnapSpoon();
+                    self.snapPointAvocado.ChangeCanSnap(true);
+                    self.isSnapRight = true;
+                    self.OnCheckDoneStep1();
+                    ShowHintSpoon();
                 }
             });
         }
+
         for (int i = 0; i < listSnapObjHint.Count; i++)
         {
             SonSnapObject obj = listSnapObjHint[i];
             obj.OnSnap.AddListener(() =>
             {
-                int removedIndex = listSnapObjHint.IndexOf(obj);
+                int removedIndex = self.listSnapObjHint.IndexOf(obj);
                 if (removedIndex < 0) return;
-                listSnapObjHint.RemoveAt(removedIndex);
+                self.listSnapObjHint.RemoveAt(removedIndex);
                 TutorialManager.Ins.ListSnapObjHint.RemoveAt(removedIndex);
                 TutorialManager.Ins.ListTargetStep1.RemoveAt(removedIndex);
             });
+        }
+    }
+    private void ShowHintSpoon()
+    {
+        if (isSnapMayonaise && isSnapRight)
+        {
+            TutorialManager.Ins.SetNewTime(3f);
+            TutorialManager.Ins.SetFailCount();
+        }
+    }
+    IEnumerator IE_DelayShowHint()
+    {
+        yield return new WaitForSeconds(0.75f);
+        if (listSnapObjHint.Count >= 5)
+        {
+            TutorialManager.Ins.SetNewTime(0.75f);
+            TutorialManager.Ins.SetFailCount();
+        }
+    }
+    // Tách riêng để dễ kiểm soát, tránh crash nếu method bị strip
+    [UnityEngine.Scripting.Preserve]
+    private void TrySetIsSnapSpoon()
+    {
+        try
+        {
+            TutorialManager.Ins.SetIsSnapSpoon();
+        }
+        catch (System.Exception e)
+        {
+            Debug.LogWarning("[LevelControl] TrySetIsSnapSpoon failed: " + e.Message);
         }
     }
     #endregion
@@ -315,7 +372,7 @@ public class LevelControl : LevelBase
     IEnumerator IE_OnStartStep3()
     {
         SoundManager.Ins.Mute();
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1.25f);
         UIManager.Instance.CloseUIGamePlay();
         UIManager.Instance.LoadUIWin();
         GameManager.Ins.showEndGame();

@@ -279,7 +279,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 60
+  m_SortingOrder: 55
   m_Sprite: {fileID: 21300000, guid: d94155dbb334348388519abeca281a77, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2540,10 +2540,9 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1490528460}
+  m_LocalScale: {x: 1.15, y: 1.15, z: 1.15}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
   m_Father: {fileID: 3199575870523522810}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1440422246
@@ -2586,7 +2585,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 61
+  m_SortingOrder: 56
   m_Sprite: {fileID: 21300000, guid: 6f1042a1114ddef49bcab68e16264723, type: 3}
   m_Color: {r: 0.91974485, g: 1, b: 0, a: 0.65882355}
   m_FlipX: 0
@@ -2735,112 +2734,6 @@ Transform:
   - {fileID: 546974107}
   m_Father: {fileID: 3917653748064991772}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1490528459
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1490528460}
-  - component: {fileID: 1490528461}
-  - component: {fileID: 1490528462}
-  m_Layer: 0
-  m_Name: glow1
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1490528460
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1490528459}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.1, y: 1.1, z: 1.1}
-  m_ConstrainProportionsScale: 1
-  m_Children: []
-  m_Father: {fileID: 1440422244}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &1490528461
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1490528459}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 62
-  m_Sprite: {fileID: 21300000, guid: 5632d41064ec4ab41a87554ac5b5ecf3, type: 3}
-  m_Color: {r: 0.92156863, g: 1, b: 0, a: 0.7490196}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 5.12, y: 5.12}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
---- !u!95 &1490528462
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1490528459}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ca8b6e40f4e6a0e4d84148aea807c3fe, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1493944910
 GameObject:
   m_ObjectHideFlags: 0
@@ -2924,13 +2817,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd67ec6377ca82f4a92a09ff262fa43a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tutorialManager: {fileID: 8593940612986707695}
   spriteAnimator: {fileID: 170381087}
   scaleTransform: {fileID: 1499156154}
   durationShow: 0.25
   durationHold: 0.6
   durationHide: 0.25
   audioSource: {fileID: 1499156156}
-  sfxPositive: {fileID: 8300000, guid: 5f05626f68893884c845937ee3502f4d, type: 3}
+  sfxPositive: {fileID: 8300000, guid: 7a38f9a2ec09c9b44a9c5eb24066d2b3, type: 3}
   sfxNegative: {fileID: 8300000, guid: 59f841e1b934631459da11645fce35cb, type: 3}
 --- !u!82 &1499156156
 AudioSource:
@@ -3208,12 +3102,12 @@ MonoBehaviour:
   - {fileID: 8442295881301144378}
   listSnapObjHint:
   - {fileID: 1244944531}
+  - {fileID: 1175894396851558850}
   - {fileID: 5517852490187148468}
   - {fileID: 2994986061183152175}
   - {fileID: 6781539016929962708}
   - {fileID: 5766985192155508158}
   - {fileID: 2637152333799491761}
-  - {fileID: 1175894396851558850}
   - {fileID: 7588666730934337069}
   - {fileID: 3817551642721616421}
   - {fileID: 8980417495062155803}
@@ -6599,7 +6493,7 @@ MonoBehaviour:
   onTransAudio:
     clip: {fileID: 0}
     volume: 0
-  soundPlay: 4
+  soundPlay: 0
 --- !u!61 &2637152333799491762
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9257,7 +9151,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 59
+  m_SortingOrder: 54
   m_Sprite: {fileID: 21300000, guid: d94155dbb334348388519abeca281a77, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -10825,7 +10719,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 58
+  m_SortingOrder: 53
   m_Sprite: {fileID: 21300000, guid: d94155dbb334348388519abeca281a77, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -11104,7 +10998,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 57
+  m_SortingOrder: 52
   m_Sprite: {fileID: 21300000, guid: d94155dbb334348388519abeca281a77, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -11663,7 +11557,7 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: c3b6bbecd14554c438d275704fe43853, type: 3}
     volume: 1
   onSnapAudio:
-    clip: {fileID: 8300000, guid: a92652c69245d4e44863c7f2cf0ed639, type: 3}
+    clip: {fileID: 8300000, guid: 10273d621ccf1a04cb72ae58f3eaf065, type: 3}
     volume: 1
   onSnap:
     m_PersistentCalls:
@@ -14554,24 +14448,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blockShowHint: 0
   disableHand: 0
-  TimeHint: 1
   enableCountTime: 0
-  timeCountHint: 1
   handCtrl: {fileID: 4684529769473805261}
   handCtrlMakeup: {fileID: 2180044685154298765}
   _level: {fileID: 1551184383}
-  countHintStep1: 0
   tutorialNode: []
   tfItem: []
+  _failCount: 0
+  _failCountToShowHint: 3
+  timeReShow: 3
   tfFlour: {fileID: 3046170884303913346}
   listSnapObjHint:
   - {fileID: 1244944531}
+  - {fileID: 1175894396851558850}
   - {fileID: 5517852490187148468}
   - {fileID: 2994986061183152175}
   - {fileID: 6781539016929962708}
   - {fileID: 5766985192155508158}
   - {fileID: 2637152333799491761}
-  - {fileID: 1175894396851558850}
   - {fileID: 7588666730934337069}
   - {fileID: 3817551642721616421}
   - {fileID: 8980417495062155803}
@@ -14579,12 +14473,12 @@ MonoBehaviour:
   - {fileID: 8720467014316001074}
   listTargetStep1:
   - {fileID: 1489697763}
-  - {fileID: 1489697763}
-  - {fileID: 1489697763}
-  - {fileID: 1489697763}
-  - {fileID: 1489697763}
-  - {fileID: 1489697763}
   - {fileID: 54175146}
+  - {fileID: 1489697763}
+  - {fileID: 1489697763}
+  - {fileID: 1489697763}
+  - {fileID: 1489697763}
+  - {fileID: 1489697763}
   - {fileID: 54175146}
   - {fileID: 54175146}
   - {fileID: 54175146}
@@ -15203,8 +15097,8 @@ MonoBehaviour:
   jumpMoveBack: 0
   yAddedFromLocalPos: 3
   pickSound: {fileID: 8300000, guid: d45a5982f0dc53a468bde0f335b6e354, type: 3}
-  takeIngredientSound: {fileID: 8300000, guid: 0b3549b434dfc7a48be8887dd7fae0a9, type: 3}
-  giveIngredientSound: {fileID: 8300000, guid: 0b3549b434dfc7a48be8887dd7fae0a9, type: 3}
+  takeIngredientSound: {fileID: 8300000, guid: 605484829b39cf541b0d7096fb776e52, type: 3}
+  giveIngredientSound: {fileID: 8300000, guid: 605484829b39cf541b0d7096fb776e52, type: 3}
   checkTriggerWhenPick: 0
   isSpriteFont: 0
   isDelayResetAfterSnap: 0
@@ -15321,7 +15215,7 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: c3b6bbecd14554c438d275704fe43853, type: 3}
     volume: 1
   onSnapAudio:
-    clip: {fileID: 8300000, guid: a92652c69245d4e44863c7f2cf0ed639, type: 3}
+    clip: {fileID: 8300000, guid: 10273d621ccf1a04cb72ae58f3eaf065, type: 3}
     volume: 1
   onSnap:
     m_PersistentCalls:

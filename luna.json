@@ -1,8 +1,8 @@
 {
     "version": "6.2.1",
     "projectId": "f42e7ff96e4545544bb6cd68f51ab634",
-    "applicationID": 0,
-    "creativeName": "R1_Cookingdom_v9_Osechi_Ryori_GG",
+    "applicationID": 27404,
+    "creativeName": "R1_Cookingdom_V10_Tacos",
     "pgServer": "EU",
     "window": {
         "‐‵": true
@@ -9366,10 +9366,6 @@
             {
                 "name": "sonnv.ToppingForwarder",
                 "excluded": true
-            },
-            {
-                "name": "GameWinScreen",
-                "excluded": false
             }
         ],
         "unusedMethods": [
@@ -22029,7 +22025,7 @@
                     },
                     {
                         "name": "LoadUIWin",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "LoadUILose",
@@ -29424,10 +29420,6 @@
                         "excluded": false
                     },
                     {
-                        "name": "CalculateTimeHint",
-                        "excluded": false
-                    },
-                    {
                         "name": "TfItem#get",
                         "excluded": false
                     },
@@ -29448,10 +29440,6 @@
                         "excluded": false
                     },
                     {
-                        "name": "TutorialStep7",
-                        "excluded": false
-                    },
-                    {
                         "name": "TutorialStep6",
                         "excluded": false
                     },
@@ -29468,15 +29456,7 @@
                         "excluded": true
                     },
                     {
-                        "name": "Tutorial",
-                        "excluded": true
-                    },
-                    {
                         "name": "SetStateIsTap",
-                        "excluded": true
-                    },
-                    {
-                        "name": "resetTimeHint",
                         "excluded": true
                     },
                     {
@@ -29484,16 +29464,52 @@
                         "excluded": true
                     },
                     {
-                        "name": "IncreaseTimeHide",
-                        "excluded": true
-                    },
-                    {
                         "name": "OnCollectFail",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "OnCollectSuccess",
-                        "excluded": true
+                        "excluded": false
+                    },
+                    {
+                        "name": "ListSnapObjHint#get",
+                        "excluded": false
+                    },
+                    {
+                        "name": "ListTargetStep1#get",
+                        "excluded": false
+                    },
+                    {
+                        "name": "SetFailCount",
+                        "excluded": false
+                    },
+                    {
+                        "name": "ReSetFailCount",
+                        "excluded": false
+                    },
+                    {
+                        "name": "TryReshowAfterDelay",
+                        "excluded": false
+                    },
+                    {
+                        "name": "IEReshowHint",
+                        "excluded": false
+                    },
+                    {
+                        "name": "StopReshowCoroutine",
+                        "excluded": false
+                    },
+                    {
+                        "name": "SetIsSnapSpoon",
+                        "excluded": false
+                    },
+                    {
+                        "name": "SetIsSnapSpoonDone",
+                        "excluded": false
+                    },
+                    {
+                        "name": "TutorialStep2",
+                        "excluded": false
                     }
                 ]
             },
@@ -38277,7 +38293,7 @@
                     },
                     {
                         "name": "fontWeightTable#get",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "fontWeightTable#set",
@@ -40050,6 +40066,10 @@
                     {
                         "name": "DelayMoveBack",
                         "excluded": true
+                    },
+                    {
+                        "name": "IsSnaps#get",
+                        "excluded": false
                     }
                 ]
             },
@@ -41364,6 +41384,38 @@
                     {
                         "name": "OnStartStep0",
                         "excluded": false
+                    },
+                    {
+                        "name": "OnCheckDoneStep1",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnStartStep2",
+                        "excluded": false
+                    },
+                    {
+                        "name": "IE_OnStartStep2",
+                        "excluded": false
+                    },
+                    {
+                        "name": "MoveToTarget",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnStartStep3",
+                        "excluded": false
+                    },
+                    {
+                        "name": "IE_OnStartStep3",
+                        "excluded": false
+                    },
+                    {
+                        "name": "TrySetIsSnapSpoon",
+                        "excluded": false
+                    },
+                    {
+                        "name": "IE_DelayShowHint",
+                        "excluded": false
                     }
                 ]
             },
@@ -41654,28 +41706,6 @@
                     {
                         "name": "ResetCake",
                         "excluded": true
-                    }
-                ]
-            },
-            {
-                "className": "sonnv.OvenVibratorDOTween",
-                "staticMethods": [],
-                "instanceMethods": [
-                    {
-                        "name": "init",
-                        "excluded": false
-                    },
-                    {
-                        "name": "Awake",
-                        "excluded": false
-                    },
-                    {
-                        "name": "StartVibration",
-                        "excluded": false
-                    },
-                    {
-                        "name": "StopVibration",
-                        "excluded": false
                     }
                 ]
             },
@@ -44170,36 +44200,6 @@
                 ]
             },
             {
-                "className": "LoopScale",
-                "staticMethods": [],
-                "instanceMethods": [
-                    {
-                        "name": "init",
-                        "excluded": false
-                    },
-                    {
-                        "name": "Awake",
-                        "excluded": false
-                    },
-                    {
-                        "name": "Play",
-                        "excluded": false
-                    },
-                    {
-                        "name": "Stop",
-                        "excluded": false
-                    },
-                    {
-                        "name": "KillTween",
-                        "excluded": true
-                    },
-                    {
-                        "name": "OnDestroy",
-                        "excluded": true
-                    }
-                ]
-            },
-            {
                 "className": "sonnv.KnifeCutObject",
                 "staticMethods": [],
                 "instanceMethods": [
@@ -45812,6 +45812,72 @@
                         "excluded": false
                     }
                 ]
+            },
+            {
+                "className": "GameWinScreen",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "init",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnCreate",
+                        "excluded": false
+                    },
+                    {
+                        "name": "gotoStore",
+                        "excluded": true
+                    },
+                    {
+                        "name": "OnShow",
+                        "excluded": true
+                    },
+                    {
+                        "name": "OnHide",
+                        "excluded": true
+                    },
+                    {
+                        "name": "OnClose",
+                        "excluded": true
+                    },
+                    {
+                        "name": "Resize",
+                        "excluded": false
+                    },
+                    {
+                        "name": "CaptureScreen",
+                        "excluded": false
+                    },
+                    {
+                        "name": "AnimateButtonsIn",
+                        "excluded": false
+                    },
+                    {
+                        "name": "PlayLoseSound",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnClickRetry",
+                        "excluded": true
+                    },
+                    {
+                        "name": "OnClickHome",
+                        "excluded": true
+                    },
+                    {
+                        "name": "OnClickStore",
+                        "excluded": true
+                    },
+                    {
+                        "name": "CanClick",
+                        "excluded": true
+                    },
+                    {
+                        "name": "OnDestroy",
+                        "excluded": true
+                    }
+                ]
             }
         ],
         "stubberDataList": [],
@@ -45998,6 +46064,16 @@
                         "script": "",
                         "ext": "",
                         "name": "Assets/_GAME/Levels/110/BRLNSDB SDF.asset"
+                    },
+                    {
+                        "maxWidth": 512,
+                        "maxHeight": 512,
+                        "format": "png32",
+                        "compression": "none",
+                        "quality": 65,
+                        "script": "",
+                        "ext": "",
+                        "name": "Assets/Fonts/LilitaOne-Regular SDF 1.asset"
                     }
                 ]
             },

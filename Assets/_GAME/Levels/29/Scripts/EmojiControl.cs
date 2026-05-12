@@ -5,6 +5,7 @@ namespace sonnv
 {
     public class EmojiControl : MonoBehaviour
     {
+        [SerializeField] private TutorialManager tutorialManager;
         private static readonly int AnimPositive = Animator.StringToHash("Positive");
         private static readonly int AnimNegative = Animator.StringToHash("Negative");
 
@@ -47,10 +48,12 @@ namespace sonnv
         public void ShowPositive(float delay = 0f)
         {
             PlayEmoji(AnimPositive, sfxPositive, delay);
+            tutorialManager.OnCollectSuccess();
         }
 
         public void ShowNegative(float delay = 0f)
         {
+            tutorialManager.OnCollectFail();
             PlayEmoji(AnimNegative, sfxNegative, delay);
         }
 

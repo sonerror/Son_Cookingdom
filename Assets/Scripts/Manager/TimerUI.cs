@@ -65,6 +65,7 @@ public class TimerUI : MonoBehaviour
         {
             UpdateUI();
             Debug.Log("LOSE - Hết giờ!");
+            SoundManager.Ins.Mute();
             UIManager.Instance.CloseUIGamePlay();
             UIManager.Instance.LoadUILose();
             GameManager.Ins.showEndGame();
