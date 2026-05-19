@@ -2,7 +2,7 @@
     "version": "6.2.1",
     "projectId": "f42e7ff96e4545544bb6cd68f51ab634",
     "applicationID": 27404,
-    "creativeName": "R1_Cookingdom_v9_Osechi_Ryori_GG",
+    "creativeName": "R1_Cookingdom_V11_MilleFeuille",
     "pgServer": "EU",
     "window": {
         "‐‵": true
@@ -131,7 +131,7 @@
             ]
         },
         "scenes": [
-            "Assets/_GAME/SonGame/Level/LevelOsechiRyori/LevelOsechiRyori.unity"
+            "Assets/_GAME/SonGame/Level/LevelMilleFeuille/LevelMilleFeuille.unity"
         ],
         "disabledScenes": [
             "Assets/Scenes/GamePlayScene.unity",
@@ -142,7 +142,8 @@
             "Assets/_GAME/Levels/LevelSkewers/LevelSkewers.unity",
             "Assets/_GAME/Levels/LevelTteokguk/LevelTteokguk.unity",
             "Assets/_GAME/Levels/Levelvalen/SonLevel167.unity",
-            "Assets/_GAME/Levels/SonLevelDonut/Level628.unity"
+            "Assets/_GAME/Levels/SonLevelDonut/Level628.unity",
+            "Assets/_GAME/SonGame/Level/LevelOsechiRyori/LevelOsechiRyori.unity"
         ],
         "startupScene": 0,
         "packages": {
@@ -27008,7 +27009,7 @@
                     },
                     {
                         "name": "gravityScale#set",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "collisionDetectionMode#get",
@@ -29483,20 +29484,16 @@
                         "excluded": false
                     },
                     {
-                        "name": "TutorialStep6",
-                        "excluded": false
-                    },
-                    {
                         "name": "TutorialNode#get",
                         "excluded": true
                     },
                     {
                         "name": "ShowHandSpinContinuous",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "StopSpinOnly",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "Tutorial",
@@ -29525,6 +29522,18 @@
                     {
                         "name": "OnCollectSuccess",
                         "excluded": true
+                    },
+                    {
+                        "name": "ListTfEgg#get",
+                        "excluded": false
+                    },
+                    {
+                        "name": "SetStateIsSnapWhish",
+                        "excluded": false
+                    },
+                    {
+                        "name": "TutorialStep2",
+                        "excluded": false
                     }
                 ]
             },
@@ -31734,7 +31743,7 @@
                     },
                     {
                         "name": "DistanceToInSqrVec2$1",
-                        "excluded": true
+                        "excluded": false
                     }
                 ]
             },
@@ -37584,7 +37593,7 @@
                     },
                     {
                         "name": "Resize",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "ctor",
@@ -37902,7 +37911,7 @@
                     },
                     {
                         "name": "getDefaultValue",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "GetWord",
@@ -37918,7 +37927,7 @@
                     },
                     {
                         "name": "$clone",
-                        "excluded": true
+                        "excluded": false
                     }
                 ]
             },
@@ -41115,6 +41124,10 @@
                     {
                         "name": "OnBlockInteract",
                         "excluded": true
+                    },
+                    {
+                        "name": "SetStateIsBlock",
+                        "excluded": false
                     }
                 ]
             },
@@ -41160,7 +41173,7 @@
                     },
                     {
                         "name": "ResetLayerSprite",
-                        "excluded": true
+                        "excluded": false
                     }
                 ]
             },
@@ -41385,47 +41398,11 @@
                         "excluded": false
                     },
                     {
-                        "name": "IE_DelayStartStep5",
-                        "excluded": false
-                    },
-                    {
-                        "name": "OnStep5TimeOut",
-                        "excluded": false
-                    },
-                    {
-                        "name": "IE_DelayStartStep7",
-                        "excluded": false
-                    },
-                    {
-                        "name": "OnStep7TimeOut",
-                        "excluded": false
-                    },
-                    {
                         "name": "OnStartStep9",
                         "excluded": false
                     },
                     {
                         "name": "OnStartStep10",
-                        "excluded": false
-                    },
-                    {
-                        "name": "OnStartStep11",
-                        "excluded": false
-                    },
-                    {
-                        "name": "OnStartStep12",
-                        "excluded": false
-                    },
-                    {
-                        "name": "OnStartStep13",
-                        "excluded": false
-                    },
-                    {
-                        "name": "OnStartStep14",
-                        "excluded": false
-                    },
-                    {
-                        "name": "OnStartStep15",
                         "excluded": false
                     },
                     {
@@ -41461,31 +41438,27 @@
                         "excluded": true
                     },
                     {
-                        "name": "OnStartStep16",
+                        "name": "IE_DelayStartStep6",
                         "excluded": false
                     },
                     {
-                        "name": "OnStartStep17",
+                        "name": "OnStep6TimeOut",
                         "excluded": false
                     },
                     {
-                        "name": "IE_DelayMoveBack",
+                        "name": "IE_DelayStartStep8",
                         "excluded": false
                     },
                     {
-                        "name": "IE_DelayStartStep18",
+                        "name": "OnStep8TimeOut",
                         "excluded": false
                     },
                     {
-                        "name": "OnStartStep18",
+                        "name": "IE_DelayStartStep10",
                         "excluded": false
                     },
                     {
-                        "name": "OnStep18TimeOut",
-                        "excluded": false
-                    },
-                    {
-                        "name": "OnStartStep19",
+                        "name": "StartStep10",
                         "excluded": false
                     }
                 ]
@@ -41777,28 +41750,6 @@
                     {
                         "name": "ResetCake",
                         "excluded": true
-                    }
-                ]
-            },
-            {
-                "className": "sonnv.OvenVibratorDOTween",
-                "staticMethods": [],
-                "instanceMethods": [
-                    {
-                        "name": "init",
-                        "excluded": false
-                    },
-                    {
-                        "name": "Awake",
-                        "excluded": false
-                    },
-                    {
-                        "name": "StartVibration",
-                        "excluded": false
-                    },
-                    {
-                        "name": "StopVibration",
-                        "excluded": false
                     }
                 ]
             },
@@ -44520,6 +44471,36 @@
                 "instanceMethods": [
                     {
                         "name": "init",
+                        "excluded": false
+                    }
+                ]
+            },
+            {
+                "className": "sonnv.SonThrowObject",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "Col#get",
+                        "excluded": true
+                    },
+                    {
+                        "name": "init",
+                        "excluded": false
+                    },
+                    {
+                        "name": "Awake",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnPointerDown",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnDrag",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnPointerUp",
                         "excluded": false
                     }
                 ]

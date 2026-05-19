@@ -10,6 +10,13 @@ namespace sonnv
 {
     public class SpriteButtonOnOff : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IPointerClickHandler
     {
+
+        [SerializeField] private bool isBlockClick = false;
+        public void SetStateIsBlock(bool value)
+        {
+            isBlockClick = value;
+        }
+        [SerializeField] private EmojiControl emoji;
         [SerializeField] private Collider2D col;
         [SerializeField] private SpriteRenderer sr;
         [SerializeField] private Sprite clickButtonSprite;
@@ -65,6 +72,11 @@ namespace sonnv
             if (blockInteractManually || !IsMatchCondition())
             {
                 onBlock?.Invoke();
+                return;
+            }
+            if(isBlockClick == true)
+            {
+                emoji.ShowNegative();
                 return;
             }
             ClickButton();

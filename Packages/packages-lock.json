@@ -215,7 +215,7 @@
       "url": "https://packages.unity.com"
     },
     "uk.lunalabs.luna": {
-      "version": "file:C:/Users/admin/Downloads/Telegram Desktop/6.2.1/scripts",
+      "version": "file:../../../../Pack/Luna6/scripts",
       "depth": 0,
       "source": "local",
       "dependencies": {}
