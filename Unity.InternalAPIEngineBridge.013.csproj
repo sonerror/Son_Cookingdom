@@ -476,6 +476,10 @@
       <HintPath>Assets\DOTween\DOTween.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="EditorScripts">
+      <HintPath>E:\ABI\Pack\Luna6\scripts\Editor\EditorScripts.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="Sirenix.Utilities.Editor">
       <HintPath>Assets\Plugins\Sirenix\Assemblies\Sirenix.Utilities.Editor.dll</HintPath>
       <Private>False</Private>
@@ -486,10 +490,6 @@
     </Reference>
     <Reference Include="Unity.VisualScripting.TextureAssets">
       <HintPath>Library\PackageCache\com.unity.visualscripting@1.9.4\Editor\VisualScripting.Core\EditorAssetResources\Unity.VisualScripting.TextureAssets.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="EditorScripts">
-      <HintPath>E:\ABI\Pack\Luna6\scripts\Editor\EditorScripts.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="RuntimeScripts">
