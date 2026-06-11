@@ -132,35 +132,12 @@ public class TutorialManager : Singleton<TutorialManager>
                 return;
             case 9:
                 ShowHintPosToPos(tfNilongStep2, tfTargetNilong);
-
-                // ShowHintPosToPos(tfBowlFood, tfCuttingBoard);
                 return;
             case 10:
-                ShowHintPosToPos(tfMilk, tfNilongStep2);
-                return;
-            case 11:
-                //ShowHintPosToPos(tfKnife, tfCuttingBoard);
-                return;
-            case 12:
-                //ShowHintPosToPos(tfKnifeInBoard, tfKnifeInBoard);
-                return;
-            case 13:
-                // ShowHintPosToPos(tfUnamilDone, tfBotlDone);
-                return;
-            case 15:
-                // ShowHintPosToPos(tfObj1, tfObj2);
-                return;
-            case 16:
-                //ShowHintPosToPos(tfLotus, tfBlend);
-                return;
-            case 17:
-                // ShowHintPosToPos(tfBtnStep2, tfBtnStep2);
-                return;
-            case 18:
-                //ShowHintPosToPos(tfSpoon, tfBlend);
+               // ShowHintPosToPos(tfMilk, tfNilongStep2);
                 return;
             default:
-                // resetTimeHint();
+                 resetTimeHint();
                 return;
         }
     }

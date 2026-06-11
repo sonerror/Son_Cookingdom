@@ -3,15 +3,15 @@
   "WorkspaceRootPath": "E:\\ABI\\Project\\Playabale\\Son_Cookingdom\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F5A3351F-32DA-B0B9-65F1-CB7225EE7907}|Assembly-CSharp.csproj|e:\\abi\\project\\playabale\\son_cookingdom\\assets\\_game\\levels\\levelshirm\\scripts\\levelcontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F5A3351F-32DA-B0B9-65F1-CB7225EE7907}|Assembly-CSharp.csproj|solutionrelative:assets\\_game\\levels\\levelshirm\\scripts\\levelcontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{F5A3351F-32DA-B0B9-65F1-CB7225EE7907}|Assembly-CSharp.csproj|E:\\ABI\\Project\\Playabale\\Son_Cookingdom\\assets\\scripts\\manager\\tutorialmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F5A3351F-32DA-B0B9-65F1-CB7225EE7907}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\manager\\tutorialmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F5A3351F-32DA-B0B9-65F1-CB7225EE7907}|Assembly-CSharp.csproj|e:\\abi\\project\\playabale\\son_cookingdom\\assets\\_game\\core\\scripts\\sonnv\\sonthrowobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{F5A3351F-32DA-B0B9-65F1-CB7225EE7907}|Assembly-CSharp.csproj|e:\\abi\\project\\playabale\\son_cookingdom\\assets\\_game\\levels\\levelshirm\\scripts\\levelcontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F5A3351F-32DA-B0B9-65F1-CB7225EE7907}|Assembly-CSharp.csproj|solutionrelative:assets\\_game\\levels\\levelshirm\\scripts\\levelcontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F5A3351F-32DA-B0B9-65F1-CB7225EE7907}|Assembly-CSharp.csproj|E:\\ABI\\Project\\Playabale\\Son_Cookingdom\\assets\\_game\\core\\scripts\\sonnv\\sonthrowobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F5A3351F-32DA-B0B9-65F1-CB7225EE7907}|Assembly-CSharp.csproj|solutionrelative:assets\\_game\\core\\scripts\\sonnv\\sonthrowobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -30,7 +30,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
@@ -42,8 +42,7 @@
               "RelativeToolTip": "Assets\\_GAME\\Core\\Scripts\\SonNv\\SonThrowObject.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAfAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-19T09:47:33.504Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-19T09:47:33.504Z"
             },
             {
               "$type": "Document",
@@ -71,26 +70,26 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "TutorialManager.cs",
               "DocumentMoniker": "E:\\ABI\\Project\\Playabale\\Son_Cookingdom\\Assets\\Scripts\\Manager\\TutorialManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Manager\\TutorialManager.cs",
               "ToolTip": "E:\\ABI\\Project\\Playabale\\Son_Cookingdom\\Assets\\Scripts\\Manager\\TutorialManager.cs",
               "RelativeToolTip": "Assets\\Scripts\\Manager\\TutorialManager.cs",
-              "ViewState": "AQIAAGgAAAAAAAAAAAAuwH8AAAAPAAAA",
+              "ViewState": "AQIAAFcAAAAAAAAAAAAmwGUAAAAsAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-19T07:29:36.541Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "LevelControl.cs",
               "DocumentMoniker": "E:\\ABI\\Project\\Playabale\\Son_Cookingdom\\Assets\\_GAME\\Levels\\LevelShirm\\Scripts\\LevelControl.cs",
               "RelativeDocumentMoniker": "Assets\\_GAME\\Levels\\LevelShirm\\Scripts\\LevelControl.cs",
               "ToolTip": "E:\\ABI\\Project\\Playabale\\Son_Cookingdom\\Assets\\_GAME\\Levels\\LevelShirm\\Scripts\\LevelControl.cs",
               "RelativeToolTip": "Assets\\_GAME\\Levels\\LevelShirm\\Scripts\\LevelControl.cs",
-              "ViewState": "AQIAAC0BAAAAAAAAAAAuwDgBAAApAAAA",
+              "ViewState": "AQIAAGsBAAAAAAAAAADwv4EBAAAgAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-19T07:21:20.737Z",
               "EditorCaption": ""
