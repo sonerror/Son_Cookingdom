@@ -123,33 +123,6 @@ public class LevelControl : LevelBase
             case 9:
                 OnStartStep10();
                 break;
-            case 10:
-                // OnStartStep11();
-                break;
-            case 11:
-                // OnStartStep12();
-                break;
-            case 12:
-                //OnStartStep13();
-                break;
-            case 13:
-                // OnStartStep14();
-                break;
-            case 14:
-                // OnStartStep15();
-                break;
-            case 15:
-                //OnStartStep16();
-                break;
-            case 16:
-                //OnStartStep17();
-                break;
-            case 17:
-                // OnStartStep18();
-                break;
-            case 18:
-                //OnStartStep19();
-                break;
         }
     }
     public void OnCompleteStage(int currentStageIndex, float x)
@@ -205,7 +178,7 @@ public class LevelControl : LevelBase
                 {
                     TutorialManager.Ins.SetNewTime(4f);
                 }
-              
+
             });
         }
         for (int i = 0; i < listAnimEgg.Count; i++)
@@ -218,7 +191,7 @@ public class LevelControl : LevelBase
                 listAnimEgg.RemoveAt(removedIndex);
                 TutorialManager.Ins.ListTfEgg.RemoveAt(removedIndex);
                 countSnapAnim++;
-                if(countSnapAnim >= 1)
+                if (countSnapAnim >= 1)
                 {
                     TutorialManager.Ins.SetNewTime(4f);
                 }
@@ -390,19 +363,8 @@ public class LevelControl : LevelBase
     IEnumerator IE_DelayStartStep10()
     {
         yield return new WaitForSeconds(1f);
-       
+        UIManager.Ins.CloseUI(UIID.GamePlayScreen);
+        UIManager.Ins.GetUI(UIID.ChangeLevelScreen);
     }
-    //[SerializeField] private SonThrowObject sonThrowObject;
-    //private void StartStep10()
-    //{
-    //    TutorialManager.Ins.SetNewTime(0.5f);
-    //    TutorialManager.Ins.enableCountTime = true;
-    //    sonThrowObject.onRemoveItem.AddListener(() =>
-    //    {
-    //        DoneStep();
-    //        TryNextStep();
-    //        EndGame();
-    //    });
-    //}
     #endregion
 }

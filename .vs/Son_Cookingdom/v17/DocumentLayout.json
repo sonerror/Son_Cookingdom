@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "E:\\ABI\\Project\\Playabale\\Son_Cookingdom\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F5A3351F-32DA-B0B9-65F1-CB7225EE7907}|Assembly-CSharp.csproj|E:\\ABI\\Project\\Playabale\\Son_Cookingdom\\assets\\scripts\\manager\\tutorialmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F5A3351F-32DA-B0B9-65F1-CB7225EE7907}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\manager\\tutorialmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F5A3351F-32DA-B0B9-65F1-CB7225EE7907}|Assembly-CSharp.csproj|E:\\ABI\\Project\\Playabale\\Son_Cookingdom\\assets\\_game\\levels\\levelshirm\\scripts\\levelcontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F5A3351F-32DA-B0B9-65F1-CB7225EE7907}|Assembly-CSharp.csproj|solutionrelative:assets\\_game\\levels\\levelshirm\\scripts\\levelcontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F5A3351F-32DA-B0B9-65F1-CB7225EE7907}|Assembly-CSharp.csproj|e:\\abi\\project\\playabale\\son_cookingdom\\assets\\_game\\levels\\levelshirm\\scripts\\levelcontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F5A3351F-32DA-B0B9-65F1-CB7225EE7907}|Assembly-CSharp.csproj|solutionrelative:assets\\_game\\levels\\levelshirm\\scripts\\levelcontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F5A3351F-32DA-B0B9-65F1-CB7225EE7907}|Assembly-CSharp.csproj|e:\\abi\\project\\playabale\\son_cookingdom\\assets\\scripts\\manager\\uimanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F5A3351F-32DA-B0B9-65F1-CB7225EE7907}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\manager\\uimanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F5A3351F-32DA-B0B9-65F1-CB7225EE7907}|Assembly-CSharp.csproj|e:\\abi\\project\\playabale\\son_cookingdom\\assets\\scripts\\manager\\tutorialmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F5A3351F-32DA-B0B9-65F1-CB7225EE7907}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\manager\\tutorialmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F5A3351F-32DA-B0B9-65F1-CB7225EE7907}|Assembly-CSharp.csproj|E:\\ABI\\Project\\Playabale\\Son_Cookingdom\\assets\\_game\\core\\scripts\\sonnv\\sonthrowobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -30,11 +34,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
+              "Title": "UIManager.cs",
+              "DocumentMoniker": "E:\\ABI\\Project\\Playabale\\Son_Cookingdom\\Assets\\Scripts\\Manager\\UIManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Manager\\UIManager.cs",
+              "ToolTip": "E:\\ABI\\Project\\Playabale\\Son_Cookingdom\\Assets\\Scripts\\Manager\\UIManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Manager\\UIManager.cs",
+              "ViewState": "AQIAADAAAAAAAAAAAAAlwEMAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-11T02:40:49.133Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "SonThrowObject.cs",
               "DocumentMoniker": "E:\\ABI\\Project\\Playabale\\Son_Cookingdom\\Assets\\_GAME\\Core\\Scripts\\SonNv\\SonThrowObject.cs",
               "RelativeDocumentMoniker": "Assets\\_GAME\\Core\\Scripts\\SonNv\\SonThrowObject.cs",
@@ -46,7 +63,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "SpriteRenderen.cs",
               "DocumentMoniker": "E:\\ABI\\Project\\Playabale\\Son_Cookingdom\\Assets\\_GAME\\Levels\\LevelShirm\\Scripts\\SpriteRenderen.cs",
               "RelativeDocumentMoniker": "Assets\\_GAME\\Levels\\LevelShirm\\Scripts\\SpriteRenderen.cs",
@@ -58,7 +75,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "SpriteButtonOnOff.cs",
               "DocumentMoniker": "E:\\ABI\\Project\\Playabale\\Son_Cookingdom\\Assets\\_GAME\\Levels\\LevelShirm\\Scripts\\SpriteButtonOnOff.cs",
               "RelativeDocumentMoniker": "Assets\\_GAME\\Levels\\LevelShirm\\Scripts\\SpriteButtonOnOff.cs",
@@ -70,7 +87,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "TutorialManager.cs",
               "DocumentMoniker": "E:\\ABI\\Project\\Playabale\\Son_Cookingdom\\Assets\\Scripts\\Manager\\TutorialManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Manager\\TutorialManager.cs",
@@ -83,13 +100,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "LevelControl.cs",
               "DocumentMoniker": "E:\\ABI\\Project\\Playabale\\Son_Cookingdom\\Assets\\_GAME\\Levels\\LevelShirm\\Scripts\\LevelControl.cs",
               "RelativeDocumentMoniker": "Assets\\_GAME\\Levels\\LevelShirm\\Scripts\\LevelControl.cs",
               "ToolTip": "E:\\ABI\\Project\\Playabale\\Son_Cookingdom\\Assets\\_GAME\\Levels\\LevelShirm\\Scripts\\LevelControl.cs",
               "RelativeToolTip": "Assets\\_GAME\\Levels\\LevelShirm\\Scripts\\LevelControl.cs",
-              "ViewState": "AQIAAGsBAAAAAAAAAADwv4EBAAAgAAAA",
+              "ViewState": "AQIAAKwAAAAAAAAAAAAIwH0AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-19T07:21:20.737Z",
               "EditorCaption": ""

@@ -177,6 +177,7 @@
     <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\Cook\OnOffButton.cs" />
     <Compile Include="Assets\_GAME\Core\Scripts\SonNv\ScalingOnPick.cs" />
     <Compile Include="Assets\_GAME\Levels\SonLevelDonut\Scripts\Phase1Donut.cs" />
+    <Compile Include="Assets\Scripts\UI\ChangeLevelScreen.cs" />
     <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\Cook\SingleCutObject.cs" />
     <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\FoodStand\Scripts\Tool\FinishedDishDrag1.cs" />
     <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\FoodStand\Scripts\Display\EmptyDisplay.cs" />
@@ -238,6 +239,7 @@
     <Compile Include="Assets\_GAME\Levels\SonLevelBarramundi\Scripts\Phase1\SonSinkWaterCleaning.cs" />
     <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\Cook\Utilities\Button\OnReadyButton.cs" />
     <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\Cook\Utilities\PeelOff\RotateToMouseDirection.cs" />
+    <Compile Include="Assets\Scripts\Object\HandCtrlUI.cs" />
     <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\CookV2\Utilities\Move\MoveToTarget.cs" />
     <Compile Include="Assets\_GAME\Core\Scripts\AnhPD\Cook\KnifeDrag.cs" />
     <Compile Include="Assets\_GAME\Levels\SonLevelDonut\Scripts\ChangeLayer.cs" />
@@ -408,10 +410,12 @@
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
     <None Include="Assets\_GAME\Levels\156. Osechi Ryori\DUONG\Scripts\ScriptsScene7\CartoonWater2D.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
+    <None Include="Assets\_GAME\Levels\Common\Shaders\UIAdditive.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
     <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF.shader" />
+    <None Include="Assets\_GAME\Levels\Common\Shaders\GrayscaleUI.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile SSD.shader" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
