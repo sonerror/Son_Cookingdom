@@ -111,9 +111,9 @@ public class TutorialManager : Singleton<TutorialManager>
       case 6:
         TutorialStep6(0, listMando);
         return;
-      case 7:
-        ShowHintPosToPos(tfOil, tfPan);
-        return;
+      //case 7:
+      //  ShowHintPosToPos(tfOil, tfPan);
+      //  return;
       default:
         resetTimeHint();
         return;

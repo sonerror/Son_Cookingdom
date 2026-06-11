@@ -1,0 +1,133 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\ABI\\Project\\Playabale\\Son_Cookingdom\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{F5A3351F-32DA-B0B9-65F1-CB7225EE7907}|Assembly-CSharp.csproj|e:\\abi\\project\\playabale\\son_cookingdom\\assets\\scripts\\ui\\changelevelscreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F5A3351F-32DA-B0B9-65F1-CB7225EE7907}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ui\\changelevelscreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F5A3351F-32DA-B0B9-65F1-CB7225EE7907}|Assembly-CSharp.csproj|E:\\ABI\\Project\\Playabale\\Son_Cookingdom\\assets\\scripts\\object\\handctrlui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F5A3351F-32DA-B0B9-65F1-CB7225EE7907}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\object\\handctrlui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F5A3351F-32DA-B0B9-65F1-CB7225EE7907}|Assembly-CSharp.csproj|E:\\ABI\\Project\\Playabale\\Son_Cookingdom\\assets\\_game\\levels\\levelshirm\\scripts\\levelcontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F5A3351F-32DA-B0B9-65F1-CB7225EE7907}|Assembly-CSharp.csproj|solutionrelative:assets\\_game\\levels\\levelshirm\\scripts\\levelcontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F5A3351F-32DA-B0B9-65F1-CB7225EE7907}|Assembly-CSharp.csproj|E:\\ABI\\Project\\Playabale\\Son_Cookingdom\\assets\\scripts\\ui\\gameplayscreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F5A3351F-32DA-B0B9-65F1-CB7225EE7907}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ui\\gameplayscreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F5A3351F-32DA-B0B9-65F1-CB7225EE7907}|Assembly-CSharp.csproj|E:\\ABI\\Project\\Playabale\\Son_Cookingdom\\assets\\scripts\\object\\handctrl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F5A3351F-32DA-B0B9-65F1-CB7225EE7907}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\object\\handctrl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F5A3351F-32DA-B0B9-65F1-CB7225EE7907}|Assembly-CSharp.csproj|E:\\ABI\\Project\\Playabale\\Son_Cookingdom\\assets\\scripts\\manager\\tutorialmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F5A3351F-32DA-B0B9-65F1-CB7225EE7907}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\manager\\tutorialmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F5A3351F-32DA-B0B9-65F1-CB7225EE7907}|Assembly-CSharp.csproj|E:\\ABI\\Project\\Playabale\\Son_Cookingdom\\assets\\scripts\\manager\\uimanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F5A3351F-32DA-B0B9-65F1-CB7225EE7907}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\manager\\uimanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "HandCtrlUI.cs",
+              "DocumentMoniker": "E:\\ABI\\Project\\Playabale\\Son_Cookingdom\\Assets\\Scripts\\Object\\HandCtrlUI.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Object\\HandCtrlUI.cs",
+              "ToolTip": "E:\\ABI\\Project\\Playabale\\Son_Cookingdom\\Assets\\Scripts\\Object\\HandCtrlUI.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Object\\HandCtrlUI.cs",
+              "ViewState": "AQIAADAAAAAAAAAAAAAowDoAAABDAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-10T10:14:19.774Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "HandCtrl.cs",
+              "DocumentMoniker": "E:\\ABI\\Project\\Playabale\\Son_Cookingdom\\Assets\\Scripts\\Object\\HandCtrl.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Object\\HandCtrl.cs",
+              "ToolTip": "E:\\ABI\\Project\\Playabale\\Son_Cookingdom\\Assets\\Scripts\\Object\\HandCtrl.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Object\\HandCtrl.cs",
+              "ViewState": "AQIAAFkAAAAAAAAAAAAQwHQAAAAaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-10T10:13:17.035Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "TutorialManager.cs",
+              "DocumentMoniker": "E:\\ABI\\Project\\Playabale\\Son_Cookingdom\\Assets\\Scripts\\Manager\\TutorialManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Manager\\TutorialManager.cs",
+              "ToolTip": "E:\\ABI\\Project\\Playabale\\Son_Cookingdom\\Assets\\Scripts\\Manager\\TutorialManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Manager\\TutorialManager.cs",
+              "ViewState": "AQIAADgAAAAAAAAAAAAqwFoAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-10T09:28:38.201Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "LevelControl.cs",
+              "DocumentMoniker": "E:\\ABI\\Project\\Playabale\\Son_Cookingdom\\Assets\\_GAME\\Levels\\LevelShirm\\Scripts\\LevelControl.cs",
+              "RelativeDocumentMoniker": "Assets\\_GAME\\Levels\\LevelShirm\\Scripts\\LevelControl.cs",
+              "ToolTip": "E:\\ABI\\Project\\Playabale\\Son_Cookingdom\\Assets\\_GAME\\Levels\\LevelShirm\\Scripts\\LevelControl.cs",
+              "RelativeToolTip": "Assets\\_GAME\\Levels\\LevelShirm\\Scripts\\LevelControl.cs",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAiwCEAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-10T09:23:23.691Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "GamePlayScreen.cs",
+              "DocumentMoniker": "E:\\ABI\\Project\\Playabale\\Son_Cookingdom\\Assets\\Scripts\\UI\\GamePlayScreen.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\GamePlayScreen.cs",
+              "ToolTip": "E:\\ABI\\Project\\Playabale\\Son_Cookingdom\\Assets\\Scripts\\UI\\GamePlayScreen.cs",
+              "RelativeToolTip": "Assets\\Scripts\\UI\\GamePlayScreen.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-10T09:06:31.054Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ChangeLevelScreen.cs",
+              "DocumentMoniker": "E:\\ABI\\Project\\Playabale\\Son_Cookingdom\\Assets\\Scripts\\UI\\ChangeLevelScreen.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\ChangeLevelScreen.cs",
+              "ToolTip": "E:\\ABI\\Project\\Playabale\\Son_Cookingdom\\Assets\\Scripts\\UI\\ChangeLevelScreen.cs",
+              "RelativeToolTip": "Assets\\Scripts\\UI\\ChangeLevelScreen.cs",
+              "ViewState": "AQIAAEkAAAAAAAAAAAAcwF0AAAAxAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-10T09:06:20.329Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "UIManager.cs",
+              "DocumentMoniker": "E:\\ABI\\Project\\Playabale\\Son_Cookingdom\\Assets\\Scripts\\Manager\\UIManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Manager\\UIManager.cs",
+              "ToolTip": "E:\\ABI\\Project\\Playabale\\Son_Cookingdom\\Assets\\Scripts\\Manager\\UIManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Manager\\UIManager.cs",
+              "ViewState": "AQIAABkAAAAAAAAAAAAEwCgAAAAiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-10T09:04:06.265Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

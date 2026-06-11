@@ -325,17 +325,16 @@ public class LevelControl : LevelBase
     }
     #endregion
     #region Step 8
-    [SerializeField] private ShowObjectEffect effectStep1;
-    [SerializeField] private ShowObjectEffect effectStep2;
     private void OnStartStep8()
     {
+        StartCoroutine(IE_DelayOnStartStep8());
+    }
 
-        effectStep1.Hide(0.5f);
-        effectStep2.Show(1.5f);
-        effectStep2.onShowComplete.AddListener(() =>
-        {
-            EndGame();
-        });
+    IEnumerator IE_DelayOnStartStep8()
+    {
+        yield return new WaitForSeconds(1f);
+        UIManager.Ins.CloseUI(UIID.GamePlayScreen);
+        UIManager.Ins.OpenUI(UIID.ChangeLevelScreen);
     }
     #endregion
 
