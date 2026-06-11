@@ -80,8 +80,6 @@ public class TutorialManager : Singleton<TutorialManager>
     //Step9
     [SerializeField] private Transform tfNilongStep2;
     [SerializeField] private Transform tfTargetNilong;
-    //Step10
-    [SerializeField] private Transform tfMilk;
     public void SetStateIsSnapWhish()
     {
         isSnapWhish = true;
@@ -125,16 +123,9 @@ public class TutorialManager : Singleton<TutorialManager>
                 ShowHintPosToPos(tfBowlMix, tfPan);
                 return;
             case 7:
-               
                 return;
             case 8:
                 ShowHintPosToPos(tfNilong, tfPan);
-                return;
-            case 9:
-                ShowHintPosToPos(tfNilongStep2, tfTargetNilong);
-                return;
-            case 10:
-               // ShowHintPosToPos(tfMilk, tfNilongStep2);
                 return;
             default:
                  resetTimeHint();
